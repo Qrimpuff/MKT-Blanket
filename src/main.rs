@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use mkt_coverage::draw_line;
+use mkt_coverage::*;
 
 fn main() {
     println!("MKT Coverage");
