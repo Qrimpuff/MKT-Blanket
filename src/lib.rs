@@ -6,7 +6,7 @@ use std::{cmp::Ordering, fs};
 use image::{
     buffer::ConvertBuffer,
     imageops::{self, FilterType},
-    GrayImage, ImageBuffer, Luma, Rgb,
+    GrayImage, Luma, Rgb,
 };
 use imageproc::{
     drawing, map,
@@ -17,18 +17,25 @@ use itertools::Itertools;
 
 use crate::data::*;
 
+const DEFAULT_ITEM_WIDTH: u32 = 160;
+const DEFAULT_ITEM_HEIGHT: u32 = 200;
+const LVL_THRESHOLD: f32 = 0.3;
+const ITEM_THRESHOLD: f32 = 0.05;
+
+const DEBUG_IMG: bool = true;
+
 pub fn draw_line() {
     // Use the open function to load an image from a Path.
     // `open` returns a `DynamicImage` on success.
     let mut source = image::open("tests/mkt_drivers.jpg").unwrap().into_rgb8();
-    let levels: Vec<_> = vec![
-        (1, 0.3),
-        (2, 0.3),
-        (3, 0.3),
-        (4, 0.3),
-        (5, 0.3),
-        (6, 0.3),
-        (7, 0.3),
+    let levels_templates: Vec<_> = vec![
+        (1, LVL_THRESHOLD),
+        (2, LVL_THRESHOLD),
+        (3, LVL_THRESHOLD),
+        (4, LVL_THRESHOLD),
+        (5, LVL_THRESHOLD),
+        (6, LVL_THRESHOLD),
+        (7, LVL_THRESHOLD),
     ]
     .into_iter()
     .map(|(lvl, threshold)| {
@@ -42,116 +49,166 @@ pub fn draw_line() {
     })
     .collect();
 
-    let drivers: Vec<_> = fs::read_dir("templates/drivers")
-        .unwrap()
-        .into_iter()
+    let items_templates: Vec<_> = ["drivers", "karts", "gliders"]
+        .iter()
+        .flat_map(|ty| fs::read_dir(format!("templates/{}", ty)).unwrap())
         .map(|p| {
             let p = p.unwrap();
             let img = image::open(p.path()).unwrap().into_rgb8();
             (
-                p.file_name().to_str().unwrap().to_owned(),
+                format!(
+                    "{}_{}",
+                    p.path()
+                        .parent()
+                        .unwrap()
+                        .file_name()
+                        .unwrap()
+                        .to_str()
+                        .unwrap(),
+                    p.file_name().to_str().unwrap()
+                ),
                 map::red_channel(&img),
                 map::green_channel(&img),
                 map::blue_channel(&img),
-                0.01,
+                ITEM_THRESHOLD,
             )
         })
         .collect();
 
-    // The dimensions method returns the images width and height.
-    // println!("dimensions {:?}", img.dimensions());
-    let (_width, _height) = source.dimensions();
+    let img: GrayImage = source.convert();
+    if DEBUG_IMG {
+        img.save("pics/post_1.png").unwrap();
+    }
 
-    // The color method returns the image's `ColorType`.
-    // println!("{:?}", img.color());
+    let item_areas = find_item_areas(&img);
 
-    let mut img: GrayImage = source.convert();
-    // let mut img = map::red_channel(&source);
-    // img = imageops::resize(&img, 4000, 4000, FilterType::Triangle); // resizing is not worth it
-    img.save("pics/post_1.png").unwrap();
-
-    let h_lines = find_item_lines(&mut img);
-    img = imageops::rotate90(&img);
-    let v_lines = find_item_lines(&mut img);
-    img = imageops::rotate270(&img);
-
-    // let mut img = edges::canny(&img, 10.0, 20.0);
-    img.save("pics/post_2.png").unwrap();
-    v_lines
-        .iter()
-        .cartesian_product(h_lines.iter())
-        .filter(|((x1, x2), (y1, y2))| (x2 - x1) * (y2 - y1) > 10_000)
-        .for_each(|((x1, x2), (y1, y2))| {
-            // crop 160 x 200
-            let mut crop = imageops::crop(&mut source, *x1, *y1, x2 - x1, y2 - y1).to_image();
-            crop = imageops::resize(&crop, 160, 200, FilterType::Triangle);
+    item_areas.iter().for_each(|ItemArea { x1, x2, y1, y2 }| {
+        // crop 160 x 200
+        let mut crop = imageops::crop(&mut source, *x1, *y1, x2 - x1, y2 - y1).to_image();
+        crop = imageops::resize(
+            &crop,
+            DEFAULT_ITEM_WIDTH,
+            DEFAULT_ITEM_HEIGHT,
+            FilterType::Triangle,
+        );
+        if DEBUG_IMG {
             crop.save(format!("pics/test_{}_{}.png", y1, x1)).unwrap();
+        }
 
-            // item x: 10 - 150  y: 20 - 140
-            let item = imageops::crop(&mut crop, 10, 20, 140, 120).to_image();
-            item.save(format!("pics/test_{}_{}_char.png", y1, x1))
+        // item x: 10 - 150  y: 20 - 140
+        let item = imageops::crop(&mut crop, 10, 20, 140, 120).to_image();
+        if DEBUG_IMG {
+            item.save(format!("pics/test_{}_{}_item.png", y1, x1))
                 .unwrap();
-            let item = imageops::resize(&item, 14, 12, FilterType::Triangle);
-            let item_r = map::red_channel(&item);
-            let item_g = map::green_channel(&item);
-            let item_b = map::blue_channel(&item);
+        }
+        let item = imageops::resize(&item, 14, 12, FilterType::Triangle);
+        let item_r = map::red_channel(&item);
+        let item_g = map::green_channel(&item);
+        let item_b = map::blue_channel(&item);
 
-            // for easily adding future items
+        // lvl x: 125 - 160  y: 130 - 170
+        let lvl = map::green_channel(&imageops::crop(&mut crop, 125, 130, 35, 40).to_image());
+        if DEBUG_IMG {
+            lvl.save(format!("pics/test_{}_{}_lvl.png", y1, x1))
+                .unwrap();
+        }
+
+        // template testing levels
+        let lvl = levels_templates
+            .iter()
+            .map(|(l, template, t)| (*l, template_score(&lvl, &template), *t))
+            .filter(|(_, score, t)| score < t)
+            // .collect();
+            .min_by(|(_, a, _), (_, b, _)| -> Ordering {
+                a.partial_cmp(b).unwrap_or(Ordering::Equal)
+            });
+
+        // template testing drivers
+        let item = items_templates
+            .iter()
+            .map(|(i, r, g, b, t)| {
+                (
+                    i,
+                    template_score(&item_r, &r),
+                    template_score(&item_g, &g),
+                    template_score(&item_b, &b),
+                    *t,
+                )
+            })
+            .filter(|(_, sr, sg, sb, t)| sr < t && sg < t && sb < t)
+            // .collect();
+            .min_by(|(_, ar, ab, ag, _), (_, br, bb, bg, _)| -> Ordering {
+                (ar, ab, ag)
+                    .partial_cmp(&(br, bb, bg))
+                    .unwrap_or(Ordering::Equal)
+            });
+
+        dbg!((y1, x1, lvl, item));
+
+        // for easily adding future items
+        if lvl.is_some() || DEBUG_IMG {
             let item_template = imageops::crop(&mut crop, 30, 30, 100, 100).to_image();
             let item_template = imageops::resize(&item_template, 10, 10, FilterType::Triangle);
             item_template
-                .save(format!("pics/test_{}_{}_char_template.png", y1, x1))
+                .save(format!("pics/test_{}_{}_item_template.png", y1, x1))
                 .unwrap();
+        } else {
+            crop.save(format!("pics/test_{}_{}.png", y1, x1)).unwrap();
+        }
 
-            // lvl x: 125 - 160  y: 130 - 170
-            let lvl = map::green_channel(&imageops::crop(&mut crop, 125, 130, 35, 40).to_image());
-            lvl.save(format!("pics/test_{}_{}_lvl.png", y1, x1))
-                .unwrap();
-
-            // template testing levels
-            let lvl: _ = levels
-                .iter()
-                .map(|(l, template, t)| (*l, template_score(&lvl, &template), *t))
-                .filter(|(_, score, t)| score < t)
-                // .collect();
-                .min_by(|(_, a, _), (_, b, _)| -> Ordering {
-                    a.partial_cmp(b).unwrap_or(Ordering::Equal)
-                });
-
-            // template testing drivers
-            let driver: Vec<_> = drivers
-                .iter()
-                .map(|(i, r, g, b, t)| {
-                    (
-                        i,
-                        template_score(&item_r, &r),
-                        template_score(&item_g, &g),
-                        template_score(&item_b, &b),
-                        *t,
-                    )
-                })
-                .filter(|(_, sr, sg, sb, t)| sr < t && sg < t && sb < t)
-                .collect();
-            // .min_by(|(_, a, _), (_, b, _)| -> Ordering {
-            //     a.partial_cmp(b).unwrap_or(Ordering::Equal)
-            // });
-
-            dbg!((y1, x1, lvl, driver));
-
+        if DEBUG_IMG {
             // debug rectangle position
             drawing::draw_hollow_rect_mut(
                 &mut source,
                 Rect::at(*x1 as i32, *y1 as i32).of_size(x2 - x1, y2 - y1),
                 Rgb([255, 0, 0]),
             );
-        });
+        }
+    });
 
-    // Write the contents of this image to the Writer in PNG format.
-    source.save("pics/source_rect_.png").unwrap();
+    if DEBUG_IMG {
+        // Write the contents of this image to the Writer in PNG format.
+        source.save("pics/source_rect_.png").unwrap();
+    }
 }
 
-fn find_item_lines(img: &ImageBuffer<Luma<u8>, Vec<u8>>) -> Vec<(u32, u32)> {
-    let mut item_lines = vec![];
+#[derive(Debug)]
+struct ItemArea {
+    x1: u32,
+    y1: u32,
+    x2: u32,
+    y2: u32,
+}
+
+impl ItemArea {
+    fn from_rect(rect: Rect) -> Self {
+        ItemArea {
+            x1: rect.left() as u32,
+            y1: rect.top() as u32,
+            x2: rect.left() as u32 + rect.width(),
+            y2: rect.top() as u32 + rect.height(),
+        }
+    }
+    fn to_rect(&self) -> Rect {
+        Rect::at(self.x1 as i32, self.y1 as i32).of_size(self.x2 - self.x1, self.y2 - self.y1)
+    }
+    fn intersect(&self, other: &ItemArea) -> Option<ItemArea> {
+        self.to_rect()
+            .intersect(other.to_rect())
+            .map(ItemArea::from_rect)
+    }
+    fn size(&self) -> u32 {
+        (self.x2 - self.x1) * (self.y2 - self.y1)
+    }
+    fn swap_x_y(&mut self) {
+        std::mem::swap(&mut self.x1, &mut self.y1);
+        std::mem::swap(&mut self.x2, &mut self.y2);
+    }
+}
+
+fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
+    let (width, height) = img.dimensions();
+    let mut item_rows = vec![];
     let mut prev_is_item = None;
     let mut item_line = None;
     for (y, ps) in img.enumerate_rows() {
@@ -179,15 +236,30 @@ fn find_item_lines(img: &ImageBuffer<Luma<u8>, Vec<u8>>) -> Vec<(u32, u32)> {
                 // remove small boxes
                 if y - l > 3 {
                     // merge small gaps
-                    if let Some(il @ (y1, y2)) = item_lines.pop() {
+                    if let Some(ir @ ItemArea { y1, y2, .. }) = item_rows.pop() {
                         if l - y2 > 3 {
-                            item_lines.push(il);
-                            item_lines.push((l, y));
+                            item_rows.push(ir);
+                            item_rows.push(ItemArea {
+                                x1: 0,
+                                y1: l,
+                                x2: width,
+                                y2: y,
+                            });
                         } else {
-                            item_lines.push((y1, y));
+                            item_rows.push(ItemArea {
+                                x1: 0,
+                                y1: y1,
+                                x2: width,
+                                y2: y,
+                            });
                         }
                     } else {
-                        item_lines.push((l, y));
+                        item_rows.push(ItemArea {
+                            x1: 0,
+                            y1: l,
+                            x2: width,
+                            y2: y,
+                        });
                     }
                 }
                 item_line = None;
@@ -196,9 +268,30 @@ fn find_item_lines(img: &ImageBuffer<Luma<u8>, Vec<u8>>) -> Vec<(u32, u32)> {
         prev_is_item = Some(is_item);
     }
     if let Some(l) = item_line {
-        item_lines.push((l, img.dimensions().1));
+        item_rows.push(ItemArea {
+            x1: 0,
+            y1: l,
+            x2: width,
+            y2: height,
+        });
     }
-    item_lines
+    item_rows
+}
+
+fn find_item_areas(img: &GrayImage) -> Vec<ItemArea> {
+    let rows = find_item_rows(img);
+    dbg!(&rows);
+    let img = &imageops::rotate90(img);
+    let mut columns = find_item_rows(img);
+    columns.iter_mut().for_each(ItemArea::swap_x_y);
+    dbg!(&columns);
+
+    columns
+        .iter()
+        .cartesian_product(rows.iter())
+        .flat_map(|(c, r)| c.intersect(r))
+        .filter(|a| a.size() >= 10_000)
+        .collect()
 }
 
 fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
@@ -224,12 +317,12 @@ fn import_screenshot(inv: &mut MktInventory, _img: Vec<u8>) {
     // TODO: maybe get the picture?
 
     // update inventory
-    inv.update_inventory(screenshot_to_inventory(_img));
+    inv.update_inventory(screenshot_to_inventory(_img, todo!()));
 
     // TODO: save inventory
 }
 
-fn screenshot_to_inventory(_img: Vec<u8>) -> MktInventory {
+fn screenshot_to_inventory(_img: Vec<u8>, database: &MktDatabase) -> MktInventory {
     // TODO: identify square
 
     // TODO: identify character/item
