@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 mod data;
 
-use std::cmp::Ordering;
+use std::{cmp::Ordering, fs};
 
 use image::{
     buffer::ConvertBuffer,
@@ -9,8 +9,7 @@ use image::{
     GrayImage, ImageBuffer, Luma, Rgb,
 };
 use imageproc::{
-    drawing,
-    map,
+    drawing, map,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
 };
@@ -35,13 +34,29 @@ pub fn draw_line() {
     .map(|(lvl, threshold)| {
         (
             lvl,
-            image::open(format!("tests/{}_template.png", lvl))
+            image::open(format!("templates/levels/{}.png", lvl))
                 .unwrap()
                 .into_luma8(),
             threshold,
         )
     })
     .collect();
+
+    let drivers: Vec<_> = fs::read_dir("templates/drivers")
+        .unwrap()
+        .into_iter()
+        .map(|p| {
+            let p = p.unwrap();
+            let img = image::open(p.path()).unwrap().into_rgb8();
+            (
+                p.file_name().to_str().unwrap().to_owned(),
+                map::red_channel(&img),
+                map::green_channel(&img),
+                map::blue_channel(&img),
+                0.01,
+            )
+        })
+        .collect();
 
     // The dimensions method returns the images width and height.
     // println!("dimensions {:?}", img.dimensions());
@@ -72,9 +87,20 @@ pub fn draw_line() {
             crop = imageops::resize(&crop, 160, 200, FilterType::Triangle);
             crop.save(format!("pics/test_{}_{}.png", y1, x1)).unwrap();
 
-            // item x: 10 - 150  y: 20 - 135
-            let item = imageops::crop(&mut crop, 10, 20, 140, 115).to_image();
+            // item x: 10 - 150  y: 20 - 140
+            let item = imageops::crop(&mut crop, 10, 20, 140, 120).to_image();
             item.save(format!("pics/test_{}_{}_char.png", y1, x1))
+                .unwrap();
+            let item = imageops::resize(&item, 14, 12, FilterType::Triangle);
+            let item_r = map::red_channel(&item);
+            let item_g = map::green_channel(&item);
+            let item_b = map::blue_channel(&item);
+
+            // for easily adding future items
+            let item_template = imageops::crop(&mut crop, 30, 30, 100, 100).to_image();
+            let item_template = imageops::resize(&item_template, 10, 10, FilterType::Triangle);
+            item_template
+                .save(format!("pics/test_{}_{}_char_template.png", y1, x1))
                 .unwrap();
 
             // lvl x: 125 - 160  y: 130 - 170
@@ -82,15 +108,35 @@ pub fn draw_line() {
             lvl.save(format!("pics/test_{}_{}_lvl.png", y1, x1))
                 .unwrap();
 
-            // template testing
+            // template testing levels
             let lvl: _ = levels
                 .iter()
                 .map(|(l, template, t)| (*l, template_score(&lvl, &template), *t))
                 .filter(|(_, score, t)| score < t)
                 // .collect();
-                .min_by(|(_, a, _), (_, b, _)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
+                .min_by(|(_, a, _), (_, b, _)| -> Ordering {
+                    a.partial_cmp(b).unwrap_or(Ordering::Equal)
+                });
 
-            dbg!((y1, x1, lvl));
+            // template testing drivers
+            let driver: Vec<_> = drivers
+                .iter()
+                .map(|(i, r, g, b, t)| {
+                    (
+                        i,
+                        template_score(&item_r, &r),
+                        template_score(&item_g, &g),
+                        template_score(&item_b, &b),
+                        *t,
+                    )
+                })
+                .filter(|(_, sr, sg, sb, t)| sr < t && sg < t && sb < t)
+                .collect();
+            // .min_by(|(_, a, _), (_, b, _)| -> Ordering {
+            //     a.partial_cmp(b).unwrap_or(Ordering::Equal)
+            // });
+
+            dbg!((y1, x1, lvl, driver));
 
             // debug rectangle position
             drawing::draw_hollow_rect_mut(
