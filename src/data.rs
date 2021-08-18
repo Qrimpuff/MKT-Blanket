@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, fs};
 
 use image::RgbImage;
 use itertools::Itertools;
@@ -122,4 +122,62 @@ impl MktInventory {
             });
         }
     }
+}
+
+pub fn get_database() -> MktDatabase {
+    let courses = HashMap::new();
+    let mut drivers = HashMap::new();
+    for (id, template) in get_item_templates("drivers") {
+        drivers.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Driver, template),
+        );
+    }
+    let mut karts = HashMap::new();
+    for (id, template) in get_item_templates("karts") {
+        karts.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Kart, template),
+        );
+    }
+    let mut gliders = HashMap::new();
+    for (id, template) in get_item_templates("gliders") {
+        gliders.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Glider, template),
+        );
+    }
+    MktDatabase {
+        courses,
+        drivers,
+        karts,
+        gliders,
+    }
+}
+
+// TODO: will be removed or transformed later
+fn get_item_templates(i_type: &str) -> Vec<(String, RgbImage)> {
+    let items_templates: Vec<_> = Some(i_type)
+        .iter()
+        .flat_map(|ty| fs::read_dir(format!("templates/{}", ty)).unwrap())
+        .map(|p| {
+            let p = p.unwrap();
+            let img = image::open(p.path()).unwrap().into_rgb8();
+            (
+                format!(
+                    "{}_{}",
+                    p.path()
+                        .parent()
+                        .unwrap()
+                        .file_name()
+                        .unwrap()
+                        .to_str()
+                        .unwrap(),
+                    p.file_name().to_str().unwrap()
+                ),
+                img,
+            )
+        })
+        .collect();
+    items_templates
 }

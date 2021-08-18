@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+use mkt_coverage::screenshot::*;
 use mkt_coverage::*;
 
 fn main() {
