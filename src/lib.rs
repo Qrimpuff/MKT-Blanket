@@ -31,15 +31,24 @@ pub fn get_database() -> MktDatabase {
     let courses = HashMap::new();
     let mut drivers = HashMap::new();
     for (id, template) in get_item_templates("drivers") {
-        drivers.insert(id.clone(), Item::with_id_and_template(id, ItemType::Driver, template));
+        drivers.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Driver, template),
+        );
     }
     let mut karts = HashMap::new();
     for (id, template) in get_item_templates("karts") {
-        karts.insert(id.clone(), Item::with_id_and_template(id, ItemType::Kart, template));
+        karts.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Kart, template),
+        );
     }
     let mut gliders = HashMap::new();
     for (id, template) in get_item_templates("gliders") {
-        gliders.insert(id.clone(), Item::with_id_and_template(id, ItemType::Glider, template));
+        gliders.insert(
+            id.clone(),
+            Item::with_id_and_template(id, ItemType::Glider, template),
+        );
     }
     MktDatabase {
         courses,
@@ -82,7 +91,8 @@ fn get_item_templates(i_type: &str) -> Vec<(String, RgbImage)> {
                         .to_str()
                         .unwrap(),
                     p.file_name().to_str().unwrap()
-                ),img
+                ),
+                img,
             )
         })
         .collect();
@@ -314,19 +324,44 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
     item.map(|i| i.0.clone())
 }
 
+fn item_image_to_template(img: &RgbImage) -> RgbImage {
+    let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
+    let item_template = imageops::resize(&item_template, 10, 10, FilterType::Triangle);
+    // item_template
+    //     .save(format!("pics/test_{}_{}_item_template.png", y1, x1))
+    //     .unwrap();
+    item_template
+}
+
+enum OwnedItemResult {
+    Found(OwnedItem),
+    NotFound(RgbImage, ItemLvl),
+    Invalid,
+}
+
 fn item_image_to_owned_item(
     img: &RgbImage,
     lvl_templates: &LvlTemplates,
     item_templates: &ItemTemplates,
-) -> Option<OwnedItem> {
+) -> OwnedItemResult {
+    use OwnedItemResult::*;
+
     let id = item_id_from_image(img, item_templates);
     let lvl = item_level_from_image(img, lvl_templates);
 
-    Some(OwnedItem {
-        id: id?,
-        lvl: lvl?,
-        points: 0,
-    })
+    if let Some(lvl) = lvl {
+        if let Some(id) = id {
+            Found(OwnedItem {
+                id: id,
+                lvl: lvl,
+                points: 0,
+            })
+        } else {
+            NotFound(img.clone(), lvl)
+        }
+    } else {
+        Invalid
+    }
 }
 
 fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
@@ -354,12 +389,15 @@ fn import_screenshot(inv: &mut MktInventory, img: RgbImage, data: &MktDatabase) 
     // TODO: get the picture
 
     // update inventory
-    inv.update_inventory(screenshots_to_inventory(vec![img], data));
+    inv.update_inventory(screenshots_to_inventory(vec![img], data).0);
 
     // TODO: save inventory
 }
 
-pub fn screenshots_to_inventory(screenshots: Vec<RgbImage>, data: &MktDatabase) -> MktInventory {
+pub fn screenshots_to_inventory(
+    screenshots: Vec<RgbImage>,
+    data: &MktDatabase,
+) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
     let lvl_templates = get_lvl_templates();
     let item_templates = data
         .drivers
@@ -378,19 +416,25 @@ pub fn screenshots_to_inventory(screenshots: Vec<RgbImage>, data: &MktDatabase) 
         .collect_vec();
 
     let mut inv = MktInventory::new();
+    let mut missing = vec![];
 
     for screenshot in screenshots {
         // identify square
         let item_areas = find_item_areas(&screenshot.convert());
 
         // identify character/item and levels
-        let items: Vec<_> = item_areas
-            .map(|area| item_area_to_image(area, &screenshot))
-            .filter_map(|img| item_image_to_owned_item(&img, &lvl_templates, &item_templates))
-            .collect();
+        let mut items = vec![];
+        for img in item_areas.map(|area| item_area_to_image(area, &screenshot)) {
+            let r = item_image_to_owned_item(&img, &lvl_templates, &item_templates);
+            match r {
+                OwnedItemResult::Found(item) => items.push(item),
+                OwnedItemResult::NotFound(img, lvl) => missing.push((img, lvl)),
+                OwnedItemResult::Invalid => {}
+            }
+        }
 
         inv.update_inventory(MktInventory::from_items(items, data));
     }
 
-    inv
+    (inv, missing)
 }
