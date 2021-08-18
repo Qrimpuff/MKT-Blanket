@@ -3,7 +3,7 @@ use mkt_coverage::*;
 
 
 fn criterion_benchmark(c: &mut Criterion) {
-    c.bench_function("draw_ line", |b| b.iter(|| draw_line()));
+    // c.bench_function("draw_ line", |b| b.iter(|| draw_line()));
 }
 
 criterion_group!(benches, criterion_benchmark);
