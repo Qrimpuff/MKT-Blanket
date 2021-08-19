@@ -25,7 +25,6 @@ pub fn update_mkt_data() {
     let row_select = Selector::parse("tr").unwrap();
     let cell_select = Selector::parse("td").unwrap();
     let item_select = Selector::parse("a").unwrap();
-    let item_name_select = Selector::parse("a[title]").unwrap();
     let course_name_select = Selector::parse("img[alt]").unwrap();
 
     for course in document.select(&courses_select) {
@@ -68,8 +67,8 @@ pub fn update_mkt_data() {
                             (i, l)
                         })
                         .flat_map(|(i, l)| {
-                            if let Some(n) = i.select(&item_name_select).next() {
-                                n.value().attr("title").map(|n| (n, l))
+                            if let Some(n) = i.value().attr("title") {
+                                Some((n, l))
                             } else if let Some(n) = i.select(&course_name_select).next() {
                                 n.value().attr("alt").map(|n| (n, l))
                             } else {
