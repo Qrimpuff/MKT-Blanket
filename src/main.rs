@@ -6,6 +6,10 @@ use mkt_coverage::*;
 fn main() {
     println!("MKT Coverage");
 
+    update_mkt_data();
+}
+
+fn test_screenshot_import() {
     let data = get_database();
 
     let screenshot = image::open("tests/mkt_drivers.jpg").unwrap().into_rgb8();

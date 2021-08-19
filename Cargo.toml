@@ -9,6 +9,9 @@ edition = "2018"
 image = "0.23"
 imageproc = "0.22"
 itertools = "0.10"
+reqwest = { version = "0.11", features = ["blocking"] }
+scraper = "0.12"
+regex = "1.5"
 
 [dev-dependencies]
 criterion = "0.3"

@@ -5,20 +5,16 @@ use itertools::Itertools;
 
 pub type ItemId = String;
 pub type ItemLvl = u8;
-pub struct I18n {
-    pub lang: String,
-    pub text: String,
-}
 
 pub struct Course {
     pub id: ItemId,
     pub name: String,          // current default name (english)
-    pub i18n_names: Vec<I18n>, // names in different languages
-    pub aka: Vec<I18n>,        // previous names (for updating/merging)
+    pub aka: Vec<String>,        // previous names (for updating/merging)
 }
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub enum ItemType {
+    Course,
     Driver,
     Kart,
     Glider,
@@ -28,8 +24,7 @@ pub struct Item {
     pub id: ItemId,
     pub i_type: ItemType,
     pub name: String,          // current default name (english)
-    pub i18n_names: Vec<I18n>, // names in different languages
-    pub aka: Vec<I18n>,        // previous names (for updating/merging)
+    pub aka: Vec<String>,        // previous names (for updating/merging)
     pub favorite_courses: Vec<(Course, ItemLvl)>,
     pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
 }
@@ -39,7 +34,6 @@ impl Item {
             id: id.clone(),
             i_type,
             name: id,
-            i18n_names: vec![],
             aka: vec![],
             favorite_courses: vec![],
             templates: vec![template],
