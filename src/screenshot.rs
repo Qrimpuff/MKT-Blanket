@@ -77,28 +77,27 @@ impl ItemArea {
 }
 
 fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
+    const LUMA_SHIFT_DIFF: i16 = 5;
+    const LUMA_SHIFT_RATIO: f32 = 0.15;
+
     let (width, height) = img.dimensions();
     let mut item_rows = vec![];
     let mut prev_is_item = None;
     let mut item_line = None;
     for (y, ps) in img.enumerate_rows() {
-        let mut is_item = false;
-        let mut min_luma_shifts = 100;
+        let mut luma_shifts = 0;
         let mut prev_luma = None;
         for (_x, _y, p) in ps {
             let Luma([luma]) = *p;
             if let Some(prev_luma) = prev_luma {
-                if (luma as i16 - prev_luma as i16).abs() > 5 {
-                    if min_luma_shifts == 0 {
-                        is_item = true;
-                        break;
-                    }
-                    min_luma_shifts -= 1;
+                if (luma as i16 - prev_luma as i16).abs() > LUMA_SHIFT_DIFF {
+                    luma_shifts += 1;
                 }
             }
             // luma average
             prev_luma = Some(((luma as u16 + prev_luma.unwrap_or(luma) as u16) / 2) as u8);
         }
+        let is_item = luma_shifts as f32 / width as f32 > LUMA_SHIFT_RATIO;
         if prev_is_item != Some(is_item) {
             if is_item {
                 item_line = Some(y);
@@ -173,7 +172,8 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
         FilterType::Triangle,
     );
     if DEBUG_IMG {
-        crop.save(format!("pics/test_{}_{}.png", y1, x1)).unwrap();
+        crop.save(format!("pics/test_{:?}_{}_{}.png", &crop.as_ptr(), y1, x1))
+            .unwrap();
     }
     crop
 }
@@ -181,10 +181,10 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
 fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<ItemLvl> {
     // lvl x: 125 - 160  y: 130 - 170
     let lvl = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
-    // if DEBUG_IMG {
-    //     lvl.save(format!("pics/test_{}_{}_lvl.png", y1, x1))
-    //         .unwrap();
-    // }
+    if DEBUG_IMG {
+        lvl.save(format!("pics/test_{:?}_lvl.png", &img.as_ptr()))
+            .unwrap();
+    }
 
     // template testing levels
     let lvl = templates
@@ -200,10 +200,10 @@ fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<Ite
 fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
     let item = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
-    // if DEBUG_IMG {
-    //     item.save(format!("pics/test_{}_{}_item.png", y1, x1))
-    //         .unwrap();
-    // }
+    if DEBUG_IMG {
+        item.save(format!("pics/test_{:?}_item.png", &img.as_ptr()))
+            .unwrap();
+    }
     let item = imageops::resize(&item, 14, 12, FilterType::Triangle);
     let item_r = map::red_channel(&item);
     let item_g = map::green_channel(&item);
@@ -236,9 +236,11 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
 fn item_image_to_template(img: &RgbImage) -> RgbImage {
     let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
     let item_template = imageops::resize(&item_template, 10, 10, FilterType::Triangle);
-    // item_template
-    //     .save(format!("pics/test_{}_{}_item_template.png", y1, x1))
-    //     .unwrap();
+    if DEBUG_IMG {
+        item_template
+            .save(format!("pics/test_{:?}_item_template.png", &img.as_ptr()))
+            .unwrap();
+    }
     item_template
 }
 
