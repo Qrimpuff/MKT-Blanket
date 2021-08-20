@@ -2,6 +2,8 @@
 pub mod data;
 pub mod screenshot;
 
+use std::collections::HashMap;
+
 pub use data::*;
 use itertools::Itertools;
 use regex::Regex;
@@ -11,6 +13,13 @@ use screenshot::*;
 use image::RgbImage;
 
 pub fn update_mkt_data() {
+    let mut data = MktDatabase {
+        courses: HashMap::new(),
+        drivers: HashMap::new(),
+        karts: HashMap::new(),
+        gliders: HashMap::new(),
+    };
+
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();
 
     // TODO: get data (from Super Mario Wiki?)
@@ -29,8 +38,9 @@ pub fn update_mkt_data() {
 
     for course in document.select(&courses_select) {
         for (high_ends, supers, normals) in course.select(&row_select).skip(1).tuples() {
-            let i_types = Some(ItemType::Course).into_iter().chain(
+            let i_types = Some(None).into_iter().chain(
                 IntoIterator::into_iter([ItemType::Driver, ItemType::Kart, ItemType::Glider])
+                    .map(Option::Some)
                     .cycle(),
             );
             let levels = Some(1).into_iter().chain(
@@ -81,10 +91,10 @@ pub fn update_mkt_data() {
                 })
             {
                 match i_type {
-                    ItemType::Course => course = Some(name),
-                    ItemType::Driver => drivers.push((name, lvl)),
-                    ItemType::Kart => karts.push((name, lvl)),
-                    ItemType::Glider => gliders.push((name, lvl)),
+                    None => course = Some(name),
+                    Some(ItemType::Driver) => drivers.push((name, lvl as ItemLvl)),
+                    Some(ItemType::Kart) => karts.push((name, lvl as ItemLvl)),
+                    Some(ItemType::Glider) => gliders.push((name, lvl as ItemLvl)),
                 }
             }
 
@@ -92,8 +102,40 @@ pub fn update_mkt_data() {
             println!("{:?}", &drivers);
             println!("{:?}", &karts);
             println!("{:?}", &gliders);
+
+            if let Some(course) = course {
+                let course_id = data.get_course_with_name_mut(&course).id.clone();
+                // drivers
+                let mut drivers_id: Vec<(String, u8)> = vec![];
+                for (driver, lvl) in drivers {
+                    let driver = data.get_driver_with_name_mut(&driver);
+                    driver.favorite_courses.insert((course_id.clone(), lvl));
+                    drivers_id.push((driver.id.clone(), lvl));
+                }
+                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(drivers_id);
+                
+                // karts
+                let mut karts_id: Vec<(String, u8)> = vec![];
+                for (kart, lvl) in karts {
+                    let kart = data.get_kart_with_name_mut(&kart);
+                    kart.favorite_courses.insert((course_id.clone(), lvl));
+                    karts_id.push((kart.id.clone(), lvl));
+                }
+                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(karts_id);
+                
+                // gliders
+                let mut gliders_id: Vec<(String, u8)> = vec![];
+                for (glider, lvl) in gliders {
+                    let glider = data.get_glider_with_name_mut(&glider);
+                    glider.favorite_courses.insert((course_id.clone(), lvl));
+                    gliders_id.push((glider.id.clone(), lvl));
+                }
+                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(gliders_id);
+            }
         }
     }
+
+    println!("{:?}", &data);
 
     // TODO merge data
 

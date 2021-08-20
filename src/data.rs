@@ -1,53 +1,126 @@
-use std::{collections::HashMap, fs};
+use std::{collections::{HashMap, HashSet}, fs};
 
 use image::RgbImage;
 use itertools::Itertools;
+use nanoid::nanoid;
 
+pub type CourseId = String;
 pub type ItemId = String;
 pub type ItemLvl = u8;
 
+fn new_course_id() -> String {
+    nanoid!(10)
+}
+fn new_item_id() -> String {
+    nanoid!(10)
+}
+
+#[derive(Debug)]
 pub struct Course {
-    pub id: ItemId,
-    pub name: String,          // current default name (english)
-    pub aka: Vec<String>,        // previous names (for updating/merging)
+    pub id: CourseId,
+    pub name: String,                           // current english name
+    pub favorite_items: HashSet<(ItemId, ItemLvl)>, // previous names (for updating/merging)
+}
+impl Course {
+    fn new(id: CourseId, name: String) -> Self {
+        Course {
+            id,
+            name,
+            favorite_items: HashSet::new(),
+        }
+    }
 }
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub enum ItemType {
-    Course,
     Driver,
     Kart,
     Glider,
 }
 
+#[derive(Debug)]
 pub struct Item {
     pub id: ItemId,
     pub i_type: ItemType,
-    pub name: String,          // current default name (english)
-    pub aka: Vec<String>,        // previous names (for updating/merging)
-    pub favorite_courses: Vec<(Course, ItemLvl)>,
+    pub name: String, // current english name
+    pub favorite_courses: HashSet<(CourseId, ItemLvl)>,
     pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
 }
 impl Item {
+    pub fn new(id: ItemId, i_type: ItemType, name: String) -> Self {
+        Item {
+            id,
+            i_type,
+            name,
+            favorite_courses: HashSet::new(),
+            templates: vec![],
+        }
+    }
+    // TODO: will remove later
     pub fn with_id_and_template(id: ItemId, i_type: ItemType, template: RgbImage) -> Self {
         Item {
             id: id.clone(),
             i_type,
             name: id,
-            aka: vec![],
-            favorite_courses: vec![],
+            favorite_courses: HashSet::new(),
             templates: vec![template],
         }
     }
 }
 
+#[derive(Debug)]
 pub struct MktDatabase {
-    pub courses: HashMap<ItemId, Course>,
+    pub courses: HashMap<CourseId, Course>,
     pub drivers: HashMap<ItemId, Item>,
     pub karts: HashMap<ItemId, Item>,
     pub gliders: HashMap<ItemId, Item>,
 }
 impl MktDatabase {
+    pub fn get_course_with_name_mut(&mut self, name: &str) -> &mut Course {
+        let id = self
+            .courses
+            .values()
+            .find(|c| c.name == name)
+            .map(|c| c.id.clone())
+            .unwrap_or(new_course_id());
+        self.courses
+            .entry(id)
+            .or_insert_with_key(|k| Course::new(k.clone(), name.into()))
+    }
+    pub fn get_driver_with_name_mut(&mut self, name: &str) -> &mut Item {
+        let id = self
+            .drivers
+            .values()
+            .find(|c| c.name == name)
+            .map(|c| c.id.clone())
+            .unwrap_or(new_item_id());
+        self.drivers
+            .entry(id)
+            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Driver, name.into()))
+    }
+    pub fn get_kart_with_name_mut(&mut self, name: &str) -> &mut Item {
+        let id = self
+            .karts
+            .values()
+            .find(|c| c.name == name)
+            .map(|c| c.id.clone())
+            .unwrap_or(new_item_id());
+        self.karts
+            .entry(id)
+            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Kart, name.into()))
+    }
+    pub fn get_glider_with_name_mut(&mut self, name: &str) -> &mut Item {
+        let id = self
+            .gliders
+            .values()
+            .find(|c| c.name == name)
+            .map(|c| c.id.clone())
+            .unwrap_or(new_item_id());
+        self.gliders
+            .entry(id)
+            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Glider, name.into()))
+    }
+
     pub fn update_database(&mut self, _new_data: MktDatabase) {
         // TODO: update courses
         // TODO: same course
