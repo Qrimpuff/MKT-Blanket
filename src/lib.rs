@@ -1,3 +1,4 @@
+#![feature(try_blocks)]
 #![allow(dead_code)]
 pub mod data;
 pub mod screenshot;
@@ -9,6 +10,34 @@ use scraper::{ElementRef, Html, Selector};
 use screenshot::*;
 
 use image::RgbImage;
+
+pub fn update_mkt_driver_data(data: &mut MktDatabase) {
+    // TODO: get data (from Super Mario Wiki?)
+    let resp = reqwest::blocking::get(
+        "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
+    )
+    .unwrap();
+    let content = resp.text().unwrap();
+    
+    let document = Html::parse_document(&content);
+    let drivers_select = Selector::parse("h2 + table tbody tr").unwrap();
+    let name_select = Selector::parse("th:nth-of-type(1) a").unwrap();
+    let img_select = Selector::parse("td:nth-of-type(1) img").unwrap();
+    let rarity_select = Selector::parse("td:nth-of-type(3)").unwrap();
+
+
+    for driver in document.select(&drivers_select) {
+        let _: Option<_> = try {
+            let name = driver.select(&name_select).next()?.text().next()?.trim();
+            let img = driver.select(&img_select).next()?.value().attr("src")?;
+            let rarity = driver.select(&rarity_select).next()?.text().next()?.trim();
+            println!("{:?}", (name, img, rarity));
+        };
+
+    }
+
+    // TODO: make new templates, if they don't already exist
+}
 
 pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();

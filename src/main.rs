@@ -7,7 +7,8 @@ fn main() {
     println!("MKT Item Coverage");
 
     let mut data = MktDatabase::new();
-    update_mkt_item_coverage_data(&mut data);
+    update_mkt_driver_data(&mut data);
+    // update_mkt_item_coverage_data(&mut data);
     println!("{:?}", data);
 }
 
