@@ -1,8 +1,6 @@
-use std::{
-    collections::{HashMap, HashSet},
-    fs,
-};
+use std::{collections::HashSet, convert::TryFrom, fs};
 
+use hashlink::LinkedHashMap;
 use image::RgbImage;
 use itertools::Itertools;
 use lazy_static::lazy_static;
@@ -74,6 +72,18 @@ pub enum Rarity {
     Super,
     HighEnd,
 }
+impl TryFrom<&str> for Rarity {
+    type Error = ();
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
+        match value.to_lowercase().as_str() {
+            "normal" => Ok(Rarity::Normal),
+            "super" => Ok(Rarity::Super),
+            "high-end" => Ok(Rarity::HighEnd),
+            _ => Err(()),
+        }
+    }
+}
 
 #[derive(Debug)]
 pub struct Item {
@@ -110,18 +120,18 @@ impl Item {
 
 #[derive(Debug)]
 pub struct MktDatabase {
-    pub courses: HashMap<CourseId, Course>,
-    pub drivers: HashMap<ItemId, Item>,
-    pub karts: HashMap<ItemId, Item>,
-    pub gliders: HashMap<ItemId, Item>,
+    pub courses: LinkedHashMap<CourseId, Course>,
+    pub drivers: LinkedHashMap<ItemId, Item>,
+    pub karts: LinkedHashMap<ItemId, Item>,
+    pub gliders: LinkedHashMap<ItemId, Item>,
 }
 impl MktDatabase {
     pub fn new() -> Self {
         MktDatabase {
-            courses: HashMap::new(),
-            drivers: HashMap::new(),
-            karts: HashMap::new(),
-            gliders: HashMap::new(),
+            courses: LinkedHashMap::new(),
+            drivers: LinkedHashMap::new(),
+            karts: LinkedHashMap::new(),
+            gliders: LinkedHashMap::new(),
         }
     }
 
@@ -196,22 +206,22 @@ impl MktInventory {
 }
 
 pub fn get_database() -> MktDatabase {
-    let courses = HashMap::new();
-    let mut drivers = HashMap::new();
+    let courses = LinkedHashMap::new();
+    let mut drivers = LinkedHashMap::new();
     for (id, template) in get_item_templates("drivers") {
         drivers.insert(
             id.clone(),
             Item::with_id_and_template(id, ItemType::Driver, template),
         );
     }
-    let mut karts = HashMap::new();
+    let mut karts = LinkedHashMap::new();
     for (id, template) in get_item_templates("karts") {
         karts.insert(
             id.clone(),
             Item::with_id_and_template(id, ItemType::Kart, template),
         );
     }
-    let mut gliders = HashMap::new();
+    let mut gliders = LinkedHashMap::new();
     for (id, template) in get_item_templates("gliders") {
         gliders.insert(
             id.clone(),

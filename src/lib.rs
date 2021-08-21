@@ -3,6 +3,8 @@
 pub mod data;
 pub mod screenshot;
 
+use std::convert::TryInto;
+
 pub use data::*;
 use itertools::Itertools;
 use regex::Regex;
@@ -13,30 +15,30 @@ use image::RgbImage;
 
 pub fn update_mkt_driver_data(data: &mut MktDatabase) {
     // TODO: get data (from Super Mario Wiki?)
-    let resp = reqwest::blocking::get(
-        "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
-    )
-    .unwrap();
+    let resp =
+        reqwest::blocking::get("https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour")
+            .unwrap();
     let content = resp.text().unwrap();
-    
+
     let document = Html::parse_document(&content);
     let drivers_select = Selector::parse("h2 + table tbody tr").unwrap();
     let name_select = Selector::parse("th:nth-of-type(1) a").unwrap();
     let img_select = Selector::parse("td:nth-of-type(1) img").unwrap();
     let rarity_select = Selector::parse("td:nth-of-type(3)").unwrap();
 
-
     for driver in document.select(&drivers_select) {
         let _: Option<_> = try {
             let name = driver.select(&name_select).next()?.text().next()?.trim();
             let img = driver.select(&img_select).next()?.value().attr("src")?;
             let rarity = driver.select(&rarity_select).next()?.text().next()?.trim();
-            println!("{:?}", (name, img, rarity));
+            let driver = Item::new(ItemType::Driver, rarity.try_into().ok()?, name.into());
+
+            // TODO: make new templates, if they don't already exist
+
+            println!("{:?}", driver);
+            data.drivers.insert(driver.id.clone(), driver);
         };
-
     }
-
-    // TODO: make new templates, if they don't already exist
 }
 
 pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
@@ -118,63 +120,52 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
                 }
             }
 
-            println!("{:?}", &course);
-            println!("{:?}", &drivers);
-            println!("{:?}", &karts);
-            println!("{:?}", &gliders);
+            // println!("{:?}", &course);
+            // println!("{:?}", &drivers);
+            // println!("{:?}", &karts);
+            // println!("{:?}", &gliders);
 
             if let Some(course) = course {
                 let course_id = course_id_from_name(&course);
+                data.courses
+                    .insert(course_id.clone(), Course::new(course.to_string()));
+                let mut course = data.courses.get_mut(&course_id).unwrap();
+
                 // drivers
                 let mut drivers_id: Vec<(String, u8)> = vec![];
                 for (driver, lvl) in drivers {
                     let driver_id = driver_id_from_name(&driver);
-                    let driver = data.drivers.entry(driver_id.clone()).or_insert_with(|| {
-                        Item::new(ItemType::Driver, Rarity::Normal, driver.into())
-                        // TODO: fix rarity
-                    });
-                    driver.favorite_courses.insert((course_id.clone(), lvl));
-                    drivers_id.push((driver_id, lvl));
+                    let _: Option<_> = try {
+                        let driver = data.drivers.get_mut(&driver_id)?;
+                        driver.favorite_courses.insert((course_id.clone(), lvl));
+                        drivers_id.push((driver_id, lvl));
+                    };
                 }
-                data.courses
-                    .entry(course_id.clone())
-                    .or_insert_with(|| Course::new(course.to_string()))
-                    .favorite_items
-                    .extend(drivers_id);
+                course.favorite_items.extend(drivers_id);
 
                 // karts
                 let mut karts_id: Vec<(String, u8)> = vec![];
                 for (kart, lvl) in karts {
                     let kart_id = kart_id_from_name(&kart);
-                    let kart = data
-                        .karts
-                        .entry(kart_id.clone())
-                        .or_insert_with(|| Item::new(ItemType::Kart, Rarity::Normal, kart.into())); // TODO: fix rarity
-                    kart.favorite_courses.insert((course_id.clone(), lvl));
-                    karts_id.push((kart_id, lvl));
+                    let _: Option<_> = try {
+                        let kart = data.karts.get_mut(&kart_id)?;
+                        kart.favorite_courses.insert((course_id.clone(), lvl));
+                        karts_id.push((kart_id, lvl));
+                    };
                 }
-                data.courses
-                    .entry(course_id.clone())
-                    .or_insert_with(|| Course::new(course.to_string()))
-                    .favorite_items
-                    .extend(karts_id);
+                course.favorite_items.extend(karts_id);
 
                 // gliders
                 let mut gliders_id: Vec<(String, u8)> = vec![];
                 for (glider, lvl) in gliders {
                     let glider_id = glider_id_from_name(&glider);
-                    let glider = data.gliders.entry(glider_id.clone()).or_insert_with(|| {
-                        Item::new(ItemType::Glider, Rarity::Normal, glider.into())
-                        // TODO: fix rarity
-                    });
-                    glider.favorite_courses.insert((course_id.clone(), lvl));
-                    gliders_id.push((glider_id, lvl));
+                    let _: Option<_> = try {
+                        let glider = data.gliders.get_mut(&glider_id)?;
+                        glider.favorite_courses.insert((course_id.clone(), lvl));
+                        gliders_id.push((glider_id, lvl));
+                    };
                 }
-                data.courses
-                    .entry(course_id.clone())
-                    .or_insert_with(|| Course::new(course.to_string()))
-                    .favorite_items
-                    .extend(gliders_id);
+                course.favorite_items.extend(gliders_id);
             }
         }
     }

@@ -8,8 +8,8 @@ fn main() {
 
     let mut data = MktDatabase::new();
     update_mkt_driver_data(&mut data);
-    // update_mkt_item_coverage_data(&mut data);
-    println!("{:?}", data);
+    update_mkt_item_coverage_data(&mut data);
+    println!("{:#?}", data.drivers);
 }
 
 fn test_screenshot_import() {

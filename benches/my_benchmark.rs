@@ -1,7 +1,6 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use mkt_item_coverage::*;
 
-
 fn criterion_benchmark(c: &mut Criterion) {
     // c.bench_function("draw_ line", |b| b.iter(|| draw_line()));
 }
