@@ -1,4 +1,4 @@
-use std::{collections::HashSet, convert::TryFrom, fs};
+use std::{collections::HashSet, convert::TryFrom, fmt::Display, fs};
 
 use hashlink::LinkedHashMap;
 use image::RgbImage;
@@ -64,6 +64,15 @@ pub enum ItemType {
     Driver,
     Kart,
     Glider,
+}
+impl Display for ItemType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match *self {
+            ItemType::Driver => f.write_str("driver"),
+            ItemType::Kart => f.write_str("kart"),
+            ItemType::Glider => f.write_str("glider"),
+        }
+    }
 }
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]

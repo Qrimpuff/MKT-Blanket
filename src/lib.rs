@@ -11,7 +11,7 @@ use regex::Regex;
 use scraper::{ElementRef, Html, Selector};
 use screenshot::*;
 
-use image::RgbImage;
+use image::{load_from_memory, RgbImage};
 
 pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     // get data (from Super Mario Wiki)
@@ -33,11 +33,17 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     for item in document.select(&items_select) {
         let _: Option<_> = try {
             let name = item.select(&name_select).next()?.text().next()?.trim();
-            let img = item.select(&img_select).next()?.value().attr("src")?;
+            let img_url = item.select(&img_select).next()?.value().attr("src")?;
             let rarity = item.select(&rarity_select).next()?.text().next()?.trim();
             let item = Item::new(i_type, rarity.try_into().ok()?, name.into());
 
             // TODO: make new templates, if they don't already exist
+            create_template(
+                &item,
+                load_from_memory(&reqwest::blocking::get(img_url).unwrap().bytes().unwrap()[..])
+                    .unwrap()
+                    .into_rgba8(),
+            );
 
             println!("{:?}", item);
             match i_type {

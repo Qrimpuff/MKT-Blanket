@@ -7,7 +7,7 @@ use std::cmp::Ordering;
 use image::{
     buffer::ConvertBuffer,
     imageops::{self, FilterType},
-    GrayImage, Luma, RgbImage,
+    DynamicImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
 };
 use imageproc::{
     map,
@@ -169,7 +169,7 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
         &crop,
         DEFAULT_ITEM_WIDTH,
         DEFAULT_ITEM_HEIGHT,
-        FilterType::Triangle,
+        FilterType::Gaussian,
     );
     if DEBUG_IMG {
         crop.save(format!("pics/test_{:?}_{}_{}.png", &crop.as_ptr(), y1, x1))
@@ -199,12 +199,12 @@ fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<Ite
 
 fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
-    let item = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
     if DEBUG_IMG {
         item.save(format!("pics/test_{:?}_item.png", &img.as_ptr()))
             .unwrap();
     }
-    let item = imageops::resize(&item, 14, 12, FilterType::Triangle);
+    let item = imageops::resize(&item, 16, 15, FilterType::Gaussian);
     let item_r = map::red_channel(&item);
     let item_g = map::green_channel(&item);
     let item_b = map::blue_channel(&item);
@@ -220,25 +220,22 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
                 template_score(&item_b, &b),
             )
         })
-        .filter(|(_, sr, sg, sb)| {
-            *sr < ITEM_THRESHOLD && *sg < ITEM_THRESHOLD && *sb < ITEM_THRESHOLD
+        .map(|(i, r, g, b)| (i, r * g * b))
+        .filter(|(_, p)| *p < ITEM_THRESHOLD * ITEM_THRESHOLD * ITEM_THRESHOLD)
+        .inspect(|i| {
+            println!("points: {:#?}", i);
         })
-        // .collect();
-        .min_by(|(_, ar, ab, ag), (_, br, bb, bg)| -> Ordering {
-            (ar, ab, ag)
-                .partial_cmp(&(br, bb, bg))
-                .unwrap_or(Ordering::Equal)
-        });
+        .min_by(|(_, p1), (_, p2)| -> Ordering { p1.partial_cmp(&p2).unwrap_or(Ordering::Equal) });
 
     item.map(|i| i.0.clone())
 }
 
-fn item_image_to_template(img: &RgbImage) -> RgbImage {
+fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
     let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
-    let item_template = imageops::resize(&item_template, 10, 10, FilterType::Triangle);
+    let item_template = imageops::resize(&item_template, 10, 10, FilterType::Gaussian);
     if DEBUG_IMG {
         item_template
-            .save(format!("pics/test_{:?}_item_template.png", &img.as_ptr()))
+            .save(format!("templates/{}s/{}_{}.png", item.i_type, item.id, i))
             .unwrap();
     }
     item_template
@@ -257,10 +254,10 @@ fn item_image_to_owned_item(
 ) -> OwnedItemResult {
     use OwnedItemResult::*;
 
-    let id = item_id_from_image(img, item_templates);
+    println!("-------");
     let lvl = item_level_from_image(img, lvl_templates);
-
     if let Some(lvl) = lvl {
+        let id = item_id_from_image(img, item_templates);
         if let Some(id) = id {
             Found(OwnedItem {
                 id: id,
@@ -329,4 +326,63 @@ pub fn screenshots_to_inventory(
     }
 
     (inv, missing)
+}
+
+// pub fn test_overlay() {
+//     let mut img1 = image::open("tests/39px-MKT_Icon_Normal.png")
+//         .unwrap()
+//         .resize_exact(160, 200, FilterType::Gaussian);
+//     let img1_w = dbg!(&img1.dimensions()).0;
+//     let img2 = image::open("tests/44px-BabyMarioSluggers.png")
+//         .unwrap()
+//         .resize(160, 200, FilterType::Gaussian);
+//     let img2_w = dbg!(&img2.dimensions()).0;
+//     imageops::overlay(&mut img1, &img2, dbg!(&(img1_w - img2_w)) / 2, 10);
+//     img1.save("tests/test_overlay.png").unwrap();
+//     item_image_to_template(&img1.into_rgb8());
+//     item_image_to_template(
+//         &image::open("tests/test_0x1c37b87d900_215_46.png")
+//             .unwrap()
+//             .into_rgb8(),
+//     );
+// }
+
+pub fn create_template(item: &Item, img: RgbaImage) {
+    for i in (80..150).step_by(20) {
+        let mut bg = match item.rarity {
+            Rarity::Normal => image::open("tests/39px-MKT_Icon_Normal.png"),
+            Rarity::Super => image::open("tests/39px-MKT_Icon_Rare.png"),
+            Rarity::HighEnd => image::open("tests/39px-MKT_Icon_HighEnd.png"),
+        }
+        .unwrap()
+        .resize_exact(
+            DEFAULT_ITEM_WIDTH,
+            DEFAULT_ITEM_HEIGHT,
+            FilterType::Gaussian,
+        );
+        let bg_w = bg.dimensions().0;
+
+        let (og_width, og_height) = img.dimensions();
+        let ratio = DEFAULT_ITEM_HEIGHT as f32 / og_height as f32 * i as f32 / 100.0;
+        let mut img = DynamicImage::ImageRgba8(img.clone()).resize_exact(
+            (og_width as f32 * ratio) as u32,
+            (og_height as f32 * ratio) as u32,
+            FilterType::Gaussian,
+        );
+        let mut img_w = img.dimensions().0;
+        // the image is too big
+        if img_w > bg_w {
+            img = img.crop_imm(
+                (img_w - bg_w) / 2,
+                0,
+                DEFAULT_ITEM_WIDTH,
+                DEFAULT_ITEM_HEIGHT,
+            );
+            img_w = img.dimensions().0;
+        }
+
+        imageops::overlay(&mut bg, &img, &(bg_w - img_w) / 2, 20);
+        bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
+        item_image_to_template(item, i, &bg.into_rgb8());
+    }
 }
