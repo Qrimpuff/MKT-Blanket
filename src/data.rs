@@ -1,30 +1,60 @@
-use std::{collections::{HashMap, HashSet}, fs};
+use std::{
+    collections::{HashMap, HashSet},
+    fs,
+};
 
 use image::RgbImage;
 use itertools::Itertools;
-use nanoid::nanoid;
+use lazy_static::lazy_static;
+use regex::Regex;
 
 pub type CourseId = String;
 pub type ItemId = String;
 pub type ItemLvl = u8;
 
-fn new_course_id() -> String {
-    nanoid!(10)
+pub fn course_id_from_name(name: &str) -> CourseId {
+    "c_".to_string() + &id_from_name(name)
 }
-fn new_item_id() -> String {
-    nanoid!(10)
+
+pub fn driver_id_from_name(name: &str) -> ItemId {
+    "d_".to_string() + &id_from_name(name)
+}
+
+pub fn kart_id_from_name(name: &str) -> ItemId {
+    "k_".to_string() + &id_from_name(name)
+}
+
+pub fn glider_id_from_name(name: &str) -> ItemId {
+    "g_".to_string() + &id_from_name(name)
+}
+
+pub fn item_id_from_name(name: &str, i_type: ItemType) -> ItemId {
+    match i_type {
+        ItemType::Driver => driver_id_from_name(name),
+        ItemType::Kart => kart_id_from_name(name),
+        ItemType::Glider => glider_id_from_name(name),
+    }
+}
+
+fn id_from_name(name: &str) -> String {
+    lazy_static! {
+        static ref RE: Regex = Regex::new("[^a-z0-9]+").unwrap();
+    }
+    RE.replace_all(&name.to_lowercase(), "_")
+        .trim_matches('_')
+        .to_string()
 }
 
 #[derive(Debug)]
 pub struct Course {
     pub id: CourseId,
-    pub name: String,                           // current english name
+    pub name: String,                               // current english name
     pub favorite_items: HashSet<(ItemId, ItemLvl)>, // previous names (for updating/merging)
 }
 impl Course {
-    fn new(id: CourseId, name: String) -> Self {
+    pub fn new(name: String) -> Self {
         Course {
-            id,
+            id: course_id_from_name(&name),
             name,
             favorite_items: HashSet::new(),
         }
@@ -38,20 +68,29 @@ pub enum ItemType {
     Glider,
 }
 
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+pub enum Rarity {
+    Normal,
+    Super,
+    HighEnd,
+}
+
 #[derive(Debug)]
 pub struct Item {
     pub id: ItemId,
     pub i_type: ItemType,
     pub name: String, // current english name
+    pub rarity: Rarity,
     pub favorite_courses: HashSet<(CourseId, ItemLvl)>,
     pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
 }
 impl Item {
-    pub fn new(id: ItemId, i_type: ItemType, name: String) -> Self {
+    pub fn new(i_type: ItemType, rarity: Rarity, name: String) -> Self {
         Item {
-            id,
+            id: item_id_from_name(&name, i_type),
             i_type,
             name,
+            rarity,
             favorite_courses: HashSet::new(),
             templates: vec![],
         }
@@ -62,6 +101,7 @@ impl Item {
             id: id.clone(),
             i_type,
             name: id,
+            rarity: Rarity::Normal,
             favorite_courses: HashSet::new(),
             templates: vec![template],
         }
@@ -76,49 +116,13 @@ pub struct MktDatabase {
     pub gliders: HashMap<ItemId, Item>,
 }
 impl MktDatabase {
-    pub fn get_course_with_name_mut(&mut self, name: &str) -> &mut Course {
-        let id = self
-            .courses
-            .values()
-            .find(|c| c.name == name)
-            .map(|c| c.id.clone())
-            .unwrap_or(new_course_id());
-        self.courses
-            .entry(id)
-            .or_insert_with_key(|k| Course::new(k.clone(), name.into()))
-    }
-    pub fn get_driver_with_name_mut(&mut self, name: &str) -> &mut Item {
-        let id = self
-            .drivers
-            .values()
-            .find(|c| c.name == name)
-            .map(|c| c.id.clone())
-            .unwrap_or(new_item_id());
-        self.drivers
-            .entry(id)
-            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Driver, name.into()))
-    }
-    pub fn get_kart_with_name_mut(&mut self, name: &str) -> &mut Item {
-        let id = self
-            .karts
-            .values()
-            .find(|c| c.name == name)
-            .map(|c| c.id.clone())
-            .unwrap_or(new_item_id());
-        self.karts
-            .entry(id)
-            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Kart, name.into()))
-    }
-    pub fn get_glider_with_name_mut(&mut self, name: &str) -> &mut Item {
-        let id = self
-            .gliders
-            .values()
-            .find(|c| c.name == name)
-            .map(|c| c.id.clone())
-            .unwrap_or(new_item_id());
-        self.gliders
-            .entry(id)
-            .or_insert_with_key(|k| Item::new(k.clone(), ItemType::Glider, name.into()))
+    pub fn new() -> Self {
+        MktDatabase {
+            courses: HashMap::new(),
+            drivers: HashMap::new(),
+            karts: HashMap::new(),
+            gliders: HashMap::new(),
+        }
     }
 
     pub fn update_database(&mut self, _new_data: MktDatabase) {

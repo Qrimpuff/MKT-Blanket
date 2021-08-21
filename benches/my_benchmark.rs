@@ -1,5 +1,5 @@
 use criterion::{criterion_group, criterion_main, Criterion};
-use mkt_coverage::*;
+use mkt_item_coverage::*;
 
 
 fn criterion_benchmark(c: &mut Criterion) {

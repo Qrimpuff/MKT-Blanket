@@ -2,8 +2,6 @@
 pub mod data;
 pub mod screenshot;
 
-use std::collections::HashMap;
-
 pub use data::*;
 use itertools::Itertools;
 use regex::Regex;
@@ -12,14 +10,7 @@ use screenshot::*;
 
 use image::RgbImage;
 
-pub fn update_mkt_data() {
-    let mut data = MktDatabase {
-        courses: HashMap::new(),
-        drivers: HashMap::new(),
-        karts: HashMap::new(),
-        gliders: HashMap::new(),
-    };
-
+pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();
 
     // TODO: get data (from Super Mario Wiki?)
@@ -104,42 +95,60 @@ pub fn update_mkt_data() {
             println!("{:?}", &gliders);
 
             if let Some(course) = course {
-                let course_id = data.get_course_with_name_mut(&course).id.clone();
+                let course_id = course_id_from_name(&course);
                 // drivers
                 let mut drivers_id: Vec<(String, u8)> = vec![];
                 for (driver, lvl) in drivers {
-                    let driver = data.get_driver_with_name_mut(&driver);
+                    let driver_id = driver_id_from_name(&driver);
+                    let driver = data.drivers.entry(driver_id.clone()).or_insert_with(|| {
+                        Item::new(ItemType::Driver, Rarity::Normal, driver.into())
+                        // TODO: fix rarity
+                    });
                     driver.favorite_courses.insert((course_id.clone(), lvl));
-                    drivers_id.push((driver.id.clone(), lvl));
+                    drivers_id.push((driver_id, lvl));
                 }
-                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(drivers_id);
-                
+                data.courses
+                    .entry(course_id.clone())
+                    .or_insert_with(|| Course::new(course.to_string()))
+                    .favorite_items
+                    .extend(drivers_id);
+
                 // karts
                 let mut karts_id: Vec<(String, u8)> = vec![];
                 for (kart, lvl) in karts {
-                    let kart = data.get_kart_with_name_mut(&kart);
+                    let kart_id = kart_id_from_name(&kart);
+                    let kart = data
+                        .karts
+                        .entry(kart_id.clone())
+                        .or_insert_with(|| Item::new(ItemType::Kart, Rarity::Normal, kart.into())); // TODO: fix rarity
                     kart.favorite_courses.insert((course_id.clone(), lvl));
-                    karts_id.push((kart.id.clone(), lvl));
+                    karts_id.push((kart_id, lvl));
                 }
-                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(karts_id);
-                
+                data.courses
+                    .entry(course_id.clone())
+                    .or_insert_with(|| Course::new(course.to_string()))
+                    .favorite_items
+                    .extend(karts_id);
+
                 // gliders
                 let mut gliders_id: Vec<(String, u8)> = vec![];
                 for (glider, lvl) in gliders {
-                    let glider = data.get_glider_with_name_mut(&glider);
+                    let glider_id = glider_id_from_name(&glider);
+                    let glider = data.gliders.entry(glider_id.clone()).or_insert_with(|| {
+                        Item::new(ItemType::Glider, Rarity::Normal, glider.into())
+                        // TODO: fix rarity
+                    });
                     glider.favorite_courses.insert((course_id.clone(), lvl));
-                    gliders_id.push((glider.id.clone(), lvl));
+                    gliders_id.push((glider_id, lvl));
                 }
-                data.courses.get_mut(&course_id).unwrap().favorite_items.extend(gliders_id);
+                data.courses
+                    .entry(course_id.clone())
+                    .or_insert_with(|| Course::new(course.to_string()))
+                    .favorite_items
+                    .extend(gliders_id);
             }
         }
     }
-
-    println!("{:?}", &data);
-
-    // TODO merge data
-
-    // TODO: store data (pull request?)
 }
 
 fn import_screenshot(inv: &mut MktInventory, img: RgbImage, data: &MktDatabase) {

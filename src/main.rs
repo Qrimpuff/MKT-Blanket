@@ -1,12 +1,14 @@
 #![allow(dead_code)]
 
-use mkt_coverage::screenshot::*;
-use mkt_coverage::*;
+use mkt_item_coverage::screenshot::*;
+use mkt_item_coverage::*;
 
 fn main() {
-    println!("MKT Coverage");
+    println!("MKT Item Coverage");
 
-    update_mkt_data();
+    let mut data = MktDatabase::new();
+    update_mkt_item_coverage_data(&mut data);
+    println!("{:?}", data);
 }
 
 fn test_screenshot_import() {
