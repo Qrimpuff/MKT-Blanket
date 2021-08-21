@@ -7,9 +7,11 @@ fn main() {
     println!("MKT Item Coverage");
 
     let mut data = MktDatabase::new();
-    update_mkt_driver_data(&mut data);
+    update_mkt_item_data(&mut data, ItemType::Driver);
+    update_mkt_item_data(&mut data, ItemType::Kart);
+    update_mkt_item_data(&mut data, ItemType::Glider);
     update_mkt_item_coverage_data(&mut data);
-    println!("{:#?}", data.drivers);
+    println!("{:#?}", data);
 }
 
 fn test_screenshot_import() {

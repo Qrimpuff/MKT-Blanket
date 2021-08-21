@@ -13,30 +13,39 @@ use screenshot::*;
 
 use image::RgbImage;
 
-pub fn update_mkt_driver_data(data: &mut MktDatabase) {
-    // TODO: get data (from Super Mario Wiki?)
-    let resp =
-        reqwest::blocking::get("https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour")
-            .unwrap();
+pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
+    // get data (from Super Mario Wiki)
+    let url = match i_type {
+        ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
+        ItemType::Kart => "https://www.mariowiki.com/List_of_karts_in_Mario_Kart_Tour",
+        ItemType::Glider => "https://www.mariowiki.com/List_of_gliders_in_Mario_Kart_Tour",
+    };
+
+    let resp = reqwest::blocking::get(url).unwrap();
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);
-    let drivers_select = Selector::parse("h2 + table tbody tr").unwrap();
+    let items_select = Selector::parse("table tbody tr").unwrap();
     let name_select = Selector::parse("th:nth-of-type(1) a").unwrap();
     let img_select = Selector::parse("td:nth-of-type(1) img").unwrap();
     let rarity_select = Selector::parse("td:nth-of-type(3)").unwrap();
 
-    for driver in document.select(&drivers_select) {
+    for item in document.select(&items_select) {
         let _: Option<_> = try {
-            let name = driver.select(&name_select).next()?.text().next()?.trim();
-            let img = driver.select(&img_select).next()?.value().attr("src")?;
-            let rarity = driver.select(&rarity_select).next()?.text().next()?.trim();
-            let driver = Item::new(ItemType::Driver, rarity.try_into().ok()?, name.into());
+            let name = item.select(&name_select).next()?.text().next()?.trim();
+            let img = item.select(&img_select).next()?.value().attr("src")?;
+            let rarity = item.select(&rarity_select).next()?.text().next()?.trim();
+            let item = Item::new(i_type, rarity.try_into().ok()?, name.into());
 
             // TODO: make new templates, if they don't already exist
 
-            println!("{:?}", driver);
-            data.drivers.insert(driver.id.clone(), driver);
+            println!("{:?}", item);
+            match i_type {
+                ItemType::Driver => &mut data.drivers,
+                ItemType::Kart => &mut data.karts,
+                ItemType::Glider => &mut data.gliders,
+            }
+            .insert(item.id.clone(), item);
         };
     }
 }
@@ -44,7 +53,7 @@ pub fn update_mkt_driver_data(data: &mut MktDatabase) {
 pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();
 
-    // TODO: get data (from Super Mario Wiki?)
+    // get data (from Super Mario Wiki)
     let resp = reqwest::blocking::get(
         "https://www.mariowiki.com/List_of_favored_and_favorite_courses_in_Mario_Kart_Tour",
     )
@@ -129,7 +138,7 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
                 let course_id = course_id_from_name(&course);
                 data.courses
                     .insert(course_id.clone(), Course::new(course.to_string()));
-                let mut course = data.courses.get_mut(&course_id).unwrap();
+                let course = data.courses.get_mut(&course_id).unwrap();
 
                 // drivers
                 let mut drivers_id: Vec<(String, u8)> = vec![];
