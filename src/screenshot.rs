@@ -348,7 +348,7 @@ pub fn screenshots_to_inventory(
 // }
 
 pub fn create_template(item: &Item, img: RgbaImage) {
-    for i in (80..150).step_by(20) {
+    for i in (70..=160).step_by(45) {
         let mut bg = match item.rarity {
             Rarity::Normal => image::open("tests/39px-MKT_Icon_Normal.png"),
             Rarity::Super => image::open("tests/39px-MKT_Icon_Rare.png"),
@@ -363,26 +363,47 @@ pub fn create_template(item: &Item, img: RgbaImage) {
         let bg_w = bg.dimensions().0;
 
         let (og_width, og_height) = img.dimensions();
-        let ratio = DEFAULT_ITEM_HEIGHT as f32 / og_height as f32 * i as f32 / 100.0;
+        // find a better center for the image
+        let (center_x, center_y) = find_center_of_mass(&img);
+        let ratio = DEFAULT_ITEM_HEIGHT as f32 / center_y as f32 * i as f32 / 100.0;
         let mut img = DynamicImage::ImageRgba8(img.clone()).resize_exact(
             (og_width as f32 * ratio) as u32,
             (og_height as f32 * ratio) as u32,
             FilterType::Gaussian,
         );
-        let mut img_w = img.dimensions().0;
+        let mut img_x: i32 = bg_w as i32 / 2 - (center_x as f32 * ratio) as i32;
         // the image is too big
-        if img_w > bg_w {
-            img = img.crop_imm(
-                (img_w - bg_w) / 2,
-                0,
-                DEFAULT_ITEM_WIDTH,
-                DEFAULT_ITEM_HEIGHT,
-            );
-            img_w = img.dimensions().0;
+        if img_x < 0 {
+            img = img.crop_imm((-img_x) as u32, 0, DEFAULT_ITEM_WIDTH, DEFAULT_ITEM_HEIGHT);
+            img_x = 0;
         }
 
-        imageops::overlay(&mut bg, &img, &(bg_w - img_w) / 2, 20);
+        imageops::overlay(&mut bg, &img, img_x as u32, 20);
         bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
         item_image_to_template(item, i, &bg.into_rgb8());
     }
+}
+
+pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
+    let total_pixel_count = img.pixels().filter(|p| p.0[3] > 0).count();
+    let mut center_y = 0;
+    let mut pixels = 0;
+    for (y, ps) in img.enumerate_rows() {
+        pixels += ps.filter(|(_, _, p)| p.0[3] > 0).count();
+        if pixels as f32 >= total_pixel_count as f32 * 0.9 {
+            center_y = y;
+            break;
+        }
+    }
+    let img = imageops::rotate90(img);
+    let mut center_x = 0;
+    let mut pixels = 0;
+    for (x, ps) in img.enumerate_rows() {
+        pixels += ps.filter(|(_, _, p)| p.0[3] > 0).count();
+        if pixels as f32 >= total_pixel_count as f32 * 0.5 {
+            center_x = x;
+            break;
+        }
+    }
+    (center_x, center_y)
 }
