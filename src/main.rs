@@ -30,12 +30,13 @@ fn test_screenshot_import() {
     // let list = vec![screenshot];
 
     let reddit1 = image::open("tests/reddit1.png").unwrap().into_rgb8();
-    let reddit2 = image::open("tests/reddit2.png").unwrap().into_rgb8();
-    let reddit3 = image::open("tests/reddit3.png").unwrap().into_rgb8();
-    let reddit4 = image::open("tests/reddit4.png").unwrap().into_rgb8();
-    let reddit5 = image::open("tests/reddit5.png").unwrap().into_rgb8();
-    let reddit6 = image::open("tests/reddit6.png").unwrap().into_rgb8();
-    let list = vec![reddit1, reddit2, reddit3, reddit4, reddit5, reddit6];
+    // let reddit2 = image::open("tests/reddit2.png").unwrap().into_rgb8();
+    // let reddit3 = image::open("tests/reddit3.png").unwrap().into_rgb8();
+    // let reddit4 = image::open("tests/reddit4.png").unwrap().into_rgb8();
+    // let reddit5 = image::open("tests/reddit5.png").unwrap().into_rgb8();
+    // let reddit6 = image::open("tests/reddit6.png").unwrap().into_rgb8();
+    // let list = vec![reddit1, reddit2, reddit3, reddit4, reddit5, reddit6];
+    let list = vec![reddit1];
 
     let (inventory, missing) = screenshots_to_inventory(list, &data);
 

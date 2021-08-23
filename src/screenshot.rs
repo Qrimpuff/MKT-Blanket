@@ -10,6 +10,7 @@ use image::{
     DynamicImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
 };
 use imageproc::{
+    contrast::threshold_mut,
     map,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
@@ -18,7 +19,7 @@ use itertools::Itertools;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
 const DEFAULT_ITEM_HEIGHT: u32 = 200;
-const LVL_THRESHOLD: f32 = 0.3;
+const LVL_THRESHOLD: f32 = 0.5;
 const ITEM_THRESHOLD: f32 = 0.05;
 
 const DEBUG_IMG: bool = true;
@@ -180,21 +181,29 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
 
 fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<ItemLvl> {
     // lvl x: 125 - 160  y: 130 - 170
-    let lvl = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
-    if DEBUG_IMG {
-        lvl.save(format!("pics/test_{:?}_lvl.png", &img.as_ptr()))
-            .unwrap();
-    }
+    let mut img = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
+    threshold_mut(&mut img, 150);
 
     // template testing levels
     let lvl = templates
         .iter()
-        .map(|(l, template)| (*l, template_score(&lvl, &template)))
+        .map(|(l, template)| (*l, template_score(&img, &template)))
+        .inspect(|i| {
+            println!("lvl points: {:#?}", i);
+        })
         .filter(|(_, score)| *score < LVL_THRESHOLD)
         // .collect();
         .min_by(|(_, a), (_, b)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
 
-    lvl.map(|l| l.0)
+    if DEBUG_IMG {
+        img.save(format!(
+            "pics/test_{:?}_{:?}_lvl.png",
+            &img.as_ptr(),
+            &lvl.map(|l| l.0)
+        ))
+        .unwrap();
+    }
+    dbg!(lvl.map(|l| l.0))
 }
 
 fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemId> {
