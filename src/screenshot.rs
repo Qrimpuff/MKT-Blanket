@@ -2,7 +2,7 @@
 
 use crate::data::*;
 
-use std::cmp::Ordering;
+use std::{cmp::Ordering, fs};
 
 use image::{
     buffer::ConvertBuffer,
@@ -15,6 +15,7 @@ use imageproc::{
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
 };
+use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
@@ -26,6 +27,7 @@ const DEBUG_IMG: bool = true;
 
 type LvlTemplates = Vec<(ItemLvl, GrayImage)>;
 type ItemTemplates = Vec<(ItemId, GrayImage, GrayImage, GrayImage)>;
+type ItemHashes = Vec<(ItemId, String)>;
 
 fn get_lvl_templates() -> LvlTemplates {
     let levels_templates: Vec<_> = (1..=7)
@@ -203,7 +205,7 @@ fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<Ite
         ))
         .unwrap();
     }
-    dbg!(lvl.map(|l| l.0))
+    lvl.map(|l| l.0)
 }
 
 fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemId> {
@@ -239,6 +241,29 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
     item.map(|i| i.0.clone())
 }
 
+fn item_id_from_image_h(img: &RgbImage, hashes: &ItemHashes) -> Option<ItemId> {
+    // item x: 10 - 150  y: 20 - 140
+    let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
+    if DEBUG_IMG {
+        item.save(format!("pics/test_{:?}_item.png", &img.as_ptr()))
+            .unwrap();
+    }
+
+    let hash = to_image_hash(&item);
+
+    // template testing drivers
+    let item = hashes
+        .iter()
+        .map(|(i, h)| (i, dist_hash(&hash, h)))
+        .filter(|(_, p)| *p < 2000)
+        .inspect(|i| {
+            println!("points h: {:#?}", i);
+        })
+        .min_by_key(|i| i.1);
+
+    item.map(|i| i.0.clone())
+}
+
 fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
     let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
     let item_template = imageops::resize(&item_template, 10, 10, FilterType::Gaussian);
@@ -259,14 +284,14 @@ enum OwnedItemResult {
 fn item_image_to_owned_item(
     img: &RgbImage,
     lvl_templates: &LvlTemplates,
-    item_templates: &ItemTemplates,
+    item_hashes: &ItemHashes,
 ) -> OwnedItemResult {
     use OwnedItemResult::*;
 
     println!("-------");
     let lvl = item_level_from_image(img, lvl_templates);
     if let Some(lvl) = lvl {
-        let id = item_id_from_image(img, item_templates);
+        let id = item_id_from_image_h(img, item_hashes);
         if let Some(id) = id {
             Found(OwnedItem {
                 id: id,
@@ -297,20 +322,12 @@ pub fn screenshots_to_inventory(
     data: &MktDatabase,
 ) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
     let lvl_templates = get_lvl_templates();
-    let item_templates = data
+    let item_hashes = data
         .drivers
         .iter()
         .chain(data.karts.iter())
         .chain(data.gliders.iter())
-        .flat_map(|(id, i)| i.templates.iter().map(move |t| (id, t)))
-        .map(|(id, t)| {
-            (
-                id.clone(),
-                map::red_channel(t),
-                map::green_channel(t),
-                map::blue_channel(t),
-            )
-        })
+        .flat_map(|(id, i)| i.hashes.iter().map(move |h| (id.clone(), h.clone())))
         .collect_vec();
 
     let mut inv = MktInventory::new();
@@ -323,7 +340,7 @@ pub fn screenshots_to_inventory(
         // identify character/item and levels
         let mut items = vec![];
         for img in item_areas.map(|area| item_area_to_image(area, &screenshot)) {
-            let r = item_image_to_owned_item(&img, &lvl_templates, &item_templates);
+            let r = item_image_to_owned_item(&img, &lvl_templates, &item_hashes);
             match r {
                 OwnedItemResult::Found(item) => items.push(item),
                 OwnedItemResult::NotFound(img, lvl) => missing.push((img, lvl)),
@@ -337,27 +354,8 @@ pub fn screenshots_to_inventory(
     (inv, missing)
 }
 
-// pub fn test_overlay() {
-//     let mut img1 = image::open("tests/39px-MKT_Icon_Normal.png")
-//         .unwrap()
-//         .resize_exact(160, 200, FilterType::Gaussian);
-//     let img1_w = dbg!(&img1.dimensions()).0;
-//     let img2 = image::open("tests/44px-BabyMarioSluggers.png")
-//         .unwrap()
-//         .resize(160, 200, FilterType::Gaussian);
-//     let img2_w = dbg!(&img2.dimensions()).0;
-//     imageops::overlay(&mut img1, &img2, dbg!(&(img1_w - img2_w)) / 2, 10);
-//     img1.save("tests/test_overlay.png").unwrap();
-//     item_image_to_template(&img1.into_rgb8());
-//     item_image_to_template(
-//         &image::open("tests/test_0x1c37b87d900_215_46.png")
-//             .unwrap()
-//             .into_rgb8(),
-//     );
-// }
-
 pub fn create_template(item: &Item, img: RgbaImage) {
-    for i in (70..=160).step_by(45) {
+    for i in (50..=170).step_by(20) {
         let mut bg = match item.rarity {
             Rarity::Normal => image::open("tests/39px-MKT_Icon_Normal.png"),
             Rarity::Super => image::open("tests/39px-MKT_Icon_Rare.png"),
@@ -388,8 +386,10 @@ pub fn create_template(item: &Item, img: RgbaImage) {
         }
 
         imageops::overlay(&mut bg, &img, img_x as u32, 20);
-        bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
-        item_image_to_template(item, i, &bg.into_rgb8());
+        // bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
+        let bg = bg.into_rgb8();
+        // item_image_to_template(item, i, &bg);
+        save_image_hash(item, i, &bg);
     }
 }
 
@@ -415,4 +415,83 @@ pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
         }
     }
     (center_x, center_y)
+}
+
+pub fn test_img_hash() {
+    let img1 = "tests/test_0x28a54720c70_14_12.png";
+    let img2 = [
+        "tests/d_yoshi_70.png",
+        "tests/d_yoshi_115.png",
+        "tests/d_yoshi_160.png",
+        "tests/d_blue_yoshi_70.png",
+        "tests/d_blue_yoshi_115.png",
+        "tests/d_blue_yoshi_160.png",
+        "tests/d_red_yoshi_70.png",
+        "tests/d_red_yoshi_115.png",
+        "tests/d_red_yoshi_160.png",
+        "tests/mkt_driver_single.jpg",
+    ];
+
+    println!("img 1: {}", img1);
+
+    for img2 in img2 {
+        println!("------");
+        println!("img 2: {}", img2);
+        let image1 = image::open(img1).unwrap();
+        let image2 = image::open(img2).unwrap();
+
+        let image1 = image1.crop_imm(0, 0, 160, 150);
+        let image2 = image2.crop_imm(0, 0, 160, 150);
+
+        let h1 = to_image_hash(&image1.into_rgb8());
+        let h2 = to_image_hash(&image2.into_rgb8());
+
+        let dist = dist_hash(&h1, &h2);
+
+        println!("Image1 hash: {}", h1);
+        println!("Image2 hash: {}", h2);
+
+        println!("Distance: {}", dist);
+    }
+}
+
+fn to_image_hash(img: &RgbImage) -> String {
+    let hasher = HasherConfig::new()
+        .preproc_dct()
+        .hash_alg(img_hash::HashAlg::DoubleGradient)
+        .to_hasher();
+
+    let r = hasher.hash_image(&map::red_channel(img));
+    let g = hasher.hash_image(&map::green_channel(img));
+    let b = hasher.hash_image(&map::blue_channel(img));
+
+    format!("{}|{}|{}", r.to_base64(), g.to_base64(), b.to_base64())
+}
+
+fn dist_hash(h1: &String, h2: &String) -> u32 {
+    let dist: Option<_> = try {
+        let (r1, g1, b1) = h1.split("|").next_tuple()?;
+        let (r2, g2, b2) = h2.split("|").next_tuple()?;
+
+        ImageHash::<Box<[u8]>>::from_base64(r1)
+            .ok()?
+            .dist(&ImageHash::from_base64(r2).ok()?)
+            * ImageHash::<Box<[u8]>>::from_base64(g1)
+                .ok()?
+                .dist(&ImageHash::from_base64(g2).ok()?)
+            * ImageHash::<Box<[u8]>>::from_base64(b1)
+                .ok()?
+                .dist(&ImageHash::from_base64(b2).ok()?)
+    };
+    dist.unwrap_or(u32::MAX)
+}
+
+fn save_image_hash(item: &Item, i: u32, img: &RgbImage) {
+    let img = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
+    let h = to_image_hash(&img);
+    fs::write(
+        format!("templates/{}s/{}_{}.txt", item.i_type, item.id, i),
+        h,
+    )
+    .unwrap();
 }
