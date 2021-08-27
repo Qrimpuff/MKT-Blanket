@@ -1,10 +1,11 @@
-use std::{collections::HashSet, convert::TryFrom, fmt::Display, fs};
+use std::{collections::HashSet, convert::TryFrom, error::Error, fmt::Display, fs};
 
 use hashlink::LinkedHashMap;
 use image::RgbImage;
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use regex::Regex;
+use serde::{Deserialize, Serialize};
 
 pub type CourseId = String;
 pub type ItemId = String;
@@ -43,11 +44,39 @@ fn id_from_name(name: &str) -> String {
         .to_string()
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+pub struct ItemRequirement {
+    pub id: ItemId,
+    pub lvl: ItemLvl,
+}
+
+impl From<(ItemId, ItemLvl)> for ItemRequirement {
+    fn from((id, lvl): (ItemId, ItemLvl)) -> Self {
+        ItemRequirement {
+            id, lvl
+        }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+pub struct CourseAvailability {
+    pub id: CourseId,
+    pub lvl: ItemLvl,
+}
+
+impl From<(CourseId, ItemLvl)> for CourseAvailability {
+    fn from((id, lvl): (CourseId, ItemLvl)) -> Self {
+        CourseAvailability {
+            id, lvl
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Course {
     pub id: CourseId,
     pub name: String,                               // current english name
-    pub favorite_items: HashSet<(ItemId, ItemLvl)>, // previous names (for updating/merging)
+    pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
 }
 impl Course {
     pub fn new(name: String) -> Self {
@@ -59,7 +88,7 @@ impl Course {
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum ItemType {
     Driver,
     Kart,
@@ -75,7 +104,7 @@ impl Display for ItemType {
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Rarity {
     Normal,
     Super,
@@ -94,15 +123,15 @@ impl TryFrom<&str> for Rarity {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Item {
     pub id: ItemId,
     pub i_type: ItemType,
     pub name: String, // current english name
     pub rarity: Rarity,
-    pub favorite_courses: HashSet<(CourseId, ItemLvl)>,
-    pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
-    pub hashes: Vec<String>,      // TODO: used for screenshot import (not sure how yet)
+    pub favorite_courses: HashSet<CourseAvailability>,
+    // pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
+    pub hashes: Vec<String>, // TODO: used for screenshot import (not sure how yet)
 }
 impl Item {
     pub fn new(i_type: ItemType, rarity: Rarity, name: String) -> Self {
@@ -112,7 +141,7 @@ impl Item {
             name,
             rarity,
             favorite_courses: HashSet::new(),
-            templates: vec![],
+            // templates: vec![],
             hashes: vec![],
         }
     }
@@ -124,7 +153,7 @@ impl Item {
             name: id,
             rarity: Rarity::Normal,
             favorite_courses: HashSet::new(),
-            templates: vec![template],
+            // templates: vec![template],
             hashes: vec![],
         }
     }
@@ -136,13 +165,13 @@ impl Item {
             name: id,
             rarity: Rarity::Normal,
             favorite_courses: HashSet::new(),
-            templates: vec![],
+            // templates: vec![],
             hashes: vec![hash],
         }
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct MktDatabase {
     pub courses: LinkedHashMap<CourseId, Course>,
     pub drivers: LinkedHashMap<ItemId, Item>,
@@ -156,6 +185,40 @@ impl MktDatabase {
             drivers: LinkedHashMap::new(),
             karts: LinkedHashMap::new(),
             gliders: LinkedHashMap::new(),
+        }
+    }
+
+    pub fn load(file_name: &str) -> Result<MktDatabase, Box<dyn Error>> {
+        let json = fs::read_to_string(file_name)?;
+        Ok(serde_json::from_str(&json)?)
+    }
+
+    pub fn save(&self, file_name: &str) -> Result<(), Box<dyn Error>> {
+        let json = serde_json::to_string(self)?;
+        fs::write(file_name, json)?;
+        Ok(())
+    }
+
+    pub fn copy_hashes(&mut self, mut new_data: MktDatabase) {
+        // drivers
+        for (id, driver) in &mut self.drivers {
+            if let Some(new_driver) = new_data.drivers.remove(id) {
+                driver.hashes = new_driver.hashes;
+            }
+        }
+
+        // karts
+        for (id, kart) in &mut self.karts {
+            if let Some(new_kart) = new_data.karts.remove(id) {
+                kart.hashes = new_kart.hashes;
+            }
+        }
+
+        // gliders
+        for (id, glider) in &mut self.gliders {
+            if let Some(new_glider) = new_data.gliders.remove(id) {
+                glider.hashes = new_glider.hashes;
+            }
         }
     }
 
@@ -271,10 +334,7 @@ pub fn get_database_hashes() -> MktDatabase {
     }
     let mut karts = LinkedHashMap::new();
     for (id, hash) in get_item_hashes("karts") {
-        karts.insert(
-            id.clone(),
-            Item::with_id_and_hash(id, ItemType::Kart, hash),
-        );
+        karts.insert(id.clone(), Item::with_id_and_hash(id, ItemType::Kart, hash));
     }
     let mut gliders = LinkedHashMap::new();
     for (id, hash) in get_item_hashes("gliders") {

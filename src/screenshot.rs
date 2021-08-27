@@ -22,6 +22,7 @@ const DEFAULT_ITEM_WIDTH: u32 = 160;
 const DEFAULT_ITEM_HEIGHT: u32 = 200;
 const LVL_THRESHOLD: f32 = 0.5;
 const ITEM_THRESHOLD: f32 = 0.05;
+const ITEM_HASH_THRESHOLD: u32 = 100;
 
 const DEBUG_IMG: bool = true;
 
@@ -44,7 +45,7 @@ fn get_lvl_templates() -> LvlTemplates {
     levels_templates
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone)]
 struct ItemArea {
     x1: u32,
     y1: u32,
@@ -175,13 +176,16 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
         FilterType::Gaussian,
     );
     if DEBUG_IMG {
-        crop.save(format!("pics/test_{:?}_{}_{}.png", &crop.as_ptr(), y1, x1))
-            .unwrap();
+        crop.save(format!("pics/test_{}_{}.png", y1, x1)).unwrap();
     }
     crop
 }
 
-fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<ItemLvl> {
+fn item_level_from_image(
+    ItemArea { x1, y1, .. }: ItemArea,
+    img: &RgbImage,
+    templates: &LvlTemplates,
+) -> Option<ItemLvl> {
     // lvl x: 125 - 160  y: 130 - 170
     let mut img = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
     threshold_mut(&mut img, 150);
@@ -199,8 +203,9 @@ fn item_level_from_image(img: &RgbImage, templates: &LvlTemplates) -> Option<Ite
 
     if DEBUG_IMG {
         img.save(format!(
-            "pics/test_{:?}_{:?}_lvl.png",
-            &img.as_ptr(),
+            "pics/test_{}_{}_{:?}_lvl.png",
+            y1,
+            x1,
             &lvl.map(|l| l.0)
         ))
         .unwrap();
@@ -241,21 +246,29 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
     item.map(|i| i.0.clone())
 }
 
-fn item_id_from_image_h(img: &RgbImage, hashes: &ItemHashes) -> Option<ItemId> {
+fn item_id_from_image_h(
+    ItemArea { x1, y1, .. }: ItemArea,
+    img: &RgbImage,
+    hashes: &ItemHashes,
+) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
     let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
+    // let item = img;
     if DEBUG_IMG {
-        item.save(format!("pics/test_{:?}_item.png", &img.as_ptr()))
+        item.save(format!("pics/test_{}_{}_item.png", y1, x1))
             .unwrap();
     }
 
     let hash = to_image_hash(&item);
+    if DEBUG_IMG {
+        fs::write(format!("pics/test_{}_{}_item.txt", y1, x1), &hash).unwrap();
+    }
 
     // template testing drivers
     let item = hashes
         .iter()
         .map(|(i, h)| (i, dist_hash(&hash, h)))
-        .filter(|(_, p)| *p < 2000)
+        .filter(|(_, p)| *p < ITEM_HASH_THRESHOLD)
         .inspect(|i| {
             println!("points h: {:#?}", i);
         })
@@ -282,6 +295,7 @@ enum OwnedItemResult {
 }
 
 fn item_image_to_owned_item(
+    area: ItemArea,
     img: &RgbImage,
     lvl_templates: &LvlTemplates,
     item_hashes: &ItemHashes,
@@ -289,9 +303,10 @@ fn item_image_to_owned_item(
     use OwnedItemResult::*;
 
     println!("-------");
-    let lvl = item_level_from_image(img, lvl_templates);
+    println!("area: {:?}", area);
+    let lvl = item_level_from_image(area, img, lvl_templates);
+    let id = item_id_from_image_h(area, img, item_hashes);
     if let Some(lvl) = lvl {
-        let id = item_id_from_image_h(img, item_hashes);
         if let Some(id) = id {
             Found(OwnedItem {
                 id: id,
@@ -339,8 +354,8 @@ pub fn screenshots_to_inventory(
 
         // identify character/item and levels
         let mut items = vec![];
-        for img in item_areas.map(|area| item_area_to_image(area, &screenshot)) {
-            let r = item_image_to_owned_item(&img, &lvl_templates, &item_hashes);
+        for (area, img) in item_areas.map(|area| (area, item_area_to_image(area, &screenshot))) {
+            let r = item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes);
             match r {
                 OwnedItemResult::Found(item) => items.push(item),
                 OwnedItemResult::NotFound(img, lvl) => missing.push((img, lvl)),
@@ -418,8 +433,9 @@ pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
 }
 
 pub fn test_img_hash() {
-    let img1 = "tests/test_0x28a54720c70_14_12.png";
+    let img1 = "tests/test_0x2416cd99f60_193_183.png";
     let img2 = [
+        "tests/test_0x2416cda4f20_667_228.png",
         "tests/d_yoshi_70.png",
         "tests/d_yoshi_115.png",
         "tests/d_yoshi_160.png",
@@ -473,15 +489,20 @@ fn dist_hash(h1: &String, h2: &String) -> u32 {
         let (r1, g1, b1) = h1.split("|").next_tuple()?;
         let (r2, g2, b2) = h2.split("|").next_tuple()?;
 
-        ImageHash::<Box<[u8]>>::from_base64(r1)
-            .ok()?
-            .dist(&ImageHash::from_base64(r2).ok()?)
-            * ImageHash::<Box<[u8]>>::from_base64(g1)
+        [
+            ImageHash::<Box<[u8]>>::from_base64(r1)
                 .ok()?
-                .dist(&ImageHash::from_base64(g2).ok()?)
-            * ImageHash::<Box<[u8]>>::from_base64(b1)
+                .dist(&ImageHash::from_base64(r2).ok()?),
+            ImageHash::<Box<[u8]>>::from_base64(g1)
                 .ok()?
-                .dist(&ImageHash::from_base64(b2).ok()?)
+                .dist(&ImageHash::from_base64(g2).ok()?),
+            ImageHash::<Box<[u8]>>::from_base64(b1)
+                .ok()?
+                .dist(&ImageHash::from_base64(b2).ok()?),
+        ]
+        .iter()
+        .map(|d| d + 1)
+        .fold(1, |d1, d2| d1 * d2)
     };
     dist.unwrap_or(u32::MAX)
 }

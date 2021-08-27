@@ -147,37 +147,37 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
                 let course = data.courses.get_mut(&course_id).unwrap();
 
                 // drivers
-                let mut drivers_id: Vec<(String, u8)> = vec![];
+                let mut drivers_id= vec![];
                 for (driver, lvl) in drivers {
                     let driver_id = driver_id_from_name(&driver);
                     let _: Option<_> = try {
                         let driver = data.drivers.get_mut(&driver_id)?;
-                        driver.favorite_courses.insert((course_id.clone(), lvl));
-                        drivers_id.push((driver_id, lvl));
+                        driver.favorite_courses.insert((course_id.clone(), lvl).into());
+                        drivers_id.push((driver_id, lvl).into());
                     };
                 }
                 course.favorite_items.extend(drivers_id);
 
                 // karts
-                let mut karts_id: Vec<(String, u8)> = vec![];
+                let mut karts_id= vec![];
                 for (kart, lvl) in karts {
                     let kart_id = kart_id_from_name(&kart);
                     let _: Option<_> = try {
                         let kart = data.karts.get_mut(&kart_id)?;
-                        kart.favorite_courses.insert((course_id.clone(), lvl));
-                        karts_id.push((kart_id, lvl));
+                        kart.favorite_courses.insert((course_id.clone(), lvl).into());
+                        karts_id.push((kart_id, lvl).into());
                     };
                 }
                 course.favorite_items.extend(karts_id);
 
                 // gliders
-                let mut gliders_id: Vec<(String, u8)> = vec![];
+                let mut gliders_id= vec![];
                 for (glider, lvl) in gliders {
                     let glider_id = glider_id_from_name(&glider);
                     let _: Option<_> = try {
                         let glider = data.gliders.get_mut(&glider_id)?;
-                        glider.favorite_courses.insert((course_id.clone(), lvl));
-                        gliders_id.push((glider_id, lvl));
+                        glider.favorite_courses.insert((course_id.clone(), lvl).into());
+                        gliders_id.push((glider_id, lvl).into());
                     };
                 }
                 course.favorite_items.extend(gliders_id);
