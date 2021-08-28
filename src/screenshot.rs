@@ -20,9 +20,12 @@ use itertools::Itertools;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
 const DEFAULT_ITEM_HEIGHT: u32 = 200;
-const LVL_THRESHOLD: f32 = 0.5;
+const DEFAULT_ITEM_RATIO: f32 = DEFAULT_ITEM_WIDTH as f32 / DEFAULT_ITEM_HEIGHT as f32;
+const ITEM_RATIO_THRESHOLD: f32 = 0.1;
+
+const LVL_THRESHOLD: f32 = 0.6;
 const ITEM_THRESHOLD: f32 = 0.05;
-const ITEM_HASH_THRESHOLD: u32 = 100;
+const ITEM_HASH_THRESHOLD: u32 = 200;
 
 const DEBUG_IMG: bool = true;
 
@@ -70,8 +73,8 @@ impl ItemArea {
             .intersect(other.to_rect())
             .map(ItemArea::from_rect)
     }
-    fn size(&self) -> u32 {
-        (self.x2 - self.x1) * (self.y2 - self.y1)
+    fn ratio(&self) -> f32 {
+        (self.x2 - self.x1) as f32 / (self.y2 - self.y1) as f32
     }
     fn swap_x_y(mut self) -> Self {
         std::mem::swap(&mut self.x1, &mut self.y1);
@@ -82,7 +85,7 @@ impl ItemArea {
 
 fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
     const LUMA_SHIFT_DIFF: i16 = 5;
-    const LUMA_SHIFT_RATIO: f32 = 0.15;
+    const LUMA_SHIFT_RATIO: f32 = 0.10;
 
     let (width, height) = img.dimensions();
     let mut item_rows = vec![];
@@ -160,10 +163,9 @@ fn find_item_areas(img: &GrayImage) -> impl Iterator<Item = ItemArea> {
     let img = &imageops::rotate90(img);
     let columns = find_item_rows(img).into_iter().map(ItemArea::swap_x_y);
 
-    columns
-        .cartesian_product(rows)
+    rows.cartesian_product(columns)
         .flat_map(|(c, r)| c.intersect(&r))
-        .filter(|a| a.size() >= 10_000)
+        .filter(|a| (a.ratio() - DEFAULT_ITEM_RATIO).abs() < ITEM_RATIO_THRESHOLD)
 }
 
 fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbImage) -> RgbImage {
@@ -210,6 +212,8 @@ fn item_level_from_image(
         ))
         .unwrap();
     }
+    println!("best lvl: {:?}", lvl);
+
     lvl.map(|l| l.0)
 }
 
@@ -242,6 +246,7 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
             println!("points: {:#?}", i);
         })
         .min_by(|(_, p1), (_, p2)| -> Ordering { p1.partial_cmp(&p2).unwrap_or(Ordering::Equal) });
+    println!("best item: {:?}", item);
 
     item.map(|i| i.0.clone())
 }
@@ -252,17 +257,9 @@ fn item_id_from_image_h(
     hashes: &ItemHashes,
 ) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
-    let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
-    // let item = img;
-    if DEBUG_IMG {
-        item.save(format!("pics/test_{}_{}_item.png", y1, x1))
-            .unwrap();
-    }
+    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
 
-    let hash = to_image_hash(&item);
-    if DEBUG_IMG {
-        fs::write(format!("pics/test_{}_{}_item.txt", y1, x1), &hash).unwrap();
-    }
+    let hash = to_image_hash(&item_img);
 
     // template testing drivers
     let item = hashes
@@ -273,6 +270,28 @@ fn item_id_from_image_h(
             println!("points h: {:#?}", i);
         })
         .min_by_key(|i| i.1);
+
+    if DEBUG_IMG {
+        item_img
+            .save(format!(
+                "pics/test_{}_{}_{}_item.png",
+                y1,
+                x1,
+                item.unwrap_or((&"none".to_string(), 0)).0
+            ))
+            .unwrap();
+        fs::write(
+            format!(
+                "pics/test_{}_{}_{}_item.txt",
+                y1,
+                x1,
+                item.unwrap_or((&"none".to_string(), 0)).0
+            ),
+            &hash,
+        )
+        .unwrap();
+    }
+    println!("best item: {:?}", item);
 
     item.map(|i| i.0.clone())
 }
@@ -302,22 +321,21 @@ fn item_image_to_owned_item(
 ) -> OwnedItemResult {
     use OwnedItemResult::*;
 
-    println!("-------");
     println!("area: {:?}", area);
     let lvl = item_level_from_image(area, img, lvl_templates);
     let id = item_id_from_image_h(area, img, item_hashes);
-    if let Some(lvl) = lvl {
-        if let Some(id) = id {
-            Found(OwnedItem {
-                id: id,
-                lvl: lvl,
-                points: 0,
-            })
-        } else {
-            NotFound(img.clone(), lvl)
-        }
+    if let Some(id) = id {
+        Found(OwnedItem {
+            id: id,
+            lvl: lvl.unwrap_or(0),
+            points: 0,
+        })
     } else {
-        Invalid
+        if let Some(lvl) = lvl {
+            NotFound(img.clone(), lvl)
+        } else {
+            Invalid
+        }
     }
 }
 
@@ -335,7 +353,11 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
 pub fn screenshots_to_inventory(
     screenshots: Vec<RgbImage>,
     data: &MktDatabase,
-) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
+) -> (
+    MktInventory,
+    Vec<(RgbImage, ItemLvl)>,
+    Vec<(RgbImage, ItemLvl)>,
+) {
     let lvl_templates = get_lvl_templates();
     let item_hashes = data
         .drivers
@@ -346,7 +368,8 @@ pub fn screenshots_to_inventory(
         .collect_vec();
 
     let mut inv = MktInventory::new();
-    let mut missing = vec![];
+    let mut owned_missing = vec![];
+    let mut not_owned_missing = vec![];
 
     for screenshot in screenshots {
         // identify square
@@ -354,19 +377,82 @@ pub fn screenshots_to_inventory(
 
         // identify character/item and levels
         let mut items = vec![];
-        for (area, img) in item_areas.map(|area| (area, item_area_to_image(area, &screenshot))) {
+        // try to identify items in order
+        let mut item_offset = 0;
+        let mut last_found_item: Option<(usize, OwnedItem)> = None;
+        let mut try_items: Vec<(usize, OwnedItem, RgbImage)> = vec![];
+        let mut potential_items = None;
+        for (i, (area, img)) in item_areas
+            .map(|area| (area, item_area_to_image(area, &screenshot)))
+            .enumerate()
+        {
+            println!("{} - x:{} y:{}", i, area.x1, area.y1);
             let r = item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes);
             match r {
-                OwnedItemResult::Found(item) => items.push(item),
-                OwnedItemResult::NotFound(img, lvl) => missing.push((img, lvl)),
-                OwnedItemResult::Invalid => {}
+                OwnedItemResult::Found(item) => {
+                    // assumes that there is only one item type per screenshot
+                    if potential_items.is_none() {
+                        if item.id.starts_with("d_") {
+                            potential_items = Some(data.drivers.values().collect_vec());
+                        } else if item.id.starts_with("k_") {
+                            potential_items = Some(data.karts.values().collect_vec());
+                        } else if item.id.starts_with("g_") {
+                            potential_items = Some(data.gliders.values().collect_vec());
+                        }
+                    }
+                    let potential_items = potential_items.as_ref().unwrap();
+                    // find known items
+                    if let Some(last_found_item) = last_found_item.as_ref() {
+                        if !try_items.is_empty() {
+                            // check if expected item
+                            let expected_item =
+                                potential_items[i - last_found_item.0 + item_offset];
+                            dbg!((&expected_item.id, &item.id));
+                            if expected_item.id == item.id {
+                                for mut t_item in try_items {
+                                    let item =
+                                        potential_items[t_item.0 - last_found_item.0 + item_offset];
+                                    t_item.1.id = item.id.clone();
+                                    items.push(t_item.1);
+                                    save_image_hash(item, &t_item.2);
+                                }
+                            }
+                            try_items = vec![];
+                        }
+                    }
+                    item_offset = potential_items
+                        .iter()
+                        .find_position(|i| i.id == item.id)
+                        .map(|i| i.0)
+                        .unwrap_or(0);
+                    last_found_item = Some((i, item.clone()));
+                    if item.lvl > 0 {
+                        items.push(item);
+                    }
+                }
+                OwnedItemResult::NotFound(img, lvl) => {
+                    if last_found_item.is_some() && lvl > 0 {
+                        let missing_item = OwnedItem {
+                            id: "not_found".into(),
+                            lvl,
+                            points: 0,
+                        };
+                        try_items.push((i, missing_item, img.clone()));
+                    }
+                    owned_missing.push((img, lvl));
+                }
+                OwnedItemResult::Invalid => {
+                    not_owned_missing.push((img, 0));
+                }
             }
+
+            println!("-------");
         }
 
         inv.update_inventory(MktInventory::from_items(items, data));
     }
 
-    (inv, missing)
+    (inv, owned_missing, not_owned_missing)
 }
 
 pub fn create_template(item: &Item, img: RgbaImage) {
@@ -404,7 +490,6 @@ pub fn create_template(item: &Item, img: RgbaImage) {
         // bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
         let bg = bg.into_rgb8();
         // item_image_to_template(item, i, &bg);
-        save_image_hash(item, i, &bg);
     }
 }
 
@@ -507,12 +592,19 @@ fn dist_hash(h1: &String, h2: &String) -> u32 {
     dist.unwrap_or(u32::MAX)
 }
 
-fn save_image_hash(item: &Item, i: u32, img: &RgbImage) {
-    let img = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
-    let h = to_image_hash(&img);
-    fs::write(
-        format!("templates/{}s/{}_{}.txt", item.i_type, item.id, i),
-        h,
-    )
-    .unwrap();
+fn save_image_hash(item: &Item, img: &RgbImage) {
+    // item x: 10 - 150  y: 20 - 140
+    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let h = to_image_hash(&item_img);
+    fs::create_dir_all(format!("templates/{}s", item.i_type)).unwrap();
+    fs::write(format!("templates/{}s/{}.txt", item.i_type, item.id), h).unwrap();
+}
+
+pub fn save_missing_image_hash(i: usize, img: &RgbImage) {
+    fs::create_dir_all("missing").unwrap();
+    img.save(format!("missing/missing_item_{}.png", i)).unwrap();
+    // item x: 10 - 150  y: 20 - 140
+    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let h = to_image_hash(&item_img);
+    fs::write(format!("missing/missing_item_{}.txt", i), h).unwrap();
 }

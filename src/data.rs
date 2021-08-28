@@ -52,9 +52,7 @@ pub struct ItemRequirement {
 
 impl From<(ItemId, ItemLvl)> for ItemRequirement {
     fn from((id, lvl): (ItemId, ItemLvl)) -> Self {
-        ItemRequirement {
-            id, lvl
-        }
+        ItemRequirement { id, lvl }
     }
 }
 
@@ -66,16 +64,14 @@ pub struct CourseAvailability {
 
 impl From<(CourseId, ItemLvl)> for CourseAvailability {
     fn from((id, lvl): (CourseId, ItemLvl)) -> Self {
-        CourseAvailability {
-            id, lvl
-        }
+        CourseAvailability { id, lvl }
     }
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Course {
     pub id: CourseId,
-    pub name: String,                               // current english name
+    pub name: String,                             // current english name
     pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
 }
 impl Course {
@@ -194,8 +190,30 @@ impl MktDatabase {
     }
 
     pub fn save(&self, file_name: &str) -> Result<(), Box<dyn Error>> {
-        let json = serde_json::to_string(self)?;
+        let json = serde_json::to_string_pretty(self)?;
         fs::write(file_name, json)?;
+        Ok(())
+    }
+
+    pub fn load_hashes(&mut self) -> Result<(), Box<dyn Error>> {
+        let types = [
+            ("drivers", &mut self.drivers),
+            ("karts", &mut self.karts),
+            ("gliders", &mut self.gliders),
+        ];
+        for (p, list) in types {
+            for file in fs::read_dir(format!("templates/{}", p))? {
+                let file = file?.path();
+                let id = file.file_stem().unwrap().to_str().unwrap();
+                let hashes = fs::read_to_string(&file)?;
+                if let Some(mut item) = list.get_mut(id) {
+                    item.hashes = hashes
+                        .split_whitespace()
+                        .map(|s| s.to_string())
+                        .collect_vec();
+                }
+            }
+        }
         Ok(())
     }
 
@@ -235,7 +253,7 @@ impl MktDatabase {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct OwnedItem {
     pub id: ItemId,
     pub lvl: ItemLvl,
