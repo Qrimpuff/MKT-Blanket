@@ -29,15 +29,15 @@ const ITEM_HASH_THRESHOLD: u32 = 600;
 
 const DEBUG_IMG: bool = true;
 
-type LvlTemplates = Vec<(ItemLvl, GrayImage)>;
-type ItemTemplates = Vec<(ItemId, GrayImage, GrayImage, GrayImage)>;
-type ItemHashes = Vec<(ItemId, String)>;
+struct LvlTemplate(ItemLvl, GrayImage);
+struct ItemTemplate(ItemId, GrayImage, GrayImage, GrayImage);
+struct ItemHash(ItemId, String);
 
-fn get_lvl_templates() -> LvlTemplates {
+fn get_lvl_templates() -> Vec<LvlTemplate> {
     let levels_templates: Vec<_> = (1..=7)
         .into_iter()
         .map(|lvl| {
-            (
+            LvlTemplate(
                 lvl,
                 image::open(format!("templates/levels/{}.png", lvl))
                     .unwrap()
@@ -65,7 +65,7 @@ impl ItemArea {
             y2: rect.top() as u32 + rect.height(),
         }
     }
-    fn to_rect(&self) -> Rect {
+    fn to_rect(self) -> Rect {
         Rect::at(self.x1 as i32, self.y1 as i32).of_size(self.x2 - self.x1, self.y2 - self.y1)
     }
     fn intersect(&self, other: &ItemArea) -> Option<ItemArea> {
@@ -124,7 +124,7 @@ fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
                         } else {
                             item_rows.push(ItemArea {
                                 x1: 0,
-                                y1: y1,
+                                y1,
                                 x2: width,
                                 y2: y,
                             });
@@ -186,7 +186,7 @@ fn item_area_to_image(ItemArea { x1, x2, y1, y2 }: ItemArea, screenshot: &RgbIma
 fn item_level_from_image(
     ItemArea { x1, y1, .. }: ItemArea,
     img: &RgbImage,
-    templates: &LvlTemplates,
+    templates: &[LvlTemplate],
 ) -> Option<ItemLvl> {
     // lvl x: 125 - 160  y: 130 - 170
     let mut img = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
@@ -195,7 +195,7 @@ fn item_level_from_image(
     // template testing levels
     let lvl = templates
         .iter()
-        .map(|(l, template)| (*l, template_score(&img, &template)))
+        .map(|LvlTemplate(l, template)| (*l, template_score(&img, template)))
         .inspect(|i| {
             println!("lvl points: {:#?}", i);
         })
@@ -217,7 +217,7 @@ fn item_level_from_image(
     lvl.map(|l| l.0)
 }
 
-fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemId> {
+fn item_id_from_image(img: &RgbImage, templates: &[ItemTemplate]) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
     let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
     if DEBUG_IMG {
@@ -232,12 +232,12 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
     // template testing drivers
     let item = templates
         .iter()
-        .map(|(i, r, g, b)| {
+        .map(|ItemTemplate(i, r, g, b)| {
             (
                 i,
-                template_score(&item_r, &r),
-                template_score(&item_g, &g),
-                template_score(&item_b, &b),
+                template_score(&item_r, r),
+                template_score(&item_g, g),
+                template_score(&item_b, b),
             )
         })
         .map(|(i, r, g, b)| (i, r * g * b))
@@ -245,7 +245,7 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
         .inspect(|i| {
             println!("points: {:#?}", i);
         })
-        .min_by(|(_, p1), (_, p2)| -> Ordering { p1.partial_cmp(&p2).unwrap_or(Ordering::Equal) });
+        .min_by(|(_, p1), (_, p2)| -> Ordering { p1.partial_cmp(p2).unwrap_or(Ordering::Equal) });
     println!("best item: {:?}", item);
 
     item.map(|i| i.0.clone())
@@ -254,7 +254,7 @@ fn item_id_from_image(img: &RgbImage, templates: &ItemTemplates) -> Option<ItemI
 fn item_id_from_image_h(
     ItemArea { x1, y1, .. }: ItemArea,
     img: &RgbImage,
-    hashes: &ItemHashes,
+    hashes: &[ItemHash],
 ) -> Option<ItemId> {
     // item x: 10 - 150  y: 20 - 140
     let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
@@ -264,7 +264,7 @@ fn item_id_from_image_h(
     // template testing drivers
     let item = hashes
         .iter()
-        .map(|(i, h)| (i, dist_hash(&hash, h)))
+        .map(|ItemHash(i, h)| (i, dist_hash(&hash, h)))
         .filter(|(_, p)| *p < ITEM_HASH_THRESHOLD)
         .inspect(|i| {
             println!("points h: {:#?}", i);
@@ -328,8 +328,8 @@ enum OwnedItemResult {
 fn item_image_to_owned_item(
     area: ItemArea,
     img: &RgbImage,
-    lvl_templates: &LvlTemplates,
-    item_hashes: &ItemHashes,
+    lvl_templates: &[LvlTemplate],
+    item_hashes: &[ItemHash],
 ) -> OwnedItemResult {
     use OwnedItemResult::*;
 
@@ -338,16 +338,14 @@ fn item_image_to_owned_item(
     let id = item_id_from_image_h(area, img, item_hashes);
     if let Some(id) = id {
         Found(OwnedItem {
-            id: id,
+            id,
             lvl: lvl.unwrap_or(0),
             points: 0,
         })
+    } else if maybe_item_image(img) {
+        NotFound(img.clone(), lvl.unwrap_or(0))
     } else {
-        if maybe_item_image(img) {
-            NotFound(img.clone(), lvl.unwrap_or(0))
-        } else {
-            Invalid
-        }
+        Invalid
     }
 }
 
@@ -365,23 +363,22 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
 pub fn screenshots_to_inventory(
     screenshots: Vec<RgbImage>,
     data: &MktDatabase,
-) -> (
-    MktInventory,
-    Vec<(RgbImage, ItemLvl)>,
-    Vec<(RgbImage, ItemLvl)>,
-) {
+) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
     let lvl_templates = get_lvl_templates();
     let item_hashes = data
         .drivers
         .iter()
         .chain(data.karts.iter())
         .chain(data.gliders.iter())
-        .flat_map(|(id, i)| i.hashes.iter().map(move |h| (id.clone(), h.clone())))
+        .flat_map(|(id, i)| {
+            i.hashes
+                .iter()
+                .map(move |h| ItemHash(id.clone(), h.clone()))
+        })
         .collect_vec();
 
     let mut inv = MktInventory::new();
-    let mut owned_missing = vec![];
-    let mut not_owned_missing = vec![];
+    let mut missing = vec![];
 
     for screenshot in screenshots {
         // identify square
@@ -463,7 +460,7 @@ pub fn screenshots_to_inventory(
                         }
                     }
                     item_offset = potential_item_ids
-                        .into_iter()
+                        .iter()
                         .find_position(|id| **id == item.id)
                         .map(|i| i.0)
                         .unwrap_or(0);
@@ -481,11 +478,7 @@ pub fn screenshots_to_inventory(
                         };
                         try_items.push((i, missing_item, img.clone()));
                     }
-                    if lvl > 0 {
-                        owned_missing.push((img, lvl));
-                    } else {
-                        not_owned_missing.push((img, 0));
-                    }
+                    missing.push((img, lvl));
                 }
                 OwnedItemResult::Invalid => { /* filtered out */ }
             }
@@ -496,7 +489,7 @@ pub fn screenshots_to_inventory(
         inv.update_inventory(MktInventory::from_items(items, data));
     }
 
-    (inv, owned_missing, not_owned_missing)
+    (inv, missing)
 }
 
 pub fn create_template(item: &Item, img: RgbaImage) {
@@ -613,10 +606,10 @@ fn to_image_hash(img: &RgbImage) -> String {
     format!("{}|{}|{}", r.to_base64(), g.to_base64(), b.to_base64())
 }
 
-fn dist_hash(h1: &String, h2: &String) -> u32 {
+fn dist_hash(h1: &str, h2: &str) -> u32 {
     let dist: Option<_> = try {
-        let (r1, g1, b1) = h1.split("|").next_tuple()?;
-        let (r2, g2, b2) = h2.split("|").next_tuple()?;
+        let (r1, g1, b1) = h1.split('|').next_tuple()?;
+        let (r2, g2, b2) = h2.split('|').next_tuple()?;
 
         [
             ImageHash::<Box<[u8]>>::from_base64(r1)
@@ -631,7 +624,7 @@ fn dist_hash(h1: &String, h2: &String) -> u32 {
         ]
         .iter()
         .map(|d| d + 1)
-        .fold(1, |d1, d2| d1 * d2)
+        .product()
     };
     dist.unwrap_or(u32::MAX)
 }

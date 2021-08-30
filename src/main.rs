@@ -8,7 +8,7 @@ static TEST_UPDATE: bool = false;
 fn main() {
     println!("MKT Item Coverage");
 
-    let mut data = MktDatabase::load("tests/database.json").unwrap_or(MktDatabase::new());
+    let mut data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
     if TEST_UPDATE {
         let mut update = test_update_data();
         update.copy_hashes(data);
@@ -53,7 +53,7 @@ fn test_screenshot_import(data: &MktDatabase) {
 
     // let list = vec![screenshot];
 
-    let (inventory, missing, not_owned_missing) = screenshots_to_inventory(list, &data);
+    let (inventory, missing) = screenshots_to_inventory(list, data);
 
     dbg!(&inventory);
     dbg!(&inventory.drivers.len());
@@ -61,8 +61,7 @@ fn test_screenshot_import(data: &MktDatabase) {
     dbg!(&inventory.gliders.len());
 
     dbg!(&missing.len());
-    dbg!(&not_owned_missing.len());
-    for (i, (img, _)) in missing.iter().chain(not_owned_missing.iter()).enumerate() {
+    for (i, (img, _)) in missing.iter().chain(missing.iter()).enumerate() {
         save_missing_image_hash(i, img);
     }
 }

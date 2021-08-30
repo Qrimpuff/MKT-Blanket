@@ -167,7 +167,7 @@ impl Item {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktDatabase {
     pub courses: LinkedHashMap<CourseId, Course>,
     pub drivers: LinkedHashMap<ItemId, Item>,
@@ -176,12 +176,7 @@ pub struct MktDatabase {
 }
 impl MktDatabase {
     pub fn new() -> Self {
-        MktDatabase {
-            courses: LinkedHashMap::new(),
-            drivers: LinkedHashMap::new(),
-            karts: LinkedHashMap::new(),
-            gliders: LinkedHashMap::new(),
-        }
+        Default::default()
     }
 
     pub fn load(file_name: &str) -> Result<MktDatabase, Box<dyn Error>> {
@@ -260,7 +255,7 @@ pub struct OwnedItem {
     pub points: u16,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct MktInventory {
     pub drivers: Vec<OwnedItem>,
     pub karts: Vec<OwnedItem>,
@@ -268,19 +263,15 @@ pub struct MktInventory {
 }
 impl MktInventory {
     pub fn new() -> Self {
-        MktInventory {
-            drivers: Vec::new(),
-            karts: Vec::new(),
-            gliders: Vec::new(),
-        }
+        Default::default()
     }
 
     pub fn from_items(items: Vec<OwnedItem>, data: &MktDatabase) -> Self {
         let mut items = items.into_iter().into_group_map_by(|i| {
             data.drivers
                 .get(&i.id)
-                .or(data.karts.get(&i.id))
-                .or(data.gliders.get(&i.id))
+                .or_else(|| data.karts.get(&i.id))
+                .or_else(|| data.gliders.get(&i.id))
                 .map(|i| i.i_type)
         });
         MktInventory {
