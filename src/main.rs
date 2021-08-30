@@ -35,7 +35,7 @@ fn test_update_data() -> MktDatabase {
 fn test_screenshot_import(data: &MktDatabase) {
     // let data = get_database_hashes();
 
-    let screenshot = image::open("tests/mkt_drivers.jpg").unwrap().into_rgb8();
+    let screenshot = image::open("tests/mkt_drivers6.jpg").unwrap().into_rgb8();
     // let screenshot = image::open("tests/mkt_drivers.jpg").unwrap().into_rgb8();
     // let screenshot2 = image::open("tests/mkt_drivers2.jpg").unwrap().into_rgb8();
     // let screenshot3 = image::open("tests/mkt_drivers3.jpg").unwrap().into_rgb8();

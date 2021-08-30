@@ -25,7 +25,7 @@ const ITEM_RATIO_THRESHOLD: f32 = 0.1;
 
 const LVL_THRESHOLD: f32 = 0.6;
 const ITEM_THRESHOLD: f32 = 0.05;
-const ITEM_HASH_THRESHOLD: u32 = 200;
+const ITEM_HASH_THRESHOLD: u32 = 600;
 
 const DEBUG_IMG: bool = true;
 
@@ -296,6 +296,18 @@ fn item_id_from_image_h(
     item.map(|i| i.0.clone())
 }
 
+fn maybe_item_image(img: &RgbImage) -> bool {
+    let mut img = map::blue_channel(img);
+    threshold_mut(&mut img, 200);
+    let mut pixels = img.pixels().map(|x| x.0[0]).counts();
+    let blue_percent = pixels.remove(&255).unwrap_or(0) as f32 / img.pixels().count() as f32;
+    if DEBUG_IMG {
+        img.save(format!("pics/test_{:?}_blue_item.png", blue_percent))
+            .unwrap();
+    }
+    blue_percent < 0.9
+}
+
 fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
     let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
     let item_template = imageops::resize(&item_template, 10, 10, FilterType::Gaussian);
@@ -331,8 +343,8 @@ fn item_image_to_owned_item(
             points: 0,
         })
     } else {
-        if let Some(lvl) = lvl {
-            NotFound(img.clone(), lvl)
+        if maybe_item_image(img) {
+            NotFound(img.clone(), lvl.unwrap_or(0))
         } else {
             Invalid
         }
@@ -381,48 +393,78 @@ pub fn screenshots_to_inventory(
         let mut item_offset = 0;
         let mut last_found_item: Option<(usize, OwnedItem)> = None;
         let mut try_items: Vec<(usize, OwnedItem, RgbImage)> = vec![];
-        let mut potential_items = None;
-        for (i, (area, img)) in item_areas
+        let mut potential_item_ids = None;
+        // the end of the list
+        let the_end_id = "<the_end>";
+        for (i, (area, item_result)) in item_areas
             .map(|area| (area, item_area_to_image(area, &screenshot)))
+            .map(|(area, img)| {
+                (
+                    area,
+                    item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes),
+                )
+            })
+            .filter(|(_, item)| !matches!(item, OwnedItemResult::Invalid))
+            .chain(Some((
+                ItemArea {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 0,
+                },
+                OwnedItemResult::Found(OwnedItem {
+                    id: the_end_id.into(),
+                    lvl: 0,
+                    points: 0,
+                }),
+            )))
             .enumerate()
         {
             println!("{} - x:{} y:{}", i, area.x1, area.y1);
-            let r = item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes);
-            match r {
+            match item_result {
                 OwnedItemResult::Found(item) => {
                     // assumes that there is only one item type per screenshot
-                    if potential_items.is_none() {
-                        if item.id.starts_with("d_") {
-                            potential_items = Some(data.drivers.values().collect_vec());
+                    if potential_item_ids.is_none() {
+                        let potential_items = if item.id.starts_with("d_") {
+                            &data.drivers
                         } else if item.id.starts_with("k_") {
-                            potential_items = Some(data.karts.values().collect_vec());
-                        } else if item.id.starts_with("g_") {
-                            potential_items = Some(data.gliders.values().collect_vec());
-                        }
+                            &data.karts
+                        } else {
+                            &data.gliders
+                        };
+                        potential_item_ids = Some(
+                            potential_items
+                                .values()
+                                .map(|i| i.id.clone())
+                                .chain(Some(the_end_id.into()))
+                                .collect_vec(),
+                        );
                     }
-                    let potential_items = potential_items.as_ref().unwrap();
+                    let potential_item_ids = potential_item_ids.as_ref().unwrap();
                     // find known items
                     if let Some(last_found_item) = last_found_item.as_ref() {
                         if !try_items.is_empty() {
                             // check if expected item
-                            let expected_item =
-                                potential_items[i - last_found_item.0 + item_offset];
-                            dbg!((&expected_item.id, &item.id));
-                            if expected_item.id == item.id {
-                                for mut t_item in try_items {
-                                    let item =
-                                        potential_items[t_item.0 - last_found_item.0 + item_offset];
-                                    t_item.1.id = item.id.clone();
-                                    items.push(t_item.1);
-                                    save_image_hash(item, &t_item.2);
+                            if let Some(expected_item_id) =
+                                potential_item_ids.get(i - last_found_item.0 + item_offset)
+                            {
+                                dbg!((&expected_item_id, &item.id));
+                                if *expected_item_id == item.id {
+                                    for mut t_item in try_items {
+                                        let item_id = &potential_item_ids
+                                            [t_item.0 - last_found_item.0 + item_offset];
+                                        t_item.1.id = item_id.clone();
+                                        items.push(t_item.1);
+                                        // save_image_hash(item_id, &t_item.2);
+                                    }
                                 }
                             }
                             try_items = vec![];
                         }
                     }
-                    item_offset = potential_items
-                        .iter()
-                        .find_position(|i| i.id == item.id)
+                    item_offset = potential_item_ids
+                        .into_iter()
+                        .find_position(|id| **id == item.id)
                         .map(|i| i.0)
                         .unwrap_or(0);
                     last_found_item = Some((i, item.clone()));
@@ -439,11 +481,13 @@ pub fn screenshots_to_inventory(
                         };
                         try_items.push((i, missing_item, img.clone()));
                     }
-                    owned_missing.push((img, lvl));
+                    if lvl > 0 {
+                        owned_missing.push((img, lvl));
+                    } else {
+                        not_owned_missing.push((img, 0));
+                    }
                 }
-                OwnedItemResult::Invalid => {
-                    not_owned_missing.push((img, 0));
-                }
+                OwnedItemResult::Invalid => { /* filtered out */ }
             }
 
             println!("-------");
@@ -488,7 +532,7 @@ pub fn create_template(item: &Item, img: RgbaImage) {
 
         imageops::overlay(&mut bg, &img, img_x as u32, 20);
         // bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
-        let bg = bg.into_rgb8();
+        let _bg = bg.into_rgb8();
         // item_image_to_template(item, i, &bg);
     }
 }

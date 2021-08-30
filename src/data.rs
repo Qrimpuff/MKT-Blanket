@@ -142,7 +142,7 @@ impl Item {
         }
     }
     // TODO: will remove later
-    pub fn with_id_and_template(id: ItemId, i_type: ItemType, template: RgbImage) -> Self {
+    pub fn with_id_and_template(id: ItemId, i_type: ItemType, _template: RgbImage) -> Self {
         Item {
             id: id.clone(),
             i_type,
