@@ -1,7 +1,6 @@
 use std::{collections::HashSet, convert::TryFrom, error::Error, fmt::Display, fs};
 
 use hashlink::LinkedHashMap;
-use image::RgbImage;
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use regex::Regex;
@@ -126,8 +125,7 @@ pub struct Item {
     pub name: String, // current english name
     pub rarity: Rarity,
     pub favorite_courses: HashSet<CourseAvailability>,
-    // pub templates: Vec<RgbImage>, // TODO: used for screenshot import (not sure how yet)
-    pub hashes: Vec<String>, // TODO: used for screenshot import (not sure how yet)
+    pub hashes: Vec<String>, // used for screenshot import
 }
 impl Item {
     pub fn new(i_type: ItemType, rarity: Rarity, name: String) -> Self {
@@ -139,30 +137,6 @@ impl Item {
             favorite_courses: HashSet::new(),
             // templates: vec![],
             hashes: vec![],
-        }
-    }
-    // TODO: will remove later
-    pub fn with_id_and_template(id: ItemId, i_type: ItemType, _template: RgbImage) -> Self {
-        Item {
-            id: id.clone(),
-            i_type,
-            name: id,
-            rarity: Rarity::Normal,
-            favorite_courses: HashSet::new(),
-            // templates: vec![template],
-            hashes: vec![],
-        }
-    }
-    // TODO: will remove later
-    pub fn with_id_and_hash(id: ItemId, i_type: ItemType, hash: String) -> Self {
-        Item {
-            id: id.clone(),
-            i_type,
-            name: id,
-            rarity: Rarity::Normal,
-            favorite_courses: HashSet::new(),
-            // templates: vec![],
-            hashes: vec![hash],
         }
     }
 }
@@ -234,18 +208,6 @@ impl MktDatabase {
             }
         }
     }
-
-    pub fn update_database(&mut self, _new_data: MktDatabase) {
-        // TODO: update courses
-        // TODO: same course
-        // TODO: change or add course
-
-        // TODO: update drivers
-
-        // TODO: update karts
-
-        // TODO: update gliders
-    }
 }
 
 #[derive(Debug, Clone)]
@@ -299,119 +261,4 @@ impl MktInventory {
             });
         }
     }
-}
-
-pub fn get_database() -> MktDatabase {
-    let courses = LinkedHashMap::new();
-    let mut drivers = LinkedHashMap::new();
-    for (id, template) in get_item_templates("drivers") {
-        drivers.insert(
-            id.clone(),
-            Item::with_id_and_template(id, ItemType::Driver, template),
-        );
-    }
-    let mut karts = LinkedHashMap::new();
-    for (id, template) in get_item_templates("karts") {
-        karts.insert(
-            id.clone(),
-            Item::with_id_and_template(id, ItemType::Kart, template),
-        );
-    }
-    let mut gliders = LinkedHashMap::new();
-    for (id, template) in get_item_templates("gliders") {
-        gliders.insert(
-            id.clone(),
-            Item::with_id_and_template(id, ItemType::Glider, template),
-        );
-    }
-    MktDatabase {
-        courses,
-        drivers,
-        karts,
-        gliders,
-    }
-}
-
-pub fn get_database_hashes() -> MktDatabase {
-    let courses = LinkedHashMap::new();
-    let mut drivers = LinkedHashMap::new();
-    for (id, hash) in get_item_hashes("drivers") {
-        drivers.insert(
-            id.clone(),
-            Item::with_id_and_hash(id, ItemType::Driver, hash),
-        );
-    }
-    let mut karts = LinkedHashMap::new();
-    for (id, hash) in get_item_hashes("karts") {
-        karts.insert(id.clone(), Item::with_id_and_hash(id, ItemType::Kart, hash));
-    }
-    let mut gliders = LinkedHashMap::new();
-    for (id, hash) in get_item_hashes("gliders") {
-        gliders.insert(
-            id.clone(),
-            Item::with_id_and_hash(id, ItemType::Glider, hash),
-        );
-    }
-    MktDatabase {
-        courses,
-        drivers,
-        karts,
-        gliders,
-    }
-}
-
-// TODO: will be removed or transformed later
-fn get_item_templates(i_type: &str) -> Vec<(String, RgbImage)> {
-    let items_templates: Vec<_> = Some(i_type)
-        .iter()
-        .flat_map(|ty| fs::read_dir(format!("templates/{}", ty)).unwrap())
-        .filter(|f| f.as_ref().unwrap().path().extension().unwrap() == "png")
-        .map(|p| {
-            let p = p.unwrap();
-            let img = image::open(p.path()).unwrap().into_rgb8();
-            (
-                format!(
-                    "{}_{}",
-                    p.path()
-                        .parent()
-                        .unwrap()
-                        .file_name()
-                        .unwrap()
-                        .to_str()
-                        .unwrap(),
-                    p.file_name().to_str().unwrap()
-                ),
-                img,
-            )
-        })
-        .collect();
-    items_templates
-}
-
-// TODO: will be removed or transformed later
-fn get_item_hashes(i_type: &str) -> Vec<(String, String)> {
-    let items_templates: Vec<_> = Some(i_type)
-        .iter()
-        .flat_map(|ty| fs::read_dir(format!("templates/{}", ty)).unwrap())
-        .filter(|f| f.as_ref().unwrap().path().extension().unwrap() == "txt")
-        .map(|p| {
-            let p = p.unwrap();
-            let img = fs::read_to_string(p.path()).unwrap();
-            (
-                format!(
-                    "{}_{}",
-                    p.path()
-                        .parent()
-                        .unwrap()
-                        .file_name()
-                        .unwrap()
-                        .to_str()
-                        .unwrap(),
-                    p.file_name().to_str().unwrap()
-                ),
-                img,
-            )
-        })
-        .collect();
-    items_templates
 }

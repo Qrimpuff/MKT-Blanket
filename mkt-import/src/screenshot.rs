@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::data::*;
+use mkt_data::*;
 
 use std::{cmp::Ordering, fs};
 

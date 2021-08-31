@@ -1,22 +1,19 @@
 #![feature(try_blocks)]
 #![allow(dead_code)]
-pub mod data;
-pub mod screenshot;
 
 use std::convert::TryInto;
 
-pub use data::*;
 use itertools::Itertools;
+use mkt_data::*;
 use regex::Regex;
 use scraper::{ElementRef, Html, Selector};
-use screenshot::*;
-
-use image::{load_from_memory, RgbImage};
 
 pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     // get data (from Super Mario Wiki)
     let url = match i_type {
-        ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
+        // TODO: the page format changed for drivers, might change as well for karts and gliders
+        // ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
+        ItemType::Driver => "https://www.mariowiki.com/index.php?title=List_of_drivers_in_Mario_Kart_Tour&oldid=3268498",
         ItemType::Kart => "https://www.mariowiki.com/List_of_karts_in_Mario_Kart_Tour",
         ItemType::Glider => "https://www.mariowiki.com/List_of_gliders_in_Mario_Kart_Tour",
     };
@@ -33,17 +30,9 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     for item in document.select(&items_select) {
         let _: Option<_> = try {
             let name = item.select(&name_select).next()?.text().next()?.trim();
-            let img_url = item.select(&img_select).next()?.value().attr("src")?;
+            let _img_url = item.select(&img_select).next()?.value().attr("src")?;
             let rarity = item.select(&rarity_select).next()?.text().next()?.trim();
             let item = Item::new(i_type, rarity.try_into().ok()?, name.into());
-
-            // TODO: make new templates, if they don't already exist
-            create_template(
-                &item,
-                load_from_memory(&reqwest::blocking::get(img_url).unwrap().bytes().unwrap()[..])
-                    .unwrap()
-                    .into_rgba8(),
-            );
 
             println!("{:?}", item);
             match i_type {
@@ -189,15 +178,4 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
             }
         }
     }
-}
-
-fn import_screenshot(inv: &mut MktInventory, img: RgbImage, data: &MktDatabase) {
-    // TODO: might be a client side function
-
-    // TODO: get the picture from browser
-
-    // update inventory
-    inv.update_inventory(screenshots_to_inventory(vec![img], data).0);
-
-    // TODO: save inventory to browser
 }

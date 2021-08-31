@@ -1,35 +1,13 @@
-#![allow(dead_code)]
-
-use mkt_item_coverage::screenshot::*;
-use mkt_item_coverage::*;
-
-static TEST_UPDATE: bool = false;
+use mkt_data::*;
+use mkt_import::screenshot::*;
 
 fn main() {
-    println!("MKT Item Coverage");
+    println!("MKT Test inventory Import");
 
-    let mut data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
-    if TEST_UPDATE {
-        let mut update = test_update_data();
-        update.copy_hashes(data);
-        data = update;
-    }
-    // println!("{:#?}", data);
-    data.load_hashes().unwrap();
-    data.save("tests/database.json").unwrap();
-
-    // test_overlay();
+    let data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
     test_screenshot_import(&data);
-    // test_img_hash();
-}
-
-fn test_update_data() -> MktDatabase {
-    let mut data = MktDatabase::new();
-    update_mkt_item_data(&mut data, ItemType::Driver);
-    // update_mkt_item_data(&mut data, ItemType::Kart);
-    // update_mkt_item_data(&mut data, ItemType::Glider);
-    update_mkt_item_coverage_data(&mut data);
-    data
+    
+    println!("Done");
 }
 
 fn test_screenshot_import(data: &MktDatabase) {
