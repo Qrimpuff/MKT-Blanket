@@ -8,3 +8,4 @@ edition = "2018"
 [dependencies]
 mkt-data = { path = "../mkt-data" }
 mkt-import = { path = "../mkt-import" }
+yew = "0.18"

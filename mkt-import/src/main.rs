@@ -6,7 +6,7 @@ fn main() {
 
     let data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
     test_screenshot_import(&data);
-    
+
     println!("Done");
 }
 

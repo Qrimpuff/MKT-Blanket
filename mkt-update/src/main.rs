@@ -11,7 +11,7 @@ fn main() {
     // println!("{:#?}", data);
     data.load_hashes().unwrap();
     data.save("tests/database.json").unwrap();
-    
+
     println!("Done");
 }
 
