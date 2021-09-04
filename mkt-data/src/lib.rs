@@ -1,5 +1,6 @@
-use std::{collections::HashSet, convert::TryFrom, error::Error, fmt::Display, fs};
+use std::{collections::HashSet, convert::TryFrom, error::Error, fmt::Display, fs, mem};
 
+use chrono::{DateTime, Utc};
 use hashlink::LinkedHashMap;
 use itertools::Itertools;
 use lazy_static::lazy_static;
@@ -72,6 +73,7 @@ pub struct Course {
     pub id: CourseId,
     pub name: String,                             // current english name
     pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
+    pub last_changed: Option<DateTime<Utc>>,
 }
 impl Course {
     pub fn new(name: String) -> Self {
@@ -79,6 +81,36 @@ impl Course {
             id: course_id_from_name(&name),
             name,
             favorite_items: HashSet::new(),
+            last_changed: Some(Utc::now()),
+        }
+    }
+
+    pub fn merge(
+        &mut self,
+        Course {
+            id,
+            name,
+            favorite_items,
+            last_changed,
+        }: Course,
+    ) {
+        let mut changed = false;
+
+        if !id.is_empty() && self.id != id {
+            self.id = id;
+            changed = true;
+        }
+        if !name.is_empty() && self.name != name {
+            self.name = name;
+            changed = true;
+        }
+        if !favorite_items.is_empty() && self.favorite_items != favorite_items {
+            self.favorite_items = favorite_items;
+            changed = true;
+        }
+
+        if changed {
+            self.last_changed = last_changed;
         }
     }
 }
@@ -120,23 +152,76 @@ impl TryFrom<&str> for Rarity {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Item {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sort: Option<u32>,
     pub id: ItemId,
     pub i_type: ItemType,
     pub name: String, // current english name
     pub rarity: Rarity,
     pub favorite_courses: HashSet<CourseAvailability>,
     pub hashes: Vec<String>, // used for screenshot import
+    pub last_changed: Option<DateTime<Utc>>,
 }
 impl Item {
-    pub fn new(i_type: ItemType, rarity: Rarity, name: String) -> Self {
+    pub fn new(i_type: ItemType, rarity: Rarity, name: String, sort: Option<u32>) -> Self {
         Item {
+            sort,
             id: item_id_from_name(&name, i_type),
             i_type,
             name,
             rarity,
             favorite_courses: HashSet::new(),
-            // templates: vec![],
             hashes: vec![],
+            last_changed: Some(Utc::now()),
+        }
+    }
+
+    pub fn merge(
+        &mut self,
+        Item {
+            sort,
+            id,
+            i_type,
+            name,
+            rarity,
+            favorite_courses,
+            hashes,
+            last_changed,
+        }: Item,
+    ) {
+        let mut changed = false;
+
+        if sort.is_some() && self.sort != sort {
+            self.sort = sort;
+            changed = true;
+        }
+        if !id.is_empty() && self.id != id {
+            self.id = id;
+            changed = true;
+        }
+        if self.i_type != i_type {
+            self.i_type = i_type;
+            changed = true;
+        }
+        if !name.is_empty() && self.name != name {
+            self.name = name;
+            changed = true;
+        }
+        if self.rarity != rarity {
+            self.rarity = rarity;
+            changed = true;
+        }
+        if !favorite_courses.is_empty() && self.favorite_courses != favorite_courses {
+            self.favorite_courses = favorite_courses;
+            changed = true;
+        }
+        if !hashes.is_empty() && self.hashes != hashes {
+            self.hashes = hashes;
+            changed = true;
+        }
+
+        if changed {
+            self.last_changed = last_changed;
         }
     }
 }
@@ -186,27 +271,54 @@ impl MktDatabase {
         Ok(())
     }
 
-    pub fn copy_hashes(&mut self, mut new_data: MktDatabase) {
+    pub fn merge(&mut self, mut new_data: MktDatabase) {
+        // courses
+        for (id, course) in &mut self.courses {
+            if let Some(new_course) = new_data.courses.remove(id) {
+                course.merge(new_course);
+            }
+        }
+        self.courses.extend(new_data.courses);
+
         // drivers
         for (id, driver) in &mut self.drivers {
             if let Some(new_driver) = new_data.drivers.remove(id) {
-                driver.hashes = new_driver.hashes;
+                driver.merge(new_driver);
             }
         }
+        self.drivers.extend(new_data.drivers);
 
         // karts
         for (id, kart) in &mut self.karts {
             if let Some(new_kart) = new_data.karts.remove(id) {
-                kart.hashes = new_kart.hashes;
+                kart.merge(new_kart);
             }
         }
+        self.karts.extend(new_data.karts);
 
         // gliders
         for (id, glider) in &mut self.gliders {
             if let Some(new_glider) = new_data.gliders.remove(id) {
-                glider.hashes = new_glider.hashes;
+                glider.merge(new_glider);
             }
         }
+        self.gliders.extend(new_data.gliders);
+
+        // sort by items
+        let mut swap = Default::default();
+        mem::swap(&mut swap, &mut self.drivers);
+        self.drivers
+            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
+
+        let mut swap = Default::default();
+        mem::swap(&mut swap, &mut self.karts);
+        self.karts
+            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
+
+        let mut swap = Default::default();
+        mem::swap(&mut swap, &mut self.gliders);
+        self.gliders
+            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
     }
 }
 

@@ -22,17 +22,19 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);
+
+    // try the old style first
     let items_select = Selector::parse("table tbody tr").unwrap();
     let name_select = Selector::parse("th:nth-of-type(1) a").unwrap();
     let img_select = Selector::parse("td:nth-of-type(1) img").unwrap();
     let rarity_select = Selector::parse("td:nth-of-type(3)").unwrap();
 
-    for item in document.select(&items_select) {
+    for (i, item) in document.select(&items_select).enumerate() {
         let _: Option<_> = try {
             let name = item.select(&name_select).next()?.text().next()?.trim();
             let _img_url = item.select(&img_select).next()?.value().attr("src")?;
             let rarity = item.select(&rarity_select).next()?.text().next()?.trim();
-            let item = Item::new(i_type, rarity.try_into().ok()?, name.into());
+            let item = Item::new(i_type, rarity.try_into().ok()?, name.into(), Some(i as u32));
 
             println!("{:?}", item);
             match i_type {
@@ -43,6 +45,8 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
             .insert(item.id.clone(), item);
         };
     }
+
+    // TODO: try the new style, used on drivers
 }
 
 pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
