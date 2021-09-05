@@ -11,30 +11,49 @@ use scraper::{ElementRef, Html, Selector};
 pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     // get data (from Super Mario Wiki)
     let url = match i_type {
-        // TODO: the page format changed for drivers, might change as well for karts and gliders
-        // ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
-        ItemType::Driver => "https://www.mariowiki.com/index.php?title=List_of_drivers_in_Mario_Kart_Tour&oldid=3268498",
+        ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
         ItemType::Kart => "https://www.mariowiki.com/List_of_karts_in_Mario_Kart_Tour",
         ItemType::Glider => "https://www.mariowiki.com/List_of_gliders_in_Mario_Kart_Tour",
     };
+    match i_type {
+        // the page format changed for drivers, might change as well for karts and gliders
+        ItemType::Driver => parse_items_new_format(url, data, i_type, 7),
+        ItemType::Kart => parse_items(url, data, i_type),
+        ItemType::Glider => parse_items(url, data, i_type),
+    }
+}
 
+fn parse_items(url: &str, data: &mut MktDatabase, i_type: ItemType) {
     let resp = reqwest::blocking::get(url).unwrap();
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);
 
-    // try the old style first
-    let items_select = Selector::parse("table tbody tr").unwrap();
+    let items_select = Selector::parse("table table tbody tr").unwrap();
     let name_select = Selector::parse("th:nth-of-type(1) a").unwrap();
     let img_select = Selector::parse("td:nth-of-type(1) img").unwrap();
     let rarity_select = Selector::parse("td:nth-of-type(3)").unwrap();
 
-    for (i, item) in document.select(&items_select).enumerate() {
+    let mut i = 1;
+    for item in document.select(&items_select) {
         let _: Option<_> = try {
-            let name = item.select(&name_select).next()?.text().next()?.trim();
+            let name = item
+                .select(&name_select)
+                .next()?
+                .text()
+                .next()?
+                .trim()
+                .into();
             let _img_url = item.select(&img_select).next()?.value().attr("src")?;
-            let rarity = item.select(&rarity_select).next()?.text().next()?.trim();
-            let item = Item::new(i_type, rarity.try_into().ok()?, name.into(), Some(i as u32));
+            let rarity = item
+                .select(&rarity_select)
+                .next()?
+                .text()
+                .next()?
+                .trim()
+                .try_into()
+                .ok()?;
+            let item = Item::new(i_type, rarity, name, Some(i));
 
             println!("{:?}", item);
             match i_type {
@@ -43,10 +62,49 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
                 ItemType::Glider => &mut data.gliders,
             }
             .insert(item.id.clone(), item);
+            i += 1;
         };
     }
+}
 
-    // TODO: try the new style, used on drivers
+fn parse_items_new_format(url: &str, data: &mut MktDatabase, i_type: ItemType, row_num: usize) {
+    let name_rgx = Regex::new("<br/?>").unwrap();
+
+    let resp = reqwest::blocking::get(url).unwrap();
+    let content = resp.text().unwrap();
+
+    let document = Html::parse_document(&content);
+
+    let table_select = Selector::parse("h2 + table tbody").unwrap();
+    let row_select = Selector::parse("tr").unwrap();
+    let cell_select = Selector::parse("th a[title], td").unwrap();
+
+    let table = document.select(&table_select).next().unwrap();
+    let rows = table.select(&row_select);
+    let mut i = 1;
+    for mut rs in rows
+        .map(|r| r.select(&cell_select))
+        .chunks(row_num)
+        .into_iter()
+    {
+        let (names, _, _, rarities) = rs.next_tuple().unwrap();
+        for (name, rarity) in names.zip(rarities) {
+            let _: Option<_> = try {
+                let name = name_rgx.replace_all(&name.inner_html(), " ").trim().into();
+                let rarity = rarity.text().next()?.trim().try_into().ok()?;
+                let item = Item::new(i_type, rarity, name, Some(i));
+
+                println!("{:?}", item);
+                match i_type {
+                    ItemType::Driver => &mut data.drivers,
+                    ItemType::Kart => &mut data.karts,
+                    ItemType::Glider => &mut data.gliders,
+                }
+                .insert(item.id.clone(), item);
+                i += 1;
+            };
+        }
+    }
 }
 
 pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {

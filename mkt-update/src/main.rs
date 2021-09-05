@@ -15,9 +15,10 @@ fn main() {
 fn test_update_data() -> MktDatabase {
     let mut data = MktDatabase::new();
     update_mkt_item_data(&mut data, ItemType::Driver);
-    // update_mkt_item_data(&mut data, ItemType::Kart);
-    // update_mkt_item_data(&mut data, ItemType::Glider);
+    update_mkt_item_data(&mut data, ItemType::Kart);
+    update_mkt_item_data(&mut data, ItemType::Glider);
     update_mkt_item_coverage_data(&mut data);
     data.load_hashes().unwrap();
+    // println!("{:?}", data);
     data
 }
