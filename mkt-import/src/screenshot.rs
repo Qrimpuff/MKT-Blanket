@@ -432,6 +432,7 @@ pub fn screenshots_to_inventory(
                         potential_item_ids = Some(
                             potential_items
                                 .values()
+                                .sorted_by_key(|i| i.sort.map(|x| x as i32).unwrap_or(-1))
                                 .map(|i| i.id.clone())
                                 .chain(Some(the_end_id.into()))
                                 .collect_vec(),
