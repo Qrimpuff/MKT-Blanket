@@ -68,7 +68,7 @@ impl From<(CourseId, ItemLvl)> for CourseAvailability {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Course {
     pub id: CourseId,
     pub name: String,                             // current english name
@@ -150,7 +150,7 @@ impl TryFrom<&str> for Rarity {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Item {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sort: Option<u32>,
