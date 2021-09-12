@@ -16,7 +16,7 @@ pub struct Props {}
 
 pub struct CourseList {
     course_ids: Vec<CourseId>,
-    _course_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
 }
 
 impl Component for CourseList {
@@ -27,7 +27,7 @@ impl Component for CourseList {
         let callback = ctx.link().callback(Msg::DataStoreMsg);
         Self {
             course_ids: Vec::new(),
-            _course_store: DataStore::bridge(callback),
+            _data_store: DataStore::bridge(callback),
         }
     }
 
@@ -37,7 +37,6 @@ impl Component for CourseList {
                 let state = state.borrow();
                 if state.data.courses.len() != self.course_ids.len() {
                     self.course_ids = state.data.courses.keys().cloned().collect();
-                    self.course_ids.sort_unstable();
                     true
                 } else {
                     false
@@ -49,8 +48,10 @@ impl Component for CourseList {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <div>{ "course list" }</div>
-                { for self.course_ids.iter().map(|id| html!{ <Course key={id.clone()} id={id.clone()} /> }) }
+                <h2>{ "Courses" }</h2>
+                <ul>
+                { for self.course_ids.iter().map(|id| html!{ <li><Course id={id.clone()} /></li> }) }
+                </ul>
             </>
         }
     }

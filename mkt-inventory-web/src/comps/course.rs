@@ -1,11 +1,15 @@
 use mkt_data::CourseId;
 use yew::prelude::*;
-use yew_agent::{Bridge, utils::store::{Bridgeable, ReadOnly, StoreWrapper}};
+use yew_agent::{
+    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
+    Bridge,
+};
 
 use crate::agents::data::DataStore;
 
 pub enum Msg {
-    DataStoreMsg(ReadOnly<DataStore>),}
+    DataStoreMsg(ReadOnly<DataStore>),
+}
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
@@ -14,7 +18,7 @@ pub struct Props {
 
 pub struct Course {
     course: Option<mkt_data::Course>,
-    _course_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
 }
 
 impl Component for Course {
@@ -25,10 +29,10 @@ impl Component for Course {
         let callback = ctx.link().callback(Msg::DataStoreMsg);
         Self {
             course: None,
-            _course_store: DataStore::bridge(callback),
+            _data_store: DataStore::bridge(callback),
         }
     }
-    
+
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::DataStoreMsg(state) => {

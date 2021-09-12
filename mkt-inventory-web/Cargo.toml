@@ -10,3 +10,5 @@ mkt-data = { path = "../mkt-data" }
 mkt-import = { path = "../mkt-import" }
 yew = {git = "https://github.com/yewstack/yew"}
 yew-agent = {git = "https://github.com/yewstack/yew"}
+gloo = "0.3.0"
+reqwest = { version = "0.11.4", features = ["blocking"] }

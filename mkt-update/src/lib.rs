@@ -8,7 +8,7 @@ use mkt_data::*;
 use regex::Regex;
 use scraper::{ElementRef, Html, Selector};
 
-pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
+pub fn update_mkt_item_data(data: &mut MktData, i_type: ItemType) {
     // get data (from Super Mario Wiki)
     let url = match i_type {
         ItemType::Driver => "https://www.mariowiki.com/List_of_drivers_in_Mario_Kart_Tour",
@@ -18,12 +18,12 @@ pub fn update_mkt_item_data(data: &mut MktDatabase, i_type: ItemType) {
     match i_type {
         // the page format changed for drivers, might change as well for karts and gliders
         ItemType::Driver => parse_items_new_format(url, data, i_type, 7),
-        ItemType::Kart => parse_items(url, data, i_type),
-        ItemType::Glider => parse_items(url, data, i_type),
+        ItemType::Kart => parse_items_new_format(url, data, i_type, 5),
+        ItemType::Glider => parse_items_new_format(url, data, i_type, 5),
     }
 }
 
-fn parse_items(url: &str, data: &mut MktDatabase, i_type: ItemType) {
+fn parse_items(url: &str, data: &mut MktData, i_type: ItemType) {
     let resp = reqwest::blocking::get(url).unwrap();
     let content = resp.text().unwrap();
 
@@ -67,7 +67,7 @@ fn parse_items(url: &str, data: &mut MktDatabase, i_type: ItemType) {
     }
 }
 
-fn parse_items_new_format(url: &str, data: &mut MktDatabase, i_type: ItemType, row_num: usize) {
+fn parse_items_new_format(url: &str, data: &mut MktData, i_type: ItemType, row_num: usize) {
     let name_rgx = Regex::new("<br/?>").unwrap();
 
     let resp = reqwest::blocking::get(url).unwrap();
@@ -81,6 +81,7 @@ fn parse_items_new_format(url: &str, data: &mut MktDatabase, i_type: ItemType, r
 
     let table = document.select(&table_select).next().unwrap();
     let rows = table.select(&row_select);
+
     let mut i = 1;
     for mut rs in rows
         .map(|r| r.select(&cell_select))
@@ -107,7 +108,7 @@ fn parse_items_new_format(url: &str, data: &mut MktDatabase, i_type: ItemType, r
     }
 }
 
-pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
+pub fn update_mkt_item_coverage_data(data: &mut MktData) {
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();
 
     // get data (from Super Mario Wiki)
@@ -124,6 +125,7 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
     let item_select = Selector::parse("a").unwrap();
     let course_name_select = Selector::parse("img[alt]").unwrap();
 
+    let mut i = 1;
     for course in document.select(&courses_select) {
         for (high_ends, supers, normals) in course.select(&row_select).skip(1).tuples() {
             let i_types = Some(None).into_iter().chain(
@@ -194,8 +196,9 @@ pub fn update_mkt_item_coverage_data(data: &mut MktDatabase) {
             if let Some(course) = course {
                 let course_id = course_id_from_name(&course);
                 data.courses
-                    .insert(course_id.clone(), Course::new(course.to_string()));
+                    .insert(course_id.clone(), Course::new(course.to_string(), Some(i)));
                 let course = data.courses.get_mut(&course_id).unwrap();
+                i += 1;
 
                 // drivers
                 let mut drivers_id = vec![];

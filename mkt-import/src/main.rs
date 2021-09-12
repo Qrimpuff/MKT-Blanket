@@ -4,14 +4,14 @@ use mkt_import::screenshot::*;
 fn main() {
     println!("MKT Test inventory Import");
 
-    let data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
+    let data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
     test_screenshot_import(&data);
 
     println!("Done");
 }
 
-fn test_screenshot_import(data: &MktDatabase) {
-    // let data = get_database_hashes();
+fn test_screenshot_import(data: &MktData) {
+    // let data = get_data_hashes();
 
     let screenshot = image::open("tests/mkt_drivers6.jpg").unwrap().into_rgb8();
     // let screenshot = image::open("tests/mkt_drivers.jpg").unwrap().into_rgb8();

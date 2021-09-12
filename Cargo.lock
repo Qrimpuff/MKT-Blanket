@@ -965,8 +965,10 @@ dependencies = [
 name = "mkt-inventory-web"
 version = "0.1.0"
 dependencies = [
+ "gloo",
  "mkt-data",
  "mkt-import",
+ "reqwest",
  "yew",
  "yew-agent",
 ]

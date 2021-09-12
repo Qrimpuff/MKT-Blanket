@@ -1,7 +1,7 @@
-use std::{collections::HashSet, convert::TryFrom, error::Error, fmt::Display, fs, mem};
+use std::{convert::TryFrom, error::Error, fmt::Display, fs, mem};
 
 use chrono::{DateTime, Utc};
-use hashlink::LinkedHashMap;
+use hashlink::{LinkedHashMap, LinkedHashSet};
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use regex::Regex;
@@ -70,17 +70,20 @@ impl From<(CourseId, ItemLvl)> for CourseAvailability {
 
 #[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Course {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sort: Option<u32>,
     pub id: CourseId,
-    pub name: String,                             // current english name
-    pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
+    pub name: String,                                   // current english name
+    pub favorite_items: LinkedHashSet<ItemRequirement>, // previous names (for updating/merging)
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Course {
-    pub fn new(name: String) -> Self {
+    pub fn new(name: String, sort: Option<u32>) -> Self {
         Course {
+            sort,
             id: course_id_from_name(&name),
             name,
-            favorite_items: HashSet::new(),
+            favorite_items: LinkedHashSet::new(),
             last_changed: Some(Utc::now()),
         }
     }
@@ -88,6 +91,7 @@ impl Course {
     pub fn merge(
         &mut self,
         Course {
+            sort,
             id,
             name,
             favorite_items,
@@ -96,6 +100,10 @@ impl Course {
     ) {
         let mut changed = false;
 
+        if sort.is_some() && self.sort != sort {
+            self.sort = sort;
+            changed = true;
+        }
         if !id.is_empty() && self.id != id {
             self.id = id;
             changed = true;
@@ -158,7 +166,7 @@ pub struct Item {
     pub i_type: ItemType,
     pub name: String, // current english name
     pub rarity: Rarity,
-    pub favorite_courses: HashSet<CourseAvailability>,
+    pub favorite_courses: LinkedHashSet<CourseAvailability>,
     pub hashes: Vec<String>, // used for screenshot import
     pub last_changed: Option<DateTime<Utc>>,
 }
@@ -170,7 +178,7 @@ impl Item {
             i_type,
             name,
             rarity,
-            favorite_courses: HashSet::new(),
+            favorite_courses: LinkedHashSet::new(),
             hashes: vec![],
             last_changed: Some(Utc::now()),
         }
@@ -227,20 +235,24 @@ impl Item {
 }
 
 #[derive(Debug, Default, Serialize, Deserialize)]
-pub struct MktDatabase {
+pub struct MktData {
     pub courses: LinkedHashMap<CourseId, Course>,
     pub drivers: LinkedHashMap<ItemId, Item>,
     pub karts: LinkedHashMap<ItemId, Item>,
     pub gliders: LinkedHashMap<ItemId, Item>,
 }
-impl MktDatabase {
+impl MktData {
     pub fn new() -> Self {
         Default::default()
     }
 
-    pub fn load(file_name: &str) -> Result<MktDatabase, Box<dyn Error>> {
+    pub fn from_json(json: &str) -> Result<MktData, Box<dyn Error>> {
+        Ok(serde_json::from_str(json)?)
+    }
+
+    pub fn load(file_name: &str) -> Result<MktData, Box<dyn Error>> {
         let json = fs::read_to_string(file_name)?;
-        Ok(serde_json::from_str(&json)?)
+        MktData::from_json(&json)
     }
 
     pub fn save(&self, file_name: &str) -> Result<(), Box<dyn Error>> {
@@ -271,7 +283,7 @@ impl MktDatabase {
         Ok(())
     }
 
-    pub fn merge(&mut self, mut new_data: MktDatabase) {
+    pub fn merge(&mut self, mut new_data: MktData) {
         // courses
         for (id, course) in &mut self.courses {
             if let Some(new_course) = new_data.courses.remove(id) {
@@ -303,6 +315,12 @@ impl MktDatabase {
             }
         }
         self.gliders.extend(new_data.gliders);
+
+        // sort by course
+        let mut swap = Default::default();
+        mem::swap(&mut swap, &mut self.courses);
+        self.courses
+            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
 
         // sort by items
         let mut swap = Default::default();
@@ -340,7 +358,7 @@ impl MktInventory {
         Default::default()
     }
 
-    pub fn from_items(items: Vec<OwnedItem>, data: &MktDatabase) -> Self {
+    pub fn from_items(items: Vec<OwnedItem>, data: &MktData) -> Self {
         let mut items = items.into_iter().into_group_map_by(|i| {
             data.drivers
                 .get(&i.id)

@@ -2,18 +2,18 @@ use mkt_data::*;
 use mkt_update::*;
 
 fn main() {
-    println!("MKT Database Update");
+    println!("MKT Data Update");
 
-    let mut data = MktDatabase::load("tests/database.json").unwrap_or_else(|_| MktDatabase::new());
+    let mut data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
     let update = test_update_data();
     data.merge(update);
-    data.save("tests/database.json").unwrap();
+    data.save("data/mkt_data.json").unwrap();
 
     println!("Done");
 }
 
-fn test_update_data() -> MktDatabase {
-    let mut data = MktDatabase::new();
+fn test_update_data() -> MktData {
+    let mut data = MktData::new();
     update_mkt_item_data(&mut data, ItemType::Driver);
     update_mkt_item_data(&mut data, ItemType::Kart);
     update_mkt_item_data(&mut data, ItemType::Glider);

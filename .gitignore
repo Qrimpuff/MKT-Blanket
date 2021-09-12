@@ -5,3 +5,5 @@
 /templates/
 /missing
 /mkt-inventory-web/dist/
+/mkt-inventory-web/mkt_data.json
+/data/mkt_data.json

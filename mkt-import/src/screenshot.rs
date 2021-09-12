@@ -362,7 +362,7 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
 
 pub fn screenshots_to_inventory(
     screenshots: Vec<RgbImage>,
-    data: &MktDatabase,
+    data: &MktData,
 ) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
     let lvl_templates = get_lvl_templates();
     let item_hashes = data
