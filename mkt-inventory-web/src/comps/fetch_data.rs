@@ -1,13 +1,11 @@
 use mkt_data::MktData;
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, StoreWrapper},
-    Bridge,
-};
+use yew_agent::{Bridge, utils::store::{Bridgeable, ReadOnly, StoreWrapper}};
 
 use crate::agents::data::{DataRequest, DataStore};
 
 pub enum Msg {
+    DataStore(ReadOnly<DataStore>),
     Fetch,
     DoneFetching(Box<MktData>),
 }
@@ -23,21 +21,23 @@ impl Component for FetchData {
     type Message = Msg;
     type Properties = Props;
 
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            data_store: DataStore::bridge(Callback::noop()),
-        }
+    fn create(ctx: &Context<Self>) -> Self {
+        let callback = ctx.link().callback(Msg::DataStore);
+        let mut data_store = DataStore::bridge(callback);
+        data_store.send(DataRequest::Load);
+        Self { data_store }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
+            Msg::DataStore(_) => {},
             Msg::Fetch => {
                 ctx.link().send_future(async {
                     Msg::DoneFetching(Box::new(DataStore::load_data().await))
                 });
             }
             Msg::DoneFetching(data) => {
-                self.data_store.send(DataRequest::NewData(data));
+                self.data_store.send(DataRequest::New(data));
             }
         };
         false

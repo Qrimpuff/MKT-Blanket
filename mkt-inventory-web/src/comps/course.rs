@@ -8,7 +8,7 @@ use yew_agent::{
 use crate::agents::data::DataStore;
 
 pub enum Msg {
-    DataStoreMsg(ReadOnly<DataStore>),
+    DataStore(ReadOnly<DataStore>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -26,7 +26,7 @@ impl Component for Course {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback = ctx.link().callback(Msg::DataStoreMsg);
+        let callback = ctx.link().callback(Msg::DataStore);
         Self {
             course: None,
             _data_store: DataStore::bridge(callback),
@@ -35,12 +35,12 @@ impl Component for Course {
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStoreMsg(state) => {
+            Msg::DataStore(state) => {
                 let state = state.borrow();
 
                 let course = state.data.courses.get(&ctx.props().id);
 
-                if course != self.course.as_ref() {
+                if course.map(|c| c.last_changed) != self.course.as_ref().map(|c| c.last_changed) {
                     self.course = course.cloned();
                     true
                 } else {

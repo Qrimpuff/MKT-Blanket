@@ -8,7 +8,8 @@ use yew_agent::{
 use crate::{agents::data::DataStore, comps::item::Item};
 
 pub enum Msg {
-    DataStoreMsg(ReadOnly<DataStore>),
+    DataStore(ReadOnly<DataStore>),
+    Toggle,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -19,6 +20,7 @@ pub struct Props {
 pub struct ItemList {
     item_ids: Vec<ItemId>,
     _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    visible: bool,
 }
 
 impl Component for ItemList {
@@ -26,16 +28,17 @@ impl Component for ItemList {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback = ctx.link().callback(Msg::DataStoreMsg);
+        let callback = ctx.link().callback(Msg::DataStore);
         Self {
             item_ids: Vec::new(),
             _data_store: DataStore::bridge(callback),
+            visible: false,
         }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStoreMsg(state) => {
+            Msg::DataStore(state) => {
                 let state = state.borrow();
                 let items = match ctx.props().i_type {
                     ItemType::Driver => &state.data.drivers,
@@ -49,6 +52,10 @@ impl Component for ItemList {
                     false
                 }
             }
+            Msg::Toggle => {
+                self.visible = !self.visible;
+                true
+            }
         }
     }
 
@@ -58,14 +65,21 @@ impl Component for ItemList {
             ItemType::Kart => "Karts",
             ItemType::Glider => "Gliders",
         };
-        html! {
-            <>
-                <h2>{ title }</h2>
+        let items = if self.visible {
+            html! {
                 <ul>
                 { for self.item_ids.iter().map(|id| html!{
                     <li><Item i_type={ctx.props().i_type} id={id.clone()} /></li>
                 }) }
                 </ul>
+            }
+        } else {
+            html! {}
+        };
+        html! {
+            <>
+                <h2 onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", title, if self.visible {'-'} else {'+'}) }</h2>
+                { items }
             </>
         }
     }

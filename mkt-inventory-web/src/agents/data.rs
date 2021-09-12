@@ -1,3 +1,4 @@
+use gloo::storage::{LocalStorage, Storage};
 use mkt_data::MktData;
 use reqwest::Url;
 use yew::utils;
@@ -7,11 +8,13 @@ use yew_agent::{
 };
 
 pub enum Msg {
-    NewData(Box<MktData>),
+    Data(Box<MktData>),
 }
 
 pub enum DataRequest {
-    NewData(Box<MktData>),
+    New(Box<MktData>),
+    Load,
+    Save,
 }
 
 pub struct DataStore {
@@ -29,15 +32,24 @@ impl Store for DataStore {
 
     fn handle_input(&self, link: AgentLink<StoreWrapper<Self>>, msg: Self::Input) {
         match msg {
-            DataRequest::NewData(data) => {
-                link.send_message(Msg::NewData(data));
+            DataRequest::New(data) => {
+                link.send_message(Msg::Data(data));
+                link.send_input(DataRequest::Save);
+            }
+            DataRequest::Load => {
+                if let Ok(data) = LocalStorage::get("mkt_data") {
+                    link.send_message(Msg::Data(data));
+                }
+            }
+            DataRequest::Save => {
+                LocalStorage::set("mkt_data", &self.data).unwrap();
             }
         }
     }
 
     fn reduce(&mut self, msg: Self::Action) {
         match msg {
-            Msg::NewData(data) => {
+            Msg::Data(data) => {
                 self.data = *data;
             }
         }
@@ -46,6 +58,7 @@ impl Store for DataStore {
 
 impl DataStore {
     pub async fn load_data() -> MktData {
+        // TODO: add compression
         let base = Url::parse(&utils::origin().unwrap()).unwrap();
         let url = base.join("mkt_data.json").unwrap();
         let resp = reqwest::get(url).await.unwrap();

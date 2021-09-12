@@ -7,7 +7,7 @@ use yew_agent::{
 use crate::agents::data::DataStore;
 
 pub enum Msg {
-    DataStoreMsg(ReadOnly<DataStore>),
+    DataStore(ReadOnly<DataStore>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -26,7 +26,7 @@ impl Component for Summary {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback = ctx.link().callback(Msg::DataStoreMsg);
+        let callback = ctx.link().callback(Msg::DataStore);
         Self {
             course_count: 0,
             driver_count: 0,
@@ -38,7 +38,7 @@ impl Component for Summary {
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStoreMsg(state) => {
+            Msg::DataStore(state) => {
                 let state = state.borrow();
                 if self.course_count != state.data.courses.len()
                     || self.driver_count != state.data.drivers.len()
