@@ -44,6 +44,18 @@ fn id_from_name(name: &str) -> String {
         .to_string()
 }
 
+pub fn item_type_from_id(id: &str) -> Option<ItemType> {
+    if id.starts_with("d_") {
+        Some(ItemType::Driver)
+    } else if id.starts_with("k_") {
+        Some(ItemType::Kart)
+    } else if id.starts_with("g_") {
+        Some(ItemType::Glider)
+    } else {
+        None
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct ItemRequirement {
     pub id: ItemId,

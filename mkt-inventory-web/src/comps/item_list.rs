@@ -69,7 +69,7 @@ impl Component for ItemList {
             html! {
                 <ul>
                 { for self.item_ids.iter().map(|id| html!{
-                    <li><Item i_type={ctx.props().i_type} id={id.clone()} /></li>
+                    <li><Item id={id.clone()} /></li>
                 }) }
                 </ul>
             }

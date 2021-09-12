@@ -6,11 +6,12 @@ use yew_agent::{
 };
 
 pub enum Msg {
-    Inventory(Box<MktInventory>),
+    Replace(Box<MktInventory>),
+    Merge(Box<MktInventory>),
 }
 
 pub enum InventoryRequest {
-    New(Box<MktInventory>),
+    Add(Box<MktInventory>),
     Load,
     Save,
 }
@@ -30,13 +31,13 @@ impl Store for Inventory {
 
     fn handle_input(&self, link: AgentLink<StoreWrapper<Self>>, msg: Self::Input) {
         match msg {
-            InventoryRequest::New(inv) => {
-                link.send_message(Msg::Inventory(inv));
+            InventoryRequest::Add(inv) => {
+                link.send_message(Msg::Merge(inv));
                 link.send_input(InventoryRequest::Save);
             }
             InventoryRequest::Load => {
                 if let Ok(inv) = LocalStorage::get("mkt_inventory") {
-                    link.send_message(Msg::Inventory(inv));
+                    link.send_message(Msg::Replace(inv));
                 }
             }
             InventoryRequest::Save => {
@@ -47,8 +48,11 @@ impl Store for Inventory {
 
     fn reduce(&mut self, msg: Self::Action) {
         match msg {
-            Msg::Inventory(inv) => {
+            Msg::Replace(inv) => {
                 self.inv = *inv;
+            }
+            Msg::Merge(inv) => {
+                self.inv.update_inventory(*inv);
             }
         }
     }

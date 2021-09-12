@@ -75,7 +75,7 @@ impl Component for Import {
                     bytes,
                     &self.data.as_ref().unwrap().borrow().data,
                 );
-                self.inventory.send(InventoryRequest::New(Box::from(inv)));
+                self.inventory.send(InventoryRequest::Add(Box::from(inv)));
             }
         };
         false
