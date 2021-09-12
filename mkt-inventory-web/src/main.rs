@@ -5,7 +5,8 @@ use mkt_data::ItemType;
 use yew::prelude::*;
 
 use crate::comps::{
-    course_list::CourseList, fetch_data::FetchData, item_list::ItemList, summary::Summary,
+    course_list::CourseList, fetch_data::FetchData, import::Import, item_list::ItemList,
+    summary::Summary,
 };
 
 struct App {}
@@ -28,6 +29,7 @@ impl Component for App {
                 <ItemList i_type={ItemType::Driver}/>
                 <ItemList i_type={ItemType::Kart}/>
                 <ItemList i_type={ItemType::Glider}/>
+                <Import/>
             </>
         }
     }

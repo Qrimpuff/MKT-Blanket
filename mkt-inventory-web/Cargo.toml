@@ -12,3 +12,4 @@ yew = {git = "https://github.com/yewstack/yew"}
 yew-agent = {git = "https://github.com/yewstack/yew"}
 gloo = "0.3.0"
 reqwest = { version = "0.11.4", features = ["blocking"] }
+js-sys = "0.3"

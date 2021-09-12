@@ -6,7 +6,8 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 mkt-data = { path = "../mkt-data" }
-image = "0.23.14"
+# this disables rayon in the jpeg decoder, otherwise it breaks in WASM
+image = { version = "0.23.14", default-features = false, features = ["jpeg", "png"] }
 imageproc = "0.22.0"
 itertools = "0.10.1"
 img_hash = "3.2.0"

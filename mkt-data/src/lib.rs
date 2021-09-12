@@ -340,18 +340,65 @@ impl MktData {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OwnedItem {
     pub id: ItemId,
     pub lvl: ItemLvl,
     pub points: u16,
+    pub added: Option<DateTime<Utc>>,
+    pub last_changed: Option<DateTime<Utc>>,
 }
 
-#[derive(Debug, Default)]
+impl OwnedItem {
+    pub fn new(id: ItemId, lvl: ItemLvl, points: u16) -> Self {
+        OwnedItem {
+            id,
+            lvl,
+            points,
+            added: Some(Utc::now()),
+            last_changed: Some(Utc::now()),
+        }
+    }
+
+    pub fn merge(
+        &mut self,
+        OwnedItem {
+            id,
+            lvl,
+            points,
+            added,
+            last_changed,
+        }: OwnedItem,
+    ) {
+        let mut changed = false;
+
+        if !id.is_empty() && self.id != id {
+            self.id = id;
+            changed = true;
+        }
+        if self.lvl != lvl {
+            self.lvl = lvl;
+            changed = true;
+        }
+        if self.points != points {
+            self.points = points;
+            changed = true;
+        }
+
+        if changed {
+            self.last_changed = last_changed;
+            if self.added.is_none() {
+                self.added = added;
+            }
+        }
+    }
+}
+
+#[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktInventory {
-    pub drivers: Vec<OwnedItem>,
-    pub karts: Vec<OwnedItem>,
-    pub gliders: Vec<OwnedItem>,
+    pub drivers: LinkedHashMap<ItemId, OwnedItem>,
+    pub karts: LinkedHashMap<ItemId, OwnedItem>,
+    pub gliders: LinkedHashMap<ItemId, OwnedItem>,
 }
 impl MktInventory {
     pub fn new() -> Self {
@@ -367,28 +414,50 @@ impl MktInventory {
                 .map(|i| i.i_type)
         });
         MktInventory {
-            drivers: items.remove(&Some(ItemType::Driver)).unwrap_or_default(),
-            karts: items.remove(&Some(ItemType::Kart)).unwrap_or_default(),
-            gliders: items.remove(&Some(ItemType::Glider)).unwrap_or_default(),
+            drivers: items
+                .remove(&Some(ItemType::Driver))
+                .unwrap_or_default()
+                .into_iter()
+                .map(|i| (i.id.clone(), i))
+                .collect(),
+            karts: items
+                .remove(&Some(ItemType::Kart))
+                .unwrap_or_default()
+                .into_iter()
+                .map(|i| (i.id.clone(), i))
+                .collect(),
+            gliders: items
+                .remove(&Some(ItemType::Glider))
+                .unwrap_or_default()
+                .into_iter()
+                .map(|i| (i.id.clone(), i))
+                .collect(),
         }
     }
 
-    pub fn update_inventory(&mut self, new_inv: MktInventory) {
-        let items = [
-            (new_inv.drivers, &mut self.drivers),
-            (new_inv.karts, &mut self.karts),
-            (new_inv.gliders, &mut self.gliders),
-        ];
-
-        for (new_inv, inv) in items {
-            new_inv.into_iter().for_each(|item| {
-                // TODO: add last modified check to merge
-                if let Some(f_item) = inv.iter_mut().find(|i_item| i_item.id == item.id) {
-                    *f_item = item;
-                } else {
-                    inv.push(item);
-                }
-            });
+    pub fn update_inventory(&mut self, mut new_inv: MktInventory) {
+        // drivers
+        for (id, driver) in &mut self.drivers {
+            if let Some(new_driver) = new_inv.drivers.remove(id) {
+                driver.merge(new_driver);
+            }
         }
+        self.drivers.extend(new_inv.drivers);
+
+        // karts
+        for (id, kart) in &mut self.karts {
+            if let Some(new_kart) = new_inv.karts.remove(id) {
+                kart.merge(new_kart);
+            }
+        }
+        self.karts.extend(new_inv.karts);
+
+        // gliders
+        for (id, glider) in &mut self.gliders {
+            if let Some(new_glider) = new_inv.gliders.remove(id) {
+                glider.merge(new_glider);
+            }
+        }
+        self.gliders.extend(new_inv.gliders);
     }
 }

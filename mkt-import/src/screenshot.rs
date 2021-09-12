@@ -27,23 +27,26 @@ const LVL_THRESHOLD: f32 = 0.6;
 const ITEM_THRESHOLD: f32 = 0.05;
 const ITEM_HASH_THRESHOLD: u32 = 600;
 
-const DEBUG_IMG: bool = true;
+const DEBUG_IMG: bool = false;
 
 struct LvlTemplate(ItemLvl, GrayImage);
 struct ItemTemplate(ItemId, GrayImage, GrayImage, GrayImage);
 struct ItemHash(ItemId, String);
 
+static TEMPLATE_LVLS: &[(ItemLvl, &[u8])] = &[
+    (1, include_bytes!("../templates/levels/1.png")),
+    (2, include_bytes!("../templates/levels/2.png")),
+    (3, include_bytes!("../templates/levels/3.png")),
+    (4, include_bytes!("../templates/levels/4.png")),
+    (5, include_bytes!("../templates/levels/5.png")),
+    (6, include_bytes!("../templates/levels/6.png")),
+    (7, include_bytes!("../templates/levels/7.png")),
+];
+
 fn get_lvl_templates() -> Vec<LvlTemplate> {
-    let levels_templates: Vec<_> = (1..=7)
-        .into_iter()
-        .map(|lvl| {
-            LvlTemplate(
-                lvl,
-                image::open(format!("templates/levels/{}.png", lvl))
-                    .unwrap()
-                    .into_luma8(),
-            )
-        })
+    let levels_templates: Vec<_> = TEMPLATE_LVLS
+        .iter()
+        .map(|(lvl, bytes)| LvlTemplate(*lvl, image::load_from_memory(bytes).unwrap().into_luma8()))
         .collect();
     levels_templates
 }
@@ -337,11 +340,7 @@ fn item_image_to_owned_item(
     let lvl = item_level_from_image(area, img, lvl_templates);
     let id = item_id_from_image_h(area, img, item_hashes);
     if let Some(id) = id {
-        Found(OwnedItem {
-            id,
-            lvl: lvl.unwrap_or(0),
-            points: 0,
-        })
+        Found(OwnedItem::new(id, lvl.unwrap_or(0), 0))
     } else if maybe_item_image(img) {
         NotFound(img.clone(), lvl.unwrap_or(0))
     } else {
@@ -358,6 +357,15 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
     .iter()
     .min_by(|a, b| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) })
     .unwrap()
+}
+
+pub fn image_bytes_to_inventory(
+    bytes: Vec<u8>,
+    data: &MktData,
+) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
+    let screenshot = image::load_from_memory(&bytes).unwrap().into_rgb8();
+    let list = vec![screenshot];
+    screenshots_to_inventory(list, data)
 }
 
 pub fn screenshots_to_inventory(
@@ -409,11 +417,7 @@ pub fn screenshots_to_inventory(
                     x2: 0,
                     y2: 0,
                 },
-                OwnedItemResult::Found(OwnedItem {
-                    id: the_end_id.into(),
-                    lvl: 0,
-                    points: 0,
-                }),
+                OwnedItemResult::Found(OwnedItem::new(the_end_id.into(), 0, 0)),
             )))
             .enumerate()
         {
@@ -472,11 +476,7 @@ pub fn screenshots_to_inventory(
                 }
                 OwnedItemResult::NotFound(img, lvl) => {
                     if last_found_item.is_some() && lvl > 0 {
-                        let missing_item = OwnedItem {
-                            id: "not_found".into(),
-                            lvl,
-                            points: 0,
-                        };
+                        let missing_item = OwnedItem::new("not_found".into(), lvl, 0);
                         try_items.push((i, missing_item, img.clone()));
                     }
                     missing.push((img, lvl));

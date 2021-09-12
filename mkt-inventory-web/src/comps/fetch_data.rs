@@ -1,6 +1,9 @@
 use mkt_data::MktData;
 use yew::prelude::*;
-use yew_agent::{Bridge, utils::store::{Bridgeable, ReadOnly, StoreWrapper}};
+use yew_agent::{
+    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
+    Bridge,
+};
 
 use crate::agents::data::{DataRequest, DataStore};
 
@@ -30,7 +33,7 @@ impl Component for FetchData {
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(_) => {},
+            Msg::DataStore(_) => {}
             Msg::Fetch => {
                 ctx.link().send_future(async {
                     Msg::DoneFetching(Box::new(DataStore::load_data().await))
