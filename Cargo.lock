@@ -934,6 +934,7 @@ name = "mkt-inventory-web"
 version = "0.1.0"
 dependencies = [
  "gloo",
+ "itertools 0.10.1",
  "js-sys",
  "mkt-data",
  "mkt-import",

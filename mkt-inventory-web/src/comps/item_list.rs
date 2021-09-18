@@ -78,7 +78,7 @@ impl Component for ItemList {
         };
         html! {
             <>
-                <h2 onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", title, if self.visible {'-'} else {'+'}) }</h2>
+                <h2 class="subtitle" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", title, if self.visible {'-'} else {'+'}) }</h2>
                 { items }
             </>
         }

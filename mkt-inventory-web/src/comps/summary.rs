@@ -84,7 +84,7 @@ impl Component for Summary {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <h2>{ "Summary" }</h2>
+                <h2 class="subtitle">{ "Summary" }</h2>
                 <ul>
                     <li>{ format!("courses: {}/{}", 0, self.course_count) }</li>
                     <li>{ format!("drivers: {}/{}", self.driver_owned_count, self.driver_count) }</li>

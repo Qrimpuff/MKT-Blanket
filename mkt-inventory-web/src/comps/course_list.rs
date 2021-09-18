@@ -1,4 +1,7 @@
-use mkt_data::CourseId;
+use itertools::Itertools;
+use mkt_data::{
+    course_generation_from_id, course_type_from_id, CourseId, CourseType,
+};
 use yew::prelude::*;
 use yew_agent::{
     utils::store::{Bridgeable, ReadOnly, StoreWrapper},
@@ -55,16 +58,44 @@ impl Component for CourseList {
     fn view(&self, ctx: &Context<Self>) -> Html {
         let courses = if self.visible {
             html! {
-                <ul>
-                { for self.course_ids.iter().map(|id| html!{ <li><Course id={id.clone()} /></li> }) }
-                </ul>
+                { for self.course_ids.iter().group_by(|id| course_generation_from_id(id)).into_iter().map(|(gen, ids)| {
+                    let mut expected = 0;
+                    html! {
+                        <>
+                        <h3 class="subtitle"> { gen } </h3>
+                        <div class="columns is-multiline">
+                        { for ids.map(|id| {
+                            let mut actual = match course_type_from_id(id) {
+                                CourseType::Normal => 0,
+                                CourseType::Reverse => 1,
+                                CourseType::Trick => 2,
+                                CourseType::ReverseTrick => 3,
+                            };
+                            if actual < expected {
+                                actual += 4;
+                            }
+                            let offset = html! { for (expected..actual).map(|_| html! { <div class="column is-one-quarter py-1 is-hidden-touch"/> }) };
+                            expected = (actual + 1) % 4;
+                            html!{
+                                <>
+                                { offset }
+                                <div class="column is-one-quarter py-1">
+                                    <Course id={id.clone()} />
+                                </div>
+                                </>
+                            }
+                        }) }
+                        </div>
+                        </>
+                    }
+                }) }
             }
         } else {
             html! {}
         };
         html! {
             <>
-                <h2 onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", "Courses", if self.visible {'-'} else {'+'}) }</h2>
+                <h2 class="subtitle" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", "Courses", if self.visible {'-'} else {'+'}) }</h2>
                 { courses }
             </>
         }

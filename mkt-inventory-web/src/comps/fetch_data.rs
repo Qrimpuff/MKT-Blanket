@@ -17,6 +17,7 @@ pub enum Msg {
 pub struct Props {}
 
 pub struct FetchData {
+    fetching: bool,
     data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
 }
 
@@ -28,28 +29,31 @@ impl Component for FetchData {
         let callback = ctx.link().callback(Msg::DataStore);
         let mut data_store = DataStore::bridge(callback);
         data_store.send(DataRequest::Load);
-        Self { data_store }
+        Self { fetching: false, data_store }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(_) => {}
+            Msg::DataStore(_) => false,
             Msg::Fetch => {
+                self.fetching = true;
                 ctx.link().send_future(async {
                     Msg::DoneFetching(Box::new(DataStore::load_data().await))
                 });
+                true
             }
             Msg::DoneFetching(data) => {
+                self.fetching = false;
                 self.data_store.send(DataRequest::New(data));
+                true
             }
-        };
-        false
+        }
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <button onclick={ctx.link().callback(|_| Msg::Fetch)}>
+                <button class={classes!("button", "is-info", self.fetching.then_some("is-loading"))} onclick={ctx.link().callback(|_| Msg::Fetch)}>
                     { "fetch data" }
                 </button>
             </>

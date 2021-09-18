@@ -56,6 +56,42 @@ pub fn item_type_from_id(id: &str) -> Option<ItemType> {
     }
 }
 
+pub fn course_type_from_id(id: &str) -> CourseType {
+    lazy_static! {
+        static ref RE: Regex = Regex::new(r"[_\d](r|t|r_t)$").unwrap();
+    }
+    let t = RE
+        .captures(id)
+        .map_or("", |c| c.get(1).map_or("", |m| m.as_str()));
+    match t {
+        "r" => CourseType::Reverse,
+        "t" => CourseType::Trick,
+        "r_t" => CourseType::ReverseTrick,
+        _ => CourseType::Normal,
+    }
+}
+
+pub fn course_generation_from_id(id: &str) -> CourseGeneration {
+    lazy_static! {
+        static ref RE: Regex = Regex::new(r"^c_(rmx|snes|n64|gba|gcn|ds|wii|3ds)_").unwrap();
+    }
+    let t = RE
+        .captures(id)
+        .map_or("", |c| c.get(1).map_or("", |m| m.as_str()));
+
+    match t {
+        "rmx" => CourseGeneration::Remix,
+        "snes" => CourseGeneration::SNES,
+        "n64" => CourseGeneration::N64,
+        "gba" => CourseGeneration::GBA,
+        "gcn" => CourseGeneration::GCN,
+        "ds" => CourseGeneration::DS,
+        "wii" => CourseGeneration::Wii,
+        "3ds" => CourseGeneration::_3DS,
+        _ => CourseGeneration::New,
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct ItemRequirement {
     pub id: ItemId,
@@ -77,6 +113,43 @@ pub struct CourseAvailability {
 impl From<(CourseId, ItemLvl)> for CourseAvailability {
     fn from((id, lvl): (CourseId, ItemLvl)) -> Self {
         CourseAvailability { id, lvl }
+    }
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum CourseType {
+    Normal,
+    Reverse,
+    Trick,
+    ReverseTrick,
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum CourseGeneration {
+    New,
+    Remix,
+    SNES,
+    N64,
+    GBA,
+    GCN,
+    DS,
+    Wii,
+    _3DS,
+}
+
+impl ToString for CourseGeneration {
+    fn to_string(&self) -> String {
+        match self {
+            CourseGeneration::New => "New".into(),
+            CourseGeneration::Remix => "Remix".into(),
+            CourseGeneration::SNES => "Super Mario Kart (SNES)".into(),
+            CourseGeneration::N64 => "Mario Kart 64 (N64)".into(),
+            CourseGeneration::GBA => "Mario Kart: Super Circuit (GBA)".into(),
+            CourseGeneration::GCN => "Mario Kart: Double Dash!! (GCN)".into(),
+            CourseGeneration::DS => "Mario Kart DS (DS)".into(),
+            CourseGeneration::Wii => "Mario Kart Wii (Wii)".into(),
+            CourseGeneration::_3DS => "Mario Kart 7 (3DS)".into(),
+        }
     }
 }
 

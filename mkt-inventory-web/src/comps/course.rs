@@ -69,10 +69,20 @@ impl Component for Course {
                 html! {}
             };
             html! {
-                <div>
-                    <p onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", course.name, if self.visible {'-'} else {'+'}) }</p>
-                    { items }
-                </div>
+                <>
+                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::Toggle)}>
+                        { format!("{} {}", course.name, if self.visible {'-'} else {'+'}) }
+                    </button>
+                    <div class={classes!("modal", self.visible.then_some("is-active"))}>
+                        <div class="modal-background" onclick={ctx.link().callback(|_| Msg::Toggle)}></div>
+                        <div class="modal-content">
+                            <div class="box">
+                                { items }
+                            </div>
+                        </div>
+                        <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(|_| Msg::Toggle)}></button>
+                    </div>
+                </>
             }
         } else {
             html! {

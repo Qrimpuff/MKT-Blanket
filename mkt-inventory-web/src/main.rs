@@ -1,3 +1,5 @@
+#![feature(bool_to_option)]
+
 mod agents;
 mod comps;
 
@@ -21,8 +23,8 @@ impl Component for App {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <>
-                <h1>{ "MKT Inventory" }</h1>
+            <div class="container is-clipped px-2">
+                <h1 class="title">{ "MKT Inventory" }</h1>
                 <FetchData/>
                 <Summary/>
                 <CourseList/>
@@ -30,7 +32,7 @@ impl Component for App {
                 <ItemList i_type={ItemType::Kart}/>
                 <ItemList i_type={ItemType::Glider}/>
                 <Import/>
-            </>
+            </div>
         }
     }
 }
