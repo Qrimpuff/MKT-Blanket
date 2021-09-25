@@ -57,7 +57,7 @@ impl Store for Inventory {
             Msg::Merge(inv) => {
                 self.inv.update_inventory(*inv);
             }
-            Msg::Refresh => {/* do nothing */},
+            Msg::Refresh => { /* do nothing */ }
         }
     }
 }

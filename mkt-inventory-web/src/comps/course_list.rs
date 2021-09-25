@@ -1,17 +1,15 @@
 use itertools::Itertools;
-use mkt_data::{
-    course_generation_from_id, course_type_from_id, CourseId, CourseType,
-};
+use mkt_data::{course_generation_from_id, course_type_from_id, CourseType};
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
-};
+use yew_agent::{Bridge, Bridged};
 
-use crate::{agents::data::DataStore, comps::course::Course};
+use crate::{
+    agents::data_inventory::{DataInvCourse, DataInventory, DataInventoryAgent, Shared},
+    comps::course::Course,
+};
 
 pub enum Msg {
-    DataStore(ReadOnly<DataStore>),
+    DataInventory(Shared<DataInventory>),
     Toggle,
 }
 
@@ -19,9 +17,9 @@ pub enum Msg {
 pub struct Props {}
 
 pub struct CourseList {
-    course_ids: Vec<CourseId>,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    courses: Vec<Shared<DataInvCourse>>,
     visible: bool,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for CourseList {
@@ -29,20 +27,21 @@ impl Component for CourseList {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback = ctx.link().callback(Msg::DataStore);
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
-            course_ids: Vec::new(),
-            _data_store: DataStore::bridge(callback),
+            courses: Vec::new(),
             visible: false,
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(state) => {
-                let state = state.borrow();
-                if state.data.courses.len() != self.course_ids.len() {
-                    self.course_ids = state.data.courses.keys().cloned().collect();
+            Msg::DataInventory(state) => {
+                let state = state.read().unwrap();
+                if state.courses.len() != self.courses.len() {
+                    self.courses = state.courses.values().cloned().collect();
+                    self.courses.sort_by_key(|c| c.read().unwrap().data.sort);
                     true
                 } else {
                     false
@@ -58,14 +57,14 @@ impl Component for CourseList {
     fn view(&self, ctx: &Context<Self>) -> Html {
         let courses = if self.visible {
             html! {
-                { for self.course_ids.iter().group_by(|id| course_generation_from_id(id)).into_iter().map(|(gen, ids)| {
+                { for self.courses.iter().group_by(|c| course_generation_from_id(&c.read().unwrap().data.id)).into_iter().map(|(gen, cs)| {
                     let mut expected = 0;
                     html! {
                         <>
                         <h3 class="subtitle"> { gen } </h3>
                         <div class="columns is-multiline">
-                        { for ids.map(|id| {
-                            let mut actual = match course_type_from_id(id) {
+                        { for cs.map(|c| {
+                            let mut actual = match course_type_from_id(&c.read().unwrap().data.id) {
                                 CourseType::Normal => 0,
                                 CourseType::Reverse => 1,
                                 CourseType::Trick => 2,
@@ -80,7 +79,7 @@ impl Component for CourseList {
                                 <>
                                 { offset }
                                 <div class="column is-one-quarter py-1">
-                                    <Course id={id.clone()} />
+                                    <Course id={c.read().unwrap().data.id.clone()} />
                                 </div>
                                 </>
                             }
@@ -95,7 +94,10 @@ impl Component for CourseList {
         };
         html! {
             <>
-                <h2 class="subtitle" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ format!("{} {}", "Courses", if self.visible {'-'} else {'+'}) }</h2>
+                <h2 class="subtitle">
+                    { "Courses" }{" "}
+                    <button onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
+                </h2>
                 { courses }
             </>
         }

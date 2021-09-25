@@ -5,7 +5,10 @@ use yew_agent::{
     Bridge,
 };
 
-use crate::agents::{data::{DataRequest, DataStore}, inventory::{Inventory, InventoryRequest}};
+use crate::agents::{
+    data::{DataRequest, DataStore},
+    inventory::{Inventory, InventoryRequest},
+};
 
 pub enum Msg {
     DataStore(ReadOnly<DataStore>),

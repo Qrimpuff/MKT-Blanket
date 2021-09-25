@@ -426,11 +426,12 @@ pub fn screenshots_to_inventory(
                 OwnedItemResult::Found(item) => {
                     // assumes that there is only one item type per screenshot
                     if potential_item_ids.is_none() {
-                        let potential_items = match item_type_from_id(&item.id).unwrap() {
-                            ItemType::Driver => &data.drivers,
-                            ItemType::Kart => &data.karts,
-                            ItemType::Glider => &data.gliders,
-                        };
+                        let potential_items =
+                            match item_type_from_id(&item.id).unwrap_or(ItemType::Driver) {
+                                ItemType::Driver => &data.drivers,
+                                ItemType::Kart => &data.karts,
+                                ItemType::Glider => &data.gliders,
+                            };
                         potential_item_ids = Some(
                             potential_items
                                 .values()

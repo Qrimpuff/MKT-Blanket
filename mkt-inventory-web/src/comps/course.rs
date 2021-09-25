@@ -1,20 +1,15 @@
-use gloo::console;
-use mkt_data::{item_type_from_id, CourseId};
+use mkt_data::CourseId;
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
-};
+use yew_agent::{Bridge, Bridged};
 
 use crate::{
-    agents::{data::DataStore, inventory::Inventory},
+    agents::data_inventory::{DataInvCourse, DataInventory, DataInventoryAgent, Shared},
     comps::item::Item,
 };
 
 pub enum Msg {
     Toggle,
-    DataStore(ReadOnly<DataStore>),
-    Inventory(ReadOnly<Inventory>),
+    DataInventory(Shared<DataInventory>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -23,16 +18,9 @@ pub struct Props {
 }
 
 pub struct Course {
-    course: Option<mkt_data::Course>,
+    course: Option<Shared<DataInvCourse>>,
     visible: bool,
-    driver_count: usize,
-    kart_count: usize,
-    glider_count: usize,
-    driver_owned_count: usize,
-    kart_owned_count: usize,
-    glider_owned_count: usize,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
-    _inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Course {
@@ -40,19 +28,11 @@ impl Component for Course {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback_data = ctx.link().callback(Msg::DataStore);
-        let callback_inv = ctx.link().callback(Msg::Inventory);
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             course: None,
             visible: false,
-            driver_count: 0,
-            kart_count: 0,
-            glider_count: 0,
-            driver_owned_count: 0,
-            kart_owned_count: 0,
-            glider_owned_count: 0,
-            _data_store: DataStore::bridge(callback_data),
-            _inventory: Inventory::bridge(callback_inv),
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
@@ -62,74 +42,10 @@ impl Component for Course {
                 self.visible = !self.visible;
                 true
             }
-            Msg::DataStore(state) => {
-                let state = state.borrow();
-
-                let course = state.data.courses.get(&ctx.props().id);
-
-                if course.map(|c| c.last_changed) != self.course.as_ref().map(|c| c.last_changed) {
-                    self.course = course.cloned();
-                    self.driver_count = 0;
-                    self.kart_count = 0;
-                    self.glider_count = 0;
-                    if let Some(course) = &self.course {
-                        for r in &course.favorite_items {
-                            if let Some(i_type) = item_type_from_id(&r.id) {
-                                match i_type {
-                                    mkt_data::ItemType::Driver => self.driver_count += 1,
-                                    mkt_data::ItemType::Kart => self.kart_count += 1,
-                                    mkt_data::ItemType::Glider => self.glider_count += 1,
-                                }
-                            }
-                        }
-                    }
-                    true
-                } else {
-                    false
-                }
-            }
-            Msg::Inventory(state) => {
-                let state = state.borrow();
-
-                if let Some(course) = &self.course {
-                    let mut driver_owned_count = 0;
-                    let mut kart_owned_count = 0;
-                    let mut glider_owned_count = 0;
-                    for r in &course.favorite_items {
-                        if let Some(item) = state.inv.drivers.get(&r.id) {
-                            if item.lvl >= r.lvl {
-                                driver_owned_count += 1;
-                            }
-                            continue;
-                        }
-                        if let Some(item) = state.inv.karts.get(&r.id) {
-                            if item.lvl >= r.lvl {
-                                kart_owned_count += 1;
-                            }
-                            continue;
-                        }
-                        if let Some(item) = state.inv.gliders.get(&r.id) {
-                            if item.lvl >= r.lvl {
-                                glider_owned_count += 1;
-                            }
-                            continue;
-                        }
-                    }
-
-                    if self.driver_owned_count != driver_owned_count
-                        || self.kart_owned_count != kart_owned_count
-                        || self.glider_owned_count != glider_owned_count
-                    {
-                        self.driver_owned_count = driver_owned_count;
-                        self.kart_owned_count = kart_owned_count;
-                        self.glider_owned_count = glider_owned_count;
-                        true
-                    } else {
-                        false
-                    }
-                } else {
-                    false
-                }
+            Msg::DataInventory(state) => {
+                let state = state.read().unwrap();
+                self.course = state.courses.get(&ctx.props().id).cloned();
+                true
             }
         }
     }
@@ -144,10 +60,11 @@ impl Component for Course {
                 .set_class_name(self.visible.then_some("is-clipped").unwrap_or(""));
         };
         if let Some(course) = self.course.as_ref() {
+            let course = course.read().unwrap();
             let items = if self.visible {
                 html! {
                     <ul>
-                    { for course.favorite_items.iter().map(|r| html!{ <li><Item id={r.id.clone()} /></li> }) }
+                    { for course.data.favorite_items.iter().map(|r| html!{ <li><Item id={r.id.clone()} /></li> }) }
                     </ul>
                 }
             } else {
@@ -156,19 +73,20 @@ impl Component for Course {
             html! {
                 <>
                     <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::Toggle)}>
-                        <span>{ &course.name }</span>
-                        <span>{self.driver_owned_count}</span>
-                        <span>{self.kart_owned_count}</span>
-                        <span>{self.glider_owned_count}</span>
+                        <span>{ &course.data.name }</span>
                         <span class="icon is-small ml-auto">
                             // TODO: add karts and gliders
                             {
-                                if self.driver_owned_count == self.driver_count {
-                                    html! {<i class="fas fa-star has-text-success"></i>}
-                                } else if self.driver_owned_count > 0 {
-                                    html! {<i class="fas fa-check has-text-success"></i>}
-                                } else if self.driver_owned_count == 0 {
-                                    html! {<i class="fas fa-times has-text-danger"></i>}
+                                if let Some(stats) = &course.stats {
+                                    if stats.driver_owned_count == stats.driver_count {
+                                        html! {<i class="fas fa-star has-text-success"></i>}
+                                    } else if stats.driver_owned_count > 0 {
+                                        html! {<i class="fas fa-check has-text-success"></i>}
+                                    } else if stats.driver_owned_count == 0 {
+                                        html! {<i class="fas fa-times has-text-danger"></i>}
+                                    } else {
+                                        html! {}
+                                    }
                                 } else {
                                     html! {}
                                 }

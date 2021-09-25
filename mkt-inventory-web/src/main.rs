@@ -1,6 +1,5 @@
 #![feature(bool_to_option)]
 #![feature(try_blocks)]
-
 // rust-analyser doesn't like gloo::console
 #![allow(unused_unsafe)]
 
