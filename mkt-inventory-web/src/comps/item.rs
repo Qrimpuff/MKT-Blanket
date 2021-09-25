@@ -42,6 +42,25 @@ impl Component for Item {
         match msg {
             Msg::Toggle => {
                 self.visible = !self.visible;
+                // prevent scrolling on modal
+                let _: Option<_> = try {
+                    let html = web_sys::window()?
+                        .document()?
+                        .query_selector("html")
+                        .ok()??;
+                    let mut layer = html
+                        .get_attribute("data-popup-layer")
+                        .and_then(|a| a.parse().ok())
+                        .unwrap_or(0);
+                    layer += if self.visible { 1 } else { -1 };
+                    html.set_attribute("data-popup-layer", &layer.to_string())
+                        .ok()?;
+                    if layer == 1 {
+                        html.set_class_name("is-clipped");
+                    } else if layer == 0 {
+                        html.set_class_name("");
+                    }
+                };
                 true
             }
             Msg::DataInventory(state) => {
@@ -69,14 +88,6 @@ impl Component for Item {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        // prevent scrolling on modal, FIXME
-        let _: Option<_> = try {
-            web_sys::window()?
-                .document()?
-                .query_selector("html")
-                .ok()??
-                .set_class_name(self.visible.then_some("is-clipped").unwrap_or(""));
-        };
         if let Some(item) = &self.item {
             let item = item.read().unwrap();
             let courses = if self.visible {
