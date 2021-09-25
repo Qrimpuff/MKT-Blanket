@@ -51,7 +51,7 @@ impl Component for Course {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        // prevent scrolling on modal
+        // prevent scrolling on modal, FIXME
         let _: Option<_> = try {
             web_sys::window()?
                 .document()?
@@ -59,7 +59,7 @@ impl Component for Course {
                 .ok()??
                 .set_class_name(self.visible.then_some("is-clipped").unwrap_or(""));
         };
-        if let Some(course) = self.course.as_ref() {
+        if let Some(course) = &self.course {
             let course = course.read().unwrap();
             let items = if self.visible {
                 html! {
@@ -97,6 +97,7 @@ impl Component for Course {
                         <div class="modal-background" onclick={ctx.link().callback(|_| Msg::Toggle)}></div>
                         <div class="modal-content">
                             <div class="box">
+                                <div class="subtitle">{ &course.data.name }</div>
                                 { items }
                             </div>
                         </div>

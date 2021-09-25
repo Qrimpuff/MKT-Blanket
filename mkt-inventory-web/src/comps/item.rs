@@ -1,15 +1,15 @@
 use mkt_data::{item_type_from_id, ItemId, ItemType};
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
+use yew_agent::{Bridge, Bridged};
+
+use crate::{
+    agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared},
+    comps::course::Course,
 };
 
-use crate::agents::{data::DataStore, inventory::Inventory};
-
 pub enum Msg {
-    DataStore(ReadOnly<DataStore>),
-    Inventory(ReadOnly<Inventory>),
+    Toggle,
+    DataInventory(Shared<DataInventory>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -18,11 +18,10 @@ pub struct Props {
 }
 
 pub struct Item {
-    item: Option<mkt_data::Item>,
+    item: Option<Shared<DataInvItem>>,
     i_type: Option<ItemType>,
-    owned_item: Option<mkt_data::OwnedItem>,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
-    _inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
+    visible: bool,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Item {
@@ -30,62 +29,36 @@ impl Component for Item {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback_data = ctx.link().callback(Msg::DataStore);
-        let callback_inv = ctx.link().callback(Msg::Inventory);
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             item: None,
             i_type: item_type_from_id(&ctx.props().id),
-            owned_item: None,
-            _data_store: DataStore::bridge(callback_data),
-            _inventory: Inventory::bridge(callback_inv),
+            visible: false,
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(state) => {
-                if self.i_type.is_none() {
-                    return false;
-                }
-                let i_type = self.i_type.unwrap();
-
-                let state = state.borrow();
-
-                let items = match i_type {
-                    ItemType::Driver => &state.data.drivers,
-                    ItemType::Kart => &state.data.karts,
-                    ItemType::Glider => &state.data.gliders,
-                };
-                let item = items.get(&ctx.props().id);
-
-                if item.map(|i| i.last_changed) != self.item.as_ref().map(|i| i.last_changed) {
-                    self.item = item.cloned();
-                    true
-                } else {
-                    false
-                }
+            Msg::Toggle => {
+                self.visible = !self.visible;
+                true
             }
-            Msg::Inventory(state) => {
+            Msg::DataInventory(state) => {
                 if self.i_type.is_none() {
                     return false;
                 }
                 let i_type = self.i_type.unwrap();
 
-                let state = state.borrow();
+                let state = state.read().unwrap();
 
                 let items = match i_type {
-                    ItemType::Driver => &state.inv.drivers,
-                    ItemType::Kart => &state.inv.karts,
-                    ItemType::Glider => &state.inv.gliders,
+                    ItemType::Driver => &state.drivers,
+                    ItemType::Kart => &state.karts,
+                    ItemType::Glider => &state.gliders,
                 };
-                let item = items.get(&ctx.props().id);
-
-                if item.map(|i| i.last_changed) != self.item.as_ref().map(|i| i.last_changed) {
-                    self.owned_item = item.cloned();
-                    true
-                } else {
-                    false
-                }
+                self.item = items.get(&ctx.props().id).cloned();
+                true
             }
         }
     }
@@ -95,22 +68,69 @@ impl Component for Item {
         true
     }
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        if let Some(item) = self.item.as_ref() {
-            if let Some(owned_item) = self.owned_item.as_ref() {
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        // prevent scrolling on modal, FIXME
+        let _: Option<_> = try {
+            web_sys::window()?
+                .document()?
+                .query_selector("html")
+                .ok()??
+                .set_class_name(self.visible.then_some("is-clipped").unwrap_or(""));
+        };
+        if let Some(item) = &self.item {
+            let item = item.read().unwrap();
+            let courses = if self.visible {
                 html! {
-                    <div>
-                        <p>{ &item.name }</p>
-                        <ul>
-                            <li>{ format!("Level: {}", owned_item.lvl) }</li>
-                            <li>{ format!("Points: {}", owned_item.points) }</li>
-                        </ul>
-                    </div>
+                    <ul>
+                    { for item.data.favorite_courses.iter().map(|r| html!{ <li><Course id={r.id.clone()} /></li> }) }
+                    </ul>
                 }
             } else {
-                html! {
-                    <p>{ &item.name }</p>
-                }
+                html! {}
+            };
+            html! {
+                <>
+                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::Toggle)}>
+                        <span>{ &item.data.name }</span>
+                        <span class="icon is-small ml-auto">
+                            {
+                                if let Some(inv) = &item.inv {
+                                    if inv.lvl > 0 {
+                                        html! {<i class="fas fa-check has-text-success"></i>}
+                                    } else if inv.lvl == 7 {
+                                        html! {<i class="fas fa-star has-text-success"></i>}
+                                    } else {
+                                        html! {}
+                                    }
+                                } else {
+                                    html! {}
+                                }
+                            }
+                        </span>
+                    </button>
+                    <div class={classes!("modal", self.visible.then_some("is-active"))}>
+                        <div class="modal-background" onclick={ctx.link().callback(|_| Msg::Toggle)}></div>
+                        <div class="modal-content">
+                            <div class="box">
+                                <div class="subtitle">{ &item.data.name }</div>
+                                {
+                                    if let Some(inv) = &item.inv {
+                                        html! {
+                                            <>
+                                                <div>{ format!("Level: {}", inv.lvl) }</div>
+                                                <div>{ format!("Points: {}", inv.points)}</div>
+                                            </>
+                                        }
+                                    } else {
+                                        html! {}
+                                    }
+                                }
+                                { courses }
+                            </div>
+                        </div>
+                        <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(|_| Msg::Toggle)}></button>
+                    </div>
+                </>
             }
         } else {
             html! {

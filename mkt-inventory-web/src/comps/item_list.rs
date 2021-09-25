@@ -1,14 +1,14 @@
-use mkt_data::{ItemId, ItemType};
+use mkt_data::ItemType;
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
+use yew_agent::{Bridge, Bridged};
+
+use crate::{
+    agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared},
+    comps::item::Item,
 };
 
-use crate::{agents::data::DataStore, comps::item::Item};
-
 pub enum Msg {
-    DataStore(ReadOnly<DataStore>),
+    DataInventory(Shared<DataInventory>),
     Toggle,
 }
 
@@ -18,9 +18,9 @@ pub struct Props {
 }
 
 pub struct ItemList {
-    item_ids: Vec<ItemId>,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    items: Vec<Shared<DataInvItem>>,
     visible: bool,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for ItemList {
@@ -28,25 +28,26 @@ impl Component for ItemList {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback = ctx.link().callback(Msg::DataStore);
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
-            item_ids: Vec::new(),
-            _data_store: DataStore::bridge(callback),
+            items: Vec::new(),
             visible: false,
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(state) => {
-                let state = state.borrow();
+            Msg::DataInventory(state) => {
+                let state = state.read().unwrap();
                 let items = match ctx.props().i_type {
-                    ItemType::Driver => &state.data.drivers,
-                    ItemType::Kart => &state.data.karts,
-                    ItemType::Glider => &state.data.gliders,
+                    ItemType::Driver => &state.drivers,
+                    ItemType::Kart => &state.karts,
+                    ItemType::Glider => &state.gliders,
                 };
-                if items.len() != self.item_ids.len() {
-                    self.item_ids = items.keys().cloned().collect();
+                if items.len() != self.items.len() {
+                    self.items = items.values().cloned().collect();
+                    self.items.sort_by_key(|c| c.read().unwrap().data.sort);
                     true
                 } else {
                     false
@@ -67,11 +68,20 @@ impl Component for ItemList {
         };
         let items = if self.visible {
             html! {
-                <ul>
-                { for self.item_ids.iter().map(|id| html!{
-                    <li><Item id={id.clone()} /></li>
+                <>
+                <div class="columns is-multiline">
+                { for self.items.iter().map(|i| {
+                    let i = i.read().unwrap();
+                    html!{
+                        <>
+                        <div class="column is-one-quarter py-1">
+                            <Item id={i.data.id.clone()} />
+                        </div>
+                        </>
+                    }
                 }) }
-                </ul>
+                </div>
+                </>
             }
         } else {
             html! {}
