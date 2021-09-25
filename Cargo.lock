@@ -939,6 +939,7 @@ dependencies = [
  "mkt-data",
  "mkt-import",
  "reqwest",
+ "web-sys",
  "yew",
  "yew-agent",
 ]

@@ -8,12 +8,14 @@ use yew_agent::{
 pub enum Msg {
     Replace(Box<MktInventory>),
     Merge(Box<MktInventory>),
+    Refresh,
 }
 
 pub enum InventoryRequest {
     Add(Box<MktInventory>),
     Load,
     Save,
+    Refresh,
 }
 
 pub struct Inventory {
@@ -43,6 +45,7 @@ impl Store for Inventory {
             InventoryRequest::Save => {
                 LocalStorage::set("mkt_inventory", &self.inv).unwrap();
             }
+            InventoryRequest::Refresh => link.send_message(Msg::Refresh),
         }
     }
 
@@ -54,6 +57,7 @@ impl Store for Inventory {
             Msg::Merge(inv) => {
                 self.inv.update_inventory(*inv);
             }
+            Msg::Refresh => {/* do nothing */},
         }
     }
 }

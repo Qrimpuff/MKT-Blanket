@@ -5,7 +5,7 @@ use yew_agent::{
     Bridge,
 };
 
-use crate::agents::data::{DataRequest, DataStore};
+use crate::agents::{data::{DataRequest, DataStore}, inventory::{Inventory, InventoryRequest}};
 
 pub enum Msg {
     DataStore(ReadOnly<DataStore>),
@@ -19,6 +19,7 @@ pub struct Props {}
 pub struct FetchData {
     fetching: bool,
     data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
 }
 
 impl Component for FetchData {
@@ -29,7 +30,11 @@ impl Component for FetchData {
         let callback = ctx.link().callback(Msg::DataStore);
         let mut data_store = DataStore::bridge(callback);
         data_store.send(DataRequest::Load);
-        Self { fetching: false, data_store }
+        Self {
+            fetching: false,
+            data_store,
+            inventory: Inventory::bridge(Callback::noop()),
+        }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
@@ -45,6 +50,7 @@ impl Component for FetchData {
             Msg::DoneFetching(data) => {
                 self.fetching = false;
                 self.data_store.send(DataRequest::New(data));
+                self.inventory.send(InventoryRequest::Refresh);
                 true
             }
         }
