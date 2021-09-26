@@ -8,7 +8,7 @@ use super::{
     data::DataStore,
     inventory::{Inventory, InventoryRequest},
 };
-use mkt_data::{item_type_from_id, Course, CourseId, Item, ItemId, OwnedItem};
+use mkt_data::{Course, CourseId, Item, ItemId, ItemType, OwnedItem, item_type_from_id};
 use yew_agent::{
     utils::store::{Bridgeable, ReadOnly, StoreWrapper},
     Agent, AgentLink, Bridge, Context, HandlerId,
@@ -36,7 +36,12 @@ pub struct DataInvCourse {
     pub stats: Option<CourseStats>,
 }
 
-pub struct ItemStats {}
+pub struct ItemStats {
+    pub fav_course_count: usize,
+    pub max_fav_course_count: usize,
+    pub add_course_count: usize,
+    pub max_add_course_count: usize,
+}
 
 pub struct DataInvItem {
     pub data: Item,
@@ -57,16 +62,18 @@ impl DataInventory {
         // courses statistics
         for course in self.courses.values() {
             let mut course = course.write().unwrap();
+
             let mut driver_count = 0;
             let mut kart_count = 0;
             let mut glider_count = 0;
             let mut driver_owned_count = 0;
             let mut kart_owned_count = 0;
             let mut glider_owned_count = 0;
+
             for r in &course.data.favorite_items {
                 if let Some(i_type) = item_type_from_id(&r.id) {
                     match i_type {
-                        mkt_data::ItemType::Driver => {
+                        ItemType::Driver => {
                             driver_count += 1;
                             if self
                                 .drivers
@@ -78,7 +85,7 @@ impl DataInventory {
                                 driver_owned_count += 1;
                             }
                         }
-                        mkt_data::ItemType::Kart => {
+                        ItemType::Kart => {
                             kart_count += 1;
                             if self
                                 .karts
@@ -90,7 +97,7 @@ impl DataInventory {
                                 kart_owned_count += 1;
                             }
                         }
-                        mkt_data::ItemType::Glider => {
+                        ItemType::Glider => {
                             glider_count += 1;
                             if self
                                 .gliders
@@ -105,6 +112,7 @@ impl DataInventory {
                     }
                 }
             }
+
             course.stats = Some(CourseStats {
                 driver_count,
                 kart_count,
@@ -112,6 +120,60 @@ impl DataInventory {
                 driver_owned_count,
                 kart_owned_count,
                 glider_owned_count,
+            })
+        }
+
+        // items statistics
+        for item in self
+            .drivers
+            .values()
+            .chain(self.karts.values())
+            .chain(self.gliders.values())
+        {
+            let mut item = item.write().unwrap();
+
+            let mut fav_course_count = 0;
+            let mut max_fav_course_count = 0;
+            let mut add_course_count = 0;
+            let mut max_add_course_count = 0;
+
+            let lvl = item.inv.as_ref().map(|i| i.lvl).unwrap_or(0);
+            for r in &item.data.favorite_courses {
+                if lvl == 0 {
+                    let add = self
+                        .courses
+                        .get(&r.id)
+                        .and_then(|c| {
+                            c.read()
+                                .unwrap()
+                                .stats
+                                .as_ref()
+                                .map(|s| match item.data.i_type {
+                                    ItemType::Driver => s.driver_owned_count,
+                                    ItemType::Kart => s.kart_owned_count,
+                                    ItemType::Glider => s.glider_owned_count,
+                                })
+                        })
+                        .filter(|c| *c > 0)
+                        .map(|_| 0)
+                        .unwrap_or(1);
+                    if r.lvl == 1 {
+                        add_course_count += add;
+                    }
+                    max_add_course_count += add;
+                } else {
+                    if lvl >= r.lvl {
+                        fav_course_count += 1;
+                    }
+                    max_fav_course_count += 1;
+                }
+            }
+
+            item.stats = Some(ItemStats {
+                fav_course_count,
+                max_fav_course_count,
+                add_course_count,
+                max_add_course_count,
             })
         }
     }

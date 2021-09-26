@@ -15,13 +15,15 @@ pub enum Msg {
 
 #[derive(Clone, PartialEq)]
 pub enum ShowStat {
-    Lvl,
+    Level,
+    FavoriteCourses,
+    AdditionalCourses,
 }
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     pub id: ItemId,
-    #[prop_or(ShowStat::Lvl)]
+    #[prop_or(ShowStat::AdditionalCourses)]
     pub show_stat: ShowStat,
 }
 
@@ -85,6 +87,32 @@ impl Component for Item {
             } else {
                 html! {}
             };
+            let fav_count = if let Some((fav, max_fav)) = item
+                .stats
+                .as_ref()
+                .map(|s| (s.fav_course_count, s.max_fav_course_count))
+            {
+                if fav == max_fav {
+                    html! {<span class="stat">{ fav }</span>}
+                } else {
+                    html! {<span class="stat">{ format!("{}-{}", fav, max_fav) }</span>}
+                }
+            } else {
+                html! {}
+            };
+            let add_count = if let Some((add, max_add)) = item
+                .stats
+                .as_ref()
+                .map(|s| (s.add_course_count, s.max_add_course_count))
+            {
+                if add == max_add {
+                    html! {<span class="stat">{ add }</span>}
+                } else {
+                    html! {<span class="stat">{ format!("{}-{}", add, max_add) }</span>}
+                }
+            } else {
+                html! {}
+            };
             html! {
                 <>
                     <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
@@ -98,9 +126,11 @@ impl Component for Item {
                             }
                         </span>
                         <span>{ &item.data.name }</span>
-                        <span class="icon is-small ml-auto">
+                        <span class="ml-auto">
                             { match ctx.props().show_stat {
-                                ShowStat::Lvl => { lvl },
+                                ShowStat::Level => { lvl },
+                                ShowStat::FavoriteCourses => { fav_count },
+                                ShowStat::AdditionalCourses => { add_count },
                             } }
                         </span>
                     </button>
