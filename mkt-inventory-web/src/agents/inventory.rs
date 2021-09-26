@@ -16,6 +16,7 @@ pub enum InventoryRequest {
     Load,
     Save,
     Refresh,
+    Delete,
 }
 
 pub struct Inventory {
@@ -46,6 +47,10 @@ impl Store for Inventory {
                 LocalStorage::set("mkt_inventory", &self.inv).unwrap();
             }
             InventoryRequest::Refresh => link.send_message(Msg::Refresh),
+            InventoryRequest::Delete => {
+                link.send_message(Msg::Replace(Box::new(MktInventory::new())));
+                link.send_input(InventoryRequest::Save);
+            }
         }
     }
 

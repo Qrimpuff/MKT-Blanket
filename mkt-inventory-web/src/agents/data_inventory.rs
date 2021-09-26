@@ -8,7 +8,7 @@ use super::{
     data::DataStore,
     inventory::{Inventory, InventoryRequest},
 };
-use mkt_data::{Course, CourseId, Item, ItemId, ItemType, OwnedItem, item_type_from_id};
+use mkt_data::{item_type_from_id, Course, CourseId, Item, ItemId, ItemType, OwnedItem};
 use yew_agent::{
     utils::store::{Bridgeable, ReadOnly, StoreWrapper},
     Agent, AgentLink, Bridge, Context, HandlerId,
@@ -139,24 +139,24 @@ impl DataInventory {
 
             let lvl = item.inv.as_ref().map(|i| i.lvl).unwrap_or(0);
             for r in &item.data.favorite_courses {
+                let add = self
+                    .courses
+                    .get(&r.id)
+                    .and_then(|c| {
+                        c.read()
+                            .unwrap()
+                            .stats
+                            .as_ref()
+                            .map(|s| match item.data.i_type {
+                                ItemType::Driver => s.driver_owned_count,
+                                ItemType::Kart => s.kart_owned_count,
+                                ItemType::Glider => s.glider_owned_count,
+                            })
+                    })
+                    .filter(|c| *c > 0)
+                    .map(|_| 0)
+                    .unwrap_or(1);
                 if lvl == 0 {
-                    let add = self
-                        .courses
-                        .get(&r.id)
-                        .and_then(|c| {
-                            c.read()
-                                .unwrap()
-                                .stats
-                                .as_ref()
-                                .map(|s| match item.data.i_type {
-                                    ItemType::Driver => s.driver_owned_count,
-                                    ItemType::Kart => s.kart_owned_count,
-                                    ItemType::Glider => s.glider_owned_count,
-                                })
-                        })
-                        .filter(|c| *c > 0)
-                        .map(|_| 0)
-                        .unwrap_or(1);
                     if r.lvl == 1 {
                         add_course_count += add;
                     }
@@ -164,6 +164,8 @@ impl DataInventory {
                 } else {
                     if lvl >= r.lvl {
                         fav_course_count += 1;
+                    } else {
+                        max_add_course_count += add;
                     }
                     max_fav_course_count += 1;
                 }

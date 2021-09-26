@@ -15,6 +15,7 @@ pub enum DataRequest {
     New(Box<MktData>),
     Load,
     Save,
+    Delete,
 }
 
 pub struct DataStore {
@@ -43,6 +44,9 @@ impl Store for DataStore {
             }
             DataRequest::Save => {
                 LocalStorage::set("mkt_data", &self.data).unwrap();
+            }
+            DataRequest::Delete => {
+                link.send_input(DataRequest::New(Box::new(MktData::new())));
             }
         }
     }

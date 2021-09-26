@@ -83,9 +83,9 @@ impl Component for Import {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <>
-                <h2 class="subtitle">{ "import inventory" }</h2>
-                <p>{ "Choose a file to upload to see the uploaded bytes" }</p>
+            <div class="block">
+                <h2 class="subtitle">{ "Import Inventory" }</h2>
+                <p>{ "Choose a screenshot to import" }</p>
                 <div class="file">
                 <label class="file-label">
                     <input class="file-input" type="file" multiple=true onchange={ctx.link().callback(move |e: Event| {
@@ -112,7 +112,7 @@ impl Component for Import {
                     </span>
                 </label>
                 </div>
-            </>
+            </div>
         }
     }
 }

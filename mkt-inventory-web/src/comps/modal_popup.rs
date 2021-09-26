@@ -55,11 +55,10 @@ where
                 { for item.data.favorite_courses.iter().map(|r| html!{ <li><Course id={r.id.clone()} /></li> }) }
                 </ul>
             };
-            let toggle_1 = toggle.clone();
-            let toggle_2 = toggle;
+            let toggle_cb = ctx.link().callback(move |_| toggle.clone());
             html! {
                 <div class={classes!("modal", "is-active")}>
-                    <div class="modal-background" onclick={ctx.link().callback(move |_| toggle_1.clone())}></div>
+                    <div class="modal-background" onclick={&toggle_cb}></div>
                     <div class="modal-content">
                         <div class="box">
                             <div class="subtitle">
@@ -78,7 +77,7 @@ where
                             { courses }
                         </div>
                     </div>
-                    <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(move |_| toggle_2.clone())}></button>
+                    <button class="modal-close is-large" aria-label="close" onclick={&toggle_cb}></button>
                 </div>
             }
         } else {
@@ -109,24 +108,62 @@ where
                 { for course.data.favorite_items.iter().map(|r| html!{ <li><Item id={r.id.clone()} /></li> }) }
                 </ul>
             };
-            let toggle_1 = toggle.clone();
-            let toggle_2 = toggle;
+            let toggle_cb = ctx.link().callback(move |_| toggle.clone());
             html! {
                 <div class={classes!("modal", "is-active")}>
-                    <div class="modal-background" onclick={ctx.link().callback(move |_| toggle_1.clone())}></div>
+                    <div class="modal-background" onclick={&toggle_cb}></div>
                     <div class="modal-content">
                         <div class="box">
                             <div class="subtitle">{ &course.data.name }</div>
                             { items }
                         </div>
                     </div>
-                    <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(move |_| toggle_2.clone())}></button>
+                    <button class="modal-close is-large" aria-label="close" onclick={&toggle_cb}></button>
                 </div>
             }
         } else {
             html! {
                 <p>{ "no_course" }</p>
             }
+        }
+    } else {
+        html! {}
+    }
+}
+
+pub fn view_confirm_modal<COMP>(
+    visible: bool,
+    content: Html,
+    ctx: &Context<COMP>,
+    toggle: COMP::Message,
+    confirm: COMP::Message,
+) -> Html
+where
+    COMP: Component,
+    COMP::Message: Clone,
+{
+    if visible {
+        let toggle_1 = toggle.clone();
+        let toggle_cb = ctx.link().callback(move |_| toggle_1.clone());
+        let confirm_cb = ctx
+            .link()
+            .batch_callback(move |_| vec![confirm.clone(), toggle.clone()]);
+        html! {
+            <div class={classes!("modal", "is-active")}>
+                <div class="modal-background" onclick={&toggle_cb}></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="block">
+                        { content }
+                        </div>
+                        <div class="buttons">
+                            <button class="button is-danger" onclick={&confirm_cb}>{"Confirm"}</button>
+                            <button class="button" onclick={&toggle_cb}>{"Cancel"}</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close" onclick={&toggle_cb}></button>
+            </div>
         }
     } else {
         html! {}
