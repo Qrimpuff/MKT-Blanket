@@ -13,9 +13,16 @@ pub enum Msg {
     DataInventory(Shared<DataInventory>),
 }
 
+#[derive(Clone, PartialEq)]
+pub enum ShowStat {
+    Lvl,
+}
+
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     pub id: ItemId,
+    #[prop_or(ShowStat::Lvl)]
+    pub show_stat: ShowStat,
 }
 
 pub struct Item {
@@ -73,24 +80,28 @@ impl Component for Item {
     fn view(&self, ctx: &Context<Self>) -> Html {
         if let Some(item) = &self.item {
             let item = item.read().unwrap();
+            let lvl = if let Some(lvl) = item.inv.as_ref().map(|i| i.lvl).filter(|lvl| *lvl > 0) {
+                html! {<span class="stat-lvl">{ lvl }</span>}
+            } else {
+                html! {}
+            };
             html! {
                 <>
                     <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
-                        <span>{ &item.data.name }</span>
-                        <span class="icon is-small ml-auto">
+                        <span class="icon rarity-dot">
                             {
-                                if let Some(inv) = &item.inv {
-                                    if inv.lvl > 0 {
-                                        html! {<i class="fas fa-check has-text-success"></i>}
-                                    } else if inv.lvl == 7 {
-                                        html! {<i class="fas fa-star has-text-success"></i>}
-                                    } else {
-                                        html! {}
-                                    }
-                                } else {
-                                    html! {}
+                                match item.data.rarity {
+                                    mkt_data::Rarity::Normal => html! {<i class="fas fa-circle rarity-normal"></i>},
+                                    mkt_data::Rarity::Super => html! {<i class="fas fa-circle rarity-super"></i>},
+                                    mkt_data::Rarity::HighEnd => html! {<i class="fas fa-circle rarity-high-end"></i>},
                                 }
                             }
+                        </span>
+                        <span>{ &item.data.name }</span>
+                        <span class="icon is-small ml-auto">
+                            { match ctx.props().show_stat {
+                                ShowStat::Lvl => { lvl },
+                            } }
                         </span>
                     </button>
                     { view_item_modal(self.visible, &self.item, ctx, Msg::ToggleModal) }

@@ -62,7 +62,18 @@ where
                     <div class="modal-background" onclick={ctx.link().callback(move |_| toggle_1.clone())}></div>
                     <div class="modal-content">
                         <div class="box">
-                            <div class="subtitle">{ &item.data.name }</div>
+                            <div class="subtitle">
+                                <span class="icon rarity-dot">
+                                    {
+                                        match item.data.rarity {
+                                            mkt_data::Rarity::Normal => html! {<i class="fas fa-circle rarity-normal"></i>},
+                                            mkt_data::Rarity::Super => html! {<i class="fas fa-circle rarity-super"></i>},
+                                            mkt_data::Rarity::HighEnd => html! {<i class="fas fa-circle rarity-high-end"></i>},
+                                        }
+                                    }
+                                </span>
+                                <span>{ &item.data.name }</span>
+                            </div>
                             { inv }
                             { courses }
                         </div>

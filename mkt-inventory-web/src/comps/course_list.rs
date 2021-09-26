@@ -1,3 +1,4 @@
+use gloo::console;
 use itertools::Itertools;
 use mkt_data::{course_generation_from_id, course_type_from_id, CourseType};
 use yew::prelude::*;
@@ -73,7 +74,7 @@ impl Component for CourseList {
                             if actual < expected {
                                 actual += 4;
                             }
-                            let offset = html! { for (expected..actual).map(|_| html! { <div class="column is-one-quarter py-1 is-hidden-touch"/> }) };
+                            let offset = html! { for (expected..actual).map(|_| html! { <div class="column is-one-quarter py-1 is-hidden-mobile"/> }) };
                             expected = (actual + 1) % 4;
                             html!{
                                 <>

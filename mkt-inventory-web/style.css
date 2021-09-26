@@ -1,0 +1,20 @@
+.rarity-dot {
+  font-size: 75%;
+}
+
+.rarity-normal {
+  color: #adadad !important;
+}
+
+.rarity-super {
+  color: #f1cf5d !important;
+}
+
+.rarity-high-end {
+  color: #e095b9 !important;
+}
+
+.stat-lvl {
+  color: #17a040 !important;
+  font-weight: bold !important;
+}
