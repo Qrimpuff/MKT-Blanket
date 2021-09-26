@@ -2,13 +2,14 @@ use mkt_data::{item_type_from_id, ItemId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
-use crate::{
-    agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared},
-    comps::course::Course,
-};
+use crate::agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared};
+use crate::comps::modal_popup::view_item_modal;
 
+use super::modal_popup::update_popup_layer;
+
+#[derive(Clone)]
 pub enum Msg {
-    Toggle,
+    ToggleModal,
     DataInventory(Shared<DataInventory>),
 }
 
@@ -40,27 +41,9 @@ impl Component for Item {
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::Toggle => {
+            Msg::ToggleModal => {
                 self.visible = !self.visible;
-                // prevent scrolling on modal
-                let _: Option<_> = try {
-                    let html = web_sys::window()?
-                        .document()?
-                        .query_selector("html")
-                        .ok()??;
-                    let mut layer = html
-                        .get_attribute("data-popup-layer")
-                        .and_then(|a| a.parse().ok())
-                        .unwrap_or(0);
-                    layer += if self.visible { 1 } else { -1 };
-                    html.set_attribute("data-popup-layer", &layer.to_string())
-                        .ok()?;
-                    if layer == 1 {
-                        html.set_class_name("is-clipped");
-                    } else if layer == 0 {
-                        html.set_class_name("");
-                    }
-                };
+                update_popup_layer(self.visible);
                 true
             }
             Msg::DataInventory(state) => {
@@ -90,18 +73,9 @@ impl Component for Item {
     fn view(&self, ctx: &Context<Self>) -> Html {
         if let Some(item) = &self.item {
             let item = item.read().unwrap();
-            let courses = if self.visible {
-                html! {
-                    <ul>
-                    { for item.data.favorite_courses.iter().map(|r| html!{ <li><Course id={r.id.clone()} /></li> }) }
-                    </ul>
-                }
-            } else {
-                html! {}
-            };
             html! {
                 <>
-                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::Toggle)}>
+                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                         <span>{ &item.data.name }</span>
                         <span class="icon is-small ml-auto">
                             {
@@ -119,28 +93,7 @@ impl Component for Item {
                             }
                         </span>
                     </button>
-                    <div class={classes!("modal", self.visible.then_some("is-active"))}>
-                        <div class="modal-background" onclick={ctx.link().callback(|_| Msg::Toggle)}></div>
-                        <div class="modal-content">
-                            <div class="box">
-                                <div class="subtitle">{ &item.data.name }</div>
-                                {
-                                    if let Some(inv) = &item.inv {
-                                        html! {
-                                            <>
-                                                <div>{ format!("Level: {}", inv.lvl) }</div>
-                                                <div>{ format!("Points: {}", inv.points)}</div>
-                                            </>
-                                        }
-                                    } else {
-                                        html! {}
-                                    }
-                                }
-                                { courses }
-                            </div>
-                        </div>
-                        <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(|_| Msg::Toggle)}></button>
-                    </div>
+                    { view_item_modal(self.visible, &self.item, ctx, Msg::ToggleModal) }
                 </>
             }
         } else {

@@ -4,11 +4,14 @@ use yew_agent::{Bridge, Bridged};
 
 use crate::{
     agents::data_inventory::{DataInvCourse, DataInventory, DataInventoryAgent, Shared},
-    comps::item::Item,
+    comps::modal_popup::view_course_modal,
 };
 
+use super::modal_popup::update_popup_layer;
+
+#[derive(Clone)]
 pub enum Msg {
-    Toggle,
+    ToggleModal,
     DataInventory(Shared<DataInventory>),
 }
 
@@ -38,27 +41,9 @@ impl Component for Course {
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::Toggle => {
+            Msg::ToggleModal => {
                 self.visible = !self.visible;
-                // prevent scrolling on modal
-                let _: Option<_> = try {
-                    let html = web_sys::window()?
-                        .document()?
-                        .query_selector("html")
-                        .ok()??;
-                    let mut layer = html
-                        .get_attribute("data-popup-layer")
-                        .and_then(|a| a.parse().ok())
-                        .unwrap_or(0);
-                    layer += if self.visible { 1 } else { -1 };
-                    html.set_attribute("data-popup-layer", &layer.to_string())
-                        .ok()?;
-                    if layer == 1 {
-                        html.set_class_name("is-clipped");
-                    } else if layer == 0 {
-                        html.set_class_name("");
-                    }
-                };
+                update_popup_layer(self.visible);
                 true
             }
             Msg::DataInventory(state) => {
@@ -72,18 +57,9 @@ impl Component for Course {
     fn view(&self, ctx: &Context<Self>) -> Html {
         if let Some(course) = &self.course {
             let course = course.read().unwrap();
-            let items = if self.visible {
-                html! {
-                    <ul>
-                    { for course.data.favorite_items.iter().map(|r| html!{ <li><Item id={r.id.clone()} /></li> }) }
-                    </ul>
-                }
-            } else {
-                html! {}
-            };
             html! {
                 <>
-                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::Toggle)}>
+                    <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                         <span>{ &course.data.name }</span>
                         <span class="icon is-small ml-auto">
                             // TODO: add karts and gliders
@@ -104,16 +80,7 @@ impl Component for Course {
                             }
                         </span>
                     </button>
-                    <div class={classes!("modal", self.visible.then_some("is-active"))}>
-                        <div class="modal-background" onclick={ctx.link().callback(|_| Msg::Toggle)}></div>
-                        <div class="modal-content">
-                            <div class="box">
-                                <div class="subtitle">{ &course.data.name }</div>
-                                { items }
-                            </div>
-                        </div>
-                        <button class="modal-close is-large" aria-label="close" onclick={ctx.link().callback(|_| Msg::Toggle)}></button>
-                    </div>
+                    { view_course_modal(self.visible, &self.course, ctx, Msg::ToggleModal) }
                 </>
             }
         } else {
