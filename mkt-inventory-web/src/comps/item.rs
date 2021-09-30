@@ -95,7 +95,7 @@ impl Component for Item {
                 if fav == max_fav {
                     html! {<span class="stat">{ fav }</span>}
                 } else {
-                    html! {<span class="stat">{ format!("{}-{}", fav, max_fav) }</span>}
+                    html! {<span class="stat">{ format!("{}/{}", fav, max_fav) }</span>}
                 }
             } else {
                 html! {}

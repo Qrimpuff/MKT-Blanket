@@ -31,7 +31,7 @@ fn test_screenshot_import(data: &MktData) {
 
     // let list = vec![screenshot];
 
-    let (inventory, new_hashes) = screenshots_to_inventory(list, data);
+    let (inventory, new_hashes) = screenshots_to_inventory(list, data, None);
 
     dbg!(&inventory);
     dbg!(&inventory.drivers.len());

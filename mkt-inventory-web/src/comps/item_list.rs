@@ -90,7 +90,7 @@ impl Component for ItemList {
             <>
                 <h2 class="subtitle">
                     { title }{" "}
-                    <button class="button" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
+                    <button class="button is-small" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
                 </h2>
                 { items }
             </>

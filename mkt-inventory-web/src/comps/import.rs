@@ -1,7 +1,4 @@
-use gloo::{
-    file::{self, callbacks::FileReader, File},
-    timers::callback::Timeout,
-};
+use gloo::{file::{self, callbacks::FileReader, File}, storage::{LocalStorage, Storage}, timers::callback::Timeout};
 use mkt_import::*;
 use yew::{
     prelude::*,
@@ -80,6 +77,7 @@ impl Component for Import {
                 let (inv, _miss) = screenshot::image_bytes_to_inventory(
                     bytes,
                     &self.data.as_ref().unwrap().borrow().data,
+                    LocalStorage::get("mkt_hash").ok().as_ref(),
                 );
                 self.inventory.send(InventoryRequest::Add(Box::from(inv)));
                 self.completed += 1;

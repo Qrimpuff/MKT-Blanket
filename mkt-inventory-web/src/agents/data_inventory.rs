@@ -224,7 +224,7 @@ impl Agent for DataInventoryAgent {
     }
 
     fn update(&mut self, msg: Self::Message) {
-        // TODO: update state
+        // update state
         match msg {
             Msg::DataStore(data) => {
                 let data = &data.borrow().data;
@@ -304,24 +304,33 @@ impl Agent for DataInventoryAgent {
                 let mut state = self.state.write().unwrap();
 
                 // update drivers
-                for driver in inv.drivers.values() {
-                    if let Some(i) = state.drivers.get(&driver.id) {
-                        (*i.write().unwrap()).inv = Some(driver.clone());
-                    };
+                for driver in state.drivers.values() {
+                    let mut driver = driver.write().unwrap();
+                    if let Some(i) = inv.drivers.get(&driver.data.id) {
+                        driver.inv = Some(i.clone());
+                    } else {
+                        driver.inv = None;
+                    }
                 }
 
                 // update karts
-                for kart in inv.karts.values() {
-                    if let Some(i) = state.karts.get(&kart.id) {
-                        (*i.write().unwrap()).inv = Some(kart.clone());
-                    };
+                for kart in state.karts.values() {
+                    let mut kart = kart.write().unwrap();
+                    if let Some(i) = inv.karts.get(&kart.data.id) {
+                        kart.inv = Some(i.clone());
+                    } else {
+                        kart.inv = None;
+                    }
                 }
 
                 // update gliders
-                for glider in inv.gliders.values() {
-                    if let Some(i) = state.gliders.get(&glider.id) {
-                        (*i.write().unwrap()).inv = Some(glider.clone());
-                    };
+                for glider in state.gliders.values() {
+                    let mut glider = glider.write().unwrap();
+                    if let Some(i) = inv.gliders.get(&glider.data.id) {
+                        glider.inv = Some(i.clone());
+                    } else {
+                        glider.inv = None;
+                    }
                 }
 
                 state.update_stats();

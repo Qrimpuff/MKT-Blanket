@@ -97,7 +97,7 @@ impl Component for CourseList {
             <>
                 <h2 class="subtitle">
                     { "Courses" }{" "}
-                    <button class="button" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
+                    <button class="button is-small" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
                 </h2>
                 { courses }
             </>

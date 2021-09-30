@@ -380,27 +380,30 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
     .unwrap()
 }
 
-pub fn image_bytes_to_inventory(bytes: Vec<u8>, data: &MktData) -> (MktInventory, MktItemHashes) {
+pub fn image_bytes_to_inventory(
+    bytes: Vec<u8>,
+    data: &MktData,
+    hashes: Option<&MktItemHashes>,
+) -> (MktInventory, MktItemHashes) {
     let screenshot = image::load_from_memory(&bytes).unwrap().into_rgb8();
     let list = vec![screenshot];
-    screenshots_to_inventory(list, data)
+    screenshots_to_inventory(list, data, hashes)
 }
 
 pub fn screenshots_to_owned_items(
     screenshots: Vec<RgbImage>,
     data: &MktData,
+    hashes: Option<&MktItemHashes>,
 ) -> Vec<OwnedItemResult> {
     let lvl_templates = get_lvl_templates();
     let item_hashes = data
         .drivers
-        .iter()
-        .chain(data.karts.iter())
-        .chain(data.gliders.iter())
-        .flat_map(|(id, i)| {
-            i.hashes
-                .iter()
-                .map(move |h| ItemHash(id.clone(), h.clone()))
-        })
+        .values()
+        .chain(data.karts.values())
+        .chain(data.gliders.values())
+        .map(|i| (&i.id, &i.hashes))
+        .chain(hashes.into_iter().flat_map(|h| h.hashes.iter()))
+        .flat_map(|(id, hashes)| hashes.iter().map(move |h| ItemHash(id.clone(), h.clone())))
         .collect_vec();
 
     let mut owned_items = vec![];
@@ -518,10 +521,11 @@ pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: 
 pub fn screenshots_to_inventory(
     screenshots: Vec<RgbImage>,
     data: &MktData,
+    hashes: Option<&MktItemHashes>,
 ) -> (MktInventory, MktItemHashes) {
     let mut inv = MktInventory::new();
 
-    let mut items = screenshots_to_owned_items(screenshots, data);
+    let mut items = screenshots_to_owned_items(screenshots, data, hashes);
     deduce_missing_owned_items(&mut items, data);
 
     let hashes = items
