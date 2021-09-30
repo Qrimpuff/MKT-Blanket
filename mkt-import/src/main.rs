@@ -39,7 +39,7 @@ fn test_screenshot_import(data: &MktData) {
     dbg!(&inventory.gliders.len());
 
     dbg!(&missing.len());
-    for (i, (img, _)) in missing.iter().chain(missing.iter()).enumerate() {
-        save_missing_image_hash(i, img);
+    for (i, result) in missing.iter().enumerate() {
+        save_missing_image_hash(i, result.img.as_ref().unwrap());
     }
 }

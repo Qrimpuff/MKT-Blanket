@@ -10,6 +10,7 @@ use serde::{Deserialize, Serialize};
 pub type CourseId = String;
 pub type ItemId = String;
 pub type ItemLvl = u8;
+pub type ItemHash = String;
 
 pub fn course_id_from_name(name: &str) -> CourseId {
     "c_".to_string() + &id_from_name(name)
@@ -252,7 +253,7 @@ pub struct Item {
     pub name: String, // current english name
     pub rarity: Rarity,
     pub favorite_courses: LinkedHashSet<CourseAvailability>,
-    pub hashes: Vec<String>, // used for screenshot import
+    pub hashes: Vec<ItemHash>, // used for screenshot import
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Item {
@@ -320,6 +321,11 @@ impl Item {
 }
 
 #[derive(Debug, Default, Serialize, Deserialize)]
+pub struct MktItemHashes {
+    pub hashes: LinkedHashMap<ItemId, Vec<ItemHash>>,
+}
+
+#[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktData {
     pub courses: LinkedHashMap<CourseId, Course>,
     pub drivers: LinkedHashMap<ItemId, Item>,
@@ -366,6 +372,17 @@ impl MktData {
             }
         }
         Ok(())
+    }
+
+    pub fn merge_hashes(&mut self, MktItemHashes { hashes }: &MktItemHashes) {
+        let types = [&mut self.drivers, &mut self.karts, &mut self.gliders];
+        for list in types {
+            for item in list.values_mut() {
+                if let Some(hash) = hashes.get(&item.id) {
+                    item.hashes.append(&mut hash.clone());
+                }
+            }
+        }
     }
 
     pub fn merge(&mut self, mut new_data: MktData) {

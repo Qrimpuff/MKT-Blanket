@@ -23,7 +23,7 @@ pub enum ShowStat {
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     pub id: ItemId,
-    #[prop_or(ShowStat::AdditionalCourses)]
+    #[prop_or(ShowStat::Level)]
     pub show_stat: ShowStat,
 }
 
@@ -125,7 +125,7 @@ impl Component for Item {
                                 }
                             }
                         </span>
-                        <span>{ &item.data.name }</span>
+                        <span class="is-clipped-ellipsis">{ &item.data.name }</span>
                         <span class="ml-auto">
                             { match ctx.props().show_stat {
                                 ShowStat::Level => { lvl },

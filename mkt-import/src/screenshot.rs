@@ -258,7 +258,7 @@ fn item_id_from_image_h(
     ItemArea { x1, y1, .. }: ItemArea,
     img: &RgbImage,
     hashes: &[ItemHash],
-) -> Option<ItemId> {
+) -> (String, Option<ItemId>) {
     // item x: 10 - 150  y: 20 - 140
     let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
 
@@ -296,7 +296,7 @@ fn item_id_from_image_h(
     }
     println!("best item: {:?}", item);
 
-    item.map(|i| i.0.clone())
+    (hash, item.map(|i| i.0.clone()))
 }
 
 fn maybe_item_image(img: &RgbImage) -> bool {
@@ -322,10 +322,24 @@ fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
     item_template
 }
 
-enum OwnedItemResult {
-    Found(OwnedItem),
-    NotFound(RgbImage, ItemLvl),
-    Invalid,
+pub struct OwnedItemResult {
+    pub id: Option<ItemId>,
+    pub lvl: Option<ItemLvl>,
+    pub points: Option<u16>,
+    pub hash: String,
+    pub img: Option<RgbImage>,
+}
+
+fn result_owned_item(
+    OwnedItemResult {
+        id, lvl, points, ..
+    }: OwnedItemResult,
+) -> Option<OwnedItem> {
+    if let Some(id) = id {
+        Some(OwnedItem::new(id, lvl.unwrap_or(0), points.unwrap_or(0)))
+    } else {
+        None
+    }
 }
 
 fn item_image_to_owned_item(
@@ -333,18 +347,29 @@ fn item_image_to_owned_item(
     img: &RgbImage,
     lvl_templates: &[LvlTemplate],
     item_hashes: &[ItemHash],
-) -> OwnedItemResult {
-    use OwnedItemResult::*;
-
+) -> Option<OwnedItemResult> {
     println!("area: {:?}", area);
     let lvl = item_level_from_image(area, img, lvl_templates);
-    let id = item_id_from_image_h(area, img, item_hashes);
-    if let Some(id) = id {
-        Found(OwnedItem::new(id, lvl.unwrap_or(0), 0))
+    let points = None;
+    let (hash, id) = item_id_from_image_h(area, img, item_hashes);
+    if id.is_some() {
+        Some(OwnedItemResult {
+            id,
+            lvl,
+            points,
+            hash,
+            img: None,
+        })
     } else if maybe_item_image(img) {
-        NotFound(img.clone(), lvl.unwrap_or(0))
+        Some(OwnedItemResult {
+            id: None,
+            lvl,
+            points,
+            hash,
+            img: Some(img.clone()),
+        })
     } else {
-        Invalid
+        None
     }
 }
 
@@ -362,16 +387,16 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
 pub fn image_bytes_to_inventory(
     bytes: Vec<u8>,
     data: &MktData,
-) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
+) -> (MktInventory, Vec<OwnedItemResult>) {
     let screenshot = image::load_from_memory(&bytes).unwrap().into_rgb8();
     let list = vec![screenshot];
     screenshots_to_inventory(list, data)
 }
 
-pub fn screenshots_to_inventory(
+pub fn screenshots_to_owned_items(
     screenshots: Vec<RgbImage>,
     data: &MktData,
-) -> (MktInventory, Vec<(RgbImage, ItemLvl)>) {
+) -> Vec<OwnedItemResult> {
     let lvl_templates = get_lvl_templates();
     let item_hashes = data
         .drivers
@@ -385,22 +410,11 @@ pub fn screenshots_to_inventory(
         })
         .collect_vec();
 
-    let mut inv = MktInventory::new();
-    let mut missing = vec![];
+    let mut owned_items = vec![];
 
     for screenshot in screenshots {
         // identify square
         let item_areas = find_item_areas(&screenshot.convert());
-
-        // identify character/item and levels
-        let mut items = vec![];
-        // try to identify items in order
-        let mut item_offset = 0;
-        let mut last_found_item: Option<(usize, OwnedItem)> = None;
-        let mut try_items: Vec<(usize, OwnedItem, RgbImage)> = vec![];
-        let mut potential_item_ids = None;
-        // the end of the list
-        let the_end_id = "<the_end>";
         for (i, (area, item_result)) in item_areas
             .map(|area| (area, item_area_to_image(area, &screenshot)))
             .map(|(area, img)| {
@@ -409,85 +423,121 @@ pub fn screenshots_to_inventory(
                     item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes),
                 )
             })
-            .filter(|(_, item)| !matches!(item, OwnedItemResult::Invalid))
-            .chain(Some((
-                ItemArea {
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 0,
-                },
-                OwnedItemResult::Found(OwnedItem::new(the_end_id.into(), 0, 0)),
-            )))
+            .filter(|(_, item)| item.is_some())
             .enumerate()
         {
             println!("{} - x:{} y:{}", i, area.x1, area.y1);
-            match item_result {
-                OwnedItemResult::Found(item) => {
-                    // assumes that there is only one item type per screenshot
-                    if potential_item_ids.is_none() {
-                        let potential_items =
-                            match item_type_from_id(&item.id).unwrap_or(ItemType::Driver) {
-                                ItemType::Driver => &data.drivers,
-                                ItemType::Kart => &data.karts,
-                                ItemType::Glider => &data.gliders,
-                            };
-                        potential_item_ids = Some(
-                            potential_items
-                                .values()
-                                .sorted_by_key(|i| i.sort.map(|x| x as i32).unwrap_or(-1))
-                                .map(|i| i.id.clone())
-                                .chain(Some(the_end_id.into()))
-                                .collect_vec(),
-                        );
-                    }
-                    let potential_item_ids = potential_item_ids.as_ref().unwrap();
-                    // find known items
-                    if let Some(last_found_item) = last_found_item.as_ref() {
+            owned_items.push(item_result.expect("is some"));
+            println!("-------");
+        }
+    }
+
+    owned_items
+}
+
+pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: &MktData) {
+    // try to identify items in order
+    let mut item_offset = 0;
+    let mut last_found_type: Option<ItemType> = None;
+    let mut last_found_item: Option<(usize, &OwnedItemResult)> = None;
+    let mut try_items: Vec<(usize, &mut OwnedItemResult)> = vec![];
+    let mut potential_item_ids = None;
+    // the end of the list
+    let the_end_id = "<the_end>";
+    for (i, item_result) in owned_items
+        .iter_mut()
+        .chain(Some(&mut OwnedItemResult {
+            id: Some(the_end_id.into()),
+            lvl: None,
+            points: None,
+            hash: String::new(),
+            img: None,
+        }))
+        .enumerate()
+    {
+        // found item
+        if let Some(id) = &item_result.id {
+            if let Some(i_type) = item_type_from_id(id).or_else(|| {
+                if id == the_end_id {
+                    last_found_type
+                } else {
+                    None
+                }
+            }) {
+                // only load the potential ids when the type change, if ever
+                if Some(i_type) != last_found_type {
+                    let potential_items = match i_type {
+                        ItemType::Driver => &data.drivers,
+                        ItemType::Kart => &data.karts,
+                        ItemType::Glider => &data.gliders,
+                    };
+                    potential_item_ids = Some(
+                        potential_items
+                            .values()
+                            .sorted_by_key(|i| i.sort.map(|x| x as i32).unwrap_or(-1))
+                            .map(|i| i.id.clone())
+                            .chain(Some(the_end_id.into()))
+                            .collect_vec(),
+                    );
+                    last_found_type = Some(i_type);
+                    // reset expectation
+                    try_items = vec![];
+                } else if let Some(potential_item_ids) = &potential_item_ids {
+                    // check expectation
+                    if let Some(last_found_item) = last_found_item {
                         if !try_items.is_empty() {
-                            // check if expected item
+                            // check if expected item matches
                             if let Some(expected_item_id) =
                                 potential_item_ids.get(i - last_found_item.0 + item_offset)
                             {
-                                dbg!((&expected_item_id, &item.id));
-                                if *expected_item_id == item.id {
+                                if expected_item_id == id {
+                                    // all the items in between are know now
                                     for mut t_item in try_items {
                                         let item_id = &potential_item_ids
                                             [t_item.0 - last_found_item.0 + item_offset];
-                                        t_item.1.id = item_id.clone();
-                                        items.push(t_item.1);
-                                        // save_image_hash(item_id, &t_item.2);
+                                        t_item.1.id = Some(item_id.clone());
                                     }
                                 }
                             }
                             try_items = vec![];
                         }
                     }
+                }
+                if let Some(potential_item_ids) = &potential_item_ids {
                     item_offset = potential_item_ids
                         .iter()
-                        .find_position(|id| **id == item.id)
+                        .find_position(|p_id| *p_id == id)
                         .map(|i| i.0)
                         .unwrap_or(0);
-                    last_found_item = Some((i, item.clone()));
-                    if item.lvl > 0 {
-                        items.push(item);
-                    }
+                    last_found_item = Some((i, item_result));
+                } else {
+                    item_offset = 0;
+                    last_found_item = None;
                 }
-                OwnedItemResult::NotFound(img, lvl) => {
-                    if last_found_item.is_some() && lvl > 0 {
-                        let missing_item = OwnedItem::new("not_found".into(), lvl, 0);
-                        try_items.push((i, missing_item, img.clone()));
-                    }
-                    missing.push((img, lvl));
-                }
-                OwnedItemResult::Invalid => { /* filtered out */ }
             }
-
-            println!("-------");
+        } else {
+            // unknown item
+            try_items.push((i, item_result));
         }
-
-        inv.update_inventory(MktInventory::from_items(items, data));
     }
+}
+
+pub fn screenshots_to_inventory(
+    screenshots: Vec<RgbImage>,
+    data: &MktData,
+) -> (MktInventory, Vec<OwnedItemResult>) {
+    let mut inv = MktInventory::new();
+
+    let mut items = screenshots_to_owned_items(screenshots, data);
+    deduce_missing_owned_items(&mut items, data);
+
+    let (items, missing): (Vec<_>, Vec<_>) = items
+        .into_iter()
+        .partition(|i| i.id.is_some() && i.lvl.is_some());
+    inv.update_inventory(MktInventory::from_items(
+        items.into_iter().flat_map(result_owned_item).collect(),
+        data,
+    ));
 
     (inv, missing)
 }

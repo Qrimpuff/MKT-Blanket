@@ -60,7 +60,7 @@ impl Component for Course {
             html! {
                 <>
                     <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
-                        <span>{ &course.data.name }</span>
+                        <span class="is-clipped-ellipsis">{ &course.data.name }</span>
                         <span class="icon is-small ml-auto">
                             // TODO: add karts and gliders
                             {

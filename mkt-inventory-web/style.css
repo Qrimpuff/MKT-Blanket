@@ -22,3 +22,8 @@
 .stat {
   font-weight: normal !important;
 }
+
+.is-clipped-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
