@@ -31,15 +31,13 @@ fn test_screenshot_import(data: &MktData) {
 
     // let list = vec![screenshot];
 
-    let (inventory, missing) = screenshots_to_inventory(list, data);
+    let (inventory, new_hashes) = screenshots_to_inventory(list, data);
 
     dbg!(&inventory);
     dbg!(&inventory.drivers.len());
     dbg!(&inventory.karts.len());
     dbg!(&inventory.gliders.len());
 
-    dbg!(&missing.len());
-    for (i, result) in missing.iter().enumerate() {
-        save_missing_image_hash(i, result.img.as_ref().unwrap());
-    }
+    dbg!(&new_hashes);
+    dbg!(&new_hashes.hashes.len());
 }

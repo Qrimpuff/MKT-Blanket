@@ -335,11 +335,7 @@ fn result_owned_item(
         id, lvl, points, ..
     }: OwnedItemResult,
 ) -> Option<OwnedItem> {
-    if let Some(id) = id {
-        Some(OwnedItem::new(id, lvl.unwrap_or(0), points.unwrap_or(0)))
-    } else {
-        None
-    }
+    id.map(|id| OwnedItem::new(id, lvl.unwrap_or(0), points.unwrap_or(0)))
 }
 
 fn item_image_to_owned_item(
@@ -384,10 +380,7 @@ fn template_score(image: &GrayImage, template: &GrayImage) -> f32 {
     .unwrap()
 }
 
-pub fn image_bytes_to_inventory(
-    bytes: Vec<u8>,
-    data: &MktData,
-) -> (MktInventory, Vec<OwnedItemResult>) {
+pub fn image_bytes_to_inventory(bytes: Vec<u8>, data: &MktData) -> (MktInventory, MktItemHashes) {
     let screenshot = image::load_from_memory(&bytes).unwrap().into_rgb8();
     let list = vec![screenshot];
     screenshots_to_inventory(list, data)
@@ -525,21 +518,25 @@ pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: 
 pub fn screenshots_to_inventory(
     screenshots: Vec<RgbImage>,
     data: &MktData,
-) -> (MktInventory, Vec<OwnedItemResult>) {
+) -> (MktInventory, MktItemHashes) {
     let mut inv = MktInventory::new();
 
     let mut items = screenshots_to_owned_items(screenshots, data);
     deduce_missing_owned_items(&mut items, data);
 
-    let (items, missing): (Vec<_>, Vec<_>) = items
+    let hashes = items
+        .iter()
+        .filter(|i| i.id.is_some() && i.img.is_some())
+        .map(|i| (i.id.as_ref().expect("is some").clone(), i.hash.clone()))
+        .collect();
+    let items = items
         .into_iter()
-        .partition(|i| i.id.is_some() && i.lvl.is_some());
-    inv.update_inventory(MktInventory::from_items(
-        items.into_iter().flat_map(result_owned_item).collect(),
-        data,
-    ));
+        .filter(|i| i.id.is_some() && i.lvl.is_some())
+        .flat_map(result_owned_item)
+        .collect();
+    inv.update_inventory(MktInventory::from_items(items, data));
 
-    (inv, missing)
+    (inv, hashes)
 }
 
 pub fn create_template(item: &Item, img: RgbaImage) {

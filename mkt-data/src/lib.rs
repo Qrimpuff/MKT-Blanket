@@ -1,4 +1,4 @@
-use std::{convert::TryFrom, error::Error, fmt::Display, fs, mem};
+use std::{convert::TryFrom, error::Error, fmt::Display, fs, iter::FromIterator, mem};
 
 use chrono::{DateTime, Utc};
 use hashlink::{LinkedHashMap, LinkedHashSet};
@@ -325,6 +325,55 @@ pub struct MktItemHashes {
     pub hashes: LinkedHashMap<ItemId, Vec<ItemHash>>,
 }
 
+impl MktItemHashes {
+    pub fn new() -> Self {
+        Default::default()
+    }
+
+    pub fn from_json(json: &str) -> Result<MktItemHashes, Box<dyn Error>> {
+        Ok(serde_json::from_str(json)?)
+    }
+
+    pub fn load(file_name: &str) -> Result<MktItemHashes, Box<dyn Error>> {
+        let json = fs::read_to_string(file_name)?;
+        MktItemHashes::from_json(&json)
+    }
+
+    pub fn save(&self, file_name: &str) -> Result<(), Box<dyn Error>> {
+        let json = serde_json::to_string_pretty(self)?;
+        fs::write(file_name, json)?;
+        Ok(())
+    }
+
+    pub fn merge(&mut self, mut new_hashes: MktItemHashes) {
+        for (id, hashes) in &mut self.hashes {
+            if let Some(mut new_hashes) = new_hashes.hashes.remove(id) {
+                hashes.append(&mut new_hashes);
+            }
+        }
+        self.hashes.extend(new_hashes.hashes);
+    }
+}
+
+impl FromIterator<(ItemId, ItemHash)> for MktItemHashes {
+    fn from_iter<T: IntoIterator<Item = (ItemId, ItemHash)>>(iter: T) -> Self {
+        let mut h = MktItemHashes::new();
+        for (id, hash) in iter {
+            h.hashes.entry(id).or_insert(vec![]).push(hash);
+        }
+        h
+    }
+}
+impl FromIterator<(ItemId, Vec<ItemHash>)> for MktItemHashes {
+    fn from_iter<T: IntoIterator<Item = (ItemId, Vec<ItemHash>)>>(iter: T) -> Self {
+        let mut h = MktItemHashes::new();
+        for (id, hash) in iter {
+            h.hashes.entry(id).or_insert(vec![]).extend(hash);
+        }
+        h
+    }
+}
+
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktData {
     pub courses: LinkedHashMap<CourseId, Course>,
@@ -352,37 +401,25 @@ impl MktData {
         Ok(())
     }
 
-    pub fn load_hashes(&mut self) -> Result<(), Box<dyn Error>> {
-        let types = [
-            ("drivers", &mut self.drivers),
-            ("karts", &mut self.karts),
-            ("gliders", &mut self.gliders),
-        ];
-        for (p, list) in types {
-            for file in fs::read_dir(format!("templates/{}", p))? {
-                let file = file?.path();
-                let id = file.file_stem().unwrap().to_str().unwrap();
-                let hashes = fs::read_to_string(&file)?;
-                if let Some(mut item) = list.get_mut(id) {
-                    item.hashes = hashes
-                        .split_whitespace()
-                        .map(|s| s.to_string())
-                        .collect_vec();
-                }
-            }
-        }
-        Ok(())
-    }
-
     pub fn merge_hashes(&mut self, MktItemHashes { hashes }: &MktItemHashes) {
         let types = [&mut self.drivers, &mut self.karts, &mut self.gliders];
         for list in types {
             for item in list.values_mut() {
                 if let Some(hash) = hashes.get(&item.id) {
-                    item.hashes.append(&mut hash.clone());
+                    item.hashes.extend(hash.clone());
                 }
             }
         }
+    }
+
+    pub fn hashes(&self) -> MktItemHashes {
+        self.drivers
+            .values()
+            .chain(self.karts.values())
+            .chain(self.gliders.values())
+            .filter(|i| !i.hashes.is_empty())
+            .map(|i| (i.id.clone(), i.hashes.clone()))
+            .collect()
     }
 
     pub fn merge(&mut self, mut new_data: MktData) {

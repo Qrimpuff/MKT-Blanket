@@ -4,10 +4,21 @@ use mkt_update::*;
 fn main() {
     println!("MKT Data Update");
 
-    let mut data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
-    let update = test_update_data();
-    data.merge(update);
-    data.save("data/mkt_data.json").unwrap();
+    let mut data = test_update_data();
+
+    // don't overwrite with bad data
+    if !data.courses.is_empty()
+        && !data.drivers.is_empty()
+        && !data.karts.is_empty()
+        && !data.gliders.is_empty()
+    {
+        let hash =
+            MktItemHashes::load("data/mkt_hash.json").unwrap_or_else(|_| MktItemHashes::new());
+        dbg!(&hash);
+        data.merge_hashes(&hash);
+
+        data.save("data/mkt_data.json").unwrap();
+    }
 
     println!("Done");
 }
@@ -18,7 +29,5 @@ fn test_update_data() -> MktData {
     update_mkt_item_data(&mut data, ItemType::Kart);
     update_mkt_item_data(&mut data, ItemType::Glider);
     update_mkt_item_coverage_data(&mut data);
-    data.load_hashes().unwrap();
-    // println!("{:?}", data);
     data
 }
