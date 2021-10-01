@@ -35,16 +35,18 @@ impl Component for App {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <div class="container is-clipped px-2">
-                <h1 class="title">{ "MKT Inventory" }</h1>
-                <Summary/>
-                <CourseList/>
-                <ItemList i_type={ItemType::Driver}/>
-                <ItemList i_type={ItemType::Kart}/>
-                <ItemList i_type={ItemType::Glider}/>
-                <Import/>
-                <DataManager/>
-            </div>
+            <section class="section">
+                <div class="container is-clipped px-2">
+                    <h1 class="title">{ "MKT Inventory" }</h1>
+                    <Summary/>
+                    <CourseList/>
+                    <ItemList i_type={ItemType::Driver}/>
+                    <ItemList i_type={ItemType::Kart}/>
+                    <ItemList i_type={ItemType::Glider}/>
+                    <Import/>
+                    <DataManager/>
+                </div>
+            </section>
         }
     }
 }

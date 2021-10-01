@@ -2,6 +2,7 @@ pub mod course;
 pub mod course_list;
 pub mod data_manager;
 pub mod delete_data;
+pub mod delete_hash;
 pub mod delete_inv;
 pub mod download_data;
 pub mod download_hash;

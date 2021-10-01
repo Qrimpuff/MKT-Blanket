@@ -78,11 +78,20 @@ impl Component for Import {
                 true
             }
             Msg::Loaded(_file_name, bytes) => {
-                let (inv, _miss) = screenshot::image_bytes_to_inventory(
+                let hash = LocalStorage::get("mkt_hash").ok();
+                let (inv, new_hash) = screenshot::image_bytes_to_inventory(
                     bytes,
                     &self.data.as_ref().unwrap().borrow().data,
-                    LocalStorage::get("mkt_hash").ok().as_ref(),
+                    hash.as_ref(),
                 );
+
+                // update local hashes
+                if !new_hash.hashes.is_empty() {
+                    let mut hash = hash.unwrap_or_default();
+                    hash.merge(new_hash);
+                    LocalStorage::set("mkt_hash", hash).unwrap();
+                }
+
                 self.inventory.send(InventoryRequest::Add(Box::from(inv)));
                 self.completed += 1;
                 if self.completed == self.readers.len() {
