@@ -2,7 +2,9 @@ use mkt_data::{item_type_from_id, ItemId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
-use crate::agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared};
+use crate::agents::data_inventory::{
+    DataInvItem, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
+};
 use crate::comps::modal_popup::view_item_modal;
 
 use super::modal_popup::update_popup_layer;
@@ -13,7 +15,7 @@ pub enum Msg {
     DataInventory(Shared<DataInventory>),
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum ShowStat {
     Level,
     FavoriteCourses,
@@ -31,7 +33,7 @@ pub struct Item {
     item: Option<Shared<DataInvItem>>,
     i_type: Option<ItemType>,
     visible: bool,
-    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
+    data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Item {
@@ -44,7 +46,7 @@ impl Component for Item {
             item: None,
             i_type: item_type_from_id(&ctx.props().id),
             visible: false,
-            _data_inventory: DataInventoryAgent::bridge(callback),
+            data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
@@ -76,6 +78,7 @@ impl Component for Item {
 
     fn changed(&mut self, ctx: &Context<Self>) -> bool {
         self.i_type = item_type_from_id(&ctx.props().id);
+        self.data_inventory.send(DataInventoryRequest::Refresh);
         true
     }
 

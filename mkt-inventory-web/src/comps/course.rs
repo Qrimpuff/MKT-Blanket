@@ -3,7 +3,9 @@ use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
 use crate::{
-    agents::data_inventory::{DataInvCourse, DataInventory, DataInventoryAgent, Shared},
+    agents::data_inventory::{
+        DataInvCourse, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
+    },
     comps::modal_popup::view_course_modal,
 };
 
@@ -23,7 +25,7 @@ pub struct Props {
 pub struct Course {
     course: Option<Shared<DataInvCourse>>,
     visible: bool,
-    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
+    data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Course {
@@ -35,7 +37,7 @@ impl Component for Course {
         Self {
             course: None,
             visible: false,
-            _data_inventory: DataInventoryAgent::bridge(callback),
+            data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
@@ -52,6 +54,11 @@ impl Component for Course {
                 true
             }
         }
+    }
+
+    fn changed(&mut self, _ctx: &Context<Self>) -> bool {
+        self.data_inventory.send(DataInventoryRequest::Refresh);
+        true
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {

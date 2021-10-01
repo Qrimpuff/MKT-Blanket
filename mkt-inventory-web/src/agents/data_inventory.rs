@@ -20,6 +20,11 @@ pub enum Msg {
     Inventory(ReadOnly<Inventory>),
 }
 
+pub enum DataInventoryRequest {
+    Refresh,
+    RefreshAll,
+}
+
 pub type Shared<T> = Rc<RwLock<T>>;
 
 pub struct CourseStats {
@@ -161,14 +166,12 @@ impl DataInventory {
                         add_course_count += add;
                     }
                     max_add_course_count += add;
+                } else if lvl >= r.lvl {
+                    fav_course_count += 1;
                 } else {
-                    if lvl >= r.lvl {
-                        fav_course_count += 1;
-                    } else {
-                        max_add_course_count += add;
-                    }
-                    max_fav_course_count += 1;
+                    max_add_course_count += add;
                 }
+                max_fav_course_count += 1;
             }
 
             item.stats = Some(ItemStats {
@@ -200,7 +203,7 @@ pub struct DataInventoryAgent {
 impl Agent for DataInventoryAgent {
     type Reach = Context<Self>;
     type Message = Msg;
-    type Input = ();
+    type Input = DataInventoryRequest;
     type Output = Shared<DataInventory>;
 
     fn create(link: AgentLink<Self>) -> Self {
@@ -335,14 +338,21 @@ impl Agent for DataInventoryAgent {
 
                 state.update_stats();
 
+                self.link.send_input(DataInventoryRequest::RefreshAll);
+            }
+        }
+    }
+
+    fn handle_input(&mut self, msg: Self::Input, id: yew_agent::HandlerId) {
+        match msg {
+            DataInventoryRequest::Refresh => self.link.respond(id, self.state.clone()),
+            DataInventoryRequest::RefreshAll => {
                 for handler in self.handlers.iter() {
                     self.link.respond(*handler, self.state.clone());
                 }
             }
         }
     }
-
-    fn handle_input(&mut self, _msg: Self::Input, _id: yew_agent::HandlerId) {}
 
     fn connected(&mut self, id: HandlerId) {
         self.handlers.insert(id);
