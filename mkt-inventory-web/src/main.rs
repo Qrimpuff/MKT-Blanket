@@ -6,7 +6,10 @@
 mod agents;
 mod comps;
 
-use agents::data::{DataRequest, DataStore};
+use agents::{
+    data::{DataRequest, DataStore},
+    inventory::{Inventory, InventoryRequest},
+};
 use mkt_data::ItemType;
 use yew::prelude::*;
 use yew_agent::{
@@ -20,6 +23,7 @@ use crate::comps::{
 
 struct App {
     _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    _inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
 }
 
 impl Component for App {
@@ -30,7 +34,12 @@ impl Component for App {
         // initial load
         let mut _data_store = DataStore::bridge(Callback::noop());
         _data_store.send(DataRequest::Load);
-        Self { _data_store }
+        let mut _inventory = Inventory::bridge(Callback::noop());
+        _inventory.send(InventoryRequest::Load);
+        Self {
+            _data_store,
+            _inventory,
+        }
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {

@@ -1,25 +1,16 @@
 use gloo::{
     file::{self, callbacks::FileReader, File},
-    storage::{LocalStorage, Storage},
     timers::callback::Timeout,
 };
-use mkt_import::*;
 use yew::{
     prelude::*,
     web_sys::{self, HtmlInputElement},
 };
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
-};
+use yew_agent::{Bridge, Bridged};
 
-use crate::agents::{
-    data::DataStore,
-    inventory::{Inventory, InventoryRequest},
-};
+use crate::agents::import::{ImportAgent, ImportRequest};
 
 pub enum Msg {
-    DataStore(ReadOnly<DataStore>),
     Files(Vec<File>),
     Loaded(String, Vec<u8>),
     Done,
@@ -32,37 +23,24 @@ pub struct Import {
     readers: Vec<FileReader>,
     completed: usize,
     timeout: Option<Timeout>,
-    data: Option<ReadOnly<DataStore>>,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
-    inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
+    import: Box<dyn Bridge<ImportAgent>>,
 }
 
 impl Component for Import {
     type Message = Msg;
     type Properties = Props;
 
-    fn create(ctx: &Context<Self>) -> Self {
-        let mut inventory = Inventory::bridge(Callback::noop());
-        inventory.send(InventoryRequest::Load);
-
-        let callback = ctx.link().callback(Msg::DataStore);
-
+    fn create(_ctx: &Context<Self>) -> Self {
         Self {
             readers: vec![],
             completed: 0,
             timeout: None,
-            inventory,
-            _data_store: DataStore::bridge(callback),
-            data: None,
+            import: ImportAgent::bridge(Callback::noop()),
         }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(state) => {
-                self.data = Some(state);
-                false
-            }
             Msg::Files(files) => {
                 for file in files.into_iter() {
                     let task = {
@@ -78,21 +56,8 @@ impl Component for Import {
                 true
             }
             Msg::Loaded(_file_name, bytes) => {
-                let hash = LocalStorage::get("mkt_hash").ok();
-                let (inv, new_hash) = screenshot::image_bytes_to_inventory(
-                    bytes,
-                    &self.data.as_ref().unwrap().borrow().data,
-                    hash.as_ref(),
-                );
+                self.import.send(ImportRequest::ImportScreenshot(bytes));
 
-                // update local hashes
-                if !new_hash.hashes.is_empty() {
-                    let mut hash = hash.unwrap_or_default();
-                    hash.merge(new_hash);
-                    LocalStorage::set("mkt_hash", hash).unwrap();
-                }
-
-                self.inventory.send(InventoryRequest::Add(Box::from(inv)));
                 self.completed += 1;
                 if self.completed == self.readers.len() {
                     let handle = {
