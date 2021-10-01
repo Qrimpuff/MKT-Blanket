@@ -1,4 +1,3 @@
-use gloo::console;
 use itertools::Itertools;
 use mkt_data::{course_generation_from_id, course_type_from_id, CourseType};
 use yew::prelude::*;

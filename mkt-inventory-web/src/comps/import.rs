@@ -1,4 +1,8 @@
-use gloo::{file::{self, callbacks::FileReader, File}, storage::{LocalStorage, Storage}, timers::callback::Timeout};
+use gloo::{
+    file::{self, callbacks::FileReader, File},
+    storage::{LocalStorage, Storage},
+    timers::callback::Timeout,
+};
 use mkt_import::*;
 use yew::{
     prelude::*,
