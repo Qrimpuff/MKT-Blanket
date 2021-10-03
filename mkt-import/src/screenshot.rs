@@ -7,10 +7,11 @@ use std::{cmp::Ordering, fs};
 use image::{
     buffer::ConvertBuffer,
     imageops::{self, FilterType},
-    DynamicImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
+    DynamicImage, GenericImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
 };
 use imageproc::{
     contrast::threshold_mut,
+    drawing::draw_hollow_rect_mut,
     map,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
@@ -23,9 +24,14 @@ const DEFAULT_ITEM_HEIGHT: u32 = 200;
 const DEFAULT_ITEM_RATIO: f32 = DEFAULT_ITEM_WIDTH as f32 / DEFAULT_ITEM_HEIGHT as f32;
 const ITEM_RATIO_THRESHOLD: f32 = 0.1;
 
+const HASH_ITEM_X: u32 = 20;
+const HASH_ITEM_Y: u32 = 30;
+const HASH_ITEM_WIDTH: u32 = 120;
+const HASH_ITEM_HEIGHT: u32 = 100;
+
 const LVL_THRESHOLD: f32 = 0.6;
 const ITEM_THRESHOLD: f32 = 0.05;
-const ITEM_HASH_THRESHOLD: u32 = 600;
+const ITEM_HASH_THRESHOLD: u32 = 2000;
 
 const DEBUG_IMG: bool = false;
 
@@ -157,13 +163,127 @@ fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
     item_rows
 }
 
-fn find_item_areas(img: &GrayImage) -> impl Iterator<Item = ItemArea> {
-    if DEBUG_IMG {
-        img.save("pics/find_item_areas.png").unwrap();
+fn find_item_rows_new_and_bad(img: &GrayImage) -> Vec<ItemArea> {
+    let (width, height) = img.dimensions();
+    let mut item_rows = vec![];
+    let mut prev_is_item = None;
+    let mut item_line = None;
+
+    let item_width = {
+        let mut streaks = vec![];
+        for (_y, ps) in img.enumerate_rows() {
+            let mut current_w_streak = 0;
+            for (_x, _y, p) in ps {
+                let Luma([luma]) = *p;
+                if luma > 0 {
+                    current_w_streak += 1;
+                } else {
+                    if current_w_streak > 0 {
+                        streaks.push(current_w_streak);
+                    }
+                    current_w_streak = 0;
+                }
+            }
+        }
+        streaks.sort_unstable();
+        average(
+            streaks.iter().skip((streaks.len() as f64 * 0.90) as usize),
+            |_| true,
+        )
+    };
+    dbg!(&item_width);
+
+    let mut is_in_item = false;
+    for (y, ps) in img.enumerate_rows() {
+        let mut is_item_line = false;
+        let mut current_w_streak = 0;
+        let mut current_b_streak = 0;
+        let mut long_current_w_streak = 0;
+        for (_x, _y, p) in ps {
+            let Luma([luma]) = *p;
+            if luma > 0 {
+                if long_current_w_streak > 0 {
+                    long_current_w_streak += current_b_streak;
+                }
+                long_current_w_streak += 1;
+                current_w_streak += 1;
+                current_b_streak = 0;
+            } else {
+                if current_b_streak > item_width * 2 {
+                    long_current_w_streak = 0;
+                }
+                current_b_streak += 1;
+                current_w_streak = 0;
+            }
+            if current_w_streak >= item_width || is_in_item && long_current_w_streak >= item_width {
+                is_item_line = true;
+                break;
+            }
+        }
+        is_in_item = is_item_line;
+        println!("{}", is_in_item);
+        if prev_is_item != Some(is_item_line) {
+            if is_item_line {
+                item_line = Some(y);
+            } else if let Some(l) = item_line {
+                // remove small boxes
+                if y - l > 3 {
+                    // merge small gaps
+                    if let Some(ir @ ItemArea { y1, y2, .. }) = item_rows.pop() {
+                        if l - y2 > 3 {
+                            item_rows.push(ir);
+                            item_rows.push(ItemArea {
+                                x1: 0,
+                                y1: l,
+                                x2: width,
+                                y2: y,
+                            });
+                        } else {
+                            item_rows.push(ItemArea {
+                                x1: 0,
+                                y1,
+                                x2: width,
+                                y2: y,
+                            });
+                        }
+                    } else {
+                        item_rows.push(ItemArea {
+                            x1: 0,
+                            y1: l,
+                            x2: width,
+                            y2: y,
+                        });
+                    }
+                }
+                item_line = None;
+            }
+        }
+        prev_is_item = Some(is_item_line);
+    }
+    if let Some(l) = item_line {
+        item_rows.push(ItemArea {
+            x1: 0,
+            y1: l,
+            x2: width,
+            y2: height,
+        });
     }
 
-    let rows = find_item_rows(img).into_iter();
-    let img = &imageops::rotate90(img);
+    dbg!(item_rows.len());
+    dbg!(item_rows)
+}
+
+fn find_item_areas(img: &RgbImage) -> impl Iterator<Item = ItemArea> {
+    // used for find_item_rows_new_and_bad
+    // let mut img = map::red_channel(img);
+    // let threshold = 50;
+    // threshold_mut(&mut img, threshold);
+    let img = img.convert();
+    if DEBUG_IMG {
+        img.save(format!("pics/test_blue_{}.png", 1)).unwrap();
+    }
+    let rows = find_item_rows(&img).into_iter();
+    let img = &imageops::rotate90(&img);
     let columns = find_item_rows(img).into_iter().map(ItemArea::swap_x_y);
 
     rows.cartesian_product(columns)
@@ -259,8 +379,14 @@ fn item_id_from_image_h(
     img: &RgbImage,
     hashes: &[ItemHash],
 ) -> (String, Option<ItemId>) {
-    // item x: 10 - 150  y: 20 - 140
-    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let item_img = imageops::crop_imm(
+        img,
+        HASH_ITEM_X,
+        HASH_ITEM_Y,
+        HASH_ITEM_WIDTH,
+        HASH_ITEM_HEIGHT,
+    )
+    .to_image();
 
     let hash = to_image_hash(&item_img);
 
@@ -322,6 +448,7 @@ fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
     item_template
 }
 
+#[derive(Debug)]
 pub struct OwnedItemResult {
     pub id: Option<ItemId>,
     pub lvl: Option<ItemLvl>,
@@ -385,32 +512,139 @@ pub fn image_bytes_to_inventory(
     data: &MktData,
     hashes: Option<&MktItemHashes>,
 ) -> (MktInventory, MktItemHashes) {
-    let screenshot = image::load_from_memory(&bytes).unwrap().into_rgb8();
-    let list = vec![screenshot];
+    images_bytes_to_inventory(vec![bytes], data, hashes)
+}
+pub fn images_bytes_to_inventory(
+    bytes: Vec<Vec<u8>>,
+    data: &MktData,
+    hashes: Option<&MktItemHashes>,
+) -> (MktInventory, MktItemHashes) {
+    let list = bytes
+        .into_iter()
+        .map(|bytes| image::load_from_memory(&bytes).unwrap().into_rgb8())
+        .collect();
     screenshots_to_inventory(list, data, hashes)
+}
+
+pub fn images_bytes_to_bootstrap_hashes(
+    bytes: Vec<Vec<u8>>,
+    i_type: ItemType,
+    data: &MktData,
+) -> Result<MktItemHashes, BootstrapError> {
+    let list = bytes
+        .into_iter()
+        .map(|bytes| image::load_from_memory(&bytes).unwrap().into_rgb8())
+        .collect();
+    screenshots_to_bootstrap_hashes(list, i_type, data)
+}
+
+#[derive(Debug)]
+pub enum BootstrapError {
+    WrongLength(usize, usize),
+    MissingId,
+}
+
+pub fn screenshots_to_bootstrap_hashes(
+    screenshots: Vec<RgbImage>,
+    i_type: ItemType,
+    data: &MktData,
+) -> Result<MktItemHashes, BootstrapError> {
+    let id_list = match i_type {
+        ItemType::Driver => &data.drivers,
+        ItemType::Kart => &data.karts,
+        ItemType::Glider => &data.gliders,
+    }
+    .keys()
+    .collect_vec();
+
+    let combine = vec![combine_screenshots(screenshots)];
+    let items = screenshots_to_owned_items(combine, None);
+
+    // remove duplicate rows
+    let mut new_hashes: Vec<String> = vec![];
+    let mut items = items
+        .into_iter()
+        .chunks(4)
+        .into_iter()
+        .flat_map(|c| {
+            let chunk = c.collect_vec();
+            if chunk.iter().all(|i| {
+                new_hashes
+                    .iter()
+                    .any(|h| dist_hash(&i.hash, h) < ITEM_HASH_THRESHOLD)
+            }) {
+                println!("bad row x{}", chunk.len());
+                None
+            } else {
+                chunk.iter().for_each(|i| new_hashes.push(i.hash.clone()));
+                Some(chunk.into_iter())
+            }
+        })
+        .flatten()
+        .collect_vec();
+
+    // verify the length of the list
+    if items.len() != id_list.len() {
+        return Err(BootstrapError::WrongLength(items.len(), id_list.len()));
+    }
+
+    // set first and last item
+    let first_id = id_list.get(0).unwrap().to_string();
+    let last_id = id_list.last().unwrap().to_string();
+    items.get_mut(0).unwrap().id = Some(first_id);
+    items.last_mut().unwrap().id = Some(last_id);
+
+    // fill everything in between
+    deduce_missing_owned_items(&mut items, data);
+
+    items.iter_mut().for_each(|i| i.img = None);
+    println!("{:#?}", items);
+
+    let hashes: Option<_> = items
+        .iter()
+        .map(|i| try { (i.id.as_ref()?.clone(), i.hash.clone()) })
+        .collect();
+    hashes.ok_or(BootstrapError::MissingId)
+}
+
+pub fn combine_screenshots(screenshots: Vec<RgbImage>) -> RgbImage {
+    let max_w = screenshots
+        .iter()
+        .map(|i| i.width())
+        .max()
+        .unwrap_or_default();
+    let max_h = screenshots.iter().map(|i| i.height()).sum();
+    let mut out = RgbImage::new(max_w, max_h);
+    let mut y = 0;
+    for s in screenshots {
+        let s = imageops::resize(&s, max_w, s.height(), FilterType::Gaussian);
+        out.copy_from(&s, 0, y).unwrap();
+        y += s.height();
+    }
+    if DEBUG_IMG {
+        out.save("pics/big_out.png").unwrap();
+    }
+    out
 }
 
 pub fn screenshots_to_owned_items(
     screenshots: Vec<RgbImage>,
-    data: &MktData,
-    hashes: Option<&MktItemHashes>,
+    hashes: Option<MktItemHashes>,
 ) -> Vec<OwnedItemResult> {
     let lvl_templates = get_lvl_templates();
-    let item_hashes = data
-        .drivers
-        .values()
-        .chain(data.karts.values())
-        .chain(data.gliders.values())
-        .map(|i| (&i.id, &i.hashes))
-        .chain(hashes.into_iter().flat_map(|h| h.hashes.iter()))
-        .flat_map(|(id, hashes)| hashes.iter().map(move |h| ItemHash(id.clone(), h.clone())))
+    let item_hashes = hashes
+        .into_iter()
+        .flat_map(|h| h.hashes.into_iter())
+        .flat_map(|(id, hashes)| hashes.into_iter().map(move |h| ItemHash(id.clone(), h)))
         .collect_vec();
 
     let mut owned_items = vec![];
 
-    for screenshot in screenshots {
+    for (i, screenshot) in screenshots.into_iter().enumerate() {
+        let mut debug_img = DEBUG_IMG.then(|| screenshot.clone());
+
         // identify square
-        let item_areas = find_item_areas(&screenshot.convert());
+        let item_areas = find_item_areas(&screenshot);
         for (i, (area, item_result)) in item_areas
             .map(|area| (area, item_area_to_image(area, &screenshot)))
             .map(|(area, img)| {
@@ -422,9 +656,21 @@ pub fn screenshots_to_owned_items(
             .filter(|(_, item)| item.is_some())
             .enumerate()
         {
+            if DEBUG_IMG {
+                if let Some(debug_img) = debug_img.as_mut() {
+                    draw_hollow_rect_mut(debug_img, area.to_rect(), image::Rgb([255, 0, 0]));
+                }
+            }
             println!("{} - x:{} y:{}", i, area.x1, area.y1);
             owned_items.push(item_result.expect("is some"));
             println!("-------");
+        }
+        if DEBUG_IMG {
+            if let Some(debug_img) = debug_img {
+                debug_img
+                    .save(format!("pics/find_item_areas_{}.png", i))
+                    .unwrap();
+            }
         }
     }
 
@@ -525,7 +771,11 @@ pub fn screenshots_to_inventory(
 ) -> (MktInventory, MktItemHashes) {
     let mut inv = MktInventory::new();
 
-    let mut items = screenshots_to_owned_items(screenshots, data, hashes);
+    let mut data_hashes = data.hashes();
+    if let Some(hashes) = hashes.cloned() {
+        data_hashes.merge(hashes);
+    }
+    let mut items = screenshots_to_owned_items(screenshots, Some(data_hashes));
     deduce_missing_owned_items(&mut items, data);
 
     let hashes = items
@@ -606,41 +856,34 @@ pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
 }
 
 pub fn test_img_hash() {
-    let img1 = "tests/test_0x2416cd99f60_193_183.png";
-    let img2 = [
-        "tests/test_0x2416cda4f20_667_228.png",
-        "tests/d_yoshi_70.png",
-        "tests/d_yoshi_115.png",
-        "tests/d_yoshi_160.png",
-        "tests/d_blue_yoshi_70.png",
-        "tests/d_blue_yoshi_115.png",
-        "tests/d_blue_yoshi_160.png",
-        "tests/d_red_yoshi_70.png",
-        "tests/d_red_yoshi_115.png",
-        "tests/d_red_yoshi_160.png",
-        "tests/mkt_driver_single.jpg",
-    ];
+    let imgs = (1..=8)
+        .map(|i| format!("tests/yoshi ({}).png", i))
+        .collect_vec();
 
-    println!("img 1: {}", img1);
+    for img1 in &imgs {
+        println!("---------------------------");
+        println!("img 1: {}", img1);
 
-    for img2 in img2 {
-        println!("------");
-        println!("img 2: {}", img2);
-        let image1 = image::open(img1).unwrap();
-        let image2 = image::open(img2).unwrap();
+        for img2 in &imgs {
+            println!("------");
+            println!("img 2: {}", img2);
+            let image1 = image::open(img1).unwrap();
+            let image2 = image::open(img2).unwrap();
 
-        let image1 = image1.crop_imm(0, 0, 160, 150);
-        let image2 = image2.crop_imm(0, 0, 160, 150);
+            let image1 = image1.crop_imm(0, 0, 160, 150);
+            let image2 = image2.crop_imm(0, 0, 160, 150);
 
-        let h1 = to_image_hash(&image1.into_rgb8());
-        let h2 = to_image_hash(&image2.into_rgb8());
+            let h1 = to_image_hash(&image1.into_rgb8());
+            let h2 = to_image_hash(&image2.into_rgb8());
 
-        let dist = dist_hash(&h1, &h2);
+            let dist = dist_hash(&h1, &h2);
 
-        println!("Image1 hash: {}", h1);
-        println!("Image2 hash: {}", h2);
+            println!("Image1 hash: {}", h1);
+            println!("Image2 hash: {}", h2);
 
-        println!("Distance: {}", dist);
+            println!("Distance: {}", dist);
+        }
+        println!("---------------------------");
     }
 }
 
@@ -650,19 +893,37 @@ fn to_image_hash(img: &RgbImage) -> String {
         .hash_alg(img_hash::HashAlg::DoubleGradient)
         .to_hasher();
 
-    let r = hasher.hash_image(&map::red_channel(img));
-    let g = hasher.hash_image(&map::green_channel(img));
-    let b = hasher.hash_image(&map::blue_channel(img));
+    let red = map::red_channel(img);
+    let green = map::green_channel(img);
+    let blue = map::blue_channel(img);
 
-    format!("{}|{}|{}", r.to_base64(), g.to_base64(), b.to_base64())
+    let rh = hasher.hash_image(&red);
+    let gh = hasher.hash_image(&green);
+    let bh = hasher.hash_image(&blue);
+
+    let avg_r = hash_average_luma(&red);
+    let avg_g = hash_average_luma(&green);
+    let avg_b = hash_average_luma(&blue);
+
+    let l_rg = color_angle(avg_r, avg_g);
+    let l_rb = color_angle(avg_r, avg_b);
+
+    format!(
+        "{}|{}|{}|{}|{}",
+        rh.to_base64(),
+        gh.to_base64(),
+        bh.to_base64(),
+        color_angle_to_hash(l_rg),
+        color_angle_to_hash(l_rb),
+    )
 }
 
 fn dist_hash(h1: &str, h2: &str) -> u32 {
     let dist: Option<_> = try {
-        let (r1, g1, b1) = h1.split('|').next_tuple()?;
-        let (r2, g2, b2) = h2.split('|').next_tuple()?;
+        let (r1, g1, b1, l_rg1, l_rb1) = h1.split('|').next_tuple()?;
+        let (r2, g2, b2, l_rg2, l_rb2) = h2.split('|').next_tuple()?;
 
-        [
+        let dist_h = [
             ImageHash::<Box<[u8]>>::from_base64(r1)
                 .ok()?
                 .dist(&ImageHash::from_base64(r2).ok()?),
@@ -675,14 +936,95 @@ fn dist_hash(h1: &str, h2: &str) -> u32 {
         ]
         .iter()
         .map(|d| d + 1)
-        .product()
+        .product::<u32>() as f64;
+
+        let dist_d = dist_angle(
+            (hash_to_color_angle(l_rg1), hash_to_color_angle(l_rb1)),
+            (hash_to_color_angle(l_rg2), hash_to_color_angle(l_rb2)),
+        )
+        .powf(2.0)
+            + 1.0;
+
+        // println!("{}, {} = {}", dist_h, dist_d, (dist_h * dist_d) as u32);
+        (dist_h * dist_d) as u32
     };
     dist.unwrap_or(u32::MAX)
 }
 
+fn hash_average_luma(img: &GrayImage) -> u8 {
+    average_luma(img, |i| {
+        (i as f64) < img.len() as f64 * 0.2 || (i as f64) > img.len() as f64 * 0.8
+    })
+}
+
+fn average_luma<P>(img: &GrayImage, predicate: P) -> u8
+where
+    P: Fn(usize) -> bool,
+{
+    average(img.pixels().map(|p| p.0[0] as usize), predicate)
+}
+
+fn average<I, O, P>(iter: I, predicate: P) -> u8
+where
+    I: IntoIterator<Item = O>,
+    O: Ord,
+    usize: std::iter::Sum<O>,
+    P: Fn(usize) -> bool,
+{
+    let mut p = iter.into_iter().collect_vec();
+    let len = p.len();
+    p.sort_unstable();
+    let sum: usize = p
+        .into_iter()
+        .enumerate()
+        .filter(|(i, _)| predicate(*i))
+        .map(|(_, p)| p)
+        .sum();
+    (sum / len) as u8
+}
+fn color_angle_to_hash(a: f64) -> String {
+    let h = (a * 100.0) as u16;
+    format!("{:x}", h)
+}
+fn hash_to_color_angle(s: &str) -> f64 {
+    let a = u16::from_str_radix(s, 16).unwrap_or_default();
+    a as f64 / 100.0
+}
+
+fn color_angle(color_1: u8, color_2: u8) -> f64 {
+    ((color_1 + 1) as f64 / (color_2 + 1) as f64)
+        .atan()
+        .to_degrees()
+}
+
+fn dist_angle(
+    (latitude_degrees_1, longitude_degrees_1): (f64, f64),
+    (latitude_degrees_2, longitude_degrees_2): (f64, f64),
+) -> f64 {
+    let radius = 100.0_f64;
+
+    let latitude_1 = latitude_degrees_1.to_radians();
+    let latitude_2 = latitude_degrees_2.to_radians();
+
+    let delta_latitude = (latitude_degrees_1 - latitude_degrees_2).to_radians();
+    let delta_longitude = (longitude_degrees_1 - longitude_degrees_2).to_radians();
+
+    let central_angle_inner = (delta_latitude / 2.0).sin().powi(2)
+        + latitude_1.cos() * latitude_2.cos() * (delta_longitude / 2.0).sin().powi(2);
+    let central_angle = 2.0 * central_angle_inner.sqrt().asin();
+
+    radius * central_angle
+}
+
 fn save_image_hash(item: &Item, img: &RgbImage) {
-    // item x: 10 - 150  y: 20 - 140
-    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let item_img = imageops::crop_imm(
+        img,
+        HASH_ITEM_X,
+        HASH_ITEM_Y,
+        HASH_ITEM_WIDTH,
+        HASH_ITEM_HEIGHT,
+    )
+    .to_image();
     let h = to_image_hash(&item_img);
     fs::create_dir_all(format!("templates/{}s", item.i_type)).unwrap();
     fs::write(format!("templates/{}s/{}.txt", item.i_type, item.id), h).unwrap();
@@ -691,8 +1033,14 @@ fn save_image_hash(item: &Item, img: &RgbImage) {
 pub fn save_missing_image_hash(i: usize, img: &RgbImage) {
     fs::create_dir_all("missing").unwrap();
     img.save(format!("missing/missing_item_{}.png", i)).unwrap();
-    // item x: 10 - 150  y: 20 - 140
-    let item_img = imageops::crop_imm(img, 10, 20, 140, 120).to_image();
+    let item_img = imageops::crop_imm(
+        img,
+        HASH_ITEM_X,
+        HASH_ITEM_Y,
+        HASH_ITEM_WIDTH,
+        HASH_ITEM_HEIGHT,
+    )
+    .to_image();
     let h = to_image_hash(&item_img);
     fs::write(format!("missing/missing_item_{}.txt", i), h).unwrap();
 }

@@ -18,6 +18,7 @@ pub enum Msg {
 #[derive(Serialize, Deserialize)]
 pub enum ImportRequest {
     ImportScreenshot(Vec<u8>),
+    BootstrapItemHashes(Vec<Vec<u8>>),
 }
 
 pub struct ImportAgent {
@@ -71,6 +72,7 @@ impl Agent for ImportAgent {
                 self.link.send_message(Msg::UpdateInventory(inv));
                 self.link.send_message(Msg::UpdateHashes(new_hash));
             }
+            ImportRequest::BootstrapItemHashes(_imgs) => todo!(),
         }
     }
 

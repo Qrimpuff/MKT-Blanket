@@ -320,7 +320,7 @@ impl Item {
     }
 }
 
-#[derive(Debug, Default, Serialize, Deserialize)]
+#[derive(Debug, Default, Clone, Serialize, Deserialize)]
 pub struct MktItemHashes {
     pub hashes: LinkedHashMap<ItemId, Vec<ItemHash>>,
 }
@@ -332,6 +332,10 @@ impl MktItemHashes {
 
     pub fn from_json(json: &str) -> Result<MktItemHashes, Box<dyn Error>> {
         Ok(serde_json::from_str(json)?)
+    }
+
+    pub fn to_json(&self) -> Result<String, Box<dyn Error>> {
+        Ok(serde_json::to_string_pretty(self)?)
     }
 
     pub fn load(file_name: &str) -> Result<MktItemHashes, Box<dyn Error>> {
