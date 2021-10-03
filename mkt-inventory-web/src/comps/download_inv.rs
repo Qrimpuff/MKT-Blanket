@@ -28,7 +28,7 @@ impl Component for DownloadInv {
                 if let Ok(inv) = LocalStorage::get("mkt_inventory") {
                     let inv: MktInventory = inv;
                     let json = serde_json::to_string_pretty(&inv).unwrap();
-                    download_file("mkt_inventory.json", &json);
+                    download_file("mkt_inventory.json", json.as_str());
                 }
                 false
             }

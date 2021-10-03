@@ -1,4 +1,4 @@
-use gloo::file::Blob;
+use gloo::file::{Blob, BlobContents};
 use wasm_bindgen::JsCast;
 use web_sys::Url;
 use yew::{prelude::*, utils::document};
@@ -31,7 +31,7 @@ pub fn view_data_manager() -> Html {
     }
 }
 
-pub fn download_file(file_name: &str, content: &str) {
+pub fn download_file(file_name: &str, content: impl BlobContents) {
     let a = document()
         .create_element("a")
         .unwrap()

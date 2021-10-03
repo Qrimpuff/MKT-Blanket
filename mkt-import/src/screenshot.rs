@@ -2,16 +2,15 @@
 
 use mkt_data::*;
 
-use std::{cmp::Ordering, fs};
+use std::{cmp::Ordering, collections::HashMap, fs};
 
 use image::{
-    buffer::ConvertBuffer,
     imageops::{self, FilterType},
     DynamicImage, GenericImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
 };
 use imageproc::{
     contrast::threshold_mut,
-    drawing::draw_hollow_rect_mut,
+    drawing::draw_filled_rect_mut,
     map,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
@@ -31,7 +30,7 @@ const HASH_ITEM_HEIGHT: u32 = 100;
 
 const LVL_THRESHOLD: f32 = 0.6;
 const ITEM_THRESHOLD: f32 = 0.05;
-const ITEM_HASH_THRESHOLD: u32 = 2000;
+const ITEM_HASH_THRESHOLD: u32 = 500;
 
 const DEBUG_IMG: bool = false;
 
@@ -163,14 +162,14 @@ fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
     item_rows
 }
 
-fn find_item_rows_new_and_bad(img: &GrayImage) -> Vec<ItemArea> {
+fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
     let (width, height) = img.dimensions();
     let mut item_rows = vec![];
     let mut prev_is_item = None;
     let mut item_line = None;
 
     let item_width = {
-        let mut streaks = vec![];
+        let mut streaks: HashMap<_, u32> = HashMap::new();
         for (_y, ps) in img.enumerate_rows() {
             let mut current_w_streak = 0;
             for (_x, _y, p) in ps {
@@ -178,23 +177,26 @@ fn find_item_rows_new_and_bad(img: &GrayImage) -> Vec<ItemArea> {
                 if luma > 0 {
                     current_w_streak += 1;
                 } else {
-                    if current_w_streak > 0 {
-                        streaks.push(current_w_streak);
+                    if current_w_streak > 0 && current_w_streak >= min_width {
+                        *streaks.entry(current_w_streak).or_default() += 1;
                     }
                     current_w_streak = 0;
                 }
             }
         }
-        streaks.sort_unstable();
-        average(
-            streaks.iter().skip((streaks.len() as f64 * 0.90) as usize),
-            |_| true,
-        )
+        println!("{:?}", streaks);
+        streaks
+            .iter()
+            .max_by_key(|(_, v)| *v)
+            .map_or(0, |(k, _)| *k)
     };
     dbg!(&item_width);
 
+    let mut item_count = 0;
     let mut is_in_item = false;
     for (y, ps) in img.enumerate_rows() {
+        let mut streak_count = 0;
+        let mut in_streaks = false;
         let mut is_item_line = false;
         let mut current_w_streak = 0;
         let mut current_b_streak = 0;
@@ -209,23 +211,35 @@ fn find_item_rows_new_and_bad(img: &GrayImage) -> Vec<ItemArea> {
                 current_w_streak += 1;
                 current_b_streak = 0;
             } else {
-                if current_b_streak > item_width * 2 {
+                if current_b_streak > item_width {
                     long_current_w_streak = 0;
                 }
                 current_b_streak += 1;
                 current_w_streak = 0;
             }
-            if current_w_streak >= item_width || is_in_item && long_current_w_streak >= item_width {
+            let is_streak = !is_in_item && current_w_streak >= item_width * 4 / 5;
+            if in_streaks != is_streak {
+                if is_streak {
+                    streak_count += 1;
+                }
+                in_streaks = is_streak;
+            }
+            if streak_count > 0
+                || is_in_item && long_current_w_streak >= item_count * item_width * 4 / 5
+            {
                 is_item_line = true;
-                break;
+                if is_in_item {
+                    break;
+                }
             }
         }
         is_in_item = is_item_line;
-        println!("{}", is_in_item);
         if prev_is_item != Some(is_item_line) {
             if is_item_line {
+                item_count = dbg!(streak_count);
                 item_line = Some(y);
             } else if let Some(l) = item_line {
+                item_count = 0;
                 // remove small boxes
                 if y - l > 3 {
                     // merge small gaps
@@ -270,21 +284,23 @@ fn find_item_rows_new_and_bad(img: &GrayImage) -> Vec<ItemArea> {
     }
 
     dbg!(item_rows.len());
-    dbg!(item_rows)
+    dbg!((item_rows, item_width))
 }
 
 fn find_item_areas(img: &RgbImage) -> impl Iterator<Item = ItemArea> {
     // used for find_item_rows_new_and_bad
-    // let mut img = map::red_channel(img);
-    // let threshold = 50;
-    // threshold_mut(&mut img, threshold);
-    let img = img.convert();
+    let mut img = map::red_channel(img);
+    let threshold = 50;
+    threshold_mut(&mut img, threshold);
+    // let img = img.convert();
     if DEBUG_IMG {
         img.save(format!("pics/test_blue_{}.png", 1)).unwrap();
     }
-    let rows = find_item_rows(&img).into_iter();
+    let (rows, item_width) = find_item_rows_new(&img, 50);
+    let rows = rows.into_iter();
     let img = &imageops::rotate90(&img);
-    let columns = find_item_rows(img).into_iter().map(ItemArea::swap_x_y);
+    let (columns, _item_width) = find_item_rows_new(img, item_width);
+    let columns = columns.into_iter().map(ItemArea::swap_x_y);
 
     rows.cartesian_product(columns)
         .flat_map(|(c, r)| c.intersect(&r))
@@ -311,8 +327,8 @@ fn item_level_from_image(
     img: &RgbImage,
     templates: &[LvlTemplate],
 ) -> Option<ItemLvl> {
-    // lvl x: 125 - 160  y: 130 - 170
-    let mut img = map::green_channel(&imageops::crop_imm(img, 125, 130, 35, 40).to_image());
+    // lvl x: 125 - 160  y: 120 - 170
+    let mut img = map::green_channel(&imageops::crop_imm(img, 125, 120, 35, 40).to_image());
     threshold_mut(&mut img, 150);
 
     // template testing levels
@@ -658,7 +674,7 @@ pub fn screenshots_to_owned_items(
         {
             if DEBUG_IMG {
                 if let Some(debug_img) = debug_img.as_mut() {
-                    draw_hollow_rect_mut(debug_img, area.to_rect(), image::Rgb([255, 0, 0]));
+                    draw_filled_rect_mut(debug_img, area.to_rect(), image::Rgb([255, 0, 0]));
                 }
             }
             println!("{} - x:{} y:{}", i, area.x1, area.y1);
@@ -855,7 +871,7 @@ pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
     (center_x, center_y)
 }
 
-pub fn test_img_hash() {
+pub fn _test_img_hash() {
     let imgs = (1..=8)
         .map(|i| format!("tests/yoshi ({}).png", i))
         .collect_vec();

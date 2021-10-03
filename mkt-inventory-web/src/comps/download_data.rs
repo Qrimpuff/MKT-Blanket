@@ -28,7 +28,7 @@ impl Component for DownloadData {
                 if let Ok(data) = LocalStorage::get("mkt_data") {
                     let data: MktData = data;
                     let json = serde_json::to_string_pretty(&data).unwrap();
-                    download_file("mkt_data.json", &json);
+                    download_file("mkt_data.json", json.as_str());
                 }
                 false
             }

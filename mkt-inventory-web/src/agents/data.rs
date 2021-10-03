@@ -1,3 +1,4 @@
+use chrono::Utc;
 use gloo::storage::{LocalStorage, Storage};
 use mkt_data::MktData;
 use reqwest::Url;
@@ -64,7 +65,8 @@ impl DataStore {
     pub async fn load_data() -> MktData {
         // TODO: add compression
         let base = Url::parse(&utils::origin().unwrap()).unwrap();
-        let url = base.join("mkt_data.json").unwrap();
+        let mut url = base.join("mkt_data.json").unwrap();
+        url.set_query(Some(&format!("day={}", Utc::today())));
         let resp = reqwest::get(url).await.unwrap();
         let json = resp.text().await.unwrap();
         MktData::from_json(&json).unwrap()

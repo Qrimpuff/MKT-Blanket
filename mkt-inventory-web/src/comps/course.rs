@@ -72,11 +72,13 @@ impl Component for Course {
                             // TODO: add karts and gliders
                             {
                                 if let Some(stats) = &course.stats {
-                                    if stats.driver_owned_count == stats.driver_count {
+                                    if stats.driver_owned_count == stats.driver_count
+                                    && stats.kart_owned_count == stats.kart_count
+                                    && stats.glider_owned_count == stats.glider_count {
                                         html! {<i class="fas fa-star has-text-success"></i>}
-                                    } else if stats.driver_owned_count > 0 {
+                                    } else if stats.driver_owned_count > 0 && stats.kart_owned_count > 0 && stats.glider_owned_count > 0 {
                                         html! {<i class="fas fa-check has-text-success"></i>}
-                                    } else if stats.driver_owned_count == 0 {
+                                    } else if stats.driver_owned_count == 0 && stats.kart_owned_count == 0 && stats.glider_owned_count == 0 {
                                         html! {<i class="fas fa-times has-text-danger"></i>}
                                     } else {
                                         html! {}

@@ -933,6 +933,7 @@ dependencies = [
 name = "mkt-inventory-web"
 version = "0.1.0"
 dependencies = [
+ "chrono",
  "gloo",
  "itertools 0.10.1",
  "js-sys",

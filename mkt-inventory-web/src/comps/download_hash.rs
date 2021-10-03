@@ -32,7 +32,7 @@ impl Component for DownloadHash {
                         data_hash.merge(hash);
                     };
                     let json = serde_json::to_string_pretty(&data_hash).unwrap();
-                    download_file("mkt_hash.json", &json);
+                    download_file("mkt_hash.json", json.as_str());
                 }
                 false
             }
