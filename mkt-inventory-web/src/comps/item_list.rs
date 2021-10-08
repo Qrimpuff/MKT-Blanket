@@ -1,5 +1,3 @@
-use std::cmp::Reverse;
-
 use mkt_data::ItemType;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -15,14 +13,22 @@ pub enum Msg {
     DataInventory(Shared<DataInventory>),
     ToggleDisplay,
     ShowStat(ShowStat),
-    ToggleSort,
+    SortStat(SortStat),
 }
 
 #[derive(Copy, Clone, PartialEq)]
 enum SortOrder {
-    Default,
     Up,
     Down,
+}
+
+#[derive(Copy, Clone, PartialEq)]
+pub enum SortStat {
+    Default,
+    Name,
+    Level,
+    FavoriteCourses,
+    AdditionalCourses,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -34,6 +40,7 @@ pub struct ItemList {
     items: Vec<Shared<DataInvItem>>,
     visible: bool,
     show_stat: ShowStat,
+    sort_stat: SortStat,
     sort: SortOrder,
     _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
@@ -48,7 +55,8 @@ impl Component for ItemList {
             items: Vec::new(),
             visible: false,
             show_stat: ShowStat::Level,
-            sort: SortOrder::Default,
+            sort_stat: SortStat::Default,
+            sort: SortOrder::Up,
             _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
@@ -78,22 +86,28 @@ impl Component for ItemList {
                 if self.show_stat != show_stat {
                     self.show_stat = show_stat;
 
-                    if self.sort != SortOrder::Default {
-                        self.sort = SortOrder::Default;
-                        self.sort_items();
-                    }
-
                     true
                 } else {
                     false
                 }
             }
-            Msg::ToggleSort => {
-                self.sort = match self.sort {
-                    SortOrder::Default => SortOrder::Down,
-                    SortOrder::Up => SortOrder::Default,
-                    SortOrder::Down => SortOrder::Up,
-                };
+            Msg::SortStat(sort_stat) => {
+                if self.sort_stat != sort_stat {
+                    self.sort_stat = sort_stat;
+                    self.sort = SortOrder::Up;
+                } else {
+                    self.sort = match self.sort {
+                        SortOrder::Up => SortOrder::Down,
+                        SortOrder::Down => SortOrder::Up,
+                    };
+                }
+                match self.sort_stat {
+                    SortStat::Level => self.show_stat = ShowStat::Level,
+                    SortStat::FavoriteCourses => self.show_stat = ShowStat::FavoriteCourses,
+                    SortStat::AdditionalCourses => self.show_stat = ShowStat::AdditionalCourses,
+                    _ => {}
+                }
+
                 self.sort_items();
                 true
             }
@@ -110,9 +124,16 @@ impl Component for ItemList {
             html! {
                 <>
                 <div class="buttons has-addons">
-                    { self.view_sort_button(ctx, "Level", ShowStat::Level) }
-                    { self.view_sort_button(ctx, "Favorites", ShowStat::FavoriteCourses) }
-                    { self.view_sort_button(ctx, "Additional", ShowStat::AdditionalCourses) }
+                    { self.view_sort_button(ctx, "Default", SortStat::Default) }
+                    { self.view_sort_button(ctx, "Name", SortStat::Name) }
+                    { self.view_sort_button(ctx, "Level", SortStat::Level) }
+                    { self.view_sort_button(ctx, "Favorites", SortStat::FavoriteCourses) }
+                    { self.view_sort_button(ctx, "Additional", SortStat::AdditionalCourses) }
+                </div>
+                <div class="buttons has-addons">
+                    { self.view_show_button(ctx, "Level", ShowStat::Level) }
+                    { self.view_show_button(ctx, "Favorites", ShowStat::FavoriteCourses) }
+                    { self.view_show_button(ctx, "Additional", ShowStat::AdditionalCourses) }
                 </div>
                 <div class="columns is-multiline">
                 { for self.items.iter().map(|i| {
@@ -144,10 +165,18 @@ impl Component for ItemList {
 }
 
 impl ItemList {
-    fn view_sort_button(&self, ctx: &Context<Self>, text: &str, show_stat: ShowStat) -> Html {
-        let sort = match (self.show_stat == show_stat, self.sort) {
+    fn view_show_button(&self, ctx: &Context<Self>, text: &str, show_stat: ShowStat) -> Html {
+        html! {
+            <button
+                class={classes!("button", (self.show_stat == show_stat).then_some("is-info is-selected"))}
+                onclick={ctx.link().callback(move |_| Msg::ShowStat(show_stat))}>
+                <span>{ text }</span>
+            </button>
+        }
+    }
+    fn view_sort_button(&self, ctx: &Context<Self>, text: &str, sort_stat: SortStat) -> Html {
+        let sort = match (self.sort_stat == sort_stat, self.sort) {
             (false, _) => html! {},
-            (_, SortOrder::Default) => html! {},
             (_, SortOrder::Up) => {
                 html! {<span class="icon is-small"><i class="fas fa-sort-up"></i></span>}
             }
@@ -157,14 +186,8 @@ impl ItemList {
         };
         html! {
             <button
-                class={classes!("button", (self.show_stat == show_stat).then_some("is-info is-selected"))}
-                onclick={
-                    if self.show_stat == show_stat {
-                        ctx.link().callback(|_| Msg::ToggleSort)
-                    } else {
-                        ctx.link().callback(move |_| Msg::ShowStat(show_stat))
-                    }
-                }>
+                class={classes!("button", (self.sort_stat == sort_stat).then_some("is-info is-selected"))}
+                onclick={ctx.link().callback(move |_| Msg::SortStat(sort_stat))}>
                 <span>{ text }</span>
                 { sort }
             </button>
@@ -172,62 +195,31 @@ impl ItemList {
     }
 
     fn sort_items(&mut self) {
-        match self.sort {
-            SortOrder::Default => {
-                self.items.sort_by_key(|c| c.read().unwrap().data.sort);
-            }
-            SortOrder::Up => match self.show_stat {
-                ShowStat::Level => {
-                    self.items
-                        .sort_by_key(|c| c.read().unwrap().inv.as_ref().map(|i| i.lvl));
-                }
-                ShowStat::FavoriteCourses => {
-                    self.items.sort_by_key(|c| {
-                        c.read()
-                            .unwrap()
-                            .stats
-                            .as_ref()
-                            .map(|s| (s.max_fav_course_count, s.fav_course_count))
-                    });
-                }
-                ShowStat::AdditionalCourses => {
-                    self.items.sort_by_key(|c| {
-                        c.read()
-                            .unwrap()
-                            .stats
-                            .as_ref()
-                            .map(|s| (s.max_add_course_count, s.add_course_count))
-                    });
-                }
-            },
-            SortOrder::Down => match self.show_stat {
-                ShowStat::Level => {
-                    self.items
-                        .sort_by_key(|c| Reverse(c.read().unwrap().inv.as_ref().map(|i| i.lvl)));
-                }
-                ShowStat::FavoriteCourses => {
-                    self.items.sort_by_key(|c| {
-                        Reverse(
-                            c.read()
-                                .unwrap()
-                                .stats
-                                .as_ref()
-                                .map(|s| (s.max_fav_course_count, s.fav_course_count)),
-                        )
-                    });
-                }
-                ShowStat::AdditionalCourses => {
-                    self.items.sort_by_key(|c| {
-                        Reverse(
-                            c.read()
-                                .unwrap()
-                                .stats
-                                .as_ref()
-                                .map(|s| (s.max_add_course_count, s.add_course_count)),
-                        )
-                    });
-                }
-            },
+        match self.sort_stat {
+            SortStat::Default => self.items.sort_by_key(|c| c.read().unwrap().data.sort),
+            SortStat::Name => self
+                .items
+                .sort_by_key(|c| c.read().unwrap().data.name.clone()),
+            SortStat::Level => self
+                .items
+                .sort_by_key(|c| c.read().unwrap().inv.as_ref().map(|i| i.lvl)),
+            SortStat::FavoriteCourses => self.items.sort_by_key(|c| {
+                c.read()
+                    .unwrap()
+                    .stats
+                    .as_ref()
+                    .map(|s| (s.max_fav_course_count, s.fav_course_count))
+            }),
+            SortStat::AdditionalCourses => self.items.sort_by_key(|c| {
+                c.read()
+                    .unwrap()
+                    .stats
+                    .as_ref()
+                    .map(|s| (s.max_add_course_count, s.add_course_count))
+            }),
+        };
+        if matches!(self.sort, SortOrder::Down) {
+            self.items.reverse();
         }
     }
 }

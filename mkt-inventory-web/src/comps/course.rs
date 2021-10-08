@@ -1,4 +1,4 @@
-use mkt_data::CourseId;
+use mkt_data::{CourseId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
@@ -20,6 +20,10 @@ pub enum Msg {
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     pub id: CourseId,
+    #[prop_or(0)]
+    pub lvl_req: u8,
+    #[prop_or(None)]
+    pub i_type: Option<ItemType>,
 }
 
 pub struct Course {
@@ -68,17 +72,33 @@ impl Component for Course {
                 <>
                     <button class="button is-fullwidth" onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                         <span class="is-clipped-ellipsis">{ &course.data.name }</span>
+                        <span>{if ctx.props().lvl_req > 1 { html! { <i class="ml-4">{format!(" Lvl. {}", ctx.props().lvl_req)}</i> } } else { html! {} }}</span>
                         <span class="icon is-small ml-auto">
-                            // TODO: add karts and gliders
                             {
                                 if let Some(stats) = &course.stats {
-                                    if stats.driver_owned_count == stats.driver_count
-                                    && stats.kart_owned_count == stats.kart_count
-                                    && stats.glider_owned_count == stats.glider_count {
+                                    let count = match ctx.props().i_type {
+                                        None => stats.driver_count + stats.kart_count + stats.glider_count,
+                                        Some(ItemType::Driver) => stats.driver_count,
+                                        Some(ItemType::Kart) => stats.kart_count,
+                                        Some(ItemType::Glider) => stats.glider_count,
+                                    };
+                                    let owned_count = match ctx.props().i_type {
+                                        None => stats.driver_owned_count + stats.kart_owned_count + stats.glider_owned_count,
+                                        Some(ItemType::Driver) => stats.driver_owned_count,
+                                        Some(ItemType::Kart) => stats.kart_owned_count,
+                                        Some(ItemType::Glider) => stats.glider_owned_count,
+                                    };
+                                    let covered = match ctx.props().i_type {
+                                        None => stats.driver_owned_count > 0 && stats.kart_owned_count > 0 && stats.glider_owned_count > 0,
+                                        Some(ItemType::Driver) => stats.driver_owned_count > 0,
+                                        Some(ItemType::Kart) => stats.kart_owned_count > 0,
+                                        Some(ItemType::Glider) => stats.glider_owned_count > 0,
+                                    };
+                                    if owned_count == count {
                                         html! {<i class="fas fa-star has-text-success"></i>}
-                                    } else if stats.driver_owned_count > 0 && stats.kart_owned_count > 0 && stats.glider_owned_count > 0 {
+                                    } else if covered {
                                         html! {<i class="fas fa-check has-text-success"></i>}
-                                    } else if stats.driver_owned_count == 0 && stats.kart_owned_count == 0 && stats.glider_owned_count == 0 {
+                                    } else if owned_count == 0 {
                                         html! {<i class="fas fa-times has-text-danger"></i>}
                                     } else {
                                         html! {}

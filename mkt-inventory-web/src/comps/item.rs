@@ -27,6 +27,8 @@ pub struct Props {
     pub id: ItemId,
     #[prop_or(ShowStat::Level)]
     pub show_stat: ShowStat,
+    #[prop_or(0)]
+    pub lvl_req: u8,
 }
 
 pub struct Item {
@@ -86,7 +88,12 @@ impl Component for Item {
         if let Some(item) = &self.item {
             let item = item.read().unwrap();
             let lvl = if let Some(lvl) = item.inv.as_ref().map(|i| i.lvl).filter(|lvl| *lvl > 0) {
-                html! {<span class="stat-lvl">{ lvl }</span>}
+                let class = if lvl >= ctx.props().lvl_req {
+                    "stat-lvl"
+                } else {
+                    "stat-lvl-maybe"
+                };
+                html! {<span {class}>{ lvl }</span>}
             } else {
                 html! {}
             };
@@ -129,6 +136,7 @@ impl Component for Item {
                             }
                         </span>
                         <span class="is-clipped-ellipsis">{ &item.data.name }</span>
+                        <span>{if ctx.props().lvl_req > 1 { html! { <i class="ml-4">{format!(" Lvl. {}", ctx.props().lvl_req)}</i> } } else { html! {} }}</span>
                         <span class="ml-auto">
                             { match ctx.props().show_stat {
                                 ShowStat::Level => { lvl },

@@ -1,3 +1,5 @@
+use itertools::Itertools;
+use mkt_data::{item_type_from_id, ItemType};
 use yew::prelude::*;
 
 use crate::{
@@ -42,18 +44,18 @@ where
             let item = item.read().unwrap();
             let inv = if let Some(inv) = &item.inv {
                 html! {
-                    <>
+                    <div class="block">
                         <div>{ format!("Level: {}", inv.lvl) }</div>
                         <div>{ format!("Points: {}", inv.points)}</div>
-                    </>
+                    </div>
                 }
             } else {
                 html! {}
             };
             let courses = html! {
-                <ul>
-                { for item.data.favorite_courses.iter().map(|r| html!{ <li><Course id={r.id.clone()} /></li> }) }
-                </ul>
+                <div class="columns is-multiline">
+                { for item.data.favorite_courses.iter().map(|r| html!{ <div class="column is-full py-1"><Course id={r.id.clone()} lvl_req={r.lvl} i_type={item.data.i_type} /></div> }) }
+                </div>
             };
             let toggle_cb = ctx.link().callback(move |_| toggle.clone());
             html! {
@@ -103,10 +105,42 @@ where
     if visible {
         if let Some(course) = &course {
             let course = course.read().unwrap();
+            let mut drivers = course
+                .data
+                .favorite_items
+                .iter()
+                .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Driver))
+                .collect_vec();
+            drivers.sort_by_key(|i| &i.id);
+            let mut karts = course
+                .data
+                .favorite_items
+                .iter()
+                .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Kart))
+                .collect_vec();
+            karts.sort_by_key(|i| &i.id);
+            let mut gliders = course
+                .data
+                .favorite_items
+                .iter()
+                .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Glider))
+                .collect_vec();
+            gliders.sort_by_key(|i| &i.id);
             let items = html! {
-                <ul>
-                { for course.data.favorite_items.iter().map(|r| html!{ <li><Item id={r.id.clone()} /></li> }) }
-                </ul>
+                <>
+                <p class="subtitle is-6">{"Drivers"}</p>
+                <div class="columns is-multiline">
+                { for drivers.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                </div>
+                <p class="subtitle is-6">{"Karts"}</p>
+                <div class="columns is-multiline">
+                { for karts.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                </div>
+                <p class="subtitle is-6">{"Gliders"}</p>
+                <div class="columns is-multiline">
+                { for gliders.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                </div>
+                </>
             };
             let toggle_cb = ctx.link().callback(move |_| toggle.clone());
             html! {
