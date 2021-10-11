@@ -1,11 +1,17 @@
-use std::{convert::TryFrom, error::Error, fmt::Display, fs, iter::FromIterator, mem};
+use std::{
+    collections::{BTreeMap, HashMap, HashSet},
+    convert::TryFrom,
+    error::Error,
+    fmt::Display,
+    fs,
+    iter::FromIterator,
+};
 
 use chrono::{DateTime, Utc};
-use hashlink::{LinkedHashMap, LinkedHashSet};
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use regex::Regex;
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, Serializer};
 
 pub type CourseId = String;
 pub type ItemId = String;
@@ -93,7 +99,27 @@ pub fn course_generation_from_id(id: &str) -> CourseGeneration {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+fn ordered_map<S, K, V>(value: &HashMap<K, V>, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+    K: Ord + Serialize,
+    V: Serialize,
+{
+    let ordered: BTreeMap<_, _> = value.iter().collect();
+    ordered.serialize(serializer)
+}
+
+fn ordered_set<S, V>(value: &HashSet<V>, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+    V: Ord + Serialize,
+{
+    let mut ordered: Vec<_> = value.iter().collect();
+    ordered.sort();
+    ordered.serialize(serializer)
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct ItemRequirement {
     pub id: ItemId,
     pub lvl: ItemLvl,
@@ -105,7 +131,7 @@ impl From<(ItemId, ItemLvl)> for ItemRequirement {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct CourseAvailability {
     pub id: CourseId,
     pub lvl: ItemLvl,
@@ -159,8 +185,9 @@ pub struct Course {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sort: Option<u32>,
     pub id: CourseId,
-    pub name: String,                                   // current english name
-    pub favorite_items: LinkedHashSet<ItemRequirement>, // previous names (for updating/merging)
+    pub name: String, // current english name
+    #[serde(serialize_with = "ordered_set")]
+    pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Course {
@@ -169,7 +196,7 @@ impl Course {
             sort,
             id: course_id_from_name(&name),
             name,
-            favorite_items: LinkedHashSet::new(),
+            favorite_items: HashSet::new(),
             last_changed: Some(Utc::now()),
         }
     }
@@ -252,7 +279,8 @@ pub struct Item {
     pub i_type: ItemType,
     pub name: String, // current english name
     pub rarity: Rarity,
-    pub favorite_courses: LinkedHashSet<CourseAvailability>,
+    #[serde(serialize_with = "ordered_set")]
+    pub favorite_courses: HashSet<CourseAvailability>,
     pub hashes: Vec<ItemHash>, // used for screenshot import
     pub last_changed: Option<DateTime<Utc>>,
 }
@@ -264,7 +292,7 @@ impl Item {
             i_type,
             name,
             rarity,
-            favorite_courses: LinkedHashSet::new(),
+            favorite_courses: HashSet::new(),
             hashes: vec![],
             last_changed: Some(Utc::now()),
         }
@@ -322,7 +350,8 @@ impl Item {
 
 #[derive(Debug, Default, Clone, Serialize, Deserialize)]
 pub struct MktItemHashes {
-    pub hashes: LinkedHashMap<ItemId, Vec<ItemHash>>,
+    #[serde(serialize_with = "ordered_map")]
+    pub hashes: HashMap<ItemId, Vec<ItemHash>>,
 }
 
 impl MktItemHashes {
@@ -363,7 +392,7 @@ impl FromIterator<(ItemId, ItemHash)> for MktItemHashes {
     fn from_iter<T: IntoIterator<Item = (ItemId, ItemHash)>>(iter: T) -> Self {
         let mut h = MktItemHashes::new();
         for (id, hash) in iter {
-            h.hashes.entry(id).or_insert(vec![]).push(hash);
+            h.hashes.entry(id).or_insert_with(Vec::new).push(hash);
         }
         h
     }
@@ -372,7 +401,7 @@ impl FromIterator<(ItemId, Vec<ItemHash>)> for MktItemHashes {
     fn from_iter<T: IntoIterator<Item = (ItemId, Vec<ItemHash>)>>(iter: T) -> Self {
         let mut h = MktItemHashes::new();
         for (id, hash) in iter {
-            h.hashes.entry(id).or_insert(vec![]).extend(hash);
+            h.hashes.entry(id).or_insert_with(Vec::new).extend(hash);
         }
         h
     }
@@ -380,10 +409,14 @@ impl FromIterator<(ItemId, Vec<ItemHash>)> for MktItemHashes {
 
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktData {
-    pub courses: LinkedHashMap<CourseId, Course>,
-    pub drivers: LinkedHashMap<ItemId, Item>,
-    pub karts: LinkedHashMap<ItemId, Item>,
-    pub gliders: LinkedHashMap<ItemId, Item>,
+    #[serde(serialize_with = "ordered_map")]
+    pub courses: HashMap<CourseId, Course>,
+    #[serde(serialize_with = "ordered_map")]
+    pub drivers: HashMap<ItemId, Item>,
+    #[serde(serialize_with = "ordered_map")]
+    pub karts: HashMap<ItemId, Item>,
+    #[serde(serialize_with = "ordered_map")]
+    pub gliders: HashMap<ItemId, Item>,
 }
 impl MktData {
     pub fn new() -> Self {
@@ -458,28 +491,6 @@ impl MktData {
             }
         }
         self.gliders.extend(new_data.gliders);
-
-        // sort by course
-        let mut swap = Default::default();
-        mem::swap(&mut swap, &mut self.courses);
-        self.courses
-            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
-
-        // sort by items
-        let mut swap = Default::default();
-        mem::swap(&mut swap, &mut self.drivers);
-        self.drivers
-            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
-
-        let mut swap = Default::default();
-        mem::swap(&mut swap, &mut self.karts);
-        self.karts
-            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
-
-        let mut swap = Default::default();
-        mem::swap(&mut swap, &mut self.gliders);
-        self.gliders
-            .extend(swap.into_iter().sorted_by_key(|(_, i)| i.sort));
     }
 }
 
@@ -539,9 +550,12 @@ impl OwnedItem {
 
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MktInventory {
-    pub drivers: LinkedHashMap<ItemId, OwnedItem>,
-    pub karts: LinkedHashMap<ItemId, OwnedItem>,
-    pub gliders: LinkedHashMap<ItemId, OwnedItem>,
+    #[serde(serialize_with = "ordered_map")]
+    pub drivers: HashMap<ItemId, OwnedItem>,
+    #[serde(serialize_with = "ordered_map")]
+    pub karts: HashMap<ItemId, OwnedItem>,
+    #[serde(serialize_with = "ordered_map")]
+    pub gliders: HashMap<ItemId, OwnedItem>,
 }
 impl MktInventory {
     pub fn new() -> Self {
