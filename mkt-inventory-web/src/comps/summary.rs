@@ -1,14 +1,10 @@
+use crate::agents::data_inventory::Shared;
+use crate::agents::data_inventory::{DataInventory, DataInventoryAgent};
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, ReadOnly, StoreWrapper},
-    Bridge,
-};
-
-use crate::agents::{data::DataStore, inventory::Inventory};
+use yew_agent::{Bridge, Bridged};
 
 pub enum Msg {
-    DataStore(ReadOnly<DataStore>),
-    Inventory(ReadOnly<Inventory>),
+    DataInventory(Shared<DataInventory>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -19,11 +15,11 @@ pub struct Summary {
     driver_count: usize,
     kart_count: usize,
     glider_count: usize,
+    course_covered_count: usize,
     driver_owned_count: usize,
     kart_owned_count: usize,
     glider_owned_count: usize,
-    _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
-    _inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Summary {
@@ -31,52 +27,73 @@ impl Component for Summary {
     type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
-        let callback_data = ctx.link().callback(Msg::DataStore);
-        let callback_inv = ctx.link().callback(Msg::Inventory);
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             course_count: 0,
             driver_count: 0,
             kart_count: 0,
             glider_count: 0,
+            course_covered_count: 0,
             driver_owned_count: 0,
             kart_owned_count: 0,
             glider_owned_count: 0,
-            _data_store: DataStore::bridge(callback_data),
-            _inventory: Inventory::bridge(callback_inv),
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::DataStore(state) => {
-                let state = state.borrow();
-                if self.course_count != state.data.courses.len()
-                    || self.driver_count != state.data.drivers.len()
-                    || self.kart_count != state.data.karts.len()
-                    || self.glider_count != state.data.gliders.len()
-                {
-                    self.course_count = state.data.courses.len();
-                    self.driver_count = state.data.drivers.len();
-                    self.kart_count = state.data.karts.len();
-                    self.glider_count = state.data.gliders.len();
-                    true
-                } else {
-                    false
+            Msg::DataInventory(state) => {
+                let state = state.read().unwrap();
+
+                self.course_count = state.courses.len();
+                self.course_covered_count = 0;
+                for course in state.courses.values() {
+                    let course = course.read().unwrap();
+                    if let Some(stats) = &course.stats {
+                        if stats.driver_owned_count > 0
+                            && stats.kart_owned_count > 0
+                            && stats.glider_owned_count > 0
+                        {
+                            self.course_covered_count += 1;
+                        }
+                    }
                 }
-            }
-            Msg::Inventory(state) => {
-                let state = state.borrow();
-                if self.driver_owned_count != state.inv.drivers.len()
-                    || self.kart_owned_count != state.inv.karts.len()
-                    || self.glider_owned_count != state.inv.gliders.len()
-                {
-                    self.driver_owned_count = state.inv.drivers.len();
-                    self.kart_owned_count = state.inv.karts.len();
-                    self.glider_owned_count = state.inv.gliders.len();
-                    true
-                } else {
-                    false
+
+                self.driver_count = state.drivers.len();
+                self.driver_owned_count = 0;
+                for driver in state.drivers.values() {
+                    let driver = driver.read().unwrap();
+                    if let Some(inv) = &driver.inv {
+                        if inv.lvl > 0 {
+                            self.driver_owned_count += 1;
+                        }
+                    }
                 }
+
+                self.kart_count = state.karts.len();
+                self.kart_owned_count = 0;
+                for kart in state.karts.values() {
+                    let kart = kart.read().unwrap();
+                    if let Some(inv) = &kart.inv {
+                        if inv.lvl > 0 {
+                            self.kart_owned_count += 1;
+                        }
+                    }
+                }
+
+                self.glider_count = state.gliders.len();
+                self.glider_owned_count = 0;
+                for glider in state.gliders.values() {
+                    let glider = glider.read().unwrap();
+                    if let Some(inv) = &glider.inv {
+                        if inv.lvl > 0 {
+                            self.glider_owned_count += 1;
+                        }
+                    }
+                }
+
+                true
             }
         }
     }
@@ -84,13 +101,16 @@ impl Component for Summary {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <h2 class="subtitle">{ "Summary" }</h2>
-                <ul>
-                    <li>{ format!("courses: {}/{}", 0, self.course_count) }</li>
-                    <li>{ format!("drivers: {}/{}", self.driver_owned_count, self.driver_count) }</li>
-                    <li>{ format!("karts: {}/{}", self.kart_owned_count, self.kart_count) }</li>
-                    <li>{ format!("gliders: {}/{}", self.glider_owned_count, self.glider_count) }</li>
-                </ul>
+                <h2 class="title is-4">{"Welcome"}</h2>
+                <div class="block">
+                    <h3 class="subtitle">{ "Summary" }</h3>
+                    <ul>
+                        <li>{ format!("Courses: {}/{} ({:.1}%)", self.course_covered_count, self.course_count, self.course_covered_count as f64 / self.course_count as f64 * 100.0) }</li>
+                        <li>{ format!("Drivers: {}/{} ({:.1}%)", self.driver_owned_count, self.driver_count, self.driver_owned_count as f64 / self.driver_count as f64 * 100.0) }</li>
+                        <li>{ format!("Karts: {}/{} ({:.1}%)", self.kart_owned_count, self.kart_count, self.kart_owned_count as f64 / self.kart_count as f64 * 100.0) }</li>
+                        <li>{ format!("Gliders: {}/{} ({:.1}%)", self.glider_owned_count, self.glider_count, self.glider_owned_count as f64 / self.glider_count as f64 * 100.0) }</li>
+                    </ul>
+                </div>
             </>
         }
     }

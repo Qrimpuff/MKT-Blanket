@@ -104,7 +104,7 @@ impl Component for Course {
                                     } else if owned_count == 0 {
                                         html! {<i class="fas fa-times has-text-danger"></i>}
                                     } else {
-                                        html! {}
+                                        html! {<i class="fas fa-info-circle has-text-danger"></i>}
                                     }
                                 } else {
                                     html! {}
@@ -119,6 +119,12 @@ impl Component for Course {
             html! {
                 <p>{ "no_course" }</p>
             }
+        }
+    }
+
+    fn destroy(&mut self, ctx: &Context<Self>) {
+        if self.visible {
+            self.popup_listener = update_popup_layer(false, ctx, Msg::ToggleModal);
         }
     }
 }

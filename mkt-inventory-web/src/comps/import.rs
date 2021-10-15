@@ -79,8 +79,9 @@ impl Component for Import {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
+            <>
+            <h2 class="title is-4">{"Import / Export"}</h2>
             <div class="block">
-                <h2 class="subtitle">{ "Import Inventory" }</h2>
                 <p>{ "Choose a screenshot to import" }</p>
                 <div class="file">
                 <label class="file-label">
@@ -114,6 +115,7 @@ impl Component for Import {
                     html! {}
                 }}
             </div>
+            </>
         }
     }
 }

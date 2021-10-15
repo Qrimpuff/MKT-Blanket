@@ -10,7 +10,7 @@ use crate::{
 
 pub enum Msg {
     DataInventory(Shared<DataInventory>),
-    Toggle,
+    _Toggle,
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -30,7 +30,7 @@ impl Component for CourseList {
         let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             courses: Vec::new(),
-            visible: false,
+            visible: true,
             _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
@@ -47,14 +47,14 @@ impl Component for CourseList {
                     false
                 }
             }
-            Msg::Toggle => {
+            Msg::_Toggle => {
                 self.visible = !self.visible;
                 true
             }
         }
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         let courses = if self.visible {
             html! {
                 { for self.courses.iter().group_by(|c| course_generation_from_id(&c.read().unwrap().data.id)).into_iter().map(|(gen, cs)| {
@@ -94,11 +94,10 @@ impl Component for CourseList {
         };
         html! {
             <>
-                <h2 class="subtitle">
-                    { "Courses" }{" "}
-                    <button class="button is-small" onclick={ctx.link().callback(|_| Msg::Toggle)}>{ if self.visible {'-'} else {'+'} }</button>
-                </h2>
-                { courses }
+                <h2 class="title is-4">{"Coverage"}</h2>
+                <div class="block">
+                    { courses }
+                </div>
             </>
         }
     }

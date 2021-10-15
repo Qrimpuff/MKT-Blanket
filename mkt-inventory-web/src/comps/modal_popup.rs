@@ -48,12 +48,16 @@ where
         }
 
         let toggle_cb = ctx.link().callback(move |_| toggle.clone());
+        let href = yew::utils::window().location().href().unwrap();
         Some(EventListener::new(
             &yew::utils::window(),
             "popstate",
             move |_| {
                 let prev_layer = layer;
+                let prev_href = href.clone();
                 gloo::console::info!("from popstate");
+
+                let href = yew::utils::window().location().href().unwrap();
                 let html = web_sys::window()
                     .unwrap()
                     .document()
@@ -65,7 +69,7 @@ where
                     .get_attribute("data-popup-layer")
                     .and_then(|a| a.parse().ok())
                     .unwrap_or(0);
-                if prev_layer == layer {
+                if prev_layer == layer && prev_href == href {
                     if layer > 1 {
                         history
                             .push_state_with_url(&JsValue::TRUE, "", None)

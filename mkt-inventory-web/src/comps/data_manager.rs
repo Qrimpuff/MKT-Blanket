@@ -12,8 +12,9 @@ use crate::comps::{
 #[function_component(DataManager)]
 pub fn view_data_manager() -> Html {
     html! {
+        <>
+        <h2 class="title is-4">{"Data Management"}</h2>
         <div class="block">
-            <h2 class="subtitle">{ "Data Manager" }</h2>
             <div class="buttons">
                 <FetchData/>
             </div>
@@ -28,6 +29,7 @@ pub fn view_data_manager() -> Html {
                 <DeleteData/>
             </div>
         </div>
+        </>
     }
 }
 

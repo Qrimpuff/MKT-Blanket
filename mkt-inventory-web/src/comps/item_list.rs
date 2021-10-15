@@ -3,7 +3,9 @@ use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
 use crate::{
-    agents::data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared},
+    agents::data_inventory::{
+        DataInvItem, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
+    },
     comps::item::Item,
 };
 
@@ -11,7 +13,7 @@ use super::item::ShowStat;
 
 pub enum Msg {
     DataInventory(Shared<DataInventory>),
-    ToggleDisplay,
+    _ToggleDisplay,
     ShowStat(ShowStat),
     SortStat(SortStat),
 }
@@ -42,7 +44,7 @@ pub struct ItemList {
     show_stat: ShowStat,
     sort_stat: SortStat,
     sort: SortOrder,
-    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
+    data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for ItemList {
@@ -53,11 +55,11 @@ impl Component for ItemList {
         let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             items: Vec::new(),
-            visible: false,
+            visible: true,
             show_stat: ShowStat::Level,
             sort_stat: SortStat::Default,
             sort: SortOrder::Up,
-            _data_inventory: DataInventoryAgent::bridge(callback),
+            data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
@@ -78,7 +80,7 @@ impl Component for ItemList {
                     false
                 }
             }
-            Msg::ToggleDisplay => {
+            Msg::_ToggleDisplay => {
                 self.visible = !self.visible;
                 true
             }
@@ -114,8 +116,14 @@ impl Component for ItemList {
         }
     }
 
+    fn changed(&mut self, _ctx: &Context<Self>) -> bool {
+        self.items.clear();
+        self.data_inventory.send(DataInventoryRequest::Refresh);
+        true
+    }
+
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let title = match ctx.props().i_type {
+        let _title = match ctx.props().i_type {
             ItemType::Driver => "Drivers",
             ItemType::Kart => "Karts",
             ItemType::Glider => "Gliders",
@@ -154,10 +162,6 @@ impl Component for ItemList {
         };
         html! {
             <>
-                <h2 class="subtitle">
-                    { title }{" "}
-                    <button class="button is-small" onclick={ctx.link().callback(|_| Msg::ToggleDisplay)}>{ if self.visible {'-'} else {'+'} }</button>
-                </h2>
                 { items }
             </>
         }

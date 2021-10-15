@@ -11,5 +11,6 @@ pub mod fetch_data;
 pub mod import;
 pub mod item;
 pub mod item_list;
+pub mod item_tabs;
 pub mod modal_popup;
 pub mod summary;

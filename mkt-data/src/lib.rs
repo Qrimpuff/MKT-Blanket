@@ -167,7 +167,7 @@ pub enum CourseGeneration {
 impl ToString for CourseGeneration {
     fn to_string(&self) -> String {
         match self {
-            CourseGeneration::New => "New".into(),
+            CourseGeneration::New => "New Courses".into(),
             CourseGeneration::Remix => "Remix".into(),
             CourseGeneration::SNES => "Super Mario Kart (SNES)".into(),
             CourseGeneration::N64 => "Mario Kart 64 (N64)".into(),

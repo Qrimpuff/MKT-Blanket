@@ -157,4 +157,10 @@ impl Component for Item {
             }
         }
     }
+
+    fn destroy(&mut self, ctx: &Context<Self>) {
+        if self.visible {
+            self.popup_listener = update_popup_layer(false, ctx, Msg::ToggleModal);
+        }
+    }
 }
