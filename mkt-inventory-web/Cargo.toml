@@ -13,7 +13,7 @@ yew-agent = {git = "https://github.com/yewstack/yew"}
 gloo = "0.3.0"
 reqwest = { version = "0.11.4", features = ["blocking"] }
 js-sys = "0.3"
-web-sys = "0.3.54"
+web-sys = { version = "0.3.54", features = ["History"] }
 wasm-bindgen = "0.2.77"
 itertools = "0.10.1"
 serde = "1.0.130"

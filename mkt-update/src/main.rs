@@ -6,9 +6,6 @@ use unidecode::unidecode;
 fn main() {
     println!("MKT Data Update");
 
-    test_b_and_g_coverage();
-    return;
-
     let mut data = test_update_data();
 
     // don't overwrite with bad data
@@ -24,6 +21,8 @@ fn main() {
 
         data.save("data/mkt_data.json").unwrap();
     }
+
+    test_b_and_g_coverage();
 
     println!("Done");
 }

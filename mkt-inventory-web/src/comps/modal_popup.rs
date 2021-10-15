@@ -1,5 +1,7 @@
+use gloo::events::EventListener;
 use itertools::Itertools;
 use mkt_data::{item_type_from_id, ItemType};
+use wasm_bindgen::JsValue;
 use yew::prelude::*;
 
 use crate::{
@@ -7,26 +9,78 @@ use crate::{
     comps::{course::Course, item::Item},
 };
 
-pub fn update_popup_layer(visible: bool) {
+pub fn update_popup_layer<COMP>(
+    visible: bool,
+    ctx: &Context<COMP>,
+    toggle: COMP::Message,
+) -> Option<EventListener>
+where
+    COMP: Component,
+    COMP::Message: Clone,
+{
     // prevent scrolling on modal
-    let _: Option<_> = try {
-        let html = web_sys::window()?
-            .document()?
-            .query_selector("html")
-            .ok()??;
-        let mut layer = html
-            .get_attribute("data-popup-layer")
-            .and_then(|a| a.parse().ok())
-            .unwrap_or(0);
-        layer += if visible { 1 } else { -1 };
-        html.set_attribute("data-popup-layer", &layer.to_string())
-            .ok()?;
+    let html = web_sys::window()
+        .unwrap()
+        .document()
+        .unwrap()
+        .query_selector("html")
+        .unwrap()
+        .unwrap();
+    let mut layer = html
+        .get_attribute("data-popup-layer")
+        .and_then(|a| a.parse().ok())
+        .unwrap_or(0);
+    layer += if visible { 1 } else { -1 };
+    html.set_attribute("data-popup-layer", &layer.to_string())
+        .unwrap();
+    if layer == 1 {
+        html.set_class_name("is-clipped");
+    } else if layer == 0 {
+        html.set_class_name("");
+    }
+
+    let history = yew::utils::window().history().expect("no history");
+    if visible {
         if layer == 1 {
-            html.set_class_name("is-clipped");
-        } else if layer == 0 {
-            html.set_class_name("");
+            history
+                .push_state_with_url(&JsValue::TRUE, "", None)
+                .expect("push history");
         }
-    };
+
+        let toggle_cb = ctx.link().callback(move |_| toggle.clone());
+        Some(EventListener::new(
+            &yew::utils::window(),
+            "popstate",
+            move |_| {
+                let prev_layer = layer;
+                gloo::console::info!("from popstate");
+                let html = web_sys::window()
+                    .unwrap()
+                    .document()
+                    .unwrap()
+                    .query_selector("html")
+                    .unwrap()
+                    .unwrap();
+                let layer = html
+                    .get_attribute("data-popup-layer")
+                    .and_then(|a| a.parse().ok())
+                    .unwrap_or(0);
+                if prev_layer == layer {
+                    if layer > 1 {
+                        history
+                            .push_state_with_url(&JsValue::TRUE, "", None)
+                            .expect("push history");
+                    }
+                    toggle_cb.emit(())
+                }
+            },
+        ))
+    } else {
+        if layer == 0 && history.state().unwrap() == JsValue::TRUE {
+            history.back().unwrap();
+        }
+        None
+    }
 }
 
 pub fn view_item_modal<COMP>(

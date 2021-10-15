@@ -1,3 +1,4 @@
+use gloo::events::EventListener;
 use mkt_data::{item_type_from_id, ItemId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -35,6 +36,7 @@ pub struct Item {
     item: Option<Shared<DataInvItem>>,
     i_type: Option<ItemType>,
     visible: bool,
+    popup_listener: Option<EventListener>,
     data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
@@ -48,6 +50,7 @@ impl Component for Item {
             item: None,
             i_type: item_type_from_id(&ctx.props().id),
             visible: false,
+            popup_listener: None,
             data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
@@ -56,7 +59,7 @@ impl Component for Item {
         match msg {
             Msg::ToggleModal => {
                 self.visible = !self.visible;
-                update_popup_layer(self.visible);
+                self.popup_listener = update_popup_layer(self.visible, ctx, Msg::ToggleModal);
                 true
             }
             Msg::DataInventory(state) => {

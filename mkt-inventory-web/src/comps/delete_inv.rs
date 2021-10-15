@@ -1,3 +1,4 @@
+use gloo::events::EventListener;
 use yew::prelude::*;
 use yew_agent::{
     utils::store::{Bridgeable, StoreWrapper},
@@ -22,6 +23,7 @@ pub struct Props {}
 
 pub struct DeleteInv {
     visible: bool,
+    popup_listener: Option<EventListener>,
     inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
 }
 
@@ -32,15 +34,16 @@ impl Component for DeleteInv {
     fn create(_ctx: &Context<Self>) -> Self {
         Self {
             visible: false,
+            popup_listener: None,
             inventory: Inventory::bridge(Callback::noop()),
         }
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+    fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::ToggleModal => {
                 self.visible = !self.visible;
-                update_popup_layer(self.visible);
+                self.popup_listener = update_popup_layer(self.visible, ctx, Msg::ToggleModal);
                 true
             }
             Msg::DeleteInv => {

@@ -1,3 +1,4 @@
+use gloo::events::EventListener;
 use mkt_data::{CourseId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -29,6 +30,7 @@ pub struct Props {
 pub struct Course {
     course: Option<Shared<DataInvCourse>>,
     visible: bool,
+    popup_listener: Option<EventListener>,
     data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
@@ -41,6 +43,7 @@ impl Component for Course {
         Self {
             course: None,
             visible: false,
+            popup_listener: None,
             data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
@@ -49,7 +52,7 @@ impl Component for Course {
         match msg {
             Msg::ToggleModal => {
                 self.visible = !self.visible;
-                update_popup_layer(self.visible);
+                self.popup_listener = update_popup_layer(self.visible, ctx, Msg::ToggleModal);
                 true
             }
             Msg::DataInventory(state) => {

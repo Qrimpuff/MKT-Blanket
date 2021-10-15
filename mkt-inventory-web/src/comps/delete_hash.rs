@@ -1,4 +1,7 @@
-use gloo::storage::{LocalStorage, Storage};
+use gloo::{
+    events::EventListener,
+    storage::{LocalStorage, Storage},
+};
 use yew::prelude::*;
 
 use crate::comps::modal_popup::view_confirm_modal;
@@ -16,6 +19,7 @@ pub struct Props {}
 
 pub struct DeleteHash {
     visible: bool,
+    popup_listener: Option<EventListener>,
 }
 
 impl Component for DeleteHash {
@@ -23,14 +27,17 @@ impl Component for DeleteHash {
     type Properties = Props;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self { visible: false }
+        Self {
+            visible: false,
+            popup_listener: None,
+        }
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+    fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::ToggleModal => {
                 self.visible = !self.visible;
-                update_popup_layer(self.visible);
+                self.popup_listener = update_popup_layer(self.visible, ctx, Msg::ToggleModal);
                 true
             }
             Msg::DeleteHash => {
