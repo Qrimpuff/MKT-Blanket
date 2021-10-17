@@ -217,7 +217,7 @@ fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
                 current_b_streak += 1;
                 current_w_streak = 0;
             }
-            let is_streak = !is_in_item && current_w_streak >= item_width * 4 / 5;
+            let is_streak = !is_in_item && current_w_streak >= item_width * 9 / 10;
             if in_streaks != is_streak {
                 if is_streak {
                     streak_count += 1;
@@ -225,7 +225,7 @@ fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
                 in_streaks = is_streak;
             }
             if streak_count > 0
-                || is_in_item && long_current_w_streak >= item_count * item_width * 4 / 5
+                || is_in_item && long_current_w_streak >= item_count * item_width * 9 / 10
             {
                 is_item_line = true;
                 if is_in_item {
@@ -289,12 +289,29 @@ fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
 
 fn find_item_areas(img: &RgbImage) -> impl Iterator<Item = ItemArea> {
     // used for find_item_rows_new_and_bad
-    let mut img = map::red_channel(img);
-    let threshold = 50;
-    threshold_mut(&mut img, threshold);
+    let mut img_red = map::red_channel(img);
+    let threshold = 100;
+    threshold_mut(&mut img_red, threshold);
+    let mut img_blue = map::blue_channel(img);
+    let threshold = 150;
+    threshold_mut(&mut img_blue, threshold);
+    imageops::invert(&mut img_blue);
+    let img = GrayImage::from_raw(
+        img.width(),
+        img.height(),
+        img_red
+            .pixels()
+            .flat_map(|p| p.0)
+            .zip(img_blue.pixels().flat_map(|p| p.0))
+            .map(|(p1, p2)| p1 | p2)
+            .collect(),
+    )
+    .unwrap();
     // let img = img.convert();
     if DEBUG_IMG {
-        img.save(format!("pics/test_blue_{}.png", 1)).unwrap();
+        img_blue.save(format!("pics/test_blue_{}.png", 1)).unwrap();
+        img_red.save(format!("pics/test_red_{}.png", 1)).unwrap();
+        img.save(format!("pics/test_mask_{}.png", 1)).unwrap();
     }
     let (rows, item_width) = find_item_rows_new(&img, 50);
     let rows = rows.into_iter();

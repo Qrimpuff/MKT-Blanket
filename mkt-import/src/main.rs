@@ -22,10 +22,10 @@ fn main() {
 fn _test_screenshot_import(data: &MktData) {
     // let data = get_data_hashes();
 
-    let screenshot = image::open("tests/MKT_character_screenV.png")
-        .unwrap()
-        .into_rgb8();
-    // let screenshot = image::open("tests/mkt_karts_tint.jpg").unwrap().into_rgb8();
+    // let screenshot = image::open("tests/MKT_character_screenV.png")
+    //     .unwrap()
+    //     .into_rgb8();
+    let screenshot = image::open("tests/inv_ipad.jpg").unwrap().into_rgb8();
     // let screenshot2 = image::open("tests/mkt_drivers2.jpg").unwrap().into_rgb8();
     // let screenshot3 = image::open("tests/mkt_drivers3.jpg").unwrap().into_rgb8();
     // let screenshot4 = image::open("tests/mkt_karts.jpg").unwrap().into_rgb8();
