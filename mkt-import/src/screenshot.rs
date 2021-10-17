@@ -92,7 +92,6 @@ impl ItemArea {
     }
 }
 
-            } else if let Some(l) = item_line {
 fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
     let (width, height) = img.dimensions();
     let mut item_rows = vec![];
