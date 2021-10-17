@@ -42,7 +42,7 @@ fn _test_screenshot_import(data: &MktData) {
 
     // let list = vec![screenshot];
 
-    // let list = (6..=6)
+    // let list = (1..=6)
     //     .map(|i| {
     //         image::open(format!("tests/reddit{}.png", i))
     //             // image::open(format!("tests/mkt_drivers{}.jpg", i))
@@ -51,14 +51,23 @@ fn _test_screenshot_import(data: &MktData) {
     //     })
     //     .collect();
 
+    // let list = (1..=8)
+    //     .map(|i| {
+    //         image::open(format!("tests/mkt karts ({}).jpg", i))
+    //             // image::open(format!("tests/mkt_drivers{}.jpg", i))
+    //             .unwrap()
+    //             .into_rgb8()
+    //     })
+    //     .collect_vec();
+
     let (inventory, new_hashes) = screenshots_to_inventory(list, data, None);
 
-    dbg!(&inventory);
+    println!("{}", inventory.to_json().unwrap());
     dbg!(&inventory.drivers.len());
     dbg!(&inventory.karts.len());
     dbg!(&inventory.gliders.len());
 
-    dbg!(&new_hashes);
+    println!("{}", new_hashes.to_json().unwrap());
     dbg!(&new_hashes.hashes.len());
 }
 

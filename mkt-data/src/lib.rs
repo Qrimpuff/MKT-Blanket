@@ -562,6 +562,10 @@ impl MktInventory {
         Default::default()
     }
 
+    pub fn to_json(&self) -> Result<String, Box<dyn Error>> {
+        Ok(serde_json::to_string_pretty(self)?)
+    }
+
     pub fn from_items(items: Vec<OwnedItem>, data: &MktData) -> Self {
         let mut items = items.into_iter().into_group_map_by(|i| {
             data.drivers

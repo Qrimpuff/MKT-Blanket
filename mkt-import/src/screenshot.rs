@@ -6,39 +6,40 @@ use std::{cmp::Ordering, collections::HashMap, fs};
 
 use image::{
     imageops::{self, FilterType},
-    DynamicImage, GenericImage, GenericImageView, GrayImage, Luma, RgbImage, RgbaImage,
+    GenericImage, GrayImage, Luma, RgbImage,
 };
 use imageproc::{
-    contrast::threshold_mut,
-    drawing::draw_filled_rect_mut,
-    map,
+    contrast, drawing, map,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
 };
 use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
 
+const DEBUG_IMG: bool = true;
+
 const DEFAULT_ITEM_WIDTH: u32 = 160;
 const DEFAULT_ITEM_HEIGHT: u32 = 200;
 const DEFAULT_ITEM_RATIO: f32 = DEFAULT_ITEM_WIDTH as f32 / DEFAULT_ITEM_HEIGHT as f32;
 const ITEM_RATIO_THRESHOLD: f32 = 0.1;
 
+const TEMPLATE_LVL_X: u32 = 125;
+const TEMPLATE_LVL_Y: u32 = 125;
+const TEMPLATE_LVL_WIDTH: u32 = 32;
+const TEMPLATE_LVL_HEIGHT: u32 = 35;
+const TEMPLATE_LVL_THRESHOLD: f32 = 0.6;
+
 const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
 const HASH_ITEM_HEIGHT: u32 = 100;
-
-const LVL_THRESHOLD: f32 = 0.6;
-const ITEM_THRESHOLD: f32 = 0.05;
-const ITEM_HASH_THRESHOLD: u32 = 500;
-
-const DEBUG_IMG: bool = false;
+const HASH_ITEM_THRESHOLD: u32 = 500;
 
 struct LvlTemplate(ItemLvl, GrayImage);
-struct ItemTemplate(ItemId, GrayImage, GrayImage, GrayImage);
+
 struct ItemHash(ItemId, String);
 
-static TEMPLATE_LVLS: &[(ItemLvl, &[u8])] = &[
+static TEMPLATES_LVL: &[(ItemLvl, &[u8])] = &[
     (1, include_bytes!("../templates/levels/1.png")),
     (2, include_bytes!("../templates/levels/2.png")),
     (3, include_bytes!("../templates/levels/3.png")),
@@ -49,7 +50,7 @@ static TEMPLATE_LVLS: &[(ItemLvl, &[u8])] = &[
 ];
 
 fn get_lvl_templates() -> Vec<LvlTemplate> {
-    let levels_templates: Vec<_> = TEMPLATE_LVLS
+    let levels_templates: Vec<_> = TEMPLATES_LVL
         .iter()
         .map(|(lvl, bytes)| LvlTemplate(*lvl, image::load_from_memory(bytes).unwrap().into_luma8()))
         .collect();
@@ -91,78 +92,8 @@ impl ItemArea {
     }
 }
 
-fn find_item_rows(img: &GrayImage) -> Vec<ItemArea> {
-    const LUMA_SHIFT_DIFF: i16 = 5;
-    const LUMA_SHIFT_RATIO: f32 = 0.10;
-
-    let (width, height) = img.dimensions();
-    let mut item_rows = vec![];
-    let mut prev_is_item = None;
-    let mut item_line = None;
-    for (y, ps) in img.enumerate_rows() {
-        let mut luma_shifts = 0;
-        let mut prev_luma = None;
-        for (_x, _y, p) in ps {
-            let Luma([luma]) = *p;
-            if let Some(prev_luma) = prev_luma {
-                if (luma as i16 - prev_luma as i16).abs() > LUMA_SHIFT_DIFF {
-                    luma_shifts += 1;
-                }
-            }
-            // luma average
-            prev_luma = Some(((luma as u16 + prev_luma.unwrap_or(luma) as u16) / 2) as u8);
-        }
-        let is_item = luma_shifts as f32 / width as f32 > LUMA_SHIFT_RATIO;
-        if prev_is_item != Some(is_item) {
-            if is_item {
-                item_line = Some(y);
             } else if let Some(l) = item_line {
-                // remove small boxes
-                if y - l > 3 {
-                    // merge small gaps
-                    if let Some(ir @ ItemArea { y1, y2, .. }) = item_rows.pop() {
-                        if l - y2 > 3 {
-                            item_rows.push(ir);
-                            item_rows.push(ItemArea {
-                                x1: 0,
-                                y1: l,
-                                x2: width,
-                                y2: y,
-                            });
-                        } else {
-                            item_rows.push(ItemArea {
-                                x1: 0,
-                                y1,
-                                x2: width,
-                                y2: y,
-                            });
-                        }
-                    } else {
-                        item_rows.push(ItemArea {
-                            x1: 0,
-                            y1: l,
-                            x2: width,
-                            y2: y,
-                        });
-                    }
-                }
-                item_line = None;
-            }
-        }
-        prev_is_item = Some(is_item);
-    }
-    if let Some(l) = item_line {
-        item_rows.push(ItemArea {
-            x1: 0,
-            y1: l,
-            x2: width,
-            y2: height,
-        });
-    }
-    item_rows
-}
-
-fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
+fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
     let (width, height) = img.dimensions();
     let mut item_rows = vec![];
     let mut prev_is_item = None;
@@ -287,36 +218,35 @@ fn find_item_rows_new(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
     dbg!((item_rows, item_width))
 }
 
-fn find_item_areas(img: &RgbImage) -> impl Iterator<Item = ItemArea> {
-    // used for find_item_rows_new_and_bad
-    let mut img_red = map::red_channel(img);
-    let threshold = 100;
-    threshold_mut(&mut img_red, threshold);
-    let mut img_blue = map::blue_channel(img);
-    let threshold = 150;
-    threshold_mut(&mut img_blue, threshold);
-    imageops::invert(&mut img_blue);
+fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
+    // used for find_item_rows
     let img = GrayImage::from_raw(
         img.width(),
         img.height(),
-        img_red
-            .pixels()
-            .flat_map(|p| p.0)
-            .zip(img_blue.pixels().flat_map(|p| p.0))
-            .map(|(p1, p2)| p1 | p2)
+        img.pixels()
+            .flat_map(|p| {
+                let g = if matches!(p.0, [0..=100, 50..=210, 130..=255]) {
+                    0
+                } else {
+                    p.0[0] | p.0[1] | p.0[2]
+                };
+                if g > 10 {
+                    [255]
+                } else {
+                    [0]
+                }
+            })
             .collect(),
     )
     .unwrap();
-    // let img = img.convert();
+
     if DEBUG_IMG {
-        img_blue.save(format!("pics/test_blue_{}.png", 1)).unwrap();
-        img_red.save(format!("pics/test_red_{}.png", 1)).unwrap();
-        img.save(format!("pics/test_mask_{}.png", 1)).unwrap();
+        img.save(format!("pics/test_mask_{}.png", i)).unwrap();
     }
-    let (rows, item_width) = find_item_rows_new(&img, 50);
+    let (rows, item_width) = find_item_rows(&img, 50);
     let rows = rows.into_iter();
     let img = &imageops::rotate90(&img);
-    let (columns, _item_width) = find_item_rows_new(img, item_width);
+    let (columns, _item_width) = find_item_rows(img, item_width);
     let columns = columns.into_iter().map(ItemArea::swap_x_y);
 
     rows.cartesian_product(columns)
@@ -344,9 +274,30 @@ fn item_level_from_image(
     img: &RgbImage,
     templates: &[LvlTemplate],
 ) -> Option<ItemLvl> {
-    // lvl x: 125 - 160  y: 120 - 170
-    let mut img = map::green_channel(&imageops::crop_imm(img, 125, 120, 35, 40).to_image());
-    threshold_mut(&mut img, 150);
+    let lvl_img = imageops::crop_imm(
+        img,
+        TEMPLATE_LVL_X,
+        TEMPLATE_LVL_Y,
+        TEMPLATE_LVL_WIDTH,
+        TEMPLATE_LVL_HEIGHT,
+    )
+    .to_image();
+
+    let img = GrayImage::from_raw(
+        lvl_img.width(),
+        lvl_img.height(),
+        lvl_img
+            .pixels()
+            .flat_map(|p| {
+                if matches!(p.0, [100..=230, 160..=255, 0..=100]) {
+                    [255]
+                } else {
+                    [0]
+                }
+            })
+            .collect(),
+    )
+    .unwrap();
 
     // template testing levels
     let lvl = templates
@@ -355,8 +306,7 @@ fn item_level_from_image(
         .inspect(|i| {
             println!("lvl points: {:#?}", i);
         })
-        .filter(|(_, score)| *score < LVL_THRESHOLD)
-        // .collect();
+        .filter(|(_, score)| *score < TEMPLATE_LVL_THRESHOLD)
         .min_by(|(_, a), (_, b)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
 
     if DEBUG_IMG {
@@ -373,41 +323,7 @@ fn item_level_from_image(
     lvl.map(|l| l.0)
 }
 
-fn item_id_from_image(img: &RgbImage, templates: &[ItemTemplate]) -> Option<ItemId> {
-    // item x: 10 - 150  y: 20 - 140
-    let item = imageops::crop_imm(img, 0, 0, 160, 150).to_image();
-    if DEBUG_IMG {
-        item.save(format!("pics/test_{:?}_item.png", &img.as_ptr()))
-            .unwrap();
-    }
-    let item = imageops::resize(&item, 16, 15, FilterType::Gaussian);
-    let item_r = map::red_channel(&item);
-    let item_g = map::green_channel(&item);
-    let item_b = map::blue_channel(&item);
-
-    // template testing drivers
-    let item = templates
-        .iter()
-        .map(|ItemTemplate(i, r, g, b)| {
-            (
-                i,
-                template_score(&item_r, r),
-                template_score(&item_g, g),
-                template_score(&item_b, b),
-            )
-        })
-        .map(|(i, r, g, b)| (i, r * g * b))
-        .filter(|(_, p)| *p < ITEM_THRESHOLD * ITEM_THRESHOLD * ITEM_THRESHOLD)
-        .inspect(|i| {
-            println!("points: {:#?}", i);
-        })
-        .min_by(|(_, p1), (_, p2)| -> Ordering { p1.partial_cmp(p2).unwrap_or(Ordering::Equal) });
-    println!("best item: {:?}", item);
-
-    item.map(|i| i.0.clone())
-}
-
-fn item_id_from_image_h(
+fn item_id_from_image(
     ItemArea { x1, y1, .. }: ItemArea,
     img: &RgbImage,
     hashes: &[ItemHash],
@@ -427,7 +343,7 @@ fn item_id_from_image_h(
     let item = hashes
         .iter()
         .map(|ItemHash(i, h)| (i, dist_hash(&hash, h)))
-        .filter(|(_, p)| *p < ITEM_HASH_THRESHOLD)
+        .filter(|(_, p)| *p < HASH_ITEM_THRESHOLD)
         .inspect(|i| {
             println!("points h: {:#?}", i);
         })
@@ -460,7 +376,7 @@ fn item_id_from_image_h(
 
 fn maybe_item_image(img: &RgbImage) -> bool {
     let mut img = map::blue_channel(img);
-    threshold_mut(&mut img, 200);
+    contrast::threshold_mut(&mut img, 200);
     let mut pixels = img.pixels().map(|x| x.0[0]).counts();
     let blue_percent = pixels.remove(&255).unwrap_or(0) as f32 / img.pixels().count() as f32;
     if DEBUG_IMG {
@@ -507,7 +423,7 @@ fn item_image_to_owned_item(
     println!("area: {:?}", area);
     let lvl = item_level_from_image(area, img, lvl_templates);
     let points = None;
-    let (hash, id) = item_id_from_image_h(area, img, item_hashes);
+    let (hash, id) = item_id_from_image(area, img, item_hashes);
     if id.is_some() {
         Some(OwnedItemResult {
             id,
@@ -604,7 +520,7 @@ pub fn screenshots_to_bootstrap_hashes(
             if chunk.iter().all(|i| {
                 new_hashes
                     .iter()
-                    .any(|h| dist_hash(&i.hash, h) < ITEM_HASH_THRESHOLD)
+                    .any(|h| dist_hash(&i.hash, h) < HASH_ITEM_THRESHOLD)
             }) {
                 println!("bad row x{}", chunk.len());
                 None
@@ -677,7 +593,7 @@ pub fn screenshots_to_owned_items(
         let mut debug_img = DEBUG_IMG.then(|| screenshot.clone());
 
         // identify square
-        let item_areas = find_item_areas(&screenshot);
+        let item_areas = find_item_areas(i, &screenshot);
         for (i, (area, item_result)) in item_areas
             .map(|area| (area, item_area_to_image(area, &screenshot)))
             .map(|(area, img)| {
@@ -691,7 +607,11 @@ pub fn screenshots_to_owned_items(
         {
             if DEBUG_IMG {
                 if let Some(debug_img) = debug_img.as_mut() {
-                    draw_filled_rect_mut(debug_img, area.to_rect(), image::Rgb([255, 0, 0]));
+                    drawing::draw_filled_rect_mut(
+                        debug_img,
+                        area.to_rect(),
+                        image::Rgb([255, 0, 0]),
+                    );
                 }
             }
             println!("{} - x:{} y:{}", i, area.x1, area.y1);
@@ -824,68 +744,6 @@ pub fn screenshots_to_inventory(
     inv.update_inventory(MktInventory::from_items(items, data));
 
     (inv, hashes)
-}
-
-pub fn create_template(item: &Item, img: RgbaImage) {
-    for i in (50..=170).step_by(20) {
-        let mut bg = match item.rarity {
-            Rarity::Normal => image::open("tests/39px-MKT_Icon_Normal.png"),
-            Rarity::Super => image::open("tests/39px-MKT_Icon_Rare.png"),
-            Rarity::HighEnd => image::open("tests/39px-MKT_Icon_HighEnd.png"),
-        }
-        .unwrap()
-        .resize_exact(
-            DEFAULT_ITEM_WIDTH,
-            DEFAULT_ITEM_HEIGHT,
-            FilterType::Gaussian,
-        );
-        let bg_w = bg.dimensions().0;
-
-        let (og_width, og_height) = img.dimensions();
-        // find a better center for the image
-        let (center_x, center_y) = find_center_of_mass(&img);
-        let ratio = DEFAULT_ITEM_HEIGHT as f32 / center_y as f32 * i as f32 / 100.0;
-        let mut img = DynamicImage::ImageRgba8(img.clone()).resize_exact(
-            (og_width as f32 * ratio) as u32,
-            (og_height as f32 * ratio) as u32,
-            FilterType::Gaussian,
-        );
-        let mut img_x: i32 = bg_w as i32 / 2 - (center_x as f32 * ratio) as i32;
-        // the image is too big
-        if img_x < 0 {
-            img = img.crop_imm((-img_x) as u32, 0, DEFAULT_ITEM_WIDTH, DEFAULT_ITEM_HEIGHT);
-            img_x = 0;
-        }
-
-        imageops::overlay(&mut bg, &img, img_x as u32, 20);
-        // bg.save(format!("pics/{}_{}.png", item.id, i)).unwrap();
-        let _bg = bg.into_rgb8();
-        // item_image_to_template(item, i, &bg);
-    }
-}
-
-pub fn find_center_of_mass(img: &RgbaImage) -> (u32, u32) {
-    let total_pixel_count = img.pixels().filter(|p| p.0[3] > 0).count();
-    let mut center_y = 0;
-    let mut pixels = 0;
-    for (y, ps) in img.enumerate_rows() {
-        pixels += ps.filter(|(_, _, p)| p.0[3] > 0).count();
-        if pixels as f32 >= total_pixel_count as f32 * 0.9 {
-            center_y = y;
-            break;
-        }
-    }
-    let img = imageops::rotate90(img);
-    let mut center_x = 0;
-    let mut pixels = 0;
-    for (x, ps) in img.enumerate_rows() {
-        pixels += ps.filter(|(_, _, p)| p.0[3] > 0).count();
-        if pixels as f32 >= total_pixel_count as f32 * 0.5 {
-            center_x = x;
-            break;
-        }
-    }
-    (center_x, center_y)
 }
 
 pub fn _test_img_hash() {
@@ -1061,19 +919,4 @@ fn save_image_hash(item: &Item, img: &RgbImage) {
     let h = to_image_hash(&item_img);
     fs::create_dir_all(format!("templates/{}s", item.i_type)).unwrap();
     fs::write(format!("templates/{}s/{}.txt", item.i_type, item.id), h).unwrap();
-}
-
-pub fn save_missing_image_hash(i: usize, img: &RgbImage) {
-    fs::create_dir_all("missing").unwrap();
-    img.save(format!("missing/missing_item_{}.png", i)).unwrap();
-    let item_img = imageops::crop_imm(
-        img,
-        HASH_ITEM_X,
-        HASH_ITEM_Y,
-        HASH_ITEM_WIDTH,
-        HASH_ITEM_HEIGHT,
-    )
-    .to_image();
-    let h = to_image_hash(&item_img);
-    fs::write(format!("missing/missing_item_{}.txt", i), h).unwrap();
 }
