@@ -19,6 +19,7 @@ pub enum Msg {
 #[derive(Copy, Clone, PartialEq)]
 pub enum ShowStat {
     Level,
+    Points,
     FavoriteCourses,
     AdditionalCourses,
 }
@@ -100,6 +101,16 @@ impl Component for Item {
             } else {
                 html! {}
             };
+            let points = if let Some(points) = item
+                .inv
+                .as_ref()
+                .map(|i| i.points)
+                .filter(|points| *points > 0)
+            {
+                html! {<span class="stat-points">{ points }</span>}
+            } else {
+                html! {}
+            };
             let fav_count = if let Some((fav, max_fav)) = item
                 .stats
                 .as_ref()
@@ -143,6 +154,7 @@ impl Component for Item {
                         <span class="ml-auto">
                             { match ctx.props().show_stat {
                                 ShowStat::Level => { lvl },
+                                ShowStat::Points => { points },
                                 ShowStat::FavoriteCourses => { fav_count },
                                 ShowStat::AdditionalCourses => { add_count },
                             } }

@@ -16,7 +16,7 @@ use imageproc::{
 use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
 
-const DEBUG_IMG: bool = true;
+const DEBUG_IMG: bool = false;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
 const DEFAULT_ITEM_HEIGHT: u32 = 200;
@@ -323,7 +323,7 @@ fn item_level_from_image(
         lvl_img
             .pixels()
             .flat_map(|p| {
-                if matches!(p.0, [100..=230, 160..=255, 0..=100]) {
+                if matches!(p.0, [100..=230, 160..=255, 0..=120]) {
                     [255]
                 } else {
                     [0]
@@ -380,7 +380,9 @@ fn item_points_from_image(
             points_img
                 .pixels()
                 .flat_map(|p| {
-                    if matches!(p.0, [180..=255, 50..=210, 0..=75]) {
+                    if matches!(p.0, [180..=255, 50..=220, 0..=100])
+                        || p.0[0] > 150 && p.0[1] > 150 && p.0[2] > 150
+                    {
                         [255]
                     } else {
                         [0]

@@ -23,6 +23,11 @@
   font-weight: bold !important;
 }
 
+.stat-points {
+  color: #ff8800 !important;
+  font-weight: bold !important;
+}
+
 .stat {
   font-weight: normal !important;
 }

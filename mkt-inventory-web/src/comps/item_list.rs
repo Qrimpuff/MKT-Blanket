@@ -1,3 +1,5 @@
+use std::cmp::Reverse;
+
 use mkt_data::ItemType;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -29,6 +31,7 @@ pub enum SortStat {
     Default,
     Name,
     Level,
+    Points,
     FavoriteCourses,
     AdditionalCourses,
 }
@@ -105,6 +108,7 @@ impl Component for ItemList {
                 }
                 match self.sort_stat {
                     SortStat::Level => self.show_stat = ShowStat::Level,
+                    SortStat::Points => self.show_stat = ShowStat::Points,
                     SortStat::FavoriteCourses => self.show_stat = ShowStat::FavoriteCourses,
                     SortStat::AdditionalCourses => self.show_stat = ShowStat::AdditionalCourses,
                     _ => {}
@@ -135,11 +139,13 @@ impl Component for ItemList {
                     { self.view_sort_button(ctx, "Default", SortStat::Default) }
                     { self.view_sort_button(ctx, "Name", SortStat::Name) }
                     { self.view_sort_button(ctx, "Level", SortStat::Level) }
+                    { self.view_sort_button(ctx, "Points", SortStat::Points) }
                     { self.view_sort_button(ctx, "Favorites", SortStat::FavoriteCourses) }
                     { self.view_sort_button(ctx, "Additional", SortStat::AdditionalCourses) }
                 </div>
                 <div class="buttons has-addons">
                     { self.view_show_button(ctx, "Level", ShowStat::Level) }
+                    { self.view_show_button(ctx, "Points", ShowStat::Points) }
                     { self.view_show_button(ctx, "Favorites", ShowStat::FavoriteCourses) }
                     { self.view_show_button(ctx, "Additional", ShowStat::AdditionalCourses) }
                 </div>
@@ -200,30 +206,83 @@ impl ItemList {
 
     fn sort_items(&mut self) {
         match self.sort_stat {
-            SortStat::Default => self.items.sort_by_key(|c| c.read().unwrap().data.sort),
-            SortStat::Name => self
-                .items
-                .sort_by_key(|c| c.read().unwrap().data.name.clone()),
-            SortStat::Level => self
-                .items
-                .sort_by_key(|c| c.read().unwrap().inv.as_ref().map(|i| i.lvl)),
-            SortStat::FavoriteCourses => self.items.sort_by_key(|c| {
-                c.read()
-                    .unwrap()
-                    .stats
-                    .as_ref()
-                    .map(|s| (s.max_fav_course_count, s.fav_course_count))
-            }),
-            SortStat::AdditionalCourses => self.items.sort_by_key(|c| {
-                c.read()
-                    .unwrap()
-                    .stats
-                    .as_ref()
-                    .map(|s| (s.max_add_course_count, s.add_course_count))
-            }),
+            SortStat::Default => {
+                if self.sort == SortOrder::Up {
+                    self.items.sort_by_key(|c| c.read().unwrap().data.sort)
+                } else {
+                    self.items
+                        .sort_by_key(|c| Reverse(c.read().unwrap().data.sort))
+                }
+            }
+            SortStat::Name => {
+                if self.sort == SortOrder::Up {
+                    self.items
+                        .sort_by_key(|c| c.read().unwrap().data.name.clone())
+                } else {
+                    self.items
+                        .sort_by_key(|c| Reverse(c.read().unwrap().data.name.clone()))
+                }
+            }
+            SortStat::Level => {
+                if self.sort == SortOrder::Up {
+                    self.items
+                        .sort_by_key(|c| c.read().unwrap().inv.as_ref().map(|i| i.lvl))
+                } else {
+                    self.items
+                        .sort_by_key(|c| Reverse(c.read().unwrap().inv.as_ref().map(|i| i.lvl)))
+                }
+            }
+            SortStat::Points => {
+                if self.sort == SortOrder::Up {
+                    self.items
+                        .sort_by_key(|c| c.read().unwrap().inv.as_ref().map(|i| i.points))
+                } else {
+                    self.items
+                        .sort_by_key(|c| Reverse(c.read().unwrap().inv.as_ref().map(|i| i.points)))
+                }
+            }
+            SortStat::FavoriteCourses => {
+                if self.sort == SortOrder::Up {
+                    self.items.sort_by_key(|c| {
+                        c.read()
+                            .unwrap()
+                            .stats
+                            .as_ref()
+                            .map(|s| (s.max_fav_course_count, s.fav_course_count))
+                    })
+                } else {
+                    self.items.sort_by_key(|c| {
+                        Reverse(
+                            c.read()
+                                .unwrap()
+                                .stats
+                                .as_ref()
+                                .map(|s| (s.max_fav_course_count, s.fav_course_count)),
+                        )
+                    })
+                }
+            }
+            SortStat::AdditionalCourses => {
+                if self.sort == SortOrder::Up {
+                    self.items.sort_by_key(|c| {
+                        c.read()
+                            .unwrap()
+                            .stats
+                            .as_ref()
+                            .map(|s| (s.max_add_course_count, s.add_course_count))
+                    })
+                } else {
+                    self.items.sort_by_key(|c| {
+                        Reverse(
+                            c.read()
+                                .unwrap()
+                                .stats
+                                .as_ref()
+                                .map(|s| (s.max_add_course_count, s.add_course_count)),
+                        )
+                    })
+                }
+            }
         };
-        if matches!(self.sort, SortOrder::Down) {
-            self.items.reverse();
-        }
     }
 }
