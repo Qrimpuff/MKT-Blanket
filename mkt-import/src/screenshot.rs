@@ -29,6 +29,14 @@ const TEMPLATE_LVL_WIDTH: u32 = 32;
 const TEMPLATE_LVL_HEIGHT: u32 = 35;
 const TEMPLATE_LVL_THRESHOLD: f32 = 0.6;
 
+const TEMPLATE_POINTS_X: u32 = 125;
+const TEMPLATE_POINTS_X_OFFSET: u32 = 22;
+const TEMPLATE_POINTS_Y: u32 = 155;
+const TEMPLATE_POINTS_WIDTH: u32 = 32;
+const TEMPLATE_POINTS_HEIGHT: u32 = 35;
+const TEMPLATE_POINTS_NUMBERS_COUNT: u32 = 4;
+const TEMPLATE_POINTS_THRESHOLD: f32 = 0.6;
+
 const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
@@ -36,6 +44,7 @@ const HASH_ITEM_HEIGHT: u32 = 100;
 const HASH_ITEM_THRESHOLD: u32 = 500;
 
 struct LvlTemplate(ItemLvl, GrayImage);
+struct PointsTemplate(ItemPoints, GrayImage);
 
 struct ItemHash(ItemId, String);
 
@@ -53,6 +62,32 @@ fn get_lvl_templates() -> Vec<LvlTemplate> {
     let levels_templates: Vec<_> = TEMPLATES_LVL
         .iter()
         .map(|(lvl, bytes)| LvlTemplate(*lvl, image::load_from_memory(bytes).unwrap().into_luma8()))
+        .collect();
+    levels_templates
+}
+
+static TEMPLATES_POINTS: &[(ItemPoints, &[u8])] = &[
+    (0, include_bytes!("../templates/points/0.png")),
+    (1, include_bytes!("../templates/points/1.png")),
+    (2, include_bytes!("../templates/points/2.png")),
+    (3, include_bytes!("../templates/points/3.png")),
+    (4, include_bytes!("../templates/points/4.png")),
+    (5, include_bytes!("../templates/points/5.png")),
+    (6, include_bytes!("../templates/points/6.png")),
+    (7, include_bytes!("../templates/points/7.png")),
+    (8, include_bytes!("../templates/points/8.png")),
+    (9, include_bytes!("../templates/points/9.png")),
+];
+
+fn get_points_templates() -> Vec<PointsTemplate> {
+    let levels_templates: Vec<_> = TEMPLATES_POINTS
+        .iter()
+        .map(|(points, bytes)| {
+            PointsTemplate(
+                *points,
+                image::load_from_memory(bytes).unwrap().into_luma8(),
+            )
+        })
         .collect();
     levels_templates
 }
@@ -322,6 +357,72 @@ fn item_level_from_image(
     lvl.map(|l| l.0)
 }
 
+fn item_points_from_image(
+    ItemArea { x1, y1, .. }: ItemArea,
+    img: &RgbImage,
+    templates: &[PointsTemplate],
+) -> Option<ItemPoints> {
+    let mut points = None;
+
+    for num in 0..TEMPLATE_POINTS_NUMBERS_COUNT {
+        let points_img = imageops::crop_imm(
+            img,
+            TEMPLATE_POINTS_X - (num * TEMPLATE_POINTS_X_OFFSET),
+            TEMPLATE_POINTS_Y,
+            TEMPLATE_POINTS_WIDTH,
+            TEMPLATE_POINTS_HEIGHT,
+        )
+        .to_image();
+
+        let img = GrayImage::from_raw(
+            points_img.width(),
+            points_img.height(),
+            points_img
+                .pixels()
+                .flat_map(|p| {
+                    if matches!(p.0, [180..=255, 50..=210, 0..=75]) {
+                        [255]
+                    } else {
+                        [0]
+                    }
+                })
+                .collect(),
+        )
+        .unwrap();
+
+        // template testing points
+        let point = templates
+            .iter()
+            .map(|PointsTemplate(l, template)| (*l, template_score(&img, template)))
+            .inspect(|i| {
+                println!("points points: {:#?}", i);
+            })
+            .filter(|(_, score)| *score < TEMPLATE_POINTS_THRESHOLD)
+            .min_by(|(_, a), (_, b)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
+
+        if DEBUG_IMG {
+            img.save(format!(
+                "pics/test_{}_{}_{:?}_points_{}.png",
+                y1,
+                x1,
+                &point.map(|l| l.0),
+                num
+            ))
+            .unwrap();
+        }
+        println!("best points: {:?}", point);
+
+        if let Some(p) = point {
+            let p = p.0 * 10_u16.pow(num);
+            if p < 2000 {
+                points = Some(p + points.unwrap_or(0));
+            }
+        }
+    }
+
+    points
+}
+
 fn item_id_from_image(
     ItemArea { x1, y1, .. }: ItemArea,
     img: &RgbImage,
@@ -400,7 +501,7 @@ fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
 pub struct OwnedItemResult {
     pub id: Option<ItemId>,
     pub lvl: Option<ItemLvl>,
-    pub points: Option<u16>,
+    pub points: Option<ItemPoints>,
     pub hash: String,
     pub img: Option<RgbImage>,
 }
@@ -417,11 +518,12 @@ fn item_image_to_owned_item(
     area: ItemArea,
     img: &RgbImage,
     lvl_templates: &[LvlTemplate],
+    points_templates: &[PointsTemplate],
     item_hashes: &[ItemHash],
 ) -> Option<OwnedItemResult> {
     println!("area: {:?}", area);
     let lvl = item_level_from_image(area, img, lvl_templates);
-    let points = None;
+    let points = item_points_from_image(area, img, points_templates);
     let (hash, id) = item_id_from_image(area, img, item_hashes);
     if id.is_some() {
         Some(OwnedItemResult {
@@ -580,6 +682,7 @@ pub fn screenshots_to_owned_items(
     hashes: Option<MktItemHashes>,
 ) -> Vec<OwnedItemResult> {
     let lvl_templates = get_lvl_templates();
+    let points_templates = get_points_templates();
     let item_hashes = hashes
         .into_iter()
         .flat_map(|h| h.hashes.into_iter())
@@ -598,7 +701,13 @@ pub fn screenshots_to_owned_items(
             .map(|(area, img)| {
                 (
                     area,
-                    item_image_to_owned_item(area, &img, &lvl_templates, &item_hashes),
+                    item_image_to_owned_item(
+                        area,
+                        &img,
+                        &lvl_templates,
+                        &points_templates,
+                        &item_hashes,
+                    ),
                 )
             })
             .filter(|(_, item)| item.is_some())

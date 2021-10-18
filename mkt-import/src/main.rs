@@ -51,9 +51,9 @@ fn _test_screenshot_import(data: &MktData) {
     //     })
     //     .collect();
 
-    // let list = (1..=8)
+    // let list = (1..=6)
     //     .map(|i| {
-    //         image::open(format!("tests/mkt karts ({}).jpg", i))
+    //         image::open(format!("tests/mkt drivers  ({}).jpg", i))
     //             // image::open(format!("tests/mkt_drivers{}.jpg", i))
     //             .unwrap()
     //             .into_rgb8()

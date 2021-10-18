@@ -16,6 +16,7 @@ use serde::{Deserialize, Serialize, Serializer};
 pub type CourseId = String;
 pub type ItemId = String;
 pub type ItemLvl = u8;
+pub type ItemPoints = u16;
 pub type ItemHash = String;
 
 pub fn course_id_from_name(name: &str) -> CourseId {
@@ -498,13 +499,13 @@ impl MktData {
 pub struct OwnedItem {
     pub id: ItemId,
     pub lvl: ItemLvl,
-    pub points: u16,
+    pub points: ItemPoints,
     pub added: Option<DateTime<Utc>>,
     pub last_changed: Option<DateTime<Utc>>,
 }
 
 impl OwnedItem {
-    pub fn new(id: ItemId, lvl: ItemLvl, points: u16) -> Self {
+    pub fn new(id: ItemId, lvl: ItemLvl, points: ItemPoints) -> Self {
         OwnedItem {
             id,
             lvl,
