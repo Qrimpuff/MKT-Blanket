@@ -1,0 +1,66 @@
+{
+  "drivers": {
+    "d_black_yoshi": {
+      "id": "d_black_yoshi",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_builder_luigi": {
+      "id": "d_builder_luigi",
+      "lvl": 1,
+      "points": 800
+    },
+    "d_builder_mario": {
+      "id": "d_builder_mario",
+      "lvl": 1,
+      "points": 704
+    },
+    "d_cat_peach": {
+      "id": "d_cat_peach",
+      "lvl": 3,
+      "points": 704
+    },
+    "d_daisy_yukata": {
+      "id": "d_daisy_yukata",
+      "lvl": 1,
+      "points": 512
+    },
+    "d_fire_rosalina": {
+      "id": "d_fire_rosalina",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_luigi_lederhosen": {
+      "id": "d_luigi_lederhosen",
+      "lvl": 4,
+      "points": 980
+    },
+    "d_mario_halloween": {
+      "id": "d_mario_halloween",
+      "lvl": 1,
+      "points": 560
+    },
+    "d_mario_snes": {
+      "id": "d_mario_snes",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_mario_swimwear": {
+      "id": "d_mario_swimwear",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_peach_explorer": {
+      "id": "d_peach_explorer",
+      "lvl": 1,
+      "points": 524
+    },
+    "d_toadette_explorer": {
+      "id": "d_toadette_explorer",
+      "lvl": 4,
+      "points": 980
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

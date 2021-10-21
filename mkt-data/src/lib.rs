@@ -500,7 +500,9 @@ pub struct OwnedItem {
     pub id: ItemId,
     pub lvl: ItemLvl,
     pub points: ItemPoints,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub added: Option<DateTime<Utc>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub last_changed: Option<DateTime<Utc>>,
 }
 
@@ -515,6 +517,7 @@ impl OwnedItem {
         }
     }
 
+    // replace item
     pub fn merge(
         &mut self,
         OwnedItem {
@@ -547,6 +550,40 @@ impl OwnedItem {
             }
         }
     }
+
+    // increase level and points
+    pub fn improve(
+        &mut self,
+        OwnedItem {
+            id,
+            lvl,
+            points,
+            added,
+            last_changed,
+        }: OwnedItem,
+    ) {
+        let mut changed = false;
+
+        // only update from same or none
+        if !id.is_empty() && self.id != id {
+            return;
+        }
+        if self.lvl < lvl {
+            self.lvl = lvl;
+            changed = true;
+        }
+        if self.points < points {
+            self.points = points;
+            changed = true;
+        }
+
+        if changed {
+            self.last_changed = last_changed;
+            if self.added.is_none() {
+                self.added = added;
+            }
+        }
+    }
 }
 
 #[derive(Debug, Default, Serialize, Deserialize)]
@@ -563,8 +600,17 @@ impl MktInventory {
         Default::default()
     }
 
+    pub fn from_json(json: &str) -> Result<MktData, Box<dyn Error>> {
+        Ok(serde_json::from_str(json)?)
+    }
+
     pub fn to_json(&self) -> Result<String, Box<dyn Error>> {
         Ok(serde_json::to_string_pretty(self)?)
+    }
+
+    pub fn load(file_name: &str) -> Result<MktData, Box<dyn Error>> {
+        let json = fs::read_to_string(file_name)?;
+        MktData::from_json(&json)
     }
 
     pub fn from_items(items: Vec<OwnedItem>, data: &MktData) -> Self {
@@ -621,5 +667,16 @@ impl MktInventory {
             }
         }
         self.gliders.extend(new_inv.gliders);
+    }
+
+    pub fn clear_dates(&mut self) {
+        self.drivers
+            .values_mut()
+            .chain(self.karts.values_mut())
+            .chain(self.gliders.values_mut())
+            .for_each(|i| {
+                i.added = None;
+                i.last_changed = None;
+            })
     }
 }

@@ -1,0 +1,71 @@
+{
+  "drivers": {
+    "d_bowser_jr_pirate": {
+      "id": "d_bowser_jr_pirate",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_bowser_santa": {
+      "id": "d_bowser_santa",
+      "lvl": 4,
+      "points": 890
+    },
+    "d_dixie_kong": {
+      "id": "d_dixie_kong",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_dry_bones_gold": {
+      "id": "d_dry_bones_gold",
+      "lvl": 1,
+      "points": 536
+    },
+    "d_dry_bowser_gold": {
+      "id": "d_dry_bowser_gold",
+      "lvl": 1,
+      "points": 512
+    },
+    "d_funky_kong": {
+      "id": "d_funky_kong",
+      "lvl": 3,
+      "points": 608
+    },
+    "d_kamek": {
+      "id": "d_kamek",
+      "lvl": 4,
+      "points": 830
+    },
+    "d_king_bob_omb": {
+      "id": "d_king_bob_omb",
+      "lvl": 2,
+      "points": 572
+    },
+    "d_king_bob_omb_gold": {
+      "id": "d_king_bob_omb_gold",
+      "lvl": 2,
+      "points": 716
+    },
+    "d_king_boo_gold": {
+      "id": "d_king_boo_gold",
+      "lvl": 4,
+      "points": 776
+    },
+    "d_shy_guy_gold": {
+      "id": "d_shy_guy_gold",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_shy_guy_ninja": {
+      "id": "d_shy_guy_ninja",
+      "lvl": 2,
+      "points": 788
+    },
+    "d_wario_hiker": {
+      "id": "d_wario_hiker",
+      "lvl": 1,
+      "points": 584
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

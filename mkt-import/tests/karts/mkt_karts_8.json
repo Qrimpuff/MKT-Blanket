@@ -1,0 +1,41 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_black_turbo_birdo": {
+      "id": "k_black_turbo_birdo",
+      "lvl": 2,
+      "points": 490
+    },
+    "k_cact_ice": {
+      "id": "k_cact_ice",
+      "lvl": 3,
+      "points": 445
+    },
+    "k_cact_x": {
+      "id": "k_cact_x",
+      "lvl": 2,
+      "points": 262
+    },
+    "k_crawly_kart": {
+      "id": "k_crawly_kart",
+      "lvl": 1,
+      "points": 256
+    },
+    "k_gilded_king": {
+      "id": "k_gilded_king",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_kamek_s_zoom_broom": {
+      "id": "k_kamek_s_zoom_broom",
+      "lvl": 2,
+      "points": 376
+    },
+    "k_sushi_racer": {
+      "id": "k_sushi_racer",
+      "lvl": 2,
+      "points": 298
+    }
+  },
+  "gliders": {}
+}

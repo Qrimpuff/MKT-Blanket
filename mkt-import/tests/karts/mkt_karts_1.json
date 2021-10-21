@@ -1,0 +1,126 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_biddybuggy": {
+      "id": "k_biddybuggy",
+      "lvl": 6,
+      "points": 216
+    },
+    "k_birthday_girl": {
+      "id": "k_birthday_girl",
+      "lvl": 6,
+      "points": 300
+    },
+    "k_birthday_girl_rosalina": {
+      "id": "k_birthday_girl_rosalina",
+      "lvl": 1,
+      "points": 208
+    },
+    "k_blue_biddybuggy": {
+      "id": "k_blue_biddybuggy",
+      "lvl": 1,
+      "points": 208
+    },
+    "k_bull_s_eye_banzai": {
+      "id": "k_bull_s_eye_banzai",
+      "lvl": 5,
+      "points": 208
+    },
+    "k_bullet_blaster": {
+      "id": "k_bullet_blaster",
+      "lvl": 6,
+      "points": 300
+    },
+    "k_cheep_charger": {
+      "id": "k_cheep_charger",
+      "lvl": 7,
+      "points": 300
+    },
+    "k_daytripper": {
+      "id": "k_daytripper",
+      "lvl": 7,
+      "points": 366
+    },
+    "k_gold_blooper": {
+      "id": "k_gold_blooper",
+      "lvl": 2,
+      "points": 300
+    },
+    "k_green_cheep_charger": {
+      "id": "k_green_cheep_charger",
+      "lvl": 1,
+      "points": 200
+    },
+    "k_green_kiddie_kart": {
+      "id": "k_green_kiddie_kart",
+      "lvl": 6,
+      "points": 300
+    },
+    "k_koopa_dasher": {
+      "id": "k_koopa_dasher",
+      "lvl": 6,
+      "points": 248
+    },
+    "k_landship": {
+      "id": "k_landship",
+      "lvl": 7,
+      "points": 300
+    },
+    "k_mach_8": {
+      "id": "k_mach_8",
+      "lvl": 6,
+      "points": 330
+    },
+    "k_mushmellow": {
+      "id": "k_mushmellow",
+      "lvl": 6,
+      "points": 268
+    },
+    "k_pink_mushmellow": {
+      "id": "k_pink_mushmellow",
+      "lvl": 2,
+      "points": 204
+    },
+    "k_pipe_buggy": {
+      "id": "k_pipe_buggy",
+      "lvl": 6,
+      "points": 216
+    },
+    "k_pipe_frame": {
+      "id": "k_pipe_frame",
+      "lvl": 6,
+      "points": 300
+    },
+    "k_red_kiddie_kart": {
+      "id": "k_red_kiddie_kart",
+      "lvl": 6,
+      "points": 200
+    },
+    "k_royale": {
+      "id": "k_royale",
+      "lvl": 6,
+      "points": 330
+    },
+    "k_soda_jet": {
+      "id": "k_soda_jet",
+      "lvl": 6,
+      "points": 330
+    },
+    "k_super_blooper": {
+      "id": "k_super_blooper",
+      "lvl": 6,
+      "points": 336
+    },
+    "k_turbo_yoshi": {
+      "id": "k_turbo_yoshi",
+      "lvl": 6,
+      "points": 330
+    },
+    "k_warship": {
+      "id": "k_warship",
+      "lvl": 1,
+      "points": 216
+    }
+  },
+  "gliders": {}
+}

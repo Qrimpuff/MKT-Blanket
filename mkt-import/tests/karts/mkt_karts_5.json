@@ -1,0 +1,61 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_blue_soda": {
+      "id": "k_blue_soda",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_cat_cruiser": {
+      "id": "k_cat_cruiser",
+      "lvl": 4,
+      "points": 415
+    },
+    "k_clackety_kart": {
+      "id": "k_clackety_kart",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_festival_girl": {
+      "id": "k_festival_girl",
+      "lvl": 2,
+      "points": 490
+    },
+    "k_gold_clanky_kart": {
+      "id": "k_gold_clanky_kart",
+      "lvl": 2,
+      "points": 316
+    },
+    "k_gold_pipe_frame": {
+      "id": "k_gold_pipe_frame",
+      "lvl": 3,
+      "points": 400
+    },
+    "k_gold_snow_skimmer": {
+      "id": "k_gold_snow_skimmer",
+      "lvl": 4,
+      "points": 388
+    },
+    "k_green_circuit": {
+      "id": "k_green_circuit",
+      "lvl": 3,
+      "points": 250
+    },
+    "k_holiday_king": {
+      "id": "k_holiday_king",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_pink_wing": {
+      "id": "k_pink_wing",
+      "lvl": 2,
+      "points": 286
+    },
+    "k_sports_coupe": {
+      "id": "k_sports_coupe",
+      "lvl": 2,
+      "points": 274
+    }
+  },
+  "gliders": {}
+}

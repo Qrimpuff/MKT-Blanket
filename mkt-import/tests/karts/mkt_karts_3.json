@@ -1,0 +1,96 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_b_dasher": {
+      "id": "k_b_dasher",
+      "lvl": 6,
+      "points": 346
+    },
+    "k_black_b_dasher": {
+      "id": "k_black_b_dasher",
+      "lvl": 4,
+      "points": 415
+    },
+    "k_black_circuit": {
+      "id": "k_black_circuit",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_bumble_v": {
+      "id": "k_bumble_v",
+      "lvl": 3,
+      "points": 400
+    },
+    "k_carrot_kart": {
+      "id": "k_carrot_kart",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_circuit_special": {
+      "id": "k_circuit_special",
+      "lvl": 6,
+      "points": 490
+    },
+    "k_dark_clown": {
+      "id": "k_dark_clown",
+      "lvl": 3,
+      "points": 260
+    },
+    "k_kabuki_dasher": {
+      "id": "k_kabuki_dasher",
+      "lvl": 3,
+      "points": 430
+    },
+    "k_light_blue_turbo_birdo": {
+      "id": "k_light_blue_turbo_birdo",
+      "lvl": 3,
+      "points": 220
+    },
+    "k_macharon": {
+      "id": "k_macharon",
+      "lvl": 4,
+      "points": 490
+    },
+    "k_para_wing": {
+      "id": "k_para_wing",
+      "lvl": 6,
+      "points": 366
+    },
+    "k_queen_bee": {
+      "id": "k_queen_bee",
+      "lvl": 1,
+      "points": 400
+    },
+    "k_quickshaw": {
+      "id": "k_quickshaw",
+      "lvl": 4,
+      "points": 460
+    },
+    "k_radish_rider": {
+      "id": "k_radish_rider",
+      "lvl": 4,
+      "points": 400
+    },
+    "k_trickster": {
+      "id": "k_trickster",
+      "lvl": 1,
+      "points": 400
+    },
+    "k_turbo_birdo": {
+      "id": "k_turbo_birdo",
+      "lvl": 6,
+      "points": 366
+    },
+    "k_wildfire_flyer": {
+      "id": "k_wildfire_flyer",
+      "lvl": 1,
+      "points": 268
+    },
+    "k_yellow_taxi": {
+      "id": "k_yellow_taxi",
+      "lvl": 4,
+      "points": 490
+    }
+  },
+  "gliders": {}
+}

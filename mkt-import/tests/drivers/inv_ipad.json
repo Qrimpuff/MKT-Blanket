@@ -1,0 +1,41 @@
+{
+  "drivers": {
+    "d_baby_daisy": {
+      "id": "d_baby_daisy",
+      "lvl": 1,
+      "points": 416
+    },
+    "d_baby_mario": {
+      "id": "d_baby_mario",
+      "lvl": 1,
+      "points": 424
+    },
+    "d_baby_peach": {
+      "id": "d_baby_peach",
+      "lvl": 1,
+      "points": 400
+    },
+    "d_dry_bones": {
+      "id": "d_dry_bones",
+      "lvl": 2,
+      "points": 424
+    },
+    "d_koopa_troopa": {
+      "id": "d_koopa_troopa",
+      "lvl": 2,
+      "points": 448
+    },
+    "d_mario": {
+      "id": "d_mario",
+      "lvl": 1,
+      "points": 450
+    },
+    "d_shy_guy": {
+      "id": "d_shy_guy",
+      "lvl": 2,
+      "points": 408
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

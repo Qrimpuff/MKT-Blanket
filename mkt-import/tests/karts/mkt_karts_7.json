@@ -1,0 +1,76 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_badwagon": {
+      "id": "k_badwagon",
+      "lvl": 5,
+      "points": 400
+    },
+    "k_banana_master": {
+      "id": "k_banana_master",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_bruiser": {
+      "id": "k_bruiser",
+      "lvl": 3,
+      "points": 352
+    },
+    "k_cact_x": {
+      "id": "k_cact_x",
+      "lvl": 2,
+      "points": 262
+    },
+    "k_crawly_kart": {
+      "id": "k_crawly_kart",
+      "lvl": 1,
+      "points": 256
+    },
+    "k_gilded_king": {
+      "id": "k_gilded_king",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_gold_cheep_charger": {
+      "id": "k_gold_cheep_charger",
+      "lvl": 4,
+      "points": 388
+    },
+    "k_gold_cheep_snorkel": {
+      "id": "k_gold_cheep_snorkel",
+      "lvl": 2,
+      "points": 430
+    },
+    "k_gold_train": {
+      "id": "k_gold_train",
+      "lvl": 5,
+      "points": 460
+    },
+    "k_koopa_king": {
+      "id": "k_koopa_king",
+      "lvl": 5,
+      "points": 394
+    },
+    "k_offroader": {
+      "id": "k_offroader",
+      "lvl": 4,
+      "points": 400
+    },
+    "k_poison_apple_kart": {
+      "id": "k_poison_apple_kart",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_snow_skimmer": {
+      "id": "k_snow_skimmer",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_sushi_racer": {
+      "id": "k_sushi_racer",
+      "lvl": 2,
+      "points": 298
+    }
+  },
+  "gliders": {}
+}

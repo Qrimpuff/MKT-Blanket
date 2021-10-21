@@ -20,47 +20,14 @@ fn main() {
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    // let data = get_data_hashes();
+    let name = "mkt_karts_8";
 
-    // let screenshot = image::open("tests/MKT_character_screenV.png")
-    //     .unwrap()
-    //     .into_rgb8();
-    let screenshot = image::open("tests/inv_ipad.jpg").unwrap().into_rgb8();
-    // let screenshot2 = image::open("tests/mkt_drivers2.jpg").unwrap().into_rgb8();
-    // let screenshot3 = image::open("tests/mkt_drivers3.jpg").unwrap().into_rgb8();
-    // let screenshot4 = image::open("tests/mkt_karts.jpg").unwrap().into_rgb8();
+    let screenshot = image::open(format!("tmp/{}.jpg", name))
+        .unwrap()
+        .into_rgb8();
     let list = vec![screenshot];
 
-    // let reddit1 = image::open("tests/reddit1.png").unwrap().into_rgb8();
-    // let reddit2 = image::open("tests/reddit2.png").unwrap().into_rgb8();
-    // let reddit3 = image::open("tests/reddit3.png").unwrap().into_rgb8();
-    // let reddit4 = image::open("tests/reddit4.png").unwrap().into_rgb8();
-    // let reddit5 = image::open("tests/reddit5.png").unwrap().into_rgb8();
-    // let reddit6 = image::open("tests/reddit6.png").unwrap().into_rgb8();
-    // let list = vec![reddit1, reddit2, reddit3, reddit4, reddit5, reddit6];
-    // let list = vec![reddit1];
-
-    // let list = vec![screenshot];
-
-    // let list = (1..=6)
-    //     .map(|i| {
-    //         image::open(format!("tests/reddit{}.png", i))
-    //             // image::open(format!("tests/mkt_drivers{}.jpg", i))
-    //             .unwrap()
-    //             .into_rgb8()
-    //     })
-    //     .collect();
-
-    // let list = (1..=6)
-    //     .map(|i| {
-    //         image::open(format!("tests/mkt drivers  ({}).jpg", i))
-    //             // image::open(format!("tests/mkt_drivers{}.jpg", i))
-    //             .unwrap()
-    //             .into_rgb8()
-    //     })
-    //     .collect_vec();
-
-    let (inventory, new_hashes) = screenshots_to_inventory(list, data, None);
+    let (mut inventory, new_hashes) = screenshots_to_inventory(list, data, None);
 
     println!("{}", inventory.to_json().unwrap());
     dbg!(&inventory.drivers.len());
@@ -69,6 +36,9 @@ fn _test_screenshot_import(data: &MktData) {
 
     println!("{}", new_hashes.to_json().unwrap());
     dbg!(&new_hashes.hashes.len());
+
+    inventory.clear_dates();
+    fs::write(format!("tmp/{}.json", name), inventory.to_json().unwrap()).unwrap();
 }
 
 fn _test_combine() {

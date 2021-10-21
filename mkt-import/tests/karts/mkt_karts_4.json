@@ -1,0 +1,71 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_apple_kart": {
+      "id": "k_apple_kart",
+      "lvl": 4,
+      "points": 415
+    },
+    "k_choco_macharon": {
+      "id": "k_choco_macharon",
+      "lvl": 4,
+      "points": 490
+    },
+    "k_clanky_kart": {
+      "id": "k_clanky_kart",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_comet_tail": {
+      "id": "k_comet_tail",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_double_decker": {
+      "id": "k_double_decker",
+      "lvl": 1,
+      "points": 358
+    },
+    "k_dozer_dasher": {
+      "id": "k_dozer_dasher",
+      "lvl": 2,
+      "points": 304
+    },
+    "k_gold_egg": {
+      "id": "k_gold_egg",
+      "lvl": 4,
+      "points": 460
+    },
+    "k_green_apple_kart": {
+      "id": "k_green_apple_kart",
+      "lvl": 1,
+      "points": 250
+    },
+    "k_jingle_bells": {
+      "id": "k_jingle_bells",
+      "lvl": 1,
+      "points": 400
+    },
+    "k_p_wing": {
+      "id": "k_p_wing",
+      "lvl": 4,
+      "points": 376
+    },
+    "k_platinum_taxi": {
+      "id": "k_platinum_taxi",
+      "lvl": 4,
+      "points": 475
+    },
+    "k_red_b_dasher": {
+      "id": "k_red_b_dasher",
+      "lvl": 4,
+      "points": 298
+    },
+    "k_swift_jack": {
+      "id": "k_swift_jack",
+      "lvl": 6,
+      "points": 595
+    }
+  },
+  "gliders": {}
+}

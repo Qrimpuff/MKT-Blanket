@@ -1,0 +1,76 @@
+{
+  "drivers": {
+    "d_baby_mario_koala": {
+      "id": "d_baby_mario_koala",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_bowser_jr_pirate": {
+      "id": "d_bowser_jr_pirate",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_daisy_swimwear": {
+      "id": "d_daisy_swimwear",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_dixie_kong": {
+      "id": "d_dixie_kong",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_dry_bones_gold": {
+      "id": "d_dry_bones_gold",
+      "lvl": 1,
+      "points": 536
+    },
+    "d_dry_bowser": {
+      "id": "d_dry_bowser",
+      "lvl": 6,
+      "points": 1160
+    },
+    "d_dry_bowser_gold": {
+      "id": "d_dry_bowser_gold",
+      "lvl": 1,
+      "points": 512
+    },
+    "d_funky_kong": {
+      "id": "d_funky_kong",
+      "lvl": 3,
+      "points": 608
+    },
+    "d_gold_koopa_freerunning": {
+      "id": "d_gold_koopa_freerunning",
+      "lvl": 6,
+      "points": 980
+    },
+    "d_luigi_painter": {
+      "id": "d_luigi_painter",
+      "lvl": 4,
+      "points": 980
+    },
+    "d_mario_tuxedo": {
+      "id": "d_mario_tuxedo",
+      "lvl": 2,
+      "points": 752
+    },
+    "d_shy_guy_pastry_chef": {
+      "id": "d_shy_guy_pastry_chef",
+      "lvl": 1,
+      "points": 536
+    },
+    "d_waluigi_bus_driver": {
+      "id": "d_waluigi_bus_driver",
+      "lvl": 4,
+      "points": 800
+    },
+    "d_wario_hiker": {
+      "id": "d_wario_hiker",
+      "lvl": 1,
+      "points": 584
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

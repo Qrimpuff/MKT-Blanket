@@ -1,0 +1,106 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_barrel_train": {
+      "id": "k_barrel_train",
+      "lvl": 6,
+      "points": 366
+    },
+    "k_birthday_girl_daisy": {
+      "id": "k_birthday_girl_daisy",
+      "lvl": 2,
+      "points": 220
+    },
+    "k_blue_royale": {
+      "id": "k_blue_royale",
+      "lvl": 2,
+      "points": 228
+    },
+    "k_blue_seven": {
+      "id": "k_blue_seven",
+      "lvl": 6,
+      "points": 330
+    },
+    "k_chrome_dk_jumbo": {
+      "id": "k_chrome_dk_jumbo",
+      "lvl": 2,
+      "points": 280
+    },
+    "k_cloud_9": {
+      "id": "k_cloud_9",
+      "lvl": 6,
+      "points": 348
+    },
+    "k_cucumber": {
+      "id": "k_cucumber",
+      "lvl": 3,
+      "points": 220
+    },
+    "k_dk_jumbo": {
+      "id": "k_dk_jumbo",
+      "lvl": 4,
+      "points": 220
+    },
+    "k_egg_1": {
+      "id": "k_egg_1",
+      "lvl": 3,
+      "points": 236
+    },
+    "k_flame_flyer": {
+      "id": "k_flame_flyer",
+      "lvl": 6,
+      "points": 366
+    },
+    "k_koopa_clown": {
+      "id": "k_koopa_clown",
+      "lvl": 6,
+      "points": 260
+    },
+    "k_poltergust_4000": {
+      "id": "k_poltergust_4000",
+      "lvl": 5,
+      "points": 240
+    },
+    "k_red_streamliner": {
+      "id": "k_red_streamliner",
+      "lvl": 2,
+      "points": 224
+    },
+    "k_red_turbo_yoshi": {
+      "id": "k_red_turbo_yoshi",
+      "lvl": 5,
+      "points": 330
+    },
+    "k_streamliner": {
+      "id": "k_streamliner",
+      "lvl": 4,
+      "points": 220
+    },
+    "k_super_1": {
+      "id": "k_super_1",
+      "lvl": 6,
+      "points": 384
+    },
+    "k_tea_coupe": {
+      "id": "k_tea_coupe",
+      "lvl": 2,
+      "points": 224
+    },
+    "k_white_royale": {
+      "id": "k_white_royale",
+      "lvl": 4,
+      "points": 330
+    },
+    "k_yellow_turbo_birdo": {
+      "id": "k_yellow_turbo_birdo",
+      "lvl": 3,
+      "points": 224
+    },
+    "k_zucchini": {
+      "id": "k_zucchini",
+      "lvl": 3,
+      "points": 224
+    }
+  },
+  "gliders": {}
+}

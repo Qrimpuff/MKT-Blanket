@@ -1,0 +1,91 @@
+{
+  "drivers": {},
+  "karts": {},
+  "gliders": {
+    "g_banana_parafoil": {
+      "id": "g_banana_parafoil",
+      "lvl": 6,
+      "points": 366
+    },
+    "g_blizzard_balloons": {
+      "id": "g_blizzard_balloons",
+      "lvl": 1,
+      "points": 250
+    },
+    "g_blue_flower_glider": {
+      "id": "g_blue_flower_glider",
+      "lvl": 6,
+      "points": 360
+    },
+    "g_bright_glider": {
+      "id": "g_bright_glider",
+      "lvl": 1,
+      "points": 340
+    },
+    "g_crimson_crane": {
+      "id": "g_crimson_crane",
+      "lvl": 4,
+      "points": 400
+    },
+    "g_fare_flier": {
+      "id": "g_fare_flier",
+      "lvl": 2,
+      "points": 490
+    },
+    "g_fireworks_parachute": {
+      "id": "g_fireworks_parachute",
+      "lvl": 1,
+      "points": 304
+    },
+    "g_glitter_glider": {
+      "id": "g_glitter_glider",
+      "lvl": 2,
+      "points": 400
+    },
+    "g_gold_glider": {
+      "id": "g_gold_glider",
+      "lvl": 6,
+      "points": 490
+    },
+    "g_heart_balloons": {
+      "id": "g_heart_balloons",
+      "lvl": 3,
+      "points": 400
+    },
+    "g_luma_parafoil": {
+      "id": "g_luma_parafoil",
+      "lvl": 1,
+      "points": 340
+    },
+    "g_new_year_s_2020": {
+      "id": "g_new_year_s_2020",
+      "lvl": 1,
+      "points": 370
+    },
+    "g_new_year_s_kite": {
+      "id": "g_new_year_s_kite",
+      "lvl": 2,
+      "points": 430
+    },
+    "g_purple_oilpaper_umbrella": {
+      "id": "g_purple_oilpaper_umbrella",
+      "lvl": 4,
+      "points": 460
+    },
+    "g_soaring_jack": {
+      "id": "g_soaring_jack",
+      "lvl": 3,
+      "points": 400
+    },
+    "g_starchute": {
+      "id": "g_starchute",
+      "lvl": 6,
+      "points": 595
+    },
+    "g_strawberry_cr_pe": {
+      "id": "g_strawberry_cr_pe",
+      "lvl": 3,
+      "points": 400
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "drivers": {},
+  "karts": {
+    "k_sakura_quickshaw": {
+      "id": "k_sakura_quickshaw",
+      "lvl": 1,
+      "points": 304
+    },
+    "k_sunny_surf_sailer": {
+      "id": "k_sunny_surf_sailer",
+      "lvl": 2,
+      "points": 400
+    },
+    "k_white_turbo_yoshi": {
+      "id": "k_white_turbo_yoshi",
+      "lvl": 1,
+      "points": 256
+    }
+  },
+  "gliders": {}
+}

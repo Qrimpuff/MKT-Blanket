@@ -1,0 +1,86 @@
+{
+  "drivers": {},
+  "karts": {},
+  "gliders": {
+    "g_baby_mario_hanafuda": {
+      "id": "g_baby_mario_hanafuda",
+      "lvl": 1,
+      "points": 400
+    },
+    "g_barrel_hanafuda": {
+      "id": "g_barrel_hanafuda",
+      "lvl": 1,
+      "points": 400
+    },
+    "g_blooper_hanafuda": {
+      "id": "g_blooper_hanafuda",
+      "lvl": 1,
+      "points": 400
+    },
+    "g_blooper_wingtip": {
+      "id": "g_blooper_wingtip",
+      "lvl": 2,
+      "points": 400
+    },
+    "g_boo_hanafuda": {
+      "id": "g_boo_hanafuda",
+      "lvl": 1,
+      "points": 268
+    },
+    "g_bowser_hanafuda": {
+      "id": "g_bowser_hanafuda",
+      "lvl": 1,
+      "points": 304
+    },
+    "g_bullet_bill_hanafuda": {
+      "id": "g_bullet_bill_hanafuda",
+      "lvl": 4,
+      "points": 400
+    },
+    "g_cape_mario_hanafuda": {
+      "id": "g_cape_mario_hanafuda",
+      "lvl": 1,
+      "points": 286
+    },
+    "g_cheep_cheep_masks": {
+      "id": "g_cheep_cheep_masks",
+      "lvl": 2,
+      "points": 352
+    },
+    "g_dream_glider": {
+      "id": "g_dream_glider",
+      "lvl": 2,
+      "points": 364
+    },
+    "g_dry_bowser_umbrella": {
+      "id": "g_dry_bowser_umbrella",
+      "lvl": 2,
+      "points": 280
+    },
+    "g_goomba_hanafuda": {
+      "id": "g_goomba_hanafuda",
+      "lvl": 1,
+      "points": 250
+    },
+    "g_jumping_mario_hanafuda": {
+      "id": "g_jumping_mario_hanafuda",
+      "lvl": 1,
+      "points": 322
+    },
+    "g_peach_hanafuda": {
+      "id": "g_peach_hanafuda",
+      "lvl": 1,
+      "points": 280
+    },
+    "g_piranha_plant_hanafuda": {
+      "id": "g_piranha_plant_hanafuda",
+      "lvl": 2,
+      "points": 400
+    },
+    "g_yoshi_s_egg_hanafuda": {
+      "id": "g_yoshi_s_egg_hanafuda",
+      "lvl": 1,
+      "points": 400
+    }
+  }
+}

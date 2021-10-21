@@ -1,0 +1,126 @@
+{
+  "drivers": {},
+  "karts": {},
+  "gliders": {
+    "g_8_bit_jumping_luigi": {
+      "id": "g_8_bit_jumping_luigi",
+      "lvl": 1,
+      "points": 220
+    },
+    "g_8_bit_jumping_mario": {
+      "id": "g_8_bit_jumping_mario",
+      "lvl": 6,
+      "points": 325
+    },
+    "g_bbia_parafoil": {
+      "id": "g_bbia_parafoil",
+      "lvl": 6,
+      "points": 264
+    },
+    "g_block": {
+      "id": "g_block",
+      "lvl": 6,
+      "points": 320
+    },
+    "g_bob_omb_parafoil": {
+      "id": "g_bob_omb_parafoil",
+      "lvl": 6,
+      "points": 330
+    },
+    "g_droplet_glider": {
+      "id": "g_droplet_glider",
+      "lvl": 6,
+      "points": 300
+    },
+    "g_eggshell_glider": {
+      "id": "g_eggshell_glider",
+      "lvl": 4,
+      "points": 236
+    },
+    "g_flower_glider": {
+      "id": "g_flower_glider",
+      "lvl": 6,
+      "points": 342
+    },
+    "g_lightning_oilpaper": {
+      "id": "g_lightning_oilpaper",
+      "lvl": 6,
+      "points": 342
+    },
+    "g_minion_paper_glider": {
+      "id": "g_minion_paper_glider",
+      "lvl": 6,
+      "points": 204
+    },
+    "g_mushroom_glider": {
+      "id": "g_mushroom_glider",
+      "lvl": 2,
+      "points": 220
+    },
+    "g_oilpaper_umbrella": {
+      "id": "g_oilpaper_umbrella",
+      "lvl": 6,
+      "points": 360
+    },
+    "g_paper_glider": {
+      "id": "g_paper_glider",
+      "lvl": 6,
+      "points": 300
+    },
+    "g_parachute": {
+      "id": "g_parachute",
+      "lvl": 6,
+      "points": 248
+    },
+    "g_parafoil": {
+      "id": "g_parafoil",
+      "lvl": 7,
+      "points": 300
+    },
+    "g_peach_parasol": {
+      "id": "g_peach_parasol",
+      "lvl": 6,
+      "points": 348
+    },
+    "g_pink_flower_glider": {
+      "id": "g_pink_flower_glider",
+      "lvl": 5,
+      "points": 330
+    },
+    "g_piranha_plant_parafoil": {
+      "id": "g_piranha_plant_parafoil",
+      "lvl": 6,
+      "points": 252
+    },
+    "g_piston_glider": {
+      "id": "g_piston_glider",
+      "lvl": 6,
+      "points": 218
+    },
+    "g_plaid_ribbon": {
+      "id": "g_plaid_ribbon",
+      "lvl": 1,
+      "points": 220
+    },
+    "g_shell_parachute": {
+      "id": "g_shell_parachute",
+      "lvl": 6,
+      "points": 366
+    },
+    "g_super_glider": {
+      "id": "g_super_glider",
+      "lvl": 6,
+      "points": 300
+    },
+    "g_waluigi_wing": {
+      "id": "g_waluigi_wing",
+      "lvl": 4,
+      "points": 272
+    },
+    "g_wario_wing": {
+      "id": "g_wario_wing",
+      "lvl": 6,
+      "points": 330
+    }
+  }
+}

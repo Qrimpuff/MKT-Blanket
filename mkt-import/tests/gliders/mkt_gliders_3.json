@@ -1,0 +1,61 @@
+{
+  "drivers": {},
+  "karts": {},
+  "gliders": {
+    "g_butterfly_prism": {
+      "id": "g_butterfly_prism",
+      "lvl": 2,
+      "points": 358
+    },
+    "g_butterfly_sunset": {
+      "id": "g_butterfly_sunset",
+      "lvl": 5,
+      "points": 400
+    },
+    "g_chocolate_donut": {
+      "id": "g_chocolate_donut",
+      "lvl": 4,
+      "points": 445
+    },
+    "g_gold_crane": {
+      "id": "g_gold_crane",
+      "lvl": 4,
+      "points": 595
+    },
+    "g_pink_gold_paper_glider": {
+      "id": "g_pink_gold_paper_glider",
+      "lvl": 4,
+      "points": 415
+    },
+    "g_planet_glider": {
+      "id": "g_planet_glider",
+      "lvl": 2,
+      "points": 304
+    },
+    "g_safety_glider": {
+      "id": "g_safety_glider",
+      "lvl": 1,
+      "points": 256
+    },
+    "g_silver_starchute": {
+      "id": "g_silver_starchute",
+      "lvl": 3,
+      "points": 400
+    },
+    "g_strawberry_donut": {
+      "id": "g_strawberry_donut",
+      "lvl": 6,
+      "points": 400
+    },
+    "g_sunset_balloons": {
+      "id": "g_sunset_balloons",
+      "lvl": 2,
+      "points": 322
+    },
+    "g_treasure_map": {
+      "id": "g_treasure_map",
+      "lvl": 1,
+      "points": 268
+    }
+  }
+}

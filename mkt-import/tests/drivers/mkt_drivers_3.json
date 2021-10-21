@@ -1,0 +1,101 @@
+{
+  "drivers": {
+    "d_baby_peach_cherub": {
+      "id": "d_baby_peach_cherub",
+      "lvl": 4,
+      "points": 800
+    },
+    "d_baby_rosalina_detective": {
+      "id": "d_baby_rosalina_detective",
+      "lvl": 1,
+      "points": 548
+    },
+    "d_ice_mario": {
+      "id": "d_ice_mario",
+      "lvl": 3,
+      "points": 704
+    },
+    "d_mario_classic": {
+      "id": "d_mario_classic",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_mario_hakama": {
+      "id": "d_mario_hakama",
+      "lvl": 3,
+      "points": 656
+    },
+    "d_mario_happi": {
+      "id": "d_mario_happi",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_mario_musician": {
+      "id": "d_mario_musician",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_mario_santa": {
+      "id": "d_mario_santa",
+      "lvl": 1,
+      "points": 704
+    },
+    "d_metal_mario": {
+      "id": "d_metal_mario",
+      "lvl": 6,
+      "points": 1190
+    },
+    "d_pauline": {
+      "id": "d_pauline",
+      "lvl": 4,
+      "points": 980
+    },
+    "d_pauline_party_time": {
+      "id": "d_pauline_party_time",
+      "lvl": 3,
+      "points": 800
+    },
+    "d_peach_kimono": {
+      "id": "d_peach_kimono",
+      "lvl": 1,
+      "points": 512
+    },
+    "d_peach_vacation": {
+      "id": "d_peach_vacation",
+      "lvl": 3,
+      "points": 980
+    },
+    "d_peach_wintertime": {
+      "id": "d_peach_wintertime",
+      "lvl": 1,
+      "points": 500
+    },
+    "d_peachette": {
+      "id": "d_peachette",
+      "lvl": 6,
+      "points": 800
+    },
+    "d_pink_gold_peach": {
+      "id": "d_pink_gold_peach",
+      "lvl": 6,
+      "points": 1190
+    },
+    "d_rosalina_aurora": {
+      "id": "d_rosalina_aurora",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_rosalina_halloween": {
+      "id": "d_rosalina_halloween",
+      "lvl": 2,
+      "points": 800
+    },
+    "d_yoshi_reindeer": {
+      "id": "d_yoshi_reindeer",
+      "lvl": 1,
+      "points": 560
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

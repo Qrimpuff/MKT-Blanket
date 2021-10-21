@@ -1,0 +1,126 @@
+{
+  "drivers": {
+    "d_birdo": {
+      "id": "d_birdo",
+      "lvl": 3,
+      "points": 621
+    },
+    "d_birdo_light_blue": {
+      "id": "d_birdo_light_blue",
+      "lvl": 3,
+      "points": 477
+    },
+    "d_birdo_yellow": {
+      "id": "d_birdo_yellow",
+      "lvl": 4,
+      "points": 504
+    },
+    "d_black_shy_guy": {
+      "id": "d_black_shy_guy",
+      "lvl": 4,
+      "points": 513
+    },
+    "d_blue_koopa_freerunning": {
+      "id": "d_blue_koopa_freerunning",
+      "lvl": 1,
+      "points": 450
+    },
+    "d_blue_yoshi": {
+      "id": "d_blue_yoshi",
+      "lvl": 6,
+      "points": 648
+    },
+    "d_boomerang_bro": {
+      "id": "d_boomerang_bro",
+      "lvl": 4,
+      "points": 675
+    },
+    "d_bowser": {
+      "id": "d_bowser",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_bowser_jr": {
+      "id": "d_bowser_jr",
+      "lvl": 7,
+      "points": 690
+    },
+    "d_diddy_kong": {
+      "id": "d_diddy_kong",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_donkey_kong": {
+      "id": "d_donkey_kong",
+      "lvl": 6,
+      "points": 765
+    },
+    "d_fire_bro": {
+      "id": "d_fire_bro",
+      "lvl": 2,
+      "points": 513
+    },
+    "d_green_shy_guy": {
+      "id": "d_green_shy_guy",
+      "lvl": 2,
+      "points": 450
+    },
+    "d_hammer_bro": {
+      "id": "d_hammer_bro",
+      "lvl": 3,
+      "points": 675
+    },
+    "d_ice_bro": {
+      "id": "d_ice_bro",
+      "lvl": 5,
+      "points": 675
+    },
+    "d_king_boo": {
+      "id": "d_king_boo",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_lakitu": {
+      "id": "d_lakitu",
+      "lvl": 5,
+      "points": 675
+    },
+    "d_monty_mole": {
+      "id": "d_monty_mole",
+      "lvl": 4,
+      "points": 549
+    },
+    "d_pink_shy_guy": {
+      "id": "d_pink_shy_guy",
+      "lvl": 6,
+      "points": 639
+    },
+    "d_pink_yoshi": {
+      "id": "d_pink_yoshi",
+      "lvl": 2,
+      "points": 468
+    },
+    "d_red_koopa_freerunning": {
+      "id": "d_red_koopa_freerunning",
+      "lvl": 4,
+      "points": 468
+    },
+    "d_red_yoshi": {
+      "id": "d_red_yoshi",
+      "lvl": 4,
+      "points": 675
+    },
+    "d_waluigi": {
+      "id": "d_waluigi",
+      "lvl": 4,
+      "points": 522
+    },
+    "d_wario": {
+      "id": "d_wario",
+      "lvl": 6,
+      "points": 675
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}

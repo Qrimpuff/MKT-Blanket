@@ -16,6 +16,7 @@ use imageproc::{
 use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
 
+const DEBUG: bool = false;
 const DEBUG_IMG: bool = false;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
@@ -149,13 +150,17 @@ fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
                 }
             }
         }
-        println!("{:?}", streaks);
+        if DEBUG {
+            println!("{:?}", streaks);
+        }
         streaks
             .iter()
             .max_by_key(|(_, v)| *v)
             .map_or(0, |(k, _)| *k)
     };
-    dbg!(&item_width);
+    if DEBUG {
+        dbg!(&item_width);
+    }
 
     let mut item_count = 0;
     let mut is_in_item = false;
@@ -201,7 +206,10 @@ fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
         is_in_item = is_item_line;
         if prev_is_item != Some(is_item_line) {
             if is_item_line {
-                item_count = dbg!(streak_count);
+                if DEBUG {
+                    dbg!(streak_count);
+                }
+                item_count = streak_count;
                 item_line = Some(y);
             } else if let Some(l) = item_line {
                 item_count = 0;
@@ -248,8 +256,11 @@ fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
         });
     }
 
-    dbg!(item_rows.len());
-    dbg!((item_rows, item_width))
+    if DEBUG {
+        dbg!(item_rows.len());
+        println!("{:?},{:?}", item_rows, item_width);
+    }
+    (item_rows, item_width)
 }
 
 fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
@@ -338,7 +349,9 @@ fn item_level_from_image(
         .iter()
         .map(|LvlTemplate(l, template)| (*l, template_score(&img, template)))
         .inspect(|i| {
-            println!("lvl points: {:#?}", i);
+            if DEBUG {
+                println!("lvl points: {:#?}", i);
+            }
         })
         .filter(|(_, score)| *score < TEMPLATE_LVL_THRESHOLD)
         .min_by(|(_, a), (_, b)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
@@ -352,7 +365,9 @@ fn item_level_from_image(
         ))
         .unwrap();
     }
-    println!("best lvl: {:?}", lvl);
+    if DEBUG {
+        println!("best lvl: {:?}", lvl);
+    }
 
     lvl.map(|l| l.0)
 }
@@ -397,7 +412,9 @@ fn item_points_from_image(
             .iter()
             .map(|PointsTemplate(l, template)| (*l, template_score(&img, template)))
             .inspect(|i| {
-                println!("points points: {:#?}", i);
+                if DEBUG {
+                    println!("points points: {:#?}", i);
+                }
             })
             .filter(|(_, score)| *score < TEMPLATE_POINTS_THRESHOLD)
             .min_by(|(_, a), (_, b)| -> Ordering { a.partial_cmp(b).unwrap_or(Ordering::Equal) });
@@ -412,7 +429,9 @@ fn item_points_from_image(
             ))
             .unwrap();
         }
-        println!("best points: {:?}", point);
+        if DEBUG {
+            println!("best points: {:?}", point);
+        }
 
         if let Some(p) = point {
             let p = p.0 * 10_u16.pow(num);
@@ -447,7 +466,9 @@ fn item_id_from_image(
         .map(|ItemHash(i, h)| (i, dist_hash(&hash, h)))
         .filter(|(_, p)| *p < HASH_ITEM_THRESHOLD)
         .inspect(|i| {
-            println!("points h: {:#?}", i);
+            if DEBUG {
+                println!("points h: {:#?}", i);
+            }
         })
         .min_by_key(|i| i.1);
 
@@ -471,7 +492,9 @@ fn item_id_from_image(
         )
         .unwrap();
     }
-    println!("best item: {:?}", item);
+    if DEBUG {
+        println!("best item: {:?}", item);
+    }
 
     (hash, item.map(|i| i.0.clone()))
 }
@@ -523,7 +546,9 @@ fn item_image_to_owned_item(
     points_templates: &[PointsTemplate],
     item_hashes: &[ItemHash],
 ) -> Option<OwnedItemResult> {
-    println!("area: {:?}", area);
+    if DEBUG {
+        println!("area: {:?}", area);
+    }
     let lvl = item_level_from_image(area, img, lvl_templates);
     let points = item_points_from_image(area, img, points_templates);
     let (hash, id) = item_id_from_image(area, img, item_hashes);
@@ -625,7 +650,9 @@ pub fn screenshots_to_bootstrap_hashes(
                     .iter()
                     .any(|h| dist_hash(&i.hash, h) < HASH_ITEM_THRESHOLD)
             }) {
-                println!("bad row x{}", chunk.len());
+                if DEBUG {
+                    println!("bad row x{}", chunk.len());
+                }
                 None
             } else {
                 chunk.iter().for_each(|i| new_hashes.push(i.hash.clone()));
@@ -650,7 +677,9 @@ pub fn screenshots_to_bootstrap_hashes(
     deduce_missing_owned_items(&mut items, data);
 
     items.iter_mut().for_each(|i| i.img = None);
-    println!("{:#?}", items);
+    if DEBUG {
+        println!("{:#?}", items);
+    }
 
     let hashes: Option<_> = items
         .iter()
@@ -724,9 +753,13 @@ pub fn screenshots_to_owned_items(
                     );
                 }
             }
-            println!("{} - x:{} y:{}", i, area.x1, area.y1);
+            if DEBUG {
+                println!("{} - x:{} y:{}", i, area.x1, area.y1);
+            }
             owned_items.push(item_result.expect("is some"));
-            println!("-------");
+            if DEBUG {
+                println!("-------");
+            }
         }
         if DEBUG_IMG {
             if let Some(debug_img) = debug_img {
@@ -848,7 +881,7 @@ pub fn screenshots_to_inventory(
         .collect();
     let items = items
         .into_iter()
-        .filter(|i| i.id.is_some() && i.lvl.is_some())
+        .filter(|i| i.id.is_some() && i.lvl.is_some() && i.points.is_some())
         .flat_map(result_owned_item)
         .collect();
     inv.update_inventory(MktInventory::from_items(items, data));

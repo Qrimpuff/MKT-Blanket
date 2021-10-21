@@ -1,0 +1,41 @@
+{
+  "drivers": {},
+  "karts": {},
+  "gliders": {
+    "g_gold_new_year_s_kite": {
+      "id": "g_gold_new_year_s_kite",
+      "lvl": 1,
+      "points": 256
+    },
+    "g_ship_s_wheel": {
+      "id": "g_ship_s_wheel",
+      "lvl": 2,
+      "points": 490
+    },
+    "g_starry_great_sail": {
+      "id": "g_starry_great_sail",
+      "lvl": 1,
+      "points": 262
+    },
+    "g_sunny_surf_master": {
+      "id": "g_sunny_surf_master",
+      "lvl": 2,
+      "points": 370
+    },
+    "g_surf_master": {
+      "id": "g_surf_master",
+      "lvl": 5,
+      "points": 490
+    },
+    "g_swooper": {
+      "id": "g_swooper",
+      "lvl": 6,
+      "points": 490
+    },
+    "g_yukata_ribbon": {
+      "id": "g_yukata_ribbon",
+      "lvl": 2,
+      "points": 388
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "drivers": {
+    "d_baby_daisy": {
+      "id": "d_baby_daisy",
+      "lvl": 6,
+      "points": 600
+    },
+    "d_baby_luigi": {
+      "id": "d_baby_luigi",
+      "lvl": 6,
+      "points": 464
+    },
+    "d_baby_mario": {
+      "id": "d_baby_mario",
+      "lvl": 7,
+      "points": 520
+    },
+    "d_baby_peach": {
+      "id": "d_baby_peach",
+      "lvl": 6,
+      "points": 488
+    },
+    "d_baby_rosalina": {
+      "id": "d_baby_rosalina",
+      "lvl": 6,
+      "points": 600
+    },
+    "d_daisy": {
+      "id": "d_daisy",
+      "lvl": 6,
+      "points": 765
+    },
+    "d_dry_bones": {
+      "id": "d_dry_bones",
+      "lvl": 6,
+      "points": 520
+    },
+    "d_iggy": {
+      "id": "d_iggy",
+      "lvl": 6,
+      "points": 600
+    },
+    "d_koopa_troopa": {
+      "id": "d_koopa_troopa",
+      "lvl": 6,
+      "points": 600
+    },
+    "d_larry": {
+      "id": "d_larry",
+      "lvl": 6,
+      "points": 432
+    },
+    "d_lemmy": {
+      "id": "d_lemmy",
+      "lvl": 6,
+      "points": 480
+    },
+    "d_ludwig": {
+      "id": "d_ludwig",
+      "lvl": 6,
+      "points": 600
+    },
+    "d_luigi": {
+      "id": "d_luigi",
+      "lvl": 7,
+      "points": 735
+    },
+    "d_mario": {
+      "id": "d_mario",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_morton": {
+      "id": "d_morton",
+      "lvl": 6,
+      "points": 624
+    },
+    "d_peach": {
+      "id": "d_peach",
+      "lvl": 6,
+      "points": 735
+    },
+    "d_rosalina": {
+      "id": "d_rosalina",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_roy": {
+      "id": "d_roy",
+      "lvl": 6,
+      "points": 440
+    },
+    "d_shy_guy": {
+      "id": "d_shy_guy",
+      "lvl": 6,
+      "points": 456
+    },
+    "d_toad": {
+      "id": "d_toad",
+      "lvl": 6,
+      "points": 675
+    },
+    "d_toad_pit_crew": {
+      "id": "d_toad_pit_crew",
+      "lvl": 5,
+      "points": 648
+    },
+    "d_toadette": {
+      "id": "d_toadette",
+      "lvl": 6,
+      "points": 765
+    },
+    "d_wendy": {
+      "id": "d_wendy",
+      "lvl": 5,
+      "points": 480
+    },
+    "d_yoshi": {
+      "id": "d_yoshi",
+      "lvl": 6,
+      "points": 735
+    }
+  },
+  "karts": {},
+  "gliders": {}
+}
