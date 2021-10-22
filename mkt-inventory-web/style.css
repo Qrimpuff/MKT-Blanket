@@ -18,6 +18,7 @@
   color: #17a040 !important;
   font-weight: bold !important;
 }
+
 .stat-lvl-maybe {
   color: #ff5e00 !important;
   font-weight: bold !important;
@@ -35,4 +36,17 @@
 .is-clipped-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.mkt-navbar {
+  background-color: #b6cbe6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .modal-background {
+    background-color: rgba(10, 10, 10, .86) !important;
+  }
+  .mkt-navbar {
+    background-color: #353b44;
+  }
 }
