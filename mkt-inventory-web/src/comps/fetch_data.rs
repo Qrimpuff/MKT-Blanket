@@ -51,7 +51,7 @@ impl Component for FetchData {
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <button class={classes!("button", "is-info", self.fetching.then_some("is-loading"))} onclick={ctx.link().callback(|_| Msg::Fetch)}>
+                <button class={classes!("button", "is-success", self.fetching.then_some("is-loading"))} onclick={ctx.link().callback(|_| Msg::Fetch)}>
                     <span>{ "Fetch Data" }</span>
                     <span class="icon"><i class="fas fa-sync-alt"/></span>
                 </button>

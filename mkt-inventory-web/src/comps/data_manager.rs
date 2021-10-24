@@ -4,9 +4,9 @@ use web_sys::Url;
 use yew::{prelude::*, utils::document};
 
 use crate::comps::{
-    delete_data::DeleteData, delete_hash::DeleteHash, delete_inv::DeleteInv,
-    download_data::DownloadData, download_hash::DownloadHash, download_inv::DownloadInv,
-    fetch_data::FetchData,
+    bootstrap_hash::BootstrapHash, delete_data::DeleteData, delete_hash::DeleteHash,
+    delete_inv::DeleteInv, download_data::DownloadData, download_hash::DownloadHash,
+    download_inv::DownloadInv, fetch_data::FetchData,
 };
 
 #[function_component(DataManager)]
@@ -15,19 +15,23 @@ pub fn view_data_manager() -> Html {
         <>
         <h2 class="title is-4">{"Data Management"}</h2>
         <div class="block">
+            <h3 class="subtitle is-4">{"Game Data"}</h3>
             <div class="buttons">
                 <FetchData/>
-            </div>
-            <div class="buttons">
-                <DownloadInv/>
-                <DownloadHash/>
                 <DownloadData/>
-            </div>
-            <div class="buttons">
-                <DeleteInv/>
-                <DeleteHash/>
                 <DeleteData/>
             </div>
+            <h3 class="subtitle is-4">{"Inventory"}</h3>
+            <div class="buttons">
+                <DownloadInv/>
+                <DeleteInv/>
+            </div>
+            <h3 class="subtitle is-4">{"Item Hashes"}</h3>
+            <div class="buttons">
+                <DownloadHash/>
+                <DeleteHash/>
+            </div>
+            <BootstrapHash/>
         </div>
         </>
     }

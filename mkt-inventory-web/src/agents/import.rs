@@ -1,6 +1,6 @@
 use gloo::storage::{LocalStorage, Storage};
-use mkt_data::{MktInventory, MktItemHashes};
-use mkt_import::screenshot;
+use mkt_data::{ItemType, MktInventory, MktItemHashes};
+use mkt_import::screenshot::{self, BootstrapError};
 use serde::{Deserialize, Serialize};
 use yew::Callback;
 use yew_agent::{
@@ -18,7 +18,12 @@ pub enum Msg {
 #[derive(Serialize, Deserialize)]
 pub enum ImportRequest {
     ImportScreenshot(Vec<u8>),
-    BootstrapItemHashes(Vec<Vec<u8>>),
+    BootstrapItemHashes(ItemType, Vec<Vec<u8>>),
+}
+
+pub enum ImportResponse {
+    BootstrapSuccess,
+    BootstrapError(BootstrapError),
 }
 
 pub struct ImportAgent {
@@ -30,7 +35,7 @@ impl Agent for ImportAgent {
     type Reach = Job<Self>;
     type Message = Msg;
     type Input = ImportRequest;
-    type Output = ();
+    type Output = ImportResponse;
 
     fn create(link: AgentLink<Self>) -> Self {
         Self {
@@ -57,7 +62,7 @@ impl Agent for ImportAgent {
         }
     }
 
-    fn handle_input(&mut self, msg: Self::Input, _id: yew_agent::HandlerId) {
+    fn handle_input(&mut self, msg: Self::Input, id: yew_agent::HandlerId) {
         match msg {
             ImportRequest::ImportScreenshot(bytes) => {
                 let hash = LocalStorage::get("mkt_hash").ok();
@@ -72,7 +77,21 @@ impl Agent for ImportAgent {
                 self.link.send_message(Msg::UpdateInventory(inv));
                 self.link.send_message(Msg::UpdateHashes(new_hash));
             }
-            ImportRequest::BootstrapItemHashes(_imgs) => todo!(),
+            ImportRequest::BootstrapItemHashes(i_type, bytes) => {
+                let data = LocalStorage::get("mkt_data").ok();
+
+                match screenshot::images_bytes_to_bootstrap_hashes(
+                    bytes,
+                    i_type,
+                    data.as_ref().unwrap(),
+                ) {
+                    Ok(new_hash) => {
+                        self.link.send_message(Msg::UpdateHashes(new_hash));
+                        self.link.respond(id, ImportResponse::BootstrapSuccess)
+                    }
+                    Err(error) => self.link.respond(id, ImportResponse::BootstrapError(error)),
+                }
+            }
         }
     }
 

@@ -8,11 +8,11 @@ fn main() {
     println!("MKT Test inventory Import");
 
     let data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
-    _test_screenshot_import(&data);
+    // _test_screenshot_import(&data);
 
     // _test_combine();
 
-    // _test_screenshots_to_bootstrap_hashes(&data);
+    _test_screenshots_to_bootstrap_hashes(&data);
 
     // _test_img_hash();
 
@@ -20,7 +20,7 @@ fn main() {
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    let name = "mkt_karts_8";
+    let name = "Screenshot_20211022-180319_Mario Kart";
 
     let screenshot = image::open(format!("tmp/{}.jpg", name))
         .unwrap()
@@ -53,33 +53,30 @@ fn _test_combine() {
 }
 
 fn _test_screenshots_to_bootstrap_hashes(data: &MktData) {
-    let list_d = (1..=6)
-        .map(|i| {
-            image::open(format!("tests/mkt drivers  ({}).jpg", i))
-                // image::open(format!("tests/mkt_drivers{}.jpg", i))
-                .unwrap()
-                .into_rgb8()
-        })
-        .collect_vec();
-    let list_k = (1..=8)
-        .map(|i| {
-            image::open(format!("tests/mkt karts ({}).jpg", i))
-                // image::open(format!("tests/mkt_drivers{}.jpg", i))
-                .unwrap()
-                .into_rgb8()
-        })
-        .collect_vec();
+    // let list_d = (1..=6)
+    //     .map(|i| {
+    //         image::open(format!("tmp/mkt drivers ({}).jpg", i))
+    //             .unwrap()
+    //             .into_rgb8()
+    //     })
+    //     .collect_vec();
+    // let list_k = (1..=8)
+    //     .map(|i| {
+    //         image::open(format!("tmp/mkt karts ({}).jpg", i))
+    //             .unwrap()
+    //             .into_rgb8()
+    //     })
+    //     .collect_vec();
     let list_g = (1..=6)
         .map(|i| {
-            image::open(format!("tests/mkt gliders ({}).jpg", i))
-                // image::open(format!("tests/mkt_drivers{}.jpg", i))
+            image::open(format!("tmp/mkt gliders ({}).jpg", i))
                 .unwrap()
                 .into_rgb8()
         })
         .collect_vec();
     let mut hashes = MktItemHashes::new();
-    hashes.merge(screenshots_to_bootstrap_hashes(list_d, ItemType::Driver, data).unwrap());
-    hashes.merge(screenshots_to_bootstrap_hashes(list_k, ItemType::Kart, data).unwrap());
+    // hashes.merge(screenshots_to_bootstrap_hashes(list_d, ItemType::Driver, data).unwrap());
+    // hashes.merge(screenshots_to_bootstrap_hashes(list_k, ItemType::Kart, data).unwrap());
     hashes.merge(screenshots_to_bootstrap_hashes(list_g, ItemType::Glider, data).unwrap());
     println!("{:?}", hashes);
 

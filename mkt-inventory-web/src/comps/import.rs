@@ -97,6 +97,7 @@ impl Component for Import {
                                 .map(File::from);
                             result.extend(files);
                         }
+                        input.set_files(None);
                         Msg::Files(result)
                     })} />
                     <span class="file-cta">

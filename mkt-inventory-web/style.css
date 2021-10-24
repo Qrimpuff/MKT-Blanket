@@ -49,4 +49,7 @@
   .mkt-navbar {
     background-color: #353b44;
   }
+  .mkt-navbar .navbar-brand .title {
+    color: #b6cbe6;
+  }
 }

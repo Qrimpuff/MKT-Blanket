@@ -1,3 +1,4 @@
+pub mod bootstrap_hash;
 pub mod course;
 pub mod course_list;
 pub mod data_manager;

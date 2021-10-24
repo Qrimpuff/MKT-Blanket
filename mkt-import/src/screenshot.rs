@@ -626,16 +626,20 @@ pub fn screenshots_to_bootstrap_hashes(
     i_type: ItemType,
     data: &MktData,
 ) -> Result<MktItemHashes, BootstrapError> {
-    let id_list = match i_type {
+    let mut id_list = match i_type {
         ItemType::Driver => &data.drivers,
         ItemType::Kart => &data.karts,
         ItemType::Glider => &data.gliders,
     }
-    .keys()
+    .values()
+    .map(|i| (i.sort, i.id.clone()))
     .collect_vec();
+    id_list.sort();
+    let id_list = id_list.into_iter().map(|(_, id)| id).collect_vec();
 
-    let combine = vec![combine_screenshots(screenshots)];
-    let items = screenshots_to_owned_items(combine, None);
+    // let combine = vec![combine_screenshots(screenshots)];
+    // let items = screenshots_to_owned_items(combine, None);
+    let items = screenshots_to_owned_items(screenshots, None);
 
     // remove duplicate rows
     let mut new_hashes: Vec<String> = vec![];
@@ -676,8 +680,8 @@ pub fn screenshots_to_bootstrap_hashes(
     // fill everything in between
     deduce_missing_owned_items(&mut items, data);
 
-    items.iter_mut().for_each(|i| i.img = None);
     if DEBUG {
+        items.iter_mut().for_each(|i| i.img = None);
         println!("{:#?}", items);
     }
 
