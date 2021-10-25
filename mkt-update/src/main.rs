@@ -1,6 +1,10 @@
+use std::{collections::HashMap, fs, ops::RangeInclusive, thread, time::Duration};
+
+use itertools::Itertools;
 use mkt_data::*;
 use mkt_update::*;
 
+use regex::Regex;
 use unidecode::unidecode;
 
 fn main() {
@@ -24,14 +28,19 @@ fn main() {
 
     test_b_and_g_coverage();
 
+    test_wiki_coverage();
+
     println!("Done");
 }
 
 fn test_update_data() -> MktData {
     let mut data = MktData::new();
     update_mkt_item_data(&mut data, ItemType::Driver);
+    thread::sleep(Duration::from_secs(1));
     update_mkt_item_data(&mut data, ItemType::Kart);
+    thread::sleep(Duration::from_secs(1));
     update_mkt_item_data(&mut data, ItemType::Glider);
+    thread::sleep(Duration::from_secs(1));
     update_mkt_item_coverage_data(&mut data);
     data
 }
@@ -52,7 +61,7 @@ fn test_b_and_g_coverage() {
         .values_mut()
         .for_each(|c| c.favorite_courses = Default::default());
 
-    let mut rdr = csv::Reader::from_path("tests/coverage.csv").unwrap();
+    let mut rdr = csv::Reader::from_path("tmp/coverage.csv").unwrap();
 
     for result in rdr.records() {
         let record = result.unwrap();
@@ -103,4 +112,85 @@ fn test_b_and_g_coverage() {
     }
 
     data.save("data/mkt_data_b&g.json").unwrap();
+}
+
+fn test_wiki_coverage() {
+    let data = MktData::load("data/mkt_data_b&g.json").unwrap();
+    let wiki = fs::read_to_string("tmp/wiki.txt").unwrap();
+
+    let mut wiki_items = HashMap::new();
+
+    // build wiki items
+    for item in data
+        .drivers
+        .values()
+        .chain(data.karts.values())
+        .chain(data.gliders.values())
+    {
+        let rgx = format!(
+            r"(.*\[File:.*[=|]{}\][^<\n]*)",
+            item.name.replace("(", r"\(").replace(")", r"\)")
+        );
+        let re = Regex::new(&rgx).unwrap();
+        if let Some(c) = re.captures_iter(&wiki).next() {
+            if let Some(m) = c.get(0) {
+                println!("{}", m.as_str());
+                wiki_items.insert(item.id.to_string(), m.as_str().trim().to_string());
+            }
+        } else {
+            println!("ERROR {}", item.name);
+        };
+    }
+    println!("\n\n\n\n");
+
+    let mut courses = data.courses.values().collect_vec();
+    courses.sort_by_key(|c| &c.id);
+
+    fn display_wiki_items(
+        data: &MktData,
+        favorite_items: &[&ItemRequirement],
+        wiki_items: &HashMap<String, String>,
+        rarity: Rarity,
+        i_type: ItemType,
+        lvl_range: RangeInclusive<u8>,
+    ) {
+        let items = match i_type {
+            ItemType::Driver => &data.drivers,
+            ItemType::Kart => &data.karts,
+            ItemType::Glider => &data.gliders,
+        };
+        favorite_items
+            .iter()
+            .filter(|r| lvl_range.contains(&r.lvl))
+            .filter_map(|r| items.get(&r.id).map(|i| (r, i)))
+            .filter(|(_, i)| i.rarity == rarity)
+            .for_each(|(r, i)| {
+                println!(
+                    "{}{}",
+                    wiki_items.get(&i.id).unwrap(),
+                    match r.lvl {
+                        3 => "<sup>*</sup>",
+                        6 => "<sup>**</sup>",
+                        _ => "",
+                    }
+                )
+            });
+    }
+
+    for c in courses {
+        let mut favorite_items = c.favorite_items.iter().collect_vec();
+        favorite_items.sort_by_key(|r| r.id.replace("_", ""));
+
+        println!("----- {} -----", c.name);
+        for ((r, l), t) in [Rarity::HighEnd, Rarity::Super, Rarity::Normal]
+            .iter()
+            .cartesian_product([1..=1, 3..=6])
+            .cartesian_product([ItemType::Driver, ItemType::Kart, ItemType::Glider])
+        {
+            println!("|");
+            display_wiki_items(&data, &favorite_items, &wiki_items, *r, t, l);
+        }
+        println!("----- END {} -----", c.name);
+        println!("\n");
+    }
 }
