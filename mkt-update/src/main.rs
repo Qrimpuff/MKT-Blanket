@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs, ops::RangeInclusive, thread, time::Duration};
+use std::{collections::HashMap, fs, ops::RangeInclusive};
 
 use itertools::Itertools;
 use mkt_data::*;
@@ -36,11 +36,8 @@ fn main() {
 fn test_update_data() -> MktData {
     let mut data = MktData::new();
     update_mkt_item_data(&mut data, ItemType::Driver);
-    thread::sleep(Duration::from_secs(1));
     update_mkt_item_data(&mut data, ItemType::Kart);
-    thread::sleep(Duration::from_secs(1));
     update_mkt_item_data(&mut data, ItemType::Glider);
-    thread::sleep(Duration::from_secs(1));
     update_mkt_item_coverage_data(&mut data);
     data
 }

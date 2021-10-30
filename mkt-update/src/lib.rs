@@ -4,9 +4,15 @@
 use std::convert::TryInto;
 
 use itertools::Itertools;
+use lazy_static::lazy_static;
 use mkt_data::*;
 use regex::Regex;
+use reqwest::blocking::{Client, ClientBuilder};
 use scraper::{ElementRef, Html, Selector};
+
+lazy_static! {
+    static ref HTTP_CLIENT: Client = ClientBuilder::new().cookie_store(true).build().unwrap();
+}
 
 pub fn update_mkt_item_data(data: &mut MktData, i_type: ItemType) {
     // get data (from Super Mario Wiki)
@@ -24,7 +30,7 @@ pub fn update_mkt_item_data(data: &mut MktData, i_type: ItemType) {
 }
 
 fn parse_items(url: &str, data: &mut MktData, i_type: ItemType) {
-    let resp = reqwest::blocking::get(url).unwrap();
+    let resp = HTTP_CLIENT.get(url).send().unwrap();
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);
@@ -70,7 +76,7 @@ fn parse_items(url: &str, data: &mut MktData, i_type: ItemType) {
 fn parse_items_new_format(url: &str, data: &mut MktData, i_type: ItemType, row_num: usize) {
     let name_rgx = Regex::new("<br/?>").unwrap();
 
-    let resp = reqwest::blocking::get(url).unwrap();
+    let resp = HTTP_CLIENT.get(url).send().unwrap();
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);
@@ -112,10 +118,10 @@ pub fn update_mkt_item_coverage_data(data: &mut MktData) {
     let name_rgx = Regex::new("('s icon)? from.*").unwrap();
 
     // get data (from Super Mario Wiki)
-    let resp = reqwest::blocking::get(
-        "https://www.mariowiki.com/List_of_favored_and_favorite_courses_in_Mario_Kart_Tour",
-    )
-    .unwrap();
+    let resp = HTTP_CLIENT
+        .get("https://www.mariowiki.com/List_of_favored_and_favorite_courses_in_Mario_Kart_Tour")
+        .send()
+        .unwrap();
     let content = resp.text().unwrap();
 
     let document = Html::parse_document(&content);

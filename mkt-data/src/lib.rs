@@ -65,39 +65,27 @@ pub fn item_type_from_id(id: &str) -> Option<ItemType> {
 }
 
 pub fn course_type_from_id(id: &str) -> CourseType {
-    lazy_static! {
-        static ref RE: Regex = Regex::new(r"[_\d](r|t|r_t)$").unwrap();
-    }
-    let t = RE
-        .captures(id)
-        .map_or("", |c| c.get(1).map_or("", |m| m.as_str()));
-    match t {
-        "r" => CourseType::Reverse,
-        "t" => CourseType::Trick,
-        "r_t" => CourseType::ReverseTrick,
-        _ => CourseType::Normal,
-    }
+    course_parts_from_id(id).2
 }
 
 pub fn course_generation_from_id(id: &str) -> CourseGeneration {
-    lazy_static! {
-        static ref RE: Regex = Regex::new(r"^c_(rmx|snes|n64|gba|gcn|ds|wii|3ds)_").unwrap();
-    }
-    let t = RE
-        .captures(id)
-        .map_or("", |c| c.get(1).map_or("", |m| m.as_str()));
+    course_parts_from_id(id).0
+}
 
-    match t {
-        "rmx" => CourseGeneration::Remix,
-        "snes" => CourseGeneration::SNES,
-        "n64" => CourseGeneration::N64,
-        "gba" => CourseGeneration::GBA,
-        "gcn" => CourseGeneration::GCN,
-        "ds" => CourseGeneration::DS,
-        "wii" => CourseGeneration::Wii,
-        "3ds" => CourseGeneration::_3DS,
-        _ => CourseGeneration::New,
+pub fn course_parts_from_id(id: &str) -> (CourseGeneration, String, CourseType) {
+    lazy_static! {
+        static ref RE: Regex =
+            Regex::new(r"^c_((rmx|snes|n64|gba|gcn|ds|wii|3ds)_)?(.+?(_|\d|$))(r|t|r_t)?$")
+                .unwrap();
     }
+    let (g, n, t) = RE.captures(id).map_or(("", "", ""), |c| {
+        (
+            c.get(2).map_or("", |m| m.as_str()),
+            c.get(3).map_or("", |m| m.as_str()),
+            c.get(5).map_or("", |m| m.as_str()),
+        )
+    });
+    (g.into(), n.trim_end_matches('_').into(), t.into())
 }
 
 fn ordered_map<S, K, V>(value: &HashMap<K, V>, serializer: S) -> Result<S::Ok, S::Error>
@@ -144,7 +132,7 @@ impl From<(CourseId, ItemLvl)> for CourseAvailability {
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize, PartialOrd, Ord)]
 pub enum CourseType {
     Normal,
     Reverse,
@@ -152,7 +140,18 @@ pub enum CourseType {
     ReverseTrick,
 }
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize)]
+impl From<&str> for CourseType {
+    fn from(t: &str) -> Self {
+        match t {
+            "r" => CourseType::Reverse,
+            "t" => CourseType::Trick,
+            "r_t" => CourseType::ReverseTrick,
+            _ => CourseType::Normal,
+        }
+    }
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Serialize, Deserialize, PartialOrd, Ord)]
 pub enum CourseGeneration {
     New,
     Remix,
@@ -163,6 +162,22 @@ pub enum CourseGeneration {
     DS,
     Wii,
     _3DS,
+}
+
+impl From<&str> for CourseGeneration {
+    fn from(g: &str) -> Self {
+        match g {
+            "rmx" => CourseGeneration::Remix,
+            "snes" => CourseGeneration::SNES,
+            "n64" => CourseGeneration::N64,
+            "gba" => CourseGeneration::GBA,
+            "gcn" => CourseGeneration::GCN,
+            "ds" => CourseGeneration::DS,
+            "wii" => CourseGeneration::Wii,
+            "3ds" => CourseGeneration::_3DS,
+            _ => CourseGeneration::New,
+        }
+    }
 }
 
 impl ToString for CourseGeneration {

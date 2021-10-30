@@ -1,6 +1,6 @@
 use gloo::events::EventListener;
 use itertools::Itertools;
-use mkt_data::{item_type_from_id, ItemType};
+use mkt_data::{course_parts_from_id, item_type_from_id, ItemType};
 use wasm_bindgen::JsValue;
 use yew::prelude::*;
 
@@ -110,9 +110,11 @@ where
             } else {
                 html! {}
             };
+            let mut favorite_courses = item.data.favorite_courses.iter().collect_vec();
+            favorite_courses.sort_by_key(|i| course_parts_from_id(&i.id));
             let courses = html! {
-                <div class="columns is-multiline">
-                { for item.data.favorite_courses.iter().map(|r| html!{ <div class="column is-full py-1"><Course id={r.id.clone()} lvl_req={r.lvl} i_type={item.data.i_type} /></div> }) }
+                <div class="columns is-multiline" style="overflow-y: scroll; max-height: 60vh;">
+                { for favorite_courses.iter().map(|r| html!{ <div class="column is-full py-1"><Course id={r.id.clone()} lvl_req={r.lvl} i_type={item.data.i_type} /></div> }) }
                 </div>
             };
             let toggle_cb = ctx.link().callback(move |_| toggle.clone());

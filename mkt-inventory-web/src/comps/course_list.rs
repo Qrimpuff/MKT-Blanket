@@ -1,5 +1,5 @@
 use itertools::Itertools;
-use mkt_data::{course_generation_from_id, course_type_from_id, CourseType};
+use mkt_data::{course_generation_from_id, course_parts_from_id, course_type_from_id, CourseType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
@@ -41,7 +41,8 @@ impl Component for CourseList {
                 let state = state.read().unwrap();
                 if state.courses.len() != self.courses.len() {
                     self.courses = state.courses.values().cloned().collect();
-                    self.courses.sort_by_key(|c| c.read().unwrap().data.sort);
+                    self.courses
+                        .sort_by_key(|c| course_parts_from_id(&c.read().unwrap().data.id));
                     true
                 } else {
                     false

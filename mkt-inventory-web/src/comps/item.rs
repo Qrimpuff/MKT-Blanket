@@ -20,6 +20,7 @@ pub enum Msg {
 pub enum ShowStat {
     Level,
     Points,
+    LevelPoints,
     FavoriteCourses,
     AdditionalCourses,
 }
@@ -155,6 +156,7 @@ impl Component for Item {
                             { match ctx.props().show_stat {
                                 ShowStat::Level => { lvl },
                                 ShowStat::Points => { points },
+                                ShowStat::LevelPoints => { html! {<>{lvl}{" "}{points}</>} },
                                 ShowStat::FavoriteCourses => { fav_count },
                                 ShowStat::AdditionalCourses => { add_count },
                             } }

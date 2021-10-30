@@ -1,19 +1,31 @@
+use chrono::{DateTime, Utc};
 use gloo::{
     file::{self, callbacks::FileReader, File},
     timers::callback::Timeout,
 };
+use itertools::Itertools;
+use mkt_data::ItemType;
 use yew::{
     prelude::*,
     web_sys::{self, HtmlInputElement},
 };
 use yew_agent::{Bridge, Bridged};
 
-use crate::agents::import::{ImportAgent, ImportRequest};
+use crate::{
+    agents::{
+        data_inventory::{DataInvItem, DataInventory, DataInventoryAgent, Shared},
+        import::{ImportAgent, ImportRequest},
+    },
+    comps::item::ShowStat,
+};
+
+use super::item::Item;
 
 pub enum Msg {
     Files(Vec<File>),
     Loaded(String, Vec<u8>),
     Done,
+    DataInventory(Shared<DataInventory>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -23,25 +35,34 @@ pub struct Import {
     readers: Vec<FileReader>,
     completed: usize,
     timeout: Option<Timeout>,
+    last_changed: DateTime<Utc>,
+    modified_items: Vec<Shared<DataInvItem>>,
     import: Box<dyn Bridge<ImportAgent>>,
+    _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
 impl Component for Import {
     type Message = Msg;
     type Properties = Props;
 
-    fn create(_ctx: &Context<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
+        let callback = ctx.link().callback(Msg::DataInventory);
         Self {
             readers: vec![],
             completed: 0,
             timeout: None,
+            last_changed: Utc::now(),
+            modified_items: Vec::new(),
             import: ImportAgent::bridge(Callback::noop()),
+            _data_inventory: DataInventoryAgent::bridge(callback),
         }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::Files(files) => {
+                self.modified_items = vec![];
+                self.last_changed = Utc::now();
                 for file in files.into_iter() {
                     let task = {
                         let file_name = file.name();
@@ -62,7 +83,7 @@ impl Component for Import {
                 if self.completed == self.readers.len() {
                     let handle = {
                         let link = ctx.link().clone();
-                        Timeout::new(1_000, move || link.send_message(Msg::Done))
+                        Timeout::new(3_000, move || link.send_message(Msg::Done))
                     };
                     self.timeout = Some(handle);
                 }
@@ -74,10 +95,61 @@ impl Component for Import {
                 self.timeout = None;
                 true
             }
+            Msg::DataInventory(state) => {
+                let state = state.read().unwrap();
+                self.modified_items = state
+                    .drivers
+                    .values()
+                    .chain(state.karts.values())
+                    .chain(state.gliders.values())
+                    .filter(|i| {
+                        Some(self.last_changed)
+                            <= i.read().unwrap().inv.as_ref().and_then(|i| i.last_changed)
+                    })
+                    .cloned()
+                    .collect();
+                self.modified_items
+                    .sort_by_key(|i| i.read().unwrap().data.id.clone());
+                true
+            }
         }
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
+        let drivers = self
+            .modified_items
+            .iter()
+            .filter(|r| r.read().unwrap().data.i_type == ItemType::Driver)
+            .map(|r| r.read().unwrap().data.id.clone())
+            .collect_vec();
+        let karts = self
+            .modified_items
+            .iter()
+            .filter(|r| r.read().unwrap().data.i_type == ItemType::Kart)
+            .map(|r| r.read().unwrap().data.id.clone())
+            .collect_vec();
+        let gliders = self
+            .modified_items
+            .iter()
+            .filter(|r| r.read().unwrap().data.i_type == ItemType::Glider)
+            .map(|r| r.read().unwrap().data.id.clone())
+            .collect_vec();
+        let items = html! {
+            <>
+            <p class="subtitle is-6">{"Drivers "}<b>{drivers.len()}</b></p>
+            <div class="columns is-multiline">
+            { for drivers.iter().map(|id| html!{ <div class="column is-one-quarter py-1"><Item id={id.clone()} show_stat={ShowStat::LevelPoints} /></div> }) }
+            </div>
+            <p class="subtitle is-6">{"Karts "}<b>{karts.len()}</b></p>
+            <div class="columns is-multiline">
+            { for karts.iter().map(|id| html!{ <div class="column is-one-quarter py-1"><Item id={id.clone()} show_stat={ShowStat::LevelPoints} /></div> }) }
+            </div>
+            <p class="subtitle is-6">{"Gliders "}<b>{gliders.len()}</b></p>
+            <div class="columns is-multiline">
+            { for gliders.iter().map(|id| html!{ <div class="column is-one-quarter py-1"><Item id={id.clone()} show_stat={ShowStat::LevelPoints} /></div> }) }
+            </div>
+            </>
+        };
         html! {
             <>
             <h2 class="title is-4">{"Import / Export"}</h2>
@@ -116,6 +188,8 @@ impl Component for Import {
                     html! {}
                 }}
             </div>
+            <h3 class="subtitle is-4">{"Modified Items "}<b>{self.modified_items.len()}</b></h3>
+            <div>{ items }</div>
             </>
         }
     }
