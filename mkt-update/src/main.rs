@@ -164,7 +164,9 @@ fn test_wiki_coverage() {
             .for_each(|(r, i)| {
                 println!(
                     "{}{}",
-                    wiki_items.get(&i.id).unwrap(),
+                    wiki_items
+                        .get(&i.id)
+                        .unwrap_or_else(|| panic!("wiki doesn't have: {}", &i.id)),
                     match r.lvl {
                         3 => "<sup>*</sup>",
                         6 => "<sup>**</sup>",
@@ -176,7 +178,7 @@ fn test_wiki_coverage() {
 
     for c in courses {
         let mut favorite_items = c.favorite_items.iter().collect_vec();
-        favorite_items.sort_by_key(|r| r.id.replace("_", ""));
+        favorite_items.sort_by_key(|r| r.id.replace("_", " "));
 
         println!("----- {} -----", c.name);
         for ((r, l), t) in [Rarity::HighEnd, Rarity::Super, Rarity::Normal]

@@ -8,11 +8,11 @@ fn main() {
     println!("MKT Test inventory Import");
 
     let data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
-    // _test_screenshot_import(&data);
+    _test_screenshot_import(&data);
 
     // _test_combine();
 
-    _test_screenshots_to_bootstrap_hashes(&data);
+    // _test_screenshots_to_bootstrap_hashes(&data);
 
     // _test_img_hash();
 
@@ -20,7 +20,7 @@ fn main() {
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    let name = "Screenshot_20211022-180319_Mario Kart";
+    let name = "mkt_gliders_3";
 
     let screenshot = image::open(format!("tmp/{}.jpg", name))
         .unwrap()

@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 use mkt_data::*;
+use palette::{Hsv, IntoColor, Pixel, Srgb};
 
 use std::{cmp::Ordering, collections::HashMap, fs};
 
@@ -9,7 +10,9 @@ use image::{
     GenericImage, GrayImage, Luma, RgbImage,
 };
 use imageproc::{
-    contrast, drawing, map,
+    contrast,
+    distance_transform::Norm,
+    drawing, map, morphology,
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
 };
@@ -42,7 +45,7 @@ const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
 const HASH_ITEM_HEIGHT: u32 = 100;
-const HASH_ITEM_THRESHOLD: u32 = 500;
+pub const HASH_ITEM_THRESHOLD: u32 = 500;
 
 struct LvlTemplate(ItemLvl, GrayImage);
 struct PointsTemplate(ItemPoints, GrayImage);
@@ -263,6 +266,15 @@ fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
     (item_rows, item_width)
 }
 
+fn hsv(ps: [u8; 3]) -> (f32, f32, f32) {
+    let rgb = Srgb::from_raw(&ps).into_format();
+    let hsv: Hsv = rgb.into_color();
+    let h = hsv.hue.to_positive_degrees();
+    let s = hsv.saturation;
+    let v = hsv.value;
+    (h, s, v)
+}
+
 fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
     // used for find_item_rows
     let img = GrayImage::from_raw(
@@ -270,15 +282,11 @@ fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
         img.height(),
         img.pixels()
             .flat_map(|p| {
-                let g = if matches!(p.0, [0..=100, 50..=210, 130..=255]) {
-                    0
-                } else {
-                    p.0[0] | p.0[1] | p.0[2]
-                };
-                if g > 10 {
-                    [255]
-                } else {
+                let (h, s, v) = hsv(p.0);
+                if (190.0..=225.0).contains(&h) && s >= 0.5 && v >= 0.5 || s <= 0.1 && v <= 0.1 {
                     [0]
+                } else {
+                    [255]
                 }
             })
             .collect(),
@@ -328,13 +336,14 @@ fn item_level_from_image(
     )
     .to_image();
 
-    let img = GrayImage::from_raw(
+    let mut img = GrayImage::from_raw(
         lvl_img.width(),
         lvl_img.height(),
         lvl_img
             .pixels()
             .flat_map(|p| {
-                if matches!(p.0, [100..=230, 160..=255, 0..=120]) {
+                let (h, s, v) = hsv(p.0);
+                if (65.0..=95.0).contains(&h) && s >= 0.2 && v >= 0.5 {
                     [255]
                 } else {
                     [0]
@@ -343,6 +352,7 @@ fn item_level_from_image(
             .collect(),
     )
     .unwrap();
+    morphology::erode_mut(&mut img, Norm::LInf, 1);
 
     // template testing levels
     let lvl = templates
@@ -358,7 +368,7 @@ fn item_level_from_image(
 
     if DEBUG_IMG {
         img.save(format!(
-            "pics/test_{}_{}_{:?}_lvl.png",
+            "pics/test_{}_{}_lvl_{:?}.png",
             y1,
             x1,
             &lvl.map(|l| l.0)
@@ -389,15 +399,14 @@ fn item_points_from_image(
         )
         .to_image();
 
-        let img = GrayImage::from_raw(
+        let mut img = GrayImage::from_raw(
             points_img.width(),
             points_img.height(),
             points_img
                 .pixels()
                 .flat_map(|p| {
-                    if matches!(p.0, [180..=255, 50..=220, 0..=100])
-                        || p.0[0] > 150 && p.0[1] > 150 && p.0[2] > 150
-                    {
+                    let (h, s, v) = hsv(p.0);
+                    if (25.0..=50.0).contains(&h) && s >= 0.2 && v >= 0.6 {
                         [255]
                     } else {
                         [0]
@@ -406,6 +415,7 @@ fn item_points_from_image(
                 .collect(),
         )
         .unwrap();
+        morphology::erode_mut(&mut img, Norm::LInf, 1);
 
         // template testing points
         let point = templates
@@ -421,11 +431,11 @@ fn item_points_from_image(
 
         if DEBUG_IMG {
             img.save(format!(
-                "pics/test_{}_{}_{:?}_points_{}.png",
+                "pics/test_{}_{}_points_{}_{:?}.png",
                 y1,
                 x1,
-                &point.map(|l| l.0),
-                num
+                num,
+                &point.map(|l| l.0)
             ))
             .unwrap();
         }
@@ -475,7 +485,7 @@ fn item_id_from_image(
     if DEBUG_IMG {
         item_img
             .save(format!(
-                "pics/test_{}_{}_{}_item.png",
+                "pics/test_{}_{}_item_{}.png",
                 y1,
                 x1,
                 item.unwrap_or((&"none".to_string(), 0)).0
@@ -483,7 +493,7 @@ fn item_id_from_image(
             .unwrap();
         fs::write(
             format!(
-                "pics/test_{}_{}_{}_item.txt",
+                "pics/test_{}_{}_item_{}.txt",
                 y1,
                 x1,
                 item.unwrap_or((&"none".to_string(), 0)).0
@@ -956,7 +966,7 @@ fn to_image_hash(img: &RgbImage) -> String {
     )
 }
 
-fn dist_hash(h1: &str, h2: &str) -> u32 {
+pub fn dist_hash(h1: &str, h2: &str) -> u32 {
     let dist: Option<_> = try {
         let (r1, g1, b1, l_rg1, l_rb1) = h1.split('|').next_tuple()?;
         let (r2, g2, b2, l_rg2, l_rb2) = h2.split('|').next_tuple()?;

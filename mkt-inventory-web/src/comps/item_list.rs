@@ -107,11 +107,12 @@ impl Component for ItemList {
                     };
                 }
                 match self.sort_stat {
+                    SortStat::Default => self.show_stat = ShowStat::Level,
+                    SortStat::Name => self.show_stat = ShowStat::Level,
                     SortStat::Level => self.show_stat = ShowStat::Level,
                     SortStat::Points => self.show_stat = ShowStat::Points,
                     SortStat::FavoriteCourses => self.show_stat = ShowStat::FavoriteCourses,
                     SortStat::AdditionalCourses => self.show_stat = ShowStat::AdditionalCourses,
-                    _ => {}
                 }
 
                 self.sort_items();
@@ -142,12 +143,6 @@ impl Component for ItemList {
                     { self.view_sort_button(ctx, "Points", SortStat::Points) }
                     { self.view_sort_button(ctx, "Favorites", SortStat::FavoriteCourses) }
                     { self.view_sort_button(ctx, "Additional", SortStat::AdditionalCourses) }
-                </div>
-                <div class="buttons has-addons">
-                    { self.view_show_button(ctx, "Level", ShowStat::Level) }
-                    { self.view_show_button(ctx, "Points", ShowStat::Points) }
-                    { self.view_show_button(ctx, "Favorites", ShowStat::FavoriteCourses) }
-                    { self.view_show_button(ctx, "Additional", ShowStat::AdditionalCourses) }
                 </div>
                 <div class="columns is-multiline">
                 { for self.items.iter().map(|i| {

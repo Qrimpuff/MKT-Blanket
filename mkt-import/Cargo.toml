@@ -11,6 +11,7 @@ image = { version = "0.23.14", default-features = false, features = ["jpeg", "pn
 imageproc = "0.22.0"
 itertools = "0.10.1"
 img_hash = "3.2.0"
+palette = "0.6.0"
 
 [dev-dependencies]
 pretty_assertions = "1.0.0"
