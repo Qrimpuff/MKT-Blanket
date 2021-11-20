@@ -45,7 +45,7 @@ const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
 const HASH_ITEM_HEIGHT: u32 = 100;
-pub const HASH_ITEM_THRESHOLD: u32 = 5000;
+pub const HASH_ITEM_THRESHOLD: u32 = 4000;
 
 struct LvlTemplate(ItemLvl, GrayImage);
 struct PointsTemplate(ItemPoints, GrayImage);
@@ -534,6 +534,7 @@ fn maybe_item_image(img: &RgbImage) -> bool {
 #[derive(Debug)]
 pub struct OwnedItemResult {
     pub id: Option<ItemId>,
+    pub i_type: Option<ItemType>,
     pub lvl: Option<ItemLvl>,
     pub points: Option<ItemPoints>,
     pub hash: String,
@@ -563,6 +564,7 @@ fn item_image_to_owned_item(
     let (hash, id) = item_id_from_image(area, img, item_hashes);
     if id.is_some() {
         Some(OwnedItemResult {
+            i_type: item_type_from_id(id.as_ref().unwrap()),
             id,
             lvl,
             points,
@@ -572,6 +574,7 @@ fn item_image_to_owned_item(
     } else if maybe_item_image(img) {
         Some(OwnedItemResult {
             id: None,
+            i_type: None,
             lvl,
             points,
             hash,
@@ -689,6 +692,7 @@ pub fn screenshots_to_bootstrap_hashes(
     let last_id = id_list.last().unwrap().to_string();
     items.get_mut(0).unwrap().id = Some(first_id);
     items.last_mut().unwrap().id = Some(last_id);
+    items.iter_mut().for_each(|i| i.i_type = Some(i_type));
 
     // fill everything in between
     deduce_missing_owned_items(&mut items, data);
@@ -722,6 +726,9 @@ pub fn screenshots_to_owned_items(
     for (i, screenshot) in screenshots.into_iter().enumerate() {
         let mut debug_img = DEBUG_IMG.then(|| screenshot.clone());
 
+        let mut s_owned_items = vec![];
+        let mut i_type = None;
+
         // identify square
         let item_areas = find_item_areas(i, &screenshot);
         for (i, (area, item_result)) in item_areas
@@ -753,11 +760,25 @@ pub fn screenshots_to_owned_items(
             if DEBUG {
                 println!("{} - x:{} y:{}", i, area.x1, area.y1);
             }
-            owned_items.push(item_result.expect("is some"));
+            if let Some(item_result) = item_result {
+                // assume one type per screenshot
+                if item_result.i_type.is_some() {
+                    i_type = item_result.i_type;
+                }
+                s_owned_items.push(item_result);
+            }
             if DEBUG {
                 println!("-------");
             }
         }
+
+        // give a type to unknown items
+        s_owned_items
+            .iter_mut()
+            .filter(|i| i.i_type.is_none())
+            .for_each(|i| i.i_type = i_type);
+        owned_items.extend(s_owned_items);
+
         if DEBUG_IMG {
             if let Some(debug_img) = debug_img {
                 debug_img
@@ -783,6 +804,7 @@ pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: 
         .iter_mut()
         .chain(Some(&mut OwnedItemResult {
             id: Some(the_end_id.into()),
+            i_type: None,
             lvl: None,
             points: None,
             hash: String::new(),
@@ -790,65 +812,61 @@ pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: 
         }))
         .enumerate()
     {
+        // only load the potential ids when the type change, if ever
+        if item_result.i_type != last_found_type {
+            if let Some(i_type) = item_result.i_type {
+                let potential_items = match i_type {
+                    ItemType::Driver => &data.drivers,
+                    ItemType::Kart => &data.karts,
+                    ItemType::Glider => &data.gliders,
+                };
+                potential_item_ids = Some(
+                    potential_items
+                        .values()
+                        .sorted_by_key(|i| i.sort.map(|x| x as i32).unwrap_or(-1))
+                        .map(|i| i.id.clone())
+                        .chain(Some(the_end_id.into()))
+                        .collect_vec(),
+                );
+            } else if item_result.id.as_deref() != Some(the_end_id) {
+                potential_item_ids = None;
+            }
+            last_found_type = item_result.i_type;
+            // reset expectation
+            try_items = vec![];
+        }
+
         // found item
         if let Some(id) = &item_result.id {
-            if let Some(i_type) = item_type_from_id(id).or_else(|| {
-                if id == the_end_id {
-                    last_found_type
-                } else {
-                    None
-                }
-            }) {
-                // only load the potential ids when the type change, if ever
-                if Some(i_type) != last_found_type {
-                    let potential_items = match i_type {
-                        ItemType::Driver => &data.drivers,
-                        ItemType::Kart => &data.karts,
-                        ItemType::Glider => &data.gliders,
-                    };
-                    potential_item_ids = Some(
-                        potential_items
-                            .values()
-                            .sorted_by_key(|i| i.sort.map(|x| x as i32).unwrap_or(-1))
-                            .map(|i| i.id.clone())
-                            .chain(Some(the_end_id.into()))
-                            .collect_vec(),
-                    );
-                    last_found_type = Some(i_type);
-                    // reset expectation
-                    try_items = vec![];
-                } else if let Some(potential_item_ids) = &potential_item_ids {
-                    // check expectation
-                    if let Some(last_found_item) = last_found_item {
-                        if !try_items.is_empty() {
-                            // check if expected item matches
-                            if let Some(expected_item_id) =
-                                potential_item_ids.get(i - last_found_item.0 + item_offset)
-                            {
-                                if expected_item_id == id {
-                                    // all the items in between are know now
-                                    for mut t_item in try_items {
-                                        let item_id = &potential_item_ids
-                                            [t_item.0 - last_found_item.0 + item_offset];
-                                        t_item.1.id = Some(item_id.clone());
-                                    }
+            if let Some(potential_item_ids) = &potential_item_ids {
+                // check expectation
+                if let Some(last_found_item) = last_found_item {
+                    if !try_items.is_empty() {
+                        // check if expected item matches
+                        if let Some(expected_item_id) =
+                            potential_item_ids.get(i - last_found_item.0 + item_offset)
+                        {
+                            if expected_item_id == id {
+                                // all the items in between are know now
+                                for mut t_item in try_items {
+                                    let item_id = &potential_item_ids
+                                        [t_item.0 - last_found_item.0 + item_offset];
+                                    t_item.1.id = Some(item_id.clone());
                                 }
                             }
-                            try_items = vec![];
                         }
+                        try_items = vec![];
                     }
                 }
-                if let Some(potential_item_ids) = &potential_item_ids {
-                    item_offset = potential_item_ids
-                        .iter()
-                        .find_position(|p_id| *p_id == id)
-                        .map(|i| i.0)
-                        .unwrap_or(0);
-                    last_found_item = Some((i, item_result));
-                } else {
-                    item_offset = 0;
-                    last_found_item = None;
-                }
+                item_offset = potential_item_ids
+                    .iter()
+                    .find_position(|p_id| *p_id == id)
+                    .map(|i| i.0)
+                    .unwrap_or(0);
+                last_found_item = Some((i, item_result));
+            } else {
+                item_offset = 0;
+                last_found_item = None;
             }
         } else {
             // unknown item
@@ -977,7 +995,10 @@ pub fn dist_hash(h1: &str, h2: &str) -> u32 {
         if h1.len() != a_dist_h.len() || h2.len() != a_dist_h.len() {
             None?;
         }
-        let dist_h = a_dist_h.iter().map(|d| d.max(&1)).product();
+        let dist_h = a_dist_h
+            .iter()
+            .map(|d| if *d <= 2 { 1 } else { *d })
+            .product();
 
         if DEBUG {
             println!("{:?} = {}", a_dist_h, dist_h);

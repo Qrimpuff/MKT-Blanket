@@ -20,7 +20,7 @@ fn main() {
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    let name = "inv_ipad";
+    let name = "mkt gliders (1)";
 
     let screenshot = image::open(format!("tmp/{}.jpg", name))
         .unwrap()
