@@ -1,12 +1,12 @@
 #![allow(dead_code)]
 
 use mkt_data::*;
-use palette::{Hsv, IntoColor, Pixel, Srgb};
+use palette::{GetHue, Hsv, IntoColor, Pixel, Srgb};
 
 use std::{cmp::Ordering, collections::HashMap, fs};
 
 use image::{
-    imageops::{self, FilterType},
+    imageops::{self, crop_imm, FilterType},
     GenericImage, GrayImage, Luma, RgbImage,
 };
 use imageproc::{
@@ -19,7 +19,7 @@ use imageproc::{
 use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
 
-const DEBUG: bool = false;
+const DEBUG: bool = true;
 const DEBUG_IMG: bool = false;
 
 const DEFAULT_ITEM_WIDTH: u32 = 160;
@@ -45,7 +45,7 @@ const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
 const HASH_ITEM_HEIGHT: u32 = 100;
-pub const HASH_ITEM_THRESHOLD: u32 = 500;
+pub const HASH_ITEM_THRESHOLD: u32 = 5000;
 
 struct LvlTemplate(ItemLvl, GrayImage);
 struct PointsTemplate(ItemPoints, GrayImage);
@@ -123,6 +123,9 @@ impl ItemArea {
     }
     fn ratio(&self) -> f32 {
         (self.x2 - self.x1) as f32 / (self.y2 - self.y1) as f32
+    }
+    fn area(&self) -> u32 {
+        (self.x2 - self.x1) * (self.y2 - self.y1)
     }
     fn swap_x_y(mut self) -> Self {
         std::mem::swap(&mut self.x1, &mut self.y1);
@@ -275,6 +278,12 @@ fn hsv(ps: [u8; 3]) -> (f32, f32, f32) {
     (h, s, v)
 }
 
+fn hue(ps: [u8; 3]) -> Option<palette::RgbHue> {
+    let rgb = Srgb::from_raw(&ps).into_format();
+    let hsv: Hsv = rgb.into_color();
+    hsv.get_hue()
+}
+
 fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
     // used for find_item_rows
     let img = GrayImage::from_raw(
@@ -304,6 +313,7 @@ fn find_item_areas(i: usize, img: &RgbImage) -> impl Iterator<Item = ItemArea> {
 
     rows.cartesian_product(columns)
         .flat_map(|(c, r)| c.intersect(&r))
+        .filter(|a| a.area() > 100)
         .filter(|a| (a.ratio() - DEFAULT_ITEM_RATIO).abs() < ITEM_RATIO_THRESHOLD)
 }
 
@@ -653,13 +663,19 @@ pub fn screenshots_to_bootstrap_hashes(
 
     // remove duplicate rows
     let mut new_hashes: Vec<String> = vec![];
+    dbg!(&items.len());
     let mut items = items
         .into_iter()
         .chunks(4)
         .into_iter()
         .flat_map(|c| {
-            let chunk = c.collect_vec();
+            let mut chunk = c.collect_vec();
+            if DEBUG {
+                chunk.iter_mut().for_each(|i| i.img = None);
+                println!("chunk {:#?}", chunk);
+            }
             if chunk.iter().all(|i| {
+                println!("item {:#?}", i);
                 new_hashes
                     .iter()
                     .any(|h| dist_hash(&i.hash, h) < HASH_ITEM_THRESHOLD)
@@ -905,7 +921,7 @@ pub fn screenshots_to_inventory(
 
 pub fn _test_img_hash() {
     let imgs = (1..=8)
-        .map(|i| format!("tests/yoshi ({}).png", i))
+        .map(|i| format!("tmp/yoshi_{}.png", i))
         .collect_vec();
 
     for img1 in &imgs {
@@ -949,29 +965,63 @@ fn to_image_hash(img: &RgbImage) -> String {
     let gh = hasher.hash_image(&green);
     let bh = hasher.hash_image(&blue);
 
-    let avg_r = hash_average_luma(&red);
-    let avg_g = hash_average_luma(&green);
-    let avg_b = hash_average_luma(&blue);
+    let red = hue_gray_image(img, 0.0);
+    let green = hue_gray_image(img, 120.0);
+    let blue = hue_gray_image(img, 240.0);
+    let sat = sat_gray_image(img);
 
-    let l_rg = color_angle(avg_r, avg_g);
-    let l_rb = color_angle(avg_r, avg_b);
+    let rhh = hasher.hash_image(&red);
+    let ghh = hasher.hash_image(&green);
+    let bhh = hasher.hash_image(&blue);
+    let sh = hasher.hash_image(&sat);
 
-    format!(
-        "{}|{}|{}|{}|{}",
+    // let nw = crop_imm(img, 0, 0, img.width() / 2, img.height() / 2).to_image();
+    // let ne = crop_imm(img, img.width() / 2, 0, img.width() / 2, img.height() / 2).to_image();
+    // let sw = crop_imm(img, 0, img.height() / 2, img.width() / 2, img.height() / 2).to_image();
+    // let se = crop_imm(
+    //     img,
+    //     img.width() / 2,
+    //     img.height() / 2,
+    //     img.width() / 2,
+    //     img.height() / 2,
+    // )
+    // .to_image();
+
+    // let nwh = hue_histogram(&nw);
+    // let neh = hue_histogram(&ne);
+    // let swh = hue_histogram(&sw);
+    // let seh = hue_histogram(&se);
+
+    let hash = format!(
+        "{}|{}|{}|{}|{}|{}|{}",
         rh.to_base64(),
         gh.to_base64(),
         bh.to_base64(),
-        color_angle_to_hash(l_rg),
-        color_angle_to_hash(l_rb),
-    )
+        rhh.to_base64(),
+        ghh.to_base64(),
+        bhh.to_base64(),
+        sh.to_base64(),
+        // base64::encode(nwh),
+        // base64::encode(neh),
+        // base64::encode(swh),
+        // base64::encode(seh)
+    );
+
+    if DEBUG {
+        println!("{}", hash);
+    }
+
+    hash
 }
 
 pub fn dist_hash(h1: &str, h2: &str) -> u32 {
     let dist: Option<_> = try {
-        let (r1, g1, b1, l_rg1, l_rb1) = h1.split('|').next_tuple()?;
-        let (r2, g2, b2, l_rg2, l_rb2) = h2.split('|').next_tuple()?;
+        let (r1, g1, b1, rh1, gh1, bh1, sh1) = h1.split('|').next_tuple()?;
+        let (r2, g2, b2, rh2, gh2, bh2, sh2) = h2.split('|').next_tuple()?;
+        // let (r1, g1, b1, nw1, ne1, sw1, se1) = h1.split('|').next_tuple()?;
+        // let (r2, g2, b2, nw2, ne2, sw2, se2) = h2.split('|').next_tuple()?;
 
-        let dist_h = [
+        let debug_dist_h = [
             ImageHash::<Box<[u8]>>::from_base64(r1)
                 .ok()?
                 .dist(&ImageHash::from_base64(r2).ok()?),
@@ -981,22 +1031,91 @@ pub fn dist_hash(h1: &str, h2: &str) -> u32 {
             ImageHash::<Box<[u8]>>::from_base64(b1)
                 .ok()?
                 .dist(&ImageHash::from_base64(b2).ok()?),
-        ]
-        .iter()
-        .map(|d| d + 1)
-        .product::<u32>() as f64;
+            ImageHash::<Box<[u8]>>::from_base64(rh1)
+                .ok()?
+                .dist(&ImageHash::from_base64(rh2).ok()?),
+            ImageHash::<Box<[u8]>>::from_base64(gh1)
+                .ok()?
+                .dist(&ImageHash::from_base64(gh2).ok()?),
+            ImageHash::<Box<[u8]>>::from_base64(bh1)
+                .ok()?
+                .dist(&ImageHash::from_base64(bh2).ok()?),
+            ImageHash::<Box<[u8]>>::from_base64(sh1)
+                .ok()?
+                .dist(&ImageHash::from_base64(sh2).ok()?),
+        ];
+        let dist_h = debug_dist_h.iter().map(|d| d.max(&1)).product::<u32>() as f64;
 
-        let dist_d = dist_angle(
-            (hash_to_color_angle(l_rg1), hash_to_color_angle(l_rb1)),
-            (hash_to_color_angle(l_rg2), hash_to_color_angle(l_rb2)),
-        )
-        .powf(2.0)
-            + 1.0;
+        // let nw1 = base64::decode(nw1).ok()?;
+        // let ne1 = base64::decode(ne1).ok()?;
+        // let sw1 = base64::decode(sw1).ok()?;
+        // let se1 = base64::decode(se1).ok()?;
 
-        // println!("{}, {} = {}", dist_h, dist_d, (dist_h * dist_d) as u32);
-        (dist_h * dist_d) as u32
+        // let nw2 = base64::decode(nw2).ok()?;
+        // let ne2 = base64::decode(ne2).ok()?;
+        // let sw2 = base64::decode(sw2).ok()?;
+        // let se2 = base64::decode(se2).ok()?;
+
+        // if DEBUG {
+        //     println!("1: {:?} {:?} {:?} {:?}", nw1, ne1, sw1, se1);
+        //     println!("2: {:?} {:?} {:?} {:?}", nw2, ne2, sw2, se2);
+        // }
+
+        // fn dist_d(a: Vec<u8>, b: Vec<u8>) -> f64 {
+        //     a.into_iter()
+        //         .zip(b.into_iter())
+        //         .map(|(a, b)| (a as i64 - b as i64).pow(2))
+        //         .sum::<i64>() as f64
+        // }
+        // let nw = dist_d(nw1, nw2);
+        // let ne = dist_d(ne1, ne2);
+        // let sw = dist_d(sw1, sw2);
+        // let se = dist_d(se1, se2);
+
+        // let dist_d = (nw + ne + sw + se).round();
+        let dist_d = 0.0;
+
+        let dist = (dist_h * 1.0 + dist_d) as u32;
+
+        if DEBUG {
+            println!("{:?}, {} = {}", debug_dist_h, dist_d, dist);
+        }
+        dist
     };
     dist.unwrap_or(u32::MAX)
+}
+
+fn hue_histogram(img: &RgbImage) -> Vec<u8> {
+    let hs = img
+        .pixels()
+        .map(|p| hsv(p.0))
+        .filter_map(
+            |(h, s, v)| {
+                if s < 0.05 || v < 0.05 {
+                    None
+                } else {
+                    Some(h)
+                }
+            },
+        )
+        .collect_vec();
+
+    let max = 360.0;
+    let parts = 3.0;
+    let bucket = max / parts;
+    let mut out = vec![0; parts as usize];
+    for (i, item) in out.iter_mut().enumerate().take(parts as usize) {
+        let a = (i + 1) as f64 * bucket;
+        *item = (hs
+            .iter()
+            .map(|h| {
+                1.0 - ((*h as f64 - a).abs().min((*h as f64 + max - a).abs()) / bucket).min(1.0)
+            })
+            .sum::<f64>()
+            * 255.0
+            / hs.len() as f64) as u8;
+    }
+    out
 }
 
 fn hash_average_luma(img: &GrayImage) -> u8 {
@@ -1076,4 +1195,62 @@ fn save_image_hash(item: &Item, img: &RgbImage) {
     let h = to_image_hash(&item_img);
     fs::create_dir_all(format!("templates/{}s", item.i_type)).unwrap();
     fs::write(format!("templates/{}s/{}.txt", item.i_type, item.id), h).unwrap();
+}
+
+pub fn _test_gray_image() {
+    let img = image::open("tmp/inv_ipad.jpg").unwrap().to_rgb8();
+
+    let red = map::red_channel(&img);
+    red.save("pics/gray_1_red.png").unwrap();
+
+    let green = map::green_channel(&img);
+    green.save("pics/gray_2_green.png").unwrap();
+
+    let blue = map::blue_channel(&img);
+    blue.save("pics/gray_3_blue.png").unwrap();
+
+    let red_hue = hue_gray_image(&img, 0.0);
+    red_hue.save("pics/gray_4_red_hue.png").unwrap();
+
+    let green_hue = hue_gray_image(&img, 120.0);
+    green_hue.save("pics/gray_5_green_hue.png").unwrap();
+
+    let blue_hue = hue_gray_image(&img, 240.0);
+    blue_hue.save("pics/gray_6_blue_hue.png").unwrap();
+
+    let sat = sat_gray_image(&img);
+    sat.save("pics/gray_7_sat.png").unwrap();
+}
+
+fn hue_gray_image(img: &RgbImage, base_hue: f32) -> GrayImage {
+    GrayImage::from_raw(
+        img.width(),
+        img.height(),
+        img.pixels()
+            .flat_map(|p| {
+                let h = hue(p.0);
+                let diff = if let Some(h) = h {
+                    base_hue - h
+                } else {
+                    180.0.into()
+                };
+                [((1.0 - diff.to_degrees().abs().min(90.0) / 90.0) * 255.0) as u8]
+            })
+            .collect(),
+    )
+    .unwrap()
+}
+
+fn sat_gray_image(img: &RgbImage) -> GrayImage {
+    GrayImage::from_raw(
+        img.width(),
+        img.height(),
+        img.pixels()
+            .flat_map(|p| {
+                let s = hsv(p.0).1;
+                [((1.0 - s) * 255.0) as u8]
+            })
+            .collect(),
+    )
+    .unwrap()
 }

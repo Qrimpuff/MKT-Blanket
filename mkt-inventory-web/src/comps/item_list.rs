@@ -16,7 +16,7 @@ use super::item::ShowStat;
 pub enum Msg {
     DataInventory(Shared<DataInventory>),
     _ToggleDisplay,
-    ShowStat(ShowStat),
+    _ShowStat(ShowStat),
     SortStat(SortStat),
 }
 
@@ -87,7 +87,7 @@ impl Component for ItemList {
                 self.visible = !self.visible;
                 true
             }
-            Msg::ShowStat(show_stat) => {
+            Msg::_ShowStat(show_stat) => {
                 if self.show_stat != show_stat {
                     self.show_stat = show_stat;
 
@@ -170,11 +170,11 @@ impl Component for ItemList {
 }
 
 impl ItemList {
-    fn view_show_button(&self, ctx: &Context<Self>, text: &str, show_stat: ShowStat) -> Html {
+    fn _view_show_button(&self, ctx: &Context<Self>, text: &str, show_stat: ShowStat) -> Html {
         html! {
             <button
                 class={classes!("button", (self.show_stat == show_stat).then_some("is-info is-selected"))}
-                onclick={ctx.link().callback(move |_| Msg::ShowStat(show_stat))}>
+                onclick={ctx.link().callback(move |_| Msg::_ShowStat(show_stat))}>
                 <span>{ text }</span>
             </button>
         }

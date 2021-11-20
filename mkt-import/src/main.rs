@@ -7,20 +7,22 @@ use mkt_import::screenshot::*;
 fn main() {
     println!("MKT Test inventory Import");
 
-    let data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
-    _test_screenshot_import(&data);
+    let _data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
+    _test_screenshot_import(&_data);
 
     // _test_combine();
 
-    // _test_screenshots_to_bootstrap_hashes(&data);
+    // _test_screenshots_to_bootstrap_hashes(&_data);
 
     // _test_img_hash();
+
+    // _test_gray_image();
 
     println!("Done");
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    let name = "mkt_gliders_3";
+    let name = "inv_ipad";
 
     let screenshot = image::open(format!("tmp/{}.jpg", name))
         .unwrap()

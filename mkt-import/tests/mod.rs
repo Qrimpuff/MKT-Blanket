@@ -1,5 +1,6 @@
 mod drivers;
 mod gliders;
+mod hash;
 mod karts;
 
 use std::fs;

@@ -1,0 +1,4349 @@
+{
+  "courses": {},
+  "drivers": {
+    "d_baby_daisy": {
+      "sort": 3,
+      "id": "d_baby_daisy",
+      "i_type": "Driver",
+      "name": "Baby Daisy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698540700Z"
+    },
+    "d_baby_luigi": {
+      "sort": 5,
+      "id": "d_baby_luigi",
+      "i_type": "Driver",
+      "name": "Baby Luigi",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698555200Z"
+    },
+    "d_baby_mario": {
+      "sort": 1,
+      "id": "d_baby_mario",
+      "i_type": "Driver",
+      "name": "Baby Mario",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698483900Z"
+    },
+    "d_baby_mario_koala": {
+      "sort": 99,
+      "id": "d_baby_mario_koala",
+      "i_type": "Driver",
+      "name": "Baby Mario (Koala)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699337400Z"
+    },
+    "d_baby_peach": {
+      "sort": 2,
+      "id": "d_baby_peach",
+      "i_type": "Driver",
+      "name": "Baby Peach",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698531800Z"
+    },
+    "d_baby_peach_cherub": {
+      "sort": 68,
+      "id": "d_baby_peach_cherub",
+      "i_type": "Driver",
+      "name": "Baby Peach (Cherub)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699073800Z"
+    },
+    "d_baby_rosalina": {
+      "sort": 4,
+      "id": "d_baby_rosalina",
+      "i_type": "Driver",
+      "name": "Baby Rosalina",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698547900Z"
+    },
+    "d_baby_rosalina_detective": {
+      "sort": 72,
+      "id": "d_baby_rosalina_detective",
+      "i_type": "Driver",
+      "name": "Baby Rosalina (Detective)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699104200Z"
+    },
+    "d_birdo": {
+      "sort": 38,
+      "id": "d_birdo",
+      "i_type": "Driver",
+      "name": "Birdo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698818200Z"
+    },
+    "d_birdo_black": {
+      "sort": 129,
+      "id": "d_birdo_black",
+      "i_type": "Driver",
+      "name": "Birdo (Black)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699608200Z"
+    },
+    "d_birdo_blue": {
+      "sort": 49,
+      "id": "d_birdo_blue",
+      "i_type": "Driver",
+      "name": "Birdo (Blue)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698910300Z"
+    },
+    "d_birdo_light_blue": {
+      "sort": 40,
+      "id": "d_birdo_light_blue",
+      "i_type": "Driver",
+      "name": "Birdo (Light Blue)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698831100Z"
+    },
+    "d_birdo_yellow": {
+      "sort": 45,
+      "id": "d_birdo_yellow",
+      "i_type": "Driver",
+      "name": "Birdo (Yellow)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698872900Z"
+    },
+    "d_black_shy_guy": {
+      "sort": 36,
+      "id": "d_black_shy_guy",
+      "i_type": "Driver",
+      "name": "Black Shy Guy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698804Z"
+    },
+    "d_black_yoshi": {
+      "sort": 74,
+      "id": "d_black_yoshi",
+      "i_type": "Driver",
+      "name": "Black Yoshi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699128800Z"
+    },
+    "d_blue_koopa_freerunning": {
+      "sort": 48,
+      "id": "d_blue_koopa_freerunning",
+      "i_type": "Driver",
+      "name": "Blue Koopa (Freerunning)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698893400Z"
+    },
+    "d_blue_yoshi": {
+      "sort": 26,
+      "id": "d_blue_yoshi",
+      "i_type": "Driver",
+      "name": "Blue Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698724500Z"
+    },
+    "d_boomerang_bro": {
+      "sort": 42,
+      "id": "d_boomerang_bro",
+      "i_type": "Driver",
+      "name": "Boomerang Bro",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698853800Z"
+    },
+    "d_bowser": {
+      "sort": 28,
+      "id": "d_bowser",
+      "i_type": "Driver",
+      "name": "Bowser",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698736500Z"
+    },
+    "d_bowser_jr": {
+      "sort": 32,
+      "id": "d_bowser_jr",
+      "i_type": "Driver",
+      "name": "Bowser Jr.",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698770300Z"
+    },
+    "d_bowser_jr_pirate": {
+      "sort": 122,
+      "id": "d_bowser_jr_pirate",
+      "i_type": "Driver",
+      "name": "Bowser Jr. (Pirate)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699549900Z"
+    },
+    "d_bowser_santa": {
+      "sort": 127,
+      "id": "d_bowser_santa",
+      "i_type": "Driver",
+      "name": "Bowser (Santa)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699587400Z"
+    },
+    "d_builder_luigi": {
+      "sort": 90,
+      "id": "d_builder_luigi",
+      "i_type": "Driver",
+      "name": "Builder Luigi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699265300Z"
+    },
+    "d_builder_mario": {
+      "sort": 75,
+      "id": "d_builder_mario",
+      "i_type": "Driver",
+      "name": "Builder Mario",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699135500Z"
+    },
+    "d_builder_toad": {
+      "sort": 76,
+      "id": "d_builder_toad",
+      "i_type": "Driver",
+      "name": "Builder Toad",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699144600Z"
+    },
+    "d_builder_toadette": {
+      "sort": 100,
+      "id": "d_builder_toadette",
+      "i_type": "Driver",
+      "name": "Builder Toadette",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699345Z"
+    },
+    "d_captain_toad": {
+      "sort": 82,
+      "id": "d_captain_toad",
+      "i_type": "Driver",
+      "name": "Captain Toad",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699198200Z"
+    },
+    "d_cat_peach": {
+      "sort": 93,
+      "id": "d_cat_peach",
+      "i_type": "Driver",
+      "name": "Cat Peach",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699284800Z"
+    },
+    "d_cat_toad": {
+      "sort": 94,
+      "id": "d_cat_toad",
+      "i_type": "Driver",
+      "name": "Cat Toad",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699290700Z"
+    },
+    "d_daisy": {
+      "sort": 19,
+      "id": "d_daisy",
+      "i_type": "Driver",
+      "name": "Daisy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698662900Z"
+    },
+    "d_daisy_fairy": {
+      "sort": 77,
+      "id": "d_daisy_fairy",
+      "i_type": "Driver",
+      "name": "Daisy (Fairy)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699151800Z"
+    },
+    "d_daisy_holiday_cheer": {
+      "sort": 60,
+      "id": "d_daisy_holiday_cheer",
+      "i_type": "Driver",
+      "name": "Daisy (Holiday Cheer)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699008Z"
+    },
+    "d_daisy_swimwear": {
+      "sort": 103,
+      "id": "d_daisy_swimwear",
+      "i_type": "Driver",
+      "name": "Daisy (Swimwear)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699366100Z"
+    },
+    "d_daisy_yukata": {
+      "sort": 84,
+      "id": "d_daisy_yukata",
+      "i_type": "Driver",
+      "name": "Daisy (Yukata)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699212200Z"
+    },
+    "d_diddy_kong": {
+      "sort": 30,
+      "id": "d_diddy_kong",
+      "i_type": "Driver",
+      "name": "Diddy Kong",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698755700Z"
+    },
+    "d_dixie_kong": {
+      "sort": 118,
+      "id": "d_dixie_kong",
+      "i_type": "Driver",
+      "name": "Dixie Kong",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699512200Z"
+    },
+    "d_donkey_kong": {
+      "sort": 29,
+      "id": "d_donkey_kong",
+      "i_type": "Driver",
+      "name": "Donkey Kong",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698743500Z"
+    },
+    "d_donkey_kong_jr_snes": {
+      "sort": 124,
+      "id": "d_donkey_kong_jr_snes",
+      "i_type": "Driver",
+      "name": "Donkey Kong Jr. (SNES)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699564900Z"
+    },
+    "d_dry_bones": {
+      "sort": 8,
+      "id": "d_dry_bones",
+      "i_type": "Driver",
+      "name": "Dry Bones",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698574Z"
+    },
+    "d_dry_bones_gold": {
+      "sort": 116,
+      "id": "d_dry_bones_gold",
+      "i_type": "Driver",
+      "name": "Dry Bones (Gold)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699499700Z"
+    },
+    "d_dry_bowser": {
+      "sort": 110,
+      "id": "d_dry_bowser",
+      "i_type": "Driver",
+      "name": "Dry Bowser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699424200Z"
+    },
+    "d_dry_bowser_gold": {
+      "sort": 119,
+      "id": "d_dry_bowser_gold",
+      "i_type": "Driver",
+      "name": "Dry Bowser (Gold)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699519100Z"
+    },
+    "d_fire_bro": {
+      "sort": 44,
+      "id": "d_fire_bro",
+      "i_type": "Driver",
+      "name": "Fire Bro",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698866300Z"
+    },
+    "d_fire_rosalina": {
+      "sort": 91,
+      "id": "d_fire_rosalina",
+      "i_type": "Driver",
+      "name": "Fire Rosalina",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699271700Z"
+    },
+    "d_funky_kong": {
+      "sort": 117,
+      "id": "d_funky_kong",
+      "i_type": "Driver",
+      "name": "Funky Kong",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699506100Z"
+    },
+    "d_gold_koopa_freerunning": {
+      "sort": 114,
+      "id": "d_gold_koopa_freerunning",
+      "i_type": "Driver",
+      "name": "Gold Koopa (Freerunning)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699484100Z"
+    },
+    "d_green_shy_guy": {
+      "sort": 47,
+      "id": "d_green_shy_guy",
+      "i_type": "Driver",
+      "name": "Green Shy Guy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698886Z"
+    },
+    "d_hammer_bro": {
+      "sort": 41,
+      "id": "d_hammer_bro",
+      "i_type": "Driver",
+      "name": "Hammer Bro",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698847300Z"
+    },
+    "d_ice_bro": {
+      "sort": 43,
+      "id": "d_ice_bro",
+      "i_type": "Driver",
+      "name": "Ice Bro",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698859800Z"
+    },
+    "d_ice_mario": {
+      "sort": 67,
+      "id": "d_ice_mario",
+      "i_type": "Driver",
+      "name": "Ice Mario",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699066200Z"
+    },
+    "d_iggy": {
+      "sort": 9,
+      "id": "d_iggy",
+      "i_type": "Driver",
+      "name": "Iggy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698590600Z"
+    },
+    "d_kamek": {
+      "sort": 132,
+      "id": "d_kamek",
+      "i_type": "Driver",
+      "name": "Kamek",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699629600Z"
+    },
+    "d_king_bob_omb": {
+      "sort": 123,
+      "id": "d_king_bob_omb",
+      "i_type": "Driver",
+      "name": "King Bob-omb",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699557500Z"
+    },
+    "d_king_bob_omb_gold": {
+      "sort": 131,
+      "id": "d_king_bob_omb_gold",
+      "i_type": "Driver",
+      "name": "King Bob-omb (Gold)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699623500Z"
+    },
+    "d_king_boo": {
+      "sort": 35,
+      "id": "d_king_boo",
+      "i_type": "Driver",
+      "name": "King Boo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698797700Z"
+    },
+    "d_king_boo_gold": {
+      "sort": 126,
+      "id": "d_king_boo_gold",
+      "i_type": "Driver",
+      "name": "King Boo (Gold)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699579300Z"
+    },
+    "d_king_boo_luigi_s_mansion": {
+      "sort": 111,
+      "id": "d_king_boo_luigi_s_mansion",
+      "i_type": "Driver",
+      "name": "King Boo (Luigi's Mansion)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699432Z"
+    },
+    "d_koopa_troopa": {
+      "sort": 6,
+      "id": "d_koopa_troopa",
+      "i_type": "Driver",
+      "name": "Koopa Troopa",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698561500Z"
+    },
+    "d_lakitu": {
+      "sort": 31,
+      "id": "d_lakitu",
+      "i_type": "Driver",
+      "name": "Lakitu",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698763900Z"
+    },
+    "d_lakitu_party_time": {
+      "sort": 128,
+      "id": "d_lakitu_party_time",
+      "i_type": "Driver",
+      "name": "Lakitu (Party Time)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699594500Z"
+    },
+    "d_larry": {
+      "sort": 10,
+      "id": "d_larry",
+      "i_type": "Driver",
+      "name": "Larry",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698596800Z"
+    },
+    "d_lemmy": {
+      "sort": 11,
+      "id": "d_lemmy",
+      "i_type": "Driver",
+      "name": "Lemmy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698602500Z"
+    },
+    "d_ludwig": {
+      "sort": 12,
+      "id": "d_ludwig",
+      "i_type": "Driver",
+      "name": "Ludwig",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698608300Z"
+    },
+    "d_luigi": {
+      "sort": 23,
+      "id": "d_luigi",
+      "i_type": "Driver",
+      "name": "Luigi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698685500Z"
+    },
+    "d_luigi_classic": {
+      "sort": 71,
+      "id": "d_luigi_classic",
+      "i_type": "Driver",
+      "name": "Luigi (Classic)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699096Z"
+    },
+    "d_luigi_lederhosen": {
+      "sort": 92,
+      "id": "d_luigi_lederhosen",
+      "i_type": "Driver",
+      "name": "Luigi (Lederhosen)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699278500Z"
+    },
+    "d_luigi_painter": {
+      "sort": 102,
+      "id": "d_luigi_painter",
+      "i_type": "Driver",
+      "name": "Luigi (Painter)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699358900Z"
+    },
+    "d_mario": {
+      "sort": 16,
+      "id": "d_mario",
+      "i_type": "Driver",
+      "name": "Mario",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698633200Z"
+    },
+    "d_mario_baseball": {
+      "sort": 104,
+      "id": "d_mario_baseball",
+      "i_type": "Driver",
+      "name": "Mario (Baseball)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699373900Z"
+    },
+    "d_mario_chef": {
+      "sort": 78,
+      "id": "d_mario_chef",
+      "i_type": "Driver",
+      "name": "Mario (Chef)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699159300Z"
+    },
+    "d_mario_classic": {
+      "sort": 70,
+      "id": "d_mario_classic",
+      "i_type": "Driver",
+      "name": "Mario (Classic)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699089100Z"
+    },
+    "d_mario_hakama": {
+      "sort": 55,
+      "id": "d_mario_hakama",
+      "i_type": "Driver",
+      "name": "Mario (Hakama)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698950700Z"
+    },
+    "d_mario_halloween": {
+      "sort": 87,
+      "id": "d_mario_halloween",
+      "i_type": "Driver",
+      "name": "Mario (Halloween)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699233600Z"
+    },
+    "d_mario_happi": {
+      "sort": 63,
+      "id": "d_mario_happi",
+      "i_type": "Driver",
+      "name": "Mario (Happi)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699029400Z"
+    },
+    "d_mario_musician": {
+      "sort": 53,
+      "id": "d_mario_musician",
+      "i_type": "Driver",
+      "name": "Mario (Musician)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698935700Z"
+    },
+    "d_mario_racing": {
+      "sort": 97,
+      "id": "d_mario_racing",
+      "i_type": "Driver",
+      "name": "Mario (Racing)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699323Z"
+    },
+    "d_mario_santa": {
+      "sort": 58,
+      "id": "d_mario_santa",
+      "i_type": "Driver",
+      "name": "Mario (Santa)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698992200Z"
+    },
+    "d_mario_snes": {
+      "sort": 85,
+      "id": "d_mario_snes",
+      "i_type": "Driver",
+      "name": "Mario (SNES)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699218900Z"
+    },
+    "d_mario_sunshine": {
+      "sort": 86,
+      "id": "d_mario_sunshine",
+      "i_type": "Driver",
+      "name": "Mario (Sunshine)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699226400Z"
+    },
+    "d_mario_swimwear": {
+      "sort": 81,
+      "id": "d_mario_swimwear",
+      "i_type": "Driver",
+      "name": "Mario (Swimwear)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699190700Z"
+    },
+    "d_mario_tuxedo": {
+      "sort": 101,
+      "id": "d_mario_tuxedo",
+      "i_type": "Driver",
+      "name": "Mario (Tuxedo)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699351900Z"
+    },
+    "d_metal_mario": {
+      "sort": 50,
+      "id": "d_metal_mario",
+      "i_type": "Driver",
+      "name": "Metal Mario",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698917400Z"
+    },
+    "d_monty_mole": {
+      "sort": 46,
+      "id": "d_monty_mole",
+      "i_type": "Driver",
+      "name": "Monty Mole",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698879800Z"
+    },
+    "d_morton": {
+      "sort": 13,
+      "id": "d_morton",
+      "i_type": "Driver",
+      "name": "Morton",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698614100Z"
+    },
+    "d_nabbit": {
+      "sort": 121,
+      "id": "d_nabbit",
+      "i_type": "Driver",
+      "name": "Nabbit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699541300Z"
+    },
+    "d_pauline": {
+      "sort": 52,
+      "id": "d_pauline",
+      "i_type": "Driver",
+      "name": "Pauline",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698929Z"
+    },
+    "d_pauline_party_time": {
+      "sort": 62,
+      "id": "d_pauline_party_time",
+      "i_type": "Driver",
+      "name": "Pauline (Party Time)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699022600Z"
+    },
+    "d_pauline_rose": {
+      "sort": 95,
+      "id": "d_pauline_rose",
+      "i_type": "Driver",
+      "name": "Pauline (Rose)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699297300Z"
+    },
+    "d_peach": {
+      "sort": 17,
+      "id": "d_peach",
+      "i_type": "Driver",
+      "name": "Peach",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698650600Z"
+    },
+    "d_peach_explorer": {
+      "sort": 89,
+      "id": "d_peach_explorer",
+      "i_type": "Driver",
+      "name": "Peach (Explorer)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699256500Z"
+    },
+    "d_peach_halloween": {
+      "sort": 88,
+      "id": "d_peach_halloween",
+      "i_type": "Driver",
+      "name": "Peach (Halloween)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699240600Z"
+    },
+    "d_peach_happi": {
+      "sort": 105,
+      "id": "d_peach_happi",
+      "i_type": "Driver",
+      "name": "Peach (Happi)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699390700Z"
+    },
+    "d_peach_kimono": {
+      "sort": 54,
+      "id": "d_peach_kimono",
+      "i_type": "Driver",
+      "name": "Peach (Kimono)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698944Z"
+    },
+    "d_peach_vacation": {
+      "sort": 57,
+      "id": "d_peach_vacation",
+      "i_type": "Driver",
+      "name": "Peach (Vacation)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698974400Z"
+    },
+    "d_peach_wedding": {
+      "sort": 79,
+      "id": "d_peach_wedding",
+      "i_type": "Driver",
+      "name": "Peach (Wedding)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699167Z"
+    },
+    "d_peach_wintertime": {
+      "sort": 65,
+      "id": "d_peach_wintertime",
+      "i_type": "Driver",
+      "name": "Peach (Wintertime)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699053Z"
+    },
+    "d_peachette": {
+      "sort": 51,
+      "id": "d_peachette",
+      "i_type": "Driver",
+      "name": "Peachette",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698923400Z"
+    },
+    "d_penguin_luigi": {
+      "sort": 66,
+      "id": "d_penguin_luigi",
+      "i_type": "Driver",
+      "name": "Penguin Luigi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699059800Z"
+    },
+    "d_penguin_mario": {
+      "sort": 106,
+      "id": "d_penguin_mario",
+      "i_type": "Driver",
+      "name": "Penguin Mario",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699398Z"
+    },
+    "d_penguin_toad": {
+      "sort": 96,
+      "id": "d_penguin_toad",
+      "i_type": "Driver",
+      "name": "Penguin Toad",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699306100Z"
+    },
+    "d_pink_gold_peach": {
+      "sort": 59,
+      "id": "d_pink_gold_peach",
+      "i_type": "Driver",
+      "name": "Pink Gold Peach",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699000200Z"
+    },
+    "d_pink_shy_guy": {
+      "sort": 39,
+      "id": "d_pink_shy_guy",
+      "i_type": "Driver",
+      "name": "Pink Shy Guy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698824300Z"
+    },
+    "d_pink_yoshi": {
+      "sort": 27,
+      "id": "d_pink_yoshi",
+      "i_type": "Driver",
+      "name": "Pink Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698730600Z"
+    },
+    "d_red_koopa_freerunning": {
+      "sort": 37,
+      "id": "d_red_koopa_freerunning",
+      "i_type": "Driver",
+      "name": "Red Koopa (Freerunning)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698811700Z"
+    },
+    "d_red_yoshi": {
+      "sort": 25,
+      "id": "d_red_yoshi",
+      "i_type": "Driver",
+      "name": "Red Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698717100Z"
+    },
+    "d_rosalina": {
+      "sort": 22,
+      "id": "d_rosalina",
+      "i_type": "Driver",
+      "name": "Rosalina",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698679900Z"
+    },
+    "d_rosalina_aurora": {
+      "sort": 69,
+      "id": "d_rosalina_aurora",
+      "i_type": "Driver",
+      "name": "Rosalina (Aurora)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699081800Z"
+    },
+    "d_rosalina_halloween": {
+      "sort": 56,
+      "id": "d_rosalina_halloween",
+      "i_type": "Driver",
+      "name": "Rosalina (Halloween)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698957800Z"
+    },
+    "d_rosalina_swimwear": {
+      "sort": 80,
+      "id": "d_rosalina_swimwear",
+      "i_type": "Driver",
+      "name": "Rosalina (Swimwear)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699174100Z"
+    },
+    "d_roy": {
+      "sort": 14,
+      "id": "d_roy",
+      "i_type": "Driver",
+      "name": "Roy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698619600Z"
+    },
+    "d_shy_guy": {
+      "sort": 7,
+      "id": "d_shy_guy",
+      "i_type": "Driver",
+      "name": "Shy Guy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698567800Z"
+    },
+    "d_shy_guy_gold": {
+      "sort": 125,
+      "id": "d_shy_guy_gold",
+      "i_type": "Driver",
+      "name": "Shy Guy (Gold)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699572100Z"
+    },
+    "d_shy_guy_ninja": {
+      "sort": 130,
+      "id": "d_shy_guy_ninja",
+      "i_type": "Driver",
+      "name": "Shy Guy (Ninja)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699616200Z"
+    },
+    "d_shy_guy_pastry_chef": {
+      "sort": 112,
+      "id": "d_shy_guy_pastry_chef",
+      "i_type": "Driver",
+      "name": "Shy Guy (Pastry Chef)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699439800Z"
+    },
+    "d_toad": {
+      "sort": 20,
+      "id": "d_toad",
+      "i_type": "Driver",
+      "name": "Toad",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698668200Z"
+    },
+    "d_toad_party_time": {
+      "sort": 64,
+      "id": "d_toad_party_time",
+      "i_type": "Driver",
+      "name": "Toad (Party Time)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699036300Z"
+    },
+    "d_toad_pit_crew": {
+      "sort": 24,
+      "id": "d_toad_pit_crew",
+      "i_type": "Driver",
+      "name": "Toad (Pit Crew)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698699700Z"
+    },
+    "d_toadette": {
+      "sort": 21,
+      "id": "d_toadette",
+      "i_type": "Driver",
+      "name": "Toadette",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698674Z"
+    },
+    "d_toadette_explorer": {
+      "sort": 83,
+      "id": "d_toadette_explorer",
+      "i_type": "Driver",
+      "name": "Toadette (Explorer)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699205200Z"
+    },
+    "d_waluigi": {
+      "sort": 34,
+      "id": "d_waluigi",
+      "i_type": "Driver",
+      "name": "Waluigi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698791700Z"
+    },
+    "d_waluigi_bus_driver": {
+      "sort": 113,
+      "id": "d_waluigi_bus_driver",
+      "i_type": "Driver",
+      "name": "Waluigi (Bus Driver)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699456400Z"
+    },
+    "d_wario": {
+      "sort": 33,
+      "id": "d_wario",
+      "i_type": "Driver",
+      "name": "Wario",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698785400Z"
+    },
+    "d_wario_cowboy": {
+      "sort": 120,
+      "id": "d_wario_cowboy",
+      "i_type": "Driver",
+      "name": "Wario (Cowboy)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699525900Z"
+    },
+    "d_wario_hiker": {
+      "sort": 115,
+      "id": "d_wario_hiker",
+      "i_type": "Driver",
+      "name": "Wario (Hiker)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699492600Z"
+    },
+    "d_wendy": {
+      "sort": 15,
+      "id": "d_wendy",
+      "i_type": "Driver",
+      "name": "Wendy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698625Z"
+    },
+    "d_white_yoshi": {
+      "sort": 98,
+      "id": "d_white_yoshi",
+      "i_type": "Driver",
+      "name": "White Yoshi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699329800Z"
+    },
+    "d_yoshi": {
+      "sort": 18,
+      "id": "d_yoshi",
+      "i_type": "Driver",
+      "name": "Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.698657400Z"
+    },
+    "d_yoshi_egg_hunt": {
+      "sort": 73,
+      "id": "d_yoshi_egg_hunt",
+      "i_type": "Driver",
+      "name": "Yoshi (Egg Hunt)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699121300Z"
+    },
+    "d_yoshi_kangaroo": {
+      "sort": 107,
+      "id": "d_yoshi_kangaroo",
+      "i_type": "Driver",
+      "name": "Yoshi (Kangaroo)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699405Z"
+    },
+    "d_yoshi_reindeer": {
+      "sort": 61,
+      "id": "d_yoshi_reindeer",
+      "i_type": "Driver",
+      "name": "Yoshi (Reindeer)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.699014900Z"
+    }
+  },
+  "karts": {
+    "k_8_bit_pipe_frame": {
+      "sort": 104,
+      "id": "k_8_bit_pipe_frame",
+      "i_type": "Kart",
+      "name": "8-Bit Pipe Frame",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917253900Z"
+    },
+    "k_apple_kart": {
+      "sort": 83,
+      "id": "k_apple_kart",
+      "i_type": "Kart",
+      "name": "Apple Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917108700Z"
+    },
+    "k_b_dasher": {
+      "sort": 56,
+      "id": "k_b_dasher",
+      "i_type": "Kart",
+      "name": "B Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916900600Z"
+    },
+    "k_b_dasher_mk_2": {
+      "sort": 122,
+      "id": "k_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917410200Z"
+    },
+    "k_badwagon": {
+      "sort": 149,
+      "id": "k_badwagon",
+      "i_type": "Kart",
+      "name": "Badwagon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917614300Z"
+    },
+    "k_banana_master": {
+      "sort": 155,
+      "id": "k_banana_master",
+      "i_type": "Kart",
+      "name": "Banana Master",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917657300Z"
+    },
+    "k_barrel_train": {
+      "sort": 45,
+      "id": "k_barrel_train",
+      "i_type": "Kart",
+      "name": "Barrel Train",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916821100Z"
+    },
+    "k_biddybuggy": {
+      "sort": 5,
+      "id": "k_biddybuggy",
+      "i_type": "Kart",
+      "name": "Biddybuggy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916512Z"
+    },
+    "k_birthday_girl": {
+      "sort": 2,
+      "id": "k_birthday_girl",
+      "i_type": "Kart",
+      "name": "Birthday Girl",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916490500Z"
+    },
+    "k_birthday_girl_daisy": {
+      "sort": 38,
+      "id": "k_birthday_girl_daisy",
+      "i_type": "Kart",
+      "name": "Birthday Girl Daisy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916766900Z"
+    },
+    "k_birthday_girl_rosalina": {
+      "sort": 9,
+      "id": "k_birthday_girl_rosalina",
+      "i_type": "Kart",
+      "name": "Birthday Girl Rosalina",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916546200Z"
+    },
+    "k_black_b_dasher": {
+      "sort": 57,
+      "id": "k_black_b_dasher",
+      "i_type": "Kart",
+      "name": "Black B Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916913600Z"
+    },
+    "k_black_cat_cruiser": {
+      "sort": 139,
+      "id": "k_black_cat_cruiser",
+      "i_type": "Kart",
+      "name": "Black Cat Cruiser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917538200Z"
+    },
+    "k_black_circuit": {
+      "sort": 62,
+      "id": "k_black_circuit",
+      "i_type": "Kart",
+      "name": "Black Circuit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916955900Z"
+    },
+    "k_black_dozer": {
+      "sort": 171,
+      "id": "k_black_dozer",
+      "i_type": "Kart",
+      "name": "Black Dozer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917770100Z"
+    },
+    "k_black_kabuki_dasher": {
+      "sort": 103,
+      "id": "k_black_kabuki_dasher",
+      "i_type": "Kart",
+      "name": "Black Kabuki Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917245800Z"
+    },
+    "k_black_penguin_slider": {
+      "sort": 174,
+      "id": "k_black_penguin_slider",
+      "i_type": "Kart",
+      "name": "Black Penguin Slider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917790200Z"
+    },
+    "k_black_turbo_birdo": {
+      "sort": 176,
+      "id": "k_black_turbo_birdo",
+      "i_type": "Kart",
+      "name": "Black Turbo Birdo",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917803100Z"
+    },
+    "k_blue_badwagon": {
+      "sort": 150,
+      "id": "k_blue_badwagon",
+      "i_type": "Kart",
+      "name": "Blue Badwagon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917621200Z"
+    },
+    "k_blue_biddybuggy": {
+      "sort": 6,
+      "id": "k_blue_biddybuggy",
+      "i_type": "Kart",
+      "name": "Blue Biddybuggy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916518400Z"
+    },
+    "k_blue_royale": {
+      "sort": 42,
+      "id": "k_blue_royale",
+      "i_type": "Kart",
+      "name": "Blue Royale",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916800200Z"
+    },
+    "k_blue_seven": {
+      "sort": 32,
+      "id": "k_blue_seven",
+      "i_type": "Kart",
+      "name": "Blue Seven",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916720600Z"
+    },
+    "k_blue_soda": {
+      "sort": 99,
+      "id": "k_blue_soda",
+      "i_type": "Kart",
+      "name": "Blue Soda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917219300Z"
+    },
+    "k_blue_turbo_birdo": {
+      "sort": 55,
+      "id": "k_blue_turbo_birdo",
+      "i_type": "Kart",
+      "name": "Blue Turbo Birdo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916893600Z"
+    },
+    "k_blue_turbo_yoshi": {
+      "sort": 43,
+      "id": "k_blue_turbo_yoshi",
+      "i_type": "Kart",
+      "name": "Blue Turbo Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916806500Z"
+    },
+    "k_bolt_buggy": {
+      "sort": 53,
+      "id": "k_bolt_buggy",
+      "i_type": "Kart",
+      "name": "Bolt Buggy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916881700Z"
+    },
+    "k_bright_bunny": {
+      "sort": 85,
+      "id": "k_bright_bunny",
+      "i_type": "Kart",
+      "name": "Bright Bunny",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917120600Z"
+    },
+    "k_brown_offroader": {
+      "sort": 162,
+      "id": "k_brown_offroader",
+      "i_type": "Kart",
+      "name": "Brown Offroader",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917707900Z"
+    },
+    "k_bruiser": {
+      "sort": 152,
+      "id": "k_bruiser",
+      "i_type": "Kart",
+      "name": "Bruiser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917632800Z"
+    },
+    "k_bull_s_eye_banzai": {
+      "sort": 13,
+      "id": "k_bull_s_eye_banzai",
+      "i_type": "Kart",
+      "name": "Bull's-Eye Banzai",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916574300Z"
+    },
+    "k_bullet_blaster": {
+      "sort": 12,
+      "id": "k_bullet_blaster",
+      "i_type": "Kart",
+      "name": "Bullet Blaster",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916567400Z"
+    },
+    "k_bumble_v": {
+      "sort": 63,
+      "id": "k_bumble_v",
+      "i_type": "Kart",
+      "name": "Bumble V",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916962300Z"
+    },
+    "k_cact_ice": {
+      "sort": 175,
+      "id": "k_cact_ice",
+      "i_type": "Kart",
+      "name": "Cact-Ice",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917796900Z"
+    },
+    "k_cact_x": {
+      "sort": 163,
+      "id": "k_cact_x",
+      "i_type": "Kart",
+      "name": "Cact-X",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917713800Z"
+    },
+    "k_carrot_kart": {
+      "sort": 68,
+      "id": "k_carrot_kart",
+      "i_type": "Kart",
+      "name": "Carrot Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916998700Z"
+    },
+    "k_cat_cruiser": {
+      "sort": 119,
+      "id": "k_cat_cruiser",
+      "i_type": "Kart",
+      "name": "Cat Cruiser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917384900Z"
+    },
+    "k_cheep_charger": {
+      "sort": 7,
+      "id": "k_cheep_charger",
+      "i_type": "Kart",
+      "name": "Cheep Charger",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916524700Z"
+    },
+    "k_cheep_snorkel": {
+      "sort": 157,
+      "id": "k_cheep_snorkel",
+      "i_type": "Kart",
+      "name": "Cheep Snorkel",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917670Z"
+    },
+    "k_cheermellow": {
+      "sort": 69,
+      "id": "k_cheermellow",
+      "i_type": "Kart",
+      "name": "Cheermellow",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917004600Z"
+    },
+    "k_choco_macharon": {
+      "sort": 93,
+      "id": "k_choco_macharon",
+      "i_type": "Kart",
+      "name": "Choco Macharon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917177Z"
+    },
+    "k_chrome_dk_jumbo": {
+      "sort": 47,
+      "id": "k_chrome_dk_jumbo",
+      "i_type": "Kart",
+      "name": "Chrome DK Jumbo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916834800Z"
+    },
+    "k_circuit_special": {
+      "sort": 61,
+      "id": "k_circuit_special",
+      "i_type": "Kart",
+      "name": "Circuit Special",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916949700Z"
+    },
+    "k_clackety_kart": {
+      "sort": 100,
+      "id": "k_clackety_kart",
+      "i_type": "Kart",
+      "name": "Clackety Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917225500Z"
+    },
+    "k_clanky_kart": {
+      "sort": 87,
+      "id": "k_clanky_kart",
+      "i_type": "Kart",
+      "name": "Clanky Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917132500Z"
+    },
+    "k_classic_b_dasher_mk_2": {
+      "sort": 142,
+      "id": "k_classic_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Classic B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917559100Z"
+    },
+    "k_cleanup_hitter": {
+      "sort": 136,
+      "id": "k_cleanup_hitter",
+      "i_type": "Kart",
+      "name": "Cleanup Hitter",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917509400Z"
+    },
+    "k_cloud_9": {
+      "sort": 25,
+      "id": "k_cloud_9",
+      "i_type": "Kart",
+      "name": "Cloud 9",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916670300Z"
+    },
+    "k_comet_tail": {
+      "sort": 84,
+      "id": "k_comet_tail",
+      "i_type": "Kart",
+      "name": "Comet Tail",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917114700Z"
+    },
+    "k_crawly_kart": {
+      "sort": 170,
+      "id": "k_crawly_kart",
+      "i_type": "Kart",
+      "name": "Crawly Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917764100Z"
+    },
+    "k_cream_b_dasher_mk_2": {
+      "sort": 145,
+      "id": "k_cream_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Cream B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917587700Z"
+    },
+    "k_crimson_hop_rod": {
+      "sort": 179,
+      "id": "k_crimson_hop_rod",
+      "i_type": "Kart",
+      "name": "Crimson Hop Rod",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917828900Z"
+    },
+    "k_cucumber": {
+      "sort": 41,
+      "id": "k_cucumber",
+      "i_type": "Kart",
+      "name": "Cucumber",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916793900Z"
+    },
+    "k_dark_buggy": {
+      "sort": 160,
+      "id": "k_dark_buggy",
+      "i_type": "Kart",
+      "name": "Dark Buggy",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917689300Z"
+    },
+    "k_dark_clown": {
+      "sort": 49,
+      "id": "k_dark_clown",
+      "i_type": "Kart",
+      "name": "Dark Clown",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916856200Z"
+    },
+    "k_dark_hop_rod": {
+      "sort": 180,
+      "id": "k_dark_hop_rod",
+      "i_type": "Kart",
+      "name": "Dark Hop Rod",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917835300Z"
+    },
+    "k_dark_trickster": {
+      "sort": 111,
+      "id": "k_dark_trickster",
+      "i_type": "Kart",
+      "name": "Dark Trickster",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917307100Z"
+    },
+    "k_dasher_ii": {
+      "sort": 34,
+      "id": "k_dasher_ii",
+      "i_type": "Kart",
+      "name": "Dasher II",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916739600Z"
+    },
+    "k_daytripper": {
+      "sort": 19,
+      "id": "k_daytripper",
+      "i_type": "Kart",
+      "name": "Daytripper",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916624Z"
+    },
+    "k_decal_streamliner": {
+      "sort": 123,
+      "id": "k_decal_streamliner",
+      "i_type": "Kart",
+      "name": "Decal Streamliner",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917416800Z"
+    },
+    "k_dk_jumbo": {
+      "sort": 46,
+      "id": "k_dk_jumbo",
+      "i_type": "Kart",
+      "name": "DK Jumbo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916828100Z"
+    },
+    "k_dk_maximum": {
+      "sort": 167,
+      "id": "k_dk_maximum",
+      "i_type": "Kart",
+      "name": "DK Maximum",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917739100Z"
+    },
+    "k_double_decker": {
+      "sort": 74,
+      "id": "k_double_decker",
+      "i_type": "Kart",
+      "name": "Double-Decker",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917044300Z"
+    },
+    "k_dozer_dasher": {
+      "sort": 86,
+      "id": "k_dozer_dasher",
+      "i_type": "Kart",
+      "name": "Dozer Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917126600Z"
+    },
+    "k_dreamy_egg": {
+      "sort": 116,
+      "id": "k_dreamy_egg",
+      "i_type": "Kart",
+      "name": "Dreamy Egg",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917367100Z"
+    },
+    "k_egg_1": {
+      "sort": 37,
+      "id": "k_egg_1",
+      "i_type": "Kart",
+      "name": "Egg 1",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916757900Z"
+    },
+    "k_fast_frank": {
+      "sort": 117,
+      "id": "k_fast_frank",
+      "i_type": "Kart",
+      "name": "Fast Frank",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917373Z"
+    },
+    "k_festival_girl": {
+      "sort": 102,
+      "id": "k_festival_girl",
+      "i_type": "Kart",
+      "name": "Festival Girl",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917238400Z"
+    },
+    "k_flame_flyer": {
+      "sort": 44,
+      "id": "k_flame_flyer",
+      "i_type": "Kart",
+      "name": "Flame Flyer",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916814900Z"
+    },
+    "k_ghost_ride": {
+      "sort": 66,
+      "id": "k_ghost_ride",
+      "i_type": "Kart",
+      "name": "Ghost Ride",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916986800Z"
+    },
+    "k_gilded_king": {
+      "sort": 169,
+      "id": "k_gilded_king",
+      "i_type": "Kart",
+      "name": "Gilded King",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917757800Z"
+    },
+    "k_gilded_prancer": {
+      "sort": 80,
+      "id": "k_gilded_prancer",
+      "i_type": "Kart",
+      "name": "Gilded Prancer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917081500Z"
+    },
+    "k_glam_bruiser": {
+      "sort": 79,
+      "id": "k_glam_bruiser",
+      "i_type": "Kart",
+      "name": "Glam Bruiser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917075300Z"
+    },
+    "k_gold_blooper": {
+      "sort": 23,
+      "id": "k_gold_blooper",
+      "i_type": "Kart",
+      "name": "Gold Blooper",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916650400Z"
+    },
+    "k_gold_cheep_charger": {
+      "sort": 159,
+      "id": "k_gold_cheep_charger",
+      "i_type": "Kart",
+      "name": "Gold Cheep Charger",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917683100Z"
+    },
+    "k_gold_cheep_snorkel": {
+      "sort": 158,
+      "id": "k_gold_cheep_snorkel",
+      "i_type": "Kart",
+      "name": "Gold Cheep Snorkel",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917676500Z"
+    },
+    "k_gold_clanky_kart": {
+      "sort": 101,
+      "id": "k_gold_clanky_kart",
+      "i_type": "Kart",
+      "name": "Gold Clanky Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917232Z"
+    },
+    "k_gold_egg": {
+      "sort": 94,
+      "id": "k_gold_egg",
+      "i_type": "Kart",
+      "name": "Gold Egg",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917183100Z"
+    },
+    "k_gold_pipe_frame": {
+      "sort": 105,
+      "id": "k_gold_pipe_frame",
+      "i_type": "Kart",
+      "name": "Gold Pipe Frame",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917268Z"
+    },
+    "k_gold_snow_skimmer": {
+      "sort": 115,
+      "id": "k_gold_snow_skimmer",
+      "i_type": "Kart",
+      "name": "Gold Snow Skimmer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917360700Z"
+    },
+    "k_gold_train": {
+      "sort": 151,
+      "id": "k_gold_train",
+      "i_type": "Kart",
+      "name": "Gold Train",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917627100Z"
+    },
+    "k_grand_badwagon": {
+      "sort": 131,
+      "id": "k_grand_badwagon",
+      "i_type": "Kart",
+      "name": "Grand Badwagon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917476800Z"
+    },
+    "k_green_apple_kart": {
+      "sort": 92,
+      "id": "k_green_apple_kart",
+      "i_type": "Kart",
+      "name": "Green Apple Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917170600Z"
+    },
+    "k_green_b_dasher_mk_2": {
+      "sort": 146,
+      "id": "k_green_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Green B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917595400Z"
+    },
+    "k_green_cheep_charger": {
+      "sort": 17,
+      "id": "k_green_cheep_charger",
+      "i_type": "Kart",
+      "name": "Green Cheep Charger",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916608600Z"
+    },
+    "k_green_circuit": {
+      "sort": 108,
+      "id": "k_green_circuit",
+      "i_type": "Kart",
+      "name": "Green Circuit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917288300Z"
+    },
+    "k_green_double_decker": {
+      "sort": 138,
+      "id": "k_green_double_decker",
+      "i_type": "Kart",
+      "name": "Green Double-Decker",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917531300Z"
+    },
+    "k_green_kiddie_kart": {
+      "sort": 10,
+      "id": "k_green_kiddie_kart",
+      "i_type": "Kart",
+      "name": "Green Kiddie Kart",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916554300Z"
+    },
+    "k_green_standard_8": {
+      "sort": 40,
+      "id": "k_green_standard_8",
+      "i_type": "Kart",
+      "name": "Green Standard 8",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916780300Z"
+    },
+    "k_happy_ride": {
+      "sort": 98,
+      "id": "k_happy_ride",
+      "i_type": "Kart",
+      "name": "Happy Ride",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917213300Z"
+    },
+    "k_head_honcho": {
+      "sort": 166,
+      "id": "k_head_honcho",
+      "i_type": "Kart",
+      "name": "Head Honcho",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917733100Z"
+    },
+    "k_holiday_king": {
+      "sort": 114,
+      "id": "k_holiday_king",
+      "i_type": "Kart",
+      "name": "Holiday King",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917353100Z"
+    },
+    "k_ice_blue_poltergust": {
+      "sort": 81,
+      "id": "k_ice_blue_poltergust",
+      "i_type": "Kart",
+      "name": "Ice-blue Poltergust",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917095500Z"
+    },
+    "k_ice_dozer": {
+      "sort": 137,
+      "id": "k_ice_dozer",
+      "i_type": "Kart",
+      "name": "Ice Dozer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917524Z"
+    },
+    "k_inferno_flyer": {
+      "sort": 128,
+      "id": "k_inferno_flyer",
+      "i_type": "Kart",
+      "name": "Inferno Flyer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917449400Z"
+    },
+    "k_iron_cucumber": {
+      "sort": 118,
+      "id": "k_iron_cucumber",
+      "i_type": "Kart",
+      "name": "Iron Cucumber",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917378900Z"
+    },
+    "k_jade_hop_rod": {
+      "sort": 178,
+      "id": "k_jade_hop_rod",
+      "i_type": "Kart",
+      "name": "Jade Hop Rod",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917822600Z"
+    },
+    "k_jet_cruiser": {
+      "sort": 127,
+      "id": "k_jet_cruiser",
+      "i_type": "Kart",
+      "name": "Jet Cruiser",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917442700Z"
+    },
+    "k_jingle_bells": {
+      "sort": 77,
+      "id": "k_jingle_bells",
+      "i_type": "Kart",
+      "name": "Jingle Bells",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917062700Z"
+    },
+    "k_kabuki_dasher": {
+      "sort": 60,
+      "id": "k_kabuki_dasher",
+      "i_type": "Kart",
+      "name": "Kabuki Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916942Z"
+    },
+    "k_kamek_s_zoom_broom": {
+      "sort": 181,
+      "id": "k_kamek_s_zoom_broom",
+      "i_type": "Kart",
+      "name": "Kamek's Zoom Broom",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917998700Z"
+    },
+    "k_karp_kart": {
+      "sort": 89,
+      "id": "k_karp_kart",
+      "i_type": "Kart",
+      "name": "Karp Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917152600Z"
+    },
+    "k_koopa_clown": {
+      "sort": 48,
+      "id": "k_koopa_clown",
+      "i_type": "Kart",
+      "name": "Koopa Clown",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916842500Z"
+    },
+    "k_koopa_dasher": {
+      "sort": 4,
+      "id": "k_koopa_dasher",
+      "i_type": "Kart",
+      "name": "Koopa Dasher",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916505400Z"
+    },
+    "k_koopa_king": {
+      "sort": 161,
+      "id": "k_koopa_king",
+      "i_type": "Kart",
+      "name": "Koopa King",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917701700Z"
+    },
+    "k_landship": {
+      "sort": 14,
+      "id": "k_landship",
+      "i_type": "Kart",
+      "name": "Landship",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916580400Z"
+    },
+    "k_light_blue_turbo_birdo": {
+      "sort": 52,
+      "id": "k_light_blue_turbo_birdo",
+      "i_type": "Kart",
+      "name": "Light-blue Turbo Birdo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916875500Z"
+    },
+    "k_lime_tea_coupe": {
+      "sort": 133,
+      "id": "k_lime_tea_coupe",
+      "i_type": "Kart",
+      "name": "Lime Tea Coupe",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917489900Z"
+    },
+    "k_mach_8": {
+      "sort": 18,
+      "id": "k_mach_8",
+      "i_type": "Kart",
+      "name": "Mach 8",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916617900Z"
+    },
+    "k_macharon": {
+      "sort": 67,
+      "id": "k_macharon",
+      "i_type": "Kart",
+      "name": "Macharon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916992600Z"
+    },
+    "k_metal_b_dasher_mk_2": {
+      "sort": 144,
+      "id": "k_metal_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Metal B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917573800Z"
+    },
+    "k_mushmellow": {
+      "sort": 3,
+      "id": "k_mushmellow",
+      "i_type": "Kart",
+      "name": "Mushmellow",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916498700Z"
+    },
+    "k_offroader": {
+      "sort": 154,
+      "id": "k_offroader",
+      "i_type": "Kart",
+      "name": "Offroader",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917651200Z"
+    },
+    "k_orange_streamliner": {
+      "sort": 124,
+      "id": "k_orange_streamliner",
+      "i_type": "Kart",
+      "name": "Orange Streamliner",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917423400Z"
+    },
+    "k_p_wing": {
+      "sort": 82,
+      "id": "k_p_wing",
+      "i_type": "Kart",
+      "name": "P-Wing",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917102700Z"
+    },
+    "k_paintster": {
+      "sort": 132,
+      "id": "k_paintster",
+      "i_type": "Kart",
+      "name": "Paintster",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917483700Z"
+    },
+    "k_para_wing": {
+      "sort": 50,
+      "id": "k_para_wing",
+      "i_type": "Kart",
+      "name": "Para-Wing",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916862900Z"
+    },
+    "k_party_wing": {
+      "sort": 172,
+      "id": "k_party_wing",
+      "i_type": "Kart",
+      "name": "Party-Wing",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917776200Z"
+    },
+    "k_penguin_slider": {
+      "sort": 173,
+      "id": "k_penguin_slider",
+      "i_type": "Kart",
+      "name": "Penguin Slider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917782300Z"
+    },
+    "k_pinch_hitter": {
+      "sort": 135,
+      "id": "k_pinch_hitter",
+      "i_type": "Kart",
+      "name": "Pinch Hitter",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917503300Z"
+    },
+    "k_pink_b_dasher_mk_2": {
+      "sort": 141,
+      "id": "k_pink_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Pink B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917552200Z"
+    },
+    "k_pink_dozer": {
+      "sort": 130,
+      "id": "k_pink_dozer",
+      "i_type": "Kart",
+      "name": "Pink Dozer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917469200Z"
+    },
+    "k_pink_mushmellow": {
+      "sort": 8,
+      "id": "k_pink_mushmellow",
+      "i_type": "Kart",
+      "name": "Pink Mushmellow",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916531100Z"
+    },
+    "k_pink_wing": {
+      "sort": 97,
+      "id": "k_pink_wing",
+      "i_type": "Kart",
+      "name": "Pink Wing",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917207200Z"
+    },
+    "k_pipe_buggy": {
+      "sort": 15,
+      "id": "k_pipe_buggy",
+      "i_type": "Kart",
+      "name": "Pipe Buggy",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916586300Z"
+    },
+    "k_pipe_frame": {
+      "sort": 1,
+      "id": "k_pipe_frame",
+      "i_type": "Kart",
+      "name": "Pipe Frame",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916467200Z"
+    },
+    "k_pirate_sushi_racer": {
+      "sort": 164,
+      "id": "k_pirate_sushi_racer",
+      "i_type": "Kart",
+      "name": "Pirate Sushi Racer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917720300Z"
+    },
+    "k_platinum_taxi": {
+      "sort": 78,
+      "id": "k_platinum_taxi",
+      "i_type": "Kart",
+      "name": "Platinum Taxi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917069Z"
+    },
+    "k_poison_apple_kart": {
+      "sort": 156,
+      "id": "k_poison_apple_kart",
+      "i_type": "Kart",
+      "name": "Poison Apple Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917663800Z"
+    },
+    "k_poltergust_4000": {
+      "sort": 26,
+      "id": "k_poltergust_4000",
+      "i_type": "Kart",
+      "name": "Poltergust 4000",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916678300Z"
+    },
+    "k_prancer": {
+      "sort": 90,
+      "id": "k_prancer",
+      "i_type": "Kart",
+      "name": "Prancer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917158500Z"
+    },
+    "k_pumpkin_kart": {
+      "sort": 110,
+      "id": "k_pumpkin_kart",
+      "i_type": "Kart",
+      "name": "Pumpkin Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917300700Z"
+    },
+    "k_purple_bunny": {
+      "sort": 177,
+      "id": "k_purple_bunny",
+      "i_type": "Kart",
+      "name": "Purple Bunny",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917816200Z"
+    },
+    "k_queen_bee": {
+      "sort": 64,
+      "id": "k_queen_bee",
+      "i_type": "Kart",
+      "name": "Queen Bee",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916968200Z"
+    },
+    "k_quickshaw": {
+      "sort": 59,
+      "id": "k_quickshaw",
+      "i_type": "Kart",
+      "name": "Quickshaw",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916935900Z"
+    },
+    "k_radish_rider": {
+      "sort": 71,
+      "id": "k_radish_rider",
+      "i_type": "Kart",
+      "name": "Radish Rider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917016600Z"
+    },
+    "k_rambi_rider": {
+      "sort": 54,
+      "id": "k_rambi_rider",
+      "i_type": "Kart",
+      "name": "Rambi Rider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916887500Z"
+    },
+    "k_rambi_runner": {
+      "sort": 129,
+      "id": "k_rambi_runner",
+      "i_type": "Kart",
+      "name": "Rambi Runner",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917462500Z"
+    },
+    "k_red_b_dasher": {
+      "sort": 76,
+      "id": "k_red_b_dasher",
+      "i_type": "Kart",
+      "name": "Red B Dasher",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917056700Z"
+    },
+    "k_red_b_dasher_mk_2": {
+      "sort": 140,
+      "id": "k_red_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Red B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917545Z"
+    },
+    "k_red_kiddie_kart": {
+      "sort": 11,
+      "id": "k_red_kiddie_kart",
+      "i_type": "Kart",
+      "name": "Red Kiddie Kart",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916561Z"
+    },
+    "k_red_standard_8": {
+      "sort": 39,
+      "id": "k_red_standard_8",
+      "i_type": "Kart",
+      "name": "Red Standard 8",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916773900Z"
+    },
+    "k_red_streamliner": {
+      "sort": 30,
+      "id": "k_red_streamliner",
+      "i_type": "Kart",
+      "name": "Red Streamliner",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916707Z"
+    },
+    "k_red_taxi": {
+      "sort": 96,
+      "id": "k_red_taxi",
+      "i_type": "Kart",
+      "name": "Red Taxi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917194900Z"
+    },
+    "k_red_turbo_yoshi": {
+      "sort": 31,
+      "id": "k_red_turbo_yoshi",
+      "i_type": "Kart",
+      "name": "Red Turbo Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916714200Z"
+    },
+    "k_ribbon_rider": {
+      "sort": 73,
+      "id": "k_ribbon_rider",
+      "i_type": "Kart",
+      "name": "Ribbon Rider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917037100Z"
+    },
+    "k_rose_queen": {
+      "sort": 91,
+      "id": "k_rose_queen",
+      "i_type": "Kart",
+      "name": "Rose Queen",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917164400Z"
+    },
+    "k_rose_taxi": {
+      "sort": 121,
+      "id": "k_rose_taxi",
+      "i_type": "Kart",
+      "name": "Rose Taxi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917403Z"
+    },
+    "k_royale": {
+      "sort": 24,
+      "id": "k_royale",
+      "i_type": "Kart",
+      "name": "Royale",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916656400Z"
+    },
+    "k_sakura_quickshaw": {
+      "sort": 126,
+      "id": "k_sakura_quickshaw",
+      "i_type": "Kart",
+      "name": "Sakura Quickshaw",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917436500Z"
+    },
+    "k_silver_bullet_blaster": {
+      "sort": 165,
+      "id": "k_silver_bullet_blaster",
+      "i_type": "Kart",
+      "name": "Silver Bullet Blaster",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917726900Z"
+    },
+    "k_silver_king": {
+      "sort": 182,
+      "id": "k_silver_king",
+      "i_type": "Kart",
+      "name": "Silver King",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.918012Z"
+    },
+    "k_sky_blue_b_dasher_mk_2": {
+      "sort": 143,
+      "id": "k_sky_blue_b_dasher_mk_2",
+      "i_type": "Kart",
+      "name": "Sky-Blue B Dasher Mk. 2",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917566300Z"
+    },
+    "k_snow_skimmer": {
+      "sort": 153,
+      "id": "k_snow_skimmer",
+      "i_type": "Kart",
+      "name": "Snow Skimmer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917645200Z"
+    },
+    "k_soda_jet": {
+      "sort": 21,
+      "id": "k_soda_jet",
+      "i_type": "Kart",
+      "name": "Soda Jet",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916638Z"
+    },
+    "k_sports_coupe": {
+      "sort": 109,
+      "id": "k_sports_coupe",
+      "i_type": "Kart",
+      "name": "Sports Coupe",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917294400Z"
+    },
+    "k_star_spangled_flyer": {
+      "sort": 107,
+      "id": "k_star_spangled_flyer",
+      "i_type": "Kart",
+      "name": "Star-Spangled Flyer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917282Z"
+    },
+    "k_steel_driver": {
+      "sort": 113,
+      "id": "k_steel_driver",
+      "i_type": "Kart",
+      "name": "Steel Driver",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917327Z"
+    },
+    "k_streamliner": {
+      "sort": 27,
+      "id": "k_streamliner",
+      "i_type": "Kart",
+      "name": "Streamliner",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916684600Z"
+    },
+    "k_sunny_surf_sailer": {
+      "sort": 134,
+      "id": "k_sunny_surf_sailer",
+      "i_type": "Kart",
+      "name": "Sunny Surf Sailer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917496400Z"
+    },
+    "k_sunset_cloud": {
+      "sort": 112,
+      "id": "k_sunset_cloud",
+      "i_type": "Kart",
+      "name": "Sunset Cloud",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917313800Z"
+    },
+    "k_super_1": {
+      "sort": 33,
+      "id": "k_super_1",
+      "i_type": "Kart",
+      "name": "Super 1",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916733200Z"
+    },
+    "k_super_blooper": {
+      "sort": 22,
+      "id": "k_super_blooper",
+      "i_type": "Kart",
+      "name": "Super Blooper",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916644200Z"
+    },
+    "k_surf_sailer": {
+      "sort": 106,
+      "id": "k_surf_sailer",
+      "i_type": "Kart",
+      "name": "Surf Sailer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917275300Z"
+    },
+    "k_sushi_racer": {
+      "sort": 168,
+      "id": "k_sushi_racer",
+      "i_type": "Kart",
+      "name": "Sushi Racer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917745Z"
+    },
+    "k_sweet_daytripper": {
+      "sort": 95,
+      "id": "k_sweet_daytripper",
+      "i_type": "Kart",
+      "name": "Sweet Daytripper",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917189Z"
+    },
+    "k_swift_jack": {
+      "sort": 75,
+      "id": "k_swift_jack",
+      "i_type": "Kart",
+      "name": "Swift Jack",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917050500Z"
+    },
+    "k_tea_coupe": {
+      "sort": 35,
+      "id": "k_tea_coupe",
+      "i_type": "Kart",
+      "name": "Tea Coupe",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916745500Z"
+    },
+    "k_trickster": {
+      "sort": 65,
+      "id": "k_trickster",
+      "i_type": "Kart",
+      "name": "Trickster",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916980500Z"
+    },
+    "k_turbo_birdo": {
+      "sort": 51,
+      "id": "k_turbo_birdo",
+      "i_type": "Kart",
+      "name": "Turbo Birdo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916868900Z"
+    },
+    "k_turbo_yoshi": {
+      "sort": 20,
+      "id": "k_turbo_yoshi",
+      "i_type": "Kart",
+      "name": "Turbo Yoshi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916630600Z"
+    },
+    "k_warship": {
+      "sort": 16,
+      "id": "k_warship",
+      "i_type": "Kart",
+      "name": "Warship",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916595Z"
+    },
+    "k_white_royale": {
+      "sort": 28,
+      "id": "k_white_royale",
+      "i_type": "Kart",
+      "name": "White Royale",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916690700Z"
+    },
+    "k_white_turbo_yoshi": {
+      "sort": 125,
+      "id": "k_white_turbo_yoshi",
+      "i_type": "Kart",
+      "name": "White Turbo Yoshi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917430200Z"
+    },
+    "k_wild_black": {
+      "sort": 88,
+      "id": "k_wild_black",
+      "i_type": "Kart",
+      "name": "Wild Black",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917140Z"
+    },
+    "k_wild_pink": {
+      "sort": 120,
+      "id": "k_wild_pink",
+      "i_type": "Kart",
+      "name": "Wild Pink",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917390800Z"
+    },
+    "k_wild_wing": {
+      "sort": 70,
+      "id": "k_wild_wing",
+      "i_type": "Kart",
+      "name": "Wild Wing",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917010500Z"
+    },
+    "k_wildfire_flyer": {
+      "sort": 72,
+      "id": "k_wildfire_flyer",
+      "i_type": "Kart",
+      "name": "Wildfire Flyer",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.917023400Z"
+    },
+    "k_yellow_taxi": {
+      "sort": 58,
+      "id": "k_yellow_taxi",
+      "i_type": "Kart",
+      "name": "Yellow Taxi",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916929800Z"
+    },
+    "k_yellow_turbo_birdo": {
+      "sort": 36,
+      "id": "k_yellow_turbo_birdo",
+      "i_type": "Kart",
+      "name": "Yellow Turbo Birdo",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916751700Z"
+    },
+    "k_zucchini": {
+      "sort": 29,
+      "id": "k_zucchini",
+      "i_type": "Kart",
+      "name": "Zucchini",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:17.916696500Z"
+    }
+  },
+  "gliders": {
+    "g_8_bit_bullet_bill": {
+      "sort": 85,
+      "id": "g_8_bit_bullet_bill",
+      "i_type": "Glider",
+      "name": "8-Bit Bullet Bill",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062868100Z"
+    },
+    "g_8_bit_fire_flower": {
+      "sort": 81,
+      "id": "g_8_bit_fire_flower",
+      "i_type": "Glider",
+      "name": "8-Bit Fire Flower",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062841900Z"
+    },
+    "g_8_bit_jumping_luigi": {
+      "sort": 19,
+      "id": "g_8_bit_jumping_luigi",
+      "i_type": "Glider",
+      "name": "8-Bit Jumping Luigi",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062315700Z"
+    },
+    "g_8_bit_jumping_mario": {
+      "sort": 15,
+      "id": "g_8_bit_jumping_mario",
+      "i_type": "Glider",
+      "name": "8-Bit Jumping Mario",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062275200Z"
+    },
+    "g_8_bit_star": {
+      "sort": 64,
+      "id": "g_8_bit_star",
+      "i_type": "Glider",
+      "name": "8-Bit Star",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062669500Z"
+    },
+    "g_baby_mario_hanafuda": {
+      "sort": 118,
+      "id": "g_baby_mario_hanafuda",
+      "i_type": "Glider",
+      "name": "Baby Mario Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063124500Z"
+    },
+    "g_banana_parafoil": {
+      "sort": 25,
+      "id": "g_banana_parafoil",
+      "i_type": "Glider",
+      "name": "BaNaNa Parafoil",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062360300Z"
+    },
+    "g_banana_wingtip": {
+      "sort": 105,
+      "id": "g_banana_wingtip",
+      "i_type": "Glider",
+      "name": "Banana Wingtip",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063015100Z"
+    },
+    "g_barrel_hanafuda": {
+      "sort": 121,
+      "id": "g_barrel_hanafuda",
+      "i_type": "Glider",
+      "name": "Barrel Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063152100Z"
+    },
+    "g_bbia_parafoil": {
+      "sort": 6,
+      "id": "g_bbia_parafoil",
+      "i_type": "Glider",
+      "name": "BBIA Parafoil",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062204600Z"
+    },
+    "g_black_great_sail": {
+      "sort": 77,
+      "id": "g_black_great_sail",
+      "i_type": "Glider",
+      "name": "Black Great Sail",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062774200Z"
+    },
+    "g_black_toe_bean_balloons": {
+      "sort": 84,
+      "id": "g_black_toe_bean_balloons",
+      "i_type": "Glider",
+      "name": "Black Toe-Bean Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062861100Z"
+    },
+    "g_blizzard_balloons": {
+      "sort": 43,
+      "id": "g_blizzard_balloons",
+      "i_type": "Glider",
+      "name": "Blizzard Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062510700Z"
+    },
+    "g_blizzard_parasol": {
+      "sort": 42,
+      "id": "g_blizzard_parasol",
+      "i_type": "Glider",
+      "name": "Blizzard Parasol",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062504400Z"
+    },
+    "g_block": {
+      "sort": 16,
+      "id": "g_block",
+      "i_type": "Glider",
+      "name": "? Block",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062287600Z"
+    },
+    "g_blooper_hanafuda": {
+      "sort": 122,
+      "id": "g_blooper_hanafuda",
+      "i_type": "Glider",
+      "name": "Blooper Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063159200Z"
+    },
+    "g_blooper_wingtip": {
+      "sort": 108,
+      "id": "g_blooper_wingtip",
+      "i_type": "Glider",
+      "name": "Blooper Wingtip",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063033500Z"
+    },
+    "g_blue_flower_glider": {
+      "sort": 26,
+      "id": "g_blue_flower_glider",
+      "i_type": "Glider",
+      "name": "Blue Flower Glider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062366900Z"
+    },
+    "g_bob_omb_parafoil": {
+      "sort": 21,
+      "id": "g_bob_omb_parafoil",
+      "i_type": "Glider",
+      "name": "Bob-omb Parafoil",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062327900Z"
+    },
+    "g_boo_hanafuda": {
+      "sort": 125,
+      "id": "g_boo_hanafuda",
+      "i_type": "Glider",
+      "name": "Boo Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063178300Z"
+    },
+    "g_bowser_hanafuda": {
+      "sort": 129,
+      "id": "g_bowser_hanafuda",
+      "i_type": "Glider",
+      "name": "Bowser Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063207700Z"
+    },
+    "g_bright_balloons": {
+      "sort": 113,
+      "id": "g_bright_balloons",
+      "i_type": "Glider",
+      "name": "Bright Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063073200Z"
+    },
+    "g_bright_glider": {
+      "sort": 48,
+      "id": "g_bright_glider",
+      "i_type": "Glider",
+      "name": "Bright Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062543100Z"
+    },
+    "g_bullet_bill_hanafuda": {
+      "sort": 124,
+      "id": "g_bullet_bill_hanafuda",
+      "i_type": "Glider",
+      "name": "Bullet Bill Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063172100Z"
+    },
+    "g_bullet_bill_parachute": {
+      "sort": 100,
+      "id": "g_bullet_bill_parachute",
+      "i_type": "Glider",
+      "name": "Bullet Bill Parachute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062978300Z"
+    },
+    "g_butterfly_prism": {
+      "sort": 71,
+      "id": "g_butterfly_prism",
+      "i_type": "Glider",
+      "name": "Butterfly Prism",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062723Z"
+    },
+    "g_butterfly_sunset": {
+      "sort": 52,
+      "id": "g_butterfly_sunset",
+      "i_type": "Glider",
+      "name": "Butterfly Sunset",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062576100Z"
+    },
+    "g_butterfly_wings": {
+      "sort": 61,
+      "id": "g_butterfly_wings",
+      "i_type": "Glider",
+      "name": "Butterfly Wings",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062650400Z"
+    },
+    "g_calico_parafoil": {
+      "sort": 76,
+      "id": "g_calico_parafoil",
+      "i_type": "Glider",
+      "name": "Calico Parafoil",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062766600Z"
+    },
+    "g_cape_mario_hanafuda": {
+      "sort": 123,
+      "id": "g_cape_mario_hanafuda",
+      "i_type": "Glider",
+      "name": "Cape Mario Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063165700Z"
+    },
+    "g_cheep_cheep_masks": {
+      "sort": 110,
+      "id": "g_cheep_cheep_masks",
+      "i_type": "Glider",
+      "name": "Cheep Cheep Masks",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063046700Z"
+    },
+    "g_chocolate_banana_cr_pe": {
+      "sort": 55,
+      "id": "g_chocolate_banana_cr_pe",
+      "i_type": "Glider",
+      "name": "Chocolate Banana Crêpe",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062594800Z"
+    },
+    "g_chocolate_donut": {
+      "sort": 53,
+      "id": "g_chocolate_donut",
+      "i_type": "Glider",
+      "name": "Chocolate Donut",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062582100Z"
+    },
+    "g_cloud_glider": {
+      "sort": 101,
+      "id": "g_cloud_glider",
+      "i_type": "Glider",
+      "name": "Cloud Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062984500Z"
+    },
+    "g_crimson_crane": {
+      "sort": 41,
+      "id": "g_crimson_crane",
+      "i_type": "Glider",
+      "name": "Crimson Crane",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062497Z"
+    },
+    "g_daisy_glider": {
+      "sort": 50,
+      "id": "g_daisy_glider",
+      "i_type": "Glider",
+      "name": "Daisy Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062562700Z"
+    },
+    "g_dragon_wings": {
+      "sort": 107,
+      "id": "g_dragon_wings",
+      "i_type": "Glider",
+      "name": "Dragon Wings",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063027500Z"
+    },
+    "g_dream_glider": {
+      "sort": 115,
+      "id": "g_dream_glider",
+      "i_type": "Glider",
+      "name": "Dream Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063105100Z"
+    },
+    "g_droplet_glider": {
+      "sort": 5,
+      "id": "g_droplet_glider",
+      "i_type": "Glider",
+      "name": "Droplet Glider",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062197900Z"
+    },
+    "g_dry_bowser_umbrella": {
+      "sort": 111,
+      "id": "g_dry_bowser_umbrella",
+      "i_type": "Glider",
+      "name": "Dry Bowser Umbrella",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063053200Z"
+    },
+    "g_eggshell_glider": {
+      "sort": 18,
+      "id": "g_eggshell_glider",
+      "i_type": "Glider",
+      "name": "Eggshell Glider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062309100Z"
+    },
+    "g_fare_flier": {
+      "sort": 28,
+      "id": "g_fare_flier",
+      "i_type": "Glider",
+      "name": "Fare Flier",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062380200Z"
+    },
+    "g_festival_wings": {
+      "sort": 63,
+      "id": "g_festival_wings",
+      "i_type": "Glider",
+      "name": "Festival Wings",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062662800Z"
+    },
+    "g_fireworks_parachute": {
+      "sort": 40,
+      "id": "g_fireworks_parachute",
+      "i_type": "Glider",
+      "name": "Fireworks Parachute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062483200Z"
+    },
+    "g_flower_glider": {
+      "sort": 11,
+      "id": "g_flower_glider",
+      "i_type": "Glider",
+      "name": "Flower Glider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062247600Z"
+    },
+    "g_flying_easel": {
+      "sort": 87,
+      "id": "g_flying_easel",
+      "i_type": "Glider",
+      "name": "Flying Easel",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062881600Z"
+    },
+    "g_full_flight": {
+      "sort": 30,
+      "id": "g_full_flight",
+      "i_type": "Glider",
+      "name": "Full Flight",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062399600Z"
+    },
+    "g_gift_glider": {
+      "sort": 37,
+      "id": "g_gift_glider",
+      "i_type": "Glider",
+      "name": "Gift Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062462700Z"
+    },
+    "g_glinting_glider": {
+      "sort": 86,
+      "id": "g_glinting_glider",
+      "i_type": "Glider",
+      "name": "Glinting Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062874200Z"
+    },
+    "g_glitter_glider": {
+      "sort": 35,
+      "id": "g_glitter_glider",
+      "i_type": "Glider",
+      "name": "Glitter Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062450100Z"
+    },
+    "g_gold_crane": {
+      "sort": 54,
+      "id": "g_gold_crane",
+      "i_type": "Glider",
+      "name": "Gold Crane",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062588100Z"
+    },
+    "g_gold_glider": {
+      "sort": 27,
+      "id": "g_gold_glider",
+      "i_type": "Glider",
+      "name": "Gold Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062374100Z"
+    },
+    "g_gold_home_field_glider": {
+      "sort": 91,
+      "id": "g_gold_home_field_glider",
+      "i_type": "Glider",
+      "name": "Gold Home-Field Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062914500Z"
+    },
+    "g_gold_new_year_s_kite": {
+      "sort": 74,
+      "id": "g_gold_new_year_s_kite",
+      "i_type": "Glider",
+      "name": "Gold New Year's Kite",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062752100Z"
+    },
+    "g_gold_swooper": {
+      "sort": 104,
+      "id": "g_gold_swooper",
+      "i_type": "Glider",
+      "name": "Gold Swooper",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063002800Z"
+    },
+    "g_goomba_hanafuda": {
+      "sort": 127,
+      "id": "g_goomba_hanafuda",
+      "i_type": "Glider",
+      "name": "Goomba Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063191700Z"
+    },
+    "g_great_sail": {
+      "sort": 62,
+      "id": "g_great_sail",
+      "i_type": "Glider",
+      "name": "Great Sail",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062656800Z"
+    },
+    "g_heart_balloons": {
+      "sort": 45,
+      "id": "g_heart_balloons",
+      "i_type": "Glider",
+      "name": "Heart Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062523300Z"
+    },
+    "g_home_field_glider": {
+      "sort": 90,
+      "id": "g_home_field_glider",
+      "i_type": "Glider",
+      "name": "Home-Field Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062907800Z"
+    },
+    "g_jolly_bells": {
+      "sort": 70,
+      "id": "g_jolly_bells",
+      "i_type": "Glider",
+      "name": "Jolly Bells",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062716Z"
+    },
+    "g_jumping_mario_hanafuda": {
+      "sort": 128,
+      "id": "g_jumping_mario_hanafuda",
+      "i_type": "Glider",
+      "name": "Jumping Mario Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063198100Z"
+    },
+    "g_le_tricolore": {
+      "sort": 32,
+      "id": "g_le_tricolore",
+      "i_type": "Glider",
+      "name": "Le Tricolore",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062424800Z"
+    },
+    "g_lightning_oilpaper": {
+      "sort": 13,
+      "id": "g_lightning_oilpaper",
+      "i_type": "Glider",
+      "name": "Lightning Oilpaper",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062261900Z"
+    },
+    "g_luma_parafoil": {
+      "sort": 46,
+      "id": "g_luma_parafoil",
+      "i_type": "Glider",
+      "name": "Luma Parafoil",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062529700Z"
+    },
+    "g_manta_glider": {
+      "sort": 59,
+      "id": "g_manta_glider",
+      "i_type": "Glider",
+      "name": "Manta Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062638100Z"
+    },
+    "g_minion_paper_glider": {
+      "sort": 7,
+      "id": "g_minion_paper_glider",
+      "i_type": "Glider",
+      "name": "Minion Paper Glider",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062211400Z"
+    },
+    "g_mushroom_glider": {
+      "sort": 20,
+      "id": "g_mushroom_glider",
+      "i_type": "Glider",
+      "name": "Mushroom Glider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062321700Z"
+    },
+    "g_nabbit_oilpaper_umbrella": {
+      "sort": 109,
+      "id": "g_nabbit_oilpaper_umbrella",
+      "i_type": "Glider",
+      "name": "Nabbit Oilpaper Umbrella",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063040200Z"
+    },
+    "g_new_year_s_2020": {
+      "sort": 38,
+      "id": "g_new_year_s_2020",
+      "i_type": "Glider",
+      "name": "New Year's 2020",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062470200Z"
+    },
+    "g_new_year_s_2021": {
+      "sort": 73,
+      "id": "g_new_year_s_2021",
+      "i_type": "Glider",
+      "name": "New Year's 2021",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062743700Z"
+    },
+    "g_new_year_s_kite": {
+      "sort": 39,
+      "id": "g_new_year_s_kite",
+      "i_type": "Glider",
+      "name": "New Year's Kite",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062476600Z"
+    },
+    "g_ninja_scroll": {
+      "sort": 114,
+      "id": "g_ninja_scroll",
+      "i_type": "Glider",
+      "name": "Ninja Scroll",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063098Z"
+    },
+    "g_oilpaper_umbrella": {
+      "sort": 12,
+      "id": "g_oilpaper_umbrella",
+      "i_type": "Glider",
+      "name": "Oilpaper Umbrella",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062253900Z"
+    },
+    "g_paper_glider": {
+      "sort": 4,
+      "id": "g_paper_glider",
+      "i_type": "Glider",
+      "name": "Paper Glider",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062190Z"
+    },
+    "g_parachute": {
+      "sort": 2,
+      "id": "g_parachute",
+      "i_type": "Glider",
+      "name": "Parachute",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062175900Z"
+    },
+    "g_parafoil": {
+      "sort": 3,
+      "id": "g_parafoil",
+      "i_type": "Glider",
+      "name": "Parafoil",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062183600Z"
+    },
+    "g_peach_hanafuda": {
+      "sort": 120,
+      "id": "g_peach_hanafuda",
+      "i_type": "Glider",
+      "name": "Peach Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063138500Z"
+    },
+    "g_peach_parasol": {
+      "sort": 10,
+      "id": "g_peach_parasol",
+      "i_type": "Glider",
+      "name": "Peach Parasol",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062240200Z"
+    },
+    "g_penguin_wingtip": {
+      "sort": 112,
+      "id": "g_penguin_wingtip",
+      "i_type": "Glider",
+      "name": "Penguin Wingtip",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063060Z"
+    },
+    "g_pink_flower_glider": {
+      "sort": 14,
+      "id": "g_pink_flower_glider",
+      "i_type": "Glider",
+      "name": "Pink Flower Glider",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062268300Z"
+    },
+    "g_pink_gold_paper_glider": {
+      "sort": 51,
+      "id": "g_pink_gold_paper_glider",
+      "i_type": "Glider",
+      "name": "Pink Gold Paper Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062569600Z"
+    },
+    "g_piranha_plant_hanafuda": {
+      "sort": 126,
+      "id": "g_piranha_plant_hanafuda",
+      "i_type": "Glider",
+      "name": "Piranha Plant Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063185400Z"
+    },
+    "g_piranha_plant_parafoil": {
+      "sort": 9,
+      "id": "g_piranha_plant_parafoil",
+      "i_type": "Glider",
+      "name": "Piranha Plant Parafoil",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062233700Z"
+    },
+    "g_piston_glider": {
+      "sort": 8,
+      "id": "g_piston_glider",
+      "i_type": "Glider",
+      "name": "Piston Glider",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062218100Z"
+    },
+    "g_plaid_ribbon": {
+      "sort": 17,
+      "id": "g_plaid_ribbon",
+      "i_type": "Glider",
+      "name": "Plaid Ribbon",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062302400Z"
+    },
+    "g_planet_glider": {
+      "sort": 72,
+      "id": "g_planet_glider",
+      "i_type": "Glider",
+      "name": "Planet Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062729100Z"
+    },
+    "g_polka_dot_manta_glider": {
+      "sort": 89,
+      "id": "g_polka_dot_manta_glider",
+      "i_type": "Glider",
+      "name": "Polka-Dot Manta Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062901200Z"
+    },
+    "g_purple_oilpaper_umbrella": {
+      "sort": 29,
+      "id": "g_purple_oilpaper_umbrella",
+      "i_type": "Glider",
+      "name": "Purple Oilpaper Umbrella",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062387100Z"
+    },
+    "g_rainbow_starchute": {
+      "sort": 47,
+      "id": "g_rainbow_starchute",
+      "i_type": "Glider",
+      "name": "Rainbow Starchute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062536700Z"
+    },
+    "g_rainy_balloons": {
+      "sort": 102,
+      "id": "g_rainy_balloons",
+      "i_type": "Glider",
+      "name": "Rainy Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062990500Z"
+    },
+    "g_rose_parasol": {
+      "sort": 79,
+      "id": "g_rose_parasol",
+      "i_type": "Glider",
+      "name": "Rose Parasol",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062788100Z"
+    },
+    "g_royal_parachute": {
+      "sort": 34,
+      "id": "g_royal_parachute",
+      "i_type": "Glider",
+      "name": "Royal Parachute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062444Z"
+    },
+    "g_safety_glider": {
+      "sort": 49,
+      "id": "g_safety_glider",
+      "i_type": "Glider",
+      "name": "Safety Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062555900Z"
+    },
+    "g_shell_parachute": {
+      "sort": 22,
+      "id": "g_shell_parachute",
+      "i_type": "Glider",
+      "name": "Shell Parachute",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062334400Z"
+    },
+    "g_ship_s_wheel": {
+      "sort": 95,
+      "id": "g_ship_s_wheel",
+      "i_type": "Glider",
+      "name": "Ship's Wheel",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062939300Z"
+    },
+    "g_silver_and_gold_hearts": {
+      "sort": 58,
+      "id": "g_silver_and_gold_hearts",
+      "i_type": "Glider",
+      "name": "Silver-and-Gold Hearts",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062630100Z"
+    },
+    "g_silver_bells": {
+      "sort": 57,
+      "id": "g_silver_bells",
+      "i_type": "Glider",
+      "name": "Silver Bells",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062614700Z"
+    },
+    "g_silver_manta_glider": {
+      "sort": 78,
+      "id": "g_silver_manta_glider",
+      "i_type": "Glider",
+      "name": "Silver Manta Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062780900Z"
+    },
+    "g_silver_starchute": {
+      "sort": 69,
+      "id": "g_silver_starchute",
+      "i_type": "Glider",
+      "name": "Silver Starchute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062709800Z"
+    },
+    "g_silver_surf_master": {
+      "sort": 94,
+      "id": "g_silver_surf_master",
+      "i_type": "Glider",
+      "name": "Silver Surf Master",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062933100Z"
+    },
+    "g_snow_crystals": {
+      "sort": 80,
+      "id": "g_snow_crystals",
+      "i_type": "Glider",
+      "name": "Snow Crystals",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062794100Z"
+    },
+    "g_soaring_jack": {
+      "sort": 36,
+      "id": "g_soaring_jack",
+      "i_type": "Glider",
+      "name": "Soaring Jack",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062456300Z"
+    },
+    "g_spider_glider": {
+      "sort": 67,
+      "id": "g_spider_glider",
+      "i_type": "Glider",
+      "name": "Spider Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062697200Z"
+    },
+    "g_springtime_crane": {
+      "sort": 92,
+      "id": "g_springtime_crane",
+      "i_type": "Glider",
+      "name": "Springtime Crane",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062921Z"
+    },
+    "g_star_spangled_glider": {
+      "sort": 66,
+      "id": "g_star_spangled_glider",
+      "i_type": "Glider",
+      "name": "Star-Spangled Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062690800Z"
+    },
+    "g_starchute": {
+      "sort": 33,
+      "id": "g_starchute",
+      "i_type": "Glider",
+      "name": "Starchute",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062437800Z"
+    },
+    "g_starry_great_sail": {
+      "sort": 83,
+      "id": "g_starry_great_sail",
+      "i_type": "Glider",
+      "name": "Starry Great Sail",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062854400Z"
+    },
+    "g_strawberry_cr_pe": {
+      "sort": 31,
+      "id": "g_strawberry_cr_pe",
+      "i_type": "Glider",
+      "name": "Strawberry Crêpe",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062417800Z"
+    },
+    "g_strawberry_donut": {
+      "sort": 56,
+      "id": "g_strawberry_donut",
+      "i_type": "Glider",
+      "name": "Strawberry Donut",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062601100Z"
+    },
+    "g_sunny_surf_master": {
+      "sort": 88,
+      "id": "g_sunny_surf_master",
+      "i_type": "Glider",
+      "name": "Sunny Surf Master",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062887700Z"
+    },
+    "g_sunset_balloons": {
+      "sort": 68,
+      "id": "g_sunset_balloons",
+      "i_type": "Glider",
+      "name": "Sunset Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062703400Z"
+    },
+    "g_super_glider": {
+      "sort": 1,
+      "id": "g_super_glider",
+      "i_type": "Glider",
+      "name": "Super Glider",
+      "rarity": "Normal",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062152300Z"
+    },
+    "g_super_mario_kart_glider": {
+      "sort": 65,
+      "id": "g_super_mario_kart_glider",
+      "i_type": "Glider",
+      "name": "Super Mario Kart Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062682700Z"
+    },
+    "g_surf_master": {
+      "sort": 82,
+      "id": "g_surf_master",
+      "i_type": "Glider",
+      "name": "Surf Master",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062848200Z"
+    },
+    "g_sweetheart_glider": {
+      "sort": 44,
+      "id": "g_sweetheart_glider",
+      "i_type": "Glider",
+      "name": "Sweetheart Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062517100Z"
+    },
+    "g_swooper": {
+      "sort": 99,
+      "id": "g_swooper",
+      "i_type": "Glider",
+      "name": "Swooper",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062971300Z"
+    },
+    "g_toe_bean_balloons": {
+      "sort": 75,
+      "id": "g_toe_bean_balloons",
+      "i_type": "Glider",
+      "name": "Toe-Bean Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062759500Z"
+    },
+    "g_treasure_map": {
+      "sort": 60,
+      "id": "g_treasure_map",
+      "i_type": "Glider",
+      "name": "Treasure Map",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062644400Z"
+    },
+    "g_tropical_glider": {
+      "sort": 106,
+      "id": "g_tropical_glider",
+      "i_type": "Glider",
+      "name": "Tropical Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063021500Z"
+    },
+    "g_waluigi_wing": {
+      "sort": 24,
+      "id": "g_waluigi_wing",
+      "i_type": "Glider",
+      "name": "Waluigi Wing",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062347400Z"
+    },
+    "g_wario_wing": {
+      "sort": 23,
+      "id": "g_wario_wing",
+      "i_type": "Glider",
+      "name": "Wario Wing",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062341600Z"
+    },
+    "g_wicked_wings": {
+      "sort": 103,
+      "id": "g_wicked_wings",
+      "i_type": "Glider",
+      "name": "Wicked Wings",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062996800Z"
+    },
+    "g_yoshi_s_egg_hanafuda": {
+      "sort": 119,
+      "id": "g_yoshi_s_egg_hanafuda",
+      "i_type": "Glider",
+      "name": "Yoshi's Egg Hanafuda",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.063131300Z"
+    },
+    "g_yukata_ribbon": {
+      "sort": 93,
+      "id": "g_yukata_ribbon",
+      "i_type": "Glider",
+      "name": "Yukata Ribbon",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": [],
+      "last_changed": "2021-10-30T16:19:18.062927Z"
+    }
+  }
+}
