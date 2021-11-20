@@ -10,8 +10,6 @@ fn main() {
     let _data = MktData::load("data/mkt_data.json").unwrap_or_else(|_| MktData::new());
     _test_screenshot_import(&_data);
 
-    // _test_combine();
-
     // _test_screenshots_to_bootstrap_hashes(&_data);
 
     // _test_img_hash();
@@ -41,17 +39,6 @@ fn _test_screenshot_import(data: &MktData) {
 
     inventory.clear_dates();
     fs::write(format!("tmp/{}.json", name), inventory.to_json().unwrap()).unwrap();
-}
-
-fn _test_combine() {
-    let list = (1..=6)
-        .map(|i| {
-            image::open(format!("tests/mkt_drivers{}.jpg", i))
-                .unwrap()
-                .into_rgb8()
-        })
-        .collect();
-    combine_screenshots(list).save("pics/big_out.png").unwrap();
 }
 
 fn _test_screenshots_to_bootstrap_hashes(data: &MktData) {

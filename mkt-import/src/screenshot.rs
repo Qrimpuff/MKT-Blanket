@@ -6,8 +6,8 @@ use palette::{GetHue, Hsv, IntoColor, Pixel, Srgb};
 use std::{cmp::Ordering, collections::HashMap, fs};
 
 use image::{
-    imageops::{self, crop_imm, FilterType},
-    GenericImage, GrayImage, Luma, RgbImage,
+    imageops::{self, FilterType},
+    GrayImage, Luma, RgbImage,
 };
 use imageproc::{
     contrast,
@@ -531,17 +531,6 @@ fn maybe_item_image(img: &RgbImage) -> bool {
     blue_percent < 0.9
 }
 
-fn item_image_to_template(item: &Item, i: u32, img: &RgbImage) -> RgbImage {
-    let item_template = imageops::crop_imm(img, 30, 30, 100, 100).to_image();
-    let item_template = imageops::resize(&item_template, 10, 10, FilterType::Gaussian);
-    if DEBUG_IMG {
-        item_template
-            .save(format!("templates/{}s/{}_{}.png", item.i_type, item.id, i))
-            .unwrap();
-    }
-    item_template
-}
-
 #[derive(Debug)]
 pub struct OwnedItemResult {
     pub id: Option<ItemId>,
@@ -657,8 +646,6 @@ pub fn screenshots_to_bootstrap_hashes(
     id_list.sort();
     let id_list = id_list.into_iter().map(|(_, id)| id).collect_vec();
 
-    // let combine = vec![combine_screenshots(screenshots)];
-    // let items = screenshots_to_owned_items(combine, None);
     let items = screenshots_to_owned_items(screenshots, None);
 
     // remove duplicate rows
@@ -716,26 +703,6 @@ pub fn screenshots_to_bootstrap_hashes(
         .map(|i| try { (i.id.as_ref()?.clone(), i.hash.clone()) })
         .collect();
     hashes.ok_or(BootstrapError::MissingId)
-}
-
-pub fn combine_screenshots(screenshots: Vec<RgbImage>) -> RgbImage {
-    let max_w = screenshots
-        .iter()
-        .map(|i| i.width())
-        .max()
-        .unwrap_or_default();
-    let max_h = screenshots.iter().map(|i| i.height()).sum();
-    let mut out = RgbImage::new(max_w, max_h);
-    let mut y = 0;
-    for s in screenshots {
-        let s = imageops::resize(&s, max_w, s.height(), FilterType::Gaussian);
-        out.copy_from(&s, 0, y).unwrap();
-        y += s.height();
-    }
-    if DEBUG_IMG {
-        out.save("pics/big_out.png").unwrap();
-    }
-    out
 }
 
 pub fn screenshots_to_owned_items(
@@ -957,6 +924,8 @@ fn to_image_hash(img: &RgbImage) -> String {
         .hash_alg(img_hash::HashAlg::DoubleGradient)
         .to_hasher();
 
+    let mut hashes = vec![];
+
     let red = map::red_channel(img);
     let green = map::green_channel(img);
     let blue = map::blue_channel(img);
@@ -964,6 +933,9 @@ fn to_image_hash(img: &RgbImage) -> String {
     let rh = hasher.hash_image(&red);
     let gh = hasher.hash_image(&green);
     let bh = hasher.hash_image(&blue);
+    hashes.push(rh.to_base64());
+    hashes.push(gh.to_base64());
+    hashes.push(bh.to_base64());
 
     let red = hue_gray_image(img, 0.0);
     let green = hue_gray_image(img, 120.0);
@@ -974,38 +946,12 @@ fn to_image_hash(img: &RgbImage) -> String {
     let ghh = hasher.hash_image(&green);
     let bhh = hasher.hash_image(&blue);
     let sh = hasher.hash_image(&sat);
+    hashes.push(rhh.to_base64());
+    hashes.push(ghh.to_base64());
+    hashes.push(bhh.to_base64());
+    hashes.push(sh.to_base64());
 
-    // let nw = crop_imm(img, 0, 0, img.width() / 2, img.height() / 2).to_image();
-    // let ne = crop_imm(img, img.width() / 2, 0, img.width() / 2, img.height() / 2).to_image();
-    // let sw = crop_imm(img, 0, img.height() / 2, img.width() / 2, img.height() / 2).to_image();
-    // let se = crop_imm(
-    //     img,
-    //     img.width() / 2,
-    //     img.height() / 2,
-    //     img.width() / 2,
-    //     img.height() / 2,
-    // )
-    // .to_image();
-
-    // let nwh = hue_histogram(&nw);
-    // let neh = hue_histogram(&ne);
-    // let swh = hue_histogram(&sw);
-    // let seh = hue_histogram(&se);
-
-    let hash = format!(
-        "{}|{}|{}|{}|{}|{}|{}",
-        rh.to_base64(),
-        gh.to_base64(),
-        bh.to_base64(),
-        rhh.to_base64(),
-        ghh.to_base64(),
-        bhh.to_base64(),
-        sh.to_base64(),
-        // base64::encode(nwh),
-        // base64::encode(neh),
-        // base64::encode(swh),
-        // base64::encode(seh)
-    );
+    let hash = hashes.join("|");
 
     if DEBUG {
         println!("{}", hash);
@@ -1016,185 +962,29 @@ fn to_image_hash(img: &RgbImage) -> String {
 
 pub fn dist_hash(h1: &str, h2: &str) -> u32 {
     let dist: Option<_> = try {
-        let (r1, g1, b1, rh1, gh1, bh1, sh1) = h1.split('|').next_tuple()?;
-        let (r2, g2, b2, rh2, gh2, bh2, sh2) = h2.split('|').next_tuple()?;
-        // let (r1, g1, b1, nw1, ne1, sw1, se1) = h1.split('|').next_tuple()?;
-        // let (r2, g2, b2, nw2, ne2, sw2, se2) = h2.split('|').next_tuple()?;
+        let h1 = h1.split('|').collect_vec();
+        let h2 = h2.split('|').collect_vec();
 
-        let debug_dist_h = [
-            ImageHash::<Box<[u8]>>::from_base64(r1)
-                .ok()?
-                .dist(&ImageHash::from_base64(r2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(g1)
-                .ok()?
-                .dist(&ImageHash::from_base64(g2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(b1)
-                .ok()?
-                .dist(&ImageHash::from_base64(b2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(rh1)
-                .ok()?
-                .dist(&ImageHash::from_base64(rh2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(gh1)
-                .ok()?
-                .dist(&ImageHash::from_base64(gh2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(bh1)
-                .ok()?
-                .dist(&ImageHash::from_base64(bh2).ok()?),
-            ImageHash::<Box<[u8]>>::from_base64(sh1)
-                .ok()?
-                .dist(&ImageHash::from_base64(sh2).ok()?),
-        ];
-        let dist_h = debug_dist_h.iter().map(|d| d.max(&1)).product::<u32>() as f64;
-
-        // let nw1 = base64::decode(nw1).ok()?;
-        // let ne1 = base64::decode(ne1).ok()?;
-        // let sw1 = base64::decode(sw1).ok()?;
-        // let se1 = base64::decode(se1).ok()?;
-
-        // let nw2 = base64::decode(nw2).ok()?;
-        // let ne2 = base64::decode(ne2).ok()?;
-        // let sw2 = base64::decode(sw2).ok()?;
-        // let se2 = base64::decode(se2).ok()?;
-
-        // if DEBUG {
-        //     println!("1: {:?} {:?} {:?} {:?}", nw1, ne1, sw1, se1);
-        //     println!("2: {:?} {:?} {:?} {:?}", nw2, ne2, sw2, se2);
-        // }
-
-        // fn dist_d(a: Vec<u8>, b: Vec<u8>) -> f64 {
-        //     a.into_iter()
-        //         .zip(b.into_iter())
-        //         .map(|(a, b)| (a as i64 - b as i64).pow(2))
-        //         .sum::<i64>() as f64
-        // }
-        // let nw = dist_d(nw1, nw2);
-        // let ne = dist_d(ne1, ne2);
-        // let sw = dist_d(sw1, sw2);
-        // let se = dist_d(se1, se2);
-
-        // let dist_d = (nw + ne + sw + se).round();
-        let dist_d = 0.0;
-
-        let dist = (dist_h * 1.0 + dist_d) as u32;
+        let a_dist_h = h1
+            .iter()
+            .zip(h2.iter())
+            .filter_map(|(h1, h2)| try {
+                ImageHash::<Box<[u8]>>::from_base64(h1)
+                    .ok()?
+                    .dist(&ImageHash::from_base64(h2).ok()?)
+            })
+            .collect_vec();
+        if h1.len() != a_dist_h.len() || h2.len() != a_dist_h.len() {
+            None?;
+        }
+        let dist_h = a_dist_h.iter().map(|d| d.max(&1)).product();
 
         if DEBUG {
-            println!("{:?}, {} = {}", debug_dist_h, dist_d, dist);
+            println!("{:?} = {}", a_dist_h, dist_h);
         }
-        dist
+        dist_h
     };
     dist.unwrap_or(u32::MAX)
-}
-
-fn hue_histogram(img: &RgbImage) -> Vec<u8> {
-    let hs = img
-        .pixels()
-        .map(|p| hsv(p.0))
-        .filter_map(
-            |(h, s, v)| {
-                if s < 0.05 || v < 0.05 {
-                    None
-                } else {
-                    Some(h)
-                }
-            },
-        )
-        .collect_vec();
-
-    let max = 360.0;
-    let parts = 3.0;
-    let bucket = max / parts;
-    let mut out = vec![0; parts as usize];
-    for (i, item) in out.iter_mut().enumerate().take(parts as usize) {
-        let a = (i + 1) as f64 * bucket;
-        *item = (hs
-            .iter()
-            .map(|h| {
-                1.0 - ((*h as f64 - a).abs().min((*h as f64 + max - a).abs()) / bucket).min(1.0)
-            })
-            .sum::<f64>()
-            * 255.0
-            / hs.len() as f64) as u8;
-    }
-    out
-}
-
-fn hash_average_luma(img: &GrayImage) -> u8 {
-    average_luma(img, |i| {
-        (i as f64) < img.len() as f64 * 0.2 || (i as f64) > img.len() as f64 * 0.8
-    })
-}
-
-fn average_luma<P>(img: &GrayImage, predicate: P) -> u8
-where
-    P: Fn(usize) -> bool,
-{
-    average(img.pixels().map(|p| p.0[0] as usize), predicate)
-}
-
-fn average<I, O, P>(iter: I, predicate: P) -> u8
-where
-    I: IntoIterator<Item = O>,
-    O: Ord,
-    usize: std::iter::Sum<O>,
-    P: Fn(usize) -> bool,
-{
-    let mut p = iter.into_iter().collect_vec();
-    let len = p.len();
-    p.sort_unstable();
-    let sum: usize = p
-        .into_iter()
-        .enumerate()
-        .filter(|(i, _)| predicate(*i))
-        .map(|(_, p)| p)
-        .sum();
-    (sum / len) as u8
-}
-fn color_angle_to_hash(a: f64) -> String {
-    let h = (a * 100.0) as u16;
-    format!("{:x}", h)
-}
-fn hash_to_color_angle(s: &str) -> f64 {
-    let a = u16::from_str_radix(s, 16).unwrap_or_default();
-    a as f64 / 100.0
-}
-
-fn color_angle(color_1: u8, color_2: u8) -> f64 {
-    ((color_1 + 1) as f64 / (color_2 + 1) as f64)
-        .atan()
-        .to_degrees()
-}
-
-fn dist_angle(
-    (latitude_degrees_1, longitude_degrees_1): (f64, f64),
-    (latitude_degrees_2, longitude_degrees_2): (f64, f64),
-) -> f64 {
-    let radius = 100.0_f64;
-
-    let latitude_1 = latitude_degrees_1.to_radians();
-    let latitude_2 = latitude_degrees_2.to_radians();
-
-    let delta_latitude = (latitude_degrees_1 - latitude_degrees_2).to_radians();
-    let delta_longitude = (longitude_degrees_1 - longitude_degrees_2).to_radians();
-
-    let central_angle_inner = (delta_latitude / 2.0).sin().powi(2)
-        + latitude_1.cos() * latitude_2.cos() * (delta_longitude / 2.0).sin().powi(2);
-    let central_angle = 2.0 * central_angle_inner.sqrt().asin();
-
-    radius * central_angle
-}
-
-fn save_image_hash(item: &Item, img: &RgbImage) {
-    let item_img = imageops::crop_imm(
-        img,
-        HASH_ITEM_X,
-        HASH_ITEM_Y,
-        HASH_ITEM_WIDTH,
-        HASH_ITEM_HEIGHT,
-    )
-    .to_image();
-    let h = to_image_hash(&item_img);
-    fs::create_dir_all(format!("templates/{}s", item.i_type)).unwrap();
-    fs::write(format!("templates/{}s/{}.txt", item.i_type, item.id), h).unwrap();
 }
 
 pub fn _test_gray_image() {
