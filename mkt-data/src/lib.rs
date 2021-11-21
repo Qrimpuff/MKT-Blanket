@@ -362,6 +362,73 @@ impl Item {
             self.last_changed = last_changed;
         }
     }
+
+    fn points_cap_tiers(&self) -> Vec<ItemPoints> {
+        match self.i_type {
+            ItemType::Driver => match self.rarity {
+                Rarity::Normal => vec![400, 600, 648, 704, 760],
+                Rarity::Super => vec![450, 675, 765, 870, 975],
+                Rarity::HighEnd => vec![500, 800, 980, 1190, 1400],
+            },
+            _ => match self.rarity {
+                Rarity::Normal => vec![200, 300, 324, 352, 380],
+                Rarity::Super => vec![220, 330, 366, 408, 450],
+                Rarity::HighEnd => vec![250, 400, 490, 595, 700],
+            },
+        }
+    }
+
+    fn valid_points(&self) -> Vec<ItemPoints> {
+        match self.i_type {
+            ItemType::Driver => match self.rarity {
+                Rarity::Normal => Some(0)
+                    .into_iter()
+                    .chain((400..600).step_by(8))
+                    .chain((600..648).step_by(8))
+                    .chain((648..704).step_by(8))
+                    .chain((704..=760).step_by(8))
+                    .collect_vec(),
+                Rarity::Super => Some(0)
+                    .into_iter()
+                    .chain((450..675).step_by(9))
+                    .chain((675..765).step_by(15))
+                    .chain((765..870).step_by(15))
+                    .chain((870..=975).step_by(15))
+                    .collect_vec(),
+                Rarity::HighEnd => Some(0)
+                    .into_iter()
+                    .chain((500..800).step_by(12))
+                    .chain((800..980).step_by(30))
+                    .chain((980..1190).step_by(30))
+                    .chain((1190..=1400).step_by(30))
+                    .collect_vec(),
+            },
+            _ => match self.rarity {
+                Rarity::Normal => Some(0)
+                    .into_iter()
+                    .chain((200..300).step_by(4))
+                    .chain((300..324).step_by(4))
+                    .chain((324..352).step_by(4))
+                    .chain((352..=380).step_by(4))
+                    .collect_vec(),
+                Rarity::Super => Some(0)
+                    .into_iter()
+                    .chain((220..280).step_by(4))
+                    .chain((280..330).step_by(5)) // this is a sneaky split
+                    .chain((330..366).step_by(6))
+                    .chain((366..408).step_by(6))
+                    .chain((408..=450).step_by(6))
+                    .collect_vec(),
+                Rarity::HighEnd => Some(0)
+                    .into_iter()
+                    .chain((250..400).step_by(6))
+                    .chain((400..490).step_by(15))
+                    .chain((490..595).step_by(15))
+                    .chain((595..=700).step_by(15))
+                    .collect_vec(),
+            },
+        }
+    }
 }
 
 #[derive(Debug, Default, Clone, Serialize, Deserialize)]
@@ -452,6 +519,13 @@ impl MktData {
         let json = serde_json::to_string_pretty(self)?;
         fs::write(file_name, json)?;
         Ok(())
+    }
+
+    pub fn get_item(&self, id: &str) -> Option<&Item> {
+        self.drivers
+            .get(id)
+            .or_else(|| self.karts.get(id))
+            .or_else(|| self.gliders.get(id))
     }
 
     pub fn merge_hashes(&mut self, MktItemHashes { hashes }: &MktItemHashes) {
@@ -598,6 +672,44 @@ impl OwnedItem {
                 self.added = added;
             }
         }
+    }
+
+    pub fn normalize_points(&mut self, item: &Item) {
+        let incs = item.valid_points();
+        let max_points = *incs.last().expect("max points");
+        for (a, b) in incs.iter().tuple_windows() {
+            if (a + 1..=*b).contains(&self.points) {
+                self.points = *b;
+                break;
+            }
+        }
+        self.points = self.points.max(0).min(max_points);
+    }
+
+    pub fn increment_points(&mut self, item: &Item) {
+        let incs = item.valid_points();
+        self.points = incs
+            .into_iter()
+            .find(|p| *p > self.points)
+            .unwrap_or(self.points);
+    }
+    pub fn decrement_points(&mut self, item: &Item) {
+        let incs = item.valid_points();
+        self.points = incs
+            .into_iter()
+            .rev()
+            .find(|p| *p < self.points)
+            .unwrap_or(self.points);
+    }
+
+    pub fn point_cap_lvl(&self, item: &Item) -> u8 {
+        let caps = item.points_cap_tiers();
+        for (l, cap) in caps.into_iter().skip(1).enumerate() {
+            if self.points <= cap {
+                return l as u8;
+            }
+        }
+        0
     }
 }
 

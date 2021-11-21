@@ -898,6 +898,11 @@ pub fn screenshots_to_inventory(
         .into_iter()
         .filter(|i| i.id.is_some() && i.lvl.is_some() && i.points.is_some())
         .flat_map(result_owned_item)
+        .update(|i| {
+            if let Some(item) = data.get_item(&i.id) {
+                i.normalize_points(item);
+            }
+        })
         .collect();
     inv.update_inventory(MktInventory::from_items(items, data));
 
