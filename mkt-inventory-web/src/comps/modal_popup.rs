@@ -1,8 +1,9 @@
 use gloo::events::EventListener;
+use gloo_utils::window;
 use itertools::Itertools;
 use mkt_data::{course_parts_from_id, item_type_from_id, ItemType};
 use wasm_bindgen::JsValue;
-use yew::prelude::*;
+use yew::{prelude::*};
 
 use crate::{
     agents::data_inventory::{DataInvCourse, DataInvItem, Shared},
@@ -39,7 +40,7 @@ where
         html.set_class_name("");
     }
 
-    let history = yew::utils::window().history().expect("no history");
+    let history = window().history().expect("no history");
     if visible {
         if layer == 1 {
             history
@@ -48,16 +49,16 @@ where
         }
 
         let toggle_cb = ctx.link().callback(move |_| toggle.clone());
-        let href = yew::utils::window().location().href().unwrap();
+        let href = window().location().href().unwrap();
         Some(EventListener::new(
-            &yew::utils::window(),
+            &window(),
             "popstate",
             move |_| {
                 let prev_layer = layer;
                 let prev_href = href.clone();
                 gloo::console::info!("from popstate");
 
-                let href = yew::utils::window().location().href().unwrap();
+                let href = window().location().href().unwrap();
                 let html = web_sys::window()
                     .unwrap()
                     .document()
@@ -103,19 +104,44 @@ where
             let inv = if let Some(inv) = &item.inv {
                 html! {
                     <div class="block">
-                        <div>{ format!("Level: {}", inv.lvl) }</div>
-                        <div>{ format!("Points: {}", inv.points)}</div>
+                        <div class="block">
+                            <span style="display: inline-block;min-width: 5rem;">{"Level:"}<span class="stat-lvl-big">{inv.lvl}</span></span>
+                            <span>{"Points:"}<span class="stat-points-big">{inv.points}</span></span>
+                        </div>
+                        <div class="buttons">
+                            <button class={classes!("button")}>
+                                <span>{ "Edit" }</span>
+                                <span class="icon"><i class="fas fa-edit"/></span>
+                            </button>
+                            <button class={classes!("button", "is-small", "is-danger")}>
+                                <span>{ "Remove" }</span>
+                                <span class="icon"><i class="fas fa-trash-alt"/></span>
+                            </button>
+                        </div>
                     </div>
                 }
             } else {
-                html! {}
+                html! {
+                    <div class="block">
+                        <p class="block">{"This item is not in your inventory."}</p>
+                        <div class="buttons">
+                            <button class={classes!("button", "is-success")}>
+                                <span>{ "Add Item" }</span>
+                                <span class="icon"><i class="fas fa-plus"/></span>
+                            </button>
+                        </div>
+                    </div>
+                }
             };
             let mut favorite_courses = item.data.favorite_courses.iter().collect_vec();
             favorite_courses.sort_by_key(|i| course_parts_from_id(&i.id));
             let courses = html! {
-                <div class="columns is-multiline" style="overflow-y: scroll; max-height: 60vh;">
-                { for favorite_courses.iter().map(|r| html!{ <div class="column is-full py-1"><Course id={r.id.clone()} lvl_req={r.lvl} i_type={item.data.i_type} /></div> }) }
-                </div>
+                <>
+                    <p class="subtitle is-6">{"Coverage"}</p>
+                    <div class="columns is-multiline" style="overflow-y: scroll; max-height: 60vh;">
+                    { for favorite_courses.iter().map(|r| html!{ <div class="column is-full py-1"><Course id={r.id.clone()} lvl_req={r.lvl} i_type={item.data.i_type} /></div> }) }
+                    </div>
+                </>
             };
             let toggle_cb = ctx.link().callback(move |_| toggle.clone());
             html! {
@@ -254,6 +280,41 @@ where
                             <button class="button is-danger" onclick={&confirm_cb}>{"Confirm"}</button>
                             <button class="button" onclick={&toggle_cb}>{"Cancel"}</button>
                         </div>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close" onclick={&toggle_cb}></button>
+            </div>
+        }
+    } else {
+        html! {}
+    }
+}
+
+
+pub fn view_popup_modal<COMP>(
+    visible: bool,
+    title: Option<Html>,
+    content: Html,
+    buttons: Option<Html>,
+    ctx: &Context<COMP>,
+    toggle: COMP::Message,
+) -> Html
+where
+    COMP: Component,
+    COMP::Message: Clone,
+{
+    if visible {
+        let toggle_cb = ctx.link().callback(move |_| toggle.clone());
+        html! {
+            <div class={classes!("modal", "is-active")}>
+                <div class="modal-background" onclick={&toggle_cb}></div>
+                <div class="modal-content">
+                    <div class="box">
+                        { title.map_or(html!{}, |title| html! {<div class="subtitle">{ title }</div>}) }
+                        <div class="block">
+                        { content }
+                        </div>
+                        {buttons.map_or(html!{}, |buttons| html! {<div class="buttons">{ buttons }</div>})}
                     </div>
                 </div>
                 <button class="modal-close is-large" aria-label="close" onclick={&toggle_cb}></button>

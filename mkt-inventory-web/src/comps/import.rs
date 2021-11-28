@@ -5,9 +5,9 @@ use gloo::{
 };
 use itertools::Itertools;
 use mkt_data::ItemType;
+use web_sys::HtmlInputElement;
 use yew::{
     prelude::*,
-    web_sys::{self, HtmlInputElement},
 };
 use yew_agent::{Bridge, Bridged};
 

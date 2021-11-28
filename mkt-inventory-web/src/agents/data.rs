@@ -2,7 +2,7 @@ use chrono::Utc;
 use gloo::storage::{LocalStorage, Storage};
 use mkt_data::MktData;
 use reqwest::Url;
-use yew::utils;
+use gloo_utils;
 use yew_agent::{
     utils::store::{Store, StoreWrapper},
     AgentLink,
@@ -64,7 +64,7 @@ impl Store for DataStore {
 impl DataStore {
     pub async fn load_data() -> MktData {
         // TODO: add compression
-        let base = Url::parse(&utils::origin().unwrap()).unwrap();
+        let base = Url::parse(&gloo_utils::window().origin()).unwrap();
         let mut url = base.join("mkt_data.json").unwrap();
         url.set_query(Some(&format!("day={}", Utc::today())));
         let resp = reqwest::get(url).await.unwrap();

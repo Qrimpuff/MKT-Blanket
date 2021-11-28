@@ -152,11 +152,11 @@ impl Component for Item {
                         </span>
                         <span class="is-clipped-ellipsis">{ &item.data.name }</span>
                         <span>{if ctx.props().lvl_req > 1 { html! { <i class="ml-4">{format!(" Lvl. {}", ctx.props().lvl_req)}</i> } } else { html! {} }}</span>
-                        <span class="ml-auto">
+                        <span class="ml-auto" style="padding-left: 0.5ch;">
                             { match ctx.props().show_stat {
                                 ShowStat::Level => { lvl },
                                 ShowStat::Points => { points },
-                                ShowStat::LevelPoints => { html! {<>{lvl}{" "}{points}</>} },
+                                ShowStat::LevelPoints => { html! {<>{lvl}<span class="stat-points-small">{points}</span></>} },
                                 ShowStat::FavoriteCourses => { fav_count },
                                 ShowStat::AdditionalCourses => { add_count },
                             } }

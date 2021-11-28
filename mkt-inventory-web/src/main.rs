@@ -66,12 +66,12 @@ impl Component for App {
 
     fn create(ctx: &Context<Self>) -> Self {
         // navigation
-        let hash = yew::utils::window().location().hash().unwrap();
+        let hash = gloo_utils::window().location().hash().unwrap();
         let nav_cb = ctx.link().callback(Msg::Nav);
-        let _nav_listener = EventListener::new(&yew::utils::window(), "popstate", move |_| {
+        let _nav_listener = EventListener::new(&gloo_utils::window(), "popstate", move |_| {
             gloo::console::info!("from navigation popstate");
 
-            let hash = yew::utils::window().location().hash().unwrap();
+            let hash = gloo_utils::window().location().hash().unwrap();
             nav_cb.emit(hash)
         });
         // initial load
@@ -132,15 +132,15 @@ impl Component for App {
                             <h1 class="title is-4">{ "MKT Inventory" }</h1>
                         </a>
 
-                        <a role="button" class={classes!("navbar-burger", self.burger.then_some("is-active"))} data-target="navMenu" aria-label="menu" aria-expanded="false"
+                        <div role="button" class={classes!("navbar-burger", self.burger.then_some("is-active"))} data-target="navMenu" aria-label="menu" aria-expanded="false"
                             onclick={ctx.link().callback(|_| Msg::ToggleBurger)}>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
-                        </a>
+                        </div>
                     </div>
                     <div class={classes!("navbar-menu", self.burger.then_some("is-active"))} id="navMenu">
-                        <a class="navbar-item" href="#">{"Home"}</a>
+                        <a class="navbar-item" href="#home">{"Home"}</a>
                         <a class="navbar-item" href="#courses">{"Coverage"}</a>
                         <a class="navbar-item" href="#items/drivers">{"Inventory"}</a>
                         <a class="navbar-item" href="#import">{"Import / Export"}</a>

@@ -59,7 +59,7 @@ impl Component for ItemList {
         Self {
             items: Vec::new(),
             visible: true,
-            show_stat: ShowStat::Level,
+            show_stat: ShowStat::LevelPoints,
             sort_stat: SortStat::Default,
             sort: SortOrder::Up,
             data_inventory: DataInventoryAgent::bridge(callback),
@@ -107,8 +107,8 @@ impl Component for ItemList {
                     };
                 }
                 match self.sort_stat {
-                    SortStat::Default => self.show_stat = ShowStat::Level,
-                    SortStat::Name => self.show_stat = ShowStat::Level,
+                    SortStat::Default => self.show_stat = ShowStat::LevelPoints,
+                    SortStat::Name => self.show_stat = ShowStat::LevelPoints,
                     SortStat::Level => self.show_stat = ShowStat::Level,
                     SortStat::Points => self.show_stat = ShowStat::Points,
                     SortStat::FavoriteCourses => self.show_stat = ShowStat::FavoriteCourses,

@@ -1,7 +1,8 @@
 use gloo::file::{Blob, BlobContents};
+use gloo_utils::document;
 use wasm_bindgen::JsCast;
 use web_sys::Url;
-use yew::{prelude::*, utils::document};
+use yew::{prelude::*};
 
 use crate::comps::{
     bootstrap_hash::BootstrapHash, delete_data::DeleteData, delete_hash::DeleteHash,

@@ -15,8 +15,8 @@
 }
 
 .stat-lvl {
-  color: #17a040 !important;
-  font-weight: bold !important;
+	color: #17a040 !important;
+	font-weight: bold !important;
 }
 
 .stat-lvl-maybe {
@@ -24,9 +24,27 @@
   font-weight: bold !important;
 }
 
+.stat-lvl-big {
+  @extend .stat-lvl;
+	font-size: 2rem;
+	padding-left: 0.5ch;
+}
+
 .stat-points {
   color: #ff8800 !important;
   font-weight: bold !important;
+}
+
+.stat-points-small {
+  @extend .stat-points;
+	font-size: 0.75rem;
+	padding-left: 0.5ch;
+}
+
+.stat-points-big {
+  @extend .stat-points;
+	font-size: 1.5rem;
+	padding-left: 0.5ch;
 }
 
 .stat {
@@ -46,9 +64,11 @@
   .modal-background {
     background-color: rgba(10, 10, 10, .86) !important;
   }
+
   .mkt-navbar {
     background-color: #353b44;
   }
+
   .mkt-navbar .navbar-brand .title {
     color: #b6cbe6;
   }

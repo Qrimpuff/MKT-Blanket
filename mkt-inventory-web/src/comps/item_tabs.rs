@@ -37,12 +37,12 @@ impl Component for ItemTabs {
 
     fn create(ctx: &Context<Self>) -> Self {
         // navigation
-        let hash = yew::utils::window().location().hash().unwrap();
+        let hash = gloo_utils::window().location().hash().unwrap();
         let nav_cb = ctx.link().callback(Msg::Nav);
-        let _nav_listener = EventListener::new(&yew::utils::window(), "popstate", move |_| {
+        let _nav_listener = EventListener::new(&gloo_utils::window(), "popstate", move |_| {
             gloo::console::info!("from item tabs popstate");
 
-            let hash = yew::utils::window().location().hash().unwrap();
+            let hash = gloo_utils::window().location().hash().unwrap();
             nav_cb.emit(hash)
         });
         Self {
