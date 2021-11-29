@@ -64,19 +64,16 @@ impl Component for DeleteData {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let confirm = html! {
-            <>
-            <div class="subtitle">{ "Delete All Data" }</div>
-            <p>{ "Are you sure you want to delete ALL data, including your inventory and item hashes?" }</p>
-            </>
-        };
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                     <span>{ "Delete All Data" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
                 </button>
-                { view_confirm_modal(self.visible, confirm, ctx, Msg::ToggleModal, Msg::DeleteData) }
+                { view_confirm_modal(self.visible,
+                    Some(html!{ "Delete All Data" }),
+                    html!{ "Are you sure you want to delete ALL data, including your inventory and item hashes?" },
+                    ctx, Msg::ToggleModal, Msg::DeleteData) }
             </>
         }
     }

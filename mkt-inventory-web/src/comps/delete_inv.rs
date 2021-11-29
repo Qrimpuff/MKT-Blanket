@@ -54,19 +54,16 @@ impl Component for DeleteInv {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let confirm = html! {
-            <>
-            <div class="subtitle">{ "Delete Inventory" }</div>
-            <p>{ "Are you sure you want to delete your inventory?" }</p>
-            </>
-        };
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                     <span>{ "Delete Inventory" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
                 </button>
-                { view_confirm_modal(self.visible, confirm, ctx, Msg::ToggleModal, Msg::DeleteInv) }
+                { view_confirm_modal(self.visible,
+                    Some(html!{ "Delete Inventory" }),
+                    html!{ "Are you sure you want to delete your inventory?" },
+                    ctx, Msg::ToggleModal, Msg::DeleteInv) }
             </>
         }
     }

@@ -48,19 +48,16 @@ impl Component for DeleteHash {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let confirm = html! {
-            <>
-            <div class="subtitle">{ "Delete Item Hashes" }</div>
-            <p>{ "Are you sure you want to delete your item hashes?" }</p>
-            </>
-        };
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
                     <span>{ "Delete Hashes" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
                 </button>
-                { view_confirm_modal(self.visible, confirm, ctx, Msg::ToggleModal, Msg::DeleteHash) }
+                { view_confirm_modal(self.visible,
+                    Some(html!{ "Delete Item Hashes" }),
+                    html!{ "Are you sure you want to delete your item hashes?" },
+                    ctx, Msg::ToggleModal, Msg::DeleteHash) }
             </>
         }
     }

@@ -1,5 +1,5 @@
 use gloo::storage::{LocalStorage, Storage};
-use mkt_data::MktInventory;
+use mkt_data::{ItemId, ItemType, MktInventory, OwnedItem};
 use yew_agent::{
     utils::store::{Store, StoreWrapper},
     AgentLink,
@@ -9,6 +9,7 @@ pub enum Msg {
     Replace(Box<MktInventory>),
     Merge(Box<MktInventory>),
     Refresh,
+    RemoveItem(ItemId),
 }
 
 pub enum InventoryRequest {
@@ -17,6 +18,8 @@ pub enum InventoryRequest {
     Save,
     Refresh,
     Delete,
+    AddItem(ItemType, OwnedItem),
+    RemoveItem(ItemId),
 }
 
 pub struct Inventory {
@@ -51,6 +54,14 @@ impl Store for Inventory {
                 link.send_message(Msg::Replace(Box::new(MktInventory::new())));
                 link.send_input(InventoryRequest::Save);
             }
+            InventoryRequest::AddItem(i_type, item) => {
+                let inv = MktInventory::from_item(i_type, item);
+                link.send_input(InventoryRequest::Add(Box::new(inv)));
+            },
+            InventoryRequest::RemoveItem(id) => {
+                link.send_message(Msg::RemoveItem(id));
+                link.send_input(InventoryRequest::Save);
+            }
         }
     }
 
@@ -63,6 +74,9 @@ impl Store for Inventory {
                 self.inv.update_inventory(*inv);
             }
             Msg::Refresh => { /* do nothing */ }
+            Msg::RemoveItem(id) => {
+                self.inv.remove_item(&id);
+            }
         }
     }
 }

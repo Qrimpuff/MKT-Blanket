@@ -2,9 +2,7 @@ use gloo::file::{self, callbacks::FileReader, File};
 use mkt_data::ItemType;
 use mkt_import::screenshot::BootstrapError;
 use web_sys::HtmlInputElement;
-use yew::{
-    prelude::*,
-};
+use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
 use crate::agents::import::{ImportAgent, ImportRequest, ImportResponse};

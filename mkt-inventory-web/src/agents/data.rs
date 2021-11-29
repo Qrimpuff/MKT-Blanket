@@ -1,8 +1,8 @@
 use chrono::Utc;
 use gloo::storage::{LocalStorage, Storage};
+use gloo_utils;
 use mkt_data::MktData;
 use reqwest::Url;
-use gloo_utils;
 use yew_agent::{
     utils::store::{Store, StoreWrapper},
     AgentLink,

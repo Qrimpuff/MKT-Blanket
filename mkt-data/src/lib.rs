@@ -363,7 +363,11 @@ impl Item {
         }
     }
 
-    fn points_cap_tiers(&self) -> Vec<ItemPoints> {
+    pub fn valid_levels(&self) -> Vec<ItemLvl> {
+        (1..=7).collect_vec()
+    }
+
+    pub fn points_cap_tiers(&self) -> Vec<ItemPoints> {
         match self.i_type {
             ItemType::Driver => match self.rarity {
                 Rarity::Normal => vec![400, 600, 648, 704, 760],
@@ -378,50 +382,44 @@ impl Item {
         }
     }
 
-    fn valid_points(&self) -> Vec<ItemPoints> {
+    pub fn valid_points(&self) -> Vec<ItemPoints> {
         match self.i_type {
             ItemType::Driver => match self.rarity {
-                Rarity::Normal => Some(0)
-                    .into_iter()
-                    .chain((400..600).step_by(8))
+                Rarity::Normal => (400..600)
+                    .step_by(8)
                     .chain((600..648).step_by(8))
                     .chain((648..704).step_by(8))
                     .chain((704..=760).step_by(8))
                     .collect_vec(),
-                Rarity::Super => Some(0)
-                    .into_iter()
-                    .chain((450..675).step_by(9))
+                Rarity::Super => (450..675)
+                    .step_by(9)
                     .chain((675..765).step_by(15))
                     .chain((765..870).step_by(15))
                     .chain((870..=975).step_by(15))
                     .collect_vec(),
-                Rarity::HighEnd => Some(0)
-                    .into_iter()
-                    .chain((500..800).step_by(12))
+                Rarity::HighEnd => (500..800)
+                    .step_by(12)
                     .chain((800..980).step_by(30))
                     .chain((980..1190).step_by(30))
                     .chain((1190..=1400).step_by(30))
                     .collect_vec(),
             },
             _ => match self.rarity {
-                Rarity::Normal => Some(0)
-                    .into_iter()
-                    .chain((200..300).step_by(4))
+                Rarity::Normal => (200..300)
+                    .step_by(4)
                     .chain((300..324).step_by(4))
                     .chain((324..352).step_by(4))
                     .chain((352..=380).step_by(4))
                     .collect_vec(),
-                Rarity::Super => Some(0)
-                    .into_iter()
-                    .chain((220..280).step_by(4))
+                Rarity::Super => (220..280)
+                    .step_by(4)
                     .chain((280..330).step_by(5)) // this is a sneaky split
                     .chain((330..366).step_by(6))
                     .chain((366..408).step_by(6))
                     .chain((408..=450).step_by(6))
                     .collect_vec(),
-                Rarity::HighEnd => Some(0)
-                    .into_iter()
-                    .chain((250..400).step_by(6))
+                Rarity::HighEnd => (250..400)
+                    .step_by(6)
                     .chain((400..490).step_by(15))
                     .chain((490..595).step_by(15))
                     .chain((595..=700).step_by(15))
@@ -677,7 +675,7 @@ impl OwnedItem {
     pub fn normalize_points(&mut self, item: &Item) {
         let incs = item.valid_points();
         let max_points = *incs.last().expect("max points");
-        for (a, b) in incs.iter().tuple_windows() {
+        for (a, b) in Some(0).iter().chain(incs.iter()).tuple_windows() {
             if (a + 1..=*b).contains(&self.points) {
                 self.points = *b;
                 break;
@@ -740,6 +738,22 @@ impl MktInventory {
         MktData::from_json(&json)
     }
 
+    pub fn from_item(i_type: ItemType, item: OwnedItem) -> Self {
+        let mut inv = MktInventory::new();
+        match i_type {
+            ItemType::Driver => {
+                inv.drivers.insert(item.id.clone(), item);
+            }
+            ItemType::Kart => {
+                inv.karts.insert(item.id.clone(), item);
+            }
+            ItemType::Glider => {
+                inv.gliders.insert(item.id.clone(), item);
+            }
+        }
+        inv
+    }
+
     pub fn from_items(items: Vec<OwnedItem>, data: &MktData) -> Self {
         let mut items = items.into_iter().into_group_map_by(|i| {
             data.drivers
@@ -794,6 +808,12 @@ impl MktInventory {
             }
         }
         self.gliders.extend(new_inv.gliders);
+    }
+
+    pub fn remove_item(&mut self, id: &str) {
+        self.drivers.remove(id);
+        self.karts.remove(id);
+        self.gliders.remove(id);
     }
 
     pub fn clear_dates(&mut self) {

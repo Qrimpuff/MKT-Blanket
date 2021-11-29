@@ -1,5 +1,6 @@
 use gloo::events::EventListener;
-use mkt_data::{CourseId, ItemType};
+use itertools::Itertools;
+use mkt_data::{item_type_from_id, CourseId, ItemType};
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
@@ -7,10 +8,10 @@ use crate::{
     agents::data_inventory::{
         DataInvCourse, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
     },
-    comps::modal_popup::view_course_modal,
+    comps::item::Item,
 };
 
-use super::modal_popup::update_popup_layer;
+use super::modal_popup::*;
 
 #[derive(Clone)]
 pub enum Msg {
@@ -112,7 +113,7 @@ impl Component for Course {
                             }
                         </span>
                     </button>
-                    { view_course_modal(self.visible, &self.course, ctx, Msg::ToggleModal) }
+                    { self.view_course_modal(ctx) }
                 </>
             }
         } else {
@@ -125,6 +126,71 @@ impl Component for Course {
     fn destroy(&mut self, ctx: &Context<Self>) {
         if self.visible {
             self.popup_listener = update_popup_layer(false, ctx, Msg::ToggleModal);
+        }
+    }
+}
+
+impl Course {
+    fn view_course_modal(&self, ctx: &Context<Self>) -> Html {
+        if self.visible {
+            if let Some(course) = &self.course {
+                let course = course.read().unwrap();
+                let mut drivers = course
+                    .data
+                    .favorite_items
+                    .iter()
+                    .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Driver))
+                    .collect_vec();
+                drivers.sort_by_key(|i| &i.id);
+                let mut karts = course
+                    .data
+                    .favorite_items
+                    .iter()
+                    .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Kart))
+                    .collect_vec();
+                karts.sort_by_key(|i| &i.id);
+                let mut gliders = course
+                    .data
+                    .favorite_items
+                    .iter()
+                    .filter(|r| item_type_from_id(&r.id) == Some(ItemType::Glider))
+                    .collect_vec();
+                gliders.sort_by_key(|i| &i.id);
+                let items = html! {
+                    <>
+                    <p class="subtitle is-6">{"Drivers"}</p>
+                    <div class="columns is-multiline">
+                    { for drivers.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                    </div>
+                    <p class="subtitle is-6">{"Karts"}</p>
+                    <div class="columns is-multiline">
+                    { for karts.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                    </div>
+                    <p class="subtitle is-6">{"Gliders"}</p>
+                    <div class="columns is-multiline">
+                    { for gliders.iter().map(|r| html!{ <div class="column is-full py-1"><Item id={r.id.clone()} lvl_req={r.lvl} /></div> }) }
+                    </div>
+                    </>
+                };
+
+                let title = html! { &course.data.name };
+                let content = html! { items };
+
+                view_popup_modal(
+                    self.visible,
+                    Some(title),
+                    content,
+                    None,
+                    ctx,
+                    Msg::ToggleModal,
+                )
+            } else {
+                html! {
+                    <p>{ "no_course" }</p>
+                }
+            }
+        } else {
+            html! {}
         }
     }
 }
