@@ -29,7 +29,7 @@ pub enum Msg {
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {}
 
-pub struct Import {
+pub struct ImportScreenshot {
     readers: Vec<FileReader>,
     completed: usize,
     timeout: Option<Timeout>,
@@ -39,7 +39,7 @@ pub struct Import {
     _data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
-impl Component for Import {
+impl Component for ImportScreenshot {
     type Message = Msg;
     type Properties = Props;
 
@@ -150,7 +150,6 @@ impl Component for Import {
         };
         html! {
             <>
-            <h2 class="title is-4">{"Import / Export"}</h2>
             <div class="block">
                 <p>{ "Choose a screenshot to import" }</p>
                 <div class="file">

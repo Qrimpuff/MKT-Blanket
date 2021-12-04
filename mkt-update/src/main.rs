@@ -84,20 +84,20 @@ fn test_b_and_g_coverage(data: &MktData) -> MktData {
             continue;
         }
 
-        let item_name = item_name.to_lowercase();
-        let course_name = course_name.replace("RT", "R/T").to_lowercase();
+        let item_name = item_name.to_uppercase();
+        let course_name = course_name.replace("RT", "R/T").to_uppercase();
 
         let item = data
             .drivers
             .values_mut()
             .chain(data.karts.values_mut())
             .chain(data.gliders.values_mut())
-            .find(|i| unidecode(&i.name).to_lowercase() == item_name);
+            .find(|i| i.get_bgr_name() == item_name);
         let course = data.courses.values_mut().find(|c| {
             if c.name.starts_with("RMX") {
-                unidecode(&c.name).to_lowercase() == course_name
+                unidecode(&c.name).to_uppercase() == course_name
             } else {
-                unidecode(&c.name).to_lowercase().ends_with(&course_name)
+                unidecode(&c.name).to_uppercase().ends_with(&course_name)
             }
         });
 

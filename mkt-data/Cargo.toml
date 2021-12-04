@@ -11,4 +11,5 @@ lazy_static = "1.4.0"
 serde = "1.0.129"
 serde_json = "1.0.66"
 hashlink = { version = "0.7.0", features = ["serde_impl"] }
-chrono = { version = "0.4.19", features = ["serde","wasmbind"] }
+chrono = { version = "0.4.19", features = ["serde", "wasmbind"] }
+unidecode = "0.3.0"

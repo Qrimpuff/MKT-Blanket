@@ -18,7 +18,7 @@ use yew_agent::{
 };
 
 use crate::comps::{
-    course_list::CourseList, data_manager::*, import::Import, item_tabs::ItemTabs, summary::Summary,
+    course_list::CourseList, data_manager::*, import_export::ImportExport, item_tabs::ItemTabs, summary::Summary,
 };
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
@@ -26,7 +26,7 @@ enum Page {
     Main,
     Courses,
     Items,
-    ImportExpot,
+    ImportExport,
     DataManager,
 }
 
@@ -39,7 +39,7 @@ impl From<String> for Page {
             "#items/drivers" => Page::Items,
             "#items/karts" => Page::Items,
             "#items/gliders" => Page::Items,
-            "#import" => Page::ImportExpot,
+            "#import" => Page::ImportExport,
             "#data" => Page::DataManager,
             _ => Page::Main,
         }
@@ -121,7 +121,7 @@ impl Component for App {
             Page::Main => html! {<Summary/>},
             Page::Courses => html! {<CourseList/>},
             Page::Items => html! {<ItemTabs/>},
-            Page::ImportExpot => html! {<Import/>},
+            Page::ImportExport => html! {<ImportExport/>},
             Page::DataManager => html! {<DataManager/>},
         };
         html! {

@@ -12,6 +12,7 @@ use itertools::Itertools;
 use lazy_static::lazy_static;
 use regex::Regex;
 use serde::{Deserialize, Serialize, Serializer};
+use unidecode::unidecode;
 
 pub type CourseId = String;
 pub type ItemId = String;
@@ -260,7 +261,7 @@ impl Course {
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub enum ItemType {
     Driver,
     Kart,
@@ -442,6 +443,10 @@ impl Item {
                     .collect_vec(),
             },
         }
+    }
+
+    pub fn get_bgr_name(&self) -> String {
+        unidecode(&self.name).to_uppercase()
     }
 }
 
@@ -716,7 +721,7 @@ impl OwnedItem {
             .unwrap_or(self.points);
     }
 
-    pub fn point_cap_lvl(&self, item: &Item) -> u8 {
+    pub fn point_cap_tier(&self, item: &Item) -> u8 {
         let caps = item.points_cap_tiers();
         for (l, cap) in caps.into_iter().skip(1).enumerate() {
             if self.points <= cap {

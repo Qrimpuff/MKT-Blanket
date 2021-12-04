@@ -1134,6 +1134,7 @@ dependencies = [
  "regex",
  "serde",
  "serde_json",
+ "unidecode",
 ]
 
 [[package]]
