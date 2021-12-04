@@ -1,4 +1,5 @@
-use std::{collections::HashMap, fs, ops::RangeInclusive};
+use std::fmt::Write;
+use std::{collections::HashMap, fs};
 
 use itertools::Itertools;
 use mkt_data::*;
@@ -26,9 +27,9 @@ fn main() {
         data.save("data/mkt_data.json").unwrap();
     }
 
-    test_b_and_g_coverage();
+    let bg_data = test_b_and_g_coverage(&data);
 
-    test_wiki_coverage();
+    test_wiki_coverage(&bg_data);
 
     println!("Done");
 }
@@ -42,8 +43,8 @@ fn test_update_data() -> MktData {
     data
 }
 
-fn test_b_and_g_coverage() {
-    let mut data = MktData::load("data/mkt_data.json").unwrap();
+fn test_b_and_g_coverage(data: &MktData) -> MktData {
+    let mut data = data.clone();
 
     data.courses
         .values_mut()
@@ -109,10 +110,10 @@ fn test_b_and_g_coverage() {
     }
 
     data.save("data/mkt_data_b&g.json").unwrap();
+    data
 }
 
-fn test_wiki_coverage() {
-    let data = MktData::load("data/mkt_data_b&g.json").unwrap();
+fn test_wiki_coverage(data: &MktData) {
     let wiki = fs::read_to_string("tmp/wiki.txt").unwrap();
 
     let mut wiki_items = HashMap::new();
@@ -141,15 +142,16 @@ fn test_wiki_coverage() {
     println!("\n\n\n\n");
 
     let mut courses = data.courses.values().collect_vec();
-    courses.sort_by_key(|c| &c.id);
+    courses.sort_by_key(|c| course_parts_from_id(&c.id));
 
     fn display_wiki_items(
+        wiki_new: &mut String,
         data: &MktData,
         favorite_items: &[&ItemRequirement],
         wiki_items: &HashMap<String, String>,
         rarity: Rarity,
         i_type: ItemType,
-        lvl_range: RangeInclusive<u8>,
+        lvl_range: fn(ItemLvl) -> bool,
     ) {
         let items = match i_type {
             ItemType::Driver => &data.drivers,
@@ -158,38 +160,67 @@ fn test_wiki_coverage() {
         };
         favorite_items
             .iter()
-            .filter(|r| lvl_range.contains(&r.lvl))
+            .filter(|r| lvl_range(r.lvl))
             .filter_map(|r| items.get(&r.id).map(|i| (r, i)))
             .filter(|(_, i)| i.rarity == rarity)
             .for_each(|(r, i)| {
-                println!(
-                    "{}{}",
-                    wiki_items
-                        .get(&i.id)
-                        .unwrap_or_else(|| panic!("wiki doesn't have: {}", &i.id)),
-                    match r.lvl {
-                        3 => "<sup>*</sup>",
-                        6 => "<sup>**</sup>",
-                        _ => "",
-                    }
-                )
+                if let Some(wiki_item) = wiki_items.get(&i.id) {
+                    writeln!(
+                        wiki_new,
+                        "{}{}",
+                        wiki_item,
+                        match r.lvl {
+                            3 => "<sup>*</sup>",
+                            6 => "<sup>**</sup>",
+                            _ => "",
+                        }
+                    )
+                    .unwrap();
+                } else {
+                    eprintln!("[ERROR] wiki doesn't have: {}", &i.id);
+                }
             });
     }
 
+    let mut wiki_new = String::new();
     for c in courses {
-        let mut favorite_items = c.favorite_items.iter().collect_vec();
+        let mut favorite_items = c
+            .favorite_items
+            .iter()
+            .chain(
+                c.favored_items
+                    .iter()
+                    .filter(|r1| !c.favorite_items.iter().any(|r2| r1.id == r2.id)),
+            )
+            .collect_vec();
         favorite_items.sort_by_key(|r| r.id.replace("_", " "));
 
-        println!("----- {} -----", c.name);
-        for ((r, l), t) in [Rarity::HighEnd, Rarity::Super, Rarity::Normal]
-            .iter()
-            .cartesian_product([1..=1, 3..=6])
-            .cartesian_product([ItemType::Driver, ItemType::Kart, ItemType::Glider])
-        {
-            println!("|");
-            display_wiki_items(&data, &favorite_items, &wiki_items, *r, t, l);
+        writeln!(&mut wiki_new, "----- {} -----", c.name).unwrap();
+        for r in [Rarity::HighEnd, Rarity::Super, Rarity::Normal] {
+            match r {
+                Rarity::HighEnd => writeln!(
+                    &mut wiki_new,
+                    "|rowspan=3 style=\"background-color:#FEFEFE;\"|\n!!! COURSE NAME HERE !!!"
+                )
+                .unwrap(),
+                Rarity::Super => {
+                    writeln!(&mut wiki_new, "|-style=\"background-color:#FEEB80\"").unwrap()
+                }
+                Rarity::Normal => {
+                    writeln!(&mut wiki_new, "|-style=\"background-color:#E3E3E3\"").unwrap()
+                }
+            }
+            for (l, t) in [|l| l == 1, |l| (3..=6).contains(&l) || l == 0]
+                .iter()
+                .cartesian_product([ItemType::Driver, ItemType::Kart, ItemType::Glider])
+            {
+                writeln!(&mut wiki_new, "|").unwrap();
+                display_wiki_items(&mut wiki_new, data, &favorite_items, &wiki_items, r, t, *l);
+            }
         }
-        println!("----- END {} -----", c.name);
-        println!("\n");
+        writeln!(&mut wiki_new, "----- END {} -----", c.name).unwrap();
+        writeln!(&mut wiki_new, "\n").unwrap();
     }
+
+    fs::write("tmp/wiki_new.txt", wiki_new).unwrap();
 }

@@ -57,7 +57,7 @@ impl Store for Inventory {
             InventoryRequest::AddItem(i_type, item) => {
                 let inv = MktInventory::from_item(i_type, item);
                 link.send_input(InventoryRequest::Add(Box::new(inv)));
-            },
+            }
             InventoryRequest::RemoveItem(id) => {
                 link.send_message(Msg::RemoveItem(id));
                 link.send_input(InventoryRequest::Save);

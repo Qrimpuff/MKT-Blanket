@@ -183,7 +183,7 @@ pub fn update_mkt_item_coverage_data(data: &mut MktData) {
                         })
                         .map(|(n, l)| (name_rgx.replace(n, ""), l))
                         .map(move |(n, l)| (n, t, l))
-                        .filter(|(_, _, l)| *l > 0)
+                    // .filter(|(_, _, l)| *l > 0)
                 })
             {
                 match i_type {
@@ -207,45 +207,76 @@ pub fn update_mkt_item_coverage_data(data: &mut MktData) {
                 i += 1;
 
                 // drivers
-                let mut drivers_id = vec![];
+                let mut drivers_id: Vec<ItemRequirement> = vec![];
                 for (driver, lvl) in drivers {
                     let driver_id = driver_id_from_name(&driver);
                     let _: Option<_> = try {
                         let driver = data.drivers.get_mut(&driver_id)?;
-                        driver
-                            .favorite_courses
-                            .insert((course_id.clone(), lvl).into());
+                        if lvl > 0 {
+                            driver
+                                .favorite_courses
+                                .insert((course_id.clone(), lvl).into());
+                        } else {
+                            driver
+                                .favored_courses
+                                .insert((course_id.clone(), lvl).into());
+                        }
                         drivers_id.push((driver_id, lvl).into());
                     };
                 }
-                course.favorite_items.extend(drivers_id);
+                course
+                    .favorite_items
+                    .extend(drivers_id.iter().filter(|r| r.lvl > 0).cloned());
+                course
+                    .favored_items
+                    .extend(drivers_id.iter().filter(|r| r.lvl == 0).cloned());
 
                 // karts
-                let mut karts_id = vec![];
+                let mut karts_id: Vec<ItemRequirement> = vec![];
                 for (kart, lvl) in karts {
                     let kart_id = kart_id_from_name(&kart);
                     let _: Option<_> = try {
                         let kart = data.karts.get_mut(&kart_id)?;
-                        kart.favorite_courses
-                            .insert((course_id.clone(), lvl).into());
+                        if lvl > 0 {
+                            kart.favorite_courses
+                                .insert((course_id.clone(), lvl).into());
+                        } else {
+                            kart.favored_courses.insert((course_id.clone(), lvl).into());
+                        }
                         karts_id.push((kart_id, lvl).into());
                     };
                 }
-                course.favorite_items.extend(karts_id);
+                course
+                    .favorite_items
+                    .extend(karts_id.iter().filter(|r| r.lvl > 0).cloned());
+                course
+                    .favored_items
+                    .extend(karts_id.iter().filter(|r| r.lvl == 0).cloned());
 
                 // gliders
-                let mut gliders_id = vec![];
+                let mut gliders_id: Vec<ItemRequirement> = vec![];
                 for (glider, lvl) in gliders {
                     let glider_id = glider_id_from_name(&glider);
                     let _: Option<_> = try {
                         let glider = data.gliders.get_mut(&glider_id)?;
-                        glider
-                            .favorite_courses
-                            .insert((course_id.clone(), lvl).into());
+                        if lvl > 0 {
+                            glider
+                                .favorite_courses
+                                .insert((course_id.clone(), lvl).into());
+                        } else {
+                            glider
+                                .favored_courses
+                                .insert((course_id.clone(), lvl).into());
+                        }
                         gliders_id.push((glider_id, lvl).into());
                     };
                 }
-                course.favorite_items.extend(gliders_id);
+                course
+                    .favorite_items
+                    .extend(gliders_id.iter().filter(|r| r.lvl > 0).cloned());
+                course
+                    .favored_items
+                    .extend(gliders_id.iter().filter(|r| r.lvl == 0).cloned());
             }
         }
     }

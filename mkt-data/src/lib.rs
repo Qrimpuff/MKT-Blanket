@@ -203,7 +203,9 @@ pub struct Course {
     pub id: CourseId,
     pub name: String, // current english name
     #[serde(serialize_with = "ordered_set")]
-    pub favorite_items: HashSet<ItemRequirement>, // previous names (for updating/merging)
+    pub favorite_items: HashSet<ItemRequirement>,
+    #[serde(skip)]
+    pub favored_items: HashSet<ItemRequirement>,
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Course {
@@ -213,6 +215,7 @@ impl Course {
             id: course_id_from_name(&name),
             name,
             favorite_items: HashSet::new(),
+            favored_items: HashSet::new(),
             last_changed: Some(Utc::now()),
         }
     }
@@ -224,6 +227,7 @@ impl Course {
             id,
             name,
             favorite_items,
+            favored_items,
             last_changed,
         }: Course,
     ) {
@@ -243,6 +247,10 @@ impl Course {
         }
         if !favorite_items.is_empty() && self.favorite_items != favorite_items {
             self.favorite_items = favorite_items;
+            changed = true;
+        }
+        if !favored_items.is_empty() && self.favored_items != favored_items {
+            self.favored_items = favored_items;
             changed = true;
         }
 
@@ -297,6 +305,8 @@ pub struct Item {
     pub rarity: Rarity,
     #[serde(serialize_with = "ordered_set")]
     pub favorite_courses: HashSet<CourseAvailability>,
+    #[serde(skip)]
+    pub favored_courses: HashSet<CourseAvailability>,
     pub hashes: Vec<ItemHash>, // used for screenshot import
     pub last_changed: Option<DateTime<Utc>>,
 }
@@ -309,6 +319,7 @@ impl Item {
             name,
             rarity,
             favorite_courses: HashSet::new(),
+            favored_courses: HashSet::new(),
             hashes: vec![],
             last_changed: Some(Utc::now()),
         }
@@ -323,6 +334,7 @@ impl Item {
             name,
             rarity,
             favorite_courses,
+            favored_courses,
             hashes,
             last_changed,
         }: Item,
@@ -351,6 +363,10 @@ impl Item {
         }
         if !favorite_courses.is_empty() && self.favorite_courses != favorite_courses {
             self.favorite_courses = favorite_courses;
+            changed = true;
+        }
+        if !favored_courses.is_empty() && self.favored_courses != favored_courses {
+            self.favored_courses = favored_courses;
             changed = true;
         }
         if !hashes.is_empty() && self.hashes != hashes {
@@ -488,7 +504,7 @@ impl FromIterator<(ItemId, Vec<ItemHash>)> for MktItemHashes {
     }
 }
 
-#[derive(Debug, Default, Serialize, Deserialize)]
+#[derive(Debug, Default, Clone, Serialize, Deserialize)]
 pub struct MktData {
     #[serde(serialize_with = "ordered_map")]
     pub courses: HashMap<CourseId, Course>,
