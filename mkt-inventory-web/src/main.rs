@@ -18,7 +18,8 @@ use yew_agent::{
 };
 
 use crate::comps::{
-    course_list::CourseList, data_manager::*, import_export::ImportExport, item_tabs::ItemTabs, summary::Summary,
+    course_list::CourseList, data_manager::*, import_export::ImportExport, item_tabs::ItemTabs,
+    summary::Summary,
 };
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]

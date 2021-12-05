@@ -1,12 +1,16 @@
-use gloo_utils::{document, window};
 use mkt_data::ItemType;
-use wasm_bindgen::{ JsCast};
+use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
 use crate::agents::data_inventory::{
     DataInvItem, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
 };
+
+#[wasm_bindgen(module = "/js/utils.js")]
+extern "C" {
+    fn copyTextToClipboard(text: &str);
+}
 
 pub enum Msg {
     CopyBgr,
@@ -59,9 +63,30 @@ impl Component for ImportExportBgr {
                 true
             }
             Msg::CopyBgr => {
-                Self::copy_bgr();
+                use std::fmt::Write;
+                let mut text = String::new();
+                for i in &self.items {
+                    let i = i.read().unwrap();
+                    writeln!(
+                        &mut text,
+                        "{}\t{}\t{}\t{}",
+                        i.data.get_bgr_name(),
+                        match i.data.i_type {
+                            ItemType::Driver => 'D',
+                            ItemType::Kart => 'K',
+                            ItemType::Glider => 'G',
+                        },
+                        i.inv.as_ref().map(|n| n.lvl).unwrap_or(0),
+                        i.inv
+                            .as_ref()
+                            .map(|n| n.point_cap_tier(&i.data))
+                            .unwrap_or(0)
+                    )
+                    .unwrap();
+                }
+                copyTextToClipboard(&text);
                 false
-            },
+            }
         }
     }
 
@@ -72,38 +97,13 @@ impl Component for ImportExportBgr {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let items = if self.visible {
+        let bgr = if self.visible {
             html! {
                 <>
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyBgr)}>
-                    <span>{ "Copy BGR Sheet" }</span>
+                    <span>{ "Send BGR Sheet to clipboard" }</span>
                     <span class="icon"><i class="fas fa-copy"/></span>
                 </button>
-                <table id="bgr_table">
-                { for self.items.iter().map(|i| {
-                    let i = i.read().unwrap();
-                    html!{
-                        <tr>
-                            <td>
-                                {i.data.get_bgr_name()}
-                            </td>
-                            <td>
-                                {match i.data.i_type {
-                                    ItemType::Driver => 'D',
-                                    ItemType::Kart => 'K',
-                                    ItemType::Glider => 'G',
-                                }}
-                            </td>
-                            <td>
-                                {i.inv.as_ref().map(|n| n.lvl).unwrap_or(0)}
-                            </td>
-                            <td>
-                                {i.inv.as_ref().map(|n| n.point_cap_tier(&i.data)).unwrap_or(0)}
-                            </td>
-                        </tr>
-                    }
-                }) }
-                </table>
                 </>
             }
         } else {
@@ -111,32 +111,8 @@ impl Component for ImportExportBgr {
         };
         html! {
             <>
-                { items }
+                { bgr }
             </>
         }
-    }
-}
-
-impl ImportExportBgr {
-    fn copy_bgr() {
-        /*
-        var range = document.createRange();
-        range.selectNode(document.getElementById(containerid));
-        window.getSelection().addRange(range);
-        document.execCommand("copy");
-        alert("Text has been copied, now paste in the text-area")
-        */
-
-        let r: Option<_> = try {
-            let range = document().create_range().ok()?;
-            range
-                .select_node(&document().get_element_by_id("bgr_table")?.into())
-                .ok()?;
-            window().get_selection().ok()??.add_range(&range).ok()?;
-            document()
-                .dyn_into::<web_sys::HtmlDocument>().ok()?
-                .exec_command("copy").ok()?;
-        };
-        r.unwrap()
     }
 }

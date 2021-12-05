@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use super::{import_screenshot::ImportScreenshot, import_export_bgr::ImportExportBgr};
+use super::{import_export_bgr::ImportExportBgr, import_screenshot::ImportScreenshot};
 
 #[function_component(ImportExport)]
 pub fn view_data_manager() -> Html {

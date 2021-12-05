@@ -1,3 +1,10 @@
+.no-style {
+  all: initial;
+  * {
+      all: unset;
+  }
+}
+
 .rarity-dot {
   font-size: 75%;
 }
