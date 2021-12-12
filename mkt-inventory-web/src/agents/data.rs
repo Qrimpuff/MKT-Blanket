@@ -65,7 +65,7 @@ impl DataStore {
     pub async fn load_data() -> MktData {
         // TODO: add compression
         let base = Url::parse(&gloo_utils::window().origin()).unwrap();
-        let mut url = base.join("mkt_data.json").unwrap();
+        let mut url = base.join("MKT-Blanket/mkt_data.json").unwrap();
         url.set_query(Some(&format!("day={}", Utc::today())));
         let resp = reqwest::get(url).await.unwrap();
         let json = resp.text().await.unwrap();
