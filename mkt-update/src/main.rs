@@ -27,9 +27,9 @@ fn main() {
         data.save("data/mkt_data.json").unwrap();
     }
 
-    let bg_data = test_b_and_g_coverage(&data);
+    // let bg_data = _test_b_and_g_coverage(&data);
 
-    test_wiki_coverage(&bg_data);
+    // _test_wiki_coverage(&bg_data);
 
     println!("Done");
 }
@@ -43,7 +43,7 @@ fn test_update_data() -> MktData {
     data
 }
 
-fn test_b_and_g_coverage(data: &MktData) -> MktData {
+fn _test_b_and_g_coverage(data: &MktData) -> MktData {
     let mut data = data.clone();
 
     data.courses
@@ -113,7 +113,7 @@ fn test_b_and_g_coverage(data: &MktData) -> MktData {
     data
 }
 
-fn test_wiki_coverage(data: &MktData) {
+fn _test_wiki_coverage(data: &MktData) {
     let wiki = fs::read_to_string("tmp/wiki.txt").unwrap();
 
     let mut wiki_items = HashMap::new();
