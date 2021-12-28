@@ -11,7 +11,7 @@ use unidecode::unidecode;
 fn main() {
     println!("MKT Data Update");
 
-    let mut data = test_update_data();
+    let mut data = update_data();
 
     // don't overwrite with bad data
     if !data.courses.is_empty()
@@ -27,14 +27,16 @@ fn main() {
         data.save("data/mkt_data.json").unwrap();
     }
 
-    // let bg_data = _test_b_and_g_coverage(&data);
-
-    // _test_wiki_coverage(&bg_data);
+    if std::env::var("MKT_B_G_WIKI_TEST").is_ok() {
+        let bg_data = _test_b_and_g_coverage(&data);
+    
+        _test_wiki_coverage(&bg_data);
+    }
 
     println!("Done");
 }
 
-fn test_update_data() -> MktData {
+fn update_data() -> MktData {
     let mut data = MktData::new();
     update_mkt_item_data(&mut data, ItemType::Driver);
     update_mkt_item_data(&mut data, ItemType::Kart);

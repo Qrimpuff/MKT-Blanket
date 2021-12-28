@@ -1146,6 +1146,7 @@ dependencies = [
  "imageproc",
  "img_hash",
  "itertools 0.10.1",
+ "lazy_static",
  "mkt-data",
  "palette",
  "pretty_assertions",
