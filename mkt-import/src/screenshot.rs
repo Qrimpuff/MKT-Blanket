@@ -5,7 +5,6 @@ use palette::{GetHue, Hsv, IntoColor, Pixel, Srgb};
 
 use std::{cmp::Ordering, collections::HashMap, fs};
 
-use lazy_static::lazy_static;
 use image::{
     imageops::{self, FilterType},
     GrayImage, Luma, RgbImage,
@@ -19,6 +18,7 @@ use imageproc::{
 };
 use img_hash::{HasherConfig, ImageHash};
 use itertools::Itertools;
+use lazy_static::lazy_static;
 
 lazy_static! {
     static ref DEBUG: bool = std::env::var("MKT_DEBUG").is_ok();

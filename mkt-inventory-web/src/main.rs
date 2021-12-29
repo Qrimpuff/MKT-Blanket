@@ -9,12 +9,13 @@ mod comps;
 use agents::{
     data::{DataRequest, DataStore},
     inventory::{Inventory, InventoryRequest},
+    update::{UpdateAgent, UpdateRequest},
 };
 use gloo::events::EventListener;
 use yew::prelude::*;
 use yew_agent::{
     utils::store::{Bridgeable, StoreWrapper},
-    Bridge,
+    Bridge, Bridged,
 };
 
 use crate::comps::{
@@ -59,6 +60,7 @@ struct App {
     _nav_listener: EventListener,
     _data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
     _inventory: Box<dyn Bridge<StoreWrapper<Inventory>>>,
+    _update: Box<dyn Bridge<UpdateAgent>>,
 }
 
 impl Component for App {
@@ -75,6 +77,9 @@ impl Component for App {
             let hash = gloo_utils::window().location().hash().unwrap();
             nav_cb.emit(hash)
         });
+        // check for data updates
+        let mut _update = UpdateAgent::bridge(Callback::noop());
+        _update.send(UpdateRequest::CheckUpdateData);
         // initial load
         let mut _data_store = DataStore::bridge(Callback::noop());
         _data_store.send(DataRequest::Load);
@@ -86,6 +91,7 @@ impl Component for App {
             _nav_listener,
             _data_store,
             _inventory,
+            _update,
         }
     }
 

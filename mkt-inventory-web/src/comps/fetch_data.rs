@@ -1,15 +1,11 @@
-use mkt_data::MktData;
 use yew::prelude::*;
-use yew_agent::{
-    utils::store::{Bridgeable, StoreWrapper},
-    Bridge,
-};
+use yew_agent::{Bridge, Bridged};
 
-use crate::agents::data::{DataRequest, DataStore};
+use crate::agents::update::{UpdateAgent, UpdateRequest, UpdateResponse};
 
 pub enum Msg {
+    Update(UpdateResponse),
     Fetch,
-    DoneFetching(Box<MktData>),
 }
 
 #[derive(Properties, Clone, PartialEq)]
@@ -17,34 +13,35 @@ pub struct Props {}
 
 pub struct FetchData {
     fetching: bool,
-    data_store: Box<dyn Bridge<StoreWrapper<DataStore>>>,
+    update: Box<dyn Bridge<UpdateAgent>>,
 }
 
 impl Component for FetchData {
     type Message = Msg;
     type Properties = Props;
 
-    fn create(_ctx: &Context<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
+        let callback = ctx.link().callback(Msg::Update);
+
         Self {
             fetching: false,
-            data_store: DataStore::bridge(Callback::noop()),
+            update: UpdateAgent::bridge(callback),
         }
     }
 
-    fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::Fetch => {
                 self.fetching = true;
-                ctx.link().send_future(async {
-                    Msg::DoneFetching(Box::new(DataStore::load_data().await))
-                });
+                self.update.send(UpdateRequest::CheckUpdateData);
                 true
             }
-            Msg::DoneFetching(data) => {
-                self.fetching = false;
-                self.data_store.send(DataRequest::New(data));
-                true
-            }
+            Msg::Update(resp) => match resp {
+                UpdateResponse::DoneDataUpdate | UpdateResponse::NoDataUpdate => {
+                    self.fetching = false;
+                    true
+                }
+            },
         }
     }
 

@@ -29,7 +29,7 @@ fn main() {
 
     if std::env::var("MKT_B_G_WIKI_TEST").is_ok() {
         let bg_data = _test_b_and_g_coverage(&data);
-    
+
         _test_wiki_coverage(&bg_data);
     }
 
