@@ -207,6 +207,7 @@ pub struct Course {
     pub favorite_items: HashSet<ItemRequirement>,
     #[serde(skip)]
     pub favored_items: HashSet<ItemRequirement>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Course {
@@ -217,7 +218,7 @@ impl Course {
             name,
             favorite_items: HashSet::new(),
             favored_items: HashSet::new(),
-            last_changed: Some(Utc::now()),
+            last_changed: None,
         }
     }
 
@@ -309,6 +310,7 @@ pub struct Item {
     #[serde(skip)]
     pub favored_courses: HashSet<CourseAvailability>,
     pub hashes: Vec<ItemHash>, // used for screenshot import
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub last_changed: Option<DateTime<Utc>>,
 }
 impl Item {
@@ -322,7 +324,7 @@ impl Item {
             favorite_courses: HashSet::new(),
             favored_courses: HashSet::new(),
             hashes: vec![],
-            last_changed: Some(Utc::now()),
+            last_changed: None,
         }
     }
 

@@ -186,7 +186,7 @@ impl Component for ImportScreenshot {
                 }}
             </div>
             <h3 class="subtitle is-4">{"Modified Items "}<b>{self.modified_items.len()}</b></h3>
-            <div>{ items }</div>
+            <div class="block">{ items }</div>
             </>
         }
     }

@@ -99,12 +99,12 @@ impl Component for ImportExportBgr {
     fn view(&self, ctx: &Context<Self>) -> Html {
         let bgr = if self.visible {
             html! {
-                <>
+                <div class="block">
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyBgr)}>
                     <span>{ "Send BGR Sheet to clipboard" }</span>
                     <span class="icon"><i class="fas fa-copy"/></span>
                 </button>
-                </>
+                </div>
             }
         } else {
             html! {}
