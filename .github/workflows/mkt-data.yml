@@ -13,8 +13,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - uses: actions-rs/toolchain@v1
+      with:
+        override: true
+        profile: minimal
+        
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: cargo-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
+        restore-keys: |
+          cargo-${{ runner.os }}-
+    
     - name: Run
       run: cargo run --release --bin mkt-update
+      
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
