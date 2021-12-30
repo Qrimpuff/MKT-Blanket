@@ -1,0 +1,25 @@
+name: web deploy
+
+on:
+  push:
+    branches: [ master ]
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: jetli/trunk-action@v0.1.0
+    - name: Build
+      run: trunk build --release
+      working-directory: ./mkt-inventory-web
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: ./mkt-inventory-web/dist # The folder the action should deploy.
+        clean-exclude: 'mkt_*.json'
