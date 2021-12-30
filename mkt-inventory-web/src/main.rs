@@ -136,7 +136,7 @@ impl Component for App {
                 <nav class="navbar is-fixed-top mkt-navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="">
-                            <h1 class="title is-4">{ "MKT Inventory" }</h1>
+                            <h1 class="title is-4">{ "MKT Blanket" }</h1>
                         </a>
 
                         <div role="button" class={classes!("navbar-burger", self.burger.then_some("is-active"))} data-target="navMenu" aria-label="menu" aria-expanded="false"

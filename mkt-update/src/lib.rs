@@ -61,7 +61,7 @@ fn parse_items(url: &str, data: &mut MktData, i_type: ItemType) {
                 .ok()?;
             let item = Item::new(i_type, rarity, name, Some(i));
 
-            println!("{:?}", item);
+            // println!("{:?}", item);
             match i_type {
                 ItemType::Driver => &mut data.drivers,
                 ItemType::Kart => &mut data.karts,
@@ -101,7 +101,7 @@ fn parse_items_new_format(url: &str, data: &mut MktData, i_type: ItemType, row_n
                 let rarity = rarity.text().next()?.trim().try_into().ok()?;
                 let item = Item::new(i_type, rarity, name, Some(i));
 
-                println!("{:?}", item);
+                // println!("{:?}", item);
                 match i_type {
                     ItemType::Driver => &mut data.drivers,
                     ItemType::Kart => &mut data.karts,

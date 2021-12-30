@@ -12,6 +12,10 @@ fn main() {
     println!("MKT Data Update");
 
     let mut data = update_data();
+    println!("courses: {}", data.courses.len());
+    println!("drivers: {}", data.drivers.len());
+    println!("karts: {}", data.karts.len());
+    println!("gliders: {}", data.gliders.len());
 
     // don't overwrite with bad data
     if !data.courses.is_empty()
@@ -21,7 +25,6 @@ fn main() {
     {
         let hash =
             MktItemHashes::load("data/mkt_hash.json").unwrap_or_else(|_| MktItemHashes::new());
-        dbg!(&hash);
         data.merge_hashes(&hash);
 
         data.save("data/mkt_data.json").unwrap();
