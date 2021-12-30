@@ -1,0 +1,23 @@
+name: MKT data
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run
+      run: cargo run --release --bin mkt-update
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: data # The folder the action should deploy.
+        clean: false
