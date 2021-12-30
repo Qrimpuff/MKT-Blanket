@@ -13,10 +13,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        target: wasm32-unknown-unknown
+        override: true
+        profile: minimal
+
     - uses: jetli/trunk-action@v0.1.0
+      with:
+        # Optional version of trunk to install(eg. 'v0.8.1', 'latest')
+        version: 'latest'
+
+    - uses: jetli/wasm-bindgen-action@v0.1.0
+      with:
+        # Optional version of wasm-bindgen to install(eg. '0.2.68', 'latest')
+        version: 'latest'
+        
     - name: Build
       run: trunk build --release
       working-directory: ./mkt-inventory-web
+      
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
