@@ -29,9 +29,9 @@ jobs:
           ~/.cargo/registry
           ~/.cargo/git
           target
-        key: cargo-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
+        key: cargo-mkt-data-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
         restore-keys: |
-          cargo-${{ runner.os }}-
+          cargo-mkt-data-${{ runner.os }}-
     
     - name: Run
       run: cargo run --release --bin mkt-update
