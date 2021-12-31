@@ -1,0 +1,1351 @@
+{
+  "hashes": {
+    "d_baby_daisy": [
+      "KBaK1pk=|KIRK1Ik=|KMRihMs=|pHlNW7Y=|6MSsQlE=|WsVihGs=|WoYihEs="
+    ],
+    "d_baby_luigi": [
+      "uGvEvAo=|qEPEnEk=|umvEjIo=|tEtCvDQ=|QsQLw/U=|OjysXK0=|mjLlLIo="
+    ],
+    "d_baby_mario": [
+      "rElGke4=|usnGk80=|usHGg80=|pE5L1LY=|WlPupcU=|mrSsRco=|WklsIsU="
+    ],
+    "d_baby_mario_koala": [
+      "SElLsmU=|OkFmk8U=|OkFmosU=|RK3JWKk=|vkJkkUY=|slKmppo=|ukJlhcU="
+    ],
+    "d_baby_peach": [
+      "pDOKFZM=|JDPLHZI=|smYgycY=|lNyt2Z4=|SBPBtpk=|WmRhyUU=|umIlS0Y="
+    ],
+    "d_baby_peach_cherub": [
+      "xjfC77Y=|JnvD7zY=|skJkicQ=|XIWsc0s=|RB3D/rQ=|OspDjEw=|smIki8Q="
+    ],
+    "d_baby_rosalina": [
+      "jE9CkBM=|qHSD2Ec=|qEQCnEc=|RGVKu7I=|vHynWmc=|OtStBWU=|CkIipE4="
+    ],
+    "d_baby_rosalina_detective": [
+      "yvtLqkQ=|itvLpVc=|qkorrlc=|Vi1LY+Q=|vNbElFs=|+MKkrpk=|qkpDpVU="
+    ],
+    "d_birdo": [
+      "KESOEkc=|2GEC8EU=|bHPCUEU=|Is7kBzo=|igSK48M=|zDuD+kU=|zGGC8kU="
+    ],
+    "d_birdo_black": [
+      "iiQpa0Y=|imAL60Y=|ykAro0Y=|kiVpS8I=|BMlCklQ=|zJqDtQw=|KEvEllU="
+    ],
+    "d_birdo_blue": [
+      "igQi40I=|yCAC4Ec=|LNvEFlU=|kiQpaYI=|iAEK4cM=|LNvEFj0=|zCAC8kY="
+    ],
+    "d_birdo_light_blue": [
+      "miQi4cI=|SGGKckU=|LNvEFnU=|kiQpaaI=|GGGuklU=|JJvGljk=|jBAC8kY="
+    ],
+    "d_birdo_yellow": [
+      "KESOEkc=|KEHKEkU=|zCAD8kY=|kowtTTo=|LEPOktU=|zDsD/Aw=|zDAD8kQ="
+    ],
+    "d_black_shy_guy": [
+      "LEpMuaU=|LEpMuaY=|JENMuHY=|GralSW0=|qiagTKI=|IHQhRnY=|5EVKtlI="
+    ],
+    "d_black_yoshi": [
+      "Kk1mi50=|KklG250=|Kknmi50=|2oVpS9s=|tFIjlFQ=|dMpmtlw=|rFqGVBU="
+    ],
+    "d_blue_koopa_freerunning": [
+      "brfENao=|brfEVQs=|KGykWlU=|NkdrpaI=|zDeGdQs=|SMio2lU=|rGyH3K8="
+    ],
+    "d_blue_yoshi": [
+      "qknGix0=|KkmGkwU=|BFqiVGQ=|uoVli5s=|qknCm0U=|RFqKdGQ=|JErmk1Q="
+    ],
+    "d_boomerang_bro": [
+      "qnmIG5U=|6niIKpU=|QF4K5qQ=|tIktm1k=|qHOKGYc=|QkZCZGQ=|RNiLpqw="
+    ],
+    "d_bowser": [
+      "2mohqSw=|0mojqT4=|hPILvdo=|nIvMNEw=|QmYnqf4=|KtXKx5s=|JNaLldo="
+    ],
+    "d_bowser_jr": [
+      "KmZNHLM=|omJNHJc=|JFKoGpU=|LIVHlKo=|giID6ZY=|eHioWlU=|NFKqktU="
+    ],
+    "d_bowser_jr_pirate": [
+      "UGJtOKE=|UGJMKKc=|IGYMGNM=|vKlj2zk=|xLPGJE4=|InSsWNU=|olSMStI="
+    ],
+    "d_bowser_santa": [
+      "ahvEVaU=|qjnMQ6U=|qj3KQqc=|dERk1VU=|QLmDKio=|qioqQqQ=|qj3KQ4c="
+    ],
+    "d_builder_luigi": [
+      "aIKkJEk=|KKKETMk=|qiJGBog=|VNvCs2Q=|sBysXZg=|qlVDyok=|qiNLips="
+    ],
+    "d_builder_mario": [
+      "qiQkQss=|qgJIrM0=|qqPAKko=|VHVsUyM=|iloFxM0=|oLuBqCg=|qqvASEw="
+    ],
+    "d_builder_toad": [
+      "qjPEGUc=|qjPBGUc=|qrOBe0c=|EkFuUcU=|qlMFBlc=|RJ+J/Lk=|qrvFLmo="
+    ],
+    "d_builder_toadette": [
+      "KCqmM7k=|LIopFyk=|VLOCMSk=|1HVnczM=|qoIIFEs=|UlqDjMw=|VLPLZGg="
+    ],
+    "d_captain_toad": [
+      "quROiu8=|qstEgV8=|ykrEpC4=|vCVrW8M=|iMxNhJk=|RhuGJzw=|wkvEJRw="
+    ],
+    "d_cat_peach": [
+      "qtQql0o=|asFPgtk=|ukJkho0=|fIVi0ks=|RN0NuDA=|0kvMjbQ=|OkJkAs0="
+    ],
+    "d_cat_toad": [
+      "MmJriMQ=|sqJpiMw=|wrSMa1g=|vMJrluI=|ECAJCNA=|Qr2EaT0=|MiJpHMQ="
+    ],
+    "d_daisy": [
+      "uEqonJU=|ulKonJU=|LNKAtVU=|RMVHoXo=|OkwrnpU=|TLvENok=|LNOAtVE="
+    ],
+    "d_daisy_fairy": [
+      "KmSkSkU=|KkaETEU=|qkaEjkI=|VJVL93Y=|IEwk3JE=|qnKEKIo=|qkKEjEI="
+    ],
+    "d_daisy_holiday_cheer": [
+      "qERFyso=|qkNFnog=|qoNFjgg=|VFSudfc=|OkdBnQA=|oLOFiIg=|KqtFngk="
+    ],
+    "d_daisy_swimwear": [
+      "qmQkQsY=|qgHEQ8w=|qlPkp00=|RKVLWnM=|spbEhZo=|WlqsrYU=|qhPEB00="
+    ],
+    "d_daisy_yukata": [
+      "KvSmwks=|qoymRgk=|KsvMhYk=|VrVL62E=|sBykVLo=|BMrECAw=|aovMhSk="
+    ],
+    "d_diddy_kong": [
+      "LLqMVCg=|KJvMFGk=|rLvIOGg=|9GQj25I=|iJuIBOw=|zDODd4g=|rLvIOsg="
+    ],
+    "d_dixie_kong": [
+      "akFGu80=|qknMM8Q=|aktGs40=|dOVr2ts=|pJvEMww=|WlqqpaU=|qsvEM80="
+    ],
+    "d_donkey_kong": [
+      "jHKAndc=|jHaIndY=|hHKJnZI=|dqNlIyk=|qMgKwNc=|AAAAAAA=|hLoJPZI="
+    ],
+    "d_donkey_kong_jr_snes": [
+      "tDKkOVg=|tDKkOZk=|1DKkOd0=|rO1NWio=|0jKi5VU=|UlKqpdU=|tDKiOZk="
+    ],
+    "d_dry_bones": [
+      "IneKCmI=|IneKCmI=|IneKCmI=|+Ewmopk=|3Jym1Js=|ZFvJtmY=|MjPIDWI="
+    ],
+    "d_dry_bones_gold": [
+      "qjmCQkc=|qjmGQc0=|qjCgQk4=|VNVq53M=|RBqFRYw=|LDyoSqg=|qhSERs4="
+    ],
+    "d_dry_bowser": [
+      "SqJILMI=|ImLKJME=|ImJOLMI=|xG1l66o=|GFKuFFU=|IqqKiIg=|MlLChFU="
+    ],
+    "d_dry_bowser_gold": [
+      "KiTMSMM=|qmZMTMc=|qkxFjgc=|VtVtw/s=|SHaAbAQ=|qlgBjw8=|qk5Jjkc="
+    ],
+    "d_fire_bro": [
+      "qpmOIk4=|qrmGIk4=|6PyD+jc=|kERpzXY=|JrmCMow=|zDODd4g=|bPyD+jM="
+    ],
+    "d_fire_rosalina": [
+      "iOUL2nM=|hI1L1ao=|kMhqpIo=|vqVlW0c=|hJwK1Jo=|UtqqpIw=|lI1KxYo="
+    ],
+    "d_funky_kong": [
+      "CqbNHas=|mraNXYs=|mraNWYs=|ZMlKsnU=|KnWJSIU=|yHqDyYU=|mjatXYs="
+    ],
+    "d_gold_koopa_freerunning": [
+      "YpPEJkk=|bjPEVpk=|al4HxqQ=|FsVqw3Y=|zDfFdBk=|SlqqrKw=|al4HxIQ="
+    ],
+    "d_green_shy_guy": [
+      "LEpMuaU=|qEZMlOY=|JENMuWY=|GuqliS0=|skRqxpI=|ZM1DmzY=|ZEtDuyQ="
+    ],
+    "d_hammer_bro": [
+      "qjmMTYw=|qriMZq4=|qGyB+iM=|/mdGmZU=|AJgpYmY=|xJwJ/3A=|aGyj+iM="
+    ],
+    "d_ice_bro": [
+      "qDSIXqM=|imaIXbI=|1i4pbRY=|rJnKkmg=|KmfESaM=|UmYlLZQ=|hqgB+Tw="
+    ],
+    "d_ice_mario": [
+      "soQpxco=|IoVLmqo=|JEpLlqQ=|2qVtSUs=|JFEFEpw=|ZFuGtjQ=|ooQrxZo="
+    ],
+    "d_iggy": [
+      "glbIlVY=|olaInVY=|KLYFXms=|HsdilRs=|TD6CdYU=|ZL6LXO0=|KLQFWms="
+    ],
+    "d_kamek": [
+      "IKtCqkQ=|IqKICN0=|QrSJTdU=|POtismY=|IkJMlZw=|wryNSZk=|IDuDSpU="
+    ],
+    "d_king_bob_omb": [
+      "aoNMJqk=|aoNMJqk=|YiNOJqE=|TEQK4u4=|IAIADHE=|tLPlWVg=|YiNHJpk="
+    ],
+    "d_king_bob_omb_gold": [
+      "JFNFNro=|JENFNro=|REJEJIA=|2nSjZ2c=|JAtFMLg=|RMSMiIg=|REYFJKI="
+    ],
+    "d_king_boo": [
+      "4nmLStQ=|hj2LSbY=|xn2JSdQ=|OMpikkk=|gkiGwbw=|nnfMbYI=|xn2NbbY="
+    ],
+    "d_king_boo_gold": [
+      "inCJa0Y=|qnCJS0Y=|qkKFigY=|VIVq9bs=|QlSFilU=|qgIEAAg=|qkKEigQ="
+    ],
+    "d_king_boo_luigi_s_mansion": [
+      "5igNSpw=|xikNQ5w=|ZjiLS5Q=|xGSkqqo=|iIgMAIA=|ElNHVd0=|xglPZ5w="
+    ],
+    "d_koopa_troopa": [
+      "pCWMWsI=|ojWMW9Y=|olwkVyw=|FKXDWmo=|UlqqpZU=|4NlHxr0=|olwmxqw="
+    ],
+    "d_lakitu": [
+      "qCCKCoE=|LCCKEoE=|ZDgrYqA=|0rZhTUQ=|JEmOsqI=|gP2H4X8=|ZDyLYqo="
+    ],
+    "d_lakitu_party_time": [
+      "uqHpCss=|qgZMTNs=|qkQNTK8=|vKViU0s=|xFaJHJI=|Qk4PpKw=|ijoJRbY="
+    ],
+    "d_larry": [
+      "uFvIGac=|qHuMWaU=|an2MSqU=|tMtjnT4=|zDuEeJ0=|RqoLbXg=|qjnFYmc="
+    ],
+    "d_lemmy": [
+      "KD2EVKk=|qDyMVqU=|KDqITKU=|NEVmlUs=|RD2Lc3U=|QlgBoGQ=|QjqKqqU="
+    ],
+    "d_ludwig": [
+      "vLvmchk=|/Luichk=|amLGiN0=|tMtkMnY=|zD2DfhE=|KkSMzcs=|WqvibS0="
+    ],
+    "d_luigi": [
+      "qjvKJJM=|qBfORJo=|qBtONps=|mstDqWQ=|5NSkUlo=|fDgrVq0=|rBtKNps="
+    ],
+    "d_luigi_classic": [
+      "aiPALkE=|aCbAToE=|ajKgToE=|fKNDsms=|xMQMVNs=|ll2oybQ=|KiKBTpU="
+    ],
+    "d_luigi_lederhosen": [
+      "qgHCgpI=|qgXEC5s=|qkOKgpM=|tEVC8kY=|UrwtTXs=|eFquppU=|KkPKgrM="
+    ],
+    "d_luigi_painter": [
+      "miNCRR8=|qiQGwJ8=|mjJDxZ8=|nqFLc0I=|ZEStyrk=|WlqCpY0=|mitDxZ8="
+    ],
+    "d_mario": [
+      "aknEQqU=|ojPGBho=|tBKmNlo=|TElJuaU=|qj1ORoY=|tJai9lo=|5FPithQ="
+    ],
+    "d_mario_baseball": [
+      "4oIEZlo=|uiLgbpY=|uiIhbpc=|RNVGtno=|mi1lSYk=|ujyr2YU=|uiohSoc="
+    ],
+    "d_mario_chef": [
+      "SLSqc3M=|yLCK4ls=|ypKKplU=|PiVkWyo=|oFKFJN8=|UFqupLU=|wtKCpF0="
+    ],
+    "d_mario_classic": [
+      "Siika8w=|WqrGIcw=|UqrGJKw=|TkApu0Y=|5LvGTMw=|sJ/G1Ls=|EqpGJcw="
+    ],
+    "d_mario_hakama": [
+      "amtHaiU=|KivHSI0=|KnuHKIU=|VIVgU3s=|qnaFTIQ=|WnqDrIw=|qjaHTIo="
+    ],
+    "d_mario_halloween": [
+      "SkJKqsU=|qiXKIso=|qjOqJoI=|UMVBqlU=|olEFAgQ=|vDasVao=|qqPKIsI="
+    ],
+    "d_mario_happi": [
+      "miPGJco=|mjKkTc4=|ujKkTY4=|RsVLtXI=|qjKETMw=|eDisWpU=|miLmDdo="
+    ],
+    "d_mario_musician": [
+      "+pthJgE=|6puFKk0=|6pulKk0=|vjXiXzI=|AMgNiNw=|SGIOJI0=|6soFqt0="
+    ],
+    "d_mario_racing": [
+      "qgRmQso=|qiHAC4Y=|qmLAioY=|VJUnU1s=|qlEBmYA=|WlqIrKU=|qiFJC8Y="
+    ],
+    "d_mario_santa": [
+      "opQH1ho=|rrQHV1o=|rrQHVdo=|UklKpSU=|pPSlqto=|rDaMWMc=|irQHXes="
+    ],
+    "d_mario_satellaview": [
+      "iCqsNIY=|qKKEKMo=|iqKIKEY=|VFtHtTQ=|oOSkito=|2iWqS0M=|qrPAKko="
+    ],
+    "d_mario_snes": [
+      "qqDEako=|qiPEDAk=|qiNERAw=|RKXMa2M=|pFNDlBw=|sFKrlJw=|qitEDQ0="
+    ],
+    "d_mario_sunshine": [
+      "KkRpiaM=|uiKqTYY=|mjKiKEY=|SkVJryM=|tDSsVNo=|xLuGelw=|mmLCjAc="
+    ],
+    "d_mario_swimwear": [
+      "mrULyao=|ujirSYo=|OjirVYk=|RsdErWI=|ulirgpc=|PDynVpk=|GrqjRYk="
+    ],
+    "d_mario_tuxedo": [
+      "qiQsQso=|aixNRMU=|amgNSoU=|VLVj13o=|qhIFAIg=|SlqMqIQ=|amgNTKU="
+    ],
+    "d_metal_mario": [
+      "qmqkZiU=|qmqEShU=|qmqkBiU=|UillZmQ=|khXExFg=|dFdDv4o=|qGXE2ps="
+    ],
+    "d_monty_mole": [
+      "rEpNnK8=|vCppnL8=|tCtrlL8=|wjSMadY=|ojoHZpo=|RDtLdLs=|tCtrFb8="
+    ],
+    "d_morton": [
+      "LHALm6c=|LDQL26M=|LDwLW6c=|tFHmAto=|TBMLvSU=|WqoFrQ0=|SrYpTMk="
+    ],
+    "d_nabbit": [
+      "omvIKyY=|omvAKiY=|omuASSY=|eqVJqsI=|qFNFBMQ=|VFymUT0=|4itFK7g="
+    ],
+    "d_pauline": [
+      "qiamSks=|qidGRIs=|qiZGRIo=|VPWpe1c=|Ig9FRJk=|SlqKrKw=|qiZHRIs="
+    ],
+    "d_pauline_party_time": [
+      "rjKlHcQ=|rjKlXcw=|qhKkHcw=|VMVt+nM=|ohWEQYg=|WlqipYw=|ujCiWcw="
+    ],
+    "d_pauline_rose": [
+      "qDKlHNs=|qjJFDIY=|qnLFDII=|VMVq03U=|qBNFBII=|oDKBiIg=|qhJFDIY="
+    ],
+    "d_peach": [
+      "qNaIndo=|qMaOlJs=|vJKsFds=|vtItPUY=|Qk1Gwb0=|fDuicp0=|vJKkFNk="
+    ],
+    "d_peach_explorer": [
+      "XqXMReo=|jqXMVcg=|mrvOJcw=|tKVhWnY=|RESMEZg=|WlqqpYU=|mqvGRc4="
+    ],
+    "d_peach_halloween": [
+      "arfGZks=|6qfC7Ms=|uiLkDss=|XFStE0c=|wK9DzLs=|sCrCjIw=|ukLkrMs="
+    ],
+    "d_peach_happi": [
+      "OKSkVEk=|MCbEXIk=|OKXmRMk=|nlGps0Y=|ZA5FRLg=|eKlG2Jk=|miNqRZk="
+    ],
+    "d_peach_kimono": [
+      "ukSsWMY=|qkTM3I0=|uiPgDo0=|XvWrcWY=|AExFBLk=|4BvHjpk=|uivgHIU="
+    ],
+    "d_peach_vacation": [
+      "3Kpoas0=|3K7oXMU=|uCroboU=|KoVFA0o=|xExJ3LY=|eHqqrKU=|uiroXIU="
+    ],
+    "d_peach_wedding": [
+      "qkSMRcY=|qgSMRYo=|ugKsB4w=|VNVpc1M=|BAxEUbg=|WlqmpI0=|ugKsB8w="
+    ],
+    "d_peach_wintertime": [
+      "aFtGpqw=|KEtEpqw=|KlvGlY0=|XKVre0M=|ZExEprg=|WlqKjY0=|uiOmGc0="
+    ],
+    "d_peachette": [
+      "qEVMBpM=|ikVMTdI=|mlKsJJI=|fKdmVmk=|QswFyf0=|klKrrZY=|mlPMBZI="
+    ],
+    "d_penguin_luigi": [
+      "6iFEI0Y=|qjGEQww=|qpqkA0o=|XmFLK0Y=|PBykVa0=|kN6slNs=|qpvEBd0="
+    ],
+    "d_penguin_mario": [
+      "sjmtA5Q=|ojmOAwY=|3EaiJAY=|cilNS50=|opqGBVg=|nEaitGI=|kpmqIxA="
+    ],
+    "d_penguin_toad": [
+      "zoYsLkg=|zoQtXcg=|uqppC8U=|3NfiNkI=|zMQFnUg=|IilJyb0=|uqtpDd0="
+    ],
+    "d_pink_gold_peach": [
+      "qhXCQyo=|qhnGQ5k=|qhmGA5g=|VPXo/XU=|olEFBJk=|qkImooo=|qpiEE5k="
+    ],
+    "d_pink_shy_guy": [
+      "qERsRNM=|LEJMnOY=|pEdMtlY=|sgQuRts=|IsoGlSk=|ZN1Llzg=|5EtDshY="
+    ],
+    "d_pink_yoshi": [
+      "inyCRSU=|KliG0wU=|JFqiVGQ=|mrapZLI=|qklCm0U=|ZMlGs3w=|JFqml2Q="
+    ],
+    "d_red_koopa_freerunning": [
+      "bpPEG1k=|brfEdQs=|rGyGXoU=|MMgoilU=|zDeCdQs=|iHgH8I8=|rGyGXac="
+    ],
+    "d_red_yoshi": [
+      "qliCxSU=|KknGmw0=|JEnmk3U=|2LapZKI=|qknim0U=|dMtGs3w=|JElmk0U="
+    ],
+    "d_rosalina": [
+      "LE1KmCc=|pHyC2XY=|pPSEWWY=|SktJqsU=|tLSmVVo=|tLSkVUo=|pPKImXY=",
+      "LE1LmWc=|pEyK2TY=|JN6OmWY=|SsNNqkU=|pDSiVbo=|PLSmVag=|pFqKmXY="
+    ],
+    "d_rosalina_aurora": [
+      "auGEq2M=|KmGEmU0=|qlCEAs0=|XsVLu2M=|gEQEAL8=|sB6mRJw=|KlKCmE0="
+    ],
+    "d_rosalina_halloween": [
+      "+itDKiU=|qitD7I0=|qqpnrk0=|VKVjc2I=|iHtHTL8=|olSsgJg=|KqpDzM0="
+    ],
+    "d_rosalina_swimwear": [
+      "gsdLqVo=|KmzMWKo=|KiiMSoU=|1sVDo3I=|LDykXK0=|KnqmjJ0=|qkJChIw="
+    ],
+    "d_roy": [
+      "KC1FVi0=|KD3EXi0=|LKqGmC0=|JKVFW1s=|Oj3FTIE=|2tqqpa4=|JNqiuD0="
+    ],
+    "d_shy_guy": [
+      "qEZMFPc=|LEpMuaQ=|LEpNuWU=|skSuQtI=|bk5FnSU=|IspFjSk=|TstBuS0="
+    ],
+    "d_shy_guy_gold": [
+      "KgPAjs0=|KkLAj80=|KlKEjsw=|VAVuY2M=|xFyJ1Jw=|ynqDrIw=|KlaFzsU="
+    ],
+    "d_shy_guy_ninja": [
+      "qkPOs0c=|qkPGs0c=|qktOpqY=|SnWKc8c=|WqQFSUk=|tEphnL4=|jtPCtWI="
+    ],
+    "d_shy_guy_pastry_chef": [
+      "qkRvg0M=|qsRDilM=|qkZDonc=|tEVoVdM=|AlEFCFw=|WlqupSU=|5MtDulo="
+    ],
+    "d_tanooki_mario": [
+      "qiVMQ8I=|qjeOR8o=|urOqB8o=|QMVLonU=|olGECRw=|WlqqJKU=|urOiV0o="
+    ],
+    "d_tanooki_rosalina": [
+      "qKXC2Ms=|qmNCiM4=|qsvBqs4=|VJVrc3M=|zEwHwIw=|qlqEjIw=|qotBqs4="
+    ],
+    "d_toad": [
+      "rESK2WY=|IPPKmWY=|JLOMFXI=|3Exj+IQ=|qiHKwMs=|JrOMd3o=|JJvEFXI="
+    ],
+    "d_toad_party_time": [
+      "qFaDrEY=|IsNIimU=|ImKIimU=|xJVD9lo=|IkNFmGA=|WmitSaU=|IsvMBnU="
+    ],
+    "d_toad_pit_crew": [
+      "qslis0c=|qMlCkk8=|hC4H3Lo=|ustmo0U=|qsWKw0c=|RDSNXLo=|rItDlD8="
+    ],
+    "d_toadette": [
+      "LFiJXiU=|ZMZJnOE=|bGwJX2U=|uFnikB8=|REQEiMg=|ZqYJb+E=|ZGZJX+U=",
+      "LEtD1CU=|ZMYJnOk=|bF6Jd2U=|uElDkB4=|REQGiMg=|Zraob+E=|ZsaIPeE="
+    ],
+    "d_toadette_explorer": [
+      "qu3MCjc=|quQDikc=|6moCqgU=|NPXsU/I=|zMQEgEg=|TDKDZIA=|imADqkY="
+    ],
+    "d_waluigi": [
+      "ItvKhlQ=|IlPIh5Q=|qEkFuo8=|RpPIJVA=|IlSKR4Q=|nCwn2q8=|rFPMOoc="
+    ],
+    "d_waluigi_bus_driver": [
+      "ukfCias=|ugrChbs=|ujKijLM=|VMVNU8g=|oF/FRL8=|SnqhqCU=|ujKqRJs="
+    ],
+    "d_wario": [
+      "sqpsVdw=|oiRsWNI=|BlqENUU=|XLvBP2c=|oCQsWpo=|RFampVU=|DFuFMUU="
+    ],
+    "d_wario_cowboy": [
+      "XCpiXEQ=|fKtixEw=|HGvAnIw=|LlqkMzc=|0KViREI=|1PvJzMw=|LFvAnK0="
+    ],
+    "d_wario_hiker": [
+      "KmmIm4U=|unuqmxU=|iipFKY0=|bF3CsiM=|tpSpVdI=|Siolae0=|gitDJaw="
+    ],
+    "d_wendy": [
+      "JEnOmt0=|aEvMOtU=|okdMjKo=|lOQrufo=|XDvMNpU=|Sq9MZSE=|ykdMpaI="
+    ],
+    "d_white_yoshi": [
+      "qnymw60=|qniCVbU=|qlimxKU=|mqVNy8s=|tE5jlBQ=|RFqCNGQ=|rFqGVBU="
+    ],
+    "d_yoshi": [
+      "qknGyx0=|LFiC1SU=|JEiGk3U=|uoVli5s=|RDaKdGY=|dMtGs3w=|JErGknQ="
+    ],
+    "d_yoshi_egg_hunt": [
+      "IkiigyQ=|ij2EWZY=|IkiggyQ=|OkligmQ=|zKfNXNs=|QlqgpyU=|IkiggyQ="
+    ],
+    "d_yoshi_kangaroo": [
+      "aolMIq0=|JpnME+w=|qoYEnEo=|WE1rojU=|BJnEE6w=|tramVVo=|riYDnEo="
+    ],
+    "d_yoshi_reindeer": [
+      "voptj0o=|rKpJvE0=|7oprrUg=|NkVlQ6o=|TLuJOFU=|2tqqpYU=|7oprnUg="
+    ],
+    "g_8_bit_bullet_bill": [
+      "SrSmY0w=|SrSiRUk=|SrSqRUk=|1iViY1c=|PMNItEs=|It6FzIw=|KrSrxUM="
+    ],
+    "g_8_bit_fire_flower": [
+      "SNKCpmU=|RLvDvX0=|QNqCpmU=|SlKCJkc=|tCVtWZo=|ItuFjIg=|StqCpm0="
+    ],
+    "g_8_bit_jumping_luigi": [
+      "lGIruaY=|lGprmaY=|lG4rmaY=|ylKNrcY=|eKtGclk=|tixpWbY=|lGwrmaY="
+    ],
+    "g_8_bit_jumping_mario": [
+      "jGIruaY=|StKKpEE=|wtKKpEI=|tG1pWaY=|QpyK5Fk=|AAAAAAA=|QtKKplk="
+    ],
+    "g_8_bit_star": [
+      "VOPiu18=|1LqDvV0=|wpSipVo=|yiVqY1M=|PGtlGa0=|otqNjIg=|gpSixVo="
+    ],
+    "g_baby_mario_hanafuda": [
+      "SrWGYms=|ap0Cwmk=|aowDomk=|SiXCY2c=|tE5snZo=|ItoJjIw=|pshLldw="
+    ],
+    "g_banana_parafoil": [
+      "bJCmZkk=|TJKmdsk=|ZLyiVTs=|Ms0nw2w=|zDKIPZM=|VKvEODM=|JLyiVTo="
+    ],
+    "g_banana_wingtip": [
+      "RjimY0Q=|1L6iVZk=|xBqmN50=|xmiiY2Y=|sIdJnDs=|uJJNlJk=|rBimV9Q="
+    ],
+    "g_barrel_hanafuda": [
+      "RqwrY2Y=|hjwr0/Q=|prwrw+Q=|SqVCY2c=|lHapXZY=|KJoFlIk=|tHyL3ZQ="
+    ],
+    "g_bbia_parafoil": [
+      "RDykZmY=|TDaoZGI=|fJaudmI=|GjqmZSw=|hlQJzdY=|fMNGspk=|ijSoTeY="
+    ],
+    "g_black_great_sail": [
+      "WlQpxMM=|2hSrxdM=|2lSrzNM=|2mQrQ0c=|jD/DvDM=|IN7FjJk=|tBvGFZ0="
+    ],
+    "g_black_toe_bean_balloons": [
+      "XPQju8o=|HLSj2ck=|XHSrmck=|zuQj+0Y=|vDSkUao=|oIvEjJk=|rJaKVV0="
+    ],
+    "g_blizzard_balloons": [
+      "TDSr+cY=|lBfKVXc=|1BvKdLU=|znSh6UY=|dJvONjM=|cItOgJk=|rnSp3cQ="
+    ],
+    "g_blizzard_parasol": [
+      "WsQrx+s=|FIRr3Zk=|lCtrvbk=|SlSq4kc=|tEVrmbo=|tCtFXbg=|OsQrzdk="
+    ],
+    "g_block": [
+      "DBKOdcw=|BDqMdcQ=|BDSuVcw=|+oVjxjs=|BHqMOcQ=|WqVFS0s=|hLSoWdw="
+    ],
+    "g_blooper_hanafuda": [
+      "RriMY+Y=|xriMY9w=|xpCKo1w=|Si1CYmU=|tFakndo=|opaNjJk=|xsNLrVg="
+    ],
+    "g_blooper_wingtip": [
+      "xDimczY=|xDqidTQ=|xDqmd7Y=|wiSmY2Y=|tMdJnGI=|OBtNnJk=|vNdJ3dk="
+    ],
+    "g_blue_flower_glider": [
+      "StCkJkQ=|xHiimzQ=|lC3C2Tw=|6lKsJsQ=|FK3D2To=|lK1D2bs=|tNCsFVQ="
+    ],
+    "g_bob_omb_parafoil": [
+      "Bnik2SQ=|BniiXeQ=|BDqmVWQ=|lmvEOWQ=|TLSr0nM=|8IdiJhs=|fJPmNls="
+    ],
+    "g_boo_hanafuda": [
+      "SqnEKmk=|Qp2I6nk=|Qp2I6mk=|yiFGYl0=|tFapXbM=|It6NjIg=|Mpyp3TM="
+    ],
+    "g_bowser_hanafuda": [
+      "QokComk=|QpgC42w=|QpgDom0=|SqVGYnM=|tHypXZY=|LNONnMg=|Jlgr04Q="
+    ],
+    "g_bright_balloons": [
+      "bDQKUqs=|Dm9FXWY=|wJJFJl0=|KDSqUqs=|FmvEvTQ=|1tMlpVg=|ytINpFU="
+    ],
+    "g_bright_glider": [
+      "VEgruyQ=|tEtrnb0=|VJyr1Z0=|SqQCY2c=|tEttnbo=|sL6FTJw=|opQrzd0="
+    ],
+    "g_bullet_bill_hanafuda": [
+      "wryCa3Y=|xryC63Q=|QryL6nY=|wiVKY3Y=|PFbmlWs=|ItqNjIg=|LB+D1N0="
+    ],
+    "g_bullet_bill_parachute": [
+      "JIQq0ro=|AkRJjaI=|SkQJiaI=|LLSmUks=|lGtJvZY=|WtoFpQ0=|SkJJraI="
+    ],
+    "g_butterfly_prism": [
+      "TNPCtl0=|THaIucc=|zHKIuMM=|SMRipkM=|Ni1rW7U=|tH6NnIg=|iPaJPEM="
+    ],
+    "g_butterfly_sunset": [
+      "zFKqskM=|zFKKvEc=|SNKIrEM=|WoViZ2M=|tEtrmbY=|KHqFjIg=|SNaIrEM="
+    ],
+    "g_butterfly_wings": [
+      "SPaIqkM=|TJKGNFk=|jFKKuNc=|SsSqIkM=|dplGRrw=|tEtlmZw=|SPaILEM="
+    ],
+    "g_calico_parafoil": [
+      "TLCn+sw=|TLSjXUk=|KLSjVts=|xsQi50Y=|lCfIPTM=|KJoFEJk=|qLSCVBs="
+    ],
+    "g_candlelight_flight": [
+      "StqEImU=|StSqpUU=|StCKosw=|SmXiI2c=|tLSkVVU=|oJ+NzIg=|KpQrxck="
+    ],
+    "g_cape_mario_hanafuda": [
+      "QqkC4mw=|wrmIa1Q=|wpiIo9w=|SCViYm0=|lELsHZI=|Ip6NjIg=|hjiMTdQ="
+    ],
+    "g_cheep_cheep_masks": [
+      "xktOqbo=|dJwj1bk=|Sh6IbaE=|yiNIJ0I=|PLymUm0=|KtyNiIE=|Sh6JZaE="
+    ],
+    "g_chocolate_banana_cr_pe": [
+      "xjSqa3I=|xjSp2RM=|otSpzZM=|XMVm5m4=|zDfIfDM=|KtqNjJk=|qtSp3RM="
+    ],
+    "g_chocolate_donut": [
+      "KEQrhqI=|alwLhqA=|alSLgqg=|3CVid3c=|ZpnGMzw=|ItqNiIg=|alyLg6g="
+    ],
+    "g_cloud_glider": [
+      "RBaqdWI=|hBeKVXY=|hBeKdLY=|TrQj62o=|ONfINjM=|tGlPyJw=|tJ/KVVU="
+    ],
+    "g_crimson_crane": [
+      "1DKofbI=|xjysXdQ=|xDisbdQ=|XoVi83M=|NLymVSo=|KnqNDIw=|hjytRdQ="
+    ],
+    "g_daisy_glider": [
+      "1swi63w=|lC1D2Tw=|1jwjyTw=|ypQsZ0Y=|NCtC2Tw=|KtqNiIg=|tj1D3T0="
+    ],
+    "g_dragon_wings": [
+      "HGapmcM=|HJap3WM=|DHapncM=|2mQru1M=|ZJvGZmw=|KF6FjIk=|LJaJnes="
+    ],
+    "g_dream_glider": [
+      "RGirO6U=|bGmrupU=|SGtLqpU=|zqWGa2o=|OGypmpU=|OMtJhIk=|anmJqpU="
+    ],
+    "g_droplet_glider": [
+      "VLKknMg=|FPKEPHg=|lHOEPLs=|2rKja0o=|ZExLl5w=|hHvEPDM=|tEwqlpw="
+    ],
+    "g_dry_bowser_umbrella": [
+      "VKhi+f0=|QrSrRd0=|QrSqzd0=|3CVCdzM=|lGvEO7Y=|ItqNiIg=|arSvRd0="
+    ],
+    "g_eggshell_glider": [
+      "hnKpqcY=|lEKquZY=|lHOpOdY=|yvSAaEI=|fItmFrk=|lGNtOdY=|lHOJOdY="
+    ],
+    "g_fare_flier": [
+      "VCgj+7k=|VDimVZ0=|xDiuc8Q=|wi2iY1Y=|PMdpnEs=|LjqNGIA=|pjiOY8Q="
+    ],
+    "g_festival_wings": [
+      "nEaivcM=|nEIjvYo=|nFILvYo=|nMYis0c=|lmlvW7Q=|Yp3NTpg=|nAJFvIo="
+    ],
+    "g_fireworks_parachute": [
+      "SkQLh6o=|SsQLxcg=|SlSLguY=|SgQL58s=|lKZjXZg=|tPvkEHQ=|CpQLxcg="
+    ],
+    "g_flower_glider": [
+      "1Czi2Tw=|Rpyiy3w=|ptSs19w=|nGNEOV4=|apSsRuU=|AAAAAAA=|rtSsVsQ="
+    ],
+    "g_flying_easel": [
+      "xrCGI04=|xpOGJVg=|xpKGp0o=|WqQrQ3M=|tEvEvMQ=|qLuNjIg=|wpPGplg="
+    ],
+    "g_full_flight": [
+      "LMQqs6I=|StQLo2M=|StQLomM=|1CVmc18=|PEZpnKM=|otqNiIg=|StQLp2E="
+    ],
+    "g_galaxy_glider": [
+      "TKmEe60=|pD2NW50=|rLSjUss=|6pQi5kI=|lmtJObQ=|KB4FnIk=|qLQjUss="
+    ],
+    "g_gift_glider": [
+      "SJKmZmk=|SrSiRUU=|SrCmZM0=|SIQmZms=|lGtJmbY=|IpuFjIg=|SrSnRUw="
+    ],
+    "g_glinting_glider": [
+      "VDaodWY=|FDyj3TM=|lB6r3bM=|TrSoY2Y=|PGljmzE=|cA9HjJk=|tPyj3TM="
+    ],
+    "g_glitter_glider": [
+      "jnKpbcY=|znarbUY=|jnarbcY=|jkZrZWY=|cK3G2rk=|KnqNCIA=|inSpbUY="
+    ],
+    "g_gold_crane": [
+      "xDasbZI=|xDasXdQ=|xjCsacQ=|1iViY2Y=|PIfAnLs=|KtqNDIw=|hjytRcQ="
+    ],
+    "g_gold_glider": [
+      "VGrCvDY=|lDaK3VY=|hhSr19I=|XqQi40Y=|mGfMPDM=|KpotlZk=|qpSr11c="
+    ],
+    "g_gold_home_field_glider": [
+      "VsxjqWo=|RswLjWw=|QtyLimw=|SmSqY2c=|lItmFbo=|otqNiIg=|atyJymU="
+    ],
+    "g_gold_new_year_s_kite": [
+      "RDiuYp0=|QjiOZp0=|QpiK4mg=|SqVC42c=|tCvsXJk=|ItqNiAg=|SpyC42k="
+    ],
+    "g_gold_swooper": [
+      "VCIqM/Y=|TD6iVSU=|Sj6FXa0=|ziRic3M=|tENKtkY=|It6NjIw=|Sr6FXS0="
+    ],
+    "g_golden_wings": [
+      "VCkqc/Y=|FJmi1XQ=|HHapnYM=|XOQpu0M=|9onGYjw=|KF6NjIk=|CNapncM="
+    ],
+    "g_goomba_hanafuda": [
+      "QrymY2w=|QriKY8w=|wtCKo1Q=|SqVmY20=|lDPtPZI=|It7JjAg=|wlNLrdQ="
+    ],
+    "g_great_sail": [
+      "VJigu3c=|VJuCtV0=|QNqqlV0=|WiQrY2M=|xLvEOTg=|qt6FjIw=|op6G1V0="
+    ],
+    "g_heart_balloons": [
+      "wCNFLt0=|aJSLxnk=|aLQLQqk=|1kJErVY=|AP/AzDM=|PL2rUqg=|atQPxtk="
+    ],
+    "g_home_field_glider": [
+      "RswLi2w=|pswLmdo=|YtyLiuw=|SsQDo2Y=|lCdkdbo=|eLitTMU=|aryDym0="
+    ],
+    "g_jolly_bells": [
+      "xDqte8Q=|yjapbZE=|SDiNauU=|RGikM2Q=|OIdKxLs=|KvqNiIg=|aLiPZu0="
+    ],
+    "g_jumping_mario_hanafuda": [
+      "SogK4mw=|ZskLw+w=|QsgLouw=|SrSGY2s=|vENjnZc=|pktJnJA=|wjPGJNk="
+    ],
+    "g_le_tricolore": [
+      "ULQrzDM=|3BQr1RM=|1BYr95M=|QvQjy2Y=|+AdAZLM=|tEvEM5w=|qhQr15M="
+    ],
+    "g_lightning_oilpaper": [
+      "TrCsY8w=|RLCkY8w=|RLSqQ10=|ulasDEY=|RLiCc7w=|sA9DnLs=|MNyj3Ds="
+    ],
+    "g_luma_parafoil": [
+      "XGCrucQ=|HNSrldk=|1jyjw7Q=|nmQh20c=|eIdONrs=|YJvERCw=|onyjyZQ="
+    ],
+    "g_manta_glider": [
+      "SrSqY2s=|TLSqV2M=|SJSqd+M=|SrSiQ2o=|eANuVpk=|tEtNnJQ=|vFNNHdU="
+    ],
+    "g_minion_paper_glider": [
+      "VDimezs=|RLCmc3s=|FLumeHw=|2rSqYyM=|RtSJ09A=|tMtFnGw=|yjSuc5M="
+    ],
+    "g_mushroom_glider": [
+      "TJag/Es=|TJag3Mg=|tDuEXJw=|utYpL2M=|ZJKK1Mw=|lmnGabw=|tDvMHJ0="
+    ],
+    "g_nabbit_oilpaper_umbrella": [
+      "Qlyi4mQ=|QlyixUQ=|Qlimw0Q=|yjQiZ2Y=|PKdL1Es=|JvvFiIw=|yrSMQUU="
+    ],
+    "g_new_year_s_2020": [
+      "VDSh+WY=|FDSj2VU=|lH6r3ZQ=|3qQh62Y=|PLSkVao=|KJvOlIk=|vP6j3V0="
+    ],
+    "g_new_year_s_2021": [
+      "VHQr+WY=|lHyj2VU=|lHyr2ZQ=|3qQj60I=|JJvENDg=|IJvMDJk=|rnQr2dU="
+    ],
+    "g_new_year_s_kite": [
+      "xiiGY5w=|xDnG85w=|xFiKopw=|SqQCY0U=|vEdsHKI=|It6NjJk=|vF/L3JU="
+    ],
+    "g_ninja_scroll": [
+      "bsAoomE=|TMvKsyE=|ZMiosqE=|asQKYkU=|nHPHvTs=|MpwlXJk=|tEtJnZQ="
+    ],
+    "g_oilpaper_umbrella": [
+      "FOximT0=|SqSry3M=|FKXr2TM=|tGtEPLw=|SpSqwns=|AP/AzDM=|FrWr2TM="
+    ],
+    "g_paper_glider": [
+      "NGpkfDQ=|RrCke38=|RjCke3c=|uEtpjIQ=|RjWGc3s=|ptnGkzw=|yjSue1M="
+    ],
+    "g_parachute": [
+      "FohmkXw=|SriD66k=|4BbKZrM=|NulmmUw=|ThQD44g=|4HfIbDc=|atSLgqo=",
+      "NolsE3g=|SqwL66k=|wFbL5LM=|NMlumUw=|TlQB44g=|wHfDbHc=|alQLoqI="
+    ],
+    "g_parafoil": [
+      "PIvGlak=|JEuGM2Y=|pHquMtQ=|PItmtak=|hlSJzdY=|8KVmYlI=|hnKI2cY=",
+      "PJvGtSk=|FPqmM2Q=|9BqudtQ=|PJvmtak=|hmQJydY=|8IVuZlY=|hniI2cQ="
+    ],
+    "g_peach_hanafuda": [
+      "SrSCY2g=|SrkDw20=|QrgD6mw=|0ifMYVM=|PMpjlGk=|otoNjIw=|QnkDy6Q="
+    ],
+    "g_peach_parasol": [
+      "lCpkOZs=|tCQr3Zs=|tC9rXZs=|tHvEMzQ=|IoQrzbo=|AAAAAAA=|tCxr3Zs="
+    ],
+    "g_penguin_wingtip": [
+      "RjimY7w=|1Dimc50=|1JKrvds=|RjimY2Q=|tG3oGbY=|uMdJnJs=|zjimd90="
+    ],
+    "g_pink_flower_glider": [
+      "1G3C+Tw=|RFiiuzQ=|tCnC2Tw=|2KNNJMs=|atSsRuU=|tGtCuzw=|tHuCmzQ="
+    ],
+    "g_pink_gold_paper_glider": [
+      "VKpj/Gw=|VJyr1cw=|RJSr18w=|1OVC6XI=|PLSmVao=|KpqtF4E=|rpSr19E="
+    ],
+    "g_piranha_plant_hanafuda": [
+      "QuELq0Q=|QrmIY9w=|QrmKauQ=|ymNDo0c=|PDysVao=|ItqNjIg=|ajmMSu0="
+    ],
+    "g_piranha_plant_parafoil": [
+      "fJPmNhk=|bJKmNtk=|fJKmNpk=|eINmNgk=|hlyN2dY=|It3AjDM=|rFaqlZs="
+    ],
+    "g_piston_glider": [
+      "VDqEPAw=|VDimUMw=|dJSq1Mg=|mLfELCM=|ZkxL19w=|tt1Dwzw=|uhQrx8g="
+    ],
+    "g_plaid_ribbon": [
+      "xpYCpco=|SLSiZcs=|WLSkals=|pktClb4=|SLSlakk=|eDisWiU=|xLaGZVo="
+    ],
+    "g_planet_glider": [
+      "RpSr53I=|hJSr1dg=|lHqqvbY=|ypQrx0I=|FONFmMg=|PGvEOL0=|qpSr1dk="
+    ],
+    "g_polka_dot_manta_glider": [
+      "SrSqY2M=|lDaoXZU=|lGPJvZQ=|SpSiw2o=|uE9tlJk=|lGtNPJQ=|KrSqV0M="
+    ],
+    "g_purple_oilpaper_umbrella": [
+      "Qtyq42Q=|StSuR0U=|Rtyqwf0=|yhSiZ0c=|tLSkVao=|NMtNmJg=|SpSuRUU="
+    ],
+    "g_rainbow_starchute": [
+      "DFYrvMM=|xDuCOVU=|xmgrqdQ=|KIQq1mM=|RLvEMzw=|kmtNiZw=|ytSLzVU="
+    ],
+    "g_rainy_balloons": [
+      "TDap+cY=|jDar3cY=|jHap3cQ=|SrQja2M=|NIfONjM=|sPuNzJw=|tFvOVRQ="
+    ],
+    "g_rose_parasol": [
+      "Qswqqnc=|QsQrzbM=|StSriOE=|SEFCY3c=|tDRlVZo=|ItqNiIg=|alQLzYE="
+    ],
+    "g_royal_parachute": [
+      "aMxL1q0=|bNxL1u0=|aFwrxqU=|SrSqY3M=|tEtCnUw=|KtoNiIg=|KFwrxiU="
+    ],
+    "g_safety_glider": [
+      "VpQrx8w=|lBSr3ds=|hpSr09Y=|WqQjw0Q=|nGPEPDM=|KpotlZk=|rtCtE9Y="
+    ],
+    "g_shell_parachute": [
+      "CsRLnao=|VKRu2eo=|VGtpumU=|qEZJnKM=|RLmGc3w=|2HigYlU=|FEtJuaI="
+    ],
+    "g_ship_s_wheel": [
+      "SrSqYms=|QrSLxlE=|QpSLymE=|SrQiZ0c=|tEtJubI=|It6NjIg=|apyLxFU="
+    ],
+    "g_silver_and_gold_hearts": [
+      "TClPdq0=|SC1HVKk=|KLyK1Ck=|ysIqo1c=|NC1CVSo=|ItyNyIw=|KryK3is="
+    ],
+    "g_silver_bells": [
+      "TEmCsmU=|fBlD1+U=|bFnKtq0=|SNCComc=|lqVlUZo=|KJ+FjJk=|thdNVd0="
+    ],
+    "g_silver_manta_glider": [
+      "RrSqYSI=|lDaIfbI=|BDaoPaI=|QrQiQ2o=|tEtjlp0=|qnqNCIw=|vENNHdU="
+    ],
+    "g_silver_starchute": [
+      "SpSK4kM=|TJKKtEE=|bNKKvGE=|SrSiYlM=|tIZtVZo=|NGvFmKw=|4paLRdk="
+    ],
+    "g_silver_surf_master": [
+      "RKiCaj0=|RD+D2TU=|RDqLurk=|SikGY6U=|HFuulaU=|KhqNHI0=|tFbLndM="
+    ],
+    "g_snow_crystals": [
+      "TLaofSI=|1LOq9dk=|1BKqtZg=|SrahbWI=|NM1Ckzs=|tElOkpw=|tJ+K1VU="
+    ],
+    "g_soaring_jack": [
+      "hnqsfbY=|jjSr3eY=|DjSr3eY=|xjKsM7Y=|PLSgWlU=|eIVDzEk=|CrSpzWY="
+    ],
+    "g_spider_glider": [
+      "1JSr92I=|lJaq1VI=|5pSrx9o=|XoQjw0I=|lGvEODM=|Klqt1J0=|rpyr190="
+    ],
+    "g_springtime_crane": [
+      "1DSobZI=|1D6oXZw=|1DKofZw=|1qViY3I=|PDysVao=|KFqNjIw=|pB6L1d0="
+    ],
+    "g_star_spangled_glider": [
+      "TMKKqkY=|TMPKuUQ=|RNOKuUQ=|SrSqY1M=|tENMucY=|tEvFnKw=|ptPKuVQ="
+    ],
+    "g_starchute": [
+      "VGviu6Y=|XHPKvVU=|StSC5lU=|yqQiY1M=|vGtNPaY=|It6NjIw=|SpSCxlU="
+    ],
+    "g_starry_great_sail": [
+      "VLKiN3M=|NBQr1dE=|lFqqnbw=|SrSiZ0M=|PIxr1ao=|tEtNmJw=|ulQr1dE="
+    ],
+    "g_strawberry_cr_pe": [
+      "1GfqvPY=|FJap3VM=|MNapnNM=|3EVC5kY=|jDfEPDM=|KtqNnIk=|Ktap3VM="
+    ],
+    "g_strawberry_donut": [
+      "VCVqdHc=|tEZplJc=|atQLoqo=|TrGCY28=|tEZp1LM=|ItqNiIg=|KlQLhqo="
+    ],
+    "g_sunny_surf_master": [
+      "xONBu1I=|hPPDnFE=|ajiGYq0=|wqFCa1Y=|tMdJnFo=|OBytVK0=|ajmFYjU="
+    ],
+    "g_sunset_balloons": [
+      "1ADqd8Y=|lHgr2cw=|hHap3cY=|3oVid0s=|tGltW7Q=|Iv6NjIg=|jnSp3cQ="
+    ],
+    "g_super_glider": [
+      "LCLEPCM=|bLaqVEM=|bBaqVJM=|mGvEOCM=|ZkQD19w=|ts1C0zY=|6hQrx5M=",
+      "XDKEPCM=|TDai3EM=|/Bai3BM=|HLvEOC4=|ZkRL19w=|ttlH0zw=|qhQrxpM="
+    ],
+    "g_super_mario_kart_glider": [
+      "xpaK5eo=|wpOCpVk=|QtaCpVk=|jnSoaeI=|cCtiVjU=|eskFiFk=|asFCk10="
+    ],
+    "g_surf_master": [
+      "RDimYr0=|SDyDW70=|THaJuvc=|QilmY5w=|PL6mXCs=|vNfJnEI=|ajyHQr0="
+    ],
+    "g_sweetheart_glider": [
+      "SJKmJGk=|SJanZEk=|SJanZMk=|1qVic3Y=|NJyq1SI=|KtqNjIw=|aJalREk="
+    ],
+    "g_swooper": [
+      "QryjQ7k=|Dj6pXSU=|QLyiZrk=|SjSlaXs=|tGRrmZY=|tMvMvEQ=|Cj6BXSU="
+    ],
+    "g_toe_bean_balloons": [
+      "VLXqd3M=|HLSq1VE=|VLaq9bE=|3MRic1c=|tLSkVao=|KtqNjIg=|rJar3cU="
+    ],
+    "g_treasure_map": [
+      "xEgqspY=|xHgLoZU=|ylKKoNc=|TpRiZ2M=|tmlpW5Q=|qtqFiIg=|ylaKpVc="
+    ],
+    "g_tropical_glider": [
+      "TLKpecY=|3LKp/VU=|zLKtLd0=|SrSta0M=|tElCljo=|INqFjIg=|yrKNTd0="
+    ],
+    "g_vampire_wings": [
+      "3GQquXM=|HJap3aM=|DFapnaM=|1uFiY1Y=|tJSkVSo=|IJ6NjIk=|DJaJ3as="
+    ],
+    "g_waluigi_wing": [
+      "zBaodMI=|TJSodsI=|hLaseTM=|uFNNNMc=|RJSr18g=|EulGCTg=|NLOMHNk="
+    ],
+    "g_wario_wing": [
+      "zDaofWI=|TLaofEI=|lDOMOdw=|ukNFJM8=|RJSodmM=|lmlEibw=|NPOMOMw="
+    ],
+    "g_wicked_wings": [
+      "HGYrudM=|DJap3aM=|lHiqk5U=|DuYpvWM=|vBSkVSo=|4JnGRpw=|DJaJ3es="
+    ],
+    "g_yoshi_s_egg_hanafuda": [
+      "wqGCI3o=|wrOMI1o=|wrGMKto=|Ti1iY2U=|lBfEPZs=|ItqNjIg=|wjeMbZs="
+    ],
+    "g_yukata_ribbon": [
+      "2nQrS0Y=|1DYr/ZI=|hNaKtZo=|imQrw0Y=|dIvENjk=|ZJvMlJk=|hlaLxcY="
+    ],
+    "k_8_bit_pipe_frame": [
+      "SF4rrKU=|SF6DrKk=|SFqDrKk=|eEQr2qc=|lpWqRVo=|xLvEPIw=|wpaGZUo="
+    ],
+    "k_apple_kart": [
+      "RMtMtG0=|Qp6D7Xk=|St6BrWE=|3ENsN8c=|ZL2D1jE=|ql6FiIg=|StaBrWs="
+    ],
+    "k_b_dasher": [
+      "SHyrzLU=|aFwr3LU=|aF4r3L0=|SmQpaic=|NGljk6Q=|JJvFlIg=|thVPVZo="
+    ],
+    "k_b_dasher_mk_2": [
+      "QHiL6LU=|aHijzDU=|SHqCyDU=|wloJJbY=|tqVuQlo=|tMvEmEw=|KLSi3Gk="
+    ],
+    "k_badwagon": [
+      "TktLpaI=|TJKCpak=|TFtKpas=|SkQD52Y=|NLvkEt0=|ONvNnI0=|aLSnVFk=",
+      "SktLpac=|TJqKpe0=|TFvKtaU=|ykYDp2Y=|tLvEM8w=|KNvNjIg=|aLSnVFk="
+    ],
+    "k_banana_master": [
+      "SNYjpFM=|SNYjtFk=|wpaL7Zs=|ylYjZ2Y=|fCHsG90=|ol6JjJg=|wpaJbZo="
+    ],
+    "k_barrel_train": [
+      "SEamqMU=|SsampKs=|YJqutrk=|OGPkGkU=|wgQr5bo=|ZJnDdzg=|tJlvl7g="
+    ],
+    "k_biddybuggy": [
+      "tFPqt1Q=|SFSqRFM=|aFSq0qU=|lEtisxQ=|QsQNTHk=|OH2i0qM=|anSryqk="
+    ],
+    "k_birthday_girl": [
+      "vE/ClKY=|jFfCtKI=|jFfCtKI=|tF3q1pQ=|ykQEqYs=|RruJd3g=|yjaELao="
+    ],
+    "k_birthday_girl_daisy": [
+      "mEdilaI=|yEbKtOM=|zDeINKM=|umRnyYY=|SHKILMM=|ZpmLdzg=|zLOINKs="
+    ],
+    "k_birthday_girl_rosalina": [
+      "yHaMLKM=|vFfCtKY=|vE/KlKY=|2rKlLSs=|yEQEiEs=|NJlLVpQ=|yraMLes="
+    ],
+    "k_black_b_dasher": [
+      "Sh6L7LM=|Qh6L5Ls=|SF4LpLs=|SjSJb6c=|tKHuE1w=|NMtGnEg=|GKZuVOs=",
+      "whaL5bs=|whaLpJs=|whYLpbs=|SnaJbac=|tEnku1Q=|NMtHnIw=|GKZuVMs="
+    ],
+    "k_black_cat_cruiser": [
+      "SjqCZSU=|SlKJZac=|SFKIrec=|SrKGZW4=|km9FKZI=|tE1pmJQ=|onwrxLc="
+    ],
+    "k_black_circuit": [
+      "ShaD5Ks=|SJaD5Kk=|SB6KpKs=|yjaIZyY=|PKVn01k=|oFvNjJw=|aNuOts0="
+    ],
+    "k_black_dozer": [
+      "ShaK5CM=|ShaL5KM=|ShaKpKM=|SrSKZ2M=|9KnkOhw=|kpbFjJg=|tFtrnd0="
+    ],
+    "k_black_kabuki_dasher": [
+      "SH4L7LE=|SE4L5Ls=|QE4LrLs=|SnypaiU=|tKFmE1o=|tMvEnIg=|gpdOZbo="
+    ],
+    "k_black_penguin_slider": [
+      "SJaoJsM=|SJaoNEM=|bNCImuk=|yhQrQ9M=|0oNnZVY=|JJvEECg=|LG3KmSU="
+    ],
+    "k_black_turbo_birdo": [
+      "SpaD7co=|RpaCxao=|BFqC1aw=|ygSoZeI=|tONpOlI=|JLvHmCw=|LFlLlqU="
+    ],
+    "k_blue_badwagon": [
+      "SpqD5Wk=|TFvDpak=|TFtLpaU=|SraBZWc=|tKlmUzw=|tEtLnIA=|aLSkRFk="
+    ],
+    "k_blue_biddybuggy": [
+      "2FaqdFM=|vFKqt1c=|JEnKk7U=|2LKsJkM=|QoSNTHk=|tElDk7Q=|alyKyq0="
+    ],
+    "k_blue_royale": [
+      "wpaD5Vs=|zFKitUc=|vEHuksY=|wr6FbXo=|7BYitFs=|PGluEqY=|8DSiRpk="
+    ],
+    "k_blue_seven": [
+      "SFqD5GU=|SFij9k0=|vGUrmpE=|Sp6EZCU=|SpqD5X0=|tGVqm5o=|aNmlsl0="
+    ],
+    "k_blue_soda": [
+      "SpSq5ao=|SshCpW0=|TMtLla0=|itSi48o=|9AlmZnQ=|NCtNGJ0=|SjyKZUU="
+    ],
+    "k_blue_turbo_birdo": [
+      "Sh6G5ag=|CkYKxas=|NAtDtqw=|SpaEzUs=|ytaMZcM=|tGlrsrQ=|2ratbVs="
+    ],
+    "k_blue_turbo_yoshi": [
+      "RkqKpaY=|DkoKpaY=|PEtKtrU=|QpyFTWg=|jmaJueY=|fAtmsh0=|lnWpebI="
+    ],
+    "k_bolt_buggy": [
+      "SkbKrac=|SEZKpec=|lIZntVo=|KmXIyKc=|TFvK9KU=|lrIlO1o=|dLordvg="
+    ],
+    "k_bright_bunny": [
+      "QGpMKWY=|SJYDtBk=|TH3J7aY=|SmBMa2Y=|eJJnllk=|pl2J3Iw=|CmfJTOY="
+    ],
+    "k_brown_offroader": [
+      "SFaL5Lc=|SFaL5Lc=|SFaLpKc=|SlQqZ6c=|PqUtWqo=|tMPFnEw=|yraLZeo="
+    ],
+    "k_bruiser": [
+      "SNKDpFk=|SNKLrFU=|SFKLrMU=|SpSGZ3s=|eIFjllk=|tG1sWKY=|inaLzYY="
+    ],
+    "k_bull_s_eye_banzai": [
+      "aERqlhc=|StSDxWY=|QtyCxW4=|vCVoGpM=|SEwFjW0=|ZrnGczw=|SryDzWw="
+    ],
+    "k_bullet_blaster": [
+      "StSLxWI=|SlSCxWY=|QlyCxSY=|lpYrrUI=|ykSFyc8=|dAtkNr0=|rFKivIY="
+    ],
+    "k_bumble_v": [
+      "LEQLmrc=|pEVLurc=|SOaLrWc=|aFSq1qM=|nmNoO8Y=|RruEDRg=|SraFbUs="
+    ],
+    "k_cact_ice": [
+      "whaBrao=|wBYrxLs=|iJZL1bs=|SlqFLWQ=|tAVqUpM=|tKXq3Jg=|ghaJRbo="
+    ],
+    "k_cact_x": [
+      "wjah7ao=|xpYj5bo=|SlaBras=|yjQhbWI=|PIlmElk=|It6FjIg=|SlaF5S8="
+    ],
+    "k_carrot_kart": [
+      "SDwr1DU=|SJ4DxDk=|SBYD5Ls=|SkZqdWc=|9pGkIko=|oF/FjJg=|yhbOJKo="
+    ],
+    "k_cat_cruiser": [
+      "RBwj9r0=|SFar1NU=|bFKKtJU=|SiQjY2M=|eHioWlU=|tMvMnIg=|ajSrzFU="
+    ],
+    "k_cheep_charger": [
+      "uEYpulM=|StaMLFM=|6FfMtJM=|tGlrkpQ=|SsQMzUs=|ZJvENDk=|aBfOZNs="
+    ],
+    "k_cheep_snorkel": [
+      "SrSj6Wk=|Sr2LaOk=|Sh6K5qc=|lnSqw1Y=|eKVMGck=|pFtFNKw=|SlqOJqc="
+    ],
+    "k_cheermellow": [
+      "QmLIKWY=|SLvEeik=|SLvEaik=|kkQrx8Y=|TLvDfjk=|YLvEGJk=|aL3EQq0="
+    ],
+    "k_choco_macharon": [
+      "SpaC7Xs=|SraA7Fs=|StSKzNk=|fmQq8+c=|2LfBbDs=|KtqNiIg=|atSKzNk="
+    ],
+    "k_chrome_dk_jumbo": [
+      "bFqGtqk=|bFqOtq0=|fFvusp0=|lr3hTSI=|bEPOusU=|8ENvNpk=|tEvusp0="
+    ],
+    "k_circuit_special": [
+      "Sj6J7aM=|SD6L7bM=|QB6rxLM=|SlaCJWc=|2qVKS0s=|tB1tVpw=|SlvIvaU="
+    ],
+    "k_clackety_kart": [
+      "QuwL6rk=|QkwLqp0=|Qt6Lrbo=|SiQra+U=|8CltUpU=|tNvElRo=|SpaL5dk="
+    ],
+    "k_clanky_kart": [
+      "QswLqvk=|QuQL690=|SuQLqeg=|igVgZ2I=|9CFtMt0=|AvqLiIg=|SqaLacg="
+    ],
+    "k_classic_b_dasher_mk_2": [
+      "SlqD7LU=|Sl6D5bc=|Sl6D7bU=|ZFgjsjU=|vqVoU8I=|srfFzEg=|itZMJcI="
+    ],
+    "k_cleanup_hitter": [
+      "aFiClqU=|aFyL1rU=|aFyL1qU=|RkpKp2c=|vCXiUlM=|tJfNjMg=|uLSpXtM="
+    ],
+    "k_cloud_9": [
+      "Fs9Kt3I=|NM1Kt3I=|NI1K0zI=|ylKErE4=|VKxrV/w=|tC1rUrg=|ND1KUrM="
+    ],
+    "k_comet_tail": [
+      "SFKLrBU=|aFqrvFU=|aFarnsU=|SlYJZSc=|ePmmWl0=|tKVuW4o=|wlKJrNU="
+    ],
+    "k_crawly_kart": [
+      "SLqEZG0=|SJqDpG0=|SlqL7GU=|SrCkY2U=|NIVmkxk=|tkdJjJA=|glZL7ZI="
+    ],
+    "k_cream_b_dasher_mk_2": [
+      "SHSizGc=|2HSizFM=|wnaL7ZY=|Smyi5WU=|vKVqUks=|tlvNrZw=|KLaGRGs="
+    ],
+    "k_crimson_hop_rod": [
+      "bMJLtKs=|jFYLvKI=|QFYLoqI=|bErCti0=|lmVr2ZY=|krYFCVg=|wjSpS1M="
+    ],
+    "k_cucumber": [
+      "ytKArVM=|TNKCrUU=|bNKqslU=|wjaNbZo=|PMvmkm0=|tE1q05Y=|tBWq0pY="
+    ],
+    "k_dark_buggy": [
+      "CkQKxOY=|ikSKzcY=|ikSKzcY=|aERKxqc=|NPvoO3U=|vDqNnIg=|1rOEKVo=",
+      "ClisiKU=|GlioiaU=|ClioiaU=|KsvErG0=|tH1rW5Y=|lCQqQZI=|1jyra5Y="
+    ],
+    "k_dark_clown": [
+      "TPSK6kQ=|QvSK6lY=|NDioWzY=|SrOGJks=|QsSKysU=|tC1pWbQ=|1OvEuxM="
+    ],
+    "k_dark_hop_rod": [
+      "QFaLqqI=|TFaLvKM=|TNaLpKI=|SlSLqiY=|tAtGlLw=|nqVkWVk=|4FqJvpU="
+    ],
+    "k_dark_trickster": [
+      "QjKJbeY=|SpqDpW0=|wnaJrcI=|Sj6AZSY=|PJgmUl0=|tHeJiIA=|aNYDpGk="
+    ],
+    "k_dasher_ii": [
+      "SNKArUU=|TNKivE0=|bNKiskU=|wj6FbT4=|fJKutsk=|tklqk7Y=|NJGq0sw="
+    ],
+    "k_daytripper": [
+      "REvKuyU=|RlmKu7Q=|tEnKs5Q=|vINmsos=|RniL77Q=|vENMPLM=|tFnKs5Q="
+    ],
+    "k_decal_streamliner": [
+      "StKDpW0=|StaD7Uk=|SFaL7KM=|SqIGZWU=|PIQj0lk=|tB3p2pI=|yvaB7VE="
+    ],
+    "k_dk_jumbo": [
+      "ShiOY6k=|SByu5qk=|YJyu1rk=|tmPIO1Y=|SDyL5Kk=|eIdnlpk=|dJyn1rk="
+    ],
+    "k_dk_maximum": [
+      "SJqGpKk=|SpyGxKk=|ShyGxK0=|1mVoc1Y=|eI9nlpk=|qt6FjIg=|yhyHxZ0="
+    ],
+    "k_double_decker": [
+      "THaoeUc=|ylSG5c4=|ylKGpc4=|ZDFpc3c=|PrWsUao=|qMvFjIg=|wkoGpZw="
+    ],
+    "k_dozer_dasher": [
+      "SHiKYiU=|SFqKpqU=|ShaKpKI=|SoQqYmM=|tEvkG1w=|kj7NzZg=|wraJZdI="
+    ],
+    "k_dreamy_egg": [
+      "aNSo1GM=|LF9LnLM=|BEvIvLU=|apSqQkM=|tE9rlLs=|lGvFKJw=|KNaJnGM="
+    ],
+    "k_egg_1": [
+      "wHqCbLc=|pEvKvLc=|tHvIurc=|QrSHZUg=|PMNtles=|sHmoupU=|tH2oWrc="
+    ],
+    "k_fast_frank": [
+      "SENKpqU=|ShPKpKM=|ShKKpKI=|fElqsiU=|JpQtT3o=|gj6FzIg=|wraEZVo="
+    ],
+    "k_festival_girl": [
+      "ynSK65M=|iEfCtac=|DMpEpKo=|ymSq69c=|PFtDlGY=|dJtFBCg=|ytYDrSo="
+    ],
+    "k_flame_flyer": [
+      "TBqGp6w=|RGgqs6w=|fHumMq0=|SpLEJWo=|tmVr25Y=|PHisWtU=|fLukMl0="
+    ],
+    "k_ghost_ride": [
+      "SpaGZW8=|ylaC5UM=|ykaC5cI=|SrwmY30=|PJUp32I=|tEPMnII=|mmZLzaI="
+    ],
+    "k_gilded_king": [
+      "SFiA7KU=|SF6JzKU=|Sl6Lpbc=|xrSmZUo=|NE3omrU=|ql8NgJk=|whZLZZI=",
+      "SFiInKU=|aFqJnKU=|wl4Lrbc=|xrCmZU4=|NGnomqQ=|qv+NiIg=|wkZLJZI="
+    ],
+    "k_gilded_prancer": [
+      "TluCoy0=|TFuKtaU=|hliqs7Q=|SpCCZmU=|PEtCnDk=|tmQtWZI=|atwD100="
+    ],
+    "k_glam_bruiser": [
+      "SGqLqVU=|SHKL7dU=|TFqKtKY=|SiYCZWc=|dJWm0lk=|tMtNnIg=|SlKJrMU="
+    ],
+    "k_gold_blooper": [
+      "dKlqcjg=|dIwqcrk=|Ql6Kxbc=|mmPFqUY=|ZJwqVrk=|AAAAAAA=|Cl6Kxac="
+    ],
+    "k_gold_cheep_charger": [
+      "TMNDu2c=|SudBrUM=|QsQLzcI=|TggiZ2c=|mKfFPVM=|It6NjIg=|QsYLzcI=",
+      "zLKGJ0s=|inSmaco=|SnysiaQ=|6s1J7l0=|nDXGcVo=|EnqOAKA=|CnysyaQ="
+    ],
+    "k_gold_cheep_snorkel": [
+      "TKtGuak=|TLPGeck=|Sj6KZic=|ShSqZmc=|vKNkGdk=|ItqNDCA=|SjyKZic=",
+      "TLWEaik=|TDyoe6k=|SnykSuU=|6sRF7lU=|3BPKtZk=|ACKmqKo=|anysSuU="
+    ],
+    "k_gold_clanky_kart": [
+      "wk1Dqrc=|wlnLrp0=|SuaLqeo=|SiQiZ2M=|sFnElp0=|QtqLiIg=|SqaLqes="
+    ],
+    "k_gold_egg": [
+      "xMPCszo=|xFPEvRs=|QpaIZXM=|SqQrZ2I=|vHvEOjc=|ItqNjIg=|QpaIRXM="
+    ],
+    "k_gold_pipe_frame": [
+      "woQq57M=|wpYL5Js=|Sl4LpKs=|TmAic2c=|soVqVts=|ot7BjIg=|Sl4LpKs="
+    ],
+    "k_gold_pumpkin_kart": [
+      "RMNApXg=|RNPErXY=|Sk4AjGU=|SiQqY+c=|lJPEPHo=|KNqFmI0=|Sk6FjGU="
+    ],
+    "k_gold_snow_skimmer": [
+      "TJOCo2M=|SBaK9WE=|SFaJ7Kc=|SiQsY2c=|NMlCk2w=|It6BjJg=|SlaJTKU="
+    ],
+    "k_gold_train": [
+      "RMKsI+Y=|StaIhe0=|SlSK5ao=|SiRqY2c=|PLvsErE=|ot6FjIg=|SlQDxas="
+    ],
+    "k_grand_badwagon": [
+      "SEJLpaM=|TENLtaM=|TFtLpaU=|SjQpZ2M=|tG1r05I=|JFvEjIw=|SFtLtaU="
+    ],
+    "k_green_apple_kart": [
+      "QpaA7Xo=|RJvIvHk=|St6JrWU=|yoQi42o=|NHvJHrU=|ql6FiIg=|Sl6BrWU="
+    ],
+    "k_green_b_dasher_mk_2": [
+      "QlqJrbU=|QFqD7LU=|Sl6D7KU=|SkoMJSY=|dKkj2lk=|urfEzIg=|CpaGRWs="
+    ],
+    "k_green_cheep_charger": [
+      "WFatLlM=|mEdpuXM=|6FfItJM=|eLArYt0=|hkxJmSY=|ZJvENLg=|6FfKxIM="
+    ],
+    "k_green_circuit": [
+      "SD6hZDE=|QDyrVLE=|SL6IbLk=|SlaAZ2c=|tKVvU5o=|IvvFjJw=|SruEKk0="
+    ],
+    "k_green_double_decker": [
+      "yjaEbcI=|ynaCbcc=|ylKCpc4=|SraGZWo=|NE1p2rU=|tEtHnJw=|ykhHhZ0="
+    ],
+    "k_green_kiddie_kart": [
+      "Stgi5WU=|SkZKpaM=|SlyKxaU=|WrulKm0=|iERJnZM=|tD3kVro=|SnyOzcU="
+    ],
+    "k_green_standard_8": [
+      "SN6m5G0=|aIQnork=|dLimUv0=|Sl6DxGU=|eKVtKps=|tGnkOyw=|tLWuU8I="
+    ],
+    "k_happy_ride": [
+      "StaArWo=|ikaCrUI=|ikaCrWI=|SpQOZ2s=|vEVrmhM=|tGvEiJQ=|mmamzMY="
+    ],
+    "k_head_honcho": [
+      "THiIaaU=|SnSJzYc=|Snap7OU=|RigkczU=|viVqU5I=|Kt6FjMg=|yrSpzFM="
+    ],
+    "k_holiday_king": [
+      "aE4KlqU=|SnyAySU=|SH6IyKU=|aE5Ltqc=|lrHkYVo=|qH6FiIA=|AnqMaaQ="
+    ],
+    "k_ice_blue_poltergust": [
+      "aFuKJqU=|bDmMMr0=|RDmMOp0=|SFYKZmM=|PHmkGq0=|tqnlmZg=|aFuCtiU="
+    ],
+    "k_ice_dozer": [
+      "SraLZaI=|xraL7dI=|1DKouZI=|SrQKZ2M=|tIfsmlo=|tGvlmJw=|wpaL5ao="
+    ],
+    "k_inferno_flyer": [
+      "SDqHZK4=|SHar7KU=|SnqJbKU=|xoNCJWo=|PGksWpU=|InmFyIw=|SnipasU="
+    ],
+    "k_iron_cucumber": [
+      "SnKJrdM=|SNKJrdE=|yFKJrdM=|yiSJa1M=|tJVuUtg=|sB/NzIg=|tNnC1t0="
+    ],
+    "k_jade_hop_rod": [
+      "bFSrqqc=|bFPKtsU=|wnSJ6rM=|bFSr5iI=|dItGtF0=|kn0JSZA=|wjytSRM="
+    ],
+    "k_jet_cruiser": [
+      "SFYLpDE=|SEYrrJE=|6FQL0pM=|SjqEZSc=|2pZmpds=|tKVp2tA=|6EpLnlU="
+    ],
+    "k_jingle_bells": [
+      "SjSobbM=|SjyJTaU=|SjyLzKU=|yiAoY0c=|tMNjl1o=|IF/BzIk=|SnyLzKU="
+    ],
+    "k_kabuki_dasher": [
+      "SH6rzLU=|SG4rzLU=|SG4L7LU=|Snwpaic=|tMFmM14=|pNvEnMg=|godOZdo="
+    ],
+    "k_kamek_s_zoom_broom": [
+      "SLSjZjs=|XLamVJk=|nGYmPIs=|SrQjZ2M=|dJljkj0=|tEvNnIQ=|mCYlXIs="
+    ],
+    "k_karp_kart": [
+      "ShYL5bM=|SpYL5Zs=|SpYLxas=|ylKEZWc=|fIFuskk=|NK1n2Kg=|yNKJrFU="
+    ],
+    "k_koopa_clown": [
+      "pExrmpQ=|pEtKu5U=|tEtjm5k=|rDQr0oA=|RPvEOXc=|WoJnpWs=|0sJnrVs="
+    ],
+    "k_koopa_dasher": [
+      "cJwrxrk=|ZFvKlr0=|eAwqxrk=|crgrZmk=|jEPEuaY=|tJamZNo=|yoQrxJo="
+    ],
+    "k_koopa_king": [
+      "aFiAnqU=|aFyJnqU=|SHyJzKU=|xrKGZU4=|NG1omrM=|qlqFCIg=|yjSJabM=",
+      "aKolOmk=|KOqkmiU=|KOgkmmU=|1qQpSco=|eFvGlnU=|AAIiASA=|imQjy1Y="
+    ],
+    "k_landship": [
+      "RtmCoyQ=|SlSOo+Y=|SlKMpeY=|dLvj/Sg=|ykQOxcc=|3DPMNNs=|ylKsJNM="
+    ],
+    "k_light_blue_turbo_birdo": [
+      "Sl6Gxao=|LE5LlKM=|NAlrsqw=|StaEzUs=|bERr1qM=|tLlnMhw=|0raMbVs="
+    ],
+    "k_lime_tea_coupe": [
+      "SlgL6eU=|RPSK9VU=|SlKCpEU=|SkwL52U=|tKfkMlo=|ql6FjIw=|atKDpEU="
+    ],
+    "k_lunar_cruiser": [
+      "SpLCpWk=|SNfKtWM=|StaKrWM=|SpKGZ20=|PElqkjE=|tmyp2Zo=|qnSJ3UY="
+    ],
+    "k_mach_8": [
+      "SpaCpas=|SJaKpas=|PMpjlyo=|wreEbdo=|SJKLJtM=|NEljkiQ=|9LGucts="
+    ],
+    "k_macharon": [
+      "VKhi6Xw=|UoQjzXM=|WsQj5Vs=|3CBic8c=|MN/InDM=|Kt4FiIg=|ysQjxVM="
+    ],
+    "k_metal_b_dasher_mk_2": [
+      "SFqDrbU=|QFqDrLU=|SFqDrLU=|Sl6CZSc=|0rFtYpo=|oL/NTIg=|tFlrktY="
+    ],
+    "k_mushmellow": [
+      "NGvMObc=|aLaMXKM=|aDaIfKM=|tCtDubw=|SsSMxkM=|0raoZFE=|SpasZMs="
+    ],
+    "k_offroader": [
+      "SFaLpKc=|SFaL7JU=|ylaLpcM=|SlaKp2c=|dCltmp0=|lqfETUo=|wpaL5Zs="
+    ],
+    "k_orange_streamliner": [
+      "SBYr5KM=|SJaD5Wk=|StKDpU0=|yiRoZaI=|PNGiml0=|JNvFjMw=|SvKHbU0="
+    ],
+    "k_p_wing": [
+      "SnwrTDU=|SHwrzDc=|CFQrzDc=|SroFZX0=|tGnoUqY=|tMXKmMI=|gnyoS6Y="
+    ],
+    "k_paintster": [
+      "SByK5qU=|aDyq3qU=|aH6rzqU=|wktGJyY=|XrWhe8s=|tMZJnJg=|aL6lTN0="
+    ],
+    "k_para_wing": [
+      "aEvKtLU=|Yhwqxr0=|8h1qxrk=|HGvFuGQ=|agQqwqM=|spWqQ9o=|shQrxpo="
+    ],
+    "k_party_wing": [
+      "ShSq55s=|wlwqxrs=|wpQqx5s=|SqSoaeE=|tGvEOjY=|tJ1Hhlg=|4hwjx5o="
+    ],
+    "k_penguin_slider": [
+      "yhSpZtM=|ZByKVqU=|LGnImqU=|ypSsZ1M=|tI9vZpI=|NOvDmC0=|KhSp24E="
+    ],
+    "k_pinch_hitter": [
+      "aFiKlrU=|QloL5bU=|Qt6L5LE=|bElqsqU=|0qRlaVo=|kraFzFg=|wrYJbVo="
+    ],
+    "k_pink_b_dasher_mk_2": [
+      "wnyryjc=|ePSi1EU=|2GSiyFc=|QjwpbyY=|PMtmlmk=|vMPEnNg=|KLSmREs="
+    ],
+    "k_pink_dozer": [
+      "yDaoaVM=|ShKKpaM=|yHKKrJM=|SqQiY2M=|VpnEMzw=|pFvNjJg=|QlvLpaY="
+    ],
+    "k_pink_mushmellow": [
+      "1GvkOTY=|SLaMfOM=|WHPMPDM=|1ItjtLg=|akQMSsM=|aL2NWnU=|aJaIRMM="
+    ],
+    "k_pink_wing": [
+      "QnwrzDU=|SF4rzGU=|aFwr1DU=|SiQla2c=|PIPEtVs=|NMvJnIg=|wnqFTVQ="
+    ],
+    "k_pipe_buggy": [
+      "TFKKtKE=|SNaKpeM=|WIaoJcs=|nltLpaQ=|SlSNzOc=|tKlkWlk=|bFqCvK0="
+    ],
+    "k_pipe_frame": [
+      "cEwr2rE=|SlYLpLs=|SEoKpLs=|siwrWrE=|yEaEzGc=|NMPEM0w=|ypbCpUs="
+    ],
+    "k_pirate_sushi_racer": [
+      "yreCJWo=|ypbKJUo=|yraILEo=|SiXCYyI=|NEprlJU=|vNaNnMg=|qraJ3Uo="
+    ],
+    "k_platinum_taxi": [
+      "SEZLpWM=|yEZLtcM=|yEZLrcM=|SiwiYyU=|tMdrlpo=|pNPMjMg=|iMZJvds="
+    ],
+    "k_poison_apple_kart": [
+      "RopErXo=|QpaErXo=|wqKELVo=|QkxLw+Y=|RJ/BzDk=|uLOMGMk=|wraErVo="
+    ],
+    "k_poltergust_4000": [
+      "jHKkOsQ=|ypaCpUo=|xNKmt9o=|vGmkGsQ=|yJYLpcs=|ZpnGszg=|xpXKs5s="
+    ],
+    "k_prancer": [
+      "Rkgr46Q=|SJqCtG0=|StqLpGU=|0iQrQ1Y=|PLPEPCs=|qtqFCIg=|SpKFLEE="
+    ],
+    "k_pumpkin_kart": [
+      "bMpItGU=|aNqBvGU=|SkaCjWU=|VqJkL0w=|JD2DUzI=|qlWCiIE=|yvaF7Vs="
+    ],
+    "k_purple_bunny": [
+      "RKZHYTs=|wKZETXs=|RFpDvL0=|SqQmY2M=|kiVOW5M=|NFvJnIw=|iqbMTFs="
+    ],
+    "k_queen_bee": [
+      "SsYD5UU=|StJD5UU=|wmLKqWY=|ahQjxmM=|lkNqs8Q=|pvvFiJw=|pGvKubY="
+    ],
+    "k_quickshaw": [
+      "ytaCZXM=|ylaKxVM=|ylaLxNM=|RqlmM3Y=|PDXi06s=|ol6FzJg=|ujSpTJM="
+    ],
+    "k_radish_rider": [
+      "SBYL5DE=|SF4D5Lk=|SBYLxLk=|SmQqY2c=|ZpvEM0w=|sJ/EzIg=|ylbGpLs="
+    ],
+    "k_rambi_rider": [
+      "wjQL5aI=|TFqKpqQ=|ZFoqpqQ=|kqSJSdo=|ZFvGJqQ=|PMNstkc=|fFtmtjU="
+    ],
+    "k_rambi_runner": [
+      "SBYKpLM=|VAdK9tM=|RFdKprI=|ShyC5Sk=|PM1ilhE=|krXtSsI=|tEtNFJU="
+    ],
+    "k_red_b_dasher": [
+      "SH6rzLU=|SFaLrLk=|QF6LrLk=|eGwrSqc=|lqFMM0o=|ptvFlYw=|wqZMZdo="
+    ],
+    "k_red_b_dasher_mk_2": [
+      "SFqDrHU=|SFqDpCU=|QkpLrbU=|aFij8nU=|tJXmV2o=|tiNNCYI=|ipbGRWs="
+    ],
+    "k_red_kiddie_kart": [
+      "SEJKteE=|SloL5WU=|NFwi1rU=|WoNqq8k=|StQFjW0=|tD3mUp4=|SnKD7cU="
+    ],
+    "k_red_standard_8": [
+      "aIYnrrk=|SJym5u0=|dLimUp0=|aIZJrpk=|hrSqVeo=|tGnkE2w=|tLWuU0Y="
+    ],
+    "k_red_streamliner": [
+      "bNQrlqk=|SNKCpU0=|bNqisl0=|tA1pUrI=|SPaD7UU=|dMvEM1w=|ZNuGu10="
+    ],
+    "k_red_taxi": [
+      "SEZLpCM=|SlaL5Wc=|SlaKrWc=|eARr17M=|trWmU1o=|pNvEDIw=|wrGAa1Q="
+    ],
+    "k_red_turbo_yoshi": [
+      "bEpCtKU=|jk6KraY=|lEvKuaY=|dJlGNh0=|jmaIraY=|lrSsWdo=|lmSpOYI="
+    ],
+    "k_ribbon_rider": [
+      "ykaCrTM=|wlbGpbs=|QtYJpbs=|2GYhaUc=|PG3OUq0=|ZpuJBTg=|QpYBpVk="
+    ],
+    "k_rose_queen": [
+      "SEQrplM=|aEZrqtU=|aEZLqpU=|WoQqd2M=|NMtnukw=|ovuFjJg=|pFnLmpQ="
+    ],
+    "k_rose_taxi": [
+      "SkJDpSc=|SnaJ7Uc=|SnaLreY=|VIliczs=|tJQqVEI=|qFuNjIw=|ynaJbUY="
+    ],
+    "k_royale": [
+      "jMJCtUY=|zNKCtUI=|vEPit0Y=|NElskpU=|yraC5Uo=|PDysSqo=|vHGispc="
+    ],
+    "k_sakura_quickshaw": [
+      "yFaipXM=|yFarzFM=|SNarxFM=|3CUuc0c=|PIdDtGs=|It/BjJg=|iFYrzNM="
+    ],
+    "k_silver_bullet_blaster": [
+      "YMtGpFU=|aEdHhFU=|aEZGhFU=|xqAHY2o=|lm1jWyY=|sl3DiYQ=|uEZpjJc="
+    ],
+    "k_silver_king": [
+      "SEwKpqU=|aF4LpqM=|SE4LpLM=|SklC46U=|PLWoWms=|traNGVo=|yJZJZVM="
+    ],
+    "k_sky_blue_b_dasher_mk_2": [
+      "SEpDrbU=|SFqDrDU=|SHiDzDU=|SkpEpXc=|tLHmUto=|uLWhWog=|ijaORao="
+    ],
+    "k_sleigh_rider": [
+      "SriGYm0=|SrqKZWQ=|SnCJaeU=|SKQmYm0=|tk1q0ZY=|qtqNiIg=|SnKJbcU="
+    ],
+    "k_snow_skimmer": [
+      "TFKopGU=|SDapTOU=|SDapTLU=|vMFis0Y=|WqVKS8s=|Ij/FzJg=|SjSpTJU="
+    ],
+    "k_soda_jet": [
+      "AtSixCI=|NM5ilDo=|dMtmts0=|ilSmwSo=|dOlrWnU=|1CtFNow=|fDgrVsU="
+    ],
+    "k_sports_coupe": [
+      "SEpHpD0=|aEpDtL0=|Sl6Frac=|SiAFa2c=|tMVqkpI=|PD6MTIg=|ijaJTaY="
+    ],
+    "k_star_spangled_flyer": [
+      "SDqCoqU=|SnqG6aQ=|hnyL6aY=|SqAiYmE=|tOvkM3w=|tkVJ3ZI=|wjiHZaw="
+    ],
+    "k_steel_driver": [
+      "SjyD7So=|Sp4D7ak=|SEJLpK0=|SjSga6c=|VpnGwzw=|tENJlNA=|SryD7Sw="
+    ],
+    "k_streamliner": [
+      "StKDpU0=|SNKitUk=|NNlqkrk=|SqYFbUM=|SLaD7VU=|tAlukrw=|ZNuGsl0="
+    ],
+    "k_sunny_surf_sailer": [
+      "xrKEY9k=|VDKOdd0=|xNKCpNw=|yqFGY1s=|PDypWKc=|NEtDnIw=|wpOEJdk="
+    ],
+    "k_sunset_cloud": [
+      "GkRq0ac=|CkQrzOU=|SlqGre0=|RAVKd7M=|ODysWpU=|itqFjIg=|SlqHrIU="
+    ],
+    "k_super_1": [
+      "aHwr1pU=|SFyjxIU=|ePij010=|tG1pWpY=|SHqD5GU=|VqFmu0o=|fNunu10="
+    ],
+    "k_super_blooper": [
+      "eEwmwi0=|NEwm0j8=|tI1mUjo=|SmYFzUU=|SlaL5cc=|tKnkErg=|tKFqMpI="
+    ],
+    "k_surf_sailer": [
+      "TrKGI8k=|XDqmVY0=|TBKMJN0=|yqFGY0I=|PGwr2aY=|sN/NjJk=|aBuMVN0="
+    ],
+    "k_sushi_racer": [
+      "SraOZao=|ypeOZao=|xJdP9Jo=|SrSKZ2M=|Wlqmpa0=|tEtlmJw=|ireMZco="
+    ],
+    "k_sweet_daytripper": [
+      "SvCCq2M=|SJqErXk=|QJqEqHk=|nCVqc8I=|NJvGszg=|ItuFjIw=|aJqErHk="
+    ],
+    "k_swift_jack": [
+      "SH6KZKc=|Sn6J7Kc=|SFqLrKU=|SjwmZyY=|tDSsX9o=|NMtLmFk=|ynaAbZY="
+    ],
+    "k_tanooki_kart": [
+      "SFqAvCU=|SFqErSU=|SnKE7cU=|aEhCtiU=|tDlLU5Q=|krSlSVo=|wjyrTZU="
+    ],
+    "k_tea_coupe": [
+      "xrSqY1I=|RLKqM1M=|bNKqskU=|wryCRgo=|fGNtObU=|PMNEvUk=|bNqjlkU="
+    ],
+    "k_trickster": [
+      "SMortmU=|SNKDpGk=|wjaL7cI=|SEoGNy0=|8KSkKlo=|lmXJyZI=|SpaJrWs="
+    ],
+    "k_turbo_birdo": [
+      "LEhLlqQ=|CEYKlas=|NEljlq4=|NDkpWqQ=|ykaM7cM=|1rPmMVs=|2qZtbVs="
+    ],
+    "k_turbo_yoshi": [
+      "RlqKraY=|TEpKtKU=|lEvKuaY=|wpyFTWg=|fEtispU=|lrSkXVo=|lmWpOZI="
+    ],
+    "k_warship": [
+      "QlCMo2Q=|QtiMI3Q=|QtiOo9Q=|mGdrvKM=|QkwNRGQ=|9rnm21w=|klymjZw="
+    ],
+    "k_white_royale": [
+      "zFKCtUY=|jFKGtUc=|vFPmtkY=|QpnNRXk=|nEJiskY=|OC2uWq0=|vGHmkoY="
+    ],
+    "k_white_turbo_yoshi": [
+      "SE5KpaM=|mEdLlJM=|iEZLlKM=|QrSgY2o=|vENmspU=|IN+NzIg=|uGZr3Jc="
+    ],
+    "k_wild_black": [
+      "Sj6CZSc=|Sn6IbKc=|SnqIbKc=|SpSGZ2s=|tGktWpU=|tEvNjJw=|ok1L3ZU="
+    ],
+    "k_wild_pink": [
+      "WFQr1jM=|aFoLtrU=|bFoLtrU=|ysQr43M=|ODylWq0=|tHvEDIw=|aFtLjqU="
+    ],
+    "k_wild_wing": [
+      "SHarbKM=|SnaBbac=|SlqIrKU=|ymQrYvM=|PKVlW0s=|pNvEmJw=|Sl6DrGU="
+    ],
+    "k_wildfire_flyer": [
+      "RmxL4aY=|RHlLoaQ=|TF4L5aY=|woZCZWI=|NGlkmlU=|ODyt3J0=|aFor3pU="
+    ],
+    "k_yellow_taxi": [
+      "SEZrpKM=|TEdLtTc=|SnKArUY=|SiQpZ2M=|tIlmkjw=|htvEjMw=|yraJbVY="
+    ],
+    "k_yellow_turbo_birdo": [
+      "JElClqw=|LE5Llq4=|CpaMxas=|RrvEIyw=|LERrlqM=|0ralaVo=|2rakbVs="
+    ],
+    "k_zucchini": [
+      "SNKDrlk=|aEgjsr0=|ZJNLttk=|ynaF7Uc=|NG1r0rU=|tJPMN0g=|1pdOddo="
+    ]
+  }
+}
