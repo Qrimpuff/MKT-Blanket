@@ -1,6 +1,10 @@
 name: MKT data
 
 on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Run at 04:00 utc 
   schedule:
     - cron: '0 4 * * *'
 env:
