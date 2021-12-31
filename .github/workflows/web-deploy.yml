@@ -25,9 +25,9 @@ jobs:
           ~/.cargo/registry
           ~/.cargo/git
           target
-        key: cargo-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
+        key: cargo-web-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
         restore-keys: |
-          cargo-${{ runner.os }}-
+          cargo-web-${{ runner.os }}-
 
     - uses: jetli/trunk-action@v0.1.0
       with:
