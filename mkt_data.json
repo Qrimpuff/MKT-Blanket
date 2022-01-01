@@ -4551,6 +4551,10 @@
           "lvl": 1
         },
         {
+          "id": "d_kamek",
+          "lvl": 1
+        },
+        {
           "id": "d_king_bob_omb",
           "lvl": 1
         },
@@ -4585,6 +4589,10 @@
         {
           "id": "d_white_yoshi",
           "lvl": 6
+        },
+        {
+          "id": "g_8_bit_super_mushroom",
+          "lvl": 1
         },
         {
           "id": "g_banana_wingtip",
@@ -4643,6 +4651,10 @@
           "lvl": 3
         },
         {
+          "id": "k_green_double_decker",
+          "lvl": 1
+        },
+        {
           "id": "k_happy_ride",
           "lvl": 1
         },
@@ -4652,6 +4664,10 @@
         },
         {
           "id": "k_mushmellow",
+          "lvl": 1
+        },
+        {
+          "id": "k_pink_b_dasher_mk_2",
           "lvl": 1
         },
         {
@@ -4719,6 +4735,10 @@
         },
         {
           "id": "d_white_yoshi",
+          "lvl": 1
+        },
+        {
+          "id": "d_yellow_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -4985,6 +5005,10 @@
         },
         {
           "id": "d_lakitu",
+          "lvl": 1
+        },
+        {
+          "id": "d_light_blue_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -13063,6 +13087,10 @@
           "lvl": 1
         },
         {
+          "id": "d_light_blue_toad_pit_crew",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_santa",
           "lvl": 1
         },
@@ -14600,6 +14628,14 @@
           "lvl": 6
         },
         {
+          "id": "d_yellow_toad_pit_crew",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_kangaroo",
+          "lvl": 1
+        },
+        {
           "id": "g_barrel_hanafuda",
           "lvl": 6
         },
@@ -15227,6 +15263,10 @@
           "lvl": 1
         },
         {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
           "id": "d_toadette_explorer",
           "lvl": 1
         },
@@ -15240,6 +15280,14 @@
         },
         {
           "id": "d_wario_hiker",
+          "lvl": 1
+        },
+        {
+          "id": "d_yellow_toad_pit_crew",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_kangaroo",
           "lvl": 1
         },
         {
@@ -19628,6 +19676,10 @@
           "lvl": 1
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "d_daisy_fairy",
           "lvl": 1
         },
@@ -19970,6 +20022,10 @@
         },
         {
           "id": "d_kamek",
+          "lvl": 1
+        },
+        {
+          "id": "d_meowser",
           "lvl": 1
         },
         {
@@ -21623,6 +21679,10 @@
         {
           "id": "d_mario_tuxedo",
           "lvl": 6
+        },
+        {
+          "id": "d_meowser",
+          "lvl": 1
         },
         {
           "id": "d_pauline_rose",
@@ -23498,6 +23558,10 @@
           "lvl": 1
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "d_dixie_kong",
           "lvl": 1
         },
@@ -23527,6 +23591,10 @@
         },
         {
           "id": "d_wario_cowboy",
+          "lvl": 1
+        },
+        {
+          "id": "d_yellow_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -28062,6 +28130,10 @@
           "lvl": 1
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "d_daisy_fairy",
           "lvl": 1
         },
@@ -28071,6 +28143,10 @@
         },
         {
           "id": "d_ice_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_light_blue_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -28369,6 +28445,10 @@
         },
         {
           "id": "d_king_boo_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_light_blue_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -34883,7 +34963,20 @@
       "i_type": "Driver",
       "name": "Cat Rosalina",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_rmx_choco_island_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_donut_plains_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_1r",
+          "lvl": 1
+        }
+      ],
       "hashes": [
         "KDOCNiE=|KDuCUik=|KriiAm0=|bFVGNis=|qD2FWhU=|1uwtid4=|IqymU0w="
       ]
@@ -36812,6 +36905,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2r",
           "lvl": 1
         },
@@ -37595,6 +37692,22 @@
       "name": "Light-blue Toad (Pit Crew)",
       "rarity": "Super",
       "favorite_courses": [
+        {
+          "id": "c_3ds_toad_circuit_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_merry_mountain_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_1t",
+          "lvl": 1
+        },
         {
           "id": "c_snes_vanilla_lake_2r",
           "lvl": 6
@@ -39458,7 +39571,20 @@
       "i_type": "Driver",
       "name": "Meowser",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_n64_kalimari_desert_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_ghost_valley_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_2",
+          "lvl": 1
+        }
+      ],
       "hashes": []
     },
     "d_metal_mario": {
@@ -43377,6 +43503,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_toad_circuit_r_t",
           "lvl": 1
         },
@@ -43393,6 +43523,14 @@
           "lvl": 3
         },
         {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_r",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_koopa_troopa_beach_r",
           "lvl": 1
         },
@@ -43402,6 +43540,10 @@
         },
         {
           "id": "c_snes_choco_island_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_donut_plains_1",
           "lvl": 1
         },
         {
@@ -43577,6 +43719,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_kalimari_desert_2r",
           "lvl": 1
         },
@@ -43586,6 +43732,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_r",
           "lvl": 1
         },
         {
@@ -50359,6 +50509,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_t",
           "lvl": 3
         },
@@ -53145,6 +53299,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_rainbow_road_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit",
           "lvl": 1
         },
         {
@@ -58396,6 +58554,10 @@
         {
           "id": "c_3ds_mario_circuit_r_t",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
         },
         {
           "id": "c_3ds_toad_circuit_r_t",
