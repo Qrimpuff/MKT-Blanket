@@ -44,6 +44,7 @@ impl Store for DataStore {
                 LocalStorage::set("mkt_data", &self.data).unwrap();
             }
             DataRequest::Delete => {
+                LocalStorage::delete("mkt_data_date");
                 link.send_input(DataRequest::New(Box::new(MktData::new())));
             }
         }
