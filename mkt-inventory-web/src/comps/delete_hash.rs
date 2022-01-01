@@ -51,8 +51,8 @@ impl Component for DeleteHash {
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
-                    <span>{ "Delete Hashes" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
+                    <span>{ "Delete Hashes" }</span>
                 </button>
                 { view_confirm_modal(self.visible,
                     Some(html!{ "Delete Item Hashes" }),

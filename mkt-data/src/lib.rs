@@ -450,6 +450,10 @@ impl Item {
     pub fn get_bgr_name(&self) -> String {
         unidecode(&self.name).to_uppercase()
     }
+    
+    pub fn get_reddit_name(&self) -> String {
+        unidecode(&self.name)
+    }
 }
 
 #[derive(Debug, Default, Clone, Serialize, Deserialize)]

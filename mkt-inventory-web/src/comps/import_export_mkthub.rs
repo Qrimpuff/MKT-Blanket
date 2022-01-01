@@ -1,30 +1,26 @@
-use mkt_data::ItemType;
-use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
 
-use crate::agents::data_inventory::{
-    DataInvItem, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
+use crate::{
+    agents::data_inventory::{
+        DataInvItem, DataInventory, DataInventoryAgent, DataInventoryRequest, Shared,
+    },
+    comps::data_manager::download_file,
 };
 
-#[wasm_bindgen(module = "/js/utils.js")]
-extern "C" {
-    fn copyTextToClipboard(text: &str);
-}
-
 pub enum Msg {
-    CopyBgr,
+    DownloadMktHub,
     DataInventory(Shared<DataInventory>),
     _ToggleDisplay,
 }
 
-pub struct ImportExportBgr {
+pub struct ImportExportMktHub {
     items: Vec<Shared<DataInvItem>>,
     visible: bool,
     data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
-impl Component for ImportExportBgr {
+impl Component for ImportExportMktHub {
     type Message = Msg;
     type Properties = ();
 
@@ -62,29 +58,24 @@ impl Component for ImportExportBgr {
                 self.visible = !self.visible;
                 true
             }
-            Msg::CopyBgr => {
+            Msg::DownloadMktHub => {
                 use std::fmt::Write;
                 let mut text = String::new();
+                writeln!(&mut text, "DRIVER NAME,LEVEL,SKILL,POINTS").unwrap();
                 for i in &self.items {
                     let i = i.read().unwrap();
-                    writeln!(
-                        &mut text,
-                        "{}\t{}\t{}\t{}",
-                        i.data.get_bgr_name(),
-                        match i.data.i_type {
-                            ItemType::Driver => 'D',
-                            ItemType::Kart => 'K',
-                            ItemType::Glider => 'G',
-                        },
-                        i.inv.as_ref().map(|n| n.lvl).unwrap_or(0),
-                        i.inv
-                            .as_ref()
-                            .map(|n| n.point_cap_tier(&i.data))
-                            .unwrap_or(0)
-                    )
-                    .unwrap();
+                    if let Some(inv) = i.inv.as_ref() {
+                        writeln!(
+                            &mut text,
+                            "{},{},0,{}",
+                            i.data.name,
+                            inv.lvl,
+                            inv.points,
+                        )
+                        .unwrap();
+                    }
                 }
-                copyTextToClipboard(&text);
+                download_file("mkthub_import.csv", text.as_str());
                 false
             }
         }
@@ -97,12 +88,12 @@ impl Component for ImportExportBgr {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let bgr = if self.visible {
+        let mkthub = if self.visible {
             html! {
                 <div class="block">
-                <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyBgr)}>
-                    <span class="icon"><i class="fas fa-copy"/></span>
-                    <span>{ "Send BGR Sheet to clipboard" }</span>
+                <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::DownloadMktHub)}>
+                    <span class="icon"><i class="fas fa-download"/></span>
+                    <span>{ "Download MKTHub Sheet" }</span>
                 </button>
                 </div>
             }
@@ -111,7 +102,7 @@ impl Component for ImportExportBgr {
         };
         html! {
             <>
-                { bgr }
+                { mkthub }
             </>
         }
     }

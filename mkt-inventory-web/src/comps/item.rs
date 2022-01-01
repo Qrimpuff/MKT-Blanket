@@ -346,16 +346,16 @@ impl Item {
                             { if self.edit_visible { edit } else { html!{} }}
                             <div class="buttons">
                                 <button class={classes!("button")} onclick={ctx.link().callback(|_| Msg::EditToggle)}>
-                                    <span>{ "Edit" }</span>
                                     { if self.edit_visible {
                                         html!{<span class="icon"><i class="fas fa-minus-square"/></span>}
                                     } else {
                                         html!{<span class="icon"><i class="fas fa-edit"/></span>}
                                     }}
+                                    <span>{ "Edit" }</span>
                                 </button>
                                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::DeleteToggleModal)}>
-                                    <span>{ "Remove" }</span>
                                     <span class="icon"><i class="fas fa-trash-alt"/></span>
+                                    <span>{ "Remove" }</span>
                                 </button>
                             </div>
                         </div>
@@ -366,8 +366,8 @@ impl Item {
                             <p class="block">{"This item is not in your inventory."}</p>
                             <div class="buttons">
                                 <button class={classes!("button", "is-success")} onclick={ctx.link().callback(|_| Msg::AddItem)}>
-                                    <span>{ "Add Item" }</span>
                                     <span class="icon"><i class="fas fa-plus"/></span>
+                                    <span>{ "Add Item" }</span>
                                 </button>
                             </div>
                         </div>

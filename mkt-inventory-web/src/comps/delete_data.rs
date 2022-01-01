@@ -67,8 +67,8 @@ impl Component for DeleteData {
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
-                    <span>{ "Delete All Data" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
+                    <span>{ "Delete All Data" }</span>
                 </button>
                 { view_confirm_modal(self.visible,
                     Some(html!{ "Delete All Data" }),

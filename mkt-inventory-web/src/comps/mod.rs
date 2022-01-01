@@ -11,6 +11,8 @@ pub mod download_inv;
 pub mod fetch_data;
 pub mod import_export;
 pub mod import_export_bgr;
+pub mod import_export_reddit;
+pub mod import_export_mkthub;
 pub mod import_screenshot;
 pub mod item;
 pub mod item_list;

@@ -54,12 +54,12 @@ impl Component for DownloadHash {
         html! {
             <>
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::DownloadAll)}>
-                    <span>{ "Download All Hashes" }</span>
                     <span class="icon"><i class="fas fa-download"/></span>
+                    <span>{ "Download All Hashes" }</span>
                 </button>
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::DownloadPersonal)}>
-                    <span>{ "Download My Hashes" }</span>
                     <span class="icon"><i class="fas fa-download"/></span>
+                    <span>{ "Download My Hashes" }</span>
                 </button>
             </>
         }

@@ -39,8 +39,8 @@ impl Component for DownloadData {
         html! {
             <>
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::Download)}>
-                    <span>{ "Download Data" }</span>
                     <span class="icon"><i class="fas fa-download"/></span>
+                    <span>{ "Download Data" }</span>
                 </button>
             </>
         }

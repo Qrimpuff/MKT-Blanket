@@ -1,4 +1,3 @@
-use mkt_data::ItemType;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -13,18 +12,18 @@ extern "C" {
 }
 
 pub enum Msg {
-    CopyBgr,
+    CopyReddit,
     DataInventory(Shared<DataInventory>),
     _ToggleDisplay,
 }
 
-pub struct ImportExportBgr {
+pub struct ImportExportReddit {
     items: Vec<Shared<DataInvItem>>,
     visible: bool,
     data_inventory: Box<dyn Bridge<DataInventoryAgent>>,
 }
 
-impl Component for ImportExportBgr {
+impl Component for ImportExportReddit {
     type Message = Msg;
     type Properties = ();
 
@@ -62,25 +61,16 @@ impl Component for ImportExportBgr {
                 self.visible = !self.visible;
                 true
             }
-            Msg::CopyBgr => {
+            Msg::CopyReddit => {
                 use std::fmt::Write;
                 let mut text = String::new();
                 for i in &self.items {
                     let i = i.read().unwrap();
                     writeln!(
                         &mut text,
-                        "{}\t{}\t{}\t{}",
-                        i.data.get_bgr_name(),
-                        match i.data.i_type {
-                            ItemType::Driver => 'D',
-                            ItemType::Kart => 'K',
-                            ItemType::Glider => 'G',
-                        },
+                        "{}\t{}",
+                        i.data.get_reddit_name(),
                         i.inv.as_ref().map(|n| n.lvl).unwrap_or(0),
-                        i.inv
-                            .as_ref()
-                            .map(|n| n.point_cap_tier(&i.data))
-                            .unwrap_or(0)
                     )
                     .unwrap();
                 }
@@ -97,12 +87,12 @@ impl Component for ImportExportBgr {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let bgr = if self.visible {
+        let reddit = if self.visible {
             html! {
                 <div class="block">
-                <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyBgr)}>
+                <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyReddit)}>
                     <span class="icon"><i class="fas fa-copy"/></span>
-                    <span>{ "Send BGR Sheet to clipboard" }</span>
+                    <span>{ "Send /u/spinachpants Sheet to clipboard" }</span>
                 </button>
                 </div>
             }
@@ -111,7 +101,7 @@ impl Component for ImportExportBgr {
         };
         html! {
             <>
-                { bgr }
+                { reddit }
             </>
         }
     }

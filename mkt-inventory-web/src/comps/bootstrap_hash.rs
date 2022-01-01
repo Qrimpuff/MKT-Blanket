@@ -146,8 +146,8 @@ impl Component for BootstrapHash {
                 </div>
                 <div class="buttons">
                     <button class={classes!("button", "is-success")} onclick={ctx.link().callback(|_| Msg::Bootstrap)}>
-                        <span>{ "Import" }</span>
                         <span class="icon"><i class="fas fa-upload"/></span>
+                        <span>{ "Bootstrap" }</span>
                     </button>
                 </div>
                 { if self.working {

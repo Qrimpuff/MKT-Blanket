@@ -57,8 +57,8 @@ impl Component for DeleteInv {
         html! {
             <>
                 <button class={classes!("button", "is-danger")} onclick={ctx.link().callback(|_| Msg::ToggleModal)}>
-                    <span>{ "Delete Inventory" }</span>
                     <span class="icon"><i class="fas fa-trash-alt"/></span>
+                    <span>{ "Delete Inventory" }</span>
                 </button>
                 { view_confirm_modal(self.visible,
                     Some(html!{ "Delete Inventory" }),

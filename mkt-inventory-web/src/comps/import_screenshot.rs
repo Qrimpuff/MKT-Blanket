@@ -151,38 +151,39 @@ impl Component for ImportScreenshot {
         html! {
             <>
             <div class="block">
-                <p>{ "Choose a screenshot to import" }</p>
-                <div class="file">
-                <label class="file-label">
-                    <input class="file-input" type="file" accept=".jpg,image/jpeg,.png,image/png" multiple=true onchange={ctx.link().callback(move |e: Event| {
-                        let mut result = Vec::new();
-                        let input: HtmlInputElement = e.target_unchecked_into();
-
-                        if let Some(files) = input.files() {
-                            let files = js_sys::try_iter(&files)
-                                .unwrap()
-                                .unwrap()
-                                .map(|v| web_sys::File::from(v.unwrap()))
-                                .map(File::from);
-                            result.extend(files);
-                        }
-                        input.set_files(None);
-                        Msg::Files(result)
-                    })} />
-                    <span class="file-cta">
-                        <span class="file-icon">
-                            <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                            { "Choose a file…" }
-                        </span>
-                    </span>
-                </label>
-                </div>
+                <p class="block">{ "Choose a screenshot to import" }</p>
                 { if !self.readers.is_empty() {
                     html! {<progress class="progress" value={Some(self.completed).filter(|c| *c > 0).map(|c| c.to_string())} max={self.readers.len().to_string()} />}
                 } else {
-                    html! {}
+                    html! {
+                        <div class="file">
+                        <label class="file-label">
+                            <input class="file-input" type="file" accept=".jpg,image/jpeg,.png,image/png" multiple=true onchange={ctx.link().callback(move |e: Event| {
+                                let mut result = Vec::new();
+                                let input: HtmlInputElement = e.target_unchecked_into();
+
+                                if let Some(files) = input.files() {
+                                    let files = js_sys::try_iter(&files)
+                                        .unwrap()
+                                        .unwrap()
+                                        .map(|v| web_sys::File::from(v.unwrap()))
+                                        .map(File::from);
+                                    result.extend(files);
+                                }
+                                input.set_files(None);
+                                Msg::Files(result)
+                            })} />
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    { "Choose a file…" }
+                                </span>
+                            </span>
+                        </label>
+                        </div>
+                    }
                 }}
             </div>
             <h3 class="subtitle is-4">{"Modified Items "}<b>{self.modified_items.len()}</b></h3>

@@ -39,8 +39,8 @@ impl Component for DownloadInv {
         html! {
             <>
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::Download)}>
-                    <span>{ "Download Inventory" }</span>
                     <span class="icon"><i class="fas fa-download"/></span>
+                    <span>{ "Download Inventory" }</span>
                 </button>
             </>
         }

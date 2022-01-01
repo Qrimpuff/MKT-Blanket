@@ -49,8 +49,8 @@ impl Component for FetchData {
         html! {
             <>
                 <button class={classes!("button", "is-success", self.fetching.then_some("is-loading"))} onclick={ctx.link().callback(|_| Msg::Fetch)}>
-                    <span>{ "Fetch Data" }</span>
                     <span class="icon"><i class="fas fa-sync-alt"/></span>
+                    <span>{ "Fetch Data" }</span>
                 </button>
             </>
         }
