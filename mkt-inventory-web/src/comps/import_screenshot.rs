@@ -151,7 +151,14 @@ impl Component for ImportScreenshot {
         html! {
             <div class="mb-6">
             <div class="block">
-                <p class="block">{ "Choose one or more screenshots to import." }</p>
+                <article class="message is-info">
+                    <div class="message-body">
+                        {"Choose one or more screenshots to import. The screenshots need to be from the \"Drivers/Karts/Gliders\" lists, "}
+                        <a href="https://raw.githubusercontent.com/Qrimpuff/MKT-Blanket/main/mkt-import/tests/drivers/mkt_drivers_1.jpg">{"for example."}</a>
+                        <br/>
+                        {" Verify that the item cards are fully visible and are not obstructed by the bottom bar."}
+                    </div>
+                </article>
                 { if !self.readers.is_empty() {
                     html! {<progress class="progress" value={Some(self.completed).filter(|c| *c > 0).map(|c| c.to_string())} max={self.readers.len().to_string()} />}
                 } else {

@@ -111,6 +111,11 @@ impl Component for Summary {
                         <li>{ format!("Gliders: {}/{} ({:.1}%)", self.glider_owned_count, self.glider_count, self.glider_owned_count as f64 / self.glider_count as f64 * 100.0) }</li>
                     </ul>
                 </div>
+                <article class="message is-info">
+                    <div class="message-body">
+                        {"To import your inventory from in-game screenshots or to use your inventory in a spreadsheet, go to the "}<a href="#import">{"Import / Export"}</a>{" page."}
+                    </div>
+                </article>
             </>
         }
     }

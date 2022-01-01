@@ -96,7 +96,7 @@ impl Component for ImportExportInv {
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <div class="block">
-            <div class="field is-grouped">
+            <div class="field is-grouped is-grouped-multiline">
                 <p class="control">
                     <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::Download)}>
                         <span class="icon"><i class="fas fa-download"/></span>

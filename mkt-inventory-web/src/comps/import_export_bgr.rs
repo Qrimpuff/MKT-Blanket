@@ -102,7 +102,7 @@ impl Component for ImportExportBgr {
                 <div class="block">
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyBgr)}>
                     <span class="icon"><i class="fas fa-copy"/></span>
-                    <span>{ "Send BGR Sheet to clipboard" }</span>
+                    <span>{ "Copy BGR Sheet to clipboard" }</span>
                 </button>
                 </div>
             }

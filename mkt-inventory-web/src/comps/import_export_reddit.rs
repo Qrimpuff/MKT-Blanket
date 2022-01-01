@@ -92,7 +92,7 @@ impl Component for ImportExportReddit {
                 <div class="block">
                 <button class={classes!("button", "is-info")} onclick={ctx.link().callback(|_| Msg::CopyReddit)}>
                     <span class="icon"><i class="fas fa-copy"/></span>
-                    <span>{ "Send /u/spinachpants Sheet to clipboard" }</span>
+                    <span>{ "Copy /u/spinachpants Sheet to clipboard" }</span>
                 </button>
                 </div>
             }
