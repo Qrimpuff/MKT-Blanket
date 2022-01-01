@@ -19,8 +19,8 @@ use yew_agent::{
 };
 
 use crate::comps::{
-    course_list::CourseList, data_manager::*, import_export::ImportExport, item_tabs::ItemTabs,
-    summary::Summary,
+    about::About, course_list::CourseList, data_manager::*, import_export::ImportExport,
+    item_tabs::ItemTabs, summary::Summary,
 };
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
@@ -30,6 +30,7 @@ enum Page {
     Items,
     ImportExport,
     DataManager,
+    About,
 }
 
 impl From<String> for Page {
@@ -43,6 +44,7 @@ impl From<String> for Page {
             "#items/gliders" => Page::Items,
             "#import" => Page::ImportExport,
             "#data" => Page::DataManager,
+            "#about" => Page::About,
             _ => Page::Main,
         }
     }
@@ -130,12 +132,13 @@ impl Component for App {
             Page::Items => html! {<ItemTabs/>},
             Page::ImportExport => html! {<ImportExport/>},
             Page::DataManager => html! {<DataManager/>},
+            Page::About => html! {<About/>},
         };
         html! {
             <section class="section pt-4">
                 <nav class="navbar is-fixed-top mkt-navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="">
+                        <a class="navbar-item" href="/MKT-Blanket/">
                             <h1 class="title is-4">{ "MKT Blanket" }</h1>
                         </a>
 
@@ -152,6 +155,7 @@ impl Component for App {
                         <a class="navbar-item" href="#items/drivers">{"Inventory"}</a>
                         <a class="navbar-item" href="#import">{"Import / Export"}</a>
                         <a class="navbar-item" href="#data">{"Data Management"}</a>
+                        <a class="navbar-item" href="#about">{"About"}</a>
                     </div>
                 </nav>
                 <div class="container is-clipped px-2 pb-4" onclick={ctx.link().callback(|_| Msg::CloseBurger)}>

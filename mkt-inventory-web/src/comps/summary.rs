@@ -102,20 +102,21 @@ impl Component for Summary {
         html! {
             <>
                 <h2 class="title is-4">{"Welcome"}</h2>
-                <div class="block">
-                    <h3 class="subtitle">{ "Summary" }</h3>
-                    <ul>
-                        <li>{ format!("Courses: {}/{} ({:.1}%)", self.course_covered_count, self.course_count, self.course_covered_count as f64 / self.course_count as f64 * 100.0) }</li>
-                        <li>{ format!("Drivers: {}/{} ({:.1}%)", self.driver_owned_count, self.driver_count, self.driver_owned_count as f64 / self.driver_count as f64 * 100.0) }</li>
-                        <li>{ format!("Karts: {}/{} ({:.1}%)", self.kart_owned_count, self.kart_count, self.kart_owned_count as f64 / self.kart_count as f64 * 100.0) }</li>
-                        <li>{ format!("Gliders: {}/{} ({:.1}%)", self.glider_owned_count, self.glider_count, self.glider_owned_count as f64 / self.glider_count as f64 * 100.0) }</li>
-                    </ul>
-                </div>
+                <p class="block">{"MKT Blanket is a course coverage tool for Mario Kart Tour. You can maintain you inventory and check which course is missing coverage."}</p>
                 <article class="message is-info">
                     <div class="message-body">
                         {"To import your inventory from in-game screenshots or to use your inventory in a spreadsheet, go to the "}<a href="#import">{"Import / Export"}</a>{" page."}
                     </div>
                 </article>
+                <div class="block">
+                    <h3 class="title is-5">{ "Coverage Summary" }</h3>
+                    <ul>
+                        <li><b>{"Courses: "}</b>{ format!("{}/{} ({:.1}%)", self.course_covered_count, self.course_count, self.course_covered_count as f64 / self.course_count as f64 * 100.0) }</li>
+                        <li><b>{"Drivers: "}</b>{ format!("{}/{} ({:.1}%)", self.driver_owned_count, self.driver_count, self.driver_owned_count as f64 / self.driver_count as f64 * 100.0) }</li>
+                        <li><b>{"Karts: "}</b>{ format!("{}/{} ({:.1}%)", self.kart_owned_count, self.kart_count, self.kart_owned_count as f64 / self.kart_count as f64 * 100.0) }</li>
+                        <li><b>{"Gliders: "}</b>{ format!("{}/{} ({:.1}%)", self.glider_owned_count, self.glider_count, self.glider_owned_count as f64 / self.glider_count as f64 * 100.0) }</li>
+                    </ul>
+                </div>
             </>
         }
     }
