@@ -149,9 +149,9 @@ impl Component for ImportScreenshot {
             </>
         };
         html! {
-            <>
+            <div class="mb-6">
             <div class="block">
-                <p class="block">{ "Choose a screenshot to import" }</p>
+                <p class="block">{ "Choose one or more screenshots to import." }</p>
                 { if !self.readers.is_empty() {
                     html! {<progress class="progress" value={Some(self.completed).filter(|c| *c > 0).map(|c| c.to_string())} max={self.readers.len().to_string()} />}
                 } else {
@@ -178,7 +178,7 @@ impl Component for ImportScreenshot {
                                     <i class="fas fa-upload"></i>
                                 </span>
                                 <span class="file-label">
-                                    { "Choose a file…" }
+                                    { "Choose a screenshot…" }
                                 </span>
                             </span>
                         </label>
@@ -187,8 +187,14 @@ impl Component for ImportScreenshot {
                 }}
             </div>
             <h3 class="subtitle is-4">{"Modified Items "}<b>{self.modified_items.len()}</b></h3>
-            <div class="block">{ items }</div>
-            </>
+            { if !self.modified_items.is_empty() {
+                html! {
+                    <div class="block">{ items }</div>
+                }
+            } else {
+                html! {}
+            }}
+            </div>
         }
     }
 }

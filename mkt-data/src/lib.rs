@@ -257,7 +257,7 @@ impl Course {
         }
 
         if changed {
-            self.last_changed = last_changed;
+            self.last_changed = last_changed.max(self.last_changed);
         }
     }
 }
@@ -378,7 +378,7 @@ impl Item {
         }
 
         if changed {
-            self.last_changed = last_changed;
+            self.last_changed = last_changed.max(self.last_changed);
         }
     }
 
@@ -450,7 +450,7 @@ impl Item {
     pub fn get_bgr_name(&self) -> String {
         unidecode(&self.name).to_uppercase()
     }
-    
+
     pub fn get_reddit_name(&self) -> String {
         unidecode(&self.name)
     }
@@ -658,7 +658,7 @@ impl OwnedItem {
         }
 
         if changed {
-            self.last_changed = last_changed;
+            self.last_changed = last_changed.max(self.last_changed);
             if self.added.is_none() {
                 self.added = added;
             }
@@ -692,7 +692,7 @@ impl OwnedItem {
         }
 
         if changed {
-            self.last_changed = last_changed;
+            self.last_changed = last_changed.max(self.last_changed);
             if self.added.is_none() {
                 self.added = added;
             }
@@ -752,7 +752,7 @@ impl MktInventory {
         Default::default()
     }
 
-    pub fn from_json(json: &str) -> Result<MktData, Box<dyn Error>> {
+    pub fn from_json(json: &str) -> Result<MktInventory, Box<dyn Error>> {
         Ok(serde_json::from_str(json)?)
     }
 
@@ -760,9 +760,9 @@ impl MktInventory {
         Ok(serde_json::to_string_pretty(self)?)
     }
 
-    pub fn load(file_name: &str) -> Result<MktData, Box<dyn Error>> {
+    pub fn load(file_name: &str) -> Result<MktInventory, Box<dyn Error>> {
         let json = fs::read_to_string(file_name)?;
-        MktData::from_json(&json)
+        MktInventory::from_json(&json)
     }
 
     pub fn from_item(i_type: ItemType, item: OwnedItem) -> Self {

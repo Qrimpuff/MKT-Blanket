@@ -65,14 +65,8 @@ impl Component for ImportExportMktHub {
                 for i in &self.items {
                     let i = i.read().unwrap();
                     if let Some(inv) = i.inv.as_ref() {
-                        writeln!(
-                            &mut text,
-                            "{},{},0,{}",
-                            i.data.name,
-                            inv.lvl,
-                            inv.points,
-                        )
-                        .unwrap();
+                        writeln!(&mut text, "{},{},0,{}", i.data.name, inv.lvl, inv.points,)
+                            .unwrap();
                     }
                 }
                 download_file("mkthub_import.csv", text.as_str());
