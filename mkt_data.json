@@ -1,5 +1,230 @@
 {
   "courses": {
+    "c_3ds_bowser_s_castle": {
+      "sort": 266,
+      "id": "c_3ds_bowser_s_castle",
+      "name": "3DS Bowser's Castle",
+      "favorite_items": [
+        {
+          "id": "d_fire_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_kangaroo",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_fire_flower",
+          "lvl": 1
+        },
+        {
+          "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_magic_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_starry_great_sail",
+          "lvl": 1
+        },
+        {
+          "id": "k_fast_frank",
+          "lvl": 1
+        },
+        {
+          "id": "k_kamek_s_zoom_broom",
+          "lvl": 1
+        },
+        {
+          "id": "k_red_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_sleigh_rider",
+          "lvl": 1
+        },
+        {
+          "id": "k_vampire_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_offroader",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_3ds_bowser_s_castle_r": {
+      "sort": 267,
+      "id": "c_3ds_bowser_s_castle_r",
+      "name": "3DS Bowser's Castle R",
+      "favorite_items": [
+        {
+          "id": "d_kamek",
+          "lvl": 1
+        },
+        {
+          "id": "d_nabbit",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
+          "id": "g_blizzard_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_dry_bowser_umbrella",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_new_year_s_kite",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 1
+        },
+        {
+          "id": "g_new_year_s_2022",
+          "lvl": 1
+        },
+        {
+          "id": "g_new_year_s_kite",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_classic_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_cheep_charger",
+          "lvl": 1
+        },
+        {
+          "id": "k_red_crawly_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_wild_pink",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_3ds_bowser_s_castle_t": {
+      "sort": 268,
+      "id": "c_3ds_bowser_s_castle_t",
+      "name": "3DS Bowser's Castle T",
+      "favorite_items": [
+        {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "d_donkey_kong_jr_snes",
+          "lvl": 1
+        },
+        {
+          "id": "d_meowser",
+          "lvl": 6
+        },
+        {
+          "id": "d_peach_explorer",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_dream_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_pink_gold_meteors",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_surf_master",
+          "lvl": 1
+        },
+        {
+          "id": "g_vampire_wings",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_cact_r",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_pumpkin_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_party_wing",
+          "lvl": 1
+        },
+        {
+          "id": "k_silver_king",
+          "lvl": 1
+        }
+      ]
+    },
     "c_3ds_cheep_cheep_lagoon": {
       "sort": 243,
       "id": "c_3ds_cheep_cheep_lagoon",
@@ -10,20 +235,8 @@
           "lvl": 1
         },
         {
-          "id": "d_birdo_yellow",
-          "lvl": 1
-        },
-        {
           "id": "d_black_shy_guy",
           "lvl": 1
-        },
-        {
-          "id": "d_blue_koopa_freerunning",
-          "lvl": 1
-        },
-        {
-          "id": "d_daisy_swimwear",
-          "lvl": 3
         },
         {
           "id": "d_dixie_kong",
@@ -34,7 +247,7 @@
           "lvl": 6
         },
         {
-          "id": "d_mario_happi",
+          "id": "d_mario",
           "lvl": 6
         },
         {
@@ -94,11 +307,19 @@
           "lvl": 1
         },
         {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
           "id": "k_dozer_dasher",
           "lvl": 1
         },
         {
           "id": "k_festival_girl",
+          "lvl": 3
+        },
+        {
+          "id": "k_frosty_bells",
           "lvl": 3
         },
         {
@@ -111,6 +332,10 @@
         },
         {
           "id": "k_penguin_slider",
+          "lvl": 1
+        },
+        {
+          "id": "k_sky_blue_b_dasher_mk_2",
           "lvl": 1
         },
         {
@@ -2297,7 +2522,7 @@
       ]
     },
     "c_3ds_rainbow_road": {
-      "sort": 266,
+      "sort": 269,
       "id": "c_3ds_rainbow_road",
       "name": "3DS Rainbow Road",
       "favorite_items": [
@@ -2456,7 +2681,7 @@
       ]
     },
     "c_3ds_rainbow_road_r": {
-      "sort": 267,
+      "sort": 270,
       "id": "c_3ds_rainbow_road_r",
       "name": "3DS Rainbow Road R",
       "favorite_items": [
@@ -2623,7 +2848,7 @@
       ]
     },
     "c_3ds_rainbow_road_r_t": {
-      "sort": 269,
+      "sort": 272,
       "id": "c_3ds_rainbow_road_r_t",
       "name": "3DS Rainbow Road R/T",
       "favorite_items": [
@@ -2810,7 +3035,7 @@
       ]
     },
     "c_3ds_rainbow_road_t": {
-      "sort": 268,
+      "sort": 271,
       "id": "c_3ds_rainbow_road_t",
       "name": "3DS Rainbow Road T",
       "favorite_items": [
@@ -33561,10 +33786,6 @@
       "rarity": "Super",
       "favorite_courses": [
         {
-          "id": "c_3ds_cheep_cheep_lagoon",
-          "lvl": 1
-        },
-        {
           "id": "c_3ds_shy_guy_bazaar_r_t",
           "lvl": 1
         },
@@ -33764,10 +33985,6 @@
       "name": "Blue Koopa (Freerunning)",
       "rarity": "Super",
       "favorite_courses": [
-        {
-          "id": "c_3ds_cheep_cheep_lagoon",
-          "lvl": 1
-        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r",
           "lvl": 6
@@ -34965,6 +35182,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_2",
           "lvl": 1
         },
@@ -35348,10 +35569,6 @@
       "name": "Daisy (Swimwear)",
       "rarity": "HighEnd",
       "favorite_courses": [
-        {
-          "id": "c_3ds_cheep_cheep_lagoon",
-          "lvl": 3
-        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 1
@@ -35764,6 +35981,10 @@
       "name": "Donkey Kong Jr. (SNES)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_berlin_byways_2r_t",
           "lvl": 1
@@ -36264,6 +36485,10 @@
       "name": "Fire Rosalina",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
@@ -36900,6 +37125,10 @@
       "name": "Kamek",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 1
@@ -38165,6 +38394,10 @@
       "rarity": "Super",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 6
+        },
+        {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 1
         },
@@ -38696,10 +38929,6 @@
       "name": "Mario (Happi)",
       "rarity": "HighEnd",
       "favorite_courses": [
-        {
-          "id": "c_3ds_cheep_cheep_lagoon",
-          "lvl": 6
-        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r_t",
           "lvl": 1
@@ -39573,6 +39802,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 6
+        },
+        {
           "id": "c_n64_kalimari_desert_r",
           "lvl": 1
         },
@@ -39734,6 +39971,10 @@
       "name": "Nabbit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rosalina_s_ice_world",
           "lvl": 1
@@ -40190,6 +40431,10 @@
       "name": "Peach (Explorer)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_daisy_hills_r",
           "lvl": 1
@@ -42068,6 +42313,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_neo_bowser_city_r_t",
           "lvl": 1
         },
@@ -42179,6 +42432,10 @@
       "name": "Shy Guy (Ninja)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_neo_bowser_city_r",
           "lvl": 3
@@ -42475,6 +42732,10 @@
       "name": "Tanooki Rosalina",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rosalina_s_ice_world",
           "lvl": 1
@@ -43036,6 +43297,14 @@
       "name": "Waluigi (Vampire)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rosalina_s_ice_world_t",
           "lvl": 1
@@ -43686,6 +43955,10 @@
       "name": "Yoshi (Kangaroo)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_ds_waluigi_pinball_t",
           "lvl": 1
@@ -44627,6 +44900,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 1
         },
@@ -44730,6 +45007,10 @@
       "name": "Black Circuit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 6
@@ -46175,6 +46456,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_t",
           "lvl": 1
         },
@@ -46312,6 +46597,10 @@
       "name": "Candy Clown",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_merry_mountain",
           "lvl": 3
@@ -46735,6 +47024,18 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 1
+        },
+        {
           "id": "c_merry_mountain_r_t",
           "lvl": 6
         },
@@ -47108,6 +47409,10 @@
       "name": "Classic B Dasher Mk. 2",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_berlin_byways_2",
           "lvl": 3
@@ -48730,6 +49035,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_r",
           "lvl": 1
         },
@@ -49007,6 +49316,10 @@
       "name": "Frosty Bells",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 3
+        },
         {
           "id": "c_snes_vanilla_lake_2r",
           "lvl": 1
@@ -49394,6 +49707,10 @@
       "name": "Gold Cheep Charger",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon",
           "lvl": 1
@@ -49852,6 +50169,10 @@
       "name": "Gold Pumpkin Kart",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
@@ -51737,6 +52058,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_r_t",
           "lvl": 1
         },
@@ -52981,6 +53306,10 @@
       "name": "Party-Wing",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r",
           "lvl": 1
@@ -54694,6 +55023,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_neo_bowser_city_r_t",
           "lvl": 1
         },
@@ -54777,6 +55110,10 @@
       "name": "Red Crawly Kart",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_daisy_hills",
           "lvl": 1
@@ -55604,6 +55941,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 1
         },
@@ -55728,6 +56069,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 1
         },
@@ -55819,6 +56164,10 @@
       "name": "Sleigh Rider",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_snes_vanilla_lake_2",
           "lvl": 3
@@ -57216,6 +57565,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_r_t",
           "lvl": 1
         },
@@ -57600,6 +57953,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 1
         },
@@ -57863,6 +58220,10 @@
       "name": "Yellow Offroader",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 1
@@ -58211,6 +58572,10 @@
       "name": "8-Bit Fire Flower",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_mario_circuit_r",
           "lvl": 1
@@ -59283,6 +59648,10 @@
       "name": "Blizzard Parasol",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_neo_bowser_city_r_t",
           "lvl": 3
@@ -60572,6 +60941,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_vanilla_lake_2",
           "lvl": 1
         },
@@ -61376,6 +61753,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 1
         },
@@ -61519,6 +61900,10 @@
       "name": "Dry Bowser Umbrella",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_neo_bowser_city",
           "lvl": 1
@@ -62216,6 +62601,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_r",
           "lvl": 3
         },
@@ -62884,6 +63273,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 6
         },
@@ -62970,7 +63363,12 @@
       "i_type": "Glider",
       "name": "Gold Penguin Wingtip",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        }
+      ],
       "hashes": []
     },
     "g_gold_swooper": {
@@ -63130,6 +63528,10 @@
       "name": "Golden Wings",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
@@ -63943,6 +64345,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 6
         },
@@ -64551,6 +64957,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
           "id": "c_vancouver_velocity_2t",
           "lvl": 1
         }
@@ -64564,6 +64974,10 @@
       "name": "New Year's Kite",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r_t",
           "lvl": 3
@@ -65154,6 +65568,10 @@
       "name": "Pink Gold Meteors",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rainbow_road",
           "lvl": 3
@@ -66785,6 +67203,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 1
         },
@@ -67528,6 +67950,10 @@
       "name": "Starry Great Sail",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon",
           "lvl": 1
@@ -68827,6 +69253,10 @@
       "name": "Vampire Wings",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rosalina_s_ice_world_t",
           "lvl": 1
