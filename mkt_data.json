@@ -235,8 +235,24 @@
           "lvl": 1
         },
         {
+          "id": "d_birdo_blue",
+          "lvl": 1
+        },
+        {
+          "id": "d_birdo_yellow",
+          "lvl": 1
+        },
+        {
           "id": "d_black_shy_guy",
           "lvl": 1
+        },
+        {
+          "id": "d_blue_koopa_freerunning",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_swimwear",
+          "lvl": 3
         },
         {
           "id": "d_dixie_kong",
@@ -247,7 +263,7 @@
           "lvl": 6
         },
         {
-          "id": "d_mario",
+          "id": "d_mario_happi",
           "lvl": 6
         },
         {
@@ -370,10 +386,6 @@
           "lvl": 1
         },
         {
-          "id": "d_daisy",
-          "lvl": 1
-        },
-        {
           "id": "d_dixie_kong",
           "lvl": 1
         },
@@ -390,8 +402,8 @@
           "lvl": 3
         },
         {
-          "id": "d_peach_vacation",
-          "lvl": 3
+          "id": "d_penguin_mario",
+          "lvl": 1
         },
         {
           "id": "d_penguin_toad",
@@ -423,6 +435,10 @@
         },
         {
           "id": "g_flower_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_galaxy_glider",
           "lvl": 1
         },
         {
@@ -484,6 +500,10 @@
         {
           "id": "k_penguin_slider",
           "lvl": 6
+        },
+        {
+          "id": "k_sky_blue_b_dasher_mk_2",
+          "lvl": 1
         },
         {
           "id": "k_snow_skimmer",
@@ -688,7 +708,7 @@
           "lvl": 1
         },
         {
-          "id": "d_builder_toad",
+          "id": "d_builder_mario",
           "lvl": 1
         },
         {
@@ -714,6 +734,10 @@
         {
           "id": "d_mario",
           "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
+          "lvl": 3
         },
         {
           "id": "d_white_yoshi",
@@ -748,6 +772,10 @@
           "lvl": 1
         },
         {
+          "id": "g_new_year_s_2022",
+          "lvl": 6
+        },
+        {
           "id": "g_peach_hanafuda",
           "lvl": 1
         },
@@ -768,6 +796,10 @@
           "lvl": 1
         },
         {
+          "id": "g_silver_surf_master",
+          "lvl": 1
+        },
+        {
           "id": "k_b_dasher",
           "lvl": 1
         },
@@ -780,6 +812,10 @@
           "lvl": 6
         },
         {
+          "id": "k_blue_turbo_birdo",
+          "lvl": 1
+        },
+        {
           "id": "k_cheep_snorkel",
           "lvl": 1
         },
@@ -790,6 +826,10 @@
         {
           "id": "k_dozer_dasher",
           "lvl": 6
+        },
+        {
+          "id": "k_frosty_bells",
+          "lvl": 1
         },
         {
           "id": "k_gold_cheep_charger",
@@ -33678,6 +33718,10 @@
       "rarity": "Super",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_neo_bowser_city_r_t",
           "lvl": 1
         },
@@ -33785,6 +33829,10 @@
       "name": "Birdo (Yellow)",
       "rarity": "Super",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_shy_guy_bazaar_r_t",
           "lvl": 1
@@ -33985,6 +34033,10 @@
       "name": "Blue Koopa (Freerunning)",
       "rarity": "Super",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r",
           "lvl": 6
@@ -34610,6 +34662,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_daisy_hills_r_t",
           "lvl": 3
         },
@@ -34709,10 +34765,6 @@
       "name": "Builder Toad",
       "rarity": "HighEnd",
       "favorite_courses": [
-        {
-          "id": "c_3ds_cheep_cheep_lagoon_t",
-          "lvl": 1
-        },
         {
           "id": "c_3ds_shy_guy_bazaar_r_t",
           "lvl": 3
@@ -35338,10 +35390,6 @@
       "rarity": "Super",
       "favorite_courses": [
         {
-          "id": "c_3ds_cheep_cheep_lagoon_r",
-          "lvl": 1
-        },
-        {
           "id": "c_3ds_daisy_hills",
           "lvl": 1
         },
@@ -35569,6 +35617,10 @@
       "name": "Daisy (Swimwear)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 3
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 1
@@ -38394,10 +38446,6 @@
       "rarity": "Super",
       "favorite_courses": [
         {
-          "id": "c_3ds_cheep_cheep_lagoon",
-          "lvl": 6
-        },
-        {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 1
         },
@@ -38929,6 +38977,10 @@
       "name": "Mario (Happi)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon",
+          "lvl": 6
+        },
         {
           "id": "c_3ds_cheep_cheep_lagoon_r_t",
           "lvl": 1
@@ -40892,10 +40944,6 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
-          "id": "c_3ds_cheep_cheep_lagoon_r",
-          "lvl": 3
-        },
-        {
           "id": "c_3ds_cheep_cheep_lagoon_r_t",
           "lvl": 1
         },
@@ -41348,6 +41396,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_cheep_cheep_lagoon_r_t",
           "lvl": 1
         },
@@ -41579,6 +41631,10 @@
       "name": "Penguin Toadette",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 3
+        },
         {
           "id": "c_snes_vanilla_lake_2",
           "lvl": 3
@@ -45812,6 +45868,10 @@
       "rarity": "Super",
       "favorite_courses": [
         {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_neo_bowser_city_r_t",
           "lvl": 1
         },
@@ -49319,6 +49379,10 @@
         {
           "id": "c_3ds_cheep_cheep_lagoon",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 1
         },
         {
           "id": "c_snes_vanilla_lake_2r",
@@ -56073,6 +56137,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_cheep_cheep_lagoon_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 1
         },
@@ -62605,6 +62673,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_cheep_cheep_lagoon_r",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road_r",
           "lvl": 3
         },
@@ -64961,6 +65033,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 6
+        },
+        {
           "id": "c_vancouver_velocity_2t",
           "lvl": 1
         }
@@ -67204,6 +67280,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 1
         },
         {
