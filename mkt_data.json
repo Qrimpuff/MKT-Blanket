@@ -10325,6 +10325,10 @@
           "lvl": 6
         },
         {
+          "id": "d_meowser",
+          "lvl": 3
+        },
+        {
           "id": "d_peach_explorer",
           "lvl": 6
         },
@@ -13999,6 +14003,10 @@
           "lvl": 1
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 6
+        },
+        {
           "id": "d_cat_toad",
           "lvl": 1
         },
@@ -14027,6 +14035,10 @@
           "lvl": 1
         },
         {
+          "id": "g_meteor_balloons",
+          "lvl": 1
+        },
+        {
           "id": "g_silver_manta_glider",
           "lvl": 1
         },
@@ -14044,6 +14056,10 @@
         },
         {
           "id": "k_cact_ice",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
           "lvl": 1
         },
         {
@@ -30851,10 +30867,6 @@
           "lvl": 1
         },
         {
-          "id": "k_black_kabuki_dasher",
-          "lvl": 1
-        },
-        {
           "id": "k_orange_streamliner",
           "lvl": 1
         },
@@ -35236,6 +35248,10 @@
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 1
+        },
+        {
+          "id": "c_n64_choco_mountain_r_t",
+          "lvl": 6
         },
         {
           "id": "c_rmx_choco_island_2",
@@ -39860,6 +39876,10 @@
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 6
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle",
+          "lvl": 3
         },
         {
           "id": "c_n64_kalimari_desert_r",
@@ -45304,10 +45324,6 @@
           "lvl": 1
         },
         {
-          "id": "c_tokyo_blur_4r",
-          "lvl": 1
-        },
-        {
           "id": "c_wii_maple_treeway_r",
           "lvl": 1
         },
@@ -46664,6 +46680,10 @@
         {
           "id": "c_merry_mountain",
           "lvl": 3
+        },
+        {
+          "id": "c_n64_choco_mountain_r_t",
+          "lvl": 1
         },
         {
           "id": "c_snes_vanilla_lake_2",
@@ -64621,6 +64641,10 @@
         {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 6
+        },
+        {
+          "id": "c_n64_choco_mountain_r_t",
+          "lvl": 1
         },
         {
           "id": "c_n64_choco_mountain_t",
