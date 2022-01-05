@@ -18,6 +18,10 @@
           "lvl": 1
         },
         {
+          "id": "d_wario_cowboy",
+          "lvl": 1
+        },
+        {
           "id": "d_yoshi_kangaroo",
           "lvl": 1
         },
@@ -31080,7 +31084,7 @@
           "lvl": 1
         },
         {
-          "id": "d_bowser_jr_pirate",
+          "id": "d_daisy_fairy",
           "lvl": 1
         },
         {
@@ -31152,10 +31156,6 @@
           "lvl": 1
         },
         {
-          "id": "k_metal_b_dasher_mk_2",
-          "lvl": 3
-        },
-        {
           "id": "k_pirate_sushi_racer",
           "lvl": 1
         },
@@ -31170,6 +31170,10 @@
         {
           "id": "k_tea_coupe",
           "lvl": 1
+        },
+        {
+          "id": "k_wild_black",
+          "lvl": 3
         }
       ]
     },
@@ -34440,10 +34444,6 @@
         {
           "id": "c_tokyo_blur",
           "lvl": 1
-        },
-        {
-          "id": "c_tokyo_blur_r",
-          "lvl": 1
         }
       ],
       "hashes": [
@@ -35507,6 +35507,10 @@
         },
         {
           "id": "c_snes_vanilla_lake_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_tokyo_blur_r",
           "lvl": 1
         },
         {
@@ -43507,6 +43511,10 @@
       "name": "Wario (Cowboy)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_neo_bowser_city_r",
           "lvl": 1
@@ -52919,10 +52927,6 @@
           "lvl": 1
         },
         {
-          "id": "c_tokyo_blur_r",
-          "lvl": 3
-        },
-        {
           "id": "c_tokyo_blur_t",
           "lvl": 6
         }
@@ -58023,6 +58027,10 @@
         {
           "id": "c_tokyo_blur_3",
           "lvl": 1
+        },
+        {
+          "id": "c_tokyo_blur_r",
+          "lvl": 3
         },
         {
           "id": "c_wii_dk_summit_r",
