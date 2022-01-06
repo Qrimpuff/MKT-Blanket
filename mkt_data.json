@@ -29209,10 +29209,6 @@
           "lvl": 1
         },
         {
-          "id": "d_yoshi_kangaroo",
-          "lvl": 3
-        },
-        {
           "id": "g_calico_parafoil",
           "lvl": 1
         },
@@ -29227,10 +29223,6 @@
         {
           "id": "g_rose_parasol",
           "lvl": 1
-        },
-        {
-          "id": "g_silver_surf_master",
-          "lvl": 3
         },
         {
           "id": "g_starry_great_sail",
@@ -29255,10 +29247,6 @@
         {
           "id": "k_decal_streamliner",
           "lvl": 1
-        },
-        {
-          "id": "k_green_b_dasher_mk_2",
-          "lvl": 3
         },
         {
           "id": "k_green_double_decker",
@@ -29334,10 +29322,6 @@
         {
           "id": "g_yukata_ribbon",
           "lvl": 1
-        },
-        {
-          "id": "k_black_cat_cruiser",
-          "lvl": 6
         },
         {
           "id": "k_brown_offroader",
@@ -29874,14 +29858,6 @@
           "lvl": 1
         },
         {
-          "id": "d_king_bob_omb_gold",
-          "lvl": 1
-        },
-        {
-          "id": "d_pauline_rose",
-          "lvl": 1
-        },
-        {
           "id": "d_peach_happi",
           "lvl": 1
         },
@@ -29916,10 +29892,6 @@
         {
           "id": "g_planet_glider",
           "lvl": 1
-        },
-        {
-          "id": "g_starry_great_sail",
-          "lvl": 6
         },
         {
           "id": "g_toe_bean_balloons",
@@ -29966,12 +29938,8 @@
           "lvl": 1
         },
         {
-          "id": "k_purple_bunny",
-          "lvl": 1
-        },
-        {
-          "id": "k_rose_taxi",
-          "lvl": 1
+          "id": "k_sakura_quickshaw",
+          "lvl": 6
         }
       ]
     },
@@ -30240,10 +30208,6 @@
         },
         {
           "id": "k_pinch_hitter",
-          "lvl": 1
-        },
-        {
-          "id": "k_platinum_taxi",
           "lvl": 1
         },
         {
@@ -31156,6 +31120,10 @@
           "lvl": 1
         },
         {
+          "id": "k_metal_b_dasher_mk_2",
+          "lvl": 3
+        },
+        {
           "id": "k_pirate_sushi_racer",
           "lvl": 1
         },
@@ -31170,10 +31138,6 @@
         {
           "id": "k_tea_coupe",
           "lvl": 1
-        },
-        {
-          "id": "k_wild_black",
-          "lvl": 3
         }
       ]
     },
@@ -37516,10 +37480,6 @@
         {
           "id": "c_snes_vanilla_lake_1r_t",
           "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_t",
-          "lvl": 1
         }
       ],
       "hashes": [
@@ -40423,10 +40383,6 @@
         },
         {
           "id": "c_snes_rainbow_road_r",
-          "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_t",
           "lvl": 1
         },
         {
@@ -44146,10 +44102,6 @@
           "lvl": 1
         },
         {
-          "id": "c_sydney_sprint",
-          "lvl": 3
-        },
-        {
           "id": "c_sydney_sprint_2",
           "lvl": 1
         },
@@ -45050,10 +45002,6 @@
         {
           "id": "c_snes_choco_island_2r_t",
           "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_2",
-          "lvl": 6
         },
         {
           "id": "c_sydney_sprint_2r",
@@ -50756,10 +50704,6 @@
           "lvl": 1
         },
         {
-          "id": "c_sydney_sprint",
-          "lvl": 3
-        },
-        {
           "id": "c_sydney_sprint_r",
           "lvl": 1
         },
@@ -52932,6 +52876,10 @@
           "lvl": 1
         },
         {
+          "id": "c_tokyo_blur_r",
+          "lvl": 3
+        },
+        {
           "id": "c_tokyo_blur_t",
           "lvl": 6
         }
@@ -54218,10 +54166,6 @@
         {
           "id": "c_snes_vanilla_lake_1",
           "lvl": 1
-        },
-        {
-          "id": "c_tokyo_blur_2r",
-          "lvl": 1
         }
       ],
       "hashes": [
@@ -54625,10 +54569,6 @@
         },
         {
           "id": "c_sydney_sprint_r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_t",
           "lvl": 1
         },
         {
@@ -55788,10 +55728,6 @@
           "lvl": 1
         },
         {
-          "id": "c_sydney_sprint_t",
-          "lvl": 1
-        },
-        {
           "id": "c_tokyo_blur_4r_t",
           "lvl": 1
         },
@@ -55930,6 +55866,10 @@
         {
           "id": "c_sydney_sprint_r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint_t",
+          "lvl": 6
         },
         {
           "id": "c_tokyo_blur_3r",
@@ -58038,10 +57978,6 @@
         {
           "id": "c_tokyo_blur_3",
           "lvl": 1
-        },
-        {
-          "id": "c_tokyo_blur_r",
-          "lvl": 3
         },
         {
           "id": "c_wii_dk_summit_r",
@@ -67414,10 +67350,6 @@
           "lvl": 1
         },
         {
-          "id": "c_sydney_sprint",
-          "lvl": 3
-        },
-        {
           "id": "c_sydney_sprint_2",
           "lvl": 1
         },
@@ -68196,10 +68128,6 @@
         {
           "id": "c_sydney_sprint_r",
           "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_t",
-          "lvl": 6
         },
         {
           "id": "c_vancouver_velocity_2t",
