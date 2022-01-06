@@ -42,3 +42,4 @@ jobs:
         branch: gh-pages # The branch the action should deploy to.
         folder: data # The folder the action should deploy.
         clean: false
+        commit-message: 'Update mkt data'
