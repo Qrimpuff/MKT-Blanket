@@ -5670,10 +5670,6 @@
           "lvl": 1
         },
         {
-          "id": "k_cucumber",
-          "lvl": 1
-        },
-        {
           "id": "k_double_decker",
           "lvl": 1
         },
@@ -29858,6 +29854,14 @@
           "lvl": 1
         },
         {
+          "id": "d_king_bob_omb_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_pauline_rose",
+          "lvl": 1
+        },
+        {
           "id": "d_peach_happi",
           "lvl": 1
         },
@@ -29935,6 +29939,14 @@
         },
         {
           "id": "k_penguin_slider",
+          "lvl": 1
+        },
+        {
+          "id": "k_purple_bunny",
+          "lvl": 1
+        },
+        {
+          "id": "k_rose_taxi",
           "lvl": 1
         },
         {
@@ -37480,6 +37492,10 @@
         {
           "id": "c_snes_vanilla_lake_1r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint_t",
+          "lvl": 1
         }
       ],
       "hashes": [
@@ -40383,6 +40399,10 @@
         },
         {
           "id": "c_snes_rainbow_road_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint_t",
           "lvl": 1
         },
         {
@@ -48064,10 +48084,6 @@
           "lvl": 1
         },
         {
-          "id": "c_berlin_byways_2r_t",
-          "lvl": 1
-        },
-        {
           "id": "c_ds_luigi_s_mansion_r_t",
           "lvl": 1
         },
@@ -54572,6 +54588,10 @@
           "lvl": 1
         },
         {
+          "id": "c_sydney_sprint_t",
+          "lvl": 1
+        },
+        {
           "id": "c_tokyo_blur_4",
           "lvl": 1
         },
@@ -55725,6 +55745,10 @@
         },
         {
           "id": "c_sydney_sprint_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint_t",
           "lvl": 1
         },
         {
