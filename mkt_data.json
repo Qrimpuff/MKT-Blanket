@@ -7922,6 +7922,10 @@
           "lvl": 1
         },
         {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
           "id": "d_nabbit",
           "lvl": 1
         },
@@ -7935,6 +7939,10 @@
         },
         {
           "id": "d_pink_gold_peach",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
           "lvl": 1
         },
         {
@@ -23446,6 +23454,10 @@
           "lvl": 3
         },
         {
+          "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "g_8_bit_star",
           "lvl": 1
         },
@@ -23530,7 +23542,15 @@
           "lvl": 6
         },
         {
+          "id": "k_pink_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
           "id": "k_sunset_cloud",
+          "lvl": 1
+        },
+        {
+          "id": "k_tanooki_kart",
           "lvl": 1
         },
         {
@@ -23772,6 +23792,14 @@
           "lvl": 3
         },
         {
+          "id": "g_ship_s_wheel",
+          "lvl": 1
+        },
+        {
+          "id": "g_tanooki_parafoil",
+          "lvl": 1
+        },
+        {
           "id": "g_yukata_ribbon",
           "lvl": 1
         },
@@ -23829,6 +23857,10 @@
         },
         {
           "id": "k_sunny_surf_sailer",
+          "lvl": 1
+        },
+        {
+          "id": "k_tanooki_kart",
           "lvl": 1
         }
       ]
@@ -33099,7 +33131,7 @@
       ]
     },
     "d_baby_mario_koala": {
-      "sort": 101,
+      "sort": 102,
       "id": "d_baby_mario_koala",
       "i_type": "Driver",
       "name": "Baby Mario (Koala)",
@@ -33243,7 +33275,7 @@
       ]
     },
     "d_baby_peach_cherub": {
-      "sort": 70,
+      "sort": 71,
       "id": "d_baby_peach_cherub",
       "i_type": "Driver",
       "name": "Baby Peach (Cherub)",
@@ -33375,7 +33407,7 @@
       ]
     },
     "d_baby_rosalina_detective": {
-      "sort": 74,
+      "sort": 75,
       "id": "d_baby_rosalina_detective",
       "i_type": "Driver",
       "name": "Baby Rosalina (Detective)",
@@ -33559,7 +33591,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 134,
+      "sort": 136,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -33915,7 +33947,7 @@
       ]
     },
     "d_black_yoshi": {
-      "sort": 76,
+      "sort": 77,
       "id": "d_black_yoshi",
       "i_type": "Driver",
       "name": "Black Yoshi",
@@ -34335,7 +34367,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 127,
+      "sort": 129,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -34431,7 +34463,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 132,
+      "sort": 134,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -34531,7 +34563,7 @@
       ]
     },
     "d_builder_luigi": {
-      "sort": 92,
+      "sort": 93,
       "id": "d_builder_luigi",
       "i_type": "Driver",
       "name": "Builder Luigi",
@@ -34647,7 +34679,7 @@
       ]
     },
     "d_builder_mario": {
-      "sort": 77,
+      "sort": 78,
       "id": "d_builder_mario",
       "i_type": "Driver",
       "name": "Builder Mario",
@@ -34751,7 +34783,7 @@
       ]
     },
     "d_builder_toad": {
-      "sort": 78,
+      "sort": 79,
       "id": "d_builder_toad",
       "i_type": "Driver",
       "name": "Builder Toad",
@@ -34859,7 +34891,7 @@
       ]
     },
     "d_builder_toadette": {
-      "sort": 102,
+      "sort": 103,
       "id": "d_builder_toadette",
       "i_type": "Driver",
       "name": "Builder Toadette",
@@ -34999,7 +35031,7 @@
       ]
     },
     "d_captain_toad": {
-      "sort": 84,
+      "sort": 85,
       "id": "d_captain_toad",
       "i_type": "Driver",
       "name": "Captain Toad",
@@ -35099,7 +35131,7 @@
       ]
     },
     "d_cat_peach": {
-      "sort": 95,
+      "sort": 96,
       "id": "d_cat_peach",
       "i_type": "Driver",
       "name": "Cat Peach",
@@ -35219,7 +35251,7 @@
       ]
     },
     "d_cat_rosalina": {
-      "sort": 114,
+      "sort": 115,
       "id": "d_cat_rosalina",
       "i_type": "Driver",
       "name": "Cat Rosalina",
@@ -35251,7 +35283,7 @@
       ]
     },
     "d_cat_toad": {
-      "sort": 96,
+      "sort": 97,
       "id": "d_cat_toad",
       "i_type": "Driver",
       "name": "Cat Toad",
@@ -35415,7 +35447,7 @@
       ]
     },
     "d_daisy_fairy": {
-      "sort": 79,
+      "sort": 80,
       "id": "d_daisy_fairy",
       "i_type": "Driver",
       "name": "Daisy (Fairy)",
@@ -35507,7 +35539,7 @@
       ]
     },
     "d_daisy_holiday_cheer": {
-      "sort": 62,
+      "sort": 63,
       "id": "d_daisy_holiday_cheer",
       "i_type": "Driver",
       "name": "Daisy (Holiday Cheer)",
@@ -35611,7 +35643,7 @@
       ]
     },
     "d_daisy_swimwear": {
-      "sort": 105,
+      "sort": 106,
       "id": "d_daisy_swimwear",
       "i_type": "Driver",
       "name": "Daisy (Swimwear)",
@@ -35735,7 +35767,7 @@
       ]
     },
     "d_daisy_yukata": {
-      "sort": 86,
+      "sort": 87,
       "id": "d_daisy_yukata",
       "i_type": "Driver",
       "name": "Daisy (Yukata)",
@@ -35883,7 +35915,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 123,
+      "sort": 125,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -36027,7 +36059,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 129,
+      "sort": 131,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -36199,7 +36231,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 121,
+      "sort": 123,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -36303,7 +36335,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 115,
+      "sort": 117,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -36379,7 +36411,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 124,
+      "sort": 126,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -36531,7 +36563,7 @@
       ]
     },
     "d_fire_rosalina": {
-      "sort": 93,
+      "sort": 94,
       "id": "d_fire_rosalina",
       "i_type": "Driver",
       "name": "Fire Rosalina",
@@ -36663,7 +36695,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 122,
+      "sort": 124,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -36763,7 +36795,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 119,
+      "sort": 121,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -37055,7 +37087,7 @@
       ]
     },
     "d_ice_mario": {
-      "sort": 69,
+      "sort": 70,
       "id": "d_ice_mario",
       "i_type": "Driver",
       "name": "Ice Mario",
@@ -37171,7 +37203,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 137,
+      "sort": 139,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -37287,7 +37319,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 128,
+      "sort": 130,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -37395,7 +37427,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 136,
+      "sort": 138,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -37551,7 +37583,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 131,
+      "sort": 133,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -37643,7 +37675,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 116,
+      "sort": 118,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -37795,7 +37827,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 133,
+      "sort": 135,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -38087,7 +38119,7 @@
       ]
     },
     "d_luigi_classic": {
-      "sort": 73,
+      "sort": 74,
       "id": "d_luigi_classic",
       "i_type": "Driver",
       "name": "Luigi (Classic)",
@@ -38179,7 +38211,7 @@
       ]
     },
     "d_luigi_lederhosen": {
-      "sort": 94,
+      "sort": 95,
       "id": "d_luigi_lederhosen",
       "i_type": "Driver",
       "name": "Luigi (Lederhosen)",
@@ -38295,7 +38327,7 @@
       ]
     },
     "d_luigi_painter": {
-      "sort": 104,
+      "sort": 105,
       "id": "d_luigi_painter",
       "i_type": "Driver",
       "name": "Luigi (Painter)",
@@ -38438,6 +38470,15 @@
         "mjNCRRc=|qiSGSJ8=|mjJDxZc=|3qFIc0I=|ZEStyrk=|WlqDpY0=|mitDxZ8="
       ]
     },
+    "d_luigi_vacation": {
+      "sort": 116,
+      "id": "d_luigi_vacation",
+      "i_type": "Driver",
+      "name": "Luigi (Vacation)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_mario": {
       "sort": 16,
       "id": "d_mario",
@@ -38483,7 +38524,7 @@
       ]
     },
     "d_mario_baseball": {
-      "sort": 106,
+      "sort": 107,
       "id": "d_mario_baseball",
       "i_type": "Driver",
       "name": "Mario (Baseball)",
@@ -38619,7 +38660,7 @@
       ]
     },
     "d_mario_chef": {
-      "sort": 80,
+      "sort": 81,
       "id": "d_mario_chef",
       "i_type": "Driver",
       "name": "Mario (Chef)",
@@ -38719,7 +38760,7 @@
       ]
     },
     "d_mario_classic": {
-      "sort": 72,
+      "sort": 73,
       "id": "d_mario_classic",
       "i_type": "Driver",
       "name": "Mario (Classic)",
@@ -38799,7 +38840,7 @@
       ]
     },
     "d_mario_hakama": {
-      "sort": 57,
+      "sort": 58,
       "id": "d_mario_hakama",
       "i_type": "Driver",
       "name": "Mario (Hakama)",
@@ -38879,7 +38920,7 @@
       ]
     },
     "d_mario_halloween": {
-      "sort": 89,
+      "sort": 90,
       "id": "d_mario_halloween",
       "i_type": "Driver",
       "name": "Mario (Halloween)",
@@ -38971,7 +39012,7 @@
       ]
     },
     "d_mario_happi": {
-      "sort": 65,
+      "sort": 66,
       "id": "d_mario_happi",
       "i_type": "Driver",
       "name": "Mario (Happi)",
@@ -39055,7 +39096,7 @@
       ]
     },
     "d_mario_musician": {
-      "sort": 55,
+      "sort": 56,
       "id": "d_mario_musician",
       "i_type": "Driver",
       "name": "Mario (Musician)",
@@ -39147,7 +39188,7 @@
       ]
     },
     "d_mario_racing": {
-      "sort": 99,
+      "sort": 100,
       "id": "d_mario_racing",
       "i_type": "Driver",
       "name": "Mario (Racing)",
@@ -39255,7 +39296,7 @@
       ]
     },
     "d_mario_santa": {
-      "sort": 60,
+      "sort": 61,
       "id": "d_mario_santa",
       "i_type": "Driver",
       "name": "Mario (Santa)",
@@ -39343,7 +39384,7 @@
       ]
     },
     "d_mario_satellaview": {
-      "sort": 112,
+      "sort": 113,
       "id": "d_mario_satellaview",
       "i_type": "Driver",
       "name": "Mario (Satellaview)",
@@ -39403,7 +39444,7 @@
       ]
     },
     "d_mario_snes": {
-      "sort": 87,
+      "sort": 88,
       "id": "d_mario_snes",
       "i_type": "Driver",
       "name": "Mario (SNES)",
@@ -39515,7 +39556,7 @@
       ]
     },
     "d_mario_sunshine": {
-      "sort": 88,
+      "sort": 89,
       "id": "d_mario_sunshine",
       "i_type": "Driver",
       "name": "Mario (Sunshine)",
@@ -39631,7 +39672,7 @@
       ]
     },
     "d_mario_swimwear": {
-      "sort": 83,
+      "sort": 84,
       "id": "d_mario_swimwear",
       "i_type": "Driver",
       "name": "Mario (Swimwear)",
@@ -39727,7 +39768,7 @@
       ]
     },
     "d_mario_tuxedo": {
-      "sort": 103,
+      "sort": 104,
       "id": "d_mario_tuxedo",
       "i_type": "Driver",
       "name": "Mario (Tuxedo)",
@@ -39847,7 +39888,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 139,
+      "sort": 141,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -39860,6 +39901,10 @@
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 6
+        },
+        {
+          "id": "c_ds_waluigi_pinball_r_t",
+          "lvl": 1
         },
         {
           "id": "c_gcn_dino_dino_jungle",
@@ -39883,7 +39928,7 @@
       ]
     },
     "d_metal_mario": {
-      "sort": 52,
+      "sort": 53,
       "id": "d_metal_mario",
       "i_type": "Driver",
       "name": "Metal Mario",
@@ -40023,7 +40068,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 126,
+      "sort": 128,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -40139,7 +40184,7 @@
       ]
     },
     "d_pauline": {
-      "sort": 54,
+      "sort": 55,
       "id": "d_pauline",
       "i_type": "Driver",
       "name": "Pauline",
@@ -40219,7 +40264,7 @@
       ]
     },
     "d_pauline_party_time": {
-      "sort": 64,
+      "sort": 65,
       "id": "d_pauline_party_time",
       "i_type": "Driver",
       "name": "Pauline (Party Time)",
@@ -40311,7 +40356,7 @@
       ]
     },
     "d_pauline_rose": {
-      "sort": 97,
+      "sort": 98,
       "id": "d_pauline_rose",
       "i_type": "Driver",
       "name": "Pauline (Rose)",
@@ -40483,7 +40528,7 @@
       ]
     },
     "d_peach_explorer": {
-      "sort": 91,
+      "sort": 92,
       "id": "d_peach_explorer",
       "i_type": "Driver",
       "name": "Peach (Explorer)",
@@ -40623,7 +40668,7 @@
       ]
     },
     "d_peach_halloween": {
-      "sort": 90,
+      "sort": 91,
       "id": "d_peach_halloween",
       "i_type": "Driver",
       "name": "Peach (Halloween)",
@@ -40743,7 +40788,7 @@
       ]
     },
     "d_peach_happi": {
-      "sort": 107,
+      "sort": 108,
       "id": "d_peach_happi",
       "i_type": "Driver",
       "name": "Peach (Happi)",
@@ -40863,7 +40908,7 @@
       ]
     },
     "d_peach_kimono": {
-      "sort": 56,
+      "sort": 57,
       "id": "d_peach_kimono",
       "i_type": "Driver",
       "name": "Peach (Kimono)",
@@ -40943,7 +40988,7 @@
       ]
     },
     "d_peach_vacation": {
-      "sort": 59,
+      "sort": 60,
       "id": "d_peach_vacation",
       "i_type": "Driver",
       "name": "Peach (Vacation)",
@@ -41027,7 +41072,7 @@
       ]
     },
     "d_peach_wedding": {
-      "sort": 81,
+      "sort": 82,
       "id": "d_peach_wedding",
       "i_type": "Driver",
       "name": "Peach (Wedding)",
@@ -41131,7 +41176,7 @@
       ]
     },
     "d_peach_wintertime": {
-      "sort": 67,
+      "sort": 68,
       "id": "d_peach_wintertime",
       "i_type": "Driver",
       "name": "Peach (Wintertime)",
@@ -41219,7 +41264,7 @@
       ]
     },
     "d_peachette": {
-      "sort": 53,
+      "sort": 54,
       "id": "d_peachette",
       "i_type": "Driver",
       "name": "Peachette",
@@ -41283,7 +41328,7 @@
       ]
     },
     "d_penguin_luigi": {
-      "sort": 68,
+      "sort": 69,
       "id": "d_penguin_luigi",
       "i_type": "Driver",
       "name": "Penguin Luigi",
@@ -41395,7 +41440,7 @@
       ]
     },
     "d_penguin_mario": {
-      "sort": 108,
+      "sort": 109,
       "id": "d_penguin_mario",
       "i_type": "Driver",
       "name": "Penguin Mario",
@@ -41519,7 +41564,7 @@
       ]
     },
     "d_penguin_toad": {
-      "sort": 98,
+      "sort": 99,
       "id": "d_penguin_toad",
       "i_type": "Driver",
       "name": "Penguin Toad",
@@ -41631,7 +41676,7 @@
       ]
     },
     "d_penguin_toadette": {
-      "sort": 113,
+      "sort": 114,
       "id": "d_penguin_toadette",
       "i_type": "Driver",
       "name": "Penguin Toadette",
@@ -41663,7 +41708,7 @@
       ]
     },
     "d_pink_gold_peach": {
-      "sort": 61,
+      "sort": 62,
       "id": "d_pink_gold_peach",
       "i_type": "Driver",
       "name": "Pink Gold Peach",
@@ -41874,6 +41919,15 @@
         "inyCRSQ=|KliG0wU=|JFqiVWQ=|mrapZLo=|qklCm0Q=|ZMtGs3w=|JFqml2Q="
       ]
     },
+    "d_purple_koopa_freerunning": {
+      "sort": 52,
+      "id": "d_purple_koopa_freerunning",
+      "i_type": "Driver",
+      "name": "Purple Koopa (Freerunning)",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_red_koopa_freerunning": {
       "sort": 39,
       "id": "d_red_koopa_freerunning",
@@ -42043,7 +42097,7 @@
       ]
     },
     "d_rosalina_aurora": {
-      "sort": 71,
+      "sort": 72,
       "id": "d_rosalina_aurora",
       "i_type": "Driver",
       "name": "Rosalina (Aurora)",
@@ -42143,7 +42197,7 @@
       ]
     },
     "d_rosalina_halloween": {
-      "sort": 58,
+      "sort": 59,
       "id": "d_rosalina_halloween",
       "i_type": "Driver",
       "name": "Rosalina (Halloween)",
@@ -42235,7 +42289,7 @@
       ]
     },
     "d_rosalina_swimwear": {
-      "sort": 82,
+      "sort": 83,
       "id": "d_rosalina_swimwear",
       "i_type": "Driver",
       "name": "Rosalina (Swimwear)",
@@ -42367,7 +42421,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 130,
+      "sort": 132,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -42487,7 +42541,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 135,
+      "sort": 137,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -42615,7 +42669,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 117,
+      "sort": 119,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -42707,7 +42761,7 @@
       ]
     },
     "d_tanooki_mario": {
-      "sort": 110,
+      "sort": 111,
       "id": "d_tanooki_mario",
       "i_type": "Driver",
       "name": "Tanooki Mario",
@@ -42787,7 +42841,7 @@
       ]
     },
     "d_tanooki_rosalina": {
-      "sort": 111,
+      "sort": 112,
       "id": "d_tanooki_rosalina",
       "i_type": "Driver",
       "name": "Tanooki Rosalina",
@@ -42836,6 +42890,10 @@
         {
           "id": "c_snes_choco_island_1r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_snes_choco_island_2r",
+          "lvl": 1
         },
         {
           "id": "c_snes_donut_plains_1r",
@@ -42923,7 +42981,7 @@
       ]
     },
     "d_toad_party_time": {
-      "sort": 66,
+      "sort": 67,
       "id": "d_toad_party_time",
       "i_type": "Driver",
       "name": "Toad (Party Time)",
@@ -43091,7 +43149,7 @@
       ]
     },
     "d_toadette_explorer": {
-      "sort": 85,
+      "sort": 86,
       "id": "d_toadette_explorer",
       "i_type": "Driver",
       "name": "Toadette (Explorer)",
@@ -43259,7 +43317,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 118,
+      "sort": 120,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -43351,7 +43409,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 138,
+      "sort": 140,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -43375,6 +43433,10 @@
         },
         {
           "id": "c_ds_luigi_s_mansion_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_ds_waluigi_pinball_r_t",
           "lvl": 1
         },
         {
@@ -43487,7 +43549,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 125,
+      "sort": 127,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -43579,7 +43641,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 120,
+      "sort": 122,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
@@ -43687,7 +43749,7 @@
       ]
     },
     "d_white_yoshi": {
-      "sort": 100,
+      "sort": 101,
       "id": "d_white_yoshi",
       "i_type": "Driver",
       "name": "White Yoshi",
@@ -43931,7 +43993,7 @@
       ]
     },
     "d_yoshi_egg_hunt": {
-      "sort": 75,
+      "sort": 76,
       "id": "d_yoshi_egg_hunt",
       "i_type": "Driver",
       "name": "Yoshi (Egg Hunt)",
@@ -44015,7 +44077,7 @@
       ]
     },
     "d_yoshi_kangaroo": {
-      "sort": 109,
+      "sort": 110,
       "id": "d_yoshi_kangaroo",
       "i_type": "Driver",
       "name": "Yoshi (Kangaroo)",
@@ -44143,7 +44205,7 @@
       ]
     },
     "d_yoshi_reindeer": {
-      "sort": 63,
+      "sort": 64,
       "id": "d_yoshi_reindeer",
       "i_type": "Driver",
       "name": "Yoshi (Reindeer)",
@@ -53760,6 +53822,10 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_choco_island_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_vancouver_velocity_2",
           "lvl": 1
         },
@@ -57389,6 +57455,14 @@
         },
         {
           "id": "c_snes_choco_island_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_choco_island_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_choco_island_2t",
           "lvl": 1
         },
         {
@@ -66842,6 +66916,10 @@
           "lvl": 3
         },
         {
+          "id": "c_snes_choco_island_2t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_ghost_valley_1r",
           "lvl": 1
         },
@@ -69035,6 +69113,10 @@
         },
         {
           "id": "c_snes_choco_island_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_choco_island_2t",
           "lvl": 1
         },
         {
