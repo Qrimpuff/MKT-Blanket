@@ -22430,6 +22430,10 @@
           "lvl": 1
         },
         {
+          "id": "d_purple_koopa_freerunning",
+          "lvl": 6
+        },
+        {
           "id": "d_shy_guy_ninja",
           "lvl": 1
         },
@@ -22553,6 +22557,14 @@
           "lvl": 6
         },
         {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
+          "id": "d_purple_koopa_freerunning",
+          "lvl": 1
+        },
+        {
           "id": "g_blizzard_parasol",
           "lvl": 1
         },
@@ -22636,6 +22648,10 @@
           "lvl": 1
         },
         {
+          "id": "d_light_blue_toad_pit_crew",
+          "lvl": 1
+        },
+        {
           "id": "d_luigi_lederhosen",
           "lvl": 1
         },
@@ -22645,6 +22661,14 @@
         },
         {
           "id": "d_penguin_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
+          "id": "d_purple_koopa_freerunning",
           "lvl": 1
         },
         {
@@ -25985,6 +26009,10 @@
       "favorite_items": [
         {
           "id": "d_baby_mario_koala",
+          "lvl": 1
+        },
+        {
+          "id": "d_light_blue_toad_pit_crew",
           "lvl": 1
         },
         {
@@ -38014,6 +38042,14 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_vanilla_lake_1t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_mario_circuit_1",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_vanilla_lake_1r",
           "lvl": 1
         },
@@ -41687,6 +41723,14 @@
           "lvl": 3
         },
         {
+          "id": "c_rmx_vanilla_lake_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_vanilla_lake_2",
           "lvl": 3
         },
@@ -41925,7 +41969,20 @@
       "i_type": "Driver",
       "name": "Purple Koopa (Freerunning)",
       "rarity": "Super",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_rmx_vanilla_lake_1",
+          "lvl": 6
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1t",
+          "lvl": 1
+        }
+      ],
       "hashes": []
     },
     "d_red_koopa_freerunning": {
