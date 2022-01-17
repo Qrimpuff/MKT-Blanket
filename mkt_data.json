@@ -30,7 +30,15 @@
           "lvl": 1
         },
         {
+          "id": "g_cat_parafoil",
+          "lvl": 1
+        },
+        {
           "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
           "lvl": 1
         },
         {
@@ -93,12 +101,20 @@
           "lvl": 1
         },
         {
+          "id": "g_black_cat_parafoil",
+          "lvl": 6
+        },
+        {
           "id": "g_blizzard_parasol",
           "lvl": 1
         },
         {
           "id": "g_candlelight_flight",
           "lvl": 1
+        },
+        {
+          "id": "g_cat_parafoil",
+          "lvl": 3
         },
         {
           "id": "g_dry_bowser_umbrella",
@@ -110,6 +126,10 @@
         },
         {
           "id": "g_gold_penguin_wingtip",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
           "lvl": 1
         },
         {
@@ -186,6 +206,10 @@
         {
           "id": "g_dream_glider",
           "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 6
         },
         {
           "id": "g_golden_wings",
@@ -10357,6 +10381,10 @@
           "lvl": 1
         },
         {
+          "id": "g_black_cat_parafoil",
+          "lvl": 1
+        },
+        {
           "id": "g_bob_omb_parafoil",
           "lvl": 1
         },
@@ -10478,6 +10506,10 @@
         {
           "id": "d_yoshi",
           "lvl": 6
+        },
+        {
+          "id": "g_black_cat_parafoil",
+          "lvl": 3
         },
         {
           "id": "g_black_toe_bean_balloons",
@@ -10780,6 +10812,10 @@
         {
           "id": "g_banana_wingtip",
           "lvl": 3
+        },
+        {
+          "id": "g_black_cat_parafoil",
+          "lvl": 1
         },
         {
           "id": "g_butterfly_wings",
@@ -14031,6 +14067,10 @@
           "lvl": 1
         },
         {
+          "id": "g_black_cat_parafoil",
+          "lvl": 6
+        },
+        {
           "id": "g_black_toe_bean_balloons",
           "lvl": 1
         },
@@ -14040,6 +14080,10 @@
         },
         {
           "id": "g_butterfly_prism",
+          "lvl": 1
+        },
+        {
+          "id": "g_cat_parafoil",
           "lvl": 1
         },
         {
@@ -19989,6 +20033,10 @@
           "lvl": 1
         },
         {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
           "id": "d_wario_cowboy",
           "lvl": 1
         },
@@ -20195,6 +20243,10 @@
           "lvl": 1
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 3
+        },
+        {
           "id": "d_daisy_swimwear",
           "lvl": 1
         },
@@ -20217,6 +20269,10 @@
         {
           "id": "d_penguin_toad",
           "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
+          "lvl": 6
         },
         {
           "id": "d_shy_guy_ninja",
@@ -23487,6 +23543,10 @@
         },
         {
           "id": "g_blooper_hanafuda",
+          "lvl": 1
+        },
+        {
+          "id": "g_cat_parafoil",
           "lvl": 1
         },
         {
@@ -35298,6 +35358,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_choco_island_2t",
+          "lvl": 3
+        },
+        {
           "id": "c_snes_donut_plains_1",
           "lvl": 1
         },
@@ -41721,6 +41785,14 @@
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 3
+        },
+        {
+          "id": "c_rmx_choco_island_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_choco_island_2t",
+          "lvl": 6
         },
         {
           "id": "c_rmx_vanilla_lake_1r",
@@ -59206,7 +59278,7 @@
       ]
     },
     "g_baby_mario_hanafuda": {
-      "sort": 126,
+      "sort": 131,
       "id": "g_baby_mario_hanafuda",
       "i_type": "Glider",
       "name": "Baby Mario Hanafuda",
@@ -59326,7 +59398,7 @@
       ]
     },
     "g_banana_wingtip": {
-      "sort": 113,
+      "sort": 118,
       "id": "g_banana_wingtip",
       "i_type": "Glider",
       "name": "Banana Wingtip",
@@ -59402,7 +59474,7 @@
       ]
     },
     "g_barrel_hanafuda": {
-      "sort": 129,
+      "sort": 134,
       "id": "g_barrel_hanafuda",
       "i_type": "Glider",
       "name": "Barrel Hanafuda",
@@ -59512,6 +59584,36 @@
       "hashes": [
         "RDykZmY=|TDaoZGI=|fJaudmI=|HjqmZSw=|gnQJzdY=|fMNGspk=|ijSoTeY="
       ]
+    },
+    "g_black_cat_parafoil": {
+      "sort": 107,
+      "id": "g_black_cat_parafoil",
+      "i_type": "Glider",
+      "name": "Black Cat Parafoil",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 6
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle",
+          "lvl": 1
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_choco_mountain_r_t",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
     },
     "g_black_great_sail": {
       "sort": 77,
@@ -60002,7 +60104,7 @@
       ]
     },
     "g_blooper_hanafuda": {
-      "sort": 130,
+      "sort": 135,
       "id": "g_blooper_hanafuda",
       "i_type": "Glider",
       "name": "Blooper Hanafuda",
@@ -60078,7 +60180,7 @@
       ]
     },
     "g_blooper_wingtip": {
-      "sort": 116,
+      "sort": 121,
       "id": "g_blooper_wingtip",
       "i_type": "Glider",
       "name": "Blooper Wingtip",
@@ -60262,7 +60364,7 @@
       ]
     },
     "g_boo_hanafuda": {
-      "sort": 133,
+      "sort": 138,
       "id": "g_boo_hanafuda",
       "i_type": "Glider",
       "name": "Boo Hanafuda",
@@ -60326,7 +60428,7 @@
       ]
     },
     "g_bowser_hanafuda": {
-      "sort": 137,
+      "sort": 142,
       "id": "g_bowser_hanafuda",
       "i_type": "Glider",
       "name": "Bowser Hanafuda",
@@ -60398,7 +60500,7 @@
       ]
     },
     "g_bright_balloons": {
-      "sort": 121,
+      "sort": 126,
       "id": "g_bright_balloons",
       "i_type": "Glider",
       "name": "Bright Balloons",
@@ -60598,7 +60700,7 @@
       ]
     },
     "g_bullet_bill_hanafuda": {
-      "sort": 132,
+      "sort": 137,
       "id": "g_bullet_bill_hanafuda",
       "i_type": "Glider",
       "name": "Bullet Bill Hanafuda",
@@ -60666,7 +60768,7 @@
       ]
     },
     "g_bullet_bill_parachute": {
-      "sort": 108,
+      "sort": 113,
       "id": "g_bullet_bill_parachute",
       "i_type": "Glider",
       "name": "Bullet Bill Parachute",
@@ -61178,7 +61280,7 @@
       ]
     },
     "g_cape_mario_hanafuda": {
-      "sort": 131,
+      "sort": 136,
       "id": "g_cape_mario_hanafuda",
       "i_type": "Glider",
       "name": "Cape Mario Hanafuda",
@@ -61245,8 +61347,34 @@
         "QqkC42w=|wrmIa1Q=|wpiKo9w=|SCVDYm0=|lEPsPdY=|ItqNjIg=|hjiMTdQ="
       ]
     },
+    "g_cat_parafoil": {
+      "sort": 108,
+      "id": "g_cat_parafoil",
+      "i_type": "Glider",
+      "name": "Cat Parafoil",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_n64_choco_mountain_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_choco_island_2r",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "g_cheep_cheep_masks": {
-      "sort": 118,
+      "sort": 123,
       "id": "g_cheep_cheep_masks",
       "i_type": "Glider",
       "name": "Cheep Cheep Masks",
@@ -61554,7 +61682,7 @@
       ]
     },
     "g_cloud_glider": {
-      "sort": 109,
+      "sort": 114,
       "id": "g_cloud_glider",
       "i_type": "Glider",
       "name": "Cloud Glider",
@@ -61834,7 +61962,7 @@
       ]
     },
     "g_dragon_wings": {
-      "sort": 115,
+      "sort": 120,
       "id": "g_dragon_wings",
       "i_type": "Glider",
       "name": "Dragon Wings",
@@ -61958,7 +62086,7 @@
       ]
     },
     "g_dream_glider": {
-      "sort": 123,
+      "sort": 128,
       "id": "g_dream_glider",
       "i_type": "Glider",
       "name": "Dream Glider",
@@ -62106,7 +62234,7 @@
       ]
     },
     "g_dry_bowser_umbrella": {
-      "sort": 119,
+      "sort": 124,
       "id": "g_dry_bowser_umbrella",
       "i_type": "Glider",
       "name": "Dry Bowser Umbrella",
@@ -63173,6 +63301,15 @@
         "jnapaUY=|znarbUY=|jnar6cY=|jkRr9WY=|cK3G2rk=|KnqNCIA=|inSpTUY="
       ]
     },
+    "g_glittering_parasol": {
+      "sort": 110,
+      "id": "g_glittering_parasol",
+      "i_type": "Glider",
+      "name": "Glittering Parasol",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "g_gold_crane": {
       "sort": 54,
       "id": "g_gold_crane",
@@ -63590,7 +63727,7 @@
       ]
     },
     "g_gold_swooper": {
-      "sort": 112,
+      "sort": 117,
       "id": "g_gold_swooper",
       "i_type": "Glider",
       "name": "Gold Swooper",
@@ -63741,8 +63878,30 @@
         "TKmEe60=|JD2FW50=|rLSj0ss=|6JQi5kI=|1mtNObQ=|KB4FHIk=|qJQjVss="
       ]
     },
+    "g_gold_toe_bean_balloons": {
+      "sort": 109,
+      "id": "g_gold_toe_bean_balloons",
+      "i_type": "Glider",
+      "name": "Gold Toe-Bean Balloons",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
+    },
     "g_golden_wings": {
-      "sort": 125,
+      "sort": 130,
       "id": "g_golden_wings",
       "i_type": "Glider",
       "name": "Golden Wings",
@@ -63826,7 +63985,7 @@
       ]
     },
     "g_goomba_hanafuda": {
-      "sort": 135,
+      "sort": 140,
       "id": "g_goomba_hanafuda",
       "i_type": "Glider",
       "name": "Goomba Hanafuda",
@@ -64274,7 +64433,7 @@
       ]
     },
     "g_jumping_mario_hanafuda": {
-      "sort": 136,
+      "sort": 141,
       "id": "g_jumping_mario_hanafuda",
       "i_type": "Glider",
       "name": "Jumping Mario Hanafuda",
@@ -64472,6 +64631,15 @@
       "hashes": [
         "TrCsY8w=|RLCkY8w=|RLSqQ10=|qlKsJEY=|RLiGc9w=|km1JybY=|sNyj3Ds="
       ]
+    },
+    "g_luigi_parafoil": {
+      "sort": 111,
+      "id": "g_luigi_parafoil",
+      "i_type": "Glider",
+      "name": "Luigi Parafoil",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "g_luma_parafoil": {
       "sort": 46,
@@ -64898,7 +65066,7 @@
       ]
     },
     "g_nabbit_oilpaper_umbrella": {
-      "sort": 117,
+      "sort": 122,
       "id": "g_nabbit_oilpaper_umbrella",
       "i_type": "Glider",
       "name": "Nabbit Oilpaper Umbrella",
@@ -65302,7 +65470,7 @@
       ]
     },
     "g_ninja_scroll": {
-      "sort": 122,
+      "sort": 127,
       "id": "g_ninja_scroll",
       "i_type": "Glider",
       "name": "Ninja Scroll",
@@ -65526,7 +65694,7 @@
       ]
     },
     "g_peach_hanafuda": {
-      "sort": 128,
+      "sort": 133,
       "id": "g_peach_hanafuda",
       "i_type": "Glider",
       "name": "Peach Hanafuda",
@@ -65638,7 +65806,7 @@
       ]
     },
     "g_penguin_wingtip": {
-      "sort": 120,
+      "sort": 125,
       "id": "g_penguin_wingtip",
       "i_type": "Glider",
       "name": "Penguin Wingtip",
@@ -65934,7 +66102,7 @@
       ]
     },
     "g_piranha_plant_hanafuda": {
-      "sort": 134,
+      "sort": 139,
       "id": "g_piranha_plant_hanafuda",
       "i_type": "Glider",
       "name": "Piranha Plant Hanafuda",
@@ -66490,7 +66658,7 @@
       ]
     },
     "g_rainy_balloons": {
-      "sort": 110,
+      "sort": 115,
       "id": "g_rainy_balloons",
       "i_type": "Glider",
       "name": "Rainy Balloons",
@@ -69046,7 +69214,7 @@
       ]
     },
     "g_swooper": {
-      "sort": 107,
+      "sort": 112,
       "id": "g_swooper",
       "i_type": "Glider",
       "name": "Swooper",
@@ -69386,7 +69554,7 @@
       ]
     },
     "g_tropical_glider": {
-      "sort": 114,
+      "sort": 119,
       "id": "g_tropical_glider",
       "i_type": "Glider",
       "name": "Tropical Glider",
@@ -69486,7 +69654,7 @@
       ]
     },
     "g_vampire_wings": {
-      "sort": 124,
+      "sort": 129,
       "id": "g_vampire_wings",
       "i_type": "Glider",
       "name": "Vampire Wings",
@@ -69658,7 +69826,7 @@
       ]
     },
     "g_wicked_wings": {
-      "sort": 111,
+      "sort": 116,
       "id": "g_wicked_wings",
       "i_type": "Glider",
       "name": "Wicked Wings",
@@ -69742,7 +69910,7 @@
       ]
     },
     "g_yoshi_s_egg_hanafuda": {
-      "sort": 127,
+      "sort": 132,
       "id": "g_yoshi_s_egg_hanafuda",
       "i_type": "Glider",
       "name": "Yoshi's Egg Hanafuda",
