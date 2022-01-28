@@ -1,7 +1,7 @@
 {
   "courses": {
     "c_3ds_bowser_s_castle": {
-      "sort": 270,
+      "sort": 273,
       "id": "c_3ds_bowser_s_castle",
       "name": "3DS Bowser's Castle",
       "favorite_items": [
@@ -80,7 +80,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_r": {
-      "sort": 271,
+      "sort": 274,
       "id": "c_3ds_bowser_s_castle_r",
       "name": "3DS Bowser's Castle R",
       "favorite_items": [
@@ -183,7 +183,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_t": {
-      "sort": 272,
+      "sort": 275,
       "id": "c_3ds_bowser_s_castle_t",
       "name": "3DS Bowser's Castle T",
       "favorite_items": [
@@ -2082,7 +2082,7 @@
       ]
     },
     "c_3ds_neo_bowser_city": {
-      "sort": 262,
+      "sort": 265,
       "id": "c_3ds_neo_bowser_city",
       "name": "3DS Neo Bowser City",
       "favorite_items": [
@@ -2201,7 +2201,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r": {
-      "sort": 263,
+      "sort": 266,
       "id": "c_3ds_neo_bowser_city_r",
       "name": "3DS Neo Bowser City R",
       "favorite_items": [
@@ -2324,7 +2324,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r_t": {
-      "sort": 265,
+      "sort": 268,
       "id": "c_3ds_neo_bowser_city_r_t",
       "name": "3DS Neo Bowser City R/T",
       "favorite_items": [
@@ -2371,6 +2371,10 @@
         {
           "id": "d_shy_guy_gold",
           "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_pastry_chef",
+          "lvl": 3
         },
         {
           "id": "g_blizzard_balloons",
@@ -2457,10 +2461,6 @@
           "lvl": 3
         },
         {
-          "id": "k_sushi_racer",
-          "lvl": 3
-        },
-        {
           "id": "k_warship",
           "lvl": 6
         },
@@ -2475,7 +2475,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_t": {
-      "sort": 264,
+      "sort": 267,
       "id": "c_3ds_neo_bowser_city_t",
       "name": "3DS Neo Bowser City T",
       "favorite_items": [
@@ -2504,11 +2504,23 @@
           "lvl": 6
         },
         {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_purple_koopa_freerunning",
+          "lvl": 3
+        },
+        {
           "id": "d_shy_guy_ninja",
           "lvl": 1
         },
         {
           "id": "d_waluigi_bus_driver",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
           "lvl": 1
         },
         {
@@ -2529,6 +2541,10 @@
         },
         {
           "id": "g_fare_flier",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
           "lvl": 1
         },
         {
@@ -2556,7 +2572,15 @@
           "lvl": 1
         },
         {
+          "id": "k_black_cat_cruiser",
+          "lvl": 1
+        },
+        {
           "id": "k_black_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "k_classic_b_dasher_mk_2",
           "lvl": 1
         },
         {
@@ -2577,6 +2601,10 @@
         },
         {
           "id": "k_holiday_king",
+          "lvl": 1
+        },
+        {
+          "id": "k_jukebox_buggy",
           "lvl": 1
         },
         {
@@ -2602,7 +2630,7 @@
       ]
     },
     "c_3ds_rainbow_road": {
-      "sort": 273,
+      "sort": 276,
       "id": "c_3ds_rainbow_road",
       "name": "3DS Rainbow Road",
       "favorite_items": [
@@ -2757,7 +2785,7 @@
       ]
     },
     "c_3ds_rainbow_road_r": {
-      "sort": 274,
+      "sort": 277,
       "id": "c_3ds_rainbow_road_r",
       "name": "3DS Rainbow Road R",
       "favorite_items": [
@@ -2924,7 +2952,7 @@
       ]
     },
     "c_3ds_rainbow_road_r_t": {
-      "sort": 276,
+      "sort": 279,
       "id": "c_3ds_rainbow_road_r_t",
       "name": "3DS Rainbow Road R/T",
       "favorite_items": [
@@ -3107,7 +3135,7 @@
       ]
     },
     "c_3ds_rainbow_road_t": {
-      "sort": 275,
+      "sort": 278,
       "id": "c_3ds_rainbow_road_t",
       "name": "3DS Rainbow Road T",
       "favorite_items": [
@@ -3655,7 +3683,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world": {
-      "sort": 266,
+      "sort": 269,
       "id": "c_3ds_rosalina_s_ice_world",
       "name": "3DS Rosalina's Ice World",
       "favorite_items": [
@@ -3798,7 +3826,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r": {
-      "sort": 267,
+      "sort": 270,
       "id": "c_3ds_rosalina_s_ice_world_r",
       "name": "3DS Rosalina's Ice World R",
       "favorite_items": [
@@ -3957,7 +3985,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r_t": {
-      "sort": 269,
+      "sort": 272,
       "id": "c_3ds_rosalina_s_ice_world_r_t",
       "name": "3DS Rosalina's Ice World R/T",
       "favorite_items": [
@@ -4048,7 +4076,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_t": {
-      "sort": 268,
+      "sort": 271,
       "id": "c_3ds_rosalina_s_ice_world_t",
       "name": "3DS Rosalina's Ice World T",
       "favorite_items": [
@@ -5411,6 +5439,255 @@
         {
           "id": "k_yellow_taxi",
           "lvl": 3
+        }
+      ]
+    },
+    "c_3ds_wario_shipyard": {
+      "sort": 262,
+      "id": "c_3ds_wario_shipyard",
+      "name": "3DS Wario Shipyard",
+      "favorite_items": [
+        {
+          "id": "d_mario_halloween",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_satellaview",
+          "lvl": 1
+        },
+        {
+          "id": "d_penguin_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
+          "id": "d_wario_cowboy",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_kangaroo",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_star",
+          "lvl": 1
+        },
+        {
+          "id": "g_black_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_pink_gold_meteors",
+          "lvl": 1
+        },
+        {
+          "id": "g_ship_s_wheel",
+          "lvl": 1
+        },
+        {
+          "id": "k_brown_offroader",
+          "lvl": 1
+        },
+        {
+          "id": "k_cact_r",
+          "lvl": 1
+        },
+        {
+          "id": "k_lime_tea_coupe",
+          "lvl": 1
+        },
+        {
+          "id": "k_metal_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_pumpkin_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_tiger_bruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_vampire_flyer",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_3ds_wario_shipyard_r": {
+      "sort": 263,
+      "id": "c_3ds_wario_shipyard_r",
+      "name": "3DS Wario Shipyard R",
+      "favorite_items": [
+        {
+          "id": "d_luigi_classic",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_explorer",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
+          "id": "d_wario_cowboy",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_festival_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_magic_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_surf_master",
+          "lvl": 1
+        },
+        {
+          "id": "g_starry_great_sail",
+          "lvl": 1
+        },
+        {
+          "id": "g_vampire_wings",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_kabuki_dasher",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_iron_cucumber",
+          "lvl": 1
+        },
+        {
+          "id": "k_jade_hop_rod",
+          "lvl": 1
+        },
+        {
+          "id": "k_paintster",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_3ds_wario_shipyard_t": {
+      "sort": 264,
+      "id": "c_3ds_wario_shipyard_t",
+      "name": "3DS Wario Shipyard T",
+      "favorite_items": [
+        {
+          "id": "d_builder_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_cat_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_swimwear",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_happi",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
+          "id": "d_wario_hiker",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_super_mushroom",
+          "lvl": 1
+        },
+        {
+          "id": "g_aurora_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_luigi_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_meteor_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_springtime_crane",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_dreamy_egg",
+          "lvl": 1
+        },
+        {
+          "id": "k_iron_cucumber",
+          "lvl": 1
+        },
+        {
+          "id": "k_rambi_runner",
+          "lvl": 1
+        },
+        {
+          "id": "k_red_crawly_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_sakura_quickshaw",
+          "lvl": 1
+        },
+        {
+          "id": "k_vampire_flyer",
+          "lvl": 1
         }
       ]
     },
@@ -34910,6 +35187,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2t",
           "lvl": 1
         },
@@ -35634,6 +35915,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2r",
           "lvl": 1
         },
@@ -36003,6 +36288,10 @@
         },
         {
           "id": "c_3ds_toad_circuit_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -38490,6 +38779,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 1
         },
@@ -38843,6 +39136,10 @@
         },
         {
           "id": "c_3ds_neo_bowser_city_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -39330,6 +39627,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 1
         },
@@ -39795,6 +40096,10 @@
         },
         {
           "id": "c_3ds_rainbow_road_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
           "lvl": 1
         },
         {
@@ -40300,6 +40605,14 @@
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_waluigi_pinball_r_t",
@@ -40958,6 +41271,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 1
         },
@@ -41219,6 +41536,10 @@
         },
         {
           "id": "c_3ds_toad_circuit_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -41890,6 +42211,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass",
           "lvl": 3
         },
@@ -42108,6 +42433,10 @@
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
         },
         {
           "id": "c_rmx_choco_island_2",
@@ -42365,6 +42694,10 @@
       "name": "Purple Koopa (Freerunning)",
       "rarity": "Super",
       "favorite_courses": [
+        {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 3
+        },
         {
           "id": "c_rmx_vanilla_lake_1",
           "lvl": 6
@@ -43026,6 +43359,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r",
           "lvl": 1
         },
@@ -43134,6 +43471,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_neo_bowser_city_r_t",
+          "lvl": 3
+        },
+        {
           "id": "c_3ds_rock_rock_mountain_t",
           "lvl": 6
         },
@@ -43221,6 +43562,10 @@
       "name": "Tanooki Mario",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
         {
           "id": "c_gba_sunset_wilds",
           "lvl": 6
@@ -43878,12 +44223,24 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_t",
           "lvl": 1
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
         },
         {
           "id": "c_ds_luigi_s_mansion_r_t",
@@ -44022,6 +44379,14 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r",
           "lvl": 6
         },
@@ -44107,6 +44472,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -44543,6 +44912,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
           "lvl": 1
         },
         {
@@ -45480,11 +45853,19 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 1
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -45761,6 +46142,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -46682,6 +47067,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r",
           "lvl": 6
         },
@@ -46971,6 +47360,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
           "lvl": 1
         },
         {
@@ -47564,6 +47957,14 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_merry_mountain_r_t",
           "lvl": 6
         },
@@ -47941,6 +48342,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_neo_bowser_city_t",
           "lvl": 1
         },
         {
@@ -49434,6 +49839,10 @@
         {
           "id": "c_3ds_rosalina_s_ice_world_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
         },
         {
           "id": "c_ds_waluigi_pinball",
@@ -51184,6 +51593,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_dino_dino_jungle_r",
           "lvl": 1
         },
@@ -52140,6 +52553,14 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -52257,6 +52678,10 @@
         },
         {
           "id": "c_3ds_rock_rock_mountain_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -52543,6 +52968,10 @@
       "name": "Jukebox Buggy",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 1
+        },
         {
           "id": "c_singapore_speedway",
           "lvl": 1
@@ -53000,6 +53429,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_t",
           "lvl": 1
         },
@@ -53291,6 +53724,10 @@
       "name": "Metal B Dasher Mk. 2",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
         {
           "id": "c_berlin_byways_2",
           "lvl": 1
@@ -53669,6 +54106,10 @@
         },
         {
           "id": "c_3ds_rainbow_road_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -54896,6 +55337,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2r_t",
           "lvl": 1
         },
@@ -55364,6 +55809,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass_r",
           "lvl": 1
         },
@@ -55653,6 +56102,10 @@
         },
         {
           "id": "c_3ds_rainbow_road_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -56334,6 +56787,10 @@
         {
           "id": "c_3ds_mario_circuit_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
         },
         {
           "id": "c_ds_luigi_s_mansion",
@@ -57624,10 +58081,6 @@
           "lvl": 1
         },
         {
-          "id": "c_3ds_neo_bowser_city_r_t",
-          "lvl": 3
-        },
-        {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 1
         },
@@ -58052,6 +58505,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_dino_dino_jungle_r",
           "lvl": 3
         },
@@ -58242,6 +58699,14 @@
         {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
         },
         {
           "id": "c_ds_luigi_s_mansion_r_t",
@@ -59502,6 +59967,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -59602,6 +60071,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_yoshi_circuit_r_t",
           "lvl": 6
         },
@@ -59665,6 +60138,10 @@
       "name": "Aurora Balloons",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
         {
           "id": "c_singapore_speedway_t",
           "lvl": 1
@@ -59996,6 +60473,10 @@
         {
           "id": "c_3ds_bowser_s_castle_r",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
         },
         {
           "id": "c_gcn_dino_dino_jungle",
@@ -61674,6 +62155,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_singapore_speedway_r",
           "lvl": 1
         },
@@ -62954,6 +63439,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2t",
           "lvl": 1
         },
@@ -63387,6 +63876,10 @@
         },
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
           "lvl": 1
         },
         {
@@ -64350,6 +64843,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_neo_bowser_city_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
         },
@@ -65082,6 +65579,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_singapore_speedway_r",
           "lvl": 1
         },
@@ -65188,6 +65689,10 @@
         {
           "id": "c_3ds_shy_guy_bazaar_r",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_airship_fortress",
@@ -65392,6 +65897,10 @@
         {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
         },
         {
           "id": "c_n64_choco_mountain_r_t",
@@ -66432,6 +66941,10 @@
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
         },
         {
           "id": "c_gba_bowser_s_castle_1r",
@@ -67542,6 +68055,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 1
         },
@@ -68094,6 +68611,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_waluigi_pinball_t",
           "lvl": 1
         },
@@ -68506,6 +69027,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass",
           "lvl": 1
         },
@@ -68859,6 +69384,10 @@
         },
         {
           "id": "c_3ds_rosalina_s_ice_world_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
         {
@@ -70160,6 +70689,10 @@
         {
           "id": "c_3ds_shy_guy_bazaar_t",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_airship_fortress_r",
