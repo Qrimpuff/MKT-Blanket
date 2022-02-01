@@ -9641,6 +9641,10 @@
           "lvl": 1
         },
         {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
           "id": "g_8_bit_fire_flower",
           "lvl": 1
         },
@@ -9705,6 +9709,10 @@
           "lvl": 1
         },
         {
+          "id": "k_roaring_racer",
+          "lvl": 1
+        },
+        {
           "id": "k_sky_blue_b_dasher_mk_2",
           "lvl": 1
         },
@@ -9741,6 +9749,10 @@
         },
         {
           "id": "d_funky_kong",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
           "lvl": 1
         },
         {
@@ -9824,6 +9836,10 @@
           "lvl": 1
         },
         {
+          "id": "k_jukebox_buggy",
+          "lvl": 1
+        },
+        {
           "id": "k_paintster",
           "lvl": 1
         },
@@ -9864,6 +9880,10 @@
         },
         {
           "id": "d_cat_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
           "lvl": 1
         },
         {
@@ -9936,6 +9956,10 @@
         },
         {
           "id": "k_black_turbo_birdo",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
           "lvl": 1
         },
         {
@@ -39047,6 +39071,14 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_cheep_cheep_island_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sunset_wilds_r",
           "lvl": 6
         },
@@ -42340,6 +42372,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_cheep_cheep_island",
           "lvl": 1
         },
         {
@@ -47420,6 +47456,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_cheep_cheep_island_t",
           "lvl": 1
         },
         {
@@ -52877,6 +52917,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_cheep_cheep_island_r",
+          "lvl": 1
+        },
+        {
           "id": "c_singapore_speedway",
           "lvl": 1
         }
@@ -56420,6 +56464,10 @@
       "name": "Roaring Racer",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gba_cheep_cheep_island",
+          "lvl": 1
+        },
         {
           "id": "c_singapore_speedway",
           "lvl": 6
