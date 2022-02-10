@@ -35955,6 +35955,15 @@
         "MqJriMQ=|sqJpiMw=|wrWMa1g=|vMJrluo=|EBANANg=|Qj2EaT0=|MiJpHMQ="
       ]
     },
+    "d_chargin_chuck": {
+      "sort": 142,
+      "id": "d_chargin_chuck",
+      "i_type": "Driver",
+      "name": "Chargin' Chuck",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_daisy": {
       "sort": 19,
       "id": "d_daisy",
