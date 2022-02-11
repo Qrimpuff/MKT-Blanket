@@ -34120,7 +34120,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 136,
+      "sort": 138,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -34896,7 +34896,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 129,
+      "sort": 131,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -34992,7 +34992,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 134,
+      "sort": 136,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -35956,7 +35956,7 @@
       ]
     },
     "d_chargin_chuck": {
-      "sort": 142,
+      "sort": 144,
       "id": "d_chargin_chuck",
       "i_type": "Driver",
       "name": "Chargin' Chuck",
@@ -36481,7 +36481,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 125,
+      "sort": 127,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -36625,7 +36625,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 131,
+      "sort": 133,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -36801,7 +36801,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 123,
+      "sort": 125,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -36905,7 +36905,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 117,
+      "sort": 119,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -36981,7 +36981,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 126,
+      "sort": 128,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -37265,7 +37265,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 124,
+      "sort": 126,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -37365,7 +37365,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 121,
+      "sort": 123,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -37773,7 +37773,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 139,
+      "sort": 141,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -37889,7 +37889,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 130,
+      "sort": 132,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -37997,7 +37997,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 138,
+      "sort": 140,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -38153,7 +38153,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 133,
+      "sort": 135,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -38245,7 +38245,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 118,
+      "sort": 120,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -38397,7 +38397,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 135,
+      "sort": 137,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -38795,6 +38795,15 @@
       "hashes": [
         "aiPALkE=|aCbAToE=|ajKgToE=|fKNDsms=|RMSMVLo=|ll2owbQ=|KiKBTpU="
       ]
+    },
+    "d_luigi_golf": {
+      "sort": 118,
+      "id": "d_luigi_golf",
+      "i_type": "Driver",
+      "name": "Luigi (Golf)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_luigi_lederhosen": {
       "sort": 95,
@@ -39471,6 +39480,15 @@
       "hashes": [
         "Siika8w=|WqrGJcw=|UqpGJKw=|TkApu0Y=|9DvETNw=|sJ/G1Ls=|kqpGJcw="
       ]
+    },
+    "d_mario_golf": {
+      "sort": 117,
+      "id": "d_mario_golf",
+      "i_type": "Driver",
+      "name": "Mario (Golf)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_mario_hakama": {
       "sort": 58,
@@ -40537,7 +40555,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 141,
+      "sort": 143,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -40725,7 +40743,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 128,
+      "sort": 130,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -43157,7 +43175,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 132,
+      "sort": 134,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -43277,7 +43295,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 137,
+      "sort": 139,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -43409,7 +43427,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 119,
+      "sort": 121,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -44065,7 +44083,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 120,
+      "sort": 122,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -44157,7 +44175,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 140,
+      "sort": 142,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -44313,7 +44331,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 127,
+      "sort": 129,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -44413,7 +44431,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 122,
+      "sort": 124,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
