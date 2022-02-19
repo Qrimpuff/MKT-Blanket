@@ -19253,16 +19253,20 @@
       ]
     },
     "c_paris_promenade": {
-      "sort": 33,
+      "sort": 34,
       "id": "c_paris_promenade",
       "name": "Paris Promenade",
       "favorite_items": [
+        {
+          "id": "d_birdo_yellow",
+          "lvl": 1
+        },
         {
           "id": "d_cat_peach",
           "lvl": 1
         },
         {
-          "id": "d_luigi_classic",
+          "id": "d_gold_koopa_freerunning",
           "lvl": 1
         },
         {
@@ -19270,19 +19274,35 @@
           "lvl": 1
         },
         {
-          "id": "d_peach_vacation",
+          "id": "d_peach_wintertime",
           "lvl": 1
         },
         {
-          "id": "d_waluigi_bus_driver",
+          "id": "d_pink_shy_guy",
           "lvl": 1
         },
         {
-          "id": "g_eggshell_glider",
+          "id": "d_shy_guy_pastry_chef",
+          "lvl": 1
+        },
+        {
+          "id": "g_calico_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_glinting_glider",
           "lvl": 1
         },
         {
           "id": "g_heart_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_le_tricolore",
+          "lvl": 1
+        },
+        {
+          "id": "g_purple_oilpaper_umbrella",
           "lvl": 1
         },
         {
@@ -19294,31 +19314,27 @@
           "lvl": 1
         },
         {
-          "id": "g_strawberry_cr_pe",
+          "id": "k_black_cat_cruiser",
           "lvl": 1
         },
         {
-          "id": "k_gold_cheep_snorkel",
+          "id": "k_carrot_kart",
           "lvl": 1
         },
         {
-          "id": "k_gold_train",
-          "lvl": 1
-        },
-        {
-          "id": "k_lime_tea_coupe",
-          "lvl": 1
-        },
-        {
-          "id": "k_macharon",
-          "lvl": 1
-        },
-        {
-          "id": "k_pink_b_dasher_mk_2",
+          "id": "k_quickshaw",
           "lvl": 1
         },
         {
           "id": "k_sunset_cloud",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_royale",
+          "lvl": 1
+        },
+        {
+          "id": "k_wildfire_flyer",
           "lvl": 1
         }
       ]
@@ -19984,105 +20000,6 @@
         {
           "id": "k_paintster",
           "lvl": 3
-        }
-      ]
-    },
-    "c_paris_promenade_r": {
-      "sort": 34,
-      "id": "c_paris_promenade_r",
-      "name": "Paris Promenade R",
-      "favorite_items": [
-        {
-          "id": "d_birdo_yellow",
-          "lvl": 1
-        },
-        {
-          "id": "d_cat_peach",
-          "lvl": 1
-        },
-        {
-          "id": "d_gold_koopa_freerunning",
-          "lvl": 1
-        },
-        {
-          "id": "d_mario_santa",
-          "lvl": 1
-        },
-        {
-          "id": "d_peach_wintertime",
-          "lvl": 1
-        },
-        {
-          "id": "d_pink_shy_guy",
-          "lvl": 1
-        },
-        {
-          "id": "d_shy_guy_pastry_chef",
-          "lvl": 1
-        },
-        {
-          "id": "g_calico_parafoil",
-          "lvl": 1
-        },
-        {
-          "id": "g_glinting_glider",
-          "lvl": 1
-        },
-        {
-          "id": "g_heart_balloons",
-          "lvl": 1
-        },
-        {
-          "id": "g_le_tricolore",
-          "lvl": 1
-        },
-        {
-          "id": "g_purple_oilpaper_umbrella",
-          "lvl": 1
-        },
-        {
-          "id": "g_silver_and_gold_hearts",
-          "lvl": 1
-        },
-        {
-          "id": "g_silver_bells",
-          "lvl": 1
-        },
-        {
-          "id": "k_black_cat_cruiser",
-          "lvl": 1
-        },
-        {
-          "id": "k_carrot_kart",
-          "lvl": 1
-        },
-        {
-          "id": "k_gold_cheep_charger",
-          "lvl": 1
-        },
-        {
-          "id": "k_paintster",
-          "lvl": 1
-        },
-        {
-          "id": "k_pink_b_dasher_mk_2",
-          "lvl": 3
-        },
-        {
-          "id": "k_quickshaw",
-          "lvl": 1
-        },
-        {
-          "id": "k_sunset_cloud",
-          "lvl": 1
-        },
-        {
-          "id": "k_white_royale",
-          "lvl": 1
-        },
-        {
-          "id": "k_wildfire_flyer",
-          "lvl": 1
         }
       ]
     },
@@ -35023,7 +34940,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -36328,10 +36245,6 @@
         },
         {
           "id": "c_paris_promenade_3t",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -38053,7 +37966,7 @@
           "lvl": 3
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -40673,10 +40586,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_snes_choco_island_2",
           "lvl": 6
         },
@@ -42625,7 +42534,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -43265,11 +43174,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_2t",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade_2t",
           "lvl": 1
         },
         {
@@ -44205,7 +44114,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -46587,15 +46496,15 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_2r",
           "lvl": 1
         },
         {
           "id": "c_paris_promenade_2t",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -48357,6 +48266,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_2r",
           "lvl": 1
         },
@@ -48370,10 +48283,6 @@
         },
         {
           "id": "c_paris_promenade_3t",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -51551,10 +51460,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_r_t",
           "lvl": 1
         },
@@ -51664,10 +51569,6 @@
         },
         {
           "id": "c_n64_choco_mountain_r",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -55165,10 +55066,6 @@
           "lvl": 3
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_t",
           "lvl": 1
         },
@@ -55623,10 +55520,6 @@
         {
           "id": "c_paris_promenade_2r",
           "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
-          "lvl": 3
         },
         {
           "id": "c_paris_promenade_r_t",
@@ -56625,7 +56518,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -58931,10 +58824,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_snes_choco_island_2r",
           "lvl": 1
         },
@@ -59903,7 +59792,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -60421,11 +60310,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_2t",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade_2t",
           "lvl": 1
         },
         {
@@ -63111,11 +63000,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_3",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade_3",
           "lvl": 1
         },
         {
@@ -65031,6 +64920,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_2",
           "lvl": 1
         },
@@ -65040,10 +64933,6 @@
         },
         {
           "id": "c_paris_promenade_3t",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -66143,10 +66032,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_rmx_choco_island_1",
           "lvl": 6
         },
@@ -66495,6 +66380,10 @@
           "lvl": 6
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_2r_t",
           "lvl": 1
         },
@@ -66504,10 +66393,6 @@
         },
         {
           "id": "c_paris_promenade_3r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -68543,7 +68428,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -69263,10 +69148,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_r",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_r_t",
           "lvl": 1
         },
@@ -69392,10 +69273,6 @@
         },
         {
           "id": "c_paris_promenade",
-          "lvl": 1
-        },
-        {
-          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
