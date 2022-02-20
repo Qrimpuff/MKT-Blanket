@@ -8569,10 +8569,6 @@
           "lvl": 1
         },
         {
-          "id": "d_waluigi_vampire",
-          "lvl": 1
-        },
-        {
           "id": "d_wario_hiker",
           "lvl": 3
         },
@@ -8590,6 +8586,10 @@
         },
         {
           "id": "g_bullet_bill_parachute",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
           "lvl": 1
         },
         {
@@ -8626,6 +8626,14 @@
         },
         {
           "id": "k_bullet_blaster",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 3
+        },
+        {
+          "id": "k_cheership",
           "lvl": 1
         },
         {
@@ -8678,10 +8686,6 @@
         {
           "id": "d_bowser_jr",
           "lvl": 1
-        },
-        {
-          "id": "d_captain_toad",
-          "lvl": 3
         },
         {
           "id": "d_dry_bones_gold",
@@ -8750,6 +8754,14 @@
         {
           "id": "k_bullet_blaster",
           "lvl": 6
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 6
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 3
         },
         {
           "id": "k_crimson_hop_rod",
@@ -8895,10 +8907,6 @@
           "lvl": 1
         },
         {
-          "id": "k_bruiser",
-          "lvl": 3
-        },
-        {
           "id": "k_gilded_king",
           "lvl": 1
         },
@@ -9010,6 +9018,10 @@
           "lvl": 1
         },
         {
+          "id": "g_candlelight_flight",
+          "lvl": 6
+        },
+        {
           "id": "g_gold_glider",
           "lvl": 3
         },
@@ -9032,6 +9044,14 @@
         {
           "id": "k_bull_s_eye_banzai",
           "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 6
         },
         {
           "id": "k_dark_buggy",
@@ -9074,7 +9094,7 @@
           "lvl": 1
         },
         {
-          "id": "k_sweet_daytripper",
+          "id": "k_red_b_dasher_mk_2",
           "lvl": 6
         }
       ]
@@ -9125,6 +9145,10 @@
           "lvl": 1
         },
         {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
           "id": "g_barrel_hanafuda",
           "lvl": 1
         },
@@ -9153,6 +9177,10 @@
           "lvl": 6
         },
         {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
           "id": "g_rainy_balloons",
           "lvl": 1
         },
@@ -9166,6 +9194,10 @@
         },
         {
           "id": "k_bull_s_eye_banzai",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
           "lvl": 1
         },
         {
@@ -9310,6 +9342,14 @@
         {
           "id": "k_banana_master",
           "lvl": 3
+        },
+        {
+          "id": "k_cact_r",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
         },
         {
           "id": "k_crimson_hop_rod",
@@ -9546,10 +9586,6 @@
           "lvl": 1
         },
         {
-          "id": "d_funky_kong",
-          "lvl": 3
-        },
-        {
           "id": "d_kamek",
           "lvl": 6
         },
@@ -9574,6 +9610,10 @@
           "lvl": 1
         },
         {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
           "id": "g_dragon_wings",
           "lvl": 1
         },
@@ -9586,16 +9626,28 @@
           "lvl": 1
         },
         {
-          "id": "g_gift_glider",
-          "lvl": 1
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 3
         },
         {
           "id": "g_goomba_hanafuda",
           "lvl": 6
         },
         {
+          "id": "g_magic_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_new_year_s_2022",
+          "lvl": 3
+        },
+        {
           "id": "g_spider_glider",
           "lvl": 3
+        },
+        {
+          "id": "g_vampire_wings",
+          "lvl": 1
         },
         {
           "id": "g_wicked_wings",
@@ -9604,6 +9656,10 @@
         {
           "id": "k_black_circuit",
           "lvl": 3
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
         },
         {
           "id": "k_dark_clown",
@@ -9647,6 +9703,10 @@
         },
         {
           "id": "k_para_wing",
+          "lvl": 1
+        },
+        {
+          "id": "k_red_b_dasher_mk_2",
           "lvl": 1
         },
         {
@@ -10340,10 +10400,6 @@
       "name": "GBA Sunset Wilds R/T",
       "favorite_items": [
         {
-          "id": "d_builder_luigi",
-          "lvl": 1
-        },
-        {
           "id": "d_builder_toadette",
           "lvl": 3
         },
@@ -10792,6 +10848,10 @@
         {
           "id": "k_rambi_runner",
           "lvl": 1
+        },
+        {
+          "id": "k_roaring_racer",
+          "lvl": 3
         }
       ]
     },
@@ -10901,6 +10961,10 @@
           "lvl": 1
         },
         {
+          "id": "k_cact_r",
+          "lvl": 1
+        },
+        {
           "id": "k_cheep_snorkel",
           "lvl": 3
         },
@@ -10976,7 +11040,15 @@
           "lvl": 1
         },
         {
+          "id": "d_morton",
+          "lvl": 6
+        },
+        {
           "id": "d_peach_explorer",
+          "lvl": 1
+        },
+        {
+          "id": "d_red_yoshi",
           "lvl": 1
         },
         {
@@ -11076,12 +11148,12 @@
           "lvl": 6
         },
         {
-          "id": "k_rambi_rider",
-          "lvl": 3
-        },
-        {
           "id": "k_tanooki_kart",
           "lvl": 1
+        },
+        {
+          "id": "k_turbo_birdo",
+          "lvl": 3
         },
         {
           "id": "k_wild_wing",
@@ -11161,6 +11233,10 @@
         {
           "id": "g_golden_wings",
           "lvl": 6
+        },
+        {
+          "id": "g_new_year_s_2022",
+          "lvl": 1
         },
         {
           "id": "g_shell_parachute",
@@ -14326,6 +14402,10 @@
         {
           "id": "g_bright_balloons",
           "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 6
         },
         {
           "id": "g_dream_glider",
@@ -19253,20 +19333,16 @@
       ]
     },
     "c_paris_promenade": {
-      "sort": 34,
+      "sort": 33,
       "id": "c_paris_promenade",
       "name": "Paris Promenade",
       "favorite_items": [
-        {
-          "id": "d_birdo_yellow",
-          "lvl": 1
-        },
         {
           "id": "d_cat_peach",
           "lvl": 1
         },
         {
-          "id": "d_gold_koopa_freerunning",
+          "id": "d_luigi_classic",
           "lvl": 1
         },
         {
@@ -19274,35 +19350,19 @@
           "lvl": 1
         },
         {
-          "id": "d_peach_wintertime",
+          "id": "d_peach_vacation",
           "lvl": 1
         },
         {
-          "id": "d_pink_shy_guy",
+          "id": "d_waluigi_bus_driver",
           "lvl": 1
         },
         {
-          "id": "d_shy_guy_pastry_chef",
-          "lvl": 1
-        },
-        {
-          "id": "g_calico_parafoil",
-          "lvl": 1
-        },
-        {
-          "id": "g_glinting_glider",
+          "id": "g_eggshell_glider",
           "lvl": 1
         },
         {
           "id": "g_heart_balloons",
-          "lvl": 1
-        },
-        {
-          "id": "g_le_tricolore",
-          "lvl": 1
-        },
-        {
-          "id": "g_purple_oilpaper_umbrella",
           "lvl": 1
         },
         {
@@ -19314,27 +19374,27 @@
           "lvl": 1
         },
         {
-          "id": "k_black_cat_cruiser",
+          "id": "g_strawberry_cr_pe",
           "lvl": 1
         },
         {
-          "id": "k_carrot_kart",
+          "id": "k_gold_train",
           "lvl": 1
         },
         {
-          "id": "k_quickshaw",
+          "id": "k_lime_tea_coupe",
+          "lvl": 1
+        },
+        {
+          "id": "k_macharon",
+          "lvl": 1
+        },
+        {
+          "id": "k_pink_b_dasher_mk_2",
           "lvl": 1
         },
         {
           "id": "k_sunset_cloud",
-          "lvl": 1
-        },
-        {
-          "id": "k_white_royale",
-          "lvl": 1
-        },
-        {
-          "id": "k_wildfire_flyer",
           "lvl": 1
         }
       ]
@@ -20003,6 +20063,93 @@
         }
       ]
     },
+    "c_paris_promenade_r": {
+      "sort": 34,
+      "id": "c_paris_promenade_r",
+      "name": "Paris Promenade R",
+      "favorite_items": [
+        {
+          "id": "d_birdo_yellow",
+          "lvl": 1
+        },
+        {
+          "id": "d_cat_peach",
+          "lvl": 1
+        },
+        {
+          "id": "d_gold_koopa_freerunning",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_santa",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_wintertime",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_pastry_chef",
+          "lvl": 1
+        },
+        {
+          "id": "g_calico_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_glinting_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_heart_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_le_tricolore",
+          "lvl": 1
+        },
+        {
+          "id": "g_purple_oilpaper_umbrella",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_and_gold_hearts",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_bells",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_carrot_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_quickshaw",
+          "lvl": 1
+        },
+        {
+          "id": "k_sunset_cloud",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_royale",
+          "lvl": 1
+        },
+        {
+          "id": "k_wildfire_flyer",
+          "lvl": 1
+        }
+      ]
+    },
     "c_paris_promenade_r_t": {
       "sort": 36,
       "id": "c_paris_promenade_r_t",
@@ -20165,10 +20312,6 @@
         },
         {
           "id": "k_pink_b_dasher_mk_2",
-          "lvl": 1
-        },
-        {
-          "id": "k_tea_coupe",
           "lvl": 1
         }
       ]
@@ -30988,6 +31131,10 @@
           "lvl": 1
         },
         {
+          "id": "g_starry_great_sail",
+          "lvl": 6
+        },
+        {
           "id": "g_toe_bean_balloons",
           "lvl": 1
         },
@@ -31038,10 +31185,6 @@
         {
           "id": "k_rose_taxi",
           "lvl": 1
-        },
-        {
-          "id": "k_sakura_quickshaw",
-          "lvl": 6
         }
       ]
     },
@@ -32536,6 +32679,10 @@
         {
           "id": "g_glitter_glider",
           "lvl": 1
+        },
+        {
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 6
         },
         {
           "id": "g_penguin_wingtip",
@@ -34940,7 +35087,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -35664,10 +35811,6 @@
           "lvl": 1
         },
         {
-          "id": "c_gba_sunset_wilds_r_t",
-          "lvl": 1
-        },
-        {
           "id": "c_gcn_dino_dino_jungle_t",
           "lvl": 1
         },
@@ -36132,10 +36275,6 @@
           "lvl": 1
         },
         {
-          "id": "c_gba_bowser_s_castle_1r",
-          "lvl": 3
-        },
-        {
           "id": "c_gba_sunset_wilds_r",
           "lvl": 1
         },
@@ -36245,6 +36384,10 @@
         },
         {
           "id": "c_paris_promenade_3t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -37858,10 +38001,6 @@
           "lvl": 3
         },
         {
-          "id": "c_gba_bowser_s_castle_2t",
-          "lvl": 3
-        },
-        {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 1
         },
@@ -37966,7 +38105,7 @@
           "lvl": 3
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -40586,6 +40725,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_choco_island_2",
           "lvl": 6
         },
@@ -41337,6 +41480,10 @@
       "name": "Morton",
       "rarity": "Normal",
       "favorite_courses": [
+        {
+          "id": "c_gcn_dino_dino_jungle_r_t",
+          "lvl": 6
+        },
         {
           "id": "c_n64_kalimari_desert",
           "lvl": 1
@@ -42534,7 +42681,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -43174,11 +43321,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_2t",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_2t",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -43375,6 +43522,10 @@
         },
         {
           "id": "c_3ds_rock_rock_mountain_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_r_t",
           "lvl": 1
         },
         {
@@ -44114,7 +44265,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -44846,7 +44997,7 @@
           "lvl": 1
         },
         {
-          "id": "c_gba_bowser_s_castle_1",
+          "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
         {
@@ -46496,15 +46647,15 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_2r",
           "lvl": 1
         },
         {
           "id": "c_paris_promenade_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -47778,10 +47929,6 @@
           "lvl": 6
         },
         {
-          "id": "c_gba_bowser_s_castle_1r_t",
-          "lvl": 3
-        },
-        {
           "id": "c_gcn_yoshi_circuit_t",
           "lvl": 1
         },
@@ -48062,12 +48209,20 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_bowser_s_castle_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2r_t",
           "lvl": 6
         },
         {
           "id": "c_gba_sunset_wilds_r_t",
           "lvl": 3
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_r",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2t",
@@ -48214,6 +48369,26 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_bowser_s_castle_1",
+          "lvl": 3
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1r",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island_t",
           "lvl": 1
         },
@@ -48266,10 +48441,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_2r",
           "lvl": 1
         },
@@ -48283,6 +48454,10 @@
         },
         {
           "id": "c_paris_promenade_3t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -48669,6 +48844,22 @@
         },
         {
           "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1r",
+          "lvl": 3
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1t",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
         {
@@ -56518,7 +56709,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -56652,10 +56843,6 @@
         {
           "id": "c_gcn_dino_dino_jungle_r",
           "lvl": 6
-        },
-        {
-          "id": "c_gcn_dino_dino_jungle_r_t",
-          "lvl": 3
         },
         {
           "id": "c_gcn_dino_dino_jungle_t",
@@ -56919,6 +57106,14 @@
         },
         {
           "id": "c_gba_bowser_s_castle_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1t",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
           "lvl": 1
         },
         {
@@ -57418,6 +57613,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gcn_dino_dino_jungle",
+          "lvl": 3
+        },
+        {
           "id": "c_los_angeles_laps_2",
           "lvl": 1
         },
@@ -57780,10 +57979,6 @@
         {
           "id": "c_sydney_sprint_r_t",
           "lvl": 1
-        },
-        {
-          "id": "c_sydney_sprint_t",
-          "lvl": 6
         },
         {
           "id": "c_tokyo_blur_3r",
@@ -58824,6 +59019,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_choco_island_2r",
           "lvl": 1
         },
@@ -59140,10 +59339,6 @@
           "lvl": 3
         },
         {
-          "id": "c_gba_bowser_s_castle_1t",
-          "lvl": 6
-        },
-        {
           "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
@@ -59416,10 +59611,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_t",
-          "lvl": 1
-        },
-        {
           "id": "c_rmx_mario_circuit_1t",
           "lvl": 1
         },
@@ -59586,6 +59777,10 @@
         {
           "id": "c_ds_luigi_s_mansion_t",
           "lvl": 1
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_r_t",
+          "lvl": 3
         },
         {
           "id": "c_gcn_yoshi_circuit_r_t",
@@ -59792,7 +59987,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -60310,11 +60505,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_2t",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_2t",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -63000,11 +63195,11 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_3",
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade_3",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -63092,12 +63287,28 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_bowser_s_castle_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_1t",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2",
           "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_merry_mountain_r_t",
+          "lvl": 6
         },
         {
           "id": "c_singapore_speedway_r",
@@ -64824,10 +65035,6 @@
           "lvl": 6
         },
         {
-          "id": "c_gba_bowser_s_castle_2t",
-          "lvl": 1
-        },
-        {
           "id": "c_merry_mountain_r",
           "lvl": 1
         },
@@ -64920,10 +65127,6 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_2",
           "lvl": 1
         },
@@ -64933,6 +65136,10 @@
         },
         {
           "id": "c_paris_promenade_3t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -65536,8 +65743,16 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_bowser_s_castle_2t",
+          "lvl": 3
+        },
+        {
           "id": "c_los_angeles_laps_3r",
           "lvl": 1
+        },
+        {
+          "id": "c_vancouver_velocity_2",
+          "lvl": 6
         }
       ],
       "hashes": [
@@ -65761,6 +65976,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_1t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
         {
@@ -66029,6 +66248,10 @@
         },
         {
           "id": "c_paris_promenade_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -66380,10 +66603,6 @@
           "lvl": 6
         },
         {
-          "id": "c_paris_promenade",
-          "lvl": 1
-        },
-        {
           "id": "c_paris_promenade_2r_t",
           "lvl": 1
         },
@@ -66393,6 +66612,10 @@
         },
         {
           "id": "c_paris_promenade_3r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -66625,6 +66848,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
           "lvl": 1
         },
         {
@@ -67246,6 +67473,14 @@
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
           "lvl": 6
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
+          "lvl": 3
+        },
+        {
+          "id": "c_gcn_dino_dino_jungle_t",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2t",
@@ -68428,7 +68663,7 @@
           "lvl": 1
         },
         {
-          "id": "c_paris_promenade",
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -69148,6 +69383,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_r_t",
           "lvl": 1
         },
@@ -69273,6 +69512,10 @@
         },
         {
           "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -70426,6 +70669,10 @@
         {
           "id": "c_sydney_sprint_r",
           "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint_t",
+          "lvl": 6
         },
         {
           "id": "c_vancouver_velocity_2t",
@@ -71665,6 +71912,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_bowser_s_castle_2t",
           "lvl": 1
         },
         {
