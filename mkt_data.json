@@ -3760,6 +3760,10 @@
           "lvl": 1
         },
         {
+          "id": "g_candlelight_flight",
+          "lvl": 3
+        },
+        {
           "id": "g_dry_bowser_umbrella",
           "lvl": 1
         },
@@ -3955,6 +3959,10 @@
           "lvl": 1
         },
         {
+          "id": "k_candy_clown",
+          "lvl": 1
+        },
+        {
           "id": "k_cleanup_hitter",
           "lvl": 1
         },
@@ -4018,6 +4026,10 @@
       "name": "3DS Rosalina's Ice World R/T",
       "favorite_items": [
         {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "d_daisy_holiday_cheer",
           "lvl": 1
         },
@@ -4034,6 +4046,10 @@
           "lvl": 1
         },
         {
+          "id": "d_purple_koopa_freerunning",
+          "lvl": 1
+        },
+        {
           "id": "d_rosalina_halloween",
           "lvl": 1
         },
@@ -4042,11 +4058,19 @@
           "lvl": 1
         },
         {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
           "id": "g_chocolate_donut",
           "lvl": 1
         },
         {
           "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_glittering_parasol",
           "lvl": 1
         },
         {
@@ -4086,8 +4110,28 @@
           "lvl": 1
         },
         {
+          "id": "k_cupid_s_arrow",
+          "lvl": 3
+        },
+        {
           "id": "k_decal_streamliner",
           "lvl": 1
+        },
+        {
+          "id": "k_frost_wing",
+          "lvl": 1
+        },
+        {
+          "id": "k_frosty_bells",
+          "lvl": 1
+        },
+        {
+          "id": "k_gray_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_lightning",
+          "lvl": 6
         },
         {
           "id": "k_iron_cucumber",
@@ -4098,8 +4142,16 @@
           "lvl": 1
         },
         {
+          "id": "k_roaring_racer",
+          "lvl": 1
+        },
+        {
           "id": "k_silver_king",
           "lvl": 1
+        },
+        {
+          "id": "k_wild_slugger",
+          "lvl": 3
         }
       ]
     },
@@ -13186,10 +13238,6 @@
         },
         {
           "id": "k_sneeker",
-          "lvl": 1
-        },
-        {
-          "id": "k_wild_slugger",
           "lvl": 1
         },
         {
@@ -23143,7 +23191,7 @@
         },
         {
           "id": "g_gold_toe_bean_balloons",
-          "lvl": 1
+          "lvl": 6
         },
         {
           "id": "g_new_year_s_2020",
@@ -36667,6 +36715,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2t",
           "lvl": 1
         },
@@ -43669,6 +43721,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_vanilla_lake_1",
           "lvl": 6
         },
@@ -48605,6 +48661,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rosalina_s_ice_world_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1",
           "lvl": 3
         },
@@ -50185,6 +50245,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 3
+        },
+        {
           "id": "c_los_angeles_laps_2t",
           "lvl": 1
         },
@@ -51431,6 +51495,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 1
         },
@@ -51480,6 +51548,10 @@
         },
         {
           "id": "c_3ds_cheep_cheep_lagoon_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 1
         },
         {
@@ -52699,6 +52771,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_dino_dino_jungle",
           "lvl": 1
         },
@@ -53174,6 +53250,10 @@
       "name": "Green Lightning",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 6
+        },
         {
           "id": "c_3ds_wario_shipyard",
           "lvl": 1
@@ -57917,6 +57997,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 1
         },
@@ -60683,11 +60767,11 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
-          "id": "c_3ds_wario_shipyard_t",
-          "lvl": 1
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 3
         },
         {
-          "id": "c_los_angeles_laps_2",
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -63631,6 +63715,14 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rosalina_s_ice_world",
+          "lvl": 3
+        },
+        {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
@@ -65671,6 +65763,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2",
           "lvl": 1
         },
@@ -66304,7 +66400,7 @@
         },
         {
           "id": "c_rmx_rainbow_road_2r",
-          "lvl": 1
+          "lvl": 6
         },
         {
           "id": "c_rmx_rainbow_road_2t",
