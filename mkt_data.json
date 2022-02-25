@@ -1,7 +1,7 @@
 {
   "courses": {
     "c_3ds_bowser_s_castle": {
-      "sort": 277,
+      "sort": 280,
       "id": "c_3ds_bowser_s_castle",
       "name": "3DS Bowser's Castle",
       "favorite_items": [
@@ -96,7 +96,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_r": {
-      "sort": 278,
+      "sort": 281,
       "id": "c_3ds_bowser_s_castle_r",
       "name": "3DS Bowser's Castle R",
       "favorite_items": [
@@ -207,7 +207,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_t": {
-      "sort": 279,
+      "sort": 282,
       "id": "c_3ds_bowser_s_castle_t",
       "name": "3DS Bowser's Castle T",
       "favorite_items": [
@@ -298,7 +298,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon": {
-      "sort": 251,
+      "sort": 254,
       "id": "c_3ds_cheep_cheep_lagoon",
       "name": "3DS Cheep Cheep Lagoon",
       "favorite_items": [
@@ -441,7 +441,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_r": {
-      "sort": 252,
+      "sort": 255,
       "id": "c_3ds_cheep_cheep_lagoon_r",
       "name": "3DS Cheep Cheep Lagoon R",
       "favorite_items": [
@@ -588,7 +588,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_r_t": {
-      "sort": 254,
+      "sort": 257,
       "id": "c_3ds_cheep_cheep_lagoon_r_t",
       "name": "3DS Cheep Cheep Lagoon R/T",
       "favorite_items": [
@@ -759,7 +759,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_t": {
-      "sort": 253,
+      "sort": 256,
       "id": "c_3ds_cheep_cheep_lagoon_t",
       "name": "3DS Cheep Cheep Lagoon T",
       "favorite_items": [
@@ -918,7 +918,7 @@
       ]
     },
     "c_3ds_daisy_hills": {
-      "sort": 247,
+      "sort": 250,
       "id": "c_3ds_daisy_hills",
       "name": "3DS Daisy Hills",
       "favorite_items": [
@@ -1061,7 +1061,7 @@
       ]
     },
     "c_3ds_daisy_hills_r": {
-      "sort": 248,
+      "sort": 251,
       "id": "c_3ds_daisy_hills_r",
       "name": "3DS Daisy Hills R",
       "favorite_items": [
@@ -1216,7 +1216,7 @@
       ]
     },
     "c_3ds_daisy_hills_r_t": {
-      "sort": 250,
+      "sort": 253,
       "id": "c_3ds_daisy_hills_r_t",
       "name": "3DS Daisy Hills R/T",
       "favorite_items": [
@@ -1375,7 +1375,7 @@
       ]
     },
     "c_3ds_daisy_hills_t": {
-      "sort": 249,
+      "sort": 252,
       "id": "c_3ds_daisy_hills_t",
       "name": "3DS Daisy Hills T",
       "favorite_items": [
@@ -1534,7 +1534,7 @@
       ]
     },
     "c_3ds_mario_circuit": {
-      "sort": 259,
+      "sort": 262,
       "id": "c_3ds_mario_circuit",
       "name": "3DS Mario Circuit",
       "favorite_items": [
@@ -1669,7 +1669,7 @@
       ]
     },
     "c_3ds_mario_circuit_r": {
-      "sort": 260,
+      "sort": 263,
       "id": "c_3ds_mario_circuit_r",
       "name": "3DS Mario Circuit R",
       "favorite_items": [
@@ -1808,7 +1808,7 @@
       ]
     },
     "c_3ds_mario_circuit_r_t": {
-      "sort": 262,
+      "sort": 265,
       "id": "c_3ds_mario_circuit_r_t",
       "name": "3DS Mario Circuit R/T",
       "favorite_items": [
@@ -1967,7 +1967,7 @@
       ]
     },
     "c_3ds_mario_circuit_t": {
-      "sort": 261,
+      "sort": 264,
       "id": "c_3ds_mario_circuit_t",
       "name": "3DS Mario Circuit T",
       "favorite_items": [
@@ -2098,7 +2098,7 @@
       ]
     },
     "c_3ds_neo_bowser_city": {
-      "sort": 269,
+      "sort": 272,
       "id": "c_3ds_neo_bowser_city",
       "name": "3DS Neo Bowser City",
       "favorite_items": [
@@ -2221,7 +2221,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r": {
-      "sort": 270,
+      "sort": 273,
       "id": "c_3ds_neo_bowser_city_r",
       "name": "3DS Neo Bowser City R",
       "favorite_items": [
@@ -2344,7 +2344,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r_t": {
-      "sort": 272,
+      "sort": 275,
       "id": "c_3ds_neo_bowser_city_r_t",
       "name": "3DS Neo Bowser City R/T",
       "favorite_items": [
@@ -2503,7 +2503,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_t": {
-      "sort": 271,
+      "sort": 274,
       "id": "c_3ds_neo_bowser_city_t",
       "name": "3DS Neo Bowser City T",
       "favorite_items": [
@@ -2662,7 +2662,7 @@
       ]
     },
     "c_3ds_rainbow_road": {
-      "sort": 280,
+      "sort": 283,
       "id": "c_3ds_rainbow_road",
       "name": "3DS Rainbow Road",
       "favorite_items": [
@@ -2817,7 +2817,7 @@
       ]
     },
     "c_3ds_rainbow_road_r": {
-      "sort": 281,
+      "sort": 284,
       "id": "c_3ds_rainbow_road_r",
       "name": "3DS Rainbow Road R",
       "favorite_items": [
@@ -2980,7 +2980,7 @@
       ]
     },
     "c_3ds_rainbow_road_r_t": {
-      "sort": 283,
+      "sort": 286,
       "id": "c_3ds_rainbow_road_r_t",
       "name": "3DS Rainbow Road R/T",
       "favorite_items": [
@@ -3163,7 +3163,7 @@
       ]
     },
     "c_3ds_rainbow_road_t": {
-      "sort": 282,
+      "sort": 285,
       "id": "c_3ds_rainbow_road_t",
       "name": "3DS Rainbow Road T",
       "favorite_items": [
@@ -3342,7 +3342,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain": {
-      "sort": 263,
+      "sort": 266,
       "id": "c_3ds_rock_rock_mountain",
       "name": "3DS Rock Rock Mountain",
       "favorite_items": [
@@ -3469,7 +3469,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain_r": {
-      "sort": 264,
+      "sort": 267,
       "id": "c_3ds_rock_rock_mountain_r",
       "name": "3DS Rock Rock Mountain R",
       "favorite_items": [
@@ -3588,7 +3588,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain_t": {
-      "sort": 265,
+      "sort": 268,
       "id": "c_3ds_rock_rock_mountain_t",
       "name": "3DS Rock Rock Mountain T",
       "favorite_items": [
@@ -3711,7 +3711,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world": {
-      "sort": 273,
+      "sort": 276,
       "id": "c_3ds_rosalina_s_ice_world",
       "name": "3DS Rosalina's Ice World",
       "favorite_items": [
@@ -3858,7 +3858,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r": {
-      "sort": 274,
+      "sort": 277,
       "id": "c_3ds_rosalina_s_ice_world_r",
       "name": "3DS Rosalina's Ice World R",
       "favorite_items": [
@@ -4021,7 +4021,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r_t": {
-      "sort": 276,
+      "sort": 279,
       "id": "c_3ds_rosalina_s_ice_world_r_t",
       "name": "3DS Rosalina's Ice World R/T",
       "favorite_items": [
@@ -4156,7 +4156,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_t": {
-      "sort": 275,
+      "sort": 278,
       "id": "c_3ds_rosalina_s_ice_world_t",
       "name": "3DS Rosalina's Ice World T",
       "favorite_items": [
@@ -4307,7 +4307,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar": {
-      "sort": 255,
+      "sort": 258,
       "id": "c_3ds_shy_guy_bazaar",
       "name": "3DS Shy Guy Bazaar",
       "favorite_items": [
@@ -4450,7 +4450,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_r": {
-      "sort": 256,
+      "sort": 259,
       "id": "c_3ds_shy_guy_bazaar_r",
       "name": "3DS Shy Guy Bazaar R",
       "favorite_items": [
@@ -4625,7 +4625,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_r_t": {
-      "sort": 258,
+      "sort": 261,
       "id": "c_3ds_shy_guy_bazaar_r_t",
       "name": "3DS Shy Guy Bazaar R/T",
       "favorite_items": [
@@ -4784,7 +4784,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_t": {
-      "sort": 257,
+      "sort": 260,
       "id": "c_3ds_shy_guy_bazaar_t",
       "name": "3DS Shy Guy Bazaar T",
       "favorite_items": [
@@ -4939,7 +4939,7 @@
       ]
     },
     "c_3ds_toad_circuit": {
-      "sort": 243,
+      "sort": 246,
       "id": "c_3ds_toad_circuit",
       "name": "3DS Toad Circuit",
       "favorite_items": [
@@ -5098,7 +5098,7 @@
       ]
     },
     "c_3ds_toad_circuit_r": {
-      "sort": 244,
+      "sort": 247,
       "id": "c_3ds_toad_circuit_r",
       "name": "3DS Toad Circuit R",
       "favorite_items": [
@@ -5225,7 +5225,7 @@
       ]
     },
     "c_3ds_toad_circuit_r_t": {
-      "sort": 246,
+      "sort": 249,
       "id": "c_3ds_toad_circuit_r_t",
       "name": "3DS Toad Circuit R/T",
       "favorite_items": [
@@ -5384,7 +5384,7 @@
       ]
     },
     "c_3ds_toad_circuit_t": {
-      "sort": 245,
+      "sort": 248,
       "id": "c_3ds_toad_circuit_t",
       "name": "3DS Toad Circuit T",
       "favorite_items": [
@@ -5523,7 +5523,7 @@
       ]
     },
     "c_3ds_wario_shipyard": {
-      "sort": 266,
+      "sort": 269,
       "id": "c_3ds_wario_shipyard",
       "name": "3DS Wario Shipyard",
       "favorite_items": [
@@ -5618,7 +5618,7 @@
       ]
     },
     "c_3ds_wario_shipyard_r": {
-      "sort": 267,
+      "sort": 270,
       "id": "c_3ds_wario_shipyard_r",
       "name": "3DS Wario Shipyard R",
       "favorite_items": [
@@ -5717,7 +5717,7 @@
       ]
     },
     "c_3ds_wario_shipyard_t": {
-      "sort": 268,
+      "sort": 271,
       "id": "c_3ds_wario_shipyard_t",
       "name": "3DS Wario Shipyard T",
       "favorite_items": [
@@ -6248,7 +6248,7 @@
       ]
     },
     "c_ds_airship_fortress": {
-      "sort": 232,
+      "sort": 235,
       "id": "c_ds_airship_fortress",
       "name": "DS Airship Fortress",
       "favorite_items": [
@@ -6423,7 +6423,7 @@
       ]
     },
     "c_ds_airship_fortress_r": {
-      "sort": 233,
+      "sort": 236,
       "id": "c_ds_airship_fortress_r",
       "name": "DS Airship Fortress R",
       "favorite_items": [
@@ -6586,7 +6586,7 @@
       ]
     },
     "c_ds_airship_fortress_r_t": {
-      "sort": 235,
+      "sort": 238,
       "id": "c_ds_airship_fortress_r_t",
       "name": "DS Airship Fortress R/T",
       "favorite_items": [
@@ -6701,7 +6701,7 @@
       ]
     },
     "c_ds_airship_fortress_t": {
-      "sort": 234,
+      "sort": 237,
       "id": "c_ds_airship_fortress_t",
       "name": "DS Airship Fortress T",
       "favorite_items": [
@@ -6872,7 +6872,7 @@
       ]
     },
     "c_ds_dk_pass": {
-      "sort": 228,
+      "sort": 231,
       "id": "c_ds_dk_pass",
       "name": "DS DK Pass",
       "favorite_items": [
@@ -7003,7 +7003,7 @@
       ]
     },
     "c_ds_dk_pass_r": {
-      "sort": 229,
+      "sort": 232,
       "id": "c_ds_dk_pass_r",
       "name": "DS DK Pass R",
       "favorite_items": [
@@ -7130,7 +7130,7 @@
       ]
     },
     "c_ds_dk_pass_r_t": {
-      "sort": 231,
+      "sort": 234,
       "id": "c_ds_dk_pass_r_t",
       "name": "DS DK Pass R/T",
       "favorite_items": [
@@ -7281,7 +7281,7 @@
       ]
     },
     "c_ds_dk_pass_t": {
-      "sort": 230,
+      "sort": 233,
       "id": "c_ds_dk_pass_t",
       "name": "DS DK Pass T",
       "favorite_items": [
@@ -7412,7 +7412,7 @@
       ]
     },
     "c_ds_luigi_s_mansion": {
-      "sort": 220,
+      "sort": 223,
       "id": "c_ds_luigi_s_mansion",
       "name": "DS Luigi's Mansion",
       "favorite_items": [
@@ -7543,7 +7543,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_r": {
-      "sort": 221,
+      "sort": 224,
       "id": "c_ds_luigi_s_mansion_r",
       "name": "DS Luigi's Mansion R",
       "favorite_items": [
@@ -7698,7 +7698,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_r_t": {
-      "sort": 223,
+      "sort": 226,
       "id": "c_ds_luigi_s_mansion_r_t",
       "name": "DS Luigi's Mansion R/T",
       "favorite_items": [
@@ -7873,7 +7873,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_t": {
-      "sort": 222,
+      "sort": 225,
       "id": "c_ds_luigi_s_mansion_t",
       "name": "DS Luigi's Mansion T",
       "favorite_items": [
@@ -8016,7 +8016,7 @@
       ]
     },
     "c_ds_waluigi_pinball": {
-      "sort": 224,
+      "sort": 227,
       "id": "c_ds_waluigi_pinball",
       "name": "DS Waluigi Pinball",
       "favorite_items": [
@@ -8163,7 +8163,7 @@
       ]
     },
     "c_ds_waluigi_pinball_r": {
-      "sort": 225,
+      "sort": 228,
       "id": "c_ds_waluigi_pinball_r",
       "name": "DS Waluigi Pinball R",
       "favorite_items": [
@@ -8318,7 +8318,7 @@
       ]
     },
     "c_ds_waluigi_pinball_r_t": {
-      "sort": 227,
+      "sort": 230,
       "id": "c_ds_waluigi_pinball_r_t",
       "name": "DS Waluigi Pinball R/T",
       "favorite_items": [
@@ -8481,7 +8481,7 @@
       ]
     },
     "c_ds_waluigi_pinball_t": {
-      "sort": 226,
+      "sort": 229,
       "id": "c_ds_waluigi_pinball_t",
       "name": "DS Waluigi Pinball T",
       "favorite_items": [
@@ -9848,7 +9848,7 @@
       ]
     },
     "c_gba_cheep_cheep_island": {
-      "sort": 205,
+      "sort": 208,
       "id": "c_gba_cheep_cheep_island",
       "name": "GBA Cheep-Cheep Island",
       "favorite_items": [
@@ -9975,7 +9975,7 @@
       ]
     },
     "c_gba_cheep_cheep_island_r": {
-      "sort": 206,
+      "sort": 209,
       "id": "c_gba_cheep_cheep_island_r",
       "name": "GBA Cheep-Cheep Island R",
       "favorite_items": [
@@ -10110,7 +10110,7 @@
       ]
     },
     "c_gba_cheep_cheep_island_t": {
-      "sort": 207,
+      "sort": 210,
       "id": "c_gba_cheep_cheep_island_t",
       "name": "GBA Cheep-Cheep Island T",
       "favorite_items": [
@@ -10244,8 +10244,217 @@
         }
       ]
     },
+    "c_gba_sky_garden": {
+      "sort": 205,
+      "id": "c_gba_sky_garden",
+      "name": "GBA Sky Garden",
+      "favorite_items": [
+        {
+          "id": "d_mario_aviator",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_explorer",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "d_waluigi_vampire",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_super_mushroom",
+          "lvl": 1
+        },
+        {
+          "id": "g_glittering_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_meteor_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
+        },
+        {
+          "id": "k_cupid_s_arrow",
+          "lvl": 1
+        },
+        {
+          "id": "k_dreamy_egg",
+          "lvl": 1
+        },
+        {
+          "id": "k_frost_wing",
+          "lvl": 1
+        },
+        {
+          "id": "k_jukebox_buggy",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_gba_sky_garden_r": {
+      "sort": 206,
+      "id": "c_gba_sky_garden_r",
+      "name": "GBA Sky Garden R",
+      "favorite_items": [
+        {
+          "id": "d_daisy_yukata",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_aviator",
+          "lvl": 6
+        },
+        {
+          "id": "d_mario_golf",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_satellaview",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_explorer",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "g_aurora_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_butterfly_prism",
+          "lvl": 1
+        },
+        {
+          "id": "g_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_glittering_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_combo_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_gray_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_karp_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_wild_slugger",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_gba_sky_garden_t": {
+      "sort": 207,
+      "id": "c_gba_sky_garden_t",
+      "name": "GBA Sky Garden T",
+      "favorite_items": [
+        {
+          "id": "d_lakitu_party_time",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_halloween",
+          "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
+          "lvl": 1
+        },
+        {
+          "id": "d_wario_cowboy",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_kangaroo",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_bullet_bill",
+          "lvl": 1
+        },
+        {
+          "id": "g_aurora_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_glinting_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_magic_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_pink_gold_meteors",
+          "lvl": 1
+        },
+        {
+          "id": "k_carrot_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_frosty_bells",
+          "lvl": 1
+        },
+        {
+          "id": "k_karp_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_sports_coupe_2022",
+          "lvl": 1
+        },
+        {
+          "id": "k_tanooki_kart",
+          "lvl": 1
+        }
+      ]
+    },
     "c_gba_sunset_wilds": {
-      "sort": 208,
+      "sort": 211,
       "id": "c_gba_sunset_wilds",
       "name": "GBA Sunset Wilds",
       "favorite_items": [
@@ -10384,7 +10593,7 @@
       ]
     },
     "c_gba_sunset_wilds_r": {
-      "sort": 209,
+      "sort": 212,
       "id": "c_gba_sunset_wilds_r",
       "name": "GBA Sunset Wilds R",
       "favorite_items": [
@@ -10527,7 +10736,7 @@
       ]
     },
     "c_gba_sunset_wilds_r_t": {
-      "sort": 211,
+      "sort": 214,
       "id": "c_gba_sunset_wilds_r_t",
       "name": "GBA Sunset Wilds R/T",
       "favorite_items": [
@@ -10686,7 +10895,7 @@
       ]
     },
     "c_gba_sunset_wilds_t": {
-      "sort": 210,
+      "sort": 213,
       "id": "c_gba_sunset_wilds_t",
       "name": "GBA Sunset Wilds T",
       "favorite_items": [
@@ -10833,7 +11042,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle": {
-      "sort": 216,
+      "sort": 219,
       "id": "c_gcn_dino_dino_jungle",
       "name": "GCN Dino Dino Jungle",
       "favorite_items": [
@@ -10988,7 +11197,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_r": {
-      "sort": 217,
+      "sort": 220,
       "id": "c_gcn_dino_dino_jungle_r",
       "name": "GCN Dino Dino Jungle R",
       "favorite_items": [
@@ -11139,7 +11348,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_r_t": {
-      "sort": 219,
+      "sort": 222,
       "id": "c_gcn_dino_dino_jungle_r_t",
       "name": "GCN Dino Dino Jungle R/T",
       "favorite_items": [
@@ -11294,7 +11503,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_t": {
-      "sort": 218,
+      "sort": 221,
       "id": "c_gcn_dino_dino_jungle_t",
       "name": "GCN Dino Dino Jungle T",
       "favorite_items": [
@@ -11449,7 +11658,7 @@
       ]
     },
     "c_gcn_yoshi_circuit": {
-      "sort": 212,
+      "sort": 215,
       "id": "c_gcn_yoshi_circuit",
       "name": "GCN Yoshi Circuit",
       "favorite_items": [
@@ -11604,7 +11813,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_r": {
-      "sort": 213,
+      "sort": 216,
       "id": "c_gcn_yoshi_circuit_r",
       "name": "GCN Yoshi Circuit R",
       "favorite_items": [
@@ -11763,7 +11972,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_r_t": {
-      "sort": 215,
+      "sort": 218,
       "id": "c_gcn_yoshi_circuit_r_t",
       "name": "GCN Yoshi Circuit R/T",
       "favorite_items": [
@@ -11914,7 +12123,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_t": {
-      "sort": 214,
+      "sort": 217,
       "id": "c_gcn_yoshi_circuit_t",
       "name": "GCN Yoshi Circuit T",
       "favorite_items": [
@@ -24106,6 +24315,10 @@
           "lvl": 1
         },
         {
+          "id": "k_metal_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
           "id": "k_red_taxi",
           "lvl": 1
         },
@@ -30682,6 +30895,10 @@
           "lvl": 1
         },
         {
+          "id": "d_yoshi_kangaroo",
+          "lvl": 3
+        },
+        {
           "id": "g_calico_parafoil",
           "lvl": 1
         },
@@ -30696,6 +30913,10 @@
         {
           "id": "g_rose_parasol",
           "lvl": 1
+        },
+        {
+          "id": "g_silver_surf_master",
+          "lvl": 3
         },
         {
           "id": "g_starry_great_sail",
@@ -30720,6 +30941,10 @@
         {
           "id": "k_decal_streamliner",
           "lvl": 1
+        },
+        {
+          "id": "k_green_b_dasher_mk_2",
+          "lvl": 3
         },
         {
           "id": "k_green_double_decker",
@@ -31557,7 +31782,7 @@
           "lvl": 1
         },
         {
-          "id": "d_peach_happi",
+          "id": "d_pauline_rose",
           "lvl": 6
         },
         {
@@ -33533,7 +33758,7 @@
       ]
     },
     "c_wii_dk_summit": {
-      "sort": 236,
+      "sort": 239,
       "id": "c_wii_dk_summit",
       "name": "Wii DK Summit",
       "favorite_items": [
@@ -33660,7 +33885,7 @@
       ]
     },
     "c_wii_dk_summit_r": {
-      "sort": 237,
+      "sort": 240,
       "id": "c_wii_dk_summit_r",
       "name": "Wii DK Summit R",
       "favorite_items": [
@@ -33783,7 +34008,7 @@
       ]
     },
     "c_wii_dk_summit_t": {
-      "sort": 238,
+      "sort": 241,
       "id": "c_wii_dk_summit_t",
       "name": "Wii DK Summit T",
       "favorite_items": [
@@ -33930,7 +34155,7 @@
       ]
     },
     "c_wii_maple_treeway": {
-      "sort": 239,
+      "sort": 242,
       "id": "c_wii_maple_treeway",
       "name": "Wii Maple Treeway",
       "favorite_items": [
@@ -34089,7 +34314,7 @@
       ]
     },
     "c_wii_maple_treeway_r": {
-      "sort": 240,
+      "sort": 243,
       "id": "c_wii_maple_treeway_r",
       "name": "Wii Maple Treeway R",
       "favorite_items": [
@@ -34244,7 +34469,7 @@
       ]
     },
     "c_wii_maple_treeway_r_t": {
-      "sort": 242,
+      "sort": 245,
       "id": "c_wii_maple_treeway_r_t",
       "name": "Wii Maple Treeway R/T",
       "favorite_items": [
@@ -34347,7 +34572,7 @@
       ]
     },
     "c_wii_maple_treeway_t": {
-      "sort": 241,
+      "sort": 244,
       "id": "c_wii_maple_treeway_t",
       "name": "Wii Maple Treeway T",
       "favorite_items": [
@@ -34576,7 +34801,7 @@
       ]
     },
     "d_baby_mario_koala": {
-      "sort": 102,
+      "sort": 103,
       "id": "d_baby_mario_koala",
       "i_type": "Driver",
       "name": "Baby Mario (Koala)",
@@ -34720,7 +34945,7 @@
       ]
     },
     "d_baby_peach_cherub": {
-      "sort": 71,
+      "sort": 72,
       "id": "d_baby_peach_cherub",
       "i_type": "Driver",
       "name": "Baby Peach (Cherub)",
@@ -34856,7 +35081,7 @@
       ]
     },
     "d_baby_rosalina_detective": {
-      "sort": 75,
+      "sort": 76,
       "id": "d_baby_rosalina_detective",
       "i_type": "Driver",
       "name": "Baby Rosalina (Detective)",
@@ -35040,7 +35265,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 138,
+      "sort": 140,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -35396,7 +35621,7 @@
       ]
     },
     "d_black_yoshi": {
-      "sort": 77,
+      "sort": 78,
       "id": "d_black_yoshi",
       "i_type": "Driver",
       "name": "Black Yoshi",
@@ -35816,7 +36041,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 131,
+      "sort": 133,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -35912,7 +36137,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 136,
+      "sort": 138,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -36012,7 +36237,7 @@
       ]
     },
     "d_builder_luigi": {
-      "sort": 93,
+      "sort": 94,
       "id": "d_builder_luigi",
       "i_type": "Driver",
       "name": "Builder Luigi",
@@ -36132,7 +36357,7 @@
       ]
     },
     "d_builder_mario": {
-      "sort": 78,
+      "sort": 79,
       "id": "d_builder_mario",
       "i_type": "Driver",
       "name": "Builder Mario",
@@ -36236,7 +36461,7 @@
       ]
     },
     "d_builder_toad": {
-      "sort": 79,
+      "sort": 80,
       "id": "d_builder_toad",
       "i_type": "Driver",
       "name": "Builder Toad",
@@ -36344,7 +36569,7 @@
       ]
     },
     "d_builder_toadette": {
-      "sort": 103,
+      "sort": 104,
       "id": "d_builder_toadette",
       "i_type": "Driver",
       "name": "Builder Toadette",
@@ -36484,7 +36709,7 @@
       ]
     },
     "d_captain_toad": {
-      "sort": 85,
+      "sort": 86,
       "id": "d_captain_toad",
       "i_type": "Driver",
       "name": "Captain Toad",
@@ -36584,7 +36809,7 @@
       ]
     },
     "d_cat_peach": {
-      "sort": 96,
+      "sort": 97,
       "id": "d_cat_peach",
       "i_type": "Driver",
       "name": "Cat Peach",
@@ -36704,7 +36929,7 @@
       ]
     },
     "d_cat_rosalina": {
-      "sort": 115,
+      "sort": 116,
       "id": "d_cat_rosalina",
       "i_type": "Driver",
       "name": "Cat Rosalina",
@@ -36748,7 +36973,7 @@
       ]
     },
     "d_cat_toad": {
-      "sort": 97,
+      "sort": 98,
       "id": "d_cat_toad",
       "i_type": "Driver",
       "name": "Cat Toad",
@@ -36880,7 +37105,7 @@
       ]
     },
     "d_chargin_chuck": {
-      "sort": 144,
+      "sort": 146,
       "id": "d_chargin_chuck",
       "i_type": "Driver",
       "name": "Chargin' Chuck",
@@ -36950,7 +37175,7 @@
       ]
     },
     "d_daisy_fairy": {
-      "sort": 80,
+      "sort": 81,
       "id": "d_daisy_fairy",
       "i_type": "Driver",
       "name": "Daisy (Fairy)",
@@ -37042,7 +37267,7 @@
       ]
     },
     "d_daisy_holiday_cheer": {
-      "sort": 63,
+      "sort": 64,
       "id": "d_daisy_holiday_cheer",
       "i_type": "Driver",
       "name": "Daisy (Holiday Cheer)",
@@ -37150,7 +37375,7 @@
       ]
     },
     "d_daisy_swimwear": {
-      "sort": 106,
+      "sort": 107,
       "id": "d_daisy_swimwear",
       "i_type": "Driver",
       "name": "Daisy (Swimwear)",
@@ -37286,7 +37511,7 @@
       ]
     },
     "d_daisy_yukata": {
-      "sort": 87,
+      "sort": 88,
       "id": "d_daisy_yukata",
       "i_type": "Driver",
       "name": "Daisy (Yukata)",
@@ -37322,6 +37547,10 @@
         },
         {
           "id": "c_ds_waluigi_pinball_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
         {
@@ -37434,7 +37663,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 127,
+      "sort": 129,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -37578,7 +37807,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 133,
+      "sort": 135,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -37758,7 +37987,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 125,
+      "sort": 127,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -37862,7 +38091,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 119,
+      "sort": 121,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -37938,7 +38167,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 128,
+      "sort": 130,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -38090,7 +38319,7 @@
       ]
     },
     "d_fire_rosalina": {
-      "sort": 94,
+      "sort": 95,
       "id": "d_fire_rosalina",
       "i_type": "Driver",
       "name": "Fire Rosalina",
@@ -38222,7 +38451,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 126,
+      "sort": 128,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -38322,7 +38551,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 123,
+      "sort": 125,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -38610,7 +38839,7 @@
       ]
     },
     "d_ice_mario": {
-      "sort": 70,
+      "sort": 71,
       "id": "d_ice_mario",
       "i_type": "Driver",
       "name": "Ice Mario",
@@ -38726,7 +38955,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 141,
+      "sort": 143,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -38846,7 +39075,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 132,
+      "sort": 134,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -38954,7 +39183,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 140,
+      "sort": 142,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -39114,7 +39343,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 135,
+      "sort": 137,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -39206,7 +39435,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 120,
+      "sort": 122,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -39358,7 +39587,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 137,
+      "sort": 139,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -39394,6 +39623,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -39529,6 +39762,15 @@
         "KD2EVKk=|qDyMVqU=|KDqITKU=|NMVmlUo=|RL2Lcjc=|QlSNqOY=|QjqKqqU="
       ]
     },
+    "d_light_blue_shy_guy": {
+      "sort": 53,
+      "id": "d_light_blue_shy_guy",
+      "i_type": "Driver",
+      "name": "Light-blue Shy Guy",
+      "rarity": "Super",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_light_blue_toad_pit_crew": {
       "sort": 29,
       "id": "d_light_blue_toad_pit_crew",
@@ -39662,7 +39904,7 @@
       ]
     },
     "d_luigi_classic": {
-      "sort": 74,
+      "sort": 75,
       "id": "d_luigi_classic",
       "i_type": "Driver",
       "name": "Luigi (Classic)",
@@ -39758,7 +40000,7 @@
       ]
     },
     "d_luigi_golf": {
-      "sort": 118,
+      "sort": 119,
       "id": "d_luigi_golf",
       "i_type": "Driver",
       "name": "Luigi (Golf)",
@@ -39776,7 +40018,7 @@
       "hashes": []
     },
     "d_luigi_lederhosen": {
-      "sort": 95,
+      "sort": 96,
       "id": "d_luigi_lederhosen",
       "i_type": "Driver",
       "name": "Luigi (Lederhosen)",
@@ -39892,7 +40134,7 @@
       ]
     },
     "d_luigi_painter": {
-      "sort": 105,
+      "sort": 106,
       "id": "d_luigi_painter",
       "i_type": "Driver",
       "name": "Luigi (Painter)",
@@ -40040,7 +40282,7 @@
       ]
     },
     "d_luigi_vacation": {
-      "sort": 116,
+      "sort": 117,
       "id": "d_luigi_vacation",
       "i_type": "Driver",
       "name": "Luigi (Vacation)",
@@ -40068,6 +40310,14 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -40147,8 +40397,26 @@
         "aknEQqU=|ojPGBho=|tBKmNlo=|TElJuaU=|qjxORoY=|tJai9lo=|5FPitlQ="
       ]
     },
+    "d_mario_aviator": {
+      "sort": 120,
+      "id": "d_mario_aviator",
+      "i_type": "Driver",
+      "name": "Mario (Aviator)",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
+    },
     "d_mario_baseball": {
-      "sort": 107,
+      "sort": 108,
       "id": "d_mario_baseball",
       "i_type": "Driver",
       "name": "Mario (Baseball)",
@@ -40288,7 +40556,7 @@
       ]
     },
     "d_mario_chef": {
-      "sort": 81,
+      "sort": 82,
       "id": "d_mario_chef",
       "i_type": "Driver",
       "name": "Mario (Chef)",
@@ -40392,7 +40660,7 @@
       ]
     },
     "d_mario_classic": {
-      "sort": 73,
+      "sort": 74,
       "id": "d_mario_classic",
       "i_type": "Driver",
       "name": "Mario (Classic)",
@@ -40472,7 +40740,7 @@
       ]
     },
     "d_mario_golf": {
-      "sort": 117,
+      "sort": 118,
       "id": "d_mario_golf",
       "i_type": "Driver",
       "name": "Mario (Golf)",
@@ -40481,6 +40749,10 @@
         {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 3
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2",
@@ -40498,7 +40770,7 @@
       "hashes": []
     },
     "d_mario_hakama": {
-      "sort": 58,
+      "sort": 59,
       "id": "d_mario_hakama",
       "i_type": "Driver",
       "name": "Mario (Hakama)",
@@ -40578,7 +40850,7 @@
       ]
     },
     "d_mario_halloween": {
-      "sort": 90,
+      "sort": 91,
       "id": "d_mario_halloween",
       "i_type": "Driver",
       "name": "Mario (Halloween)",
@@ -40674,7 +40946,7 @@
       ]
     },
     "d_mario_happi": {
-      "sort": 66,
+      "sort": 67,
       "id": "d_mario_happi",
       "i_type": "Driver",
       "name": "Mario (Happi)",
@@ -40758,7 +41030,7 @@
       ]
     },
     "d_mario_musician": {
-      "sort": 56,
+      "sort": 57,
       "id": "d_mario_musician",
       "i_type": "Driver",
       "name": "Mario (Musician)",
@@ -40850,7 +41122,7 @@
       ]
     },
     "d_mario_racing": {
-      "sort": 100,
+      "sort": 101,
       "id": "d_mario_racing",
       "i_type": "Driver",
       "name": "Mario (Racing)",
@@ -40958,7 +41230,7 @@
       ]
     },
     "d_mario_santa": {
-      "sort": 61,
+      "sort": 62,
       "id": "d_mario_santa",
       "i_type": "Driver",
       "name": "Mario (Santa)",
@@ -41046,7 +41318,7 @@
       ]
     },
     "d_mario_satellaview": {
-      "sort": 113,
+      "sort": 114,
       "id": "d_mario_satellaview",
       "i_type": "Driver",
       "name": "Mario (Satellaview)",
@@ -41075,6 +41347,10 @@
         {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 6
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
         },
         {
           "id": "c_rmx_rainbow_road_2",
@@ -41122,7 +41398,7 @@
       ]
     },
     "d_mario_snes": {
-      "sort": 88,
+      "sort": 89,
       "id": "d_mario_snes",
       "i_type": "Driver",
       "name": "Mario (SNES)",
@@ -41234,7 +41510,7 @@
       ]
     },
     "d_mario_sunshine": {
-      "sort": 89,
+      "sort": 90,
       "id": "d_mario_sunshine",
       "i_type": "Driver",
       "name": "Mario (Sunshine)",
@@ -41354,7 +41630,7 @@
       ]
     },
     "d_mario_swimwear": {
-      "sort": 84,
+      "sort": 85,
       "id": "d_mario_swimwear",
       "i_type": "Driver",
       "name": "Mario (Swimwear)",
@@ -41454,7 +41730,7 @@
       ]
     },
     "d_mario_tuxedo": {
-      "sort": 104,
+      "sort": 105,
       "id": "d_mario_tuxedo",
       "i_type": "Driver",
       "name": "Mario (Tuxedo)",
@@ -41574,7 +41850,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 143,
+      "sort": 145,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -41630,7 +41906,7 @@
       ]
     },
     "d_metal_mario": {
-      "sort": 53,
+      "sort": 54,
       "id": "d_metal_mario",
       "i_type": "Driver",
       "name": "Metal Mario",
@@ -41774,7 +42050,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 130,
+      "sort": 132,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -41890,7 +42166,7 @@
       ]
     },
     "d_pauline": {
-      "sort": 55,
+      "sort": 56,
       "id": "d_pauline",
       "i_type": "Driver",
       "name": "Pauline",
@@ -41970,7 +42246,7 @@
       ]
     },
     "d_pauline_party_time": {
-      "sort": 65,
+      "sort": 66,
       "id": "d_pauline_party_time",
       "i_type": "Driver",
       "name": "Pauline (Party Time)",
@@ -42066,7 +42342,7 @@
       ]
     },
     "d_pauline_rose": {
-      "sort": 98,
+      "sort": 99,
       "id": "d_pauline_rose",
       "i_type": "Driver",
       "name": "Pauline (Rose)",
@@ -42177,6 +42453,10 @@
           "lvl": 1
         },
         {
+          "id": "c_tokyo_blur_2",
+          "lvl": 6
+        },
+        {
           "id": "c_tokyo_blur_3r_t",
           "lvl": 1
         },
@@ -42250,7 +42530,7 @@
       ]
     },
     "d_peach_explorer": {
-      "sort": 92,
+      "sort": 93,
       "id": "d_peach_explorer",
       "i_type": "Driver",
       "name": "Peach (Explorer)",
@@ -42278,6 +42558,14 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
         {
@@ -42394,7 +42682,7 @@
       ]
     },
     "d_peach_halloween": {
-      "sort": 91,
+      "sort": 92,
       "id": "d_peach_halloween",
       "i_type": "Driver",
       "name": "Peach (Halloween)",
@@ -42430,6 +42718,10 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -42522,7 +42814,7 @@
       ]
     },
     "d_peach_happi": {
-      "sort": 108,
+      "sort": 109,
       "id": "d_peach_happi",
       "i_type": "Driver",
       "name": "Peach (Happi)",
@@ -42637,10 +42929,6 @@
           "lvl": 1
         },
         {
-          "id": "c_tokyo_blur_2",
-          "lvl": 6
-        },
-        {
           "id": "c_tokyo_blur_3r",
           "lvl": 1
         },
@@ -42654,7 +42942,7 @@
       ]
     },
     "d_peach_kimono": {
-      "sort": 57,
+      "sort": 58,
       "id": "d_peach_kimono",
       "i_type": "Driver",
       "name": "Peach (Kimono)",
@@ -42734,7 +43022,7 @@
       ]
     },
     "d_peach_vacation": {
-      "sort": 60,
+      "sort": 61,
       "id": "d_peach_vacation",
       "i_type": "Driver",
       "name": "Peach (Vacation)",
@@ -42818,7 +43106,7 @@
       ]
     },
     "d_peach_wedding": {
-      "sort": 82,
+      "sort": 83,
       "id": "d_peach_wedding",
       "i_type": "Driver",
       "name": "Peach (Wedding)",
@@ -42922,7 +43210,7 @@
       ]
     },
     "d_peach_wintertime": {
-      "sort": 68,
+      "sort": 69,
       "id": "d_peach_wintertime",
       "i_type": "Driver",
       "name": "Peach (Wintertime)",
@@ -43010,7 +43298,7 @@
       ]
     },
     "d_peachette": {
-      "sort": 54,
+      "sort": 55,
       "id": "d_peachette",
       "i_type": "Driver",
       "name": "Peachette",
@@ -43074,7 +43362,7 @@
       ]
     },
     "d_penguin_luigi": {
-      "sort": 69,
+      "sort": 70,
       "id": "d_penguin_luigi",
       "i_type": "Driver",
       "name": "Penguin Luigi",
@@ -43186,7 +43474,7 @@
       ]
     },
     "d_penguin_mario": {
-      "sort": 109,
+      "sort": 110,
       "id": "d_penguin_mario",
       "i_type": "Driver",
       "name": "Penguin Mario",
@@ -43318,7 +43606,7 @@
       ]
     },
     "d_penguin_toad": {
-      "sort": 99,
+      "sort": 100,
       "id": "d_penguin_toad",
       "i_type": "Driver",
       "name": "Penguin Toad",
@@ -43430,7 +43718,7 @@
       ]
     },
     "d_penguin_toadette": {
-      "sort": 114,
+      "sort": 115,
       "id": "d_penguin_toadette",
       "i_type": "Driver",
       "name": "Penguin Toadette",
@@ -43446,6 +43734,10 @@
         },
         {
           "id": "c_gba_cheep_cheep_island",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -43494,7 +43786,7 @@
       ]
     },
     "d_pink_gold_peach": {
-      "sort": 62,
+      "sort": 63,
       "id": "d_pink_gold_peach",
       "i_type": "Driver",
       "name": "Pink Gold Peach",
@@ -43914,7 +44206,7 @@
       ]
     },
     "d_rosalina_aurora": {
-      "sort": 72,
+      "sort": 73,
       "id": "d_rosalina_aurora",
       "i_type": "Driver",
       "name": "Rosalina (Aurora)",
@@ -44014,7 +44306,7 @@
       ]
     },
     "d_rosalina_halloween": {
-      "sort": 59,
+      "sort": 60,
       "id": "d_rosalina_halloween",
       "i_type": "Driver",
       "name": "Rosalina (Halloween)",
@@ -44106,7 +44398,7 @@
       ]
     },
     "d_rosalina_swimwear": {
-      "sort": 83,
+      "sort": 84,
       "id": "d_rosalina_swimwear",
       "i_type": "Driver",
       "name": "Rosalina (Swimwear)",
@@ -44238,7 +44530,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 134,
+      "sort": 136,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -44358,7 +44650,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 139,
+      "sort": 141,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -44490,7 +44782,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 121,
+      "sort": 123,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -44586,7 +44878,7 @@
       ]
     },
     "d_tanooki_mario": {
-      "sort": 111,
+      "sort": 112,
       "id": "d_tanooki_mario",
       "i_type": "Driver",
       "name": "Tanooki Mario",
@@ -44594,6 +44886,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
           "lvl": 1
         },
         {
@@ -44666,7 +44962,7 @@
       ]
     },
     "d_tanooki_rosalina": {
-      "sort": 112,
+      "sort": 113,
       "id": "d_tanooki_rosalina",
       "i_type": "Driver",
       "name": "Tanooki Rosalina",
@@ -44698,6 +44994,14 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
         {
@@ -44814,7 +45118,7 @@
       ]
     },
     "d_toad_party_time": {
-      "sort": 67,
+      "sort": 68,
       "id": "d_toad_party_time",
       "i_type": "Driver",
       "name": "Toad (Party Time)",
@@ -44982,7 +45286,7 @@
       ]
     },
     "d_toadette_explorer": {
-      "sort": 86,
+      "sort": 87,
       "id": "d_toadette_explorer",
       "i_type": "Driver",
       "name": "Toadette (Explorer)",
@@ -45150,7 +45454,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 122,
+      "sort": 124,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -45242,7 +45546,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 142,
+      "sort": 144,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -45286,6 +45590,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
           "lvl": 1
         },
         {
@@ -45402,7 +45710,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 129,
+      "sort": 131,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -45435,6 +45743,10 @@
         {
           "id": "c_ds_luigi_s_mansion_t",
           "lvl": 3
+        },
+        {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
         },
         {
           "id": "c_gcn_dino_dino_jungle",
@@ -45502,7 +45814,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 124,
+      "sort": 126,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
@@ -45614,7 +45926,7 @@
       ]
     },
     "d_white_yoshi": {
-      "sort": 101,
+      "sort": 102,
       "id": "d_white_yoshi",
       "i_type": "Driver",
       "name": "White Yoshi",
@@ -45862,7 +46174,7 @@
       ]
     },
     "d_yoshi_egg_hunt": {
-      "sort": 76,
+      "sort": 77,
       "id": "d_yoshi_egg_hunt",
       "i_type": "Driver",
       "name": "Yoshi (Egg Hunt)",
@@ -45946,7 +46258,7 @@
       ]
     },
     "d_yoshi_kangaroo": {
-      "sort": 110,
+      "sort": 111,
       "id": "d_yoshi_kangaroo",
       "i_type": "Driver",
       "name": "Yoshi (Kangaroo)",
@@ -45966,6 +46278,10 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -46065,6 +46381,10 @@
           "lvl": 1
         },
         {
+          "id": "c_sydney_sprint",
+          "lvl": 3
+        },
+        {
           "id": "c_sydney_sprint_2",
           "lvl": 1
         },
@@ -46082,7 +46402,7 @@
       ]
     },
     "d_yoshi_reindeer": {
-      "sort": 64,
+      "sort": 65,
       "id": "d_yoshi_reindeer",
       "i_type": "Driver",
       "name": "Yoshi (Reindeer)",
@@ -48689,6 +49009,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_3r",
           "lvl": 1
         },
@@ -48718,6 +49042,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_toad_circuit_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -49156,6 +49484,10 @@
         },
         {
           "id": "c_gba_bowser_s_castle_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
         {
@@ -49783,6 +50115,10 @@
           "lvl": 3
         },
         {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2r_t",
           "lvl": 1
         },
@@ -50247,6 +50583,10 @@
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 3
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2t",
@@ -51119,6 +51459,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2r",
           "lvl": 1
         },
@@ -51499,6 +51843,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 1
         },
@@ -51552,6 +51900,10 @@
         },
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -52775,6 +53127,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_dino_dino_jungle",
           "lvl": 1
         },
@@ -52949,6 +53305,10 @@
         {
           "id": "c_snes_koopa_troopa_beach_2t",
           "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint",
+          "lvl": 3
         },
         {
           "id": "c_sydney_sprint_r",
@@ -54333,6 +54693,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2r_t",
           "lvl": 1
         },
@@ -54582,6 +54946,14 @@
         },
         {
           "id": "c_ds_airship_fortress_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -55246,6 +55618,10 @@
         },
         {
           "id": "c_rmx_mario_circuit_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_singapore_speedway_r_t",
           "lvl": 1
         },
         {
@@ -59027,6 +59403,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_3t",
           "lvl": 1
         },
@@ -59919,6 +60299,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sunset_wilds",
           "lvl": 3
         },
@@ -60775,6 +61159,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
           "id": "c_los_angeles_laps_2",
           "lvl": 6
         },
@@ -61259,6 +61647,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_choco_mountain_r_t",
           "lvl": 1
         },
@@ -61691,6 +62083,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
           "id": "c_gcn_yoshi_circuit_r_t",
           "lvl": 6
         },
@@ -61756,6 +62152,14 @@
       "favorite_courses": [
         {
           "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -63311,6 +63715,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sunset_wilds",
           "lvl": 6
         },
@@ -63785,6 +64193,10 @@
         {
           "id": "c_3ds_bowser_s_castle_r",
           "lvl": 3
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_3t",
@@ -65427,6 +65839,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2r_t",
           "lvl": 1
         },
@@ -65564,6 +65980,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -65764,6 +66184,14 @@
       "favorite_courses": [
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
         {
@@ -66389,6 +66817,10 @@
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 6
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
         },
         {
           "id": "c_los_angeles_laps_2t",
@@ -67323,6 +67755,10 @@
           "lvl": 1
         },
         {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
           "id": "c_london_loop_3",
           "lvl": 6
         },
@@ -67520,6 +67956,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
           "lvl": 1
         },
         {
@@ -68596,6 +69036,10 @@
         },
         {
           "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
           "lvl": 1
         },
         {
@@ -70333,6 +70777,10 @@
         {
           "id": "c_snes_vanilla_lake_2t",
           "lvl": 1
+        },
+        {
+          "id": "c_sydney_sprint",
+          "lvl": 3
         },
         {
           "id": "c_sydney_sprint_2",
