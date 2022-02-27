@@ -3033,6 +3033,10 @@
           "lvl": 1
         },
         {
+          "id": "d_tanooki_mario",
+          "lvl": 1
+        },
+        {
           "id": "d_toadette_explorer",
           "lvl": 3
         },
@@ -3061,8 +3065,16 @@
           "lvl": 1
         },
         {
+          "id": "g_luma_parafoil",
+          "lvl": 3
+        },
+        {
           "id": "g_meteor_balloons",
           "lvl": 1
+        },
+        {
+          "id": "g_new_year_s_kite",
+          "lvl": 3
         },
         {
           "id": "g_pink_flower_glider",
@@ -3113,10 +3125,6 @@
           "lvl": 1
         },
         {
-          "id": "k_gold_cheep_charger",
-          "lvl": 3
-        },
-        {
           "id": "k_ice_blue_poltergust",
           "lvl": 1
         },
@@ -3126,10 +3134,6 @@
         },
         {
           "id": "k_lunar_cruiser",
-          "lvl": 3
-        },
-        {
-          "id": "k_paintster",
           "lvl": 3
         },
         {
@@ -3363,6 +3367,10 @@
           "lvl": 3
         },
         {
+          "id": "d_meowser",
+          "lvl": 1
+        },
+        {
           "id": "d_penguin_luigi",
           "lvl": 6
         },
@@ -3459,6 +3467,10 @@
           "lvl": 1
         },
         {
+          "id": "k_green_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
           "id": "k_jingle_bells",
           "lvl": 3
         },
@@ -3471,7 +3483,15 @@
           "lvl": 1
         },
         {
+          "id": "k_tiger_bruiser",
+          "lvl": 1
+        },
+        {
           "id": "k_white_royale",
+          "lvl": 1
+        },
+        {
+          "id": "k_wild_slugger",
           "lvl": 1
         }
       ]
@@ -8447,6 +8467,10 @@
           "lvl": 1
         },
         {
+          "id": "g_new_year_s_2022",
+          "lvl": 1
+        },
+        {
           "id": "g_rainbow_starchute",
           "lvl": 3
         },
@@ -8493,6 +8517,10 @@
         {
           "id": "k_iron_cucumber",
           "lvl": 1
+        },
+        {
+          "id": "k_jukebox_buggy",
+          "lvl": 3
         },
         {
           "id": "k_poison_apple_kart",
@@ -12069,6 +12097,10 @@
           "lvl": 1
         },
         {
+          "id": "d_yoshi",
+          "lvl": 1
+        },
+        {
           "id": "d_yoshi_egg_hunt",
           "lvl": 1
         },
@@ -12171,6 +12203,10 @@
         {
           "id": "k_yellow_turbo_birdo",
           "lvl": 3
+        },
+        {
+          "id": "k_zucchini",
+          "lvl": 1
         }
       ]
     },
@@ -12249,11 +12285,15 @@
         },
         {
           "id": "g_rose_parasol",
-          "lvl": 6
+          "lvl": 3
         },
         {
           "id": "g_shell_parachute",
           "lvl": 1
+        },
+        {
+          "id": "g_ship_s_wheel",
+          "lvl": 6
         },
         {
           "id": "g_silver_manta_glider",
@@ -41962,6 +42002,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rock_rock_mountain_r",
           "lvl": 1
         },
@@ -44982,6 +45026,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rainbow_road_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_r",
           "lvl": 1
         },
@@ -46251,6 +46299,10 @@
         },
         {
           "id": "c_gcn_yoshi_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_r_t",
           "lvl": 1
         },
         {
@@ -52420,10 +52472,6 @@
           "lvl": 6
         },
         {
-          "id": "c_3ds_rainbow_road_r_t",
-          "lvl": 3
-        },
-        {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 1
         },
@@ -53353,6 +53401,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_mario_circuit_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_rock_rock_mountain",
           "lvl": 1
         },
         {
@@ -54798,6 +54850,10 @@
           "lvl": 1
         },
         {
+          "id": "c_ds_waluigi_pinball_r_t",
+          "lvl": 3
+        },
+        {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 1
         },
@@ -56052,10 +56108,6 @@
         {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
-        },
-        {
-          "id": "c_3ds_rainbow_road_r_t",
-          "lvl": 3
         },
         {
           "id": "c_3ds_rainbow_road_t",
@@ -60576,6 +60628,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard",
           "lvl": 1
         },
@@ -61276,6 +61332,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 3
         },
@@ -61687,6 +61747,10 @@
         },
         {
           "id": "c_gcn_yoshi_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_r_t",
           "lvl": 1
         },
         {
@@ -67788,6 +67852,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_rainbow_road_r_t",
+          "lvl": 3
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_t",
           "lvl": 1
         },
@@ -68516,6 +68584,10 @@
           "lvl": 6
         },
         {
+          "id": "c_ds_waluigi_pinball_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2t",
           "lvl": 3
         },
@@ -68562,6 +68634,10 @@
         {
           "id": "c_3ds_rainbow_road_r",
           "lvl": 1
+        },
+        {
+          "id": "c_3ds_rainbow_road_r_t",
+          "lvl": 3
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r_t",
@@ -69961,7 +70037,7 @@
         },
         {
           "id": "c_gcn_yoshi_circuit_t",
-          "lvl": 6
+          "lvl": 3
         },
         {
           "id": "c_london_loop_3",
@@ -70286,6 +70362,10 @@
         {
           "id": "c_gcn_yoshi_circuit_r",
           "lvl": 1
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_t",
+          "lvl": 6
         },
         {
           "id": "c_london_loop_3",
