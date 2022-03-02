@@ -3479,6 +3479,10 @@
           "lvl": 1
         },
         {
+          "id": "k_prop_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_rambi_rider",
           "lvl": 1
         },
@@ -3618,6 +3622,10 @@
           "lvl": 1
         },
         {
+          "id": "k_prop_kart",
+          "lvl": 3
+        },
+        {
           "id": "k_rambi_rider",
           "lvl": 1
         },
@@ -3627,6 +3635,10 @@
         },
         {
           "id": "k_roaring_racer",
+          "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
           "lvl": 1
         },
         {
@@ -3761,12 +3773,20 @@
           "lvl": 3
         },
         {
+          "id": "k_prop_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_rambi_runner",
           "lvl": 1
         },
         {
           "id": "k_roaring_racer",
           "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
+          "lvl": 6
         },
         {
           "id": "k_trickster",
@@ -10400,6 +10420,10 @@
         {
           "id": "k_jukebox_buggy",
           "lvl": 1
+        },
+        {
+          "id": "k_prop_kart",
+          "lvl": 1
         }
       ]
     },
@@ -10473,6 +10497,18 @@
           "lvl": 1
         },
         {
+          "id": "k_magma_broom",
+          "lvl": 6
+        },
+        {
+          "id": "k_prop_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
+          "lvl": 1
+        },
+        {
           "id": "k_wild_slugger",
           "lvl": 1
         }
@@ -10540,7 +10576,15 @@
           "lvl": 1
         },
         {
+          "id": "k_magma_broom",
+          "lvl": 1
+        },
+        {
           "id": "k_sports_coupe_2022",
+          "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
           "lvl": 1
         },
         {
@@ -12211,6 +12255,10 @@
         {
           "id": "k_sky_blue_b_dasher_mk_2",
           "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
+          "lvl": 6
         },
         {
           "id": "k_turbo_birdo",
@@ -21713,7 +21761,7 @@
         },
         {
           "id": "d_waluigi_vampire",
-          "lvl": 6
+          "lvl": 3
         },
         {
           "id": "g_8_bit_fire_flower",
@@ -21932,6 +21980,10 @@
         },
         {
           "id": "k_jukebox_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_magma_broom",
           "lvl": 1
         },
         {
@@ -22199,6 +22251,10 @@
         {
           "id": "k_jet_cruiser",
           "lvl": 1
+        },
+        {
+          "id": "k_magma_broom",
+          "lvl": 3
         },
         {
           "id": "k_metal_b_dasher_mk_2",
@@ -23406,6 +23462,10 @@
         {
           "id": "d_cat_peach",
           "lvl": 1
+        },
+        {
+          "id": "d_cat_rosalina",
+          "lvl": 3
         },
         {
           "id": "d_lakitu_party_time",
@@ -31242,6 +31302,10 @@
           "lvl": 1
         },
         {
+          "id": "k_black_cat_cruiser",
+          "lvl": 6
+        },
+        {
           "id": "k_brown_offroader",
           "lvl": 1
         },
@@ -37186,6 +37250,10 @@
         {
           "id": "c_rmx_ghost_valley_1r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_2",
+          "lvl": 3
         },
         {
           "id": "c_snes_donut_plains_1",
@@ -45935,7 +46003,7 @@
         },
         {
           "id": "c_rmx_ghost_valley_1",
-          "lvl": 6
+          "lvl": 3
         },
         {
           "id": "c_rmx_ghost_valley_1r",
@@ -47157,7 +47225,7 @@
       ]
     },
     "k_badwagon": {
-      "sort": 162,
+      "sort": 165,
       "id": "k_badwagon",
       "i_type": "Kart",
       "name": "Badwagon",
@@ -47225,7 +47293,7 @@
       ]
     },
     "k_banana_master": {
-      "sort": 168,
+      "sort": 171,
       "id": "k_banana_master",
       "i_type": "Kart",
       "name": "Banana Master",
@@ -47608,6 +47676,10 @@
           "lvl": 1
         },
         {
+          "id": "c_sydney_sprint_2",
+          "lvl": 6
+        },
+        {
           "id": "c_sydney_sprint_2r",
           "lvl": 1
         },
@@ -47701,7 +47773,7 @@
       ]
     },
     "k_black_dozer": {
-      "sort": 184,
+      "sort": 187,
       "id": "k_black_dozer",
       "i_type": "Kart",
       "name": "Black Dozer",
@@ -47909,7 +47981,7 @@
       ]
     },
     "k_black_penguin_slider": {
-      "sort": 187,
+      "sort": 190,
       "id": "k_black_penguin_slider",
       "i_type": "Kart",
       "name": "Black Penguin Slider",
@@ -48017,7 +48089,7 @@
       ]
     },
     "k_black_turbo_birdo": {
-      "sort": 189,
+      "sort": 192,
       "id": "k_black_turbo_birdo",
       "i_type": "Kart",
       "name": "Black Turbo Birdo",
@@ -48137,7 +48209,7 @@
       ]
     },
     "k_blue_badwagon": {
-      "sort": 163,
+      "sort": 166,
       "id": "k_blue_badwagon",
       "i_type": "Kart",
       "name": "Blue Badwagon",
@@ -48731,7 +48803,7 @@
       ]
     },
     "k_brown_offroader": {
-      "sort": 175,
+      "sort": 178,
       "id": "k_brown_offroader",
       "i_type": "Kart",
       "name": "Brown Offroader",
@@ -48819,7 +48891,7 @@
       ]
     },
     "k_bruiser": {
-      "sort": 165,
+      "sort": 168,
       "id": "k_bruiser",
       "i_type": "Kart",
       "name": "Bruiser",
@@ -49015,7 +49087,7 @@
       ]
     },
     "k_cact_ice": {
-      "sort": 188,
+      "sort": 191,
       "id": "k_cact_ice",
       "i_type": "Kart",
       "name": "Cact-Ice",
@@ -49107,7 +49179,7 @@
       ]
     },
     "k_cact_r": {
-      "sort": 199,
+      "sort": 202,
       "id": "k_cact_r",
       "i_type": "Kart",
       "name": "Cact-R",
@@ -49199,7 +49271,7 @@
       ]
     },
     "k_cact_x": {
-      "sort": 176,
+      "sort": 179,
       "id": "k_cact_x",
       "i_type": "Kart",
       "name": "Cact-X",
@@ -49275,7 +49347,7 @@
       ]
     },
     "k_candy_clown": {
-      "sort": 201,
+      "sort": 204,
       "id": "k_candy_clown",
       "i_type": "Kart",
       "name": "Candy Clown",
@@ -49555,7 +49627,7 @@
       ]
     },
     "k_cheep_snorkel": {
-      "sort": 170,
+      "sort": 173,
       "id": "k_cheep_snorkel",
       "i_type": "Kart",
       "name": "Cheep Snorkel",
@@ -49753,7 +49825,7 @@
       ]
     },
     "k_cheership": {
-      "sort": 200,
+      "sort": 203,
       "id": "k_cheership",
       "i_type": "Kart",
       "name": "Cheership",
@@ -50417,7 +50489,7 @@
       ]
     },
     "k_combo_cruiser": {
-      "sort": 203,
+      "sort": 206,
       "id": "k_combo_cruiser",
       "i_type": "Kart",
       "name": "Combo Cruiser",
@@ -50551,7 +50623,7 @@
       ]
     },
     "k_crawly_kart": {
-      "sort": 183,
+      "sort": 186,
       "id": "k_crawly_kart",
       "i_type": "Kart",
       "name": "Crawly Kart",
@@ -50739,7 +50811,7 @@
       ]
     },
     "k_crimson_hop_rod": {
-      "sort": 192,
+      "sort": 195,
       "id": "k_crimson_hop_rod",
       "i_type": "Kart",
       "name": "Crimson Hop Rod",
@@ -50933,7 +51005,7 @@
       "hashes": []
     },
     "k_dark_buggy": {
-      "sort": 173,
+      "sort": 176,
       "id": "k_dark_buggy",
       "i_type": "Kart",
       "name": "Dark Buggy",
@@ -51061,7 +51133,7 @@
       ]
     },
     "k_dark_hop_rod": {
-      "sort": 193,
+      "sort": 196,
       "id": "k_dark_hop_rod",
       "i_type": "Kart",
       "name": "Dark Hop Rod",
@@ -51469,7 +51541,7 @@
       ]
     },
     "k_dk_maximum": {
-      "sort": 180,
+      "sort": 183,
       "id": "k_dk_maximum",
       "i_type": "Kart",
       "name": "DK Maximum",
@@ -52337,7 +52409,7 @@
       ]
     },
     "k_gilded_king": {
-      "sort": 182,
+      "sort": 185,
       "id": "k_gilded_king",
       "i_type": "Kart",
       "name": "Gilded King",
@@ -52625,7 +52697,7 @@
       ]
     },
     "k_gold_cheep_charger": {
-      "sort": 172,
+      "sort": 175,
       "id": "k_gold_cheep_charger",
       "i_type": "Kart",
       "name": "Gold Cheep Charger",
@@ -52733,7 +52805,7 @@
       ]
     },
     "k_gold_cheep_snorkel": {
-      "sort": 171,
+      "sort": 174,
       "id": "k_gold_cheep_snorkel",
       "i_type": "Kart",
       "name": "Gold Cheep Snorkel",
@@ -53261,7 +53333,7 @@
       ]
     },
     "k_gold_train": {
-      "sort": 164,
+      "sort": 167,
       "id": "k_gold_train",
       "i_type": "Kart",
       "name": "Gold Train",
@@ -54123,7 +54195,7 @@
       ]
     },
     "k_head_honcho": {
-      "sort": 179,
+      "sort": 182,
       "id": "k_head_honcho",
       "i_type": "Kart",
       "name": "Head Honcho",
@@ -54707,7 +54779,7 @@
       ]
     },
     "k_jade_hop_rod": {
-      "sort": 191,
+      "sort": 194,
       "id": "k_jade_hop_rod",
       "i_type": "Kart",
       "name": "Jade Hop Rod",
@@ -55151,7 +55223,7 @@
       ]
     },
     "k_kamek_s_zoom_broom": {
-      "sort": 194,
+      "sort": 197,
       "id": "k_kamek_s_zoom_broom",
       "i_type": "Kart",
       "name": "Kamek's Zoom Broom",
@@ -55423,7 +55495,7 @@
       ]
     },
     "k_koopa_king": {
-      "sort": 174,
+      "sort": 177,
       "id": "k_koopa_king",
       "i_type": "Kart",
       "name": "Koopa King",
@@ -55906,6 +55978,32 @@
         "VKhi7Xw=|UoRjzXM=|WoQjxVk=|3CAic8c=|NN/InDI=|Kt6FiIg=|ysQjxVM="
       ]
     },
+    "k_magma_broom": {
+      "sort": 164,
+      "id": "k_magma_broom",
+      "i_type": "Kart",
+      "name": "Magma Broom",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_ghost_valley_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_ghost_valley_1t",
+          "lvl": 3
+        }
+      ],
+      "hashes": []
+    },
     "k_metal_b_dasher_mk_2": {
       "sort": 144,
       "id": "k_metal_b_dasher_mk_2",
@@ -56019,7 +56117,7 @@
       ]
     },
     "k_offroader": {
-      "sort": 167,
+      "sort": 170,
       "id": "k_offroader",
       "i_type": "Kart",
       "name": "Offroader",
@@ -56455,7 +56553,7 @@
       ]
     },
     "k_party_wing": {
-      "sort": 185,
+      "sort": 188,
       "id": "k_party_wing",
       "i_type": "Kart",
       "name": "Party-Wing",
@@ -56543,7 +56641,7 @@
       ]
     },
     "k_penguin_slider": {
-      "sort": 186,
+      "sort": 189,
       "id": "k_penguin_slider",
       "i_type": "Kart",
       "name": "Penguin Slider",
@@ -57131,7 +57229,7 @@
       ]
     },
     "k_pirate_sushi_racer": {
-      "sort": 177,
+      "sort": 180,
       "id": "k_pirate_sushi_racer",
       "i_type": "Kart",
       "name": "Pirate Sushi Racer",
@@ -57295,7 +57393,7 @@
       ]
     },
     "k_poison_apple_kart": {
-      "sort": 169,
+      "sort": 172,
       "id": "k_poison_apple_kart",
       "i_type": "Kart",
       "name": "Poison Apple Kart",
@@ -57502,6 +57600,36 @@
         "Rkgr46Q=|SJqCtG0=|StKLpGU=|0iQrY1Y=|PLPEPCs=|ItqNiAg=|SpKBJEk="
       ]
     },
+    "k_prop_kart": {
+      "sort": 162,
+      "id": "k_prop_kart",
+      "i_type": "Kart",
+      "name": "Prop Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_rock_rock_mountain_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_3ds_rock_rock_mountain_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "k_pumpkin_kart": {
       "sort": 110,
       "id": "k_pumpkin_kart",
@@ -57599,7 +57727,7 @@
       ]
     },
     "k_purple_bunny": {
-      "sort": 190,
+      "sort": 193,
       "id": "k_purple_bunny",
       "i_type": "Kart",
       "name": "Purple Bunny",
@@ -58283,7 +58411,7 @@
       ]
     },
     "k_red_crawly_kart": {
-      "sort": 197,
+      "sort": 200,
       "id": "k_red_crawly_kart",
       "i_type": "Kart",
       "name": "Red Crawly Kart",
@@ -59123,7 +59251,7 @@
       ]
     },
     "k_silver_bullet_blaster": {
-      "sort": 178,
+      "sort": 181,
       "id": "k_silver_bullet_blaster",
       "i_type": "Kart",
       "name": "Silver Bullet Blaster",
@@ -59211,7 +59339,7 @@
       ]
     },
     "k_silver_king": {
-      "sort": 195,
+      "sort": 198,
       "id": "k_silver_king",
       "i_type": "Kart",
       "name": "Silver King",
@@ -59521,7 +59649,7 @@
       "hashes": []
     },
     "k_snow_skimmer": {
-      "sort": 166,
+      "sort": 169,
       "id": "k_snow_skimmer",
       "i_type": "Kart",
       "name": "Snow Skimmer",
@@ -59799,6 +59927,36 @@
       "hashes": [
         "Sl4D5aY=|ylYL5aI=|SFYD7Ic=|QrKEZWo=|tAVrVZI=|vE1rmtU=|ClaBzCM="
       ]
+    },
+    "k_star_broom": {
+      "sort": 163,
+      "id": "k_star_broom",
+      "i_type": "Kart",
+      "name": "Star Broom",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_rock_rock_mountain_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_rock_rock_mountain_t",
+          "lvl": 6
+        },
+        {
+          "id": "c_gba_sky_garden_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_gba_sky_garden_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_r_t",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
     },
     "k_star_spangled_flyer": {
       "sort": 107,
@@ -60385,7 +60543,7 @@
       ]
     },
     "k_sushi_racer": {
-      "sort": 181,
+      "sort": 184,
       "id": "k_sushi_racer",
       "i_type": "Kart",
       "name": "Sushi Racer",
@@ -60813,7 +60971,7 @@
       ]
     },
     "k_tiger_bruiser": {
-      "sort": 202,
+      "sort": 205,
       "id": "k_tiger_bruiser",
       "i_type": "Kart",
       "name": "Tiger Bruiser",
@@ -61013,7 +61171,7 @@
       ]
     },
     "k_vampire_flyer": {
-      "sort": 196,
+      "sort": 199,
       "id": "k_vampire_flyer",
       "i_type": "Kart",
       "name": "Vampire Flyer",
@@ -61735,7 +61893,7 @@
       ]
     },
     "k_yellow_offroader": {
-      "sort": 198,
+      "sort": 201,
       "id": "k_yellow_offroader",
       "i_type": "Kart",
       "name": "Yellow Offroader",
