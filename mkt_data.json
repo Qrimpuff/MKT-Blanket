@@ -3372,6 +3372,10 @@
           "lvl": 1
         },
         {
+          "id": "k_candy_clown",
+          "lvl": 6
+        },
+        {
           "id": "k_comet_tail",
           "lvl": 1
         },
@@ -6555,6 +6559,10 @@
         {
           "id": "g_bullet_bill_hanafuda",
           "lvl": 6
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 3
         },
         {
           "id": "g_great_sail",
@@ -10109,6 +10117,10 @@
           "lvl": 1
         },
         {
+          "id": "d_chargin_chuck",
+          "lvl": 3
+        },
+        {
           "id": "d_daisy_swimwear",
           "lvl": 1
         },
@@ -10189,6 +10201,10 @@
           "lvl": 6
         },
         {
+          "id": "k_combo_cruiser",
+          "lvl": 3
+        },
+        {
           "id": "k_decal_streamliner",
           "lvl": 1
         },
@@ -10215,6 +10231,10 @@
         {
           "id": "k_sky_blue_b_dasher_mk_2",
           "lvl": 1
+        },
+        {
+          "id": "k_sneeker",
+          "lvl": 6
         },
         {
           "id": "k_sunny_surf_sailer",
@@ -10250,6 +10270,10 @@
         {
           "id": "d_funky_kong",
           "lvl": 1
+        },
+        {
+          "id": "d_luigi_golf",
+          "lvl": 3
         },
         {
           "id": "d_luigi_vacation",
@@ -10387,6 +10411,10 @@
           "lvl": 1
         },
         {
+          "id": "d_luigi_golf",
+          "lvl": 6
+        },
+        {
           "id": "d_luigi_vacation",
           "lvl": 1
         },
@@ -10471,8 +10499,16 @@
           "lvl": 1
         },
         {
+          "id": "k_combo_cruiser",
+          "lvl": 6
+        },
+        {
           "id": "k_grand_badwagon",
           "lvl": 1
+        },
+        {
+          "id": "k_green_lightning",
+          "lvl": 3
         },
         {
           "id": "k_pinch_hitter",
@@ -16495,6 +16531,10 @@
           "lvl": 1
         },
         {
+          "id": "d_kamek",
+          "lvl": 1
+        },
+        {
           "id": "d_lakitu_party_time",
           "lvl": 6
         },
@@ -16548,6 +16588,10 @@
         },
         {
           "id": "g_lightning_oilpaper",
+          "lvl": 1
+        },
+        {
+          "id": "g_meteor_balloons",
           "lvl": 1
         },
         {
@@ -16609,6 +16653,10 @@
         {
           "id": "k_star_spangled_flyer",
           "lvl": 6
+        },
+        {
+          "id": "k_tiger_bruiser",
+          "lvl": 1
         }
       ]
     },
@@ -17202,6 +17250,10 @@
           "lvl": 1
         },
         {
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 1
+        },
+        {
           "id": "g_gold_swooper",
           "lvl": 3
         },
@@ -17271,6 +17323,14 @@
         },
         {
           "id": "k_star_spangled_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_tiger_bruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_offroader",
           "lvl": 1
         }
       ]
@@ -17460,6 +17520,10 @@
           "lvl": 1
         },
         {
+          "id": "d_tanooki_mario",
+          "lvl": 1
+        },
+        {
           "id": "d_wario",
           "lvl": 1
         },
@@ -17488,7 +17552,19 @@
           "lvl": 6
         },
         {
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
           "id": "g_new_year_s_2021",
+          "lvl": 1
+        },
+        {
+          "id": "g_new_year_s_2022",
           "lvl": 1
         },
         {
@@ -17521,6 +17597,10 @@
         },
         {
           "id": "k_landship",
+          "lvl": 1
+        },
+        {
+          "id": "k_lunar_cruiser",
           "lvl": 1
         },
         {
@@ -24993,6 +25073,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sleigh_rider",
+          "lvl": 3
+        },
+        {
           "id": "k_surf_sailer",
           "lvl": 1
         },
@@ -25150,6 +25234,10 @@
         {
           "id": "k_sakura_quickshaw",
           "lvl": 1
+        },
+        {
+          "id": "k_sleigh_rider",
+          "lvl": 6
         },
         {
           "id": "k_surf_sailer",
@@ -37648,6 +37736,10 @@
           "lvl": 6
         },
         {
+          "id": "c_gba_cheep_cheep_island",
+          "lvl": 3
+        },
+        {
           "id": "c_los_angeles_laps_2",
           "lvl": 1
         },
@@ -39554,6 +39646,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_kalimari_desert_r_t",
           "lvl": 1
         },
@@ -40550,6 +40646,14 @@
         {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 1
+        },
+        {
+          "id": "c_gba_cheep_cheep_island_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 6
         },
         {
           "id": "c_los_angeles_laps_2r",
@@ -45518,6 +45622,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_kalimari_desert_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_1r",
           "lvl": 3
         },
@@ -49614,6 +49722,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_rainbow_road_t",
+          "lvl": 6
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 1
         },
@@ -50776,8 +50888,16 @@
           "lvl": 3
         },
         {
+          "id": "c_gba_cheep_cheep_island",
+          "lvl": 3
+        },
+        {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 1
+        },
+        {
+          "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 6
         },
         {
           "id": "c_gba_sky_garden_r",
@@ -54336,6 +54456,10 @@
           "lvl": 6
         },
         {
+          "id": "c_gba_cheep_cheep_island_t",
+          "lvl": 3
+        },
+        {
           "id": "c_gcn_yoshi_circuit",
           "lvl": 1
         },
@@ -56136,6 +56260,10 @@
         {
           "id": "c_3ds_rosalina_s_ice_world_r",
           "lvl": 6
+        },
+        {
+          "id": "c_n64_kalimari_desert_t",
+          "lvl": 1
         },
         {
           "id": "c_n64_koopa_troopa_beach_t",
@@ -59942,6 +60070,14 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_choco_island_1",
+          "lvl": 3
+        },
+        {
+          "id": "c_snes_choco_island_1r",
+          "lvl": 6
+        },
+        {
           "id": "c_snes_choco_island_1r_t",
           "lvl": 1
         },
@@ -59973,6 +60109,10 @@
       "name": "Sneeker",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gba_cheep_cheep_island",
+          "lvl": 6
+        },
         {
           "id": "c_los_angeles_laps_2",
           "lvl": 1
@@ -61366,6 +61506,14 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_r",
+          "lvl": 1
+        },
+        {
           "id": "c_singapore_speedway_r",
           "lvl": 1
         },
@@ -62293,6 +62441,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_r",
           "lvl": 1
         },
         {
@@ -65078,6 +65230,10 @@
           "lvl": 1
         },
         {
+          "id": "c_ds_airship_fortress",
+          "lvl": 3
+        },
+        {
           "id": "c_gba_bowser_s_castle_1",
           "lvl": 1
         },
@@ -67626,6 +67782,14 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_kalimari_desert_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2t",
           "lvl": 6
         },
@@ -67907,6 +68071,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_t",
           "lvl": 1
         },
         {
@@ -68978,6 +69146,10 @@
           "lvl": 3
         },
         {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2r_t",
           "lvl": 1
         },
@@ -69411,6 +69583,10 @@
         },
         {
           "id": "c_los_angeles_laps_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_t",
           "lvl": 1
         },
         {
