@@ -23027,10 +23027,6 @@
           "lvl": 3
         },
         {
-          "id": "d_yoshi_egg_hunt",
-          "lvl": 1
-        },
-        {
           "id": "g_blizzard_balloons",
           "lvl": 3
         },
@@ -23059,7 +23055,7 @@
           "lvl": 1
         },
         {
-          "id": "g_vampire_wings",
+          "id": "g_super_mario_kart_glider",
           "lvl": 6
         },
         {
@@ -23488,6 +23484,10 @@
           "lvl": 6
         },
         {
+          "id": "g_glittering_parasol",
+          "lvl": 1
+        },
+        {
           "id": "g_gold_crane",
           "lvl": 1
         },
@@ -23585,6 +23585,10 @@
         },
         {
           "id": "k_silver_bullet_blaster",
+          "lvl": 1
+        },
+        {
+          "id": "k_sports_coupe_2022",
           "lvl": 1
         }
       ]
@@ -23711,6 +23715,10 @@
           "lvl": 1
         },
         {
+          "id": "k_frost_wing",
+          "lvl": 1
+        },
+        {
           "id": "k_gold_pipe_frame",
           "lvl": 1
         },
@@ -23774,11 +23782,19 @@
           "lvl": 1
         },
         {
+          "id": "d_mario_satellaview",
+          "lvl": 1
+        },
+        {
           "id": "d_peach_happi",
           "lvl": 1
         },
         {
           "id": "d_penguin_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_penguin_toadette",
           "lvl": 1
         },
         {
@@ -23791,6 +23807,10 @@
         },
         {
           "id": "g_8_bit_super_mushroom",
+          "lvl": 1
+        },
+        {
+          "id": "g_aurora_balloons",
           "lvl": 1
         },
         {
@@ -23846,6 +23866,10 @@
           "lvl": 1
         },
         {
+          "id": "k_frosty_bells",
+          "lvl": 1
+        },
+        {
           "id": "k_gold_snow_skimmer",
           "lvl": 1
         },
@@ -23867,6 +23891,10 @@
         },
         {
           "id": "k_surf_sailer",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_snow_skimmer",
           "lvl": 1
         }
       ]
@@ -23945,8 +23973,16 @@
           "lvl": 1
         },
         {
+          "id": "g_galaxy_glider",
+          "lvl": 1
+        },
+        {
           "id": "g_gold_crane",
           "lvl": 6
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
         },
         {
           "id": "g_great_sail",
@@ -23979,6 +24015,10 @@
         {
           "id": "k_dreamy_egg",
           "lvl": 3
+        },
+        {
+          "id": "k_frosty_bells",
+          "lvl": 1
         },
         {
           "id": "k_gold_pipe_frame",
@@ -42534,6 +42574,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 1
         },
@@ -44960,6 +45004,10 @@
         {
           "id": "c_rmx_choco_island_2t",
           "lvl": 6
+        },
+        {
+          "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
         },
         {
           "id": "c_rmx_vanilla_lake_1r",
@@ -47479,10 +47527,6 @@
         },
         {
           "id": "c_gcn_yoshi_circuit_r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_rmx_mario_circuit_1r",
           "lvl": 1
         },
         {
@@ -53244,6 +53288,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_rainbow_road_1r",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 1
         },
@@ -53321,6 +53369,14 @@
         },
         {
           "id": "c_n64_frappe_snowland",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_1t",
           "lvl": 1
         },
         {
@@ -61092,6 +61148,10 @@
           "lvl": 6
         },
         {
+          "id": "c_rmx_rainbow_road_1",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 3
         },
@@ -62570,6 +62630,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_vanilla_lake_1",
           "lvl": 1
         },
@@ -64003,6 +64067,10 @@
         },
         {
           "id": "c_n64_royal_raceway_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_1r_t",
           "lvl": 1
         },
         {
@@ -67738,6 +67806,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_rainbow_road_1t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2r_t",
           "lvl": 1
         },
@@ -68111,6 +68183,10 @@
         },
         {
           "id": "c_n64_frappe_snowland_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_1",
           "lvl": 1
         },
         {
@@ -68783,6 +68859,10 @@
         },
         {
           "id": "c_rmx_choco_island_1t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_rainbow_road_1t",
           "lvl": 1
         },
         {
@@ -74126,6 +74206,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_mario_circuit_1r",
+          "lvl": 6
+        },
+        {
           "id": "c_rmx_mario_circuit_1r_t",
           "lvl": 1
         },
@@ -74911,10 +74995,6 @@
         },
         {
           "id": "c_rmx_ghost_valley_1t",
-          "lvl": 6
-        },
-        {
-          "id": "c_rmx_mario_circuit_1r",
           "lvl": 6
         },
         {
