@@ -7714,6 +7714,10 @@
           "lvl": 1
         },
         {
+          "id": "g_glittering_parasol",
+          "lvl": 3
+        },
+        {
           "id": "g_gold_glider",
           "lvl": 1
         },
@@ -7933,6 +7937,10 @@
           "lvl": 1
         },
         {
+          "id": "k_magma_broom",
+          "lvl": 3
+        },
+        {
           "id": "k_poison_apple_kart",
           "lvl": 1
         },
@@ -8062,6 +8070,10 @@
         {
           "id": "g_rainy_balloons",
           "lvl": 1
+        },
+        {
+          "id": "g_record_setter",
+          "lvl": 3
         },
         {
           "id": "g_rose_parasol",
@@ -8336,6 +8348,10 @@
         {
           "id": "d_king_boo_luigi_s_mansion",
           "lvl": 1
+        },
+        {
+          "id": "d_light_blue_shy_guy",
+          "lvl": 3
         },
         {
           "id": "d_luigi",
@@ -16843,6 +16859,10 @@
           "lvl": 3
         },
         {
+          "id": "d_meowser",
+          "lvl": 3
+        },
+        {
           "id": "d_morton",
           "lvl": 1
         },
@@ -17966,6 +17986,10 @@
         {
           "id": "k_sunny_surf_sailer",
           "lvl": 1
+        },
+        {
+          "id": "k_tiger_bruiser",
+          "lvl": 6
         }
       ]
     },
@@ -29938,6 +29962,10 @@
           "lvl": 6
         },
         {
+          "id": "d_mario_golf",
+          "lvl": 3
+        },
+        {
           "id": "d_mario_halloween",
           "lvl": 1
         },
@@ -30056,6 +30084,10 @@
         {
           "id": "k_radish_rider",
           "lvl": 1
+        },
+        {
+          "id": "k_sneeker",
+          "lvl": 3
         },
         {
           "id": "k_sports_coupe_2022",
@@ -30463,6 +30495,10 @@
           "lvl": 6
         },
         {
+          "id": "k_green_lightning",
+          "lvl": 3
+        },
+        {
           "id": "k_iron_cucumber",
           "lvl": 3
         },
@@ -30485,6 +30521,10 @@
         {
           "id": "k_red_standard_8",
           "lvl": 1
+        },
+        {
+          "id": "k_sneeker",
+          "lvl": 6
         },
         {
           "id": "k_streamliner",
@@ -41082,6 +41122,10 @@
           "lvl": 1
         },
         {
+          "id": "c_ds_luigi_s_mansion_t",
+          "lvl": 3
+        },
+        {
           "id": "c_rmx_ghost_valley_1r",
           "lvl": 6
         }
@@ -42154,6 +42198,10 @@
         {
           "id": "c_snes_mario_circuit_2r",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_mario_circuit_3",
+          "lvl": 3
         },
         {
           "id": "c_snes_mario_circuit_3r",
@@ -43308,6 +43356,10 @@
         {
           "id": "c_los_angeles_laps_3r",
           "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert",
+          "lvl": 3
         },
         {
           "id": "c_n64_kalimari_desert_r",
@@ -55350,6 +55402,10 @@
         {
           "id": "c_los_angeles_laps_3t",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_mario_circuit_3t",
+          "lvl": 3
         }
       ],
       "hashes": []
@@ -57325,6 +57381,10 @@
       "name": "Magma Broom",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_ds_luigi_s_mansion",
+          "lvl": 3
+        },
         {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 1
@@ -61046,8 +61106,16 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_mario_circuit_3",
+          "lvl": 3
+        },
+        {
           "id": "c_snes_mario_circuit_3r",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_mario_circuit_3t",
+          "lvl": 6
         }
       ],
       "hashes": []
@@ -62440,6 +62508,10 @@
         {
           "id": "c_n64_kalimari_desert_r",
           "lvl": 1
+        },
+        {
+          "id": "c_n64_kalimari_desert_t",
+          "lvl": 6
         },
         {
           "id": "c_singapore_speedway_r",
@@ -68498,6 +68570,10 @@
           "lvl": 1
         },
         {
+          "id": "c_ds_dk_pass_t",
+          "lvl": 3
+        },
+        {
           "id": "c_gba_sky_garden",
           "lvl": 1
         },
@@ -72240,6 +72316,10 @@
         {
           "id": "c_3ds_rock_rock_mountain_t",
           "lvl": 1
+        },
+        {
+          "id": "c_ds_luigi_s_mansion_r",
+          "lvl": 3
         },
         {
           "id": "c_gba_sky_garden",
