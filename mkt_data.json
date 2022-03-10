@@ -64347,7 +64347,7 @@
       ]
     },
     "g_baby_mario_hanafuda": {
-      "sort": 136,
+      "sort": 138,
       "id": "g_baby_mario_hanafuda",
       "i_type": "Glider",
       "name": "Baby Mario Hanafuda",
@@ -64467,7 +64467,7 @@
       ]
     },
     "g_banana_wingtip": {
-      "sort": 120,
+      "sort": 122,
       "id": "g_banana_wingtip",
       "i_type": "Glider",
       "name": "Banana Wingtip",
@@ -64543,7 +64543,7 @@
       ]
     },
     "g_barrel_hanafuda": {
-      "sort": 139,
+      "sort": 141,
       "id": "g_barrel_hanafuda",
       "i_type": "Glider",
       "name": "Barrel Hanafuda",
@@ -65211,7 +65211,7 @@
       ]
     },
     "g_blooper_hanafuda": {
-      "sort": 140,
+      "sort": 142,
       "id": "g_blooper_hanafuda",
       "i_type": "Glider",
       "name": "Blooper Hanafuda",
@@ -65287,7 +65287,7 @@
       ]
     },
     "g_blooper_wingtip": {
-      "sort": 123,
+      "sort": 125,
       "id": "g_blooper_wingtip",
       "i_type": "Glider",
       "name": "Blooper Wingtip",
@@ -65471,7 +65471,7 @@
       ]
     },
     "g_boo_hanafuda": {
-      "sort": 143,
+      "sort": 145,
       "id": "g_boo_hanafuda",
       "i_type": "Glider",
       "name": "Boo Hanafuda",
@@ -65535,7 +65535,7 @@
       ]
     },
     "g_bowser_hanafuda": {
-      "sort": 147,
+      "sort": 149,
       "id": "g_bowser_hanafuda",
       "i_type": "Glider",
       "name": "Bowser Hanafuda",
@@ -65607,7 +65607,7 @@
       ]
     },
     "g_bright_balloons": {
-      "sort": 128,
+      "sort": 130,
       "id": "g_bright_balloons",
       "i_type": "Glider",
       "name": "Bright Balloons",
@@ -65807,7 +65807,7 @@
       ]
     },
     "g_bullet_bill_hanafuda": {
-      "sort": 142,
+      "sort": 144,
       "id": "g_bullet_bill_hanafuda",
       "i_type": "Glider",
       "name": "Bullet Bill Hanafuda",
@@ -65875,7 +65875,7 @@
       ]
     },
     "g_bullet_bill_parachute": {
-      "sort": 115,
+      "sort": 117,
       "id": "g_bullet_bill_parachute",
       "i_type": "Glider",
       "name": "Bullet Bill Parachute",
@@ -66451,7 +66451,7 @@
       ]
     },
     "g_cape_mario_hanafuda": {
-      "sort": 141,
+      "sort": 143,
       "id": "g_cape_mario_hanafuda",
       "i_type": "Glider",
       "name": "Cape Mario Hanafuda",
@@ -66583,7 +66583,7 @@
       ]
     },
     "g_cheep_cheep_masks": {
-      "sort": 125,
+      "sort": 127,
       "id": "g_cheep_cheep_masks",
       "i_type": "Glider",
       "name": "Cheep Cheep Masks",
@@ -66895,7 +66895,7 @@
       ]
     },
     "g_cloud_glider": {
-      "sort": 116,
+      "sort": 118,
       "id": "g_cloud_glider",
       "i_type": "Glider",
       "name": "Cloud Glider",
@@ -67175,7 +67175,7 @@
       ]
     },
     "g_dragon_wings": {
-      "sort": 122,
+      "sort": 124,
       "id": "g_dragon_wings",
       "i_type": "Glider",
       "name": "Dragon Wings",
@@ -67299,7 +67299,7 @@
       ]
     },
     "g_dream_glider": {
-      "sort": 130,
+      "sort": 132,
       "id": "g_dream_glider",
       "i_type": "Glider",
       "name": "Dream Glider",
@@ -67447,7 +67447,7 @@
       ]
     },
     "g_dry_bowser_umbrella": {
-      "sort": 126,
+      "sort": 128,
       "id": "g_dry_bowser_umbrella",
       "i_type": "Glider",
       "name": "Dry Bowser Umbrella",
@@ -69067,7 +69067,7 @@
       ]
     },
     "g_gold_swooper": {
-      "sort": 119,
+      "sort": 121,
       "id": "g_gold_swooper",
       "i_type": "Glider",
       "name": "Gold Swooper",
@@ -69287,7 +69287,7 @@
       ]
     },
     "g_golden_wings": {
-      "sort": 132,
+      "sort": 134,
       "id": "g_golden_wings",
       "i_type": "Glider",
       "name": "Golden Wings",
@@ -69403,7 +69403,7 @@
       ]
     },
     "g_goomba_hanafuda": {
-      "sort": 145,
+      "sort": 147,
       "id": "g_goomba_hanafuda",
       "i_type": "Glider",
       "name": "Goomba Hanafuda",
@@ -69863,7 +69863,7 @@
       ]
     },
     "g_jumping_mario_hanafuda": {
-      "sort": 146,
+      "sort": 148,
       "id": "g_jumping_mario_hanafuda",
       "i_type": "Glider",
       "name": "Jumping Mario Hanafuda",
@@ -70101,6 +70101,15 @@
       "hashes": [
         "xjyrQaY=|1jyiVbQ=|xjyqRbQ=|SiSp+WM=|9ItGNj0=|oNqFjIw=|tjmjVtQ="
       ]
+    },
+    "g_luigi_s_mustache": {
+      "sort": 115,
+      "id": "g_luigi_s_mustache",
+      "i_type": "Glider",
+      "name": "Luigi's Mustache",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "g_luma_parafoil": {
       "sort": 46,
@@ -70402,6 +70411,15 @@
         "SrSqY2s=|TLSqV2s=|SJSqV+s=|SrSiQ2o=|eINsFtk=|tEtNnJQ=|vFNNHdU="
       ]
     },
+    "g_mario_s_mustache": {
+      "sort": 114,
+      "id": "g_mario_s_mustache",
+      "i_type": "Glider",
+      "name": "Mario's Mustache",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "g_meteor_balloons": {
       "sort": 100,
       "id": "g_meteor_balloons",
@@ -70567,7 +70585,7 @@
       ]
     },
     "g_nabbit_oilpaper_umbrella": {
-      "sort": 124,
+      "sort": 126,
       "id": "g_nabbit_oilpaper_umbrella",
       "i_type": "Glider",
       "name": "Nabbit Oilpaper Umbrella",
@@ -71015,7 +71033,7 @@
       ]
     },
     "g_ninja_scroll": {
-      "sort": 129,
+      "sort": 131,
       "id": "g_ninja_scroll",
       "i_type": "Glider",
       "name": "Ninja Scroll",
@@ -71239,7 +71257,7 @@
       ]
     },
     "g_peach_hanafuda": {
-      "sort": 138,
+      "sort": 140,
       "id": "g_peach_hanafuda",
       "i_type": "Glider",
       "name": "Peach Hanafuda",
@@ -71351,7 +71369,7 @@
       ]
     },
     "g_penguin_wingtip": {
-      "sort": 127,
+      "sort": 129,
       "id": "g_penguin_wingtip",
       "i_type": "Glider",
       "name": "Penguin Wingtip",
@@ -71663,7 +71681,7 @@
       ]
     },
     "g_piranha_plant_hanafuda": {
-      "sort": 144,
+      "sort": 146,
       "id": "g_piranha_plant_hanafuda",
       "i_type": "Glider",
       "name": "Piranha Plant Hanafuda",
@@ -72227,7 +72245,7 @@
       ]
     },
     "g_rainy_balloons": {
-      "sort": 117,
+      "sort": 119,
       "id": "g_rainy_balloons",
       "i_type": "Glider",
       "name": "Rainy Balloons",
@@ -74951,7 +74969,7 @@
       ]
     },
     "g_swooper": {
-      "sort": 114,
+      "sort": 116,
       "id": "g_swooper",
       "i_type": "Glider",
       "name": "Swooper",
@@ -75299,7 +75317,7 @@
       ]
     },
     "g_tropical_glider": {
-      "sort": 121,
+      "sort": 123,
       "id": "g_tropical_glider",
       "i_type": "Glider",
       "name": "Tropical Glider",
@@ -75399,7 +75417,7 @@
       ]
     },
     "g_vampire_wings": {
-      "sort": 131,
+      "sort": 133,
       "id": "g_vampire_wings",
       "i_type": "Glider",
       "name": "Vampire Wings",
@@ -75491,7 +75509,7 @@
       ]
     },
     "g_waluigi_s_mustache": {
-      "sort": 134,
+      "sort": 136,
       "id": "g_waluigi_s_mustache",
       "i_type": "Glider",
       "name": "Waluigi's Mustache",
@@ -75581,7 +75599,7 @@
       ]
     },
     "g_wario_s_mustache": {
-      "sort": 133,
+      "sort": 135,
       "id": "g_wario_s_mustache",
       "i_type": "Glider",
       "name": "Wario's Mustache",
@@ -75683,7 +75701,7 @@
       ]
     },
     "g_wicked_wings": {
-      "sort": 118,
+      "sort": 120,
       "id": "g_wicked_wings",
       "i_type": "Glider",
       "name": "Wicked Wings",
@@ -75767,7 +75785,7 @@
       ]
     },
     "g_wonderful_wings": {
-      "sort": 135,
+      "sort": 137,
       "id": "g_wonderful_wings",
       "i_type": "Glider",
       "name": "Wonderful Wings",
@@ -75797,7 +75815,7 @@
       "hashes": []
     },
     "g_yoshi_s_egg_hanafuda": {
-      "sort": 137,
+      "sort": 139,
       "id": "g_yoshi_s_egg_hanafuda",
       "i_type": "Glider",
       "name": "Yoshi's Egg Hanafuda",
