@@ -382,11 +382,18 @@ impl Item {
         }
     }
 
+    pub fn is_mii(&self) -> bool {
+        self.id.contains("_mii")
+    }
+
     pub fn valid_levels(&self) -> Vec<ItemLvl> {
-        (1..=7).collect_vec()
+        (1..=8).collect_vec()
     }
 
     pub fn points_cap_tiers(&self) -> Vec<ItemPoints> {
+        if self.is_mii() {
+            return vec![500, 840, 1020, 1230, 1440];
+        }
         match self.i_type {
             ItemType::Driver => match self.rarity {
                 Rarity::Normal => vec![400, 600, 648, 704, 760],
@@ -402,6 +409,20 @@ impl Item {
     }
 
     pub fn valid_points(&self) -> Vec<ItemPoints> {
+        // special for mii
+        // 500 +12 or +10 840
+        // 840 +30 or +10 1020
+        // 1020 +30 or +10 1230
+        // 1230 +30 or +10 1440
+        if self.is_mii() {
+            return (500..840)
+                .step_by(2)
+                .chain((840..1020).step_by(10))
+                .chain((1020..1230).step_by(10))
+                .chain((1230..=1440).step_by(10))
+                .collect_vec();
+        }
+
         match self.i_type {
             ItemType::Driver => match self.rarity {
                 Rarity::Normal => (400..600)

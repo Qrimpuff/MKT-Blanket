@@ -83,7 +83,7 @@ fn parse_items_new_format(url: &str, data: &mut MktData, i_type: ItemType, row_n
 
     let table_select = Selector::parse("h2 + table tbody").unwrap();
     let row_select = Selector::parse("tr").unwrap();
-    let cell_select = Selector::parse("th a[title], td").unwrap();
+    let cell_select = Selector::parse("th a[title]:first-child, td").unwrap();
 
     let table = document.select(&table_select).next().unwrap();
     let rows = table.select(&row_select);
@@ -96,8 +96,13 @@ fn parse_items_new_format(url: &str, data: &mut MktData, i_type: ItemType, row_n
     {
         let (names, _, _, rarities) = rs.next_tuple().unwrap();
         for (name, rarity) in names.zip(rarities) {
+            let name = Some(name)
+                .into_iter()
+                .chain(name.next_siblings().filter_map(ElementRef::wrap))
+                .map(|n| n.inner_html())
+                .join(" ");
             let _: Option<_> = try {
-                let name = name_rgx.replace_all(&name.inner_html(), " ").trim().into();
+                let name = name_rgx.replace_all(&name, " ").trim().into();
                 let rarity = rarity.text().next()?.trim().try_into().ok()?;
                 let item = Item::new(i_type, rarity, name, Some(i));
 
@@ -164,9 +169,18 @@ pub fn update_mkt_item_coverage_data(data: &mut MktData) {
                             if let Some(s) = i.next_sibling() {
                                 if let Some(e) = ElementRef::wrap(s) {
                                     if e.value().name() == "sup" {
-                                        // * = 3, ** = 6
-                                        l = e.inner_html().chars().filter(|c| *c == '*').count()
-                                            * 3;
+                                        // * = 3, ** = 6, *** = 8
+                                        l = match e
+                                            .inner_html()
+                                            .chars()
+                                            .filter(|c| *c == '*')
+                                            .count()
+                                        {
+                                            1 => 3,
+                                            2 => 6,
+                                            3 => 8,
+                                            _ => 0,
+                                        };
                                     }
                                 }
                             }

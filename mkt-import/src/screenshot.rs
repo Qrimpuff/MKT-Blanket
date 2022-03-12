@@ -48,7 +48,7 @@ const HASH_ITEM_X: u32 = 20;
 const HASH_ITEM_Y: u32 = 30;
 const HASH_ITEM_WIDTH: u32 = 120;
 const HASH_ITEM_HEIGHT: u32 = 100;
-pub const HASH_ITEM_THRESHOLD: u32 = 4000;
+pub const HASH_ITEM_THRESHOLD: u64 = 4000;
 
 struct LvlTemplate(ItemLvl, GrayImage);
 struct PointsTemplate(ItemPoints, GrayImage);
@@ -63,6 +63,7 @@ static TEMPLATES_LVL: &[(ItemLvl, &[u8])] = &[
     (5, include_bytes!("../templates/levels/5.png")),
     (6, include_bytes!("../templates/levels/6.png")),
     (7, include_bytes!("../templates/levels/7.png")),
+    (8, include_bytes!("../templates/levels/8.png")),
 ];
 
 fn get_lvl_templates() -> Vec<LvlTemplate> {
@@ -472,7 +473,7 @@ fn item_id_from_image(
     img: &RgbImage,
     hashes: &[ItemHash],
 ) -> (String, Option<ItemId>) {
-    let item_img = imageops::crop_imm(
+    let mut item_img = imageops::crop_imm(
         img,
         HASH_ITEM_X,
         HASH_ITEM_Y,
@@ -480,6 +481,13 @@ fn item_id_from_image(
         HASH_ITEM_HEIGHT,
     )
     .to_image();
+    // cut out the mii badge
+    drawing::draw_filled_rect_mut(
+        &mut item_img,
+        Rect::at((HASH_ITEM_WIDTH / 2) as i32, 0)
+            .of_size(HASH_ITEM_WIDTH / 2, HASH_ITEM_HEIGHT / 5 * 2),
+        image::Rgb([0, 0, 0]),
+    );
 
     let hash = to_image_hash(&item_img);
 
@@ -656,7 +664,9 @@ pub fn screenshots_to_bootstrap_hashes(
 
     // remove duplicate rows
     let mut new_hashes: Vec<String> = vec![];
-    dbg!(&items.len());
+    if *DEBUG {
+        dbg!(&items.len());
+    }
     let mut items = items
         .into_iter()
         .chunks(4)
@@ -668,7 +678,9 @@ pub fn screenshots_to_bootstrap_hashes(
                 println!("chunk {:#?}", chunk);
             }
             if chunk.iter().all(|i| {
-                println!("item {:#?}", i);
+                if *DEBUG {
+                    println!("item {:#?}", i);
+                }
                 new_hashes
                     .iter()
                     .any(|h| dist_hash(&i.hash, h) < HASH_ITEM_THRESHOLD)
@@ -913,7 +925,7 @@ pub fn screenshots_to_inventory(
 }
 
 pub fn _test_img_hash() {
-    let imgs = (1..=8)
+    let imgs = (1..=12)
         .map(|i| format!("tmp/yoshi_{}.png", i))
         .collect_vec();
 
@@ -986,7 +998,7 @@ fn to_image_hash(img: &RgbImage) -> String {
     hash
 }
 
-pub fn dist_hash(h1: &str, h2: &str) -> u32 {
+pub fn dist_hash(h1: &str, h2: &str) -> u64 {
     let dist: Option<_> = try {
         let h1 = h1.split('|').collect_vec();
         let h2 = h2.split('|').collect_vec();
@@ -997,7 +1009,7 @@ pub fn dist_hash(h1: &str, h2: &str) -> u32 {
             .filter_map(|(h1, h2)| try {
                 ImageHash::<Box<[u8]>>::from_base64(h1)
                     .ok()?
-                    .dist(&ImageHash::from_base64(h2).ok()?)
+                    .dist(&ImageHash::from_base64(h2).ok()?) as u64
             })
             .collect_vec();
         if h1.len() != a_dist_h.len() || h2.len() != a_dist_h.len() {
@@ -1013,7 +1025,7 @@ pub fn dist_hash(h1: &str, h2: &str) -> u32 {
         }
         dist_h
     };
-    dist.unwrap_or(u32::MAX)
+    dist.unwrap_or(u64::MAX)
 }
 
 pub fn _test_gray_image() {

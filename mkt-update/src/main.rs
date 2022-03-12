@@ -28,6 +28,14 @@ fn main() {
         data.merge_hashes(&hash);
 
         data.save("data/mkt_data.json").unwrap();
+    } else {
+        panic!(
+            "some data are empty. courses: {}, drivers: {}, karts: {}, gliders: {}",
+            data.courses.len(),
+            data.drivers.len(),
+            data.karts.len(),
+            data.gliders.len()
+        );
     }
 
     if std::env::var("MKT_B_G_WIKI_TEST").is_ok() {

@@ -20,7 +20,7 @@ fn main() {
 }
 
 fn _test_screenshot_import(data: &MktData) {
-    let name = "mkt gliders (1)";
+    let name = "mkt drivers (7)";
 
     let screenshot = image::open(format!("tmp/{}.jpg", name))
         .unwrap()
@@ -42,21 +42,21 @@ fn _test_screenshot_import(data: &MktData) {
 }
 
 fn _test_screenshots_to_bootstrap_hashes(data: &MktData) {
-    // let list_d = (1..=6)
-    //     .map(|i| {
-    //         image::open(format!("tmp/mkt drivers ({}).jpg", i))
-    //             .unwrap()
-    //             .into_rgb8()
-    //     })
-    //     .collect_vec();
-    // let list_k = (1..=8)
-    //     .map(|i| {
-    //         image::open(format!("tmp/mkt karts ({}).jpg", i))
-    //             .unwrap()
-    //             .into_rgb8()
-    //     })
-    //     .collect_vec();
-    let list_g = (1..=6)
+    let list_d = (1..=7)
+        .map(|i| {
+            image::open(format!("tmp/mkt drivers ({}).jpg", i))
+                .unwrap()
+                .into_rgb8()
+        })
+        .collect_vec();
+    let list_k = (1..=9)
+        .map(|i| {
+            image::open(format!("tmp/mkt karts ({}).jpg", i))
+                .unwrap()
+                .into_rgb8()
+        })
+        .collect_vec();
+    let list_g = (1..=7)
         .map(|i| {
             image::open(format!("tmp/mkt gliders ({}).jpg", i))
                 .unwrap()
@@ -64,8 +64,8 @@ fn _test_screenshots_to_bootstrap_hashes(data: &MktData) {
         })
         .collect_vec();
     let mut hashes = MktItemHashes::new();
-    // hashes.merge(screenshots_to_bootstrap_hashes(list_d, ItemType::Driver, data).unwrap());
-    // hashes.merge(screenshots_to_bootstrap_hashes(list_k, ItemType::Kart, data).unwrap());
+    hashes.merge(screenshots_to_bootstrap_hashes(list_d, ItemType::Driver, data).unwrap());
+    hashes.merge(screenshots_to_bootstrap_hashes(list_k, ItemType::Kart, data).unwrap());
     hashes.merge(screenshots_to_bootstrap_hashes(list_g, ItemType::Glider, data).unwrap());
     println!("{:?}", hashes);
 
