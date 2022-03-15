@@ -11334,6 +11334,10 @@
           "lvl": 1
         },
         {
+          "id": "d_silver_mii_racing_suit",
+          "lvl": 3
+        },
+        {
           "id": "d_tanooki_mario",
           "lvl": 1
         },
@@ -24523,6 +24527,10 @@
         {
           "id": "g_manta_glider",
           "lvl": 1
+        },
+        {
+          "id": "g_mario_s_mustache",
+          "lvl": 3
         },
         {
           "id": "g_new_year_s_2022",
@@ -48856,6 +48864,10 @@
       "name": "Silver Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gba_sky_garden",
+          "lvl": 3
+        },
         {
           "id": "c_gba_sky_garden_r",
           "lvl": 1
@@ -73963,6 +73975,10 @@
         {
           "id": "c_gba_sky_garden_t",
           "lvl": 6
+        },
+        {
+          "id": "c_rmx_mario_circuit_1t",
+          "lvl": 3
         },
         {
           "id": "c_snes_choco_island_1r_t",
