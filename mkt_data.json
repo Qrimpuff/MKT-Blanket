@@ -15963,7 +15963,7 @@
           "lvl": 1
         },
         {
-          "id": "g_butterfly_wings",
+          "id": "g_butterfly_prism",
           "lvl": 3
         },
         {
@@ -15987,6 +15987,10 @@
           "lvl": 1
         },
         {
+          "id": "g_planet_glider",
+          "lvl": 6
+        },
+        {
           "id": "g_silver_and_gold_hearts",
           "lvl": 1
         },
@@ -16001,10 +16005,6 @@
         {
           "id": "g_star_spangled_glider",
           "lvl": 1
-        },
-        {
-          "id": "g_starchute",
-          "lvl": 6
         },
         {
           "id": "g_sweetheart_glider",
@@ -70705,6 +70705,10 @@
           "lvl": 1
         },
         {
+          "id": "c_merry_mountain",
+          "lvl": 3
+        },
+        {
           "id": "c_n64_choco_mountain_r_t",
           "lvl": 1
         },
@@ -70899,10 +70903,6 @@
         {
           "id": "c_gcn_dino_dino_jungle_t",
           "lvl": 1
-        },
-        {
-          "id": "c_merry_mountain",
-          "lvl": 3
         },
         {
           "id": "c_merry_mountain_t",
@@ -77069,6 +77069,10 @@
           "lvl": 1
         },
         {
+          "id": "c_merry_mountain",
+          "lvl": 6
+        },
+        {
           "id": "c_merry_mountain_r",
           "lvl": 1
         },
@@ -79335,10 +79339,6 @@
         {
           "id": "c_los_angeles_laps",
           "lvl": 1
-        },
-        {
-          "id": "c_merry_mountain",
-          "lvl": 6
         },
         {
           "id": "c_merry_mountain_t",
