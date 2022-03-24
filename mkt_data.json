@@ -39206,7 +39206,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 140,
+      "sort": 142,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -40002,7 +40002,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 133,
+      "sort": 135,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -40102,7 +40102,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 138,
+      "sort": 140,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -40206,7 +40206,7 @@
       ]
     },
     "d_bronze_mii_racing_suit": {
-      "sort": 154,
+      "sort": 157,
       "id": "d_bronze_mii_racing_suit",
       "i_type": "Driver",
       "name": "Bronze Mii Racing Suit",
@@ -41206,7 +41206,7 @@
       ]
     },
     "d_chargin_chuck": {
-      "sort": 146,
+      "sort": 148,
       "id": "d_chargin_chuck",
       "i_type": "Driver",
       "name": "Chargin' Chuck",
@@ -41826,7 +41826,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 129,
+      "sort": 131,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -41974,7 +41974,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 135,
+      "sort": 137,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -42138,7 +42138,7 @@
       ]
     },
     "d_donkey_kong_mii_racing_suit": {
-      "sort": 153,
+      "sort": 156,
       "id": "d_donkey_kong_mii_racing_suit",
       "i_type": "Driver",
       "name": "Donkey Kong Mii Racing Suit",
@@ -42198,7 +42198,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 127,
+      "sort": 129,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -42306,7 +42306,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 121,
+      "sort": 123,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -42386,7 +42386,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 130,
+      "sort": 132,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -42678,7 +42678,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 128,
+      "sort": 130,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -42782,7 +42782,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 125,
+      "sort": 127,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -42874,7 +42874,7 @@
       ]
     },
     "d_gold_mii_racing_suit": {
-      "sort": 156,
+      "sort": 159,
       "id": "d_gold_mii_racing_suit",
       "i_type": "Driver",
       "name": "Gold Mii Racing Suit",
@@ -43246,7 +43246,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 143,
+      "sort": 145,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -43378,7 +43378,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 134,
+      "sort": 136,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -43490,7 +43490,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 142,
+      "sort": 144,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -43609,6 +43609,15 @@
         "mGvmML4=|mGvGML4=|mEvEIKo=|mG1iYXc=|nAtEMJg=|AMyMiIg=|ZpoNJqg="
       ]
     },
+    "d_king_bob_omb_mii_racing_suit": {
+      "sort": 161,
+      "id": "d_king_bob_omb_mii_racing_suit",
+      "i_type": "Driver",
+      "name": "King Bob-omb Mii Racing Suit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_king_boo": {
       "sort": 37,
       "id": "d_king_boo",
@@ -43654,7 +43663,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 137,
+      "sort": 139,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -43750,7 +43759,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 122,
+      "sort": 124,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -43820,6 +43829,15 @@
       "hashes": [
         "kCnmSJw=|kClOQJw=|mCnmSJQ=|iIioqqo=|AIgIAIg=|mGNmUV8=|xglNZ5w="
       ]
+    },
+    "d_king_boo_mii_racing_suit": {
+      "sort": 160,
+      "id": "d_king_boo_mii_racing_suit",
+      "i_type": "Driver",
+      "name": "King Boo Mii Racing Suit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_koopa_troopa": {
       "sort": 6,
@@ -43906,7 +43924,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 139,
+      "sort": 141,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -44550,7 +44568,7 @@
       ]
     },
     "d_luigi_mii_racing_suit": {
-      "sort": 151,
+      "sort": 154,
       "id": "d_luigi_mii_racing_suit",
       "i_type": "Driver",
       "name": "Luigi Mii Racing Suit",
@@ -45618,7 +45636,7 @@
       ]
     },
     "d_mario_mii_racing_suit": {
-      "sort": 148,
+      "sort": 151,
       "id": "d_mario_mii_racing_suit",
       "i_type": "Driver",
       "name": "Mario Mii Racing Suit",
@@ -45868,6 +45886,15 @@
       "hashes": [
         "mKFmQE8=|mCHqicY=|GGnoqCQ=|nKVmUl8=|FEFLmIA=|WlqIrKU=|JgFJC8A="
       ]
+    },
+    "d_mario_samurai": {
+      "sort": 121,
+      "id": "d_mario_samurai",
+      "i_type": "Driver",
+      "name": "Mario (Samurai)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_mario_santa": {
       "sort": 62,
@@ -46530,7 +46557,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 145,
+      "sort": 147,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -46770,7 +46797,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 132,
+      "sort": 134,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -47778,7 +47805,7 @@
       ]
     },
     "d_peach_mii_racing_suit": {
-      "sort": 149,
+      "sort": 152,
       "id": "d_peach_mii_racing_suit",
       "i_type": "Driver",
       "name": "Peach Mii Racing Suit",
@@ -48104,6 +48131,15 @@
       "hashes": [
         "mMnGoC4=|mEnGoK4=|HEPGkY0=|mOVmWUc=|gIlGoLg=|WFqKrYU=|ZhaJnck="
       ]
+    },
+    "d_peach_yukata": {
+      "sort": 122,
+      "id": "d_peach_yukata",
+      "i_type": "Driver",
+      "name": "Peach (Yukata)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_peachette": {
       "sort": 55,
@@ -48777,6 +48813,15 @@
         "mOXuQNM=|nEtMmKY=|nEFOsFY=|kKQqwNs=|FEtGmSQ=|jGnGuTc=|pEtDthY="
       ]
     },
+    "d_pink_shy_guy_ninja": {
+      "sort": 149,
+      "id": "d_pink_shy_guy_ninja",
+      "i_type": "Driver",
+      "name": "Pink Shy Guy (Ninja)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_pink_yoshi": {
       "sort": 27,
       "id": "d_pink_yoshi",
@@ -48974,7 +49019,7 @@
       ]
     },
     "d_red_mii_racing_suit": {
-      "sort": 147,
+      "sort": 150,
       "id": "d_red_mii_racing_suit",
       "i_type": "Driver",
       "name": "Red Mii Racing Suit",
@@ -49330,7 +49375,7 @@
       ]
     },
     "d_rosalina_mii_racing_suit": {
-      "sort": 152,
+      "sort": 155,
       "id": "d_rosalina_mii_racing_suit",
       "i_type": "Driver",
       "name": "Rosalina Mii Racing Suit",
@@ -49498,7 +49543,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 136,
+      "sort": 138,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -49622,7 +49667,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 141,
+      "sort": 143,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -49758,7 +49803,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 123,
+      "sort": 125,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -49858,7 +49903,7 @@
       ]
     },
     "d_silver_mii_racing_suit": {
-      "sort": 155,
+      "sort": 158,
       "id": "d_silver_mii_racing_suit",
       "i_type": "Driver",
       "name": "Silver Mii Racing Suit",
@@ -50174,7 +50219,7 @@
       ]
     },
     "d_toad_mii_racing_suit": {
-      "sort": 150,
+      "sort": 153,
       "id": "d_toad_mii_racing_suit",
       "i_type": "Driver",
       "name": "Toad Mii Racing Suit",
@@ -50566,7 +50611,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 124,
+      "sort": 126,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -50662,7 +50707,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 144,
+      "sort": 146,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -50842,7 +50887,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 131,
+      "sort": 133,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -50950,7 +50995,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 126,
+      "sort": 128,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
