@@ -274,6 +274,89 @@
         }
       ]
     },
+    "c_3ds_bowser_s_castle_rt": {
+      "sort": 286,
+      "id": "c_3ds_bowser_s_castle_rt",
+      "name": "3DS Bowser's Castle RT",
+      "favorite_items": [
+        {
+          "id": "d_gold_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_bob_omb_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 8
+        },
+        {
+          "id": "d_mario_baseball",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_golf",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_samurai",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_happi",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "g_black_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_sky_high_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "g_spider_glider",
+          "lvl": 1
+        },
+        {
+          "id": "k_candy_clown",
+          "lvl": 1
+        },
+        {
+          "id": "k_classic_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_gray_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_magma_broom",
+          "lvl": 1
+        },
+        {
+          "id": "k_prop_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_offroader",
+          "lvl": 1
+        }
+      ]
+    },
     "c_3ds_bowser_s_castle_t": {
       "sort": 285,
       "id": "c_3ds_bowser_s_castle_t",
@@ -2946,7 +3029,7 @@
       ]
     },
     "c_3ds_rainbow_road": {
-      "sort": 286,
+      "sort": 287,
       "id": "c_3ds_rainbow_road",
       "name": "3DS Rainbow Road",
       "favorite_items": [
@@ -3109,7 +3192,7 @@
       ]
     },
     "c_3ds_rainbow_road_r": {
-      "sort": 287,
+      "sort": 288,
       "id": "c_3ds_rainbow_road_r",
       "name": "3DS Rainbow Road R",
       "favorite_items": [
@@ -3284,7 +3367,7 @@
       ]
     },
     "c_3ds_rainbow_road_r_t": {
-      "sort": 289,
+      "sort": 290,
       "id": "c_3ds_rainbow_road_r_t",
       "name": "3DS Rainbow Road R/T",
       "favorite_items": [
@@ -3475,7 +3558,7 @@
       ]
     },
     "c_3ds_rainbow_road_t": {
-      "sort": 288,
+      "sort": 289,
       "id": "c_3ds_rainbow_road_t",
       "name": "3DS Rainbow Road T",
       "favorite_items": [
@@ -42889,6 +42972,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_waluigi_pinball_r",
           "lvl": 1
         },
@@ -43501,6 +43588,10 @@
           "lvl": 8
         },
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rainbow_road",
           "lvl": 1
         },
@@ -43615,7 +43706,12 @@
       "i_type": "Driver",
       "name": "King Bob-omb Mii Racing Suit",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 8
+        }
+      ],
       "hashes": []
     },
     "d_king_boo": {
@@ -44963,6 +45059,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_mario_circuit",
           "lvl": 1
         },
@@ -45302,6 +45402,10 @@
       "name": "Mario (Golf)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 3
@@ -45893,7 +45997,12 @@
       "i_type": "Driver",
       "name": "Mario (Samurai)",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        }
+      ],
       "hashes": []
     },
     "d_mario_santa": {
@@ -47592,6 +47701,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_mario_circuit_r",
           "lvl": 6
         },
@@ -47811,6 +47924,10 @@
       "name": "Peach Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
         {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 8
@@ -54340,6 +54457,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 8
         },
@@ -55321,6 +55442,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 1
         },
         {
@@ -58884,6 +59009,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
           "lvl": 1
         },
@@ -61572,6 +61701,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 1
         },
@@ -63287,6 +63420,10 @@
       "name": "Prop Kart",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_rock_rock_mountain",
           "lvl": 1
@@ -68080,6 +68217,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 1
         },
@@ -69368,6 +69509,10 @@
         {
           "id": "c_3ds_bowser_s_castle_r",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
         },
         {
           "id": "c_3ds_neo_bowser_city",
@@ -71155,6 +71300,10 @@
         },
         {
           "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 1
         },
         {
@@ -74265,6 +74414,10 @@
       "name": "Golden Wings",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_bowser_s_castle_t",
           "lvl": 1
@@ -78690,6 +78843,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_rock_rock_mountain",
           "lvl": 1
         },
@@ -78945,6 +79102,10 @@
       "name": "Spider Glider",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_neo_bowser_city_r",
           "lvl": 1
