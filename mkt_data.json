@@ -22,12 +22,20 @@
           "lvl": 8
         },
         {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_luigi_vacation",
           "lvl": 3
         },
         {
           "id": "d_mario_mii_racing_suit",
           "lvl": 1
+        },
+        {
+          "id": "d_mario_samurai",
+          "lvl": 3
         },
         {
           "id": "d_meowser",
@@ -163,6 +171,10 @@
         {
           "id": "d_mario_mii_racing_suit",
           "lvl": 8
+        },
+        {
+          "id": "d_mario_samurai",
+          "lvl": 6
         },
         {
           "id": "d_nabbit",
@@ -9643,10 +9655,6 @@
         {
           "id": "g_dream_glider",
           "lvl": 1
-        },
-        {
-          "id": "g_dry_bowser_umbrella",
-          "lvl": 6
         },
         {
           "id": "g_fare_flier",
@@ -43791,6 +43799,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 8
         }
@@ -46090,6 +46102,14 @@
       "name": "Mario (Samurai)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle",
+          "lvl": 3
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 6
+        },
         {
           "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 1
@@ -72618,10 +72638,6 @@
         {
           "id": "c_ds_waluigi_pinball",
           "lvl": 1
-        },
-        {
-          "id": "c_ds_waluigi_pinball_t",
-          "lvl": 6
         },
         {
           "id": "c_gba_bowser_s_castle_1",
