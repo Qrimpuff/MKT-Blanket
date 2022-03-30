@@ -9072,6 +9072,10 @@
           "lvl": 3
         },
         {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 3
+        },
+        {
           "id": "d_lakitu_party_time",
           "lvl": 1
         },
@@ -9280,6 +9284,10 @@
         },
         {
           "id": "d_mario_musician",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
           "lvl": 1
         },
         {
@@ -38550,6 +38558,10 @@
           "lvl": 1
         },
         {
+          "id": "d_peach_yukata",
+          "lvl": 8
+        },
+        {
           "id": "d_silver_mii_racing_suit",
           "lvl": 1
         },
@@ -38758,6 +38770,14 @@
         {
           "id": "d_peach_mii_racing_suit",
           "lvl": 3
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 6
         },
         {
           "id": "d_rosalina_mii_racing_suit",
@@ -43805,6 +43825,10 @@
         {
           "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 8
+        },
+        {
+          "id": "c_ds_waluigi_pinball",
+          "lvl": 3
         }
       ],
       "hashes": []
@@ -48371,7 +48395,16 @@
       "i_type": "Driver",
       "name": "Peach (Yukata)",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_wii_mushroom_gorge",
+          "lvl": 8
+        },
+        {
+          "id": "c_wii_mushroom_gorge_t",
+          "lvl": 1
+        }
+      ],
       "hashes": []
     },
     "d_peachette": {
@@ -49054,8 +49087,16 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_ds_waluigi_pinball_r",
+          "lvl": 1
+        },
+        {
           "id": "c_wario_shipyard_r_t",
           "lvl": 8
+        },
+        {
+          "id": "c_wii_mushroom_gorge_t",
+          "lvl": 6
         }
       ],
       "hashes": []
