@@ -233,6 +233,10 @@
           "lvl": 1
         },
         {
+          "id": "g_origami_glider",
+          "lvl": 8
+        },
+        {
           "id": "g_wario_s_mustache",
           "lvl": 3
         },
@@ -336,6 +340,14 @@
           "lvl": 1
         },
         {
+          "id": "g_origami_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_sakura_origami_glider",
+          "lvl": 6
+        },
+        {
           "id": "g_sky_high_flyer",
           "lvl": 1
         },
@@ -433,6 +445,10 @@
         {
           "id": "g_golden_wings",
           "lvl": 1
+        },
+        {
+          "id": "g_origami_glider",
+          "lvl": 3
         },
         {
           "id": "g_pink_gold_meteors",
@@ -30300,6 +30316,10 @@
           "lvl": 1
         },
         {
+          "id": "d_mario_aviator",
+          "lvl": 1
+        },
+        {
           "id": "d_monty_mole",
           "lvl": 1
         },
@@ -30309,6 +30329,14 @@
         },
         {
           "id": "d_penguin_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_rosalina_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -30471,8 +30499,24 @@
           "lvl": 1
         },
         {
+          "id": "d_luigi_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_aviator",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_swimwear",
           "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 6
         },
         {
           "id": "d_red_koopa_freerunning",
@@ -30515,6 +30559,10 @@
           "lvl": 1
         },
         {
+          "id": "g_gold_penguin_wingtip",
+          "lvl": 1
+        },
+        {
           "id": "g_great_sail",
           "lvl": 1
         },
@@ -30533,6 +30581,10 @@
         {
           "id": "g_surf_master",
           "lvl": 6
+        },
+        {
+          "id": "g_wonderful_wings",
+          "lvl": 1
         },
         {
           "id": "k_blue_royale",
@@ -30555,6 +30607,10 @@
           "lvl": 6
         },
         {
+          "id": "k_combo_cruiser",
+          "lvl": 1
+        },
+        {
           "id": "k_fast_frank",
           "lvl": 6
         },
@@ -30575,6 +30631,10 @@
           "lvl": 1
         },
         {
+          "id": "k_green_lightning",
+          "lvl": 1
+        },
+        {
           "id": "k_jade_hop_rod",
           "lvl": 1
         },
@@ -30584,6 +30644,10 @@
         },
         {
           "id": "k_star_spangled_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_8_bit_pipe_frame",
           "lvl": 1
         }
       ]
@@ -30634,8 +30698,16 @@
           "lvl": 1
         },
         {
+          "id": "d_mario_golf",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_swimwear",
           "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 6
         },
         {
           "id": "d_penguin_luigi",
@@ -30663,6 +30735,10 @@
         },
         {
           "id": "g_cheep_cheep_masks",
+          "lvl": 1
+        },
+        {
+          "id": "g_glittering_parasol",
           "lvl": 1
         },
         {
@@ -38598,6 +38674,10 @@
           "lvl": 1
         },
         {
+          "id": "g_origami_glider",
+          "lvl": 6
+        },
+        {
           "id": "g_royal_parachute",
           "lvl": 1
         },
@@ -38673,8 +38753,16 @@
           "lvl": 1
         },
         {
+          "id": "g_origami_glider",
+          "lvl": 1
+        },
+        {
           "id": "g_record_setter",
           "lvl": 1
+        },
+        {
+          "id": "g_sakura_origami_glider",
+          "lvl": 8
         },
         {
           "id": "g_sky_high_flyer",
@@ -38805,6 +38893,10 @@
         },
         {
           "id": "g_new_year_s_2022",
+          "lvl": 1
+        },
+        {
+          "id": "g_sakura_origami_glider",
           "lvl": 1
         },
         {
@@ -45065,6 +45157,10 @@
         {
           "id": "c_singapore_speedway_t",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 1
         }
       ],
       "hashes": [
@@ -45160,6 +45256,14 @@
         },
         {
           "id": "c_snes_choco_island_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2r",
           "lvl": 1
         },
         {
@@ -45564,6 +45668,10 @@
         },
         {
           "id": "c_rmx_mario_circuit_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2t",
           "lvl": 1
         },
         {
@@ -48397,6 +48505,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2t",
+          "lvl": 6
+        },
+        {
           "id": "c_wii_mushroom_gorge",
           "lvl": 8
         },
@@ -49091,6 +49207,14 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_koopa_troopa_beach_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 6
+        },
+        {
           "id": "c_wario_shipyard_r_t",
           "lvl": 8
         },
@@ -49667,6 +49791,10 @@
         {
           "id": "c_rmx_rainbow_road_1r_t",
           "lvl": 3
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2",
+          "lvl": 1
         },
         {
           "id": "c_snes_vanilla_lake_2r",
@@ -55911,6 +56039,10 @@
           "lvl": 8
         },
         {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_mario_circuit_2r",
           "lvl": 1
         },
@@ -59796,6 +59928,10 @@
         },
         {
           "id": "c_los_angeles_laps_3t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2r",
           "lvl": 1
         },
         {
@@ -68383,6 +68519,10 @@
           "lvl": 3
         },
         {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_wii_mushroom_gorge_r",
           "lvl": 6
         },
@@ -69370,7 +69510,7 @@
       ]
     },
     "g_baby_mario_hanafuda": {
-      "sort": 138,
+      "sort": 140,
       "id": "g_baby_mario_hanafuda",
       "i_type": "Glider",
       "name": "Baby Mario Hanafuda",
@@ -69494,7 +69634,7 @@
       ]
     },
     "g_banana_wingtip": {
-      "sort": 122,
+      "sort": 124,
       "id": "g_banana_wingtip",
       "i_type": "Glider",
       "name": "Banana Wingtip",
@@ -69574,7 +69714,7 @@
       ]
     },
     "g_barrel_hanafuda": {
-      "sort": 141,
+      "sort": 143,
       "id": "g_barrel_hanafuda",
       "i_type": "Glider",
       "name": "Barrel Hanafuda",
@@ -70282,7 +70422,7 @@
       ]
     },
     "g_blooper_hanafuda": {
-      "sort": 142,
+      "sort": 144,
       "id": "g_blooper_hanafuda",
       "i_type": "Glider",
       "name": "Blooper Hanafuda",
@@ -70362,7 +70502,7 @@
       ]
     },
     "g_blooper_wingtip": {
-      "sort": 125,
+      "sort": 127,
       "id": "g_blooper_wingtip",
       "i_type": "Glider",
       "name": "Blooper Wingtip",
@@ -70550,7 +70690,7 @@
       ]
     },
     "g_boo_hanafuda": {
-      "sort": 145,
+      "sort": 147,
       "id": "g_boo_hanafuda",
       "i_type": "Glider",
       "name": "Boo Hanafuda",
@@ -70618,7 +70758,7 @@
       ]
     },
     "g_bowser_hanafuda": {
-      "sort": 149,
+      "sort": 151,
       "id": "g_bowser_hanafuda",
       "i_type": "Glider",
       "name": "Bowser Hanafuda",
@@ -70694,7 +70834,7 @@
       ]
     },
     "g_bright_balloons": {
-      "sort": 130,
+      "sort": 132,
       "id": "g_bright_balloons",
       "i_type": "Glider",
       "name": "Bright Balloons",
@@ -70902,7 +71042,7 @@
       ]
     },
     "g_bullet_bill_hanafuda": {
-      "sort": 144,
+      "sort": 146,
       "id": "g_bullet_bill_hanafuda",
       "i_type": "Glider",
       "name": "Bullet Bill Hanafuda",
@@ -70974,7 +71114,7 @@
       ]
     },
     "g_bullet_bill_parachute": {
-      "sort": 117,
+      "sort": 119,
       "id": "g_bullet_bill_parachute",
       "i_type": "Glider",
       "name": "Bullet Bill Parachute",
@@ -71582,7 +71722,7 @@
       ]
     },
     "g_cape_mario_hanafuda": {
-      "sort": 143,
+      "sort": 145,
       "id": "g_cape_mario_hanafuda",
       "i_type": "Glider",
       "name": "Cape Mario Hanafuda",
@@ -71734,7 +71874,7 @@
       ]
     },
     "g_cheep_cheep_masks": {
-      "sort": 127,
+      "sort": 129,
       "id": "g_cheep_cheep_masks",
       "i_type": "Glider",
       "name": "Cheep Cheep Masks",
@@ -72058,7 +72198,7 @@
       ]
     },
     "g_cloud_glider": {
-      "sort": 118,
+      "sort": 120,
       "id": "g_cloud_glider",
       "i_type": "Glider",
       "name": "Cloud Glider",
@@ -72350,7 +72490,7 @@
       ]
     },
     "g_dragon_wings": {
-      "sort": 124,
+      "sort": 126,
       "id": "g_dragon_wings",
       "i_type": "Glider",
       "name": "Dragon Wings",
@@ -72478,7 +72618,7 @@
       ]
     },
     "g_dream_glider": {
-      "sort": 132,
+      "sort": 134,
       "id": "g_dream_glider",
       "i_type": "Glider",
       "name": "Dream Glider",
@@ -72630,7 +72770,7 @@
       ]
     },
     "g_dry_bowser_umbrella": {
-      "sort": 128,
+      "sort": 130,
       "id": "g_dry_bowser_umbrella",
       "i_type": "Glider",
       "name": "Dry Bowser Umbrella",
@@ -73841,6 +73981,10 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_koopa_troopa_beach_2t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_vanilla_lake_2r",
           "lvl": 1
         },
@@ -74329,6 +74473,10 @@
           "lvl": 6
         },
         {
+          "id": "c_snes_koopa_troopa_beach_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_vancouver_velocity_2",
           "lvl": 6
         }
@@ -74338,7 +74486,7 @@
       ]
     },
     "g_gold_swooper": {
-      "sort": 121,
+      "sort": 123,
       "id": "g_gold_swooper",
       "i_type": "Glider",
       "name": "Gold Swooper",
@@ -74594,7 +74742,7 @@
       ]
     },
     "g_golden_wings": {
-      "sort": 134,
+      "sort": 136,
       "id": "g_golden_wings",
       "i_type": "Glider",
       "name": "Golden Wings",
@@ -74722,7 +74870,7 @@
       ]
     },
     "g_goomba_hanafuda": {
-      "sort": 147,
+      "sort": 149,
       "id": "g_goomba_hanafuda",
       "i_type": "Glider",
       "name": "Goomba Hanafuda",
@@ -75202,7 +75350,7 @@
       ]
     },
     "g_jumping_mario_hanafuda": {
-      "sort": 148,
+      "sort": 150,
       "id": "g_jumping_mario_hanafuda",
       "i_type": "Glider",
       "name": "Jumping Mario Hanafuda",
@@ -76070,7 +76218,7 @@
       ]
     },
     "g_nabbit_oilpaper_umbrella": {
-      "sort": 126,
+      "sort": 128,
       "id": "g_nabbit_oilpaper_umbrella",
       "i_type": "Glider",
       "name": "Nabbit Oilpaper Umbrella",
@@ -76550,7 +76698,7 @@
       ]
     },
     "g_ninja_scroll": {
-      "sort": 131,
+      "sort": 133,
       "id": "g_ninja_scroll",
       "i_type": "Glider",
       "name": "Ninja Scroll",
@@ -76701,6 +76849,36 @@
         "mGnmmD8=|mOWiyXM=|mOXimTM=|nGtmOL4=|mNSqwFs=|AAAAAAA=|ZraL2zM="
       ]
     },
+    "g_origami_glider": {
+      "sort": 116,
+      "id": "g_origami_glider",
+      "i_type": "Glider",
+      "name": "Origami Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_r",
+          "lvl": 8
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 3
+        },
+        {
+          "id": "c_wii_mushroom_gorge",
+          "lvl": 6
+        },
+        {
+          "id": "c_wii_mushroom_gorge_r",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "g_paper_glider": {
       "sort": 4,
       "id": "g_paper_glider",
@@ -76782,7 +76960,7 @@
       ]
     },
     "g_peach_hanafuda": {
-      "sort": 140,
+      "sort": 142,
       "id": "g_peach_hanafuda",
       "i_type": "Glider",
       "name": "Peach Hanafuda",
@@ -76898,7 +77076,7 @@
       ]
     },
     "g_penguin_wingtip": {
-      "sort": 129,
+      "sort": 131,
       "id": "g_penguin_wingtip",
       "i_type": "Glider",
       "name": "Penguin Wingtip",
@@ -77226,7 +77404,7 @@
       ]
     },
     "g_piranha_plant_hanafuda": {
-      "sort": 146,
+      "sort": 148,
       "id": "g_piranha_plant_hanafuda",
       "i_type": "Glider",
       "name": "Piranha Plant Hanafuda",
@@ -77810,7 +77988,7 @@
       ]
     },
     "g_rainy_balloons": {
-      "sort": 119,
+      "sort": 121,
       "id": "g_rainy_balloons",
       "i_type": "Glider",
       "name": "Rainy Balloons",
@@ -78272,6 +78450,28 @@
       "hashes": [
         "mGliwE8=|mGni0Z8=|mHCq0dY=|mK1iwUY=|nGPEPDM=|WBqulJk=|JtKvF9Q="
       ]
+    },
+    "g_sakura_origami_glider": {
+      "sort": 117,
+      "id": "g_sakura_origami_glider",
+      "i_type": "Glider",
+      "name": "Sakura Origami Glider",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 6
+        },
+        {
+          "id": "c_wii_mushroom_gorge_r",
+          "lvl": 8
+        },
+        {
+          "id": "c_wii_mushroom_gorge_t",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
     },
     "g_shell_parachute": {
       "sort": 22,
@@ -80702,7 +80902,7 @@
       ]
     },
     "g_swooper": {
-      "sort": 116,
+      "sort": 118,
       "id": "g_swooper",
       "i_type": "Glider",
       "name": "Swooper",
@@ -81078,7 +81278,7 @@
       ]
     },
     "g_tropical_glider": {
-      "sort": 123,
+      "sort": 125,
       "id": "g_tropical_glider",
       "i_type": "Glider",
       "name": "Tropical Glider",
@@ -81182,7 +81382,7 @@
       ]
     },
     "g_vampire_wings": {
-      "sort": 133,
+      "sort": 135,
       "id": "g_vampire_wings",
       "i_type": "Glider",
       "name": "Vampire Wings",
@@ -81282,7 +81482,7 @@
       ]
     },
     "g_waluigi_s_mustache": {
-      "sort": 136,
+      "sort": 138,
       "id": "g_waluigi_s_mustache",
       "i_type": "Glider",
       "name": "Waluigi's Mustache",
@@ -81394,7 +81594,7 @@
       ]
     },
     "g_wario_s_mustache": {
-      "sort": 135,
+      "sort": 137,
       "id": "g_wario_s_mustache",
       "i_type": "Glider",
       "name": "Wario's Mustache",
@@ -81510,7 +81710,7 @@
       ]
     },
     "g_wicked_wings": {
-      "sort": 120,
+      "sort": 122,
       "id": "g_wicked_wings",
       "i_type": "Glider",
       "name": "Wicked Wings",
@@ -81598,7 +81798,7 @@
       ]
     },
     "g_wonderful_wings": {
-      "sort": 137,
+      "sort": 139,
       "id": "g_wonderful_wings",
       "i_type": "Glider",
       "name": "Wonderful Wings",
@@ -81626,6 +81826,10 @@
         },
         {
           "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_koopa_troopa_beach_2r",
           "lvl": 1
         },
         {
@@ -81658,7 +81862,7 @@
       ]
     },
     "g_yoshi_s_egg_hanafuda": {
-      "sort": 139,
+      "sort": 141,
       "id": "g_yoshi_s_egg_hanafuda",
       "i_type": "Glider",
       "name": "Yoshi's Egg Hanafuda",
