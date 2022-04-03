@@ -376,6 +376,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
           "id": "k_yellow_offroader",
           "lvl": 1
         }
@@ -21470,6 +21474,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
           "id": "k_wild_pink",
           "lvl": 1
         }
@@ -21597,6 +21605,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sakura_hop_rod",
+          "lvl": 6
+        },
+        {
           "id": "k_sakura_quickshaw",
           "lvl": 1
         },
@@ -21714,6 +21726,10 @@
         {
           "id": "k_roaring_racer",
           "lvl": 1
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 8
         },
         {
           "id": "k_sakura_quickshaw",
@@ -21869,6 +21885,10 @@
         {
           "id": "k_roaring_racer",
           "lvl": 1
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 3
         },
         {
           "id": "k_sakura_quickshaw",
@@ -37574,6 +37594,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
           "id": "k_star_broom",
           "lvl": 1
         },
@@ -38846,6 +38870,10 @@
           "lvl": 1
         },
         {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
           "id": "k_star_broom",
           "lvl": 1
         }
@@ -38947,6 +38975,10 @@
         {
           "id": "k_rambi_rider",
           "lvl": 1
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 3
         },
         {
           "id": "k_sneeker",
@@ -39070,6 +39102,10 @@
         {
           "id": "k_pinch_hitter",
           "lvl": 8
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 6
         },
         {
           "id": "k_yellow_8_bit_pipe_frame",
@@ -65598,6 +65634,52 @@
       "hashes": [
         "nEvmsUY=|mNPmsU4=|nEPmsEY=|nElmkNU=|mLSi5Go=|Oi2uSqo=|ZlaLtpA="
       ]
+    },
+    "k_sakura_hop_rod": {
+      "sort": 208,
+      "id": "k_sakura_hop_rod",
+      "i_type": "Kart",
+      "name": "Sakura Hop Rod",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
+          "id": "c_ninja_hideaway",
+          "lvl": 1
+        },
+        {
+          "id": "c_ninja_hideaway_r",
+          "lvl": 6
+        },
+        {
+          "id": "c_ninja_hideaway_r_t",
+          "lvl": 8
+        },
+        {
+          "id": "c_ninja_hideaway_t",
+          "lvl": 3
+        },
+        {
+          "id": "c_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_wii_mushroom_gorge",
+          "lvl": 1
+        },
+        {
+          "id": "c_wii_mushroom_gorge_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_wii_mushroom_gorge_t",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
     },
     "k_sakura_quickshaw": {
       "sort": 126,
