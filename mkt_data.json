@@ -6467,6 +6467,89 @@
         }
       ]
     },
+    "c_3ds_wario_shipyard_r_t": {
+      "sort": 275,
+      "id": "c_3ds_wario_shipyard_r_t",
+      "name": "3DS Wario Shipyard R/T",
+      "favorite_items": [
+        {
+          "id": "d_chargin_chuck",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_golf",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_satellaview",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 8
+        },
+        {
+          "id": "d_rosalina_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "g_ninja_scroll",
+          "lvl": 1
+        },
+        {
+          "id": "g_record_setter",
+          "lvl": 1
+        },
+        {
+          "id": "g_ship_s_wheel",
+          "lvl": 1
+        },
+        {
+          "id": "g_wario_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "g_wonderful_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_yukata_ribbon",
+          "lvl": 1
+        },
+        {
+          "id": "k_festival_girl",
+          "lvl": 1
+        },
+        {
+          "id": "k_frosty_bells",
+          "lvl": 1
+        },
+        {
+          "id": "k_jukebox_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_snow_skimmer",
+          "lvl": 1
+        }
+      ]
+    },
     "c_3ds_wario_shipyard_t": {
       "sort": 274,
       "id": "c_3ds_wario_shipyard_t",
@@ -37524,89 +37607,6 @@
         }
       ]
     },
-    "c_wario_shipyard_r_t": {
-      "sort": 275,
-      "id": "c_wario_shipyard_r_t",
-      "name": "Wario Shipyard R/T",
-      "favorite_items": [
-        {
-          "id": "d_chargin_chuck",
-          "lvl": 1
-        },
-        {
-          "id": "d_king_boo_mii_racing_suit",
-          "lvl": 1
-        },
-        {
-          "id": "d_luigi_golf",
-          "lvl": 1
-        },
-        {
-          "id": "d_mario_satellaview",
-          "lvl": 1
-        },
-        {
-          "id": "d_pink_shy_guy_ninja",
-          "lvl": 8
-        },
-        {
-          "id": "d_rosalina_mii_racing_suit",
-          "lvl": 1
-        },
-        {
-          "id": "d_tanooki_rosalina",
-          "lvl": 1
-        },
-        {
-          "id": "g_ninja_scroll",
-          "lvl": 1
-        },
-        {
-          "id": "g_record_setter",
-          "lvl": 1
-        },
-        {
-          "id": "g_ship_s_wheel",
-          "lvl": 1
-        },
-        {
-          "id": "g_wario_s_mustache",
-          "lvl": 1
-        },
-        {
-          "id": "g_wonderful_wings",
-          "lvl": 1
-        },
-        {
-          "id": "g_yukata_ribbon",
-          "lvl": 1
-        },
-        {
-          "id": "k_festival_girl",
-          "lvl": 1
-        },
-        {
-          "id": "k_frosty_bells",
-          "lvl": 1
-        },
-        {
-          "id": "k_jukebox_buggy",
-          "lvl": 1
-        },
-        {
-          "id": "k_sakura_hop_rod",
-          "lvl": 1
-        },
-        {
-          "id": "k_star_broom",
-          "lvl": 1
-        },
-        {
-          "id": "k_white_snow_skimmer",
-          "lvl": 1
-        }
-      ]
-    },
     "c_wii_dk_summit": {
       "sort": 242,
       "id": "c_wii_dk_summit",
@@ -39668,7 +39668,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 142,
+      "sort": 143,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -39942,6 +39942,24 @@
       "hashes": [
         "miQq4cI=|mGHqEEU=|PFnGElU=|kiQpaaI=|GGGukFU=|vNnGkj0=|5pQB10Q="
       ]
+    },
+    "d_birdo_mii_racing_suit": {
+      "sort": 165,
+      "id": "d_birdo_mii_racing_suit",
+      "i_type": "Driver",
+      "name": "Birdo Mii Racing Suit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
+    "d_birdo_white": {
+      "sort": 151,
+      "id": "d_birdo_white",
+      "i_type": "Driver",
+      "name": "Birdo (White)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_birdo_yellow": {
       "sort": 47,
@@ -40464,7 +40482,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 135,
+      "sort": 136,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -40564,7 +40582,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 140,
+      "sort": 141,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -40668,7 +40686,7 @@
       ]
     },
     "d_bronze_mii_racing_suit": {
-      "sort": 157,
+      "sort": 159,
       "id": "d_bronze_mii_racing_suit",
       "i_type": "Driver",
       "name": "Bronze Mii Racing Suit",
@@ -41676,7 +41694,7 @@
       ]
     },
     "d_chargin_chuck": {
-      "sort": 148,
+      "sort": 149,
       "id": "d_chargin_chuck",
       "i_type": "Driver",
       "name": "Chargin' Chuck",
@@ -41700,6 +41718,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -41732,10 +41754,6 @@
         },
         {
           "id": "c_rmx_mario_circuit_1r",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -42300,7 +42318,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 131,
+      "sort": 132,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -42448,7 +42466,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 137,
+      "sort": 138,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -42612,7 +42630,7 @@
       ]
     },
     "d_donkey_kong_mii_racing_suit": {
-      "sort": 156,
+      "sort": 158,
       "id": "d_donkey_kong_mii_racing_suit",
       "i_type": "Driver",
       "name": "Donkey Kong Mii Racing Suit",
@@ -42672,7 +42690,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 129,
+      "sort": 130,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -42780,7 +42798,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 123,
+      "sort": 124,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -42860,7 +42878,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 132,
+      "sort": 133,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -43152,7 +43170,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 130,
+      "sort": 131,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -43256,7 +43274,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 127,
+      "sort": 128,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -43348,7 +43366,7 @@
       ]
     },
     "d_gold_mii_racing_suit": {
-      "sort": 159,
+      "sort": 161,
       "id": "d_gold_mii_racing_suit",
       "i_type": "Driver",
       "name": "Gold Mii Racing Suit",
@@ -43724,7 +43742,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 145,
+      "sort": 146,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -43856,7 +43874,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 136,
+      "sort": 137,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -43968,7 +43986,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 144,
+      "sort": 145,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -44092,7 +44110,7 @@
       ]
     },
     "d_king_bob_omb_mii_racing_suit": {
-      "sort": 161,
+      "sort": 163,
       "id": "d_king_bob_omb_mii_racing_suit",
       "i_type": "Driver",
       "name": "King Bob-omb Mii Racing Suit",
@@ -44166,7 +44184,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 139,
+      "sort": 140,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -44262,7 +44280,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 124,
+      "sort": 125,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -44334,14 +44352,14 @@
       ]
     },
     "d_king_boo_mii_racing_suit": {
-      "sort": 160,
+      "sort": 162,
       "id": "d_king_boo_mii_racing_suit",
       "i_type": "Driver",
       "name": "King Boo Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
         {
-          "id": "c_wario_shipyard_r_t",
+          "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 1
         }
       ],
@@ -44432,7 +44450,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 141,
+      "sort": 142,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -44899,6 +44917,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 1
         },
@@ -44940,10 +44962,6 @@
         },
         {
           "id": "c_rmx_ghost_valley_1t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -45080,7 +45098,7 @@
       ]
     },
     "d_luigi_mii_racing_suit": {
-      "sort": 154,
+      "sort": 156,
       "id": "d_luigi_mii_racing_suit",
       "i_type": "Driver",
       "name": "Luigi Mii Racing Suit",
@@ -46172,7 +46190,7 @@
       ]
     },
     "d_mario_mii_racing_suit": {
-      "sort": 151,
+      "sort": 153,
       "id": "d_mario_mii_racing_suit",
       "i_type": "Driver",
       "name": "Mario Mii Racing Suit",
@@ -46581,6 +46599,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass",
           "lvl": 1
         },
@@ -46638,10 +46660,6 @@
         },
         {
           "id": "c_snes_vanilla_lake_2",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -47126,7 +47144,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 147,
+      "sort": 148,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -47366,7 +47384,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 134,
+      "sort": 135,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -48378,7 +48396,7 @@
       ]
     },
     "d_peach_mii_racing_suit": {
-      "sort": 152,
+      "sort": 154,
       "id": "d_peach_mii_racing_suit",
       "i_type": "Driver",
       "name": "Peach Mii Racing Suit",
@@ -49420,12 +49438,16 @@
       ]
     },
     "d_pink_shy_guy_ninja": {
-      "sort": 149,
+      "sort": 150,
       "id": "d_pink_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Pink Shy Guy (Ninja)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 8
+        },
         {
           "id": "c_ds_waluigi_pinball_r",
           "lvl": 1
@@ -49445,10 +49467,6 @@
         {
           "id": "c_snes_koopa_troopa_beach_2r",
           "lvl": 6
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 8
         },
         {
           "id": "c_wii_mushroom_gorge_t",
@@ -49658,7 +49676,7 @@
       ]
     },
     "d_red_mii_racing_suit": {
-      "sort": 150,
+      "sort": 152,
       "id": "d_red_mii_racing_suit",
       "i_type": "Driver",
       "name": "Red Mii Racing Suit",
@@ -50014,12 +50032,16 @@
       ]
     },
     "d_rosalina_mii_racing_suit": {
-      "sort": 155,
+      "sort": 157,
       "id": "d_rosalina_mii_racing_suit",
       "i_type": "Driver",
       "name": "Rosalina Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
         {
           "id": "c_gba_sky_garden",
           "lvl": 1
@@ -50039,10 +50061,6 @@
         {
           "id": "c_snes_vanilla_lake_2t",
           "lvl": 6
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 1
         },
         {
           "id": "c_wii_mushroom_gorge_t",
@@ -50190,7 +50208,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 138,
+      "sort": 139,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -50314,7 +50332,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 143,
+      "sort": 144,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -50450,7 +50468,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 125,
+      "sort": 126,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -50550,7 +50568,7 @@
       ]
     },
     "d_silver_mii_racing_suit": {
-      "sort": 158,
+      "sort": 160,
       "id": "d_silver_mii_racing_suit",
       "i_type": "Driver",
       "name": "Silver Mii Racing Suit",
@@ -50725,6 +50743,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r_t",
           "lvl": 1
         },
@@ -50819,10 +50841,6 @@
         {
           "id": "c_vancouver_velocity_2t",
           "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 1
         }
       ],
       "hashes": [
@@ -50874,7 +50892,7 @@
       ]
     },
     "d_toad_mii_racing_suit": {
-      "sort": 153,
+      "sort": 155,
       "id": "d_toad_mii_racing_suit",
       "i_type": "Driver",
       "name": "Toad Mii Racing Suit",
@@ -51266,7 +51284,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 126,
+      "sort": 127,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -51362,7 +51380,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 146,
+      "sort": 147,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -51542,7 +51560,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 133,
+      "sort": 134,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -51650,7 +51668,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 128,
+      "sort": 129,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
@@ -52121,6 +52139,15 @@
         "EkmioyQ=|mC3OWbY=|UkmiIiQ=|OkligmQ=|nKfMXNs=|WlqqoSU=|ZlioAyQ="
       ]
     },
+    "d_yoshi_gold_egg": {
+      "sort": 123,
+      "id": "d_yoshi_gold_egg",
+      "i_type": "Driver",
+      "name": "Yoshi (Gold Egg)",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
+    },
     "d_yoshi_kangaroo": {
       "sort": 111,
       "id": "d_yoshi_kangaroo",
@@ -52272,6 +52299,15 @@
       "hashes": [
         "mCluIK0=|nGnOEc4=|nJbC3Eo=|WGlroDU=|lCnEEaw=|lJam1Vo=|JpaJ3Ug="
       ]
+    },
+    "d_yoshi_mii_racing_suit": {
+      "sort": 164,
+      "id": "d_yoshi_mii_racing_suit",
+      "i_type": "Driver",
+      "name": "Yoshi Mii Racing Suit",
+      "rarity": "HighEnd",
+      "favorite_courses": [],
+      "hashes": []
     },
     "d_yoshi_reindeer": {
       "sort": 65,
@@ -58003,6 +58039,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_london_loop_r",
           "lvl": 1
         },
@@ -58060,10 +58100,6 @@
         },
         {
           "id": "c_tokyo_blur_r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -58227,6 +58263,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass_r",
           "lvl": 1
         },
@@ -58292,10 +58332,6 @@
         },
         {
           "id": "c_vancouver_velocity_2t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         }
       ],
@@ -61291,6 +61327,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 8
         },
@@ -61340,10 +61380,6 @@
         },
         {
           "id": "c_singapore_speedway",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         }
       ],
@@ -65647,6 +65683,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ninja_hideaway",
           "lvl": 1
         },
@@ -65661,10 +65701,6 @@
         {
           "id": "c_ninja_hideaway_t",
           "lvl": 3
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 1
         },
         {
           "id": "c_wii_mushroom_gorge",
@@ -66633,6 +66669,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sky_garden_r",
           "lvl": 1
         },
@@ -66658,10 +66698,6 @@
         },
         {
           "id": "c_snes_vanilla_lake_2t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -68153,6 +68189,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass",
           "lvl": 1
         },
@@ -68219,10 +68259,6 @@
         {
           "id": "c_vancouver_velocity_2t",
           "lvl": 6
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 1
         },
         {
           "id": "c_wii_dk_summit",
@@ -77055,6 +77091,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -77116,10 +77156,6 @@
         },
         {
           "id": "c_tokyo_blur_3r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -78437,6 +78473,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 3
         },
@@ -78462,10 +78502,6 @@
         },
         {
           "id": "c_rmx_rainbow_road_1r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -78895,6 +78931,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass_t",
           "lvl": 1
         },
@@ -79004,10 +79044,6 @@
         },
         {
           "id": "c_vancouver_velocity_2r",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -81987,6 +82023,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 6
         },
@@ -82020,10 +82060,6 @@
         },
         {
           "id": "c_rmx_mario_circuit_1r",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         }
       ],
@@ -82183,6 +82219,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sky_garden_r",
           "lvl": 3
         },
@@ -82204,10 +82244,6 @@
         },
         {
           "id": "c_snes_vanilla_lake_2",
-          "lvl": 1
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -82311,6 +82347,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 6
         },
@@ -82405,10 +82445,6 @@
         {
           "id": "c_tokyo_blur_r",
           "lvl": 3
-        },
-        {
-          "id": "c_wario_shipyard_r_t",
-          "lvl": 1
         },
         {
           "id": "c_wii_maple_treeway_r_t",
