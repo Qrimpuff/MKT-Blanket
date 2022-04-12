@@ -13488,6 +13488,14 @@
           "lvl": 1
         },
         {
+          "id": "d_yoshi_gold_egg",
+          "lvl": 3
+        },
+        {
+          "id": "d_yoshi_mii_racing_suit",
+          "lvl": 3
+        },
+        {
           "id": "g_bright_balloons",
           "lvl": 1
         },
@@ -13548,6 +13556,10 @@
           "lvl": 6
         },
         {
+          "id": "k_black_turbo_yoshi",
+          "lvl": 3
+        },
+        {
           "id": "k_blue_seven",
           "lvl": 1
         },
@@ -13598,6 +13610,10 @@
         {
           "id": "k_swift_jack",
           "lvl": 1
+        },
+        {
+          "id": "k_white_turbo_birdo",
+          "lvl": 3
         },
         {
           "id": "k_white_turbo_yoshi",
@@ -13838,6 +13854,10 @@
           "lvl": 1
         },
         {
+          "id": "d_yoshi_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_yoshi_reindeer",
           "lvl": 1
         },
@@ -13899,6 +13919,10 @@
         },
         {
           "id": "k_black_b_dasher",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_turbo_yoshi",
           "lvl": 1
         },
         {
@@ -52505,6 +52529,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_gcn_yoshi_circuit_r",
+          "lvl": 3
+        },
+        {
           "id": "c_n64_yoshi_valley",
           "lvl": 1
         },
@@ -52678,6 +52706,14 @@
       "name": "Yoshi Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gcn_yoshi_circuit_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_t",
+          "lvl": 1
+        },
         {
           "id": "c_n64_yoshi_valley_r",
           "lvl": 8
@@ -54228,6 +54264,14 @@
       "name": "Black Turbo Yoshi",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gcn_yoshi_circuit_r",
+          "lvl": 3
+        },
+        {
+          "id": "c_gcn_yoshi_circuit_t",
+          "lvl": 1
+        },
         {
           "id": "c_n64_yoshi_valley",
           "lvl": 1
@@ -68828,6 +68872,10 @@
       "name": "White Turbo Birdo",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_gcn_yoshi_circuit_r",
+          "lvl": 3
+        },
         {
           "id": "c_n64_yoshi_valley_r",
           "lvl": 1
