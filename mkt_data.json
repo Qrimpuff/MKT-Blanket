@@ -6355,12 +6355,28 @@
           "lvl": 8
         },
         {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 6
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_halloween",
           "lvl": 1
         },
         {
+          "id": "d_mario_samurai",
+          "lvl": 6
+        },
+        {
           "id": "d_mario_satellaview",
           "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 3
         },
         {
           "id": "d_penguin_mario",
@@ -6395,6 +6411,10 @@
           "lvl": 8
         },
         {
+          "id": "g_mario_s_mustache",
+          "lvl": 1
+        },
+        {
           "id": "g_pink_gold_meteors",
           "lvl": 1
         },
@@ -6403,7 +6423,15 @@
           "lvl": 1
         },
         {
+          "id": "g_sky_high_flyer",
+          "lvl": 1
+        },
+        {
           "id": "g_wario_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "k_armored_rider",
           "lvl": 1
         },
         {
@@ -6458,6 +6486,10 @@
           "lvl": 1
         },
         {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_luigi_classic",
           "lvl": 1
         },
@@ -6474,7 +6506,15 @@
           "lvl": 1
         },
         {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
           "id": "d_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_silver_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -6498,8 +6538,16 @@
           "lvl": 1
         },
         {
+          "id": "g_sakura_origami_glider",
+          "lvl": 1
+        },
+        {
           "id": "g_silver_surf_master",
           "lvl": 1
+        },
+        {
+          "id": "g_springtime_crane",
+          "lvl": 3
         },
         {
           "id": "g_starry_great_sail",
@@ -6508,10 +6556,6 @@
         {
           "id": "g_vampire_wings",
           "lvl": 1
-        },
-        {
-          "id": "g_waluigi_s_mustache",
-          "lvl": 3
         },
         {
           "id": "g_wario_s_mustache",
@@ -6524,6 +6568,10 @@
         {
           "id": "k_black_kabuki_dasher",
           "lvl": 1
+        },
+        {
+          "id": "k_black_turbo_yoshi",
+          "lvl": 6
         },
         {
           "id": "k_cheership",
@@ -6668,11 +6716,27 @@
           "lvl": 1
         },
         {
+          "id": "d_king_bob_omb_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 8
+        },
+        {
+          "id": "d_light_blue_shy_guy",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_golf",
           "lvl": 3
         },
         {
           "id": "d_peach_happi",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
           "lvl": 1
         },
         {
@@ -6757,6 +6821,10 @@
         },
         {
           "id": "k_sakura_quickshaw",
+          "lvl": 1
+        },
+        {
+          "id": "k_star_broom",
           "lvl": 1
         },
         {
@@ -27243,8 +27311,16 @@
           "lvl": 1
         },
         {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_luigi_painter",
           "lvl": 8
+        },
+        {
+          "id": "d_mario_samurai",
+          "lvl": 1
         },
         {
           "id": "d_pauline_rose",
@@ -27268,6 +27344,10 @@
         },
         {
           "id": "d_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_silver_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -27323,6 +27403,14 @@
           "lvl": 1
         },
         {
+          "id": "g_waluigi_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "g_wonderful_wings",
+          "lvl": 1
+        },
+        {
           "id": "g_yukata_ribbon",
           "lvl": 8
         },
@@ -27364,6 +27452,10 @@
         },
         {
           "id": "k_penguin_slider",
+          "lvl": 1
+        },
+        {
+          "id": "k_prop_kart",
           "lvl": 1
         },
         {
@@ -27412,6 +27504,10 @@
         {
           "id": "d_ice_mario",
           "lvl": 1
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 3
         },
         {
           "id": "d_mario_satellaview",
@@ -27478,6 +27574,10 @@
           "lvl": 8
         },
         {
+          "id": "g_record_setter",
+          "lvl": 1
+        },
+        {
           "id": "g_silver_surf_master",
           "lvl": 3
         },
@@ -27492,6 +27592,10 @@
         {
           "id": "k_8_bit_pipe_frame",
           "lvl": 1
+        },
+        {
+          "id": "k_armored_rider",
+          "lvl": 3
         },
         {
           "id": "k_black_turbo_birdo",
@@ -27554,6 +27658,10 @@
         },
         {
           "id": "d_cat_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_light_blue_shy_guy",
           "lvl": 1
         },
         {
@@ -27625,11 +27733,19 @@
           "lvl": 1
         },
         {
+          "id": "g_sky_high_flyer",
+          "lvl": 1
+        },
+        {
           "id": "g_yukata_ribbon",
           "lvl": 1
         },
         {
           "id": "k_black_penguin_slider",
+          "lvl": 1
+        },
+        {
+          "id": "k_cupid_s_arrow",
           "lvl": 1
         },
         {
@@ -44992,6 +45108,18 @@
           "lvl": 8
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r",
           "lvl": 1
         },
@@ -45234,8 +45362,24 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 8
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1r",
+          "lvl": 3
         },
         {
           "id": "c_snes_ghost_valley_1r",
@@ -45532,6 +45676,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_t",
           "lvl": 1
         },
@@ -45542,6 +45690,10 @@
         {
           "id": "c_rmx_ghost_valley_1r",
           "lvl": 6
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1t",
+          "lvl": 1
         },
         {
           "id": "c_snes_vanilla_lake_2t",
@@ -47388,6 +47540,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 6
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -47410,6 +47566,10 @@
         {
           "id": "c_ninja_hideaway_t",
           "lvl": 8
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1",
+          "lvl": 1
         },
         {
           "id": "c_wii_maple_treeway_r_t",
@@ -49698,6 +49858,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 3
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ninja_hideaway_r",
           "lvl": 3
         },
@@ -50419,6 +50587,10 @@
       "name": "Pink Shy Guy (Ninja)",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 8
@@ -51586,6 +51758,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -51600,6 +51776,10 @@
         {
           "id": "c_gba_sky_garden_t",
           "lvl": 8
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1",
+          "lvl": 1
         },
         {
           "id": "c_snes_vanilla_lake_2",
@@ -53692,6 +53872,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 1
         },
@@ -53706,6 +53890,10 @@
         {
           "id": "c_ninja_hideaway",
           "lvl": 8
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1r",
+          "lvl": 3
         },
         {
           "id": "c_snes_ghost_valley_1",
@@ -54949,6 +55137,10 @@
       "name": "Black Turbo Yoshi",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 6
+        },
         {
           "id": "c_ds_airship_fortress_t",
           "lvl": 3
@@ -58042,6 +58234,10 @@
         {
           "id": "c_rmx_rainbow_road_2r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1t",
+          "lvl": 1
         },
         {
           "id": "c_wii_dk_summit_r",
@@ -65330,6 +65526,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_vanilla_lake_1",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_mario_circuit_2r",
           "lvl": 6
         },
@@ -67973,6 +68173,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
         {
@@ -77874,6 +78078,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r_t",
           "lvl": 6
         },
@@ -80044,6 +80252,10 @@
           "lvl": 1
         },
         {
+          "id": "c_rmx_vanilla_lake_1r",
+          "lvl": 1
+        },
+        {
           "id": "c_wii_dk_summit_r",
           "lvl": 6
         },
@@ -80394,6 +80606,10 @@
         {
           "id": "c_3ds_bowser_s_castle_rt",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_airship_fortress_r",
@@ -81222,6 +81438,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 8
         },
@@ -81251,6 +81471,10 @@
         },
         {
           "id": "c_n64_yoshi_valley_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1t",
           "lvl": 1
         },
         {
@@ -81600,6 +81824,10 @@
         {
           "id": "c_3ds_mario_circuit_r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r",
+          "lvl": 3
         },
         {
           "id": "c_3ds_wario_shipyard_t",
@@ -83478,10 +83706,6 @@
           "lvl": 3
         },
         {
-          "id": "c_3ds_wario_shipyard_r",
-          "lvl": 3
-        },
-        {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 1
         },
@@ -83515,6 +83739,10 @@
         },
         {
           "id": "c_los_angeles_laps_3r",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1",
           "lvl": 1
         },
         {
@@ -83823,6 +84051,10 @@
         },
         {
           "id": "c_rmx_rainbow_road_1r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_rmx_vanilla_lake_1",
           "lvl": 1
         },
         {
