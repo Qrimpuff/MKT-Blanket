@@ -2844,10 +2844,6 @@
           "lvl": 1
         },
         {
-          "id": "d_shy_guy_pastry_chef",
-          "lvl": 3
-        },
-        {
           "id": "g_blizzard_balloons",
           "lvl": 3
         },
@@ -22023,7 +22019,7 @@
           "lvl": 1
         },
         {
-          "id": "d_pauline_party_time",
+          "id": "d_shy_guy_pastry_chef",
           "lvl": 1
         },
         {
@@ -49742,10 +49738,6 @@
           "lvl": 1
         },
         {
-          "id": "c_new_york_minute_3r_t",
-          "lvl": 1
-        },
-        {
           "id": "c_rmx_rainbow_road_2",
           "lvl": 8
         },
@@ -52728,10 +52720,6 @@
           "lvl": 1
         },
         {
-          "id": "c_3ds_neo_bowser_city_r_t",
-          "lvl": 3
-        },
-        {
           "id": "c_3ds_rock_rock_mountain_t",
           "lvl": 6
         },
@@ -52781,6 +52769,10 @@
         },
         {
           "id": "c_new_york_minute_3r",
+          "lvl": 1
+        },
+        {
+          "id": "c_new_york_minute_3r_t",
           "lvl": 1
         },
         {
