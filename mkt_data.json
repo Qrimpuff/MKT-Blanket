@@ -38101,7 +38101,7 @@
           "lvl": 1
         },
         {
-          "id": "d_daisy_fairy",
+          "id": "d_bowser_jr_pirate",
           "lvl": 1
         },
         {
@@ -42294,6 +42294,10 @@
         {
           "id": "c_tokyo_blur",
           "lvl": 1
+        },
+        {
+          "id": "c_tokyo_blur_r",
+          "lvl": 1
         }
       ],
       "hashes": [
@@ -43649,10 +43653,6 @@
         },
         {
           "id": "c_snes_vanilla_lake_1r_t",
-          "lvl": 1
-        },
-        {
-          "id": "c_tokyo_blur_r",
           "lvl": 1
         },
         {
