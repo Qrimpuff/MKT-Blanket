@@ -324,6 +324,10 @@
       "name": "3DS Bowser's Castle RT",
       "favorite_items": [
         {
+          "id": "d_dr_bowser",
+          "lvl": 1
+        },
+        {
           "id": "d_gold_mii_racing_suit",
           "lvl": 1
         },
@@ -356,11 +360,19 @@
           "lvl": 1
         },
         {
+          "id": "d_wario_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "g_black_cat_parafoil",
           "lvl": 1
         },
         {
           "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_flybrary_book",
           "lvl": 1
         },
         {
@@ -381,6 +393,10 @@
         },
         {
           "id": "g_spider_glider",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_turbo_yoshi",
           "lvl": 1
         },
         {
@@ -1216,6 +1232,10 @@
         {
           "id": "d_dixie_kong",
           "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 6
         },
         {
           "id": "d_luigi_golf",
@@ -5239,6 +5259,10 @@
           "lvl": 3
         },
         {
+          "id": "d_dr_bowser",
+          "lvl": 6
+        },
+        {
           "id": "d_green_shy_guy",
           "lvl": 1
         },
@@ -5987,6 +6011,14 @@
           "lvl": 1
         },
         {
+          "id": "d_dr_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 3
+        },
+        {
           "id": "d_hammer_bro",
           "lvl": 1
         },
@@ -6016,6 +6048,10 @@
         },
         {
           "id": "d_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_toad_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -6063,6 +6099,10 @@
           "lvl": 1
         },
         {
+          "id": "g_magniflying_glass",
+          "lvl": 1
+        },
+        {
           "id": "g_new_year_s_2021",
           "lvl": 1
         },
@@ -6081,6 +6121,10 @@
         {
           "id": "k_black_penguin_slider",
           "lvl": 8
+        },
+        {
+          "id": "k_capsule_kart",
+          "lvl": 1
         },
         {
           "id": "k_cucumber",
@@ -6174,7 +6218,15 @@
           "lvl": 1
         },
         {
+          "id": "d_rosalina_volendam",
+          "lvl": 1
+        },
+        {
           "id": "d_tanooki_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_toad_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -6191,6 +6243,10 @@
         },
         {
           "id": "d_yellow_toad_pit_crew",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -6219,6 +6275,10 @@
         },
         {
           "id": "g_goomba_hanafuda",
+          "lvl": 1
+        },
+        {
+          "id": "g_magniflying_glass",
           "lvl": 1
         },
         {
@@ -6266,7 +6326,15 @@
           "lvl": 1
         },
         {
+          "id": "k_capsule_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_circuit_special",
+          "lvl": 1
+        },
+        {
+          "id": "k_firefly",
           "lvl": 1
         },
         {
@@ -6484,6 +6552,10 @@
           "lvl": 1
         },
         {
+          "id": "d_donkey_kong_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_king_bob_omb",
           "lvl": 3
         },
@@ -6493,6 +6565,10 @@
         },
         {
           "id": "d_light_blue_toad_pit_crew",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -6513,6 +6589,10 @@
         },
         {
           "id": "d_red_koopa_freerunning",
+          "lvl": 1
+        },
+        {
+          "id": "d_rosalina_volendam",
           "lvl": 1
         },
         {
@@ -6586,6 +6666,10 @@
         {
           "id": "k_cleanup_hitter",
           "lvl": 6
+        },
+        {
+          "id": "k_combo_cruiser",
+          "lvl": 1
         },
         {
           "id": "k_frost_wing",
@@ -20465,6 +20549,10 @@
           "lvl": 1
         },
         {
+          "id": "d_dr_bowser",
+          "lvl": 3
+        },
+        {
           "id": "d_gold_koopa_freerunning",
           "lvl": 1
         },
@@ -20485,7 +20573,15 @@
           "lvl": 1
         },
         {
+          "id": "d_mario_golf",
+          "lvl": 1
+        },
+        {
           "id": "d_mario_sunshine",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -20511,6 +20607,10 @@
         {
           "id": "g_bullet_bill_parachute",
           "lvl": 3
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
         },
         {
           "id": "g_peach_hanafuda",
@@ -20569,6 +20669,10 @@
           "lvl": 1
         },
         {
+          "id": "k_combo_cruiser",
+          "lvl": 1
+        },
+        {
           "id": "k_gold_blooper",
           "lvl": 1
         },
@@ -20583,6 +20687,10 @@
         {
           "id": "k_jet_cruiser",
           "lvl": 6
+        },
+        {
+          "id": "k_jukebox_buggy",
+          "lvl": 1
         },
         {
           "id": "k_koopa_dasher",
@@ -20628,6 +20736,10 @@
           "lvl": 3
         },
         {
+          "id": "d_cat_rosalina",
+          "lvl": 1
+        },
+        {
           "id": "d_daisy_holiday_cheer",
           "lvl": 1
         },
@@ -20636,11 +20748,23 @@
           "lvl": 6
         },
         {
+          "id": "d_gold_koopa_freerunning",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_golf",
+          "lvl": 1
+        },
+        {
           "id": "d_mario",
           "lvl": 6
         },
         {
           "id": "d_mario_baseball",
+          "lvl": 1
+        },
+        {
+          "id": "d_nabbit_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -20713,6 +20837,10 @@
         },
         {
           "id": "k_choco_macharon",
+          "lvl": 1
+        },
+        {
+          "id": "k_coconut_1",
           "lvl": 1
         },
         {
@@ -20795,6 +20923,10 @@
           "lvl": 1
         },
         {
+          "id": "d_donkey_kong_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_gold_koopa_freerunning",
           "lvl": 1
         },
@@ -20808,6 +20940,10 @@
         },
         {
           "id": "d_peach_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
           "lvl": 1
         },
         {
@@ -20875,6 +21011,10 @@
           "lvl": 1
         },
         {
+          "id": "g_wario_s_mustache",
+          "lvl": 1
+        },
+        {
           "id": "k_blue_soda",
           "lvl": 1
         },
@@ -20919,6 +21059,10 @@
           "lvl": 1
         },
         {
+          "id": "k_prop_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_red_turbo_yoshi",
           "lvl": 1
         },
@@ -20932,6 +21076,10 @@
         },
         {
           "id": "k_sushi_racer",
+          "lvl": 1
+        },
+        {
+          "id": "k_wild_slugger",
           "lvl": 1
         },
         {
@@ -20986,6 +21134,10 @@
           "lvl": 1
         },
         {
+          "id": "d_peach_yukata",
+          "lvl": 1
+        },
+        {
           "id": "d_shy_guy_pastry_chef",
           "lvl": 1
         },
@@ -21015,6 +21167,10 @@
         },
         {
           "id": "g_full_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_green_sprout",
           "lvl": 1
         },
         {
@@ -21059,6 +21215,10 @@
         },
         {
           "id": "k_gold_blooper",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_bunny",
           "lvl": 1
         },
         {
@@ -21126,6 +21286,10 @@
         },
         {
           "id": "d_dr_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
           "lvl": 1
         },
         {
@@ -21712,6 +21876,10 @@
         {
           "id": "d_birdo_white",
           "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 3
         },
         {
           "id": "d_funky_kong",
@@ -39866,11 +40034,19 @@
           "lvl": 1
         },
         {
+          "id": "d_dr_bowser",
+          "lvl": 6
+        },
+        {
           "id": "d_dr_luigi",
           "lvl": 8
         },
         {
           "id": "d_dr_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
           "lvl": 1
         },
         {
@@ -39953,6 +40129,10 @@
           "lvl": 1
         },
         {
+          "id": "d_block_mii_racing_suit",
+          "lvl": 8
+        },
+        {
           "id": "d_daisy_fairy",
           "lvl": 1
         },
@@ -39963,6 +40143,10 @@
         {
           "id": "d_dr_mario",
           "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 6
         },
         {
           "id": "d_rosalina_volendam",
@@ -42967,7 +43151,12 @@
       "i_type": "Driver",
       "name": "? Block Mii Racing Suit",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_wii_coconut_mall_r",
+          "lvl": 8
+        }
+      ],
       "hashes": []
     },
     "d_blue_koopa_freerunning": {
@@ -44330,6 +44519,10 @@
           "lvl": 6
         },
         {
+          "id": "c_n64_koopa_troopa_beach_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ninja_hideaway_t",
           "lvl": 1
         },
@@ -45580,6 +45773,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r_t",
           "lvl": 3
         },
@@ -45604,6 +45801,10 @@
           "lvl": 6
         },
         {
+          "id": "c_n64_koopa_troopa_beach_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_choco_island_1r_t",
           "lvl": 1
         }
@@ -45618,7 +45819,24 @@
       "i_type": "Driver",
       "name": "Dr. Bowser",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_shy_guy_bazaar",
+          "lvl": 6
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach",
+          "lvl": 3
+        },
+        {
+          "id": "c_wii_coconut_mall",
+          "lvl": 6
+        }
+      ],
       "hashes": []
     },
     "d_dr_luigi": {
@@ -45683,6 +45901,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_choco_mountain_t",
           "lvl": 3
         },
@@ -45719,7 +45941,32 @@
       "i_type": "Driver",
       "name": "Dr. Peach",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_3ds_daisy_hills",
+          "lvl": 6
+        },
+        {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 3
+        },
+        {
+          "id": "c_n64_royal_raceway",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_royal_raceway_t",
+          "lvl": 3
+        },
+        {
+          "id": "c_wii_coconut_mall",
+          "lvl": 1
+        },
+        {
+          "id": "c_wii_coconut_mall_r",
+          "lvl": 6
+        }
+      ],
       "hashes": []
     },
     "d_dry_bones": {
@@ -46371,6 +46618,10 @@
         },
         {
           "id": "c_n64_koopa_troopa_beach",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_r",
           "lvl": 1
         },
         {
@@ -48154,6 +48405,10 @@
           "lvl": 6
         },
         {
+          "id": "c_n64_koopa_troopa_beach_r",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_yoshi_valley",
           "lvl": 1
         },
@@ -49150,6 +49405,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_koopa_troopa_beach",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_1t",
           "lvl": 6
         },
@@ -49495,6 +49754,10 @@
         },
         {
           "id": "c_3ds_bowser_s_castle_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit_t",
           "lvl": 1
         },
         {
@@ -50892,6 +51155,10 @@
           "lvl": 3
         },
         {
+          "id": "c_n64_koopa_troopa_beach_r",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_yoshi_valley",
           "lvl": 1
         },
@@ -51834,6 +52101,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_koopa_troopa_beach",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_royal_raceway_t",
           "lvl": 1
         },
@@ -52175,6 +52446,14 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_t",
           "lvl": 1
         },
         {
@@ -53738,6 +54017,14 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit_t",
+          "lvl": 1
+        },
+        {
           "id": "c_amsterdam_drift",
           "lvl": 1
         },
@@ -54543,6 +54830,14 @@
       "name": "Toad Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
         {
           "id": "c_gba_cheep_cheep_island_r",
           "lvl": 1
@@ -55424,6 +55719,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_shy_guy_bazaar",
           "lvl": 1
         },
@@ -56063,6 +56362,10 @@
       "name": "Yoshi Mii Racing Suit",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
         {
           "id": "c_gcn_yoshi_circuit_r",
           "lvl": 3
@@ -57690,6 +57993,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_wario_shipyard_r",
           "lvl": 6
         },
@@ -59102,6 +59409,14 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_royal_raceway_t",
           "lvl": 6
         },
@@ -60312,6 +60627,10 @@
           "lvl": 3
         },
         {
+          "id": "c_n64_koopa_troopa_beach_r",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_ghost_valley_1r_t",
           "lvl": 1
         },
@@ -60337,6 +60656,10 @@
       "name": "Combo Cruiser",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_3ds_toad_circuit_t",
+          "lvl": 1
+        },
         {
           "id": "c_3ds_wario_shipyard",
           "lvl": 6
@@ -60384,6 +60707,10 @@
         {
           "id": "c_n64_kalimari_desert_2r_t",
           "lvl": 8
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach",
+          "lvl": 1
         },
         {
           "id": "c_snes_donut_plains_1t",
@@ -62358,6 +62685,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
+        },
+        {
           "id": "c_amsterdam_drift_r",
           "lvl": 1
         },
@@ -63091,6 +63422,10 @@
         },
         {
           "id": "c_n64_choco_mountain_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_t",
           "lvl": 1
         },
         {
@@ -65825,6 +66160,10 @@
         },
         {
           "id": "c_los_angeles_laps_3",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach",
           "lvl": 1
         },
         {
@@ -68593,6 +68932,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_r_t",
           "lvl": 1
         },
         {
@@ -73529,6 +73872,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_r_t",
           "lvl": 1
         },
         {
@@ -78670,6 +79017,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
           "id": "c_3ds_daisy_hills_r",
           "lvl": 6
         },
@@ -80226,6 +80577,10 @@
           "lvl": 1
         },
         {
+          "id": "c_n64_koopa_troopa_beach",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_1t",
           "lvl": 1
         },
@@ -80579,6 +80934,10 @@
         },
         {
           "id": "c_gcn_yoshi_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_t",
           "lvl": 1
         },
         {
@@ -81542,6 +81901,14 @@
         {
           "id": "c_3ds_shy_guy_bazaar",
           "lvl": 3
+        },
+        {
+          "id": "c_3ds_toad_circuit",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_toad_circuit_r",
+          "lvl": 1
         },
         {
           "id": "c_gba_cheep_cheep_island",
@@ -87584,6 +87951,10 @@
         {
           "id": "c_n64_kalimari_desert_2t",
           "lvl": 3
+        },
+        {
+          "id": "c_n64_koopa_troopa_beach_r_t",
+          "lvl": 1
         },
         {
           "id": "c_n64_yoshi_valley_r",
