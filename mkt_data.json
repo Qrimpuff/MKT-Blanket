@@ -7001,6 +7001,14 @@
           "lvl": 1
         },
         {
+          "id": "d_dr_bowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 1
+        },
+        {
           "id": "d_king_boo_mii_racing_suit",
           "lvl": 1
         },
@@ -7022,6 +7030,14 @@
         },
         {
           "id": "d_tanooki_rosalina",
+          "lvl": 1
+        },
+        {
+          "id": "d_wario_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_eggshell_glider",
           "lvl": 1
         },
         {
@@ -7061,7 +7077,15 @@
           "lvl": 1
         },
         {
+          "id": "k_green_yellow_capsule_kart",
+          "lvl": 6
+        },
+        {
           "id": "k_jukebox_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_pink_capsule_kart",
           "lvl": 1
         },
         {
@@ -36841,11 +36865,23 @@
           "lvl": 8
         },
         {
+          "id": "d_birdo_white",
+          "lvl": 1
+        },
+        {
           "id": "d_blue_koopa_freerunning",
           "lvl": 1
         },
         {
           "id": "d_daisy_holiday_cheer",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -36971,6 +37007,10 @@
         {
           "id": "k_vampire_flyer",
           "lvl": 1
+        },
+        {
+          "id": "k_white_turbo_birdo",
+          "lvl": 1
         }
       ]
     },
@@ -36979,6 +37019,10 @@
       "id": "c_snes_vanilla_lake_2r",
       "name": "SNES Vanilla Lake 2R",
       "favorite_items": [
+        {
+          "id": "d_block_mii_racing_suit",
+          "lvl": 3
+        },
         {
           "id": "d_kamek",
           "lvl": 1
@@ -37012,7 +37056,7 @@
           "lvl": 1
         },
         {
-          "id": "d_rosalina",
+          "id": "d_rosalina_aurora",
           "lvl": 8
         },
         {
@@ -37072,12 +37116,20 @@
           "lvl": 1
         },
         {
+          "id": "g_sakura_origami_glider",
+          "lvl": 1
+        },
+        {
           "id": "g_snow_crystals",
           "lvl": 1
         },
         {
           "id": "g_toe_bean_balloons",
           "lvl": 8
+        },
+        {
+          "id": "k_blue_green_capsule_kart",
+          "lvl": 1
         },
         {
           "id": "k_cheership",
@@ -37124,6 +37176,10 @@
           "lvl": 6
         },
         {
+          "id": "k_white_bruiser",
+          "lvl": 1
+        },
+        {
           "id": "k_white_snow_skimmer",
           "lvl": 1
         }
@@ -37139,7 +37195,15 @@
           "lvl": 1
         },
         {
+          "id": "d_birdo_white",
+          "lvl": 1
+        },
+        {
           "id": "d_bowser_santa",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
           "lvl": 1
         },
         {
@@ -37235,6 +37299,10 @@
           "lvl": 1
         },
         {
+          "id": "k_blue_green_capsule_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_blue_turbo_yoshi",
           "lvl": 1
         },
@@ -37285,6 +37353,10 @@
         {
           "id": "k_white_snow_skimmer",
           "lvl": 3
+        },
+        {
+          "id": "k_white_turbo_birdo",
+          "lvl": 1
         }
       ]
     },
@@ -43107,6 +43179,14 @@
           "lvl": 1
         },
         {
+          "id": "c_snes_vanilla_lake_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2t",
+          "lvl": 1
+        },
+        {
           "id": "c_wii_coconut_mall",
           "lvl": 1
         },
@@ -43347,6 +43427,10 @@
         {
           "id": "c_gba_sunset_wilds_t",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2r",
+          "lvl": 3
         },
         {
           "id": "c_wii_coconut_mall_r",
@@ -46037,6 +46121,10 @@
           "lvl": 6
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2r",
           "lvl": 1
         },
@@ -46092,6 +46180,10 @@
         },
         {
           "id": "c_snes_donut_plains_1t",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2",
           "lvl": 1
         },
         {
@@ -46171,12 +46263,20 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_royal_raceway",
           "lvl": 1
         },
         {
           "id": "c_n64_royal_raceway_t",
           "lvl": 3
+        },
+        {
+          "id": "c_snes_vanilla_lake_2t",
+          "lvl": 1
         },
         {
           "id": "c_wii_coconut_mall",
@@ -47997,6 +48097,10 @@
         {
           "id": "c_snes_ghost_valley_1r",
           "lvl": 6
+        },
+        {
+          "id": "c_snes_vanilla_lake_2",
+          "lvl": 1
         },
         {
           "id": "c_wii_maple_treeway",
@@ -53885,10 +53989,6 @@
           "lvl": 1
         },
         {
-          "id": "c_snes_vanilla_lake_2r",
-          "lvl": 8
-        },
-        {
           "id": "c_sydney_sprint_r_t",
           "lvl": 1
         }
@@ -53975,6 +54075,10 @@
         {
           "id": "c_snes_vanilla_lake_1r_t",
           "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2r",
+          "lvl": 8
         },
         {
           "id": "c_vancouver_velocity",
@@ -55968,6 +56072,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar",
+          "lvl": 1
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 1
         },
         {
@@ -58437,6 +58545,14 @@
         {
           "id": "c_rmx_mario_circuit_1r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_snes_vanilla_lake_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2t",
+          "lvl": 1
         },
         {
           "id": "c_wii_coconut_mall_r",
@@ -65351,6 +65467,10 @@
           "lvl": 3
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 6
+        },
+        {
           "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
@@ -68535,6 +68655,10 @@
         {
           "id": "c_3ds_toad_circuit_t",
           "lvl": 6
+        },
+        {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
         },
         {
           "id": "c_n64_koopa_troopa_beach_t",
@@ -73627,6 +73751,10 @@
           "lvl": 6
         },
         {
+          "id": "c_snes_vanilla_lake_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_wii_coconut_mall",
           "lvl": 1
         },
@@ -73826,6 +73954,14 @@
         },
         {
           "id": "c_snes_donut_plains_1r",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_snes_vanilla_lake_2t",
           "lvl": 1
         },
         {
@@ -80303,6 +80439,10 @@
           "lvl": 1
         },
         {
+          "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_amsterdam_drift_r_t",
           "lvl": 1
         },
@@ -85073,6 +85213,10 @@
         {
           "id": "c_snes_ghost_valley_1t",
           "lvl": 6
+        },
+        {
+          "id": "c_snes_vanilla_lake_2r",
+          "lvl": 1
         },
         {
           "id": "c_wii_coconut_mall_t",
