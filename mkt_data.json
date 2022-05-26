@@ -40731,10 +40731,6 @@
           "lvl": 3
         },
         {
-          "id": "k_snow_skimmer",
-          "lvl": 8
-        },
-        {
           "id": "k_white_snow_skimmer",
           "lvl": 1
         }
@@ -40927,10 +40923,6 @@
         {
           "id": "d_mario_aviator",
           "lvl": 3
-        },
-        {
-          "id": "d_mario_racing",
-          "lvl": 1
         },
         {
           "id": "d_nabbit",
@@ -42229,6 +42221,10 @@
           "lvl": 1
         },
         {
+          "id": "k_pumpkin_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_roaring_racer",
           "lvl": 1
         },
@@ -42469,6 +42465,10 @@
         {
           "id": "g_snow_crystals",
           "lvl": 1
+        },
+        {
+          "id": "k_armored_rider",
+          "lvl": 3
         },
         {
           "id": "k_black_turbo_yoshi",
@@ -50664,10 +50664,6 @@
         {
           "id": "c_tokyo_blur_4r_t",
           "lvl": 6
-        },
-        {
-          "id": "c_wii_dk_summit_t",
-          "lvl": 1
         }
       ],
       "hashes": [
@@ -57494,6 +57490,10 @@
         {
           "id": "c_wii_mushroom_gorge_r",
           "lvl": 1
+        },
+        {
+          "id": "c_wii_mushroom_gorge_t",
+          "lvl": 3
         }
       ],
       "hashes": []
@@ -69974,6 +69974,10 @@
         {
           "id": "c_wii_maple_treeway_t",
           "lvl": 6
+        },
+        {
+          "id": "c_wii_mushroom_gorge",
+          "lvl": 1
         }
       ],
       "hashes": [
@@ -72308,10 +72312,6 @@
         {
           "id": "c_vancouver_velocity_r",
           "lvl": 1
-        },
-        {
-          "id": "c_wii_dk_summit",
-          "lvl": 8
         }
       ],
       "hashes": [
