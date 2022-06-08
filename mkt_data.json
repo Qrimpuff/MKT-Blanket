@@ -42708,12 +42708,8 @@
           "lvl": 1
         },
         {
-          "id": "k_roaring_racer",
-          "lvl": 3
-        },
-        {
           "id": "k_sakura_hop_rod",
-          "lvl": 8
+          "lvl": 3
         },
         {
           "id": "k_sneeker",
@@ -42721,10 +42717,14 @@
         },
         {
           "id": "k_star_broom",
-          "lvl": 6
+          "lvl": 8
         },
         {
           "id": "k_warrior_wagon",
+          "lvl": 6
+        },
+        {
+          "id": "k_yellow_8_bit_pipe_frame",
           "lvl": 6
         }
       ]
@@ -71900,10 +71900,6 @@
         {
           "id": "c_wii_mushroom_gorge",
           "lvl": 1
-        },
-        {
-          "id": "c_wii_mushroom_gorge_r",
-          "lvl": 3
         }
       ],
       "hashes": [
@@ -72231,7 +72227,7 @@
         },
         {
           "id": "c_wii_mushroom_gorge_r",
-          "lvl": 8
+          "lvl": 3
         },
         {
           "id": "c_wii_mushroom_gorge_t",
@@ -73289,7 +73285,7 @@
         },
         {
           "id": "c_wii_mushroom_gorge_r",
-          "lvl": 6
+          "lvl": 8
         }
       ],
       "hashes": [
@@ -75756,6 +75752,10 @@
         {
           "id": "c_wii_koopa_cape_t",
           "lvl": 1
+        },
+        {
+          "id": "c_wii_mushroom_gorge_r",
+          "lvl": 6
         },
         {
           "id": "c_wii_mushroom_gorge_t",
