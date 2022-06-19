@@ -24266,6 +24266,14 @@
       "name": "Paris Promenade",
       "favorite_items": [
         {
+          "id": "d_cat_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_cat_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_cat_peach",
           "lvl": 1
         },
@@ -24286,11 +24294,27 @@
           "lvl": 1
         },
         {
+          "id": "g_candlelight_flight_cake",
+          "lvl": 3
+        },
+        {
           "id": "g_eggshell_glider",
           "lvl": 1
         },
         {
+          "id": "g_glittering_parasol",
+          "lvl": 1
+        },
+        {
           "id": "g_heart_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_luigi_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_record_setter",
           "lvl": 1
         },
         {
@@ -24306,7 +24330,19 @@
           "lvl": 1
         },
         {
+          "id": "k_gold_cheep_snorkel",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_kiddie_kart",
+          "lvl": 1
+        },
+        {
           "id": "k_gold_train",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_cat_cruiser",
           "lvl": 1
         },
         {
@@ -24319,6 +24355,10 @@
         },
         {
           "id": "k_pink_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_pink_capsule_kart",
           "lvl": 1
         },
         {
@@ -25001,7 +25041,19 @@
           "lvl": 1
         },
         {
+          "id": "d_block_mii_racing_suit",
+          "lvl": 1
+        },
+        {
           "id": "d_cat_peach",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
           "lvl": 1
         },
         {
@@ -25011,6 +25063,10 @@
         {
           "id": "d_mario_santa",
           "lvl": 1
+        },
+        {
+          "id": "d_pastry_chef_mii_racing_suit",
+          "lvl": 3
         },
         {
           "id": "d_peach_wintertime",
@@ -25026,6 +25082,14 @@
         },
         {
           "id": "g_calico_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_cream_toe_bean_balloons",
           "lvl": 1
         },
         {
@@ -25065,6 +25129,10 @@
           "lvl": 1
         },
         {
+          "id": "k_goo_goo_pink",
+          "lvl": 1
+        },
+        {
           "id": "k_paintster",
           "lvl": 1
         },
@@ -25078,6 +25146,10 @@
         },
         {
           "id": "k_sunset_cloud",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_bruiser",
           "lvl": 1
         },
         {
@@ -25187,11 +25259,23 @@
           "lvl": 1
         },
         {
+          "id": "d_dr_peach",
+          "lvl": 1
+        },
+        {
           "id": "d_lakitu",
           "lvl": 1
         },
         {
           "id": "d_mario_sunshine",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 1
+        },
+        {
+          "id": "d_red_mii_racing_suit",
           "lvl": 1
         },
         {
@@ -25211,7 +25295,15 @@
           "lvl": 1
         },
         {
+          "id": "g_luigi_parafoil",
+          "lvl": 1
+        },
+        {
           "id": "g_pink_flower_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_sakura_origami_glider",
           "lvl": 1
         },
         {
@@ -25227,6 +25319,10 @@
           "lvl": 1
         },
         {
+          "id": "g_tulip_corsage",
+          "lvl": 3
+        },
+        {
           "id": "k_black_cat_cruiser",
           "lvl": 1
         },
@@ -25235,7 +25331,15 @@
           "lvl": 1
         },
         {
+          "id": "k_coconut_1",
+          "lvl": 1
+        },
+        {
           "id": "k_egg_1",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_bunny",
           "lvl": 1
         },
         {
@@ -25252,6 +25356,10 @@
         },
         {
           "id": "k_pink_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_bruiser",
           "lvl": 1
         }
       ]
@@ -44270,6 +44378,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_1r_t",
           "lvl": 1
         },
@@ -45504,6 +45616,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_ghost_valley_1r",
           "lvl": 3
         },
@@ -45577,6 +45693,10 @@
         },
         {
           "id": "c_n64_frappe_snowland_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -47182,6 +47302,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_donut_plains_1",
           "lvl": 3
         },
@@ -47287,6 +47411,14 @@
         },
         {
           "id": "c_n64_yoshi_valley_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_t",
           "lvl": 1
         },
         {
@@ -52602,7 +52734,12 @@
       "i_type": "Driver",
       "name": "Pastry Chef Mii Racing Suit",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_paris_promenade_r",
+          "lvl": 3
+        }
+      ],
       "hashes": []
     },
     "d_pauline": {
@@ -53909,6 +54046,10 @@
           "lvl": 6
         },
         {
+          "id": "c_paris_promenade_t",
+          "lvl": 1
+        },
+        {
           "id": "c_snes_donut_plains_1r",
           "lvl": 1
         },
@@ -54950,6 +55091,10 @@
         },
         {
           "id": "c_n64_kalimari_desert_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_t",
           "lvl": 1
         },
         {
@@ -62168,6 +62313,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_ghost_valley_1r_t",
           "lvl": 1
         },
@@ -65068,6 +65217,10 @@
           "lvl": 8
         },
         {
+          "id": "c_paris_promenade_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_2r",
           "lvl": 1
         },
@@ -65271,6 +65424,10 @@
         },
         {
           "id": "c_n64_choco_mountain_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -65515,6 +65672,10 @@
         },
         {
           "id": "c_n64_koopa_troopa_beach_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -65958,6 +66119,10 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_choco_island_2",
           "lvl": 6
         },
@@ -66398,6 +66563,10 @@
         {
           "id": "c_gba_sky_garden_r",
           "lvl": 6
+        },
+        {
+          "id": "c_paris_promenade",
+          "lvl": 1
         },
         {
           "id": "c_rmx_choco_island_2t",
@@ -70109,6 +70278,10 @@
         },
         {
           "id": "c_n64_royal_raceway_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -75231,6 +75404,14 @@
           "lvl": 1
         },
         {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_t",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_rainbow_road_2r",
           "lvl": 6
         },
@@ -79440,7 +79621,12 @@
       "i_type": "Glider",
       "name": "Candlelight Flight Cake",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_paris_promenade",
+          "lvl": 3
+        }
+      ],
       "hashes": []
     },
     "g_cape_mario_hanafuda": {
@@ -79588,6 +79774,10 @@
         },
         {
           "id": "c_ninja_hideaway_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_r",
           "lvl": 1
         },
         {
@@ -80053,6 +80243,10 @@
         {
           "id": "c_gba_sky_garden_t",
           "lvl": 6
+        },
+        {
+          "id": "c_paris_promenade_r",
+          "lvl": 1
         },
         {
           "id": "c_snes_donut_plains_2",
@@ -81828,6 +82022,10 @@
         },
         {
           "id": "c_n64_royal_raceway_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
           "lvl": 1
         },
         {
@@ -83702,6 +83900,14 @@
         },
         {
           "id": "c_n64_yoshi_valley",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
+          "id": "c_paris_promenade_t",
           "lvl": 1
         },
         {
@@ -86516,6 +86722,10 @@
           "lvl": 8
         },
         {
+          "id": "c_paris_promenade",
+          "lvl": 1
+        },
+        {
           "id": "c_rmx_mario_circuit_1r_t",
           "lvl": 1
         },
@@ -86922,6 +87132,10 @@
         {
           "id": "c_ninja_hideaway_t",
           "lvl": 3
+        },
+        {
+          "id": "c_paris_promenade_t",
+          "lvl": 1
         },
         {
           "id": "c_rmx_ghost_valley_1r",
@@ -89940,7 +90154,12 @@
       "i_type": "Glider",
       "name": "Tulip Corsage",
       "rarity": "HighEnd",
-      "favorite_courses": [],
+      "favorite_courses": [
+        {
+          "id": "c_paris_promenade_t",
+          "lvl": 3
+        }
+      ],
       "hashes": []
     },
     "g_vampire_wings": {
