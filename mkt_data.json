@@ -7493,6 +7493,10 @@
           "lvl": 1
         },
         {
+          "id": "d_light_blue_shy_guy",
+          "lvl": 1
+        },
+        {
           "id": "d_luigi_lederhosen",
           "lvl": 1
         },
@@ -8097,6 +8101,10 @@
         },
         {
           "id": "k_silver_king",
+          "lvl": 1
+        },
+        {
+          "id": "k_sleigh_rider",
           "lvl": 1
         }
       ]
@@ -50745,6 +50753,10 @@
           "lvl": 1
         },
         {
+          "id": "c_amsterdam_drift_2r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_t",
           "lvl": 1
         },
@@ -74900,6 +74912,10 @@
         },
         {
           "id": "c_3ds_daisy_hills_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_2",
           "lvl": 1
         },
         {
