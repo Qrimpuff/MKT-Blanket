@@ -1,7 +1,7 @@
 {
   "courses": {
     "c_3ds_bowser_s_castle": {
-      "sort": 300,
+      "sort": 303,
       "id": "c_3ds_bowser_s_castle",
       "name": "3DS Bowser's Castle",
       "favorite_items": [
@@ -156,7 +156,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_r": {
-      "sort": 301,
+      "sort": 304,
       "id": "c_3ds_bowser_s_castle_r",
       "name": "3DS Bowser's Castle R",
       "favorite_items": [
@@ -319,7 +319,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_rt": {
-      "sort": 303,
+      "sort": 306,
       "id": "c_3ds_bowser_s_castle_rt",
       "name": "3DS Bowser's Castle RT",
       "favorite_items": [
@@ -442,7 +442,7 @@
       ]
     },
     "c_3ds_bowser_s_castle_t": {
-      "sort": 302,
+      "sort": 305,
       "id": "c_3ds_bowser_s_castle_t",
       "name": "3DS Bowser's Castle T",
       "favorite_items": [
@@ -581,7 +581,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon": {
-      "sort": 273,
+      "sort": 276,
       "id": "c_3ds_cheep_cheep_lagoon",
       "name": "3DS Cheep Cheep Lagoon",
       "favorite_items": [
@@ -728,7 +728,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_r": {
-      "sort": 274,
+      "sort": 277,
       "id": "c_3ds_cheep_cheep_lagoon_r",
       "name": "3DS Cheep Cheep Lagoon R",
       "favorite_items": [
@@ -875,7 +875,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_r_t": {
-      "sort": 276,
+      "sort": 279,
       "id": "c_3ds_cheep_cheep_lagoon_r_t",
       "name": "3DS Cheep Cheep Lagoon R/T",
       "favorite_items": [
@@ -1050,7 +1050,7 @@
       ]
     },
     "c_3ds_cheep_cheep_lagoon_t": {
-      "sort": 275,
+      "sort": 278,
       "id": "c_3ds_cheep_cheep_lagoon_t",
       "name": "3DS Cheep Cheep Lagoon T",
       "favorite_items": [
@@ -1209,7 +1209,7 @@
       ]
     },
     "c_3ds_daisy_hills": {
-      "sort": 269,
+      "sort": 272,
       "id": "c_3ds_daisy_hills",
       "name": "3DS Daisy Hills",
       "favorite_items": [
@@ -1388,7 +1388,7 @@
       ]
     },
     "c_3ds_daisy_hills_r": {
-      "sort": 270,
+      "sort": 273,
       "id": "c_3ds_daisy_hills_r",
       "name": "3DS Daisy Hills R",
       "favorite_items": [
@@ -1579,7 +1579,7 @@
       ]
     },
     "c_3ds_daisy_hills_r_t": {
-      "sort": 272,
+      "sort": 275,
       "id": "c_3ds_daisy_hills_r_t",
       "name": "3DS Daisy Hills R/T",
       "favorite_items": [
@@ -1766,7 +1766,7 @@
       ]
     },
     "c_3ds_daisy_hills_t": {
-      "sort": 271,
+      "sort": 274,
       "id": "c_3ds_daisy_hills_t",
       "name": "3DS Daisy Hills T",
       "favorite_items": [
@@ -1961,7 +1961,7 @@
       ]
     },
     "c_3ds_mario_circuit": {
-      "sort": 281,
+      "sort": 284,
       "id": "c_3ds_mario_circuit",
       "name": "3DS Mario Circuit",
       "favorite_items": [
@@ -2116,7 +2116,7 @@
       ]
     },
     "c_3ds_mario_circuit_r": {
-      "sort": 282,
+      "sort": 285,
       "id": "c_3ds_mario_circuit_r",
       "name": "3DS Mario Circuit R",
       "favorite_items": [
@@ -2279,7 +2279,7 @@
       ]
     },
     "c_3ds_mario_circuit_r_t": {
-      "sort": 284,
+      "sort": 287,
       "id": "c_3ds_mario_circuit_r_t",
       "name": "3DS Mario Circuit R/T",
       "favorite_items": [
@@ -2450,7 +2450,7 @@
       ]
     },
     "c_3ds_mario_circuit_t": {
-      "sort": 283,
+      "sort": 286,
       "id": "c_3ds_mario_circuit_t",
       "name": "3DS Mario Circuit T",
       "favorite_items": [
@@ -2605,7 +2605,7 @@
       ]
     },
     "c_3ds_neo_bowser_city": {
-      "sort": 292,
+      "sort": 295,
       "id": "c_3ds_neo_bowser_city",
       "name": "3DS Neo Bowser City",
       "favorite_items": [
@@ -2756,7 +2756,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r": {
-      "sort": 293,
+      "sort": 296,
       "id": "c_3ds_neo_bowser_city_r",
       "name": "3DS Neo Bowser City R",
       "favorite_items": [
@@ -2915,7 +2915,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_r_t": {
-      "sort": 295,
+      "sort": 298,
       "id": "c_3ds_neo_bowser_city_r_t",
       "name": "3DS Neo Bowser City R/T",
       "favorite_items": [
@@ -3070,7 +3070,7 @@
       ]
     },
     "c_3ds_neo_bowser_city_t": {
-      "sort": 294,
+      "sort": 297,
       "id": "c_3ds_neo_bowser_city_t",
       "name": "3DS Neo Bowser City T",
       "favorite_items": [
@@ -3237,7 +3237,7 @@
       ]
     },
     "c_3ds_rainbow_road": {
-      "sort": 304,
+      "sort": 307,
       "id": "c_3ds_rainbow_road",
       "name": "3DS Rainbow Road",
       "favorite_items": [
@@ -3416,7 +3416,7 @@
       ]
     },
     "c_3ds_rainbow_road_r": {
-      "sort": 305,
+      "sort": 308,
       "id": "c_3ds_rainbow_road_r",
       "name": "3DS Rainbow Road R",
       "favorite_items": [
@@ -3607,7 +3607,7 @@
       ]
     },
     "c_3ds_rainbow_road_r_t": {
-      "sort": 307,
+      "sort": 310,
       "id": "c_3ds_rainbow_road_r_t",
       "name": "3DS Rainbow Road R/T",
       "favorite_items": [
@@ -3798,7 +3798,7 @@
       ]
     },
     "c_3ds_rainbow_road_t": {
-      "sort": 306,
+      "sort": 309,
       "id": "c_3ds_rainbow_road_t",
       "name": "3DS Rainbow Road T",
       "favorite_items": [
@@ -3989,7 +3989,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain": {
-      "sort": 285,
+      "sort": 288,
       "id": "c_3ds_rock_rock_mountain",
       "name": "3DS Rock Rock Mountain",
       "favorite_items": [
@@ -4156,7 +4156,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain_r": {
-      "sort": 286,
+      "sort": 289,
       "id": "c_3ds_rock_rock_mountain_r",
       "name": "3DS Rock Rock Mountain R",
       "favorite_items": [
@@ -4319,7 +4319,7 @@
       ]
     },
     "c_3ds_rock_rock_mountain_t": {
-      "sort": 287,
+      "sort": 290,
       "id": "c_3ds_rock_rock_mountain_t",
       "name": "3DS Rock Rock Mountain T",
       "favorite_items": [
@@ -4478,7 +4478,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world": {
-      "sort": 296,
+      "sort": 299,
       "id": "c_3ds_rosalina_s_ice_world",
       "name": "3DS Rosalina's Ice World",
       "favorite_items": [
@@ -4665,7 +4665,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r": {
-      "sort": 297,
+      "sort": 300,
       "id": "c_3ds_rosalina_s_ice_world_r",
       "name": "3DS Rosalina's Ice World R",
       "favorite_items": [
@@ -4868,7 +4868,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_r_t": {
-      "sort": 299,
+      "sort": 302,
       "id": "c_3ds_rosalina_s_ice_world_r_t",
       "name": "3DS Rosalina's Ice World R/T",
       "favorite_items": [
@@ -5063,7 +5063,7 @@
       ]
     },
     "c_3ds_rosalina_s_ice_world_t": {
-      "sort": 298,
+      "sort": 301,
       "id": "c_3ds_rosalina_s_ice_world_t",
       "name": "3DS Rosalina's Ice World T",
       "favorite_items": [
@@ -5258,7 +5258,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar": {
-      "sort": 277,
+      "sort": 280,
       "id": "c_3ds_shy_guy_bazaar",
       "name": "3DS Shy Guy Bazaar",
       "favorite_items": [
@@ -5453,7 +5453,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_r": {
-      "sort": 278,
+      "sort": 281,
       "id": "c_3ds_shy_guy_bazaar_r",
       "name": "3DS Shy Guy Bazaar R",
       "favorite_items": [
@@ -5660,7 +5660,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_r_t": {
-      "sort": 280,
+      "sort": 283,
       "id": "c_3ds_shy_guy_bazaar_r_t",
       "name": "3DS Shy Guy Bazaar R/T",
       "favorite_items": [
@@ -5823,7 +5823,7 @@
       ]
     },
     "c_3ds_shy_guy_bazaar_t": {
-      "sort": 279,
+      "sort": 282,
       "id": "c_3ds_shy_guy_bazaar_t",
       "name": "3DS Shy Guy Bazaar T",
       "favorite_items": [
@@ -6018,7 +6018,7 @@
       ]
     },
     "c_3ds_toad_circuit": {
-      "sort": 265,
+      "sort": 268,
       "id": "c_3ds_toad_circuit",
       "name": "3DS Toad Circuit",
       "favorite_items": [
@@ -6209,7 +6209,7 @@
       ]
     },
     "c_3ds_toad_circuit_r": {
-      "sort": 266,
+      "sort": 269,
       "id": "c_3ds_toad_circuit_r",
       "name": "3DS Toad Circuit R",
       "favorite_items": [
@@ -6396,7 +6396,7 @@
       ]
     },
     "c_3ds_toad_circuit_r_t": {
-      "sort": 268,
+      "sort": 271,
       "id": "c_3ds_toad_circuit_r_t",
       "name": "3DS Toad Circuit R/T",
       "favorite_items": [
@@ -6555,7 +6555,7 @@
       ]
     },
     "c_3ds_toad_circuit_t": {
-      "sort": 267,
+      "sort": 270,
       "id": "c_3ds_toad_circuit_t",
       "name": "3DS Toad Circuit T",
       "favorite_items": [
@@ -6750,7 +6750,7 @@
       ]
     },
     "c_3ds_wario_shipyard": {
-      "sort": 288,
+      "sort": 291,
       "id": "c_3ds_wario_shipyard",
       "name": "3DS Wario Shipyard",
       "favorite_items": [
@@ -6885,7 +6885,7 @@
       ]
     },
     "c_3ds_wario_shipyard_r": {
-      "sort": 289,
+      "sort": 292,
       "id": "c_3ds_wario_shipyard_r",
       "name": "3DS Wario Shipyard R",
       "favorite_items": [
@@ -7016,7 +7016,7 @@
       ]
     },
     "c_3ds_wario_shipyard_r_t": {
-      "sort": 291,
+      "sort": 294,
       "id": "c_3ds_wario_shipyard_r_t",
       "name": "3DS Wario Shipyard R/T",
       "favorite_items": [
@@ -7135,7 +7135,7 @@
       ]
     },
     "c_3ds_wario_shipyard_t": {
-      "sort": 290,
+      "sort": 293,
       "id": "c_3ds_wario_shipyard_t",
       "name": "3DS Wario Shipyard T",
       "favorite_items": [
@@ -7278,7 +7278,7 @@
       ]
     },
     "c_amsterdam_drift": {
-      "sort": 101,
+      "sort": 104,
       "id": "c_amsterdam_drift",
       "name": "Amsterdam Drift",
       "favorite_items": [
@@ -7377,7 +7377,7 @@
       ]
     },
     "c_amsterdam_drift_2": {
-      "sort": 105,
+      "sort": 108,
       "id": "c_amsterdam_drift_2",
       "name": "Amsterdam Drift 2",
       "favorite_items": [
@@ -7484,7 +7484,7 @@
       ]
     },
     "c_amsterdam_drift_2r": {
-      "sort": 106,
+      "sort": 109,
       "id": "c_amsterdam_drift_2r",
       "name": "Amsterdam Drift 2R",
       "favorite_items": [
@@ -7583,7 +7583,7 @@
       ]
     },
     "c_amsterdam_drift_2t": {
-      "sort": 107,
+      "sort": 110,
       "id": "c_amsterdam_drift_2t",
       "name": "Amsterdam Drift 2T",
       "favorite_items": [
@@ -7608,8 +7608,16 @@
           "lvl": 1
         },
         {
+          "id": "d_pastry_chef_mii_racing_suit",
+          "lvl": 8
+        },
+        {
           "id": "d_penguin_toadette",
           "lvl": 1
+        },
+        {
+          "id": "d_rosalina_chef",
+          "lvl": 6
         },
         {
           "id": "d_rosalina_mii_racing_suit",
@@ -7674,7 +7682,7 @@
       ]
     },
     "c_amsterdam_drift_r": {
-      "sort": 102,
+      "sort": 105,
       "id": "c_amsterdam_drift_r",
       "name": "Amsterdam Drift R",
       "favorite_items": [
@@ -7777,7 +7785,7 @@
       ]
     },
     "c_amsterdam_drift_r_t": {
-      "sort": 104,
+      "sort": 107,
       "id": "c_amsterdam_drift_r_t",
       "name": "Amsterdam Drift R/T",
       "favorite_items": [
@@ -7872,7 +7880,7 @@
       ]
     },
     "c_amsterdam_drift_t": {
-      "sort": 103,
+      "sort": 106,
       "id": "c_amsterdam_drift_t",
       "name": "Amsterdam Drift T",
       "favorite_items": [
@@ -7974,8 +7982,91 @@
         }
       ]
     },
-    "c_berlin_byways_2": {
+    "c_berlin_byways": {
       "sort": 81,
+      "id": "c_berlin_byways",
+      "name": "Berlin Byways",
+      "favorite_items": [
+        {
+          "id": "d_birdo_white",
+          "lvl": 1
+        },
+        {
+          "id": "d_chargin_chuck",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_bowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_rosalina_chef",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight_cake",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_luigi_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_mario_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "g_pretzel_glider",
+          "lvl": 8
+        },
+        {
+          "id": "g_waluigi_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "g_wicked_topaz",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_turbo_yoshi",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_yellow_capsule_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_iron_cucumber",
+          "lvl": 1
+        },
+        {
+          "id": "k_sports_coupe_2022",
+          "lvl": 1
+        },
+        {
+          "id": "k_sweet_ride",
+          "lvl": 1
+        },
+        {
+          "id": "k_tiger_bruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_fast_frank",
+          "lvl": 1
+        }
+      ]
+    },
+    "c_berlin_byways_2": {
+      "sort": 84,
       "id": "c_berlin_byways_2",
       "name": "Berlin Byways 2",
       "favorite_items": [
@@ -8110,7 +8201,7 @@
       ]
     },
     "c_berlin_byways_2r": {
-      "sort": 82,
+      "sort": 85,
       "id": "c_berlin_byways_2r",
       "name": "Berlin Byways 2R",
       "favorite_items": [
@@ -8245,7 +8336,7 @@
       ]
     },
     "c_berlin_byways_2r_t": {
-      "sort": 84,
+      "sort": 87,
       "id": "c_berlin_byways_2r_t",
       "name": "Berlin Byways 2R/T",
       "favorite_items": [
@@ -8384,7 +8475,7 @@
       ]
     },
     "c_berlin_byways_2t": {
-      "sort": 83,
+      "sort": 86,
       "id": "c_berlin_byways_2t",
       "name": "Berlin Byways 2T",
       "favorite_items": [
@@ -8534,8 +8625,190 @@
         }
       ]
     },
+    "c_berlin_byways_r": {
+      "sort": 82,
+      "id": "c_berlin_byways_r",
+      "name": "Berlin Byways R",
+      "favorite_items": [
+        {
+          "id": "d_birdo_white",
+          "lvl": 1
+        },
+        {
+          "id": "d_cat_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_chargin_chuck",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_golf",
+          "lvl": 1
+        },
+        {
+          "id": "d_nabbit_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_gold_egg",
+          "lvl": 1
+        },
+        {
+          "id": "g_aurora_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight_cake",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_green_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_magniflying_glass",
+          "lvl": 1
+        },
+        {
+          "id": "g_wicked_topaz",
+          "lvl": 1
+        },
+        {
+          "id": "k_blue_green_capsule_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_cact_r",
+          "lvl": 1
+        },
+        {
+          "id": "k_cheership",
+          "lvl": 1
+        },
+        {
+          "id": "k_fast_frank",
+          "lvl": 1
+        },
+        {
+          "id": "k_goo_goo_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_metal_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_sleigh_rider",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_fast_frank",
+          "lvl": 8
+        }
+      ]
+    },
+    "c_berlin_byways_t": {
+      "sort": 83,
+      "id": "c_berlin_byways_t",
+      "name": "Berlin Byways T",
+      "favorite_items": [
+        {
+          "id": "d_cat_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_bowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_dry_bowser_gold",
+          "lvl": 1
+        },
+        {
+          "id": "d_king_boo_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_lederhosen",
+          "lvl": 1
+        },
+        {
+          "id": "d_rosalina_chef",
+          "lvl": 8
+        },
+        {
+          "id": "d_silver_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_gold_egg",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_bullet_bill",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight_cake",
+          "lvl": 8
+        },
+        {
+          "id": "g_flybrary_book",
+          "lvl": 1
+        },
+        {
+          "id": "g_green_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_luigi_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "g_sky_high_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_gray_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_inferno_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_metal_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_fast_frank",
+          "lvl": 6
+        },
+        {
+          "id": "k_white_turbo_birdo",
+          "lvl": 1
+        }
+      ]
+    },
     "c_ds_airship_fortress": {
-      "sort": 245,
+      "sort": 248,
       "id": "c_ds_airship_fortress",
       "name": "DS Airship Fortress",
       "favorite_items": [
@@ -8742,7 +9015,7 @@
       ]
     },
     "c_ds_airship_fortress_r": {
-      "sort": 246,
+      "sort": 249,
       "id": "c_ds_airship_fortress_r",
       "name": "DS Airship Fortress R",
       "favorite_items": [
@@ -8937,7 +9210,7 @@
       ]
     },
     "c_ds_airship_fortress_r_t": {
-      "sort": 248,
+      "sort": 251,
       "id": "c_ds_airship_fortress_r_t",
       "name": "DS Airship Fortress R/T",
       "favorite_items": [
@@ -9100,7 +9373,7 @@
       ]
     },
     "c_ds_airship_fortress_t": {
-      "sort": 247,
+      "sort": 250,
       "id": "c_ds_airship_fortress_t",
       "name": "DS Airship Fortress T",
       "favorite_items": [
@@ -9311,7 +9584,7 @@
       ]
     },
     "c_ds_dk_pass": {
-      "sort": 241,
+      "sort": 244,
       "id": "c_ds_dk_pass",
       "name": "DS DK Pass",
       "favorite_items": [
@@ -9474,7 +9747,7 @@
       ]
     },
     "c_ds_dk_pass_r": {
-      "sort": 242,
+      "sort": 245,
       "id": "c_ds_dk_pass_r",
       "name": "DS DK Pass R",
       "favorite_items": [
@@ -9625,7 +9898,7 @@
       ]
     },
     "c_ds_dk_pass_r_t": {
-      "sort": 244,
+      "sort": 247,
       "id": "c_ds_dk_pass_r_t",
       "name": "DS DK Pass R/T",
       "favorite_items": [
@@ -9804,7 +10077,7 @@
       ]
     },
     "c_ds_dk_pass_t": {
-      "sort": 243,
+      "sort": 246,
       "id": "c_ds_dk_pass_t",
       "name": "DS DK Pass T",
       "favorite_items": [
@@ -9967,7 +10240,7 @@
       ]
     },
     "c_ds_luigi_s_mansion": {
-      "sort": 233,
+      "sort": 236,
       "id": "c_ds_luigi_s_mansion",
       "name": "DS Luigi's Mansion",
       "favorite_items": [
@@ -10142,7 +10415,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_r": {
-      "sort": 234,
+      "sort": 237,
       "id": "c_ds_luigi_s_mansion_r",
       "name": "DS Luigi's Mansion R",
       "favorite_items": [
@@ -10329,7 +10602,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_r_t": {
-      "sort": 236,
+      "sort": 239,
       "id": "c_ds_luigi_s_mansion_r_t",
       "name": "DS Luigi's Mansion R/T",
       "favorite_items": [
@@ -10540,7 +10813,7 @@
       ]
     },
     "c_ds_luigi_s_mansion_t": {
-      "sort": 235,
+      "sort": 238,
       "id": "c_ds_luigi_s_mansion_t",
       "name": "DS Luigi's Mansion T",
       "favorite_items": [
@@ -10707,7 +10980,7 @@
       ]
     },
     "c_ds_waluigi_pinball": {
-      "sort": 237,
+      "sort": 240,
       "id": "c_ds_waluigi_pinball",
       "name": "DS Waluigi Pinball",
       "favorite_items": [
@@ -10890,7 +11163,7 @@
       ]
     },
     "c_ds_waluigi_pinball_r": {
-      "sort": 238,
+      "sort": 241,
       "id": "c_ds_waluigi_pinball_r",
       "name": "DS Waluigi Pinball R",
       "favorite_items": [
@@ -11077,7 +11350,7 @@
       ]
     },
     "c_ds_waluigi_pinball_r_t": {
-      "sort": 240,
+      "sort": 243,
       "id": "c_ds_waluigi_pinball_r_t",
       "name": "DS Waluigi Pinball R/T",
       "favorite_items": [
@@ -11248,7 +11521,7 @@
       ]
     },
     "c_ds_waluigi_pinball_t": {
-      "sort": 239,
+      "sort": 242,
       "id": "c_ds_waluigi_pinball_t",
       "name": "DS Waluigi Pinball T",
       "favorite_items": [
@@ -11439,7 +11712,7 @@
       ]
     },
     "c_gba_bowser_s_castle_1": {
-      "sort": 207,
+      "sort": 210,
       "id": "c_gba_bowser_s_castle_1",
       "name": "GBA Bowser's Castle 1",
       "favorite_items": [
@@ -11606,7 +11879,7 @@
       ]
     },
     "c_gba_bowser_s_castle_1r": {
-      "sort": 208,
+      "sort": 211,
       "id": "c_gba_bowser_s_castle_1r",
       "name": "GBA Bowser's Castle 1R",
       "favorite_items": [
@@ -11781,7 +12054,7 @@
       ]
     },
     "c_gba_bowser_s_castle_1r_t": {
-      "sort": 210,
+      "sort": 213,
       "id": "c_gba_bowser_s_castle_1r_t",
       "name": "GBA Bowser's Castle 1R/T",
       "favorite_items": [
@@ -11940,7 +12213,7 @@
       ]
     },
     "c_gba_bowser_s_castle_1t": {
-      "sort": 209,
+      "sort": 212,
       "id": "c_gba_bowser_s_castle_1t",
       "name": "GBA Bowser's Castle 1T",
       "favorite_items": [
@@ -12107,7 +12380,7 @@
       ]
     },
     "c_gba_bowser_s_castle_2": {
-      "sort": 211,
+      "sort": 214,
       "id": "c_gba_bowser_s_castle_2",
       "name": "GBA Bowser's Castle 2",
       "favorite_items": [
@@ -12298,7 +12571,7 @@
       ]
     },
     "c_gba_bowser_s_castle_2r": {
-      "sort": 212,
+      "sort": 215,
       "id": "c_gba_bowser_s_castle_2r",
       "name": "GBA Bowser's Castle 2R",
       "favorite_items": [
@@ -12489,7 +12762,7 @@
       ]
     },
     "c_gba_bowser_s_castle_2r_t": {
-      "sort": 214,
+      "sort": 217,
       "id": "c_gba_bowser_s_castle_2r_t",
       "name": "GBA Bowser's Castle 2R/T",
       "favorite_items": [
@@ -12644,7 +12917,7 @@
       ]
     },
     "c_gba_bowser_s_castle_2t": {
-      "sort": 213,
+      "sort": 216,
       "id": "c_gba_bowser_s_castle_2t",
       "name": "GBA Bowser's Castle 2T",
       "favorite_items": [
@@ -12835,7 +13108,7 @@
       ]
     },
     "c_gba_cheep_cheep_island": {
-      "sort": 218,
+      "sort": 221,
       "id": "c_gba_cheep_cheep_island",
       "name": "GBA Cheep-Cheep Island",
       "favorite_items": [
@@ -13034,7 +13307,7 @@
       ]
     },
     "c_gba_cheep_cheep_island_r": {
-      "sort": 219,
+      "sort": 222,
       "id": "c_gba_cheep_cheep_island_r",
       "name": "GBA Cheep-Cheep Island R",
       "favorite_items": [
@@ -13209,7 +13482,7 @@
       ]
     },
     "c_gba_cheep_cheep_island_t": {
-      "sort": 220,
+      "sort": 223,
       "id": "c_gba_cheep_cheep_island_t",
       "name": "GBA Cheep-Cheep Island T",
       "favorite_items": [
@@ -13404,7 +13677,7 @@
       ]
     },
     "c_gba_sky_garden": {
-      "sort": 215,
+      "sort": 218,
       "id": "c_gba_sky_garden",
       "name": "GBA Sky Garden",
       "favorite_items": [
@@ -13523,7 +13796,7 @@
       ]
     },
     "c_gba_sky_garden_r": {
-      "sort": 216,
+      "sort": 219,
       "id": "c_gba_sky_garden_r",
       "name": "GBA Sky Garden R",
       "favorite_items": [
@@ -13670,7 +13943,7 @@
       ]
     },
     "c_gba_sky_garden_t": {
-      "sort": 217,
+      "sort": 220,
       "id": "c_gba_sky_garden_t",
       "name": "GBA Sky Garden T",
       "favorite_items": [
@@ -13789,7 +14062,7 @@
       ]
     },
     "c_gba_sunset_wilds": {
-      "sort": 221,
+      "sort": 224,
       "id": "c_gba_sunset_wilds",
       "name": "GBA Sunset Wilds",
       "favorite_items": [
@@ -13980,7 +14253,7 @@
       ]
     },
     "c_gba_sunset_wilds_r": {
-      "sort": 222,
+      "sort": 225,
       "id": "c_gba_sunset_wilds_r",
       "name": "GBA Sunset Wilds R",
       "favorite_items": [
@@ -14151,7 +14424,7 @@
       ]
     },
     "c_gba_sunset_wilds_r_t": {
-      "sort": 224,
+      "sort": 227,
       "id": "c_gba_sunset_wilds_r_t",
       "name": "GBA Sunset Wilds R/T",
       "favorite_items": [
@@ -14342,7 +14615,7 @@
       ]
     },
     "c_gba_sunset_wilds_t": {
-      "sort": 223,
+      "sort": 226,
       "id": "c_gba_sunset_wilds_t",
       "name": "GBA Sunset Wilds T",
       "favorite_items": [
@@ -14541,7 +14814,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle": {
-      "sort": 229,
+      "sort": 232,
       "id": "c_gcn_dino_dino_jungle",
       "name": "GCN Dino Dino Jungle",
       "favorite_items": [
@@ -14704,7 +14977,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_r": {
-      "sort": 230,
+      "sort": 233,
       "id": "c_gcn_dino_dino_jungle_r",
       "name": "GCN Dino Dino Jungle R",
       "favorite_items": [
@@ -14855,7 +15128,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_r_t": {
-      "sort": 232,
+      "sort": 235,
       "id": "c_gcn_dino_dino_jungle_r_t",
       "name": "GCN Dino Dino Jungle R/T",
       "favorite_items": [
@@ -15010,7 +15283,7 @@
       ]
     },
     "c_gcn_dino_dino_jungle_t": {
-      "sort": 231,
+      "sort": 234,
       "id": "c_gcn_dino_dino_jungle_t",
       "name": "GCN Dino Dino Jungle T",
       "favorite_items": [
@@ -15177,7 +15450,7 @@
       ]
     },
     "c_gcn_yoshi_circuit": {
-      "sort": 225,
+      "sort": 228,
       "id": "c_gcn_yoshi_circuit",
       "name": "GCN Yoshi Circuit",
       "favorite_items": [
@@ -15364,7 +15637,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_r": {
-      "sort": 226,
+      "sort": 229,
       "id": "c_gcn_yoshi_circuit_r",
       "name": "GCN Yoshi Circuit R",
       "favorite_items": [
@@ -15555,7 +15828,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_r_t": {
-      "sort": 228,
+      "sort": 231,
       "id": "c_gcn_yoshi_circuit_r_t",
       "name": "GCN Yoshi Circuit R/T",
       "favorite_items": [
@@ -15722,7 +15995,7 @@
       ]
     },
     "c_gcn_yoshi_circuit_t": {
-      "sort": 227,
+      "sort": 230,
       "id": "c_gcn_yoshi_circuit_t",
       "name": "GCN Yoshi Circuit T",
       "favorite_items": [
@@ -18933,7 +19206,7 @@
       ]
     },
     "c_n64_choco_mountain": {
-      "sort": 196,
+      "sort": 199,
       "id": "c_n64_choco_mountain",
       "name": "N64 Choco Mountain",
       "favorite_items": [
@@ -19136,7 +19409,7 @@
       ]
     },
     "c_n64_choco_mountain_r": {
-      "sort": 197,
+      "sort": 200,
       "id": "c_n64_choco_mountain_r",
       "name": "N64 Choco Mountain R",
       "favorite_items": [
@@ -19323,7 +19596,7 @@
       ]
     },
     "c_n64_choco_mountain_r_t": {
-      "sort": 199,
+      "sort": 202,
       "id": "c_n64_choco_mountain_r_t",
       "name": "N64 Choco Mountain R/T",
       "favorite_items": [
@@ -19458,7 +19731,7 @@
       ]
     },
     "c_n64_choco_mountain_t": {
-      "sort": 198,
+      "sort": 201,
       "id": "c_n64_choco_mountain_t",
       "name": "N64 Choco Mountain T",
       "favorite_items": [
@@ -19661,7 +19934,7 @@
       ]
     },
     "c_n64_frappe_snowland": {
-      "sort": 192,
+      "sort": 195,
       "id": "c_n64_frappe_snowland",
       "name": "N64 Frappe Snowland",
       "favorite_items": [
@@ -19852,7 +20125,7 @@
       ]
     },
     "c_n64_frappe_snowland_r": {
-      "sort": 193,
+      "sort": 196,
       "id": "c_n64_frappe_snowland_r",
       "name": "N64 Frappe Snowland R",
       "favorite_items": [
@@ -20035,7 +20308,7 @@
       ]
     },
     "c_n64_frappe_snowland_r_t": {
-      "sort": 195,
+      "sort": 198,
       "id": "c_n64_frappe_snowland_r_t",
       "name": "N64 Frappe Snowland R/T",
       "favorite_items": [
@@ -20234,7 +20507,7 @@
       ]
     },
     "c_n64_frappe_snowland_t": {
-      "sort": 194,
+      "sort": 197,
       "id": "c_n64_frappe_snowland_t",
       "name": "N64 Frappe Snowland T",
       "favorite_items": [
@@ -20421,7 +20694,7 @@
       ]
     },
     "c_n64_kalimari_desert": {
-      "sort": 184,
+      "sort": 187,
       "id": "c_n64_kalimari_desert",
       "name": "N64 Kalimari Desert",
       "favorite_items": [
@@ -20572,7 +20845,7 @@
       ]
     },
     "c_n64_kalimari_desert_2": {
-      "sort": 188,
+      "sort": 191,
       "id": "c_n64_kalimari_desert_2",
       "name": "N64 Kalimari Desert 2",
       "favorite_items": [
@@ -20747,7 +21020,7 @@
       ]
     },
     "c_n64_kalimari_desert_2r": {
-      "sort": 189,
+      "sort": 192,
       "id": "c_n64_kalimari_desert_2r",
       "name": "N64 Kalimari Desert 2R",
       "favorite_items": [
@@ -20926,7 +21199,7 @@
       ]
     },
     "c_n64_kalimari_desert_2r_t": {
-      "sort": 191,
+      "sort": 194,
       "id": "c_n64_kalimari_desert_2r_t",
       "name": "N64 Kalimari Desert 2R/T",
       "favorite_items": [
@@ -21065,7 +21338,7 @@
       ]
     },
     "c_n64_kalimari_desert_2t": {
-      "sort": 190,
+      "sort": 193,
       "id": "c_n64_kalimari_desert_2t",
       "name": "N64 Kalimari Desert 2T",
       "favorite_items": [
@@ -21224,7 +21497,7 @@
       ]
     },
     "c_n64_kalimari_desert_r": {
-      "sort": 185,
+      "sort": 188,
       "id": "c_n64_kalimari_desert_r",
       "name": "N64 Kalimari Desert R",
       "favorite_items": [
@@ -21383,7 +21656,7 @@
       ]
     },
     "c_n64_kalimari_desert_r_t": {
-      "sort": 187,
+      "sort": 190,
       "id": "c_n64_kalimari_desert_r_t",
       "name": "N64 Kalimari Desert R/T",
       "favorite_items": [
@@ -21526,7 +21799,7 @@
       ]
     },
     "c_n64_kalimari_desert_t": {
-      "sort": 186,
+      "sort": 189,
       "id": "c_n64_kalimari_desert_t",
       "name": "N64 Kalimari Desert T",
       "favorite_items": [
@@ -21673,7 +21946,7 @@
       ]
     },
     "c_n64_koopa_troopa_beach": {
-      "sort": 180,
+      "sort": 183,
       "id": "c_n64_koopa_troopa_beach",
       "name": "N64 Koopa Troopa Beach",
       "favorite_items": [
@@ -21880,7 +22153,7 @@
       ]
     },
     "c_n64_koopa_troopa_beach_r": {
-      "sort": 181,
+      "sort": 184,
       "id": "c_n64_koopa_troopa_beach_r",
       "name": "N64 Koopa Troopa Beach R",
       "favorite_items": [
@@ -22055,7 +22328,7 @@
       ]
     },
     "c_n64_koopa_troopa_beach_r_t": {
-      "sort": 183,
+      "sort": 186,
       "id": "c_n64_koopa_troopa_beach_r_t",
       "name": "N64 Koopa Troopa Beach R/T",
       "favorite_items": [
@@ -22254,7 +22527,7 @@
       ]
     },
     "c_n64_koopa_troopa_beach_t": {
-      "sort": 182,
+      "sort": 185,
       "id": "c_n64_koopa_troopa_beach_t",
       "name": "N64 Koopa Troopa Beach T",
       "favorite_items": [
@@ -22453,7 +22726,7 @@
       ]
     },
     "c_n64_royal_raceway": {
-      "sort": 200,
+      "sort": 203,
       "id": "c_n64_royal_raceway",
       "name": "N64 Royal Raceway",
       "favorite_items": [
@@ -22668,7 +22941,7 @@
       ]
     },
     "c_n64_royal_raceway_r": {
-      "sort": 201,
+      "sort": 204,
       "id": "c_n64_royal_raceway_r",
       "name": "N64 Royal Raceway R",
       "favorite_items": [
@@ -22883,7 +23156,7 @@
       ]
     },
     "c_n64_royal_raceway_r_t": {
-      "sort": 203,
+      "sort": 206,
       "id": "c_n64_royal_raceway_r_t",
       "name": "N64 Royal Raceway R/T",
       "favorite_items": [
@@ -23050,7 +23323,7 @@
       ]
     },
     "c_n64_royal_raceway_t": {
-      "sort": 202,
+      "sort": 205,
       "id": "c_n64_royal_raceway_t",
       "name": "N64 Royal Raceway T",
       "favorite_items": [
@@ -23273,7 +23546,7 @@
       ]
     },
     "c_n64_yoshi_valley": {
-      "sort": 204,
+      "sort": 207,
       "id": "c_n64_yoshi_valley",
       "name": "N64 Yoshi Valley",
       "favorite_items": [
@@ -23392,7 +23665,7 @@
       ]
     },
     "c_n64_yoshi_valley_r": {
-      "sort": 205,
+      "sort": 208,
       "id": "c_n64_yoshi_valley_r",
       "name": "N64 Yoshi Valley R",
       "favorite_items": [
@@ -23523,7 +23796,7 @@
       ]
     },
     "c_n64_yoshi_valley_t": {
-      "sort": 206,
+      "sort": 209,
       "id": "c_n64_yoshi_valley_t",
       "name": "N64 Yoshi Valley T",
       "favorite_items": [
@@ -24486,7 +24759,7 @@
       ]
     },
     "c_ninja_hideaway": {
-      "sort": 85,
+      "sort": 88,
       "id": "c_ninja_hideaway",
       "name": "Ninja Hideaway",
       "favorite_items": [
@@ -24613,7 +24886,7 @@
       ]
     },
     "c_ninja_hideaway_r": {
-      "sort": 86,
+      "sort": 89,
       "id": "c_ninja_hideaway_r",
       "name": "Ninja Hideaway R",
       "favorite_items": [
@@ -24756,7 +25029,7 @@
       ]
     },
     "c_ninja_hideaway_r_t": {
-      "sort": 88,
+      "sort": 91,
       "id": "c_ninja_hideaway_r_t",
       "name": "Ninja Hideaway R/T",
       "favorite_items": [
@@ -24891,7 +25164,7 @@
       ]
     },
     "c_ninja_hideaway_t": {
-      "sort": 87,
+      "sort": 90,
       "id": "c_ninja_hideaway_t",
       "name": "Ninja Hideaway T",
       "favorite_items": [
@@ -26402,7 +26675,7 @@
       ]
     },
     "c_rmx_choco_island_1": {
-      "sort": 112,
+      "sort": 115,
       "id": "c_rmx_choco_island_1",
       "name": "RMX Choco Island 1",
       "favorite_items": [
@@ -26569,7 +26842,7 @@
       ]
     },
     "c_rmx_choco_island_1r": {
-      "sort": 113,
+      "sort": 116,
       "id": "c_rmx_choco_island_1r",
       "name": "RMX Choco Island 1R",
       "favorite_items": [
@@ -26724,7 +26997,7 @@
       ]
     },
     "c_rmx_choco_island_1r_t": {
-      "sort": 115,
+      "sort": 118,
       "id": "c_rmx_choco_island_1r_t",
       "name": "RMX Choco Island 1R/T",
       "favorite_items": [
@@ -26883,7 +27156,7 @@
       ]
     },
     "c_rmx_choco_island_1t": {
-      "sort": 114,
+      "sort": 117,
       "id": "c_rmx_choco_island_1t",
       "name": "RMX Choco Island 1T",
       "favorite_items": [
@@ -27042,7 +27315,7 @@
       ]
     },
     "c_rmx_choco_island_2": {
-      "sort": 124,
+      "sort": 127,
       "id": "c_rmx_choco_island_2",
       "name": "RMX Choco Island 2",
       "favorite_items": [
@@ -27225,7 +27498,7 @@
       ]
     },
     "c_rmx_choco_island_2r": {
-      "sort": 125,
+      "sort": 128,
       "id": "c_rmx_choco_island_2r",
       "name": "RMX Choco Island 2R",
       "favorite_items": [
@@ -27388,7 +27661,7 @@
       ]
     },
     "c_rmx_choco_island_2t": {
-      "sort": 126,
+      "sort": 129,
       "id": "c_rmx_choco_island_2t",
       "name": "RMX Choco Island 2T",
       "favorite_items": [
@@ -27575,7 +27848,7 @@
       ]
     },
     "c_rmx_ghost_valley_1": {
-      "sort": 130,
+      "sort": 133,
       "id": "c_rmx_ghost_valley_1",
       "name": "RMX Ghost Valley 1",
       "favorite_items": [
@@ -27774,7 +28047,7 @@
       ]
     },
     "c_rmx_ghost_valley_1r": {
-      "sort": 131,
+      "sort": 134,
       "id": "c_rmx_ghost_valley_1r",
       "name": "RMX Ghost Valley 1R",
       "favorite_items": [
@@ -27961,7 +28234,7 @@
       ]
     },
     "c_rmx_ghost_valley_1r_t": {
-      "sort": 133,
+      "sort": 136,
       "id": "c_rmx_ghost_valley_1r_t",
       "name": "RMX Ghost Valley 1R/T",
       "favorite_items": [
@@ -28136,7 +28409,7 @@
       ]
     },
     "c_rmx_ghost_valley_1t": {
-      "sort": 132,
+      "sort": 135,
       "id": "c_rmx_ghost_valley_1t",
       "name": "RMX Ghost Valley 1T",
       "favorite_items": [
@@ -28323,7 +28596,7 @@
       ]
     },
     "c_rmx_mario_circuit_1": {
-      "sort": 108,
+      "sort": 111,
       "id": "c_rmx_mario_circuit_1",
       "name": "RMX Mario Circuit 1",
       "favorite_items": [
@@ -28498,7 +28771,7 @@
       ]
     },
     "c_rmx_mario_circuit_1r": {
-      "sort": 109,
+      "sort": 112,
       "id": "c_rmx_mario_circuit_1r",
       "name": "RMX Mario Circuit 1R",
       "favorite_items": [
@@ -28657,7 +28930,7 @@
       ]
     },
     "c_rmx_mario_circuit_1r_t": {
-      "sort": 111,
+      "sort": 114,
       "id": "c_rmx_mario_circuit_1r_t",
       "name": "RMX Mario Circuit 1R/T",
       "favorite_items": [
@@ -28836,7 +29109,7 @@
       ]
     },
     "c_rmx_mario_circuit_1t": {
-      "sort": 110,
+      "sort": 113,
       "id": "c_rmx_mario_circuit_1t",
       "name": "RMX Mario Circuit 1T",
       "favorite_items": [
@@ -29007,7 +29280,7 @@
       ]
     },
     "c_rmx_rainbow_road_1": {
-      "sort": 116,
+      "sort": 119,
       "id": "c_rmx_rainbow_road_1",
       "name": "RMX Rainbow Road 1",
       "favorite_items": [
@@ -29198,7 +29471,7 @@
       ]
     },
     "c_rmx_rainbow_road_1r": {
-      "sort": 117,
+      "sort": 120,
       "id": "c_rmx_rainbow_road_1r",
       "name": "RMX Rainbow Road 1R",
       "favorite_items": [
@@ -29361,7 +29634,7 @@
       ]
     },
     "c_rmx_rainbow_road_1r_t": {
-      "sort": 119,
+      "sort": 122,
       "id": "c_rmx_rainbow_road_1r_t",
       "name": "RMX Rainbow Road 1R/T",
       "favorite_items": [
@@ -29564,7 +29837,7 @@
       ]
     },
     "c_rmx_rainbow_road_1t": {
-      "sort": 118,
+      "sort": 121,
       "id": "c_rmx_rainbow_road_1t",
       "name": "RMX Rainbow Road 1T",
       "favorite_items": [
@@ -29735,7 +30008,7 @@
       ]
     },
     "c_rmx_rainbow_road_2": {
-      "sort": 120,
+      "sort": 123,
       "id": "c_rmx_rainbow_road_2",
       "name": "RMX Rainbow Road 2",
       "favorite_items": [
@@ -29934,7 +30207,7 @@
       ]
     },
     "c_rmx_rainbow_road_2r": {
-      "sort": 121,
+      "sort": 124,
       "id": "c_rmx_rainbow_road_2r",
       "name": "RMX Rainbow Road 2R",
       "favorite_items": [
@@ -30105,7 +30378,7 @@
       ]
     },
     "c_rmx_rainbow_road_2r_t": {
-      "sort": 123,
+      "sort": 126,
       "id": "c_rmx_rainbow_road_2r_t",
       "name": "RMX Rainbow Road 2R/T",
       "favorite_items": [
@@ -30228,7 +30501,7 @@
       ]
     },
     "c_rmx_rainbow_road_2t": {
-      "sort": 122,
+      "sort": 125,
       "id": "c_rmx_rainbow_road_2t",
       "name": "RMX Rainbow Road 2T",
       "favorite_items": [
@@ -30419,7 +30692,7 @@
       ]
     },
     "c_rmx_vanilla_lake_1": {
-      "sort": 127,
+      "sort": 130,
       "id": "c_rmx_vanilla_lake_1",
       "name": "RMX Vanilla Lake 1",
       "favorite_items": [
@@ -30594,7 +30867,7 @@
       ]
     },
     "c_rmx_vanilla_lake_1r": {
-      "sort": 128,
+      "sort": 131,
       "id": "c_rmx_vanilla_lake_1r",
       "name": "RMX Vanilla Lake 1R",
       "favorite_items": [
@@ -30761,7 +31034,7 @@
       ]
     },
     "c_rmx_vanilla_lake_1t": {
-      "sort": 129,
+      "sort": 132,
       "id": "c_rmx_vanilla_lake_1t",
       "name": "RMX Vanilla Lake 1T",
       "favorite_items": [
@@ -30920,7 +31193,7 @@
       ]
     },
     "c_singapore_speedway": {
-      "sort": 97,
+      "sort": 100,
       "id": "c_singapore_speedway",
       "name": "Singapore Speedway",
       "favorite_items": [
@@ -31007,7 +31280,7 @@
       ]
     },
     "c_singapore_speedway_r": {
-      "sort": 98,
+      "sort": 101,
       "id": "c_singapore_speedway_r",
       "name": "Singapore Speedway R",
       "favorite_items": [
@@ -31090,7 +31363,7 @@
       ]
     },
     "c_singapore_speedway_r_t": {
-      "sort": 100,
+      "sort": 103,
       "id": "c_singapore_speedway_r_t",
       "name": "Singapore Speedway R/T",
       "favorite_items": [
@@ -31173,7 +31446,7 @@
       ]
     },
     "c_singapore_speedway_t": {
-      "sort": 99,
+      "sort": 102,
       "id": "c_singapore_speedway_t",
       "name": "Singapore Speedway T",
       "favorite_items": [
@@ -31252,7 +31525,7 @@
       ]
     },
     "c_snes_choco_island_1": {
-      "sort": 150,
+      "sort": 153,
       "id": "c_snes_choco_island_1",
       "name": "SNES Choco Island 1",
       "favorite_items": [
@@ -31435,7 +31708,7 @@
       ]
     },
     "c_snes_choco_island_1r": {
-      "sort": 151,
+      "sort": 154,
       "id": "c_snes_choco_island_1r",
       "name": "SNES Choco Island 1R",
       "favorite_items": [
@@ -31606,7 +31879,7 @@
       ]
     },
     "c_snes_choco_island_1r_t": {
-      "sort": 153,
+      "sort": 156,
       "id": "c_snes_choco_island_1r_t",
       "name": "SNES Choco Island 1R/T",
       "favorite_items": [
@@ -31761,7 +32034,7 @@
       ]
     },
     "c_snes_choco_island_1t": {
-      "sort": 152,
+      "sort": 155,
       "id": "c_snes_choco_island_1t",
       "name": "SNES Choco Island 1T",
       "favorite_items": [
@@ -31948,7 +32221,7 @@
       ]
     },
     "c_snes_choco_island_2": {
-      "sort": 162,
+      "sort": 165,
       "id": "c_snes_choco_island_2",
       "name": "SNES Choco Island 2",
       "favorite_items": [
@@ -32099,7 +32372,7 @@
       ]
     },
     "c_snes_choco_island_2r": {
-      "sort": 163,
+      "sort": 166,
       "id": "c_snes_choco_island_2r",
       "name": "SNES Choco Island 2R",
       "favorite_items": [
@@ -32262,7 +32535,7 @@
       ]
     },
     "c_snes_choco_island_2r_t": {
-      "sort": 165,
+      "sort": 168,
       "id": "c_snes_choco_island_2r_t",
       "name": "SNES Choco Island 2R/T",
       "favorite_items": [
@@ -32409,7 +32682,7 @@
       ]
     },
     "c_snes_choco_island_2t": {
-      "sort": 164,
+      "sort": 167,
       "id": "c_snes_choco_island_2t",
       "name": "SNES Choco Island 2T",
       "favorite_items": [
@@ -32568,7 +32841,7 @@
       ]
     },
     "c_snes_donut_plains_1": {
-      "sort": 138,
+      "sort": 141,
       "id": "c_snes_donut_plains_1",
       "name": "SNES Donut Plains 1",
       "favorite_items": [
@@ -32759,7 +33032,7 @@
       ]
     },
     "c_snes_donut_plains_1r": {
-      "sort": 139,
+      "sort": 142,
       "id": "c_snes_donut_plains_1r",
       "name": "SNES Donut Plains 1R",
       "favorite_items": [
@@ -32930,7 +33203,7 @@
       ]
     },
     "c_snes_donut_plains_1r_t": {
-      "sort": 141,
+      "sort": 144,
       "id": "c_snes_donut_plains_1r_t",
       "name": "SNES Donut Plains 1R/T",
       "favorite_items": [
@@ -33089,7 +33362,7 @@
       ]
     },
     "c_snes_donut_plains_1t": {
-      "sort": 140,
+      "sort": 143,
       "id": "c_snes_donut_plains_1t",
       "name": "SNES Donut Plains 1T",
       "favorite_items": [
@@ -33268,7 +33541,7 @@
       ]
     },
     "c_snes_donut_plains_2": {
-      "sort": 154,
+      "sort": 157,
       "id": "c_snes_donut_plains_2",
       "name": "SNES Donut Plains 2",
       "favorite_items": [
@@ -33435,7 +33708,7 @@
       ]
     },
     "c_snes_donut_plains_2r": {
-      "sort": 155,
+      "sort": 158,
       "id": "c_snes_donut_plains_2r",
       "name": "SNES Donut Plains 2R",
       "favorite_items": [
@@ -33602,7 +33875,7 @@
       ]
     },
     "c_snes_donut_plains_2r_t": {
-      "sort": 157,
+      "sort": 160,
       "id": "c_snes_donut_plains_2r_t",
       "name": "SNES Donut Plains 2R/T",
       "favorite_items": [
@@ -33757,7 +34030,7 @@
       ]
     },
     "c_snes_donut_plains_2t": {
-      "sort": 156,
+      "sort": 159,
       "id": "c_snes_donut_plains_2t",
       "name": "SNES Donut Plains 2T",
       "favorite_items": [
@@ -33932,7 +34205,7 @@
       ]
     },
     "c_snes_ghost_valley_1": {
-      "sort": 142,
+      "sort": 145,
       "id": "c_snes_ghost_valley_1",
       "name": "SNES Ghost Valley 1",
       "favorite_items": [
@@ -34099,7 +34372,7 @@
       ]
     },
     "c_snes_ghost_valley_1r": {
-      "sort": 143,
+      "sort": 146,
       "id": "c_snes_ghost_valley_1r",
       "name": "SNES Ghost Valley 1R",
       "favorite_items": [
@@ -34266,7 +34539,7 @@
       ]
     },
     "c_snes_ghost_valley_1r_t": {
-      "sort": 145,
+      "sort": 148,
       "id": "c_snes_ghost_valley_1r_t",
       "name": "SNES Ghost Valley 1R/T",
       "favorite_items": [
@@ -34433,7 +34706,7 @@
       ]
     },
     "c_snes_ghost_valley_1t": {
-      "sort": 144,
+      "sort": 147,
       "id": "c_snes_ghost_valley_1t",
       "name": "SNES Ghost Valley 1T",
       "favorite_items": [
@@ -34588,7 +34861,7 @@
       ]
     },
     "c_snes_koopa_troopa_beach_2": {
-      "sort": 170,
+      "sort": 173,
       "id": "c_snes_koopa_troopa_beach_2",
       "name": "SNES Koopa Troopa Beach 2",
       "favorite_items": [
@@ -34771,7 +35044,7 @@
       ]
     },
     "c_snes_koopa_troopa_beach_2r": {
-      "sort": 171,
+      "sort": 174,
       "id": "c_snes_koopa_troopa_beach_2r",
       "name": "SNES Koopa Troopa Beach 2R",
       "favorite_items": [
@@ -34954,7 +35227,7 @@
       ]
     },
     "c_snes_koopa_troopa_beach_2t": {
-      "sort": 172,
+      "sort": 175,
       "id": "c_snes_koopa_troopa_beach_2t",
       "name": "SNES Koopa Troopa Beach 2T",
       "favorite_items": [
@@ -35141,7 +35414,7 @@
       ]
     },
     "c_snes_mario_circuit_1": {
-      "sort": 134,
+      "sort": 137,
       "id": "c_snes_mario_circuit_1",
       "name": "SNES Mario Circuit 1",
       "favorite_items": [
@@ -35300,7 +35573,7 @@
       ]
     },
     "c_snes_mario_circuit_1r": {
-      "sort": 135,
+      "sort": 138,
       "id": "c_snes_mario_circuit_1r",
       "name": "SNES Mario Circuit 1R",
       "favorite_items": [
@@ -35451,7 +35724,7 @@
       ]
     },
     "c_snes_mario_circuit_1r_t": {
-      "sort": 137,
+      "sort": 140,
       "id": "c_snes_mario_circuit_1r_t",
       "name": "SNES Mario Circuit 1R/T",
       "favorite_items": [
@@ -35618,7 +35891,7 @@
       ]
     },
     "c_snes_mario_circuit_1t": {
-      "sort": 136,
+      "sort": 139,
       "id": "c_snes_mario_circuit_1t",
       "name": "SNES Mario Circuit 1T",
       "favorite_items": [
@@ -35777,7 +36050,7 @@
       ]
     },
     "c_snes_mario_circuit_2": {
-      "sort": 146,
+      "sort": 149,
       "id": "c_snes_mario_circuit_2",
       "name": "SNES Mario Circuit 2",
       "favorite_items": [
@@ -35928,7 +36201,7 @@
       ]
     },
     "c_snes_mario_circuit_2r": {
-      "sort": 147,
+      "sort": 150,
       "id": "c_snes_mario_circuit_2r",
       "name": "SNES Mario Circuit 2R",
       "favorite_items": [
@@ -36095,7 +36368,7 @@
       ]
     },
     "c_snes_mario_circuit_2r_t": {
-      "sort": 149,
+      "sort": 152,
       "id": "c_snes_mario_circuit_2r_t",
       "name": "SNES Mario Circuit 2R/T",
       "favorite_items": [
@@ -36222,7 +36495,7 @@
       ]
     },
     "c_snes_mario_circuit_2t": {
-      "sort": 148,
+      "sort": 151,
       "id": "c_snes_mario_circuit_2t",
       "name": "SNES Mario Circuit 2T",
       "favorite_items": [
@@ -36381,7 +36654,7 @@
       ]
     },
     "c_snes_mario_circuit_3": {
-      "sort": 158,
+      "sort": 161,
       "id": "c_snes_mario_circuit_3",
       "name": "SNES Mario Circuit 3",
       "favorite_items": [
@@ -36536,7 +36809,7 @@
       ]
     },
     "c_snes_mario_circuit_3r": {
-      "sort": 159,
+      "sort": 162,
       "id": "c_snes_mario_circuit_3r",
       "name": "SNES Mario Circuit 3R",
       "favorite_items": [
@@ -36679,7 +36952,7 @@
       ]
     },
     "c_snes_mario_circuit_3r_t": {
-      "sort": 161,
+      "sort": 164,
       "id": "c_snes_mario_circuit_3r_t",
       "name": "SNES Mario Circuit 3R/T",
       "favorite_items": [
@@ -36862,7 +37135,7 @@
       ]
     },
     "c_snes_mario_circuit_3t": {
-      "sort": 160,
+      "sort": 163,
       "id": "c_snes_mario_circuit_3t",
       "name": "SNES Mario Circuit 3T",
       "favorite_items": [
@@ -37009,7 +37282,7 @@
       ]
     },
     "c_snes_rainbow_road": {
-      "sort": 176,
+      "sort": 179,
       "id": "c_snes_rainbow_road",
       "name": "SNES Rainbow Road",
       "favorite_items": [
@@ -37184,7 +37457,7 @@
       ]
     },
     "c_snes_rainbow_road_r": {
-      "sort": 177,
+      "sort": 180,
       "id": "c_snes_rainbow_road_r",
       "name": "SNES Rainbow Road R",
       "favorite_items": [
@@ -37379,7 +37652,7 @@
       ]
     },
     "c_snes_rainbow_road_r_t": {
-      "sort": 179,
+      "sort": 182,
       "id": "c_snes_rainbow_road_r_t",
       "name": "SNES Rainbow Road R/T",
       "favorite_items": [
@@ -37534,7 +37807,7 @@
       ]
     },
     "c_snes_rainbow_road_t": {
-      "sort": 178,
+      "sort": 181,
       "id": "c_snes_rainbow_road_t",
       "name": "SNES Rainbow Road T",
       "favorite_items": [
@@ -37729,7 +38002,7 @@
       ]
     },
     "c_snes_vanilla_lake_1": {
-      "sort": 166,
+      "sort": 169,
       "id": "c_snes_vanilla_lake_1",
       "name": "SNES Vanilla Lake 1",
       "favorite_items": [
@@ -37896,7 +38169,7 @@
       ]
     },
     "c_snes_vanilla_lake_1r": {
-      "sort": 167,
+      "sort": 170,
       "id": "c_snes_vanilla_lake_1r",
       "name": "SNES Vanilla Lake 1R",
       "favorite_items": [
@@ -38071,7 +38344,7 @@
       ]
     },
     "c_snes_vanilla_lake_1r_t": {
-      "sort": 169,
+      "sort": 172,
       "id": "c_snes_vanilla_lake_1r_t",
       "name": "SNES Vanilla Lake 1R/T",
       "favorite_items": [
@@ -38238,7 +38511,7 @@
       ]
     },
     "c_snes_vanilla_lake_1t": {
-      "sort": 168,
+      "sort": 171,
       "id": "c_snes_vanilla_lake_1t",
       "name": "SNES Vanilla Lake 1T",
       "favorite_items": [
@@ -38421,7 +38694,7 @@
       ]
     },
     "c_snes_vanilla_lake_2": {
-      "sort": 173,
+      "sort": 176,
       "id": "c_snes_vanilla_lake_2",
       "name": "SNES Vanilla Lake 2",
       "favorite_items": [
@@ -38584,7 +38857,7 @@
       ]
     },
     "c_snes_vanilla_lake_2r": {
-      "sort": 174,
+      "sort": 177,
       "id": "c_snes_vanilla_lake_2r",
       "name": "SNES Vanilla Lake 2R",
       "favorite_items": [
@@ -38755,7 +39028,7 @@
       ]
     },
     "c_snes_vanilla_lake_2t": {
-      "sort": 175,
+      "sort": 178,
       "id": "c_snes_vanilla_lake_2t",
       "name": "SNES Vanilla Lake 2T",
       "favorite_items": [
@@ -38930,7 +39203,7 @@
       ]
     },
     "c_sydney_sprint": {
-      "sort": 89,
+      "sort": 92,
       "id": "c_sydney_sprint",
       "name": "Sydney Sprint",
       "favorite_items": [
@@ -39045,7 +39318,7 @@
       ]
     },
     "c_sydney_sprint_2": {
-      "sort": 93,
+      "sort": 96,
       "id": "c_sydney_sprint_2",
       "name": "Sydney Sprint 2",
       "favorite_items": [
@@ -39120,7 +39393,7 @@
       ]
     },
     "c_sydney_sprint_2r": {
-      "sort": 94,
+      "sort": 97,
       "id": "c_sydney_sprint_2r",
       "name": "Sydney Sprint 2R",
       "favorite_items": [
@@ -39195,7 +39468,7 @@
       ]
     },
     "c_sydney_sprint_2r_t": {
-      "sort": 96,
+      "sort": 99,
       "id": "c_sydney_sprint_2r_t",
       "name": "Sydney Sprint 2R/T",
       "favorite_items": [
@@ -39286,7 +39559,7 @@
       ]
     },
     "c_sydney_sprint_2t": {
-      "sort": 95,
+      "sort": 98,
       "id": "c_sydney_sprint_2t",
       "name": "Sydney Sprint 2T",
       "favorite_items": [
@@ -39377,7 +39650,7 @@
       ]
     },
     "c_sydney_sprint_r": {
-      "sort": 90,
+      "sort": 93,
       "id": "c_sydney_sprint_r",
       "name": "Sydney Sprint R",
       "favorite_items": [
@@ -39488,7 +39761,7 @@
       ]
     },
     "c_sydney_sprint_r_t": {
-      "sort": 92,
+      "sort": 95,
       "id": "c_sydney_sprint_r_t",
       "name": "Sydney Sprint R/T",
       "favorite_items": [
@@ -39615,7 +39888,7 @@
       ]
     },
     "c_sydney_sprint_t": {
-      "sort": 91,
+      "sort": 94,
       "id": "c_sydney_sprint_t",
       "name": "Sydney Sprint T",
       "favorite_items": [
@@ -41830,7 +42103,7 @@
       ]
     },
     "c_wii_coconut_mall": {
-      "sort": 252,
+      "sort": 255,
       "id": "c_wii_coconut_mall",
       "name": "Wii Coconut Mall",
       "favorite_items": [
@@ -41933,7 +42206,7 @@
       ]
     },
     "c_wii_coconut_mall_r": {
-      "sort": 253,
+      "sort": 256,
       "id": "c_wii_coconut_mall_r",
       "name": "Wii Coconut Mall R",
       "favorite_items": [
@@ -42052,7 +42325,7 @@
       ]
     },
     "c_wii_coconut_mall_t": {
-      "sort": 254,
+      "sort": 257,
       "id": "c_wii_coconut_mall_t",
       "name": "Wii Coconut Mall T",
       "favorite_items": [
@@ -42155,7 +42428,7 @@
       ]
     },
     "c_wii_dk_summit": {
-      "sort": 255,
+      "sort": 258,
       "id": "c_wii_dk_summit",
       "name": "Wii DK Summit",
       "favorite_items": [
@@ -42314,7 +42587,7 @@
       ]
     },
     "c_wii_dk_summit_r": {
-      "sort": 256,
+      "sort": 259,
       "id": "c_wii_dk_summit_r",
       "name": "Wii DK Summit R",
       "favorite_items": [
@@ -42477,7 +42750,7 @@
       ]
     },
     "c_wii_dk_summit_t": {
-      "sort": 257,
+      "sort": 260,
       "id": "c_wii_dk_summit_t",
       "name": "Wii DK Summit T",
       "favorite_items": [
@@ -42648,7 +42921,7 @@
       ]
     },
     "c_wii_koopa_cape": {
-      "sort": 258,
+      "sort": 261,
       "id": "c_wii_koopa_cape",
       "name": "Wii Koopa Cape",
       "favorite_items": [
@@ -42751,7 +43024,7 @@
       ]
     },
     "c_wii_koopa_cape_r": {
-      "sort": 259,
+      "sort": 262,
       "id": "c_wii_koopa_cape_r",
       "name": "Wii Koopa Cape R",
       "favorite_items": [
@@ -42862,7 +43135,7 @@
       ]
     },
     "c_wii_koopa_cape_t": {
-      "sort": 260,
+      "sort": 263,
       "id": "c_wii_koopa_cape_t",
       "name": "Wii Koopa Cape T",
       "favorite_items": [
@@ -42977,7 +43250,7 @@
       ]
     },
     "c_wii_maple_treeway": {
-      "sort": 261,
+      "sort": 264,
       "id": "c_wii_maple_treeway",
       "name": "Wii Maple Treeway",
       "favorite_items": [
@@ -43180,7 +43453,7 @@
       ]
     },
     "c_wii_maple_treeway_r": {
-      "sort": 262,
+      "sort": 265,
       "id": "c_wii_maple_treeway_r",
       "name": "Wii Maple Treeway R",
       "favorite_items": [
@@ -43379,7 +43652,7 @@
       ]
     },
     "c_wii_maple_treeway_r_t": {
-      "sort": 264,
+      "sort": 267,
       "id": "c_wii_maple_treeway_r_t",
       "name": "Wii Maple Treeway R/T",
       "favorite_items": [
@@ -43562,7 +43835,7 @@
       ]
     },
     "c_wii_maple_treeway_t": {
-      "sort": 263,
+      "sort": 266,
       "id": "c_wii_maple_treeway_t",
       "name": "Wii Maple Treeway T",
       "favorite_items": [
@@ -43757,7 +44030,7 @@
       ]
     },
     "c_wii_mushroom_gorge": {
-      "sort": 249,
+      "sort": 252,
       "id": "c_wii_mushroom_gorge",
       "name": "Wii Mushroom Gorge",
       "favorite_items": [
@@ -43904,7 +44177,7 @@
       ]
     },
     "c_wii_mushroom_gorge_r": {
-      "sort": 250,
+      "sort": 253,
       "id": "c_wii_mushroom_gorge_r",
       "name": "Wii Mushroom Gorge R",
       "favorite_items": [
@@ -44055,7 +44328,7 @@
       ]
     },
     "c_wii_mushroom_gorge_t": {
-      "sort": 251,
+      "sort": 254,
       "id": "c_wii_mushroom_gorge_t",
       "name": "Wii Mushroom Gorge T",
       "favorite_items": [
@@ -45134,6 +45407,14 @@
         },
         {
           "id": "c_3ds_rosalina_s_ice_world_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -46665,6 +46946,14 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r_t",
           "lvl": 1
         },
@@ -47224,6 +47513,14 @@
         },
         {
           "id": "c_amsterdam_drift_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -48349,6 +48646,14 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2r",
           "lvl": 1
         },
@@ -48842,6 +49147,10 @@
         },
         {
           "id": "c_3ds_rosalina_s_ice_world_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -50427,6 +50736,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1r",
           "lvl": 1
         },
@@ -51162,6 +51475,10 @@
         },
         {
           "id": "c_berlin_byways_2r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -52122,6 +52439,10 @@
         },
         {
           "id": "c_amsterdam_drift_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -53955,6 +54276,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2t",
           "lvl": 1
         },
@@ -54003,6 +54328,10 @@
         {
           "id": "c_amsterdam_drift_2r",
           "lvl": 1
+        },
+        {
+          "id": "c_amsterdam_drift_2t",
+          "lvl": 8
         },
         {
           "id": "c_paris_promenade_2r_t",
@@ -56105,6 +56434,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -56665,6 +56998,18 @@
         {
           "id": "c_amsterdam_drift_2",
           "lvl": 1
+        },
+        {
+          "id": "c_amsterdam_drift_2t",
+          "lvl": 6
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 8
         },
         {
           "id": "c_london_loop_2r_t",
@@ -57456,6 +57801,10 @@
         },
         {
           "id": "c_amsterdam_drift_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -59151,6 +59500,14 @@
         {
           "id": "c_3ds_daisy_hills_r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
         },
         {
           "id": "c_gba_sunset_wilds_r_t",
@@ -61057,6 +61414,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2t",
           "lvl": 1
         },
@@ -61228,6 +61589,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -62201,6 +62566,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_t",
           "lvl": 1
         },
@@ -63036,6 +63405,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -65759,6 +66132,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1r",
           "lvl": 1
         },
@@ -67635,6 +68012,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sky_garden",
           "lvl": 6
         },
@@ -67832,6 +68213,10 @@
         },
         {
           "id": "c_amsterdam_drift_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -68130,6 +68515,14 @@
       "name": "Green Cat Cruiser",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
         {
           "id": "c_ds_luigi_s_mansion_r_t",
           "lvl": 3
@@ -68615,6 +69008,10 @@
         {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
         },
         {
           "id": "c_gba_bowser_s_castle_2",
@@ -69143,6 +69540,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 3
         },
@@ -69260,6 +69661,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways",
           "lvl": 1
         },
         {
@@ -70845,6 +71250,14 @@
         {
           "id": "c_berlin_byways_2t",
           "lvl": 3
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
         },
         {
           "id": "c_london_loop_2r",
@@ -74919,6 +75332,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_t",
           "lvl": 1
         },
@@ -75336,6 +75753,10 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways",
           "lvl": 1
         },
         {
@@ -76295,6 +76716,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
           "id": "c_london_loop_3r",
           "lvl": 6
         },
@@ -76619,6 +77044,10 @@
         {
           "id": "c_3ds_wario_shipyard_r",
           "lvl": 8
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
         },
         {
           "id": "c_gba_bowser_s_castle_1r",
@@ -77145,6 +77574,18 @@
           "lvl": 6
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 8
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 6
+        },
+        {
           "id": "c_london_loop_2r_t",
           "lvl": 3
         },
@@ -77328,6 +77769,10 @@
         },
         {
           "id": "c_amsterdam_drift_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -78371,6 +78816,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -78996,6 +79445,10 @@
         },
         {
           "id": "c_berlin_byways_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
           "lvl": 1
         },
         {
@@ -81287,6 +81740,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 3
         },
@@ -81381,6 +81838,18 @@
         {
           "id": "c_amsterdam_drift_r",
           "lvl": 6
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
+          "lvl": 8
         },
         {
           "id": "c_london_loop_2t",
@@ -83083,6 +83552,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1",
           "lvl": 1
         },
@@ -84691,6 +85164,14 @@
           "lvl": 6
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_2",
           "lvl": 1
         },
@@ -85084,6 +85565,14 @@
         },
         {
           "id": "c_berlin_byways_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -85751,6 +86240,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion",
           "lvl": 1
         },
@@ -85840,6 +86333,10 @@
         },
         {
           "id": "c_amsterdam_drift_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -86163,6 +86660,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 6
         },
@@ -86310,6 +86811,10 @@
         },
         {
           "id": "c_amsterdam_drift",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways",
           "lvl": 1
         },
         {
@@ -88353,6 +88858,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 8
+        },
+        {
           "id": "c_berlin_byways_2r_t",
           "lvl": 1
         },
@@ -89974,6 +90483,10 @@
         },
         {
           "id": "c_berlin_byways_2t",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_t",
           "lvl": 1
         },
         {
@@ -92331,6 +92844,10 @@
           "lvl": 1
         },
         {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -92589,6 +93106,14 @@
         {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 8
+        },
+        {
+          "id": "c_berlin_byways",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_r",
+          "lvl": 1
         },
         {
           "id": "c_gba_bowser_s_castle_2",
