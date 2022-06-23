@@ -8425,7 +8425,7 @@
           "lvl": 1
         },
         {
-          "id": "k_black_b_dasher",
+          "id": "k_black_kabuki_dasher",
           "lvl": 1
         },
         {
@@ -60698,10 +60698,6 @@
           "lvl": 6
         },
         {
-          "id": "c_berlin_byways_2r_t",
-          "lvl": 1
-        },
-        {
           "id": "c_gcn_yoshi_circuit",
           "lvl": 1
         },
@@ -61075,6 +61071,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_2r_t",
           "lvl": 1
         },
         {
