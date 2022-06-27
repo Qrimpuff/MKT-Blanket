@@ -8254,6 +8254,10 @@
           "lvl": 1
         },
         {
+          "id": "g_butterfly_wings",
+          "lvl": 1
+        },
+        {
           "id": "g_daisy_glider",
           "lvl": 1
         },
@@ -8462,10 +8466,6 @@
         },
         {
           "id": "k_pumpkin_kart",
-          "lvl": 1
-        },
-        {
-          "id": "k_queen_bee",
           "lvl": 1
         },
         {
@@ -73358,10 +73358,6 @@
           "lvl": 1
         },
         {
-          "id": "c_berlin_byways_2r_t",
-          "lvl": 1
-        },
-        {
           "id": "c_ds_luigi_s_mansion",
           "lvl": 6
         },
@@ -81477,6 +81473,10 @@
         },
         {
           "id": "c_berlin_byways_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_berlin_byways_2r",
           "lvl": 1
         },
         {
