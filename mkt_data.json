@@ -7986,25 +7986,409 @@
       "sort": 111,
       "id": "c_bangkok_rush",
       "name": "Bangkok Rush",
-      "favorite_items": []
+      "favorite_items": [
+        {
+          "id": "d_cat_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_chain_chomp_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_thai_dress",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_peach",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_aviator",
+          "lvl": 1
+        },
+        {
+          "id": "d_pink_shy_guy_ninja",
+          "lvl": 1
+        },
+        {
+          "id": "d_silver_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_toe_bean_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_green_cat_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_nabbit_oilpaper_umbrella",
+          "lvl": 1
+        },
+        {
+          "id": "g_origami_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_pink_magniflying_glass",
+          "lvl": 1
+        },
+        {
+          "id": "g_red_and_gold_umbrella",
+          "lvl": 6
+        },
+        {
+          "id": "g_wonderful_wings",
+          "lvl": 1
+        },
+        {
+          "id": "k_coconut_1",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_zucchini",
+          "lvl": 1
+        },
+        {
+          "id": "k_goo_goo_pink",
+          "lvl": 1
+        },
+        {
+          "id": "k_orange_streamliner",
+          "lvl": 1
+        },
+        {
+          "id": "k_pink_capsule_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_rose_queen",
+          "lvl": 1
+        },
+        {
+          "id": "k_tuk_tuk_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_warrior_wagon",
+          "lvl": 1
+        }
+      ]
     },
     "c_bangkok_rush_r": {
       "sort": 112,
       "id": "c_bangkok_rush_r",
       "name": "Bangkok Rush R",
-      "favorite_items": []
+      "favorite_items": [
+        {
+          "id": "d_daisy_thai_dress",
+          "lvl": 1
+        },
+        {
+          "id": "d_dr_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_gold_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_mario_sunshine",
+          "lvl": 1
+        },
+        {
+          "id": "d_pastry_chef_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_pastry_chef",
+          "lvl": 1
+        },
+        {
+          "id": "g_8_bit_super_mushroom",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight",
+          "lvl": 1
+        },
+        {
+          "id": "g_cream_toe_bean_balloons",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_crane",
+          "lvl": 1
+        },
+        {
+          "id": "g_pretzel_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_record_setter",
+          "lvl": 1
+        },
+        {
+          "id": "g_wario_s_mustache",
+          "lvl": 1
+        },
+        {
+          "id": "k_black_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_dragonfly",
+          "lvl": 1
+        },
+        {
+          "id": "k_flower_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_gold_zucchini",
+          "lvl": 1
+        },
+        {
+          "id": "k_goo_goo_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_sakura_hop_rod",
+          "lvl": 1
+        },
+        {
+          "id": "k_sneeker",
+          "lvl": 1
+        },
+        {
+          "id": "k_tuk_tuk_kart",
+          "lvl": 6
+        },
+        {
+          "id": "k_yellow_8_bit_pipe_frame",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_offroader",
+          "lvl": 1
+        }
+      ]
     },
     "c_bangkok_rush_r_t": {
       "sort": 114,
       "id": "c_bangkok_rush_r_t",
       "name": "Bangkok Rush R/T",
-      "favorite_items": []
+      "favorite_items": [
+        {
+          "id": "d_builder_mario",
+          "lvl": 1
+        },
+        {
+          "id": "d_cat_luigi",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_farmer",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_thai_dress",
+          "lvl": 1
+        },
+        {
+          "id": "d_peach_yukata",
+          "lvl": 1
+        },
+        {
+          "id": "d_rosalina_chef",
+          "lvl": 1
+        },
+        {
+          "id": "d_yoshi_gold_egg",
+          "lvl": 1
+        },
+        {
+          "id": "g_candlelight_flight_cake",
+          "lvl": 1
+        },
+        {
+          "id": "g_glittering_parasol",
+          "lvl": 1
+        },
+        {
+          "id": "g_gold_eggshell_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_red_and_gold_umbrella",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_and_gold_hearts",
+          "lvl": 1
+        },
+        {
+          "id": "g_silver_surf_master",
+          "lvl": 1
+        },
+        {
+          "id": "g_tanooki_parafoil",
+          "lvl": 1
+        },
+        {
+          "id": "g_tulip_corsage",
+          "lvl": 1
+        },
+        {
+          "id": "k_cream_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_dreamy_egg",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_yellow_capsule_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_sunny_surf_sailer",
+          "lvl": 1
+        },
+        {
+          "id": "k_sunset_cloud",
+          "lvl": 1
+        },
+        {
+          "id": "k_tuk_tuk_kart",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_bruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_white_fast_frank",
+          "lvl": 1
+        },
+        {
+          "id": "k_yellow_offroader",
+          "lvl": 1
+        }
+      ]
     },
     "c_bangkok_rush_t": {
       "sort": 113,
       "id": "c_bangkok_rush_t",
       "name": "Bangkok Rush T",
-      "favorite_items": []
+      "favorite_items": [
+        {
+          "id": "d_captain_toad",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_holiday_cheer",
+          "lvl": 1
+        },
+        {
+          "id": "d_daisy_thai_dress",
+          "lvl": 6
+        },
+        {
+          "id": "d_dr_bowser",
+          "lvl": 1
+        },
+        {
+          "id": "d_gold_mii_racing_suit",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_golf",
+          "lvl": 1
+        },
+        {
+          "id": "d_luigi_vacation",
+          "lvl": 1
+        },
+        {
+          "id": "d_shy_guy_gold",
+          "lvl": 1
+        },
+        {
+          "id": "g_banana_wingtip",
+          "lvl": 1
+        },
+        {
+          "id": "g_golden_wings",
+          "lvl": 1
+        },
+        {
+          "id": "g_origami_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_pink_gold_meteors",
+          "lvl": 1
+        },
+        {
+          "id": "g_red_and_gold_umbrella",
+          "lvl": 1
+        },
+        {
+          "id": "g_sky_high_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "g_spider_glider",
+          "lvl": 1
+        },
+        {
+          "id": "g_wicked_topaz",
+          "lvl": 1
+        },
+        {
+          "id": "k_classic_b_dasher_mk_2",
+          "lvl": 1
+        },
+        {
+          "id": "k_firefly",
+          "lvl": 1
+        },
+        {
+          "id": "k_green_cat_cruiser",
+          "lvl": 1
+        },
+        {
+          "id": "k_inferno_flyer",
+          "lvl": 1
+        },
+        {
+          "id": "k_jukebox_buggy",
+          "lvl": 1
+        },
+        {
+          "id": "k_sleigh_rider",
+          "lvl": 1
+        },
+        {
+          "id": "k_sweet_ride",
+          "lvl": 1
+        },
+        {
+          "id": "k_tropical_truck",
+          "lvl": 1
+        },
+        {
+          "id": "k_tuk_tuk_kart",
+          "lvl": 1
+        }
+      ]
     },
     "c_berlin_byways": {
       "sort": 81,
@@ -45065,7 +45449,7 @@
       ]
     },
     "d_birdo_black": {
-      "sort": 151,
+      "sort": 152,
       "id": "d_birdo_black",
       "i_type": "Driver",
       "name": "Birdo (Black)",
@@ -45341,7 +45725,7 @@
       ]
     },
     "d_birdo_mii_racing_suit": {
-      "sort": 174,
+      "sort": 175,
       "id": "d_birdo_mii_racing_suit",
       "i_type": "Driver",
       "name": "Birdo Mii Racing Suit",
@@ -45411,7 +45795,7 @@
       "hashes": []
     },
     "d_birdo_white": {
-      "sort": 159,
+      "sort": 160,
       "id": "d_birdo_white",
       "i_type": "Driver",
       "name": "Birdo (White)",
@@ -45705,7 +46089,7 @@
       ]
     },
     "d_block_mii_racing_suit": {
-      "sort": 177,
+      "sort": 178,
       "id": "d_block_mii_racing_suit",
       "i_type": "Driver",
       "name": "? Block Mii Racing Suit",
@@ -46071,7 +46455,7 @@
       ]
     },
     "d_bowser_jr_pirate": {
-      "sort": 144,
+      "sort": 145,
       "id": "d_bowser_jr_pirate",
       "i_type": "Driver",
       "name": "Bowser Jr. (Pirate)",
@@ -46175,7 +46559,7 @@
       ]
     },
     "d_bowser_santa": {
-      "sort": 149,
+      "sort": 150,
       "id": "d_bowser_santa",
       "i_type": "Driver",
       "name": "Bowser (Santa)",
@@ -46283,7 +46667,7 @@
       ]
     },
     "d_bronze_mii_racing_suit": {
-      "sort": 168,
+      "sort": 169,
       "id": "d_bronze_mii_racing_suit",
       "i_type": "Driver",
       "name": "Bronze Mii Racing Suit",
@@ -46508,6 +46892,10 @@
         {
           "id": "c_3ds_toad_circuit_t",
           "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
         },
         {
           "id": "c_ds_airship_fortress_r_t",
@@ -46878,6 +47266,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 6
         },
@@ -46970,6 +47362,10 @@
       "rarity": "HighEnd",
       "favorite_courses": [
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_r",
           "lvl": 1
         },
@@ -47019,6 +47415,10 @@
       "name": "Cat Mario",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
         {
           "id": "c_berlin_byways_2t",
           "lvl": 1
@@ -47071,7 +47471,7 @@
       "hashes": []
     },
     "d_cat_mii_racing_suit": {
-      "sort": 178,
+      "sort": 179,
       "id": "d_cat_mii_racing_suit",
       "i_type": "Driver",
       "name": "Cat Mii Racing Suit",
@@ -47500,8 +47900,22 @@
         "FEJpiMA=|kMFpmMw=|mKnmaF4=|PMJrluI=|ECAJCNA=|2D3GaT8=|ZhIpHsA="
       ]
     },
+    "d_chain_chomp_mii_racing_suit": {
+      "sort": 181,
+      "id": "d_chain_chomp_mii_racing_suit",
+      "i_type": "Driver",
+      "name": "Chain Chomp Mii Racing Suit",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "d_chargin_chuck": {
-      "sort": 157,
+      "sort": 158,
       "id": "d_chargin_chuck",
       "i_type": "Driver",
       "name": "Chargin' Chuck",
@@ -47792,6 +48206,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sunset_wilds",
           "lvl": 1
         },
@@ -47875,6 +48293,10 @@
         },
         {
           "id": "c_3ds_toad_circuit_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -48114,6 +48536,32 @@
         "mC3uQM4=|mKHqQMw=|WoHioEg=|mK1mWH8=|lJXGlZg=|WlqorYU=|ZpKIJ0E="
       ]
     },
+    "d_daisy_thai_dress": {
+      "sort": 132,
+      "id": "d_daisy_thai_dress",
+      "i_type": "Driver",
+      "name": "Daisy (Thai Dress)",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 6
+        }
+      ],
+      "hashes": []
+    },
     "d_daisy_yukata": {
       "sort": 88,
       "id": "d_daisy_yukata",
@@ -48271,7 +48719,7 @@
       ]
     },
     "d_dixie_kong": {
-      "sort": 140,
+      "sort": 141,
       "id": "d_dixie_kong",
       "i_type": "Driver",
       "name": "Dixie Kong",
@@ -48419,7 +48867,7 @@
       ]
     },
     "d_donkey_kong_jr_snes": {
-      "sort": 146,
+      "sort": 147,
       "id": "d_donkey_kong_jr_snes",
       "i_type": "Driver",
       "name": "Donkey Kong Jr. (SNES)",
@@ -48591,7 +49039,7 @@
       ]
     },
     "d_donkey_kong_mii_racing_suit": {
-      "sort": 167,
+      "sort": 168,
       "id": "d_donkey_kong_mii_racing_suit",
       "i_type": "Driver",
       "name": "Donkey Kong Mii Racing Suit",
@@ -48651,7 +49099,7 @@
       ]
     },
     "d_dr_bowser": {
-      "sort": 160,
+      "sort": 161,
       "id": "d_dr_bowser",
       "i_type": "Driver",
       "name": "Dr. Bowser",
@@ -48667,6 +49115,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -48814,6 +49266,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_london_loop_2r_t",
           "lvl": 1
         },
@@ -48873,6 +49329,10 @@
         },
         {
           "id": "c_3ds_wario_shipyard_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -48947,7 +49407,7 @@
       ]
     },
     "d_dry_bones_gold": {
-      "sort": 138,
+      "sort": 139,
       "id": "d_dry_bones_gold",
       "i_type": "Driver",
       "name": "Dry Bones (Gold)",
@@ -49055,7 +49515,7 @@
       ]
     },
     "d_dry_bowser": {
-      "sort": 132,
+      "sort": 133,
       "id": "d_dry_bowser",
       "i_type": "Driver",
       "name": "Dry Bowser",
@@ -49135,7 +49595,7 @@
       ]
     },
     "d_dry_bowser_gold": {
-      "sort": 141,
+      "sort": 142,
       "id": "d_dry_bowser_gold",
       "i_type": "Driver",
       "name": "Dry Bowser (Gold)",
@@ -49447,7 +49907,7 @@
       ]
     },
     "d_funky_kong": {
-      "sort": 139,
+      "sort": 140,
       "id": "d_funky_kong",
       "i_type": "Driver",
       "name": "Funky Kong",
@@ -49551,7 +50011,7 @@
       ]
     },
     "d_gold_koopa_freerunning": {
-      "sort": 136,
+      "sort": 137,
       "id": "d_gold_koopa_freerunning",
       "i_type": "Driver",
       "name": "Gold Koopa (Freerunning)",
@@ -49651,7 +50111,7 @@
       ]
     },
     "d_gold_mii_racing_suit": {
-      "sort": 170,
+      "sort": 171,
       "id": "d_gold_mii_racing_suit",
       "i_type": "Driver",
       "name": "Gold Mii Racing Suit",
@@ -49683,6 +50143,14 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -50079,7 +50547,7 @@
       ]
     },
     "d_kamek": {
-      "sort": 154,
+      "sort": 155,
       "id": "d_kamek",
       "i_type": "Driver",
       "name": "Kamek",
@@ -50211,7 +50679,7 @@
       ]
     },
     "d_king_bob_omb": {
-      "sort": 145,
+      "sort": 146,
       "id": "d_king_bob_omb",
       "i_type": "Driver",
       "name": "King Bob-omb",
@@ -50323,7 +50791,7 @@
       ]
     },
     "d_king_bob_omb_gold": {
-      "sort": 153,
+      "sort": 154,
       "id": "d_king_bob_omb_gold",
       "i_type": "Driver",
       "name": "King Bob-omb (Gold)",
@@ -50447,7 +50915,7 @@
       ]
     },
     "d_king_bob_omb_mii_racing_suit": {
-      "sort": 172,
+      "sort": 173,
       "id": "d_king_bob_omb_mii_racing_suit",
       "i_type": "Driver",
       "name": "King Bob-omb Mii Racing Suit",
@@ -50565,7 +51033,7 @@
       ]
     },
     "d_king_boo_gold": {
-      "sort": 148,
+      "sort": 149,
       "id": "d_king_boo_gold",
       "i_type": "Driver",
       "name": "King Boo (Gold)",
@@ -50661,7 +51129,7 @@
       ]
     },
     "d_king_boo_luigi_s_mansion": {
-      "sort": 133,
+      "sort": 134,
       "id": "d_king_boo_luigi_s_mansion",
       "i_type": "Driver",
       "name": "King Boo (Luigi's Mansion)",
@@ -50733,7 +51201,7 @@
       ]
     },
     "d_king_boo_mii_racing_suit": {
-      "sort": 171,
+      "sort": 172,
       "id": "d_king_boo_mii_racing_suit",
       "i_type": "Driver",
       "name": "King Boo Mii Racing Suit",
@@ -50887,7 +51355,7 @@
       ]
     },
     "d_lakitu_party_time": {
-      "sort": 150,
+      "sort": 151,
       "id": "d_lakitu_party_time",
       "i_type": "Driver",
       "name": "Lakitu (Party Time)",
@@ -51398,6 +51866,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 1
         },
@@ -51603,7 +52075,7 @@
       ]
     },
     "d_luigi_mii_racing_suit": {
-      "sort": 165,
+      "sort": 166,
       "id": "d_luigi_mii_racing_suit",
       "i_type": "Driver",
       "name": "Luigi Mii Racing Suit",
@@ -51854,6 +52326,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2r_t",
           "lvl": 1
         },
@@ -52015,6 +52491,10 @@
         },
         {
           "id": "c_amsterdam_drift",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -52831,7 +53311,7 @@
       ]
     },
     "d_mario_mii_racing_suit": {
-      "sort": 162,
+      "sort": 163,
       "id": "d_mario_mii_racing_suit",
       "i_type": "Driver",
       "name": "Mario Mii Racing Suit",
@@ -53532,6 +54012,10 @@
           "lvl": 8
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_london_loop_t",
           "lvl": 1
         },
@@ -53877,7 +54361,7 @@
       ]
     },
     "d_meowser": {
-      "sort": 156,
+      "sort": 157,
       "id": "d_meowser",
       "i_type": "Driver",
       "name": "Meowser",
@@ -54149,7 +54633,7 @@
       ]
     },
     "d_nabbit": {
-      "sort": 143,
+      "sort": 144,
       "id": "d_nabbit",
       "i_type": "Driver",
       "name": "Nabbit",
@@ -54277,7 +54761,7 @@
       ]
     },
     "d_nabbit_mii_racing_suit": {
-      "sort": 175,
+      "sort": 176,
       "id": "d_nabbit_mii_racing_suit",
       "i_type": "Driver",
       "name": "Nabbit Mii Racing Suit",
@@ -54339,7 +54823,7 @@
       "hashes": []
     },
     "d_pastry_chef_mii_racing_suit": {
-      "sort": 179,
+      "sort": 180,
       "id": "d_pastry_chef_mii_racing_suit",
       "i_type": "Driver",
       "name": "Pastry Chef Mii Racing Suit",
@@ -54356,6 +54840,10 @@
         {
           "id": "c_amsterdam_drift_2t",
           "lvl": 8
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
         },
         {
           "id": "c_paris_promenade_2r_t",
@@ -55273,7 +55761,7 @@
       ]
     },
     "d_peach_mii_racing_suit": {
-      "sort": 163,
+      "sort": 164,
       "id": "d_peach_mii_racing_suit",
       "i_type": "Driver",
       "name": "Peach Mii Racing Suit",
@@ -55657,6 +56145,10 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
           "lvl": 1
         },
         {
@@ -56439,7 +56931,7 @@
       ]
     },
     "d_pink_shy_guy_ninja": {
-      "sort": 158,
+      "sort": 159,
       "id": "d_pink_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Pink Shy Guy (Ninja)",
@@ -56455,6 +56947,10 @@
         },
         {
           "id": "c_amsterdam_drift_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -56741,7 +57237,7 @@
       ]
     },
     "d_red_mii_racing_suit": {
-      "sort": 161,
+      "sort": 162,
       "id": "d_red_mii_racing_suit",
       "i_type": "Driver",
       "name": "Red Mii Racing Suit",
@@ -57028,6 +57524,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways",
           "lvl": 1
         },
@@ -57155,7 +57655,7 @@
       ]
     },
     "d_rosalina_mii_racing_suit": {
-      "sort": 166,
+      "sort": 167,
       "id": "d_rosalina_mii_racing_suit",
       "i_type": "Driver",
       "name": "Rosalina Mii Racing Suit",
@@ -57445,7 +57945,7 @@
       ]
     },
     "d_shy_guy_gold": {
-      "sort": 147,
+      "sort": 148,
       "id": "d_shy_guy_gold",
       "i_type": "Driver",
       "name": "Shy Guy (Gold)",
@@ -57485,6 +57985,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -57569,7 +58073,7 @@
       ]
     },
     "d_shy_guy_ninja": {
-      "sort": 152,
+      "sort": 153,
       "id": "d_shy_guy_ninja",
       "i_type": "Driver",
       "name": "Shy Guy (Ninja)",
@@ -57705,7 +58209,7 @@
       ]
     },
     "d_shy_guy_pastry_chef": {
-      "sort": 134,
+      "sort": 135,
       "id": "d_shy_guy_pastry_chef",
       "i_type": "Driver",
       "name": "Shy Guy (Pastry Chef)",
@@ -57725,6 +58229,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
           "lvl": 1
         },
         {
@@ -57805,7 +58313,7 @@
       ]
     },
     "d_silver_mii_racing_suit": {
-      "sort": 169,
+      "sort": 170,
       "id": "d_silver_mii_racing_suit",
       "i_type": "Driver",
       "name": "Silver Mii Racing Suit",
@@ -57825,6 +58333,10 @@
         },
         {
           "id": "c_amsterdam_drift_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -58173,7 +58685,7 @@
       ]
     },
     "d_toad_mii_racing_suit": {
-      "sort": 164,
+      "sort": 165,
       "id": "d_toad_mii_racing_suit",
       "i_type": "Driver",
       "name": "Toad Mii Racing Suit",
@@ -58593,7 +59105,7 @@
       ]
     },
     "d_waluigi_bus_driver": {
-      "sort": 135,
+      "sort": 136,
       "id": "d_waluigi_bus_driver",
       "i_type": "Driver",
       "name": "Waluigi (Bus Driver)",
@@ -58689,7 +59201,7 @@
       ]
     },
     "d_waluigi_vampire": {
-      "sort": 155,
+      "sort": 156,
       "id": "d_waluigi_vampire",
       "i_type": "Driver",
       "name": "Waluigi (Vampire)",
@@ -58873,7 +59385,7 @@
       ]
     },
     "d_wario_cowboy": {
-      "sort": 142,
+      "sort": 143,
       "id": "d_wario_cowboy",
       "i_type": "Driver",
       "name": "Wario (Cowboy)",
@@ -58981,7 +59493,7 @@
       ]
     },
     "d_wario_hiker": {
-      "sort": 137,
+      "sort": 138,
       "id": "d_wario_hiker",
       "i_type": "Driver",
       "name": "Wario (Hiker)",
@@ -59077,7 +59589,7 @@
       ]
     },
     "d_wario_mii_racing_suit": {
-      "sort": 176,
+      "sort": 177,
       "id": "d_wario_mii_racing_suit",
       "i_type": "Driver",
       "name": "Wario Mii Racing Suit",
@@ -59526,6 +60038,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_r",
           "lvl": 1
         },
@@ -59761,7 +60277,7 @@
       ]
     },
     "d_yoshi_mii_racing_suit": {
-      "sort": 173,
+      "sort": 174,
       "id": "d_yoshi_mii_racing_suit",
       "i_type": "Driver",
       "name": "Yoshi Mii Racing Suit",
@@ -60383,7 +60899,7 @@
       ]
     },
     "k_badwagon": {
-      "sort": 186,
+      "sort": 189,
       "id": "k_badwagon",
       "i_type": "Kart",
       "name": "Badwagon",
@@ -60455,7 +60971,7 @@
       ]
     },
     "k_banana_master": {
-      "sort": 192,
+      "sort": 195,
       "id": "k_banana_master",
       "i_type": "Kart",
       "name": "Banana Master",
@@ -60794,6 +61310,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion_r",
           "lvl": 6
         },
@@ -60963,7 +61483,7 @@
       ]
     },
     "k_black_dozer": {
-      "sort": 208,
+      "sort": 211,
       "id": "k_black_dozer",
       "i_type": "Kart",
       "name": "Black Dozer",
@@ -61183,7 +61703,7 @@
       ]
     },
     "k_black_penguin_slider": {
-      "sort": 211,
+      "sort": 214,
       "id": "k_black_penguin_slider",
       "i_type": "Kart",
       "name": "Black Penguin Slider",
@@ -61295,7 +61815,7 @@
       ]
     },
     "k_black_turbo_birdo": {
-      "sort": 213,
+      "sort": 216,
       "id": "k_black_turbo_birdo",
       "i_type": "Kart",
       "name": "Black Turbo Birdo",
@@ -61497,7 +62017,7 @@
       "hashes": []
     },
     "k_blue_badwagon": {
-      "sort": 187,
+      "sort": 190,
       "id": "k_blue_badwagon",
       "i_type": "Kart",
       "name": "Blue Badwagon",
@@ -62179,7 +62699,7 @@
       ]
     },
     "k_brown_offroader": {
-      "sort": 199,
+      "sort": 202,
       "id": "k_brown_offroader",
       "i_type": "Kart",
       "name": "Brown Offroader",
@@ -62271,7 +62791,7 @@
       ]
     },
     "k_bruiser": {
-      "sort": 189,
+      "sort": 192,
       "id": "k_bruiser",
       "i_type": "Kart",
       "name": "Bruiser",
@@ -62475,7 +62995,7 @@
       ]
     },
     "k_cact_ice": {
-      "sort": 212,
+      "sort": 215,
       "id": "k_cact_ice",
       "i_type": "Kart",
       "name": "Cact-Ice",
@@ -62571,7 +63091,7 @@
       ]
     },
     "k_cact_r": {
-      "sort": 223,
+      "sort": 226,
       "id": "k_cact_r",
       "i_type": "Kart",
       "name": "Cact-R",
@@ -62707,7 +63227,7 @@
       ]
     },
     "k_cact_x": {
-      "sort": 200,
+      "sort": 203,
       "id": "k_cact_x",
       "i_type": "Kart",
       "name": "Cact-X",
@@ -62787,7 +63307,7 @@
       ]
     },
     "k_candy_clown": {
-      "sort": 225,
+      "sort": 228,
       "id": "k_candy_clown",
       "i_type": "Kart",
       "name": "Candy Clown",
@@ -63185,7 +63705,7 @@
       ]
     },
     "k_cheep_snorkel": {
-      "sort": 194,
+      "sort": 197,
       "id": "k_cheep_snorkel",
       "i_type": "Kart",
       "name": "Cheep Snorkel",
@@ -63401,7 +63921,7 @@
       ]
     },
     "k_cheership": {
-      "sort": 224,
+      "sort": 227,
       "id": "k_cheership",
       "i_type": "Kart",
       "name": "Cheership",
@@ -63896,6 +64416,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 3
         },
@@ -64152,6 +64676,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 6
         },
@@ -64195,7 +64723,7 @@
       "hashes": []
     },
     "k_combo_cruiser": {
-      "sort": 227,
+      "sort": 230,
       "id": "k_combo_cruiser",
       "i_type": "Kart",
       "name": "Combo Cruiser",
@@ -64391,7 +64919,7 @@
       ]
     },
     "k_crawly_kart": {
-      "sort": 207,
+      "sort": 210,
       "id": "k_crawly_kart",
       "i_type": "Kart",
       "name": "Crawly Kart",
@@ -64622,6 +65150,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sky_garden",
           "lvl": 6
         },
@@ -64661,7 +65193,7 @@
       "hashes": []
     },
     "k_crimson_hop_rod": {
-      "sort": 216,
+      "sort": 219,
       "id": "k_crimson_hop_rod",
       "i_type": "Kart",
       "name": "Crimson Hop Rod",
@@ -65003,7 +65535,7 @@
       "hashes": []
     },
     "k_dark_buggy": {
-      "sort": 197,
+      "sort": 200,
       "id": "k_dark_buggy",
       "i_type": "Kart",
       "name": "Dark Buggy",
@@ -65135,7 +65667,7 @@
       ]
     },
     "k_dark_hop_rod": {
-      "sort": 217,
+      "sort": 220,
       "id": "k_dark_hop_rod",
       "i_type": "Kart",
       "name": "Dark Hop Rod",
@@ -65563,7 +66095,7 @@
       ]
     },
     "k_dk_maximum": {
-      "sort": 204,
+      "sort": 207,
       "id": "k_dk_maximum",
       "i_type": "Kart",
       "name": "DK Maximum",
@@ -65882,6 +66414,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -65969,6 +66505,10 @@
         },
         {
           "id": "c_amsterdam_drift_2r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
           "lvl": 1
         },
         {
@@ -66368,6 +66908,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 3
         },
@@ -66483,6 +67027,10 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
           "lvl": 1
         },
         {
@@ -66813,7 +67361,7 @@
       ]
     },
     "k_gilded_king": {
-      "sort": 206,
+      "sort": 209,
       "id": "k_gilded_king",
       "i_type": "Kart",
       "name": "Gilded King",
@@ -67191,7 +67739,7 @@
       "hashes": []
     },
     "k_gold_cheep_charger": {
-      "sort": 196,
+      "sort": 199,
       "id": "k_gold_cheep_charger",
       "i_type": "Kart",
       "name": "Gold Cheep Charger",
@@ -67311,7 +67859,7 @@
       ]
     },
     "k_gold_cheep_snorkel": {
-      "sort": 195,
+      "sort": 198,
       "id": "k_gold_cheep_snorkel",
       "i_type": "Kart",
       "name": "Gold Cheep Snorkel",
@@ -67933,7 +68481,7 @@
       ]
     },
     "k_gold_train": {
-      "sort": 188,
+      "sort": 191,
       "id": "k_gold_train",
       "i_type": "Kart",
       "name": "Gold Train",
@@ -68016,6 +68564,24 @@
         "mGnmIOc=|mGnuoO8=|2tyi4Ks=|mCVmYWc=|PCPsGrM=|EN7AjIg=|QpyLxag="
       ]
     },
+    "k_gold_zucchini": {
+      "sort": 188,
+      "id": "k_gold_zucchini",
+      "i_type": "Kart",
+      "name": "Gold Zucchini",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "k_goo_goo_buggy": {
       "sort": 181,
       "id": "k_goo_goo_buggy",
@@ -68030,6 +68596,10 @@
         {
           "id": "c_3ds_toad_circuit_t",
           "lvl": 3
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways_2r_t",
@@ -68067,6 +68637,10 @@
       "favorite_courses": [
         {
           "id": "c_amsterdam_drift",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -68539,6 +69113,10 @@
       "name": "Green Cat Cruiser",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
         {
           "id": "c_berlin_byways_r",
           "lvl": 1
@@ -69015,7 +69593,7 @@
       ]
     },
     "k_green_yellow_capsule_kart": {
-      "sort": 230,
+      "sort": 233,
       "id": "k_green_yellow_capsule_kart",
       "i_type": "Kart",
       "name": "Green-Yellow Capsule Kart",
@@ -69032,6 +69610,10 @@
         {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways",
@@ -69181,7 +69763,7 @@
       ]
     },
     "k_head_honcho": {
-      "sort": 203,
+      "sort": 206,
       "id": "k_head_honcho",
       "i_type": "Kart",
       "name": "Head Honcho",
@@ -69560,6 +70142,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2t",
           "lvl": 1
         },
@@ -69797,7 +70383,7 @@
       ]
     },
     "k_jade_hop_rod": {
-      "sort": 215,
+      "sort": 218,
       "id": "k_jade_hop_rod",
       "i_type": "Kart",
       "name": "Jade Hop Rod",
@@ -70156,6 +70742,10 @@
           "lvl": 8
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_luigi_s_mansion",
           "lvl": 1
         },
@@ -70329,7 +70919,7 @@
       ]
     },
     "k_kamek_s_zoom_broom": {
-      "sort": 218,
+      "sort": 221,
       "id": "k_kamek_s_zoom_broom",
       "i_type": "Kart",
       "name": "Kamek's Zoom Broom",
@@ -70613,7 +71203,7 @@
       ]
     },
     "k_koopa_king": {
-      "sort": 198,
+      "sort": 201,
       "id": "k_koopa_king",
       "i_type": "Kart",
       "name": "Koopa King",
@@ -71385,7 +71975,7 @@
       ]
     },
     "k_offroader": {
-      "sort": 191,
+      "sort": 194,
       "id": "k_offroader",
       "i_type": "Kart",
       "name": "Offroader",
@@ -71489,6 +72079,10 @@
       "favorite_courses": [
         {
           "id": "c_3ds_neo_bowser_city_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -71841,7 +72435,7 @@
       ]
     },
     "k_party_wing": {
-      "sort": 209,
+      "sort": 212,
       "id": "k_party_wing",
       "i_type": "Kart",
       "name": "Party-Wing",
@@ -71937,7 +72531,7 @@
       ]
     },
     "k_penguin_slider": {
-      "sort": 210,
+      "sort": 213,
       "id": "k_penguin_slider",
       "i_type": "Kart",
       "name": "Penguin Slider",
@@ -72316,6 +72910,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_frappe_snowland_r_t",
           "lvl": 1
         },
@@ -72627,7 +73225,7 @@
       ]
     },
     "k_pirate_sushi_racer": {
-      "sort": 201,
+      "sort": 204,
       "id": "k_pirate_sushi_racer",
       "i_type": "Kart",
       "name": "Pirate Sushi Racer",
@@ -72799,7 +73397,7 @@
       ]
     },
     "k_poison_apple_kart": {
-      "sort": 193,
+      "sort": 196,
       "id": "k_poison_apple_kart",
       "i_type": "Kart",
       "name": "Poison Apple Kart",
@@ -73231,7 +73829,7 @@
       ]
     },
     "k_purple_bunny": {
-      "sort": 214,
+      "sort": 217,
       "id": "k_purple_bunny",
       "i_type": "Kart",
       "name": "Purple Bunny",
@@ -73971,7 +74569,7 @@
       ]
     },
     "k_red_crawly_kart": {
-      "sort": 221,
+      "sort": 224,
       "id": "k_red_crawly_kart",
       "i_type": "Kart",
       "name": "Red Crawly Kart",
@@ -74550,6 +75148,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -74771,7 +75373,7 @@
       ]
     },
     "k_sakura_hop_rod": {
-      "sort": 228,
+      "sort": 231,
       "id": "k_sakura_hop_rod",
       "i_type": "Kart",
       "name": "Sakura Hop Rod",
@@ -74795,6 +75397,10 @@
         },
         {
           "id": "c_amsterdam_drift_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
           "lvl": 1
         },
         {
@@ -74977,7 +75583,7 @@
       ]
     },
     "k_silver_bullet_blaster": {
-      "sort": 202,
+      "sort": 205,
       "id": "k_silver_bullet_blaster",
       "i_type": "Kart",
       "name": "Silver Bullet Blaster",
@@ -75069,7 +75675,7 @@
       ]
     },
     "k_silver_king": {
-      "sort": 219,
+      "sort": 222,
       "id": "k_silver_king",
       "i_type": "Kart",
       "name": "Silver King",
@@ -75348,6 +75954,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -75440,6 +76050,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_cheep_cheep_island",
           "lvl": 6
         },
@@ -75505,7 +76119,7 @@
       ]
     },
     "k_snow_skimmer": {
-      "sort": 190,
+      "sort": 193,
       "id": "k_snow_skimmer",
       "i_type": "Kart",
       "name": "Snow Skimmer",
@@ -76172,6 +76786,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r_t",
           "lvl": 6
         },
@@ -76275,6 +76893,10 @@
       "name": "Sunset Cloud",
       "rarity": "HighEnd",
       "favorite_courses": [
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
         {
           "id": "c_ds_dk_pass_r_t",
           "lvl": 6
@@ -76533,7 +77155,7 @@
       ]
     },
     "k_sushi_racer": {
-      "sort": 205,
+      "sort": 208,
       "id": "k_sushi_racer",
       "i_type": "Kart",
       "name": "Sushi Racer",
@@ -76733,6 +77355,10 @@
         },
         {
           "id": "c_amsterdam_drift_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -77039,7 +77665,7 @@
       ]
     },
     "k_tiger_bruiser": {
-      "sort": 226,
+      "sort": 229,
       "id": "k_tiger_bruiser",
       "i_type": "Kart",
       "name": "Tiger Bruiser",
@@ -77222,6 +77848,46 @@
         "GElisGU=|WMvioG0=|mGfK6cY=|WElmMC0=|8LSkKlo=|lmXKyZI=|StaJrWs="
       ]
     },
+    "k_tropical_truck": {
+      "sort": 187,
+      "id": "k_tropical_truck",
+      "i_type": "Kart",
+      "name": "Tropical Truck",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
+    "k_tuk_tuk_kart": {
+      "sort": 186,
+      "id": "k_tuk_tuk_kart",
+      "i_type": "Kart",
+      "name": "Tuk-Tuk Kart",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
+    },
     "k_turbo_birdo": {
       "sort": 51,
       "id": "k_turbo_birdo",
@@ -77299,7 +77965,7 @@
       ]
     },
     "k_vampire_flyer": {
-      "sort": 220,
+      "sort": 223,
       "id": "k_vampire_flyer",
       "i_type": "Kart",
       "name": "Vampire Flyer",
@@ -77426,6 +78092,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1r",
           "lvl": 1
         },
@@ -77532,6 +78202,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1r",
           "lvl": 8
         },
@@ -77592,6 +78266,10 @@
         {
           "id": "c_amsterdam_drift_t",
           "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways",
@@ -77769,7 +78447,7 @@
       ]
     },
     "k_white_turbo_birdo": {
-      "sort": 229,
+      "sort": 232,
       "id": "k_white_turbo_birdo",
       "i_type": "Kart",
       "name": "White Turbo Birdo",
@@ -78474,6 +79152,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress_r_t",
           "lvl": 6
         },
@@ -78539,7 +79221,7 @@
       ]
     },
     "k_yellow_offroader": {
-      "sort": 222,
+      "sort": 225,
       "id": "k_yellow_offroader",
       "i_type": "Kart",
       "name": "Yellow Offroader",
@@ -78551,6 +79233,14 @@
         },
         {
           "id": "c_3ds_bowser_s_castle_rt",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
           "lvl": 1
         },
         {
@@ -79352,6 +80042,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sky_garden",
           "lvl": 1
         },
@@ -79569,7 +80263,7 @@
       ]
     },
     "g_baby_mario_hanafuda": {
-      "sort": 151,
+      "sort": 152,
       "id": "g_baby_mario_hanafuda",
       "i_type": "Glider",
       "name": "Baby Mario Hanafuda",
@@ -79693,7 +80387,7 @@
       ]
     },
     "g_banana_wingtip": {
-      "sort": 134,
+      "sort": 135,
       "id": "g_banana_wingtip",
       "i_type": "Glider",
       "name": "Banana Wingtip",
@@ -79709,6 +80403,10 @@
         },
         {
           "id": "c_3ds_toad_circuit_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -79777,7 +80475,7 @@
       ]
     },
     "g_barrel_hanafuda": {
-      "sort": 154,
+      "sort": 155,
       "id": "g_barrel_hanafuda",
       "i_type": "Glider",
       "name": "Barrel Hanafuda",
@@ -80509,7 +81207,7 @@
       ]
     },
     "g_blooper_hanafuda": {
-      "sort": 155,
+      "sort": 156,
       "id": "g_blooper_hanafuda",
       "i_type": "Glider",
       "name": "Blooper Hanafuda",
@@ -80589,7 +81287,7 @@
       ]
     },
     "g_blooper_wingtip": {
-      "sort": 137,
+      "sort": 138,
       "id": "g_blooper_wingtip",
       "i_type": "Glider",
       "name": "Blooper Wingtip",
@@ -80777,7 +81475,7 @@
       ]
     },
     "g_boo_hanafuda": {
-      "sort": 158,
+      "sort": 159,
       "id": "g_boo_hanafuda",
       "i_type": "Glider",
       "name": "Boo Hanafuda",
@@ -80845,7 +81543,7 @@
       ]
     },
     "g_bowser_hanafuda": {
-      "sort": 162,
+      "sort": 163,
       "id": "g_bowser_hanafuda",
       "i_type": "Glider",
       "name": "Bowser Hanafuda",
@@ -80921,7 +81619,7 @@
       ]
     },
     "g_bright_balloons": {
-      "sort": 142,
+      "sort": 143,
       "id": "g_bright_balloons",
       "i_type": "Glider",
       "name": "Bright Balloons",
@@ -81137,7 +81835,7 @@
       ]
     },
     "g_bullet_bill_hanafuda": {
-      "sort": 157,
+      "sort": 158,
       "id": "g_bullet_bill_hanafuda",
       "i_type": "Glider",
       "name": "Bullet Bill Hanafuda",
@@ -81209,7 +81907,7 @@
       ]
     },
     "g_bullet_bill_parachute": {
-      "sort": 129,
+      "sort": 130,
       "id": "g_bullet_bill_parachute",
       "i_type": "Glider",
       "name": "Bullet Bill Parachute",
@@ -81760,6 +82458,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2r_t",
           "lvl": 1
         },
@@ -81864,6 +82566,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways",
           "lvl": 1
         },
@@ -81895,7 +82601,7 @@
       "hashes": []
     },
     "g_cape_mario_hanafuda": {
-      "sort": 156,
+      "sort": 157,
       "id": "g_cape_mario_hanafuda",
       "i_type": "Glider",
       "name": "Cape Mario Hanafuda",
@@ -82087,7 +82793,7 @@
       ]
     },
     "g_cheep_cheep_masks": {
-      "sort": 139,
+      "sort": 140,
       "id": "g_cheep_cheep_masks",
       "i_type": "Glider",
       "name": "Cheep Cheep Masks",
@@ -82415,7 +83121,7 @@
       ]
     },
     "g_cloud_glider": {
-      "sort": 130,
+      "sort": 131,
       "id": "g_cloud_glider",
       "i_type": "Glider",
       "name": "Cloud Glider",
@@ -82511,6 +83217,10 @@
         },
         {
           "id": "c_amsterdam_drift_2",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r",
           "lvl": 1
         },
         {
@@ -82765,7 +83475,7 @@
       ]
     },
     "g_dragon_wings": {
-      "sort": 136,
+      "sort": 137,
       "id": "g_dragon_wings",
       "i_type": "Glider",
       "name": "Dragon Wings",
@@ -82893,7 +83603,7 @@
       ]
     },
     "g_dream_glider": {
-      "sort": 144,
+      "sort": 145,
       "id": "g_dream_glider",
       "i_type": "Glider",
       "name": "Dream Glider",
@@ -83045,7 +83755,7 @@
       ]
     },
     "g_dry_bowser_umbrella": {
-      "sort": 140,
+      "sort": 141,
       "id": "g_dry_bowser_umbrella",
       "i_type": "Glider",
       "name": "Dry Bowser Umbrella",
@@ -84310,6 +85020,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass",
           "lvl": 1
         },
@@ -84408,6 +85122,10 @@
         {
           "id": "c_3ds_rainbow_road_t",
           "lvl": 3
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_waluigi_pinball",
@@ -84543,6 +85261,10 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
           "lvl": 1
         },
         {
@@ -84989,7 +85711,7 @@
       ]
     },
     "g_gold_swooper": {
-      "sort": 133,
+      "sort": 134,
       "id": "g_gold_swooper",
       "i_type": "Glider",
       "name": "Gold Swooper",
@@ -85188,6 +85910,10 @@
           "lvl": 6
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways",
           "lvl": 1
         },
@@ -85269,7 +85995,7 @@
       ]
     },
     "g_golden_wings": {
-      "sort": 146,
+      "sort": 147,
       "id": "g_golden_wings",
       "i_type": "Glider",
       "name": "Golden Wings",
@@ -85298,6 +86024,14 @@
         {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 8
+        },
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways_2r",
@@ -85421,7 +86155,7 @@
       ]
     },
     "g_goomba_hanafuda": {
-      "sort": 160,
+      "sort": 161,
       "id": "g_goomba_hanafuda",
       "i_type": "Glider",
       "name": "Goomba Hanafuda",
@@ -85586,6 +86320,10 @@
         {
           "id": "c_3ds_toad_circuit_t",
           "lvl": 3
+        },
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways_2r",
@@ -86037,7 +86775,7 @@
       ]
     },
     "g_jumping_mario_hanafuda": {
-      "sort": 161,
+      "sort": 162,
       "id": "g_jumping_mario_hanafuda",
       "i_type": "Glider",
       "name": "Jumping Mario Hanafuda",
@@ -87103,7 +87841,7 @@
       ]
     },
     "g_nabbit_oilpaper_umbrella": {
-      "sort": 138,
+      "sort": 139,
       "id": "g_nabbit_oilpaper_umbrella",
       "i_type": "Glider",
       "name": "Nabbit Oilpaper Umbrella",
@@ -87119,6 +87857,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -87603,7 +88345,7 @@
       ]
     },
     "g_ninja_scroll": {
-      "sort": 143,
+      "sort": 144,
       "id": "g_ninja_scroll",
       "i_type": "Glider",
       "name": "Ninja Scroll",
@@ -87774,6 +88516,14 @@
           "lvl": 3
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_airship_fortress",
           "lvl": 1
         },
@@ -87917,7 +88667,7 @@
       ]
     },
     "g_peach_hanafuda": {
-      "sort": 153,
+      "sort": 154,
       "id": "g_peach_hanafuda",
       "i_type": "Glider",
       "name": "Peach Hanafuda",
@@ -88033,7 +88783,7 @@
       ]
     },
     "g_penguin_wingtip": {
-      "sort": 141,
+      "sort": 142,
       "id": "g_penguin_wingtip",
       "i_type": "Glider",
       "name": "Penguin Wingtip",
@@ -88224,6 +88974,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_bowser_s_castle_1r",
           "lvl": 1
         },
@@ -88404,6 +89158,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush",
+          "lvl": 1
+        },
+        {
           "id": "c_n64_frappe_snowland_r_t",
           "lvl": 1
         },
@@ -88443,7 +89201,7 @@
       "hashes": []
     },
     "g_piranha_plant_hanafuda": {
-      "sort": 159,
+      "sort": 160,
       "id": "g_piranha_plant_hanafuda",
       "i_type": "Glider",
       "name": "Piranha Plant Hanafuda",
@@ -88882,6 +89640,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways",
           "lvl": 8
         },
@@ -89081,7 +89843,7 @@
       ]
     },
     "g_rainy_balloons": {
-      "sort": 131,
+      "sort": 132,
       "id": "g_rainy_balloons",
       "i_type": "Glider",
       "name": "Rainy Balloons",
@@ -89200,6 +89962,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
+        },
+        {
           "id": "c_berlin_byways_2",
           "lvl": 1
         },
@@ -89279,6 +90045,28 @@
       "hashes": [
         "mLGmYNs=|mGnm0N8=|mGnimJc=|2LCkYHs=|egVKxpk=|lGtLmIQ=|ZpaMVJk="
       ]
+    },
+    "g_red_and_gold_umbrella": {
+      "sort": 128,
+      "id": "g_red_and_gold_umbrella",
+      "i_type": "Glider",
+      "name": "Red and Gold Umbrella",
+      "rarity": "HighEnd",
+      "favorite_courses": [
+        {
+          "id": "c_bangkok_rush",
+          "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
+        }
+      ],
+      "hashes": []
     },
     "g_rose_parasol": {
       "sort": 79,
@@ -89890,6 +90678,10 @@
           "lvl": 3
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_gba_sunset_wilds",
           "lvl": 8
         },
@@ -90358,6 +91150,10 @@
           "lvl": 1
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_ds_dk_pass_r_t",
           "lvl": 8
         },
@@ -90503,6 +91299,10 @@
         },
         {
           "id": "c_amsterdam_drift_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -90795,6 +91595,10 @@
         },
         {
           "id": "c_3ds_rock_rock_mountain",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_t",
           "lvl": 1
         },
         {
@@ -92203,7 +93007,7 @@
       ]
     },
     "g_swooper": {
-      "sort": 128,
+      "sort": 129,
       "id": "g_swooper",
       "i_type": "Glider",
       "name": "Swooper",
@@ -92295,6 +93099,10 @@
         },
         {
           "id": "c_3ds_shy_guy_bazaar_r_t",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush_r_t",
           "lvl": 1
         },
         {
@@ -92583,7 +93391,7 @@
       ]
     },
     "g_tropical_glider": {
-      "sort": 135,
+      "sort": 136,
       "id": "g_tropical_glider",
       "i_type": "Glider",
       "name": "Tropical Glider",
@@ -92710,6 +93518,10 @@
           "lvl": 8
         },
         {
+          "id": "c_bangkok_rush_r_t",
+          "lvl": 1
+        },
+        {
           "id": "c_paris_promenade_2",
           "lvl": 6
         },
@@ -92733,7 +93545,7 @@
       "hashes": []
     },
     "g_vampire_wings": {
-      "sort": 145,
+      "sort": 146,
       "id": "g_vampire_wings",
       "i_type": "Glider",
       "name": "Vampire Wings",
@@ -92841,7 +93653,7 @@
       ]
     },
     "g_waluigi_s_mustache": {
-      "sort": 148,
+      "sort": 149,
       "id": "g_waluigi_s_mustache",
       "i_type": "Glider",
       "name": "Waluigi's Mustache",
@@ -92981,7 +93793,7 @@
       ]
     },
     "g_wario_s_mustache": {
-      "sort": 147,
+      "sort": 148,
       "id": "g_wario_s_mustache",
       "i_type": "Glider",
       "name": "Wario's Mustache",
@@ -93010,6 +93822,10 @@
         {
           "id": "c_3ds_wario_shipyard_t",
           "lvl": 6
+        },
+        {
+          "id": "c_bangkok_rush_r",
+          "lvl": 1
         },
         {
           "id": "c_ds_dk_pass_r",
@@ -93113,7 +93929,7 @@
       ]
     },
     "g_wicked_topaz": {
-      "sort": 150,
+      "sort": 151,
       "id": "g_wicked_topaz",
       "i_type": "Glider",
       "name": "Wicked Topaz",
@@ -93130,6 +93946,10 @@
         {
           "id": "c_3ds_wario_shipyard_r_t",
           "lvl": 8
+        },
+        {
+          "id": "c_bangkok_rush_t",
+          "lvl": 1
         },
         {
           "id": "c_berlin_byways",
@@ -93175,7 +93995,7 @@
       "hashes": []
     },
     "g_wicked_wings": {
-      "sort": 132,
+      "sort": 133,
       "id": "g_wicked_wings",
       "i_type": "Glider",
       "name": "Wicked Wings",
@@ -93263,7 +94083,7 @@
       ]
     },
     "g_wonderful_wings": {
-      "sort": 149,
+      "sort": 150,
       "id": "g_wonderful_wings",
       "i_type": "Glider",
       "name": "Wonderful Wings",
@@ -93291,6 +94111,10 @@
         },
         {
           "id": "c_amsterdam_drift",
+          "lvl": 1
+        },
+        {
+          "id": "c_bangkok_rush",
           "lvl": 1
         },
         {
@@ -93359,7 +94183,7 @@
       ]
     },
     "g_yoshi_s_egg_hanafuda": {
-      "sort": 152,
+      "sort": 153,
       "id": "g_yoshi_s_egg_hanafuda",
       "i_type": "Glider",
       "name": "Yoshi's Egg Hanafuda",
