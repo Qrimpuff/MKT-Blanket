@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 
 use mkt_data::*;
-use palette::{GetHue, Hsv, IntoColor, Pixel, Srgb};
+use palette::{GetHue, Hsv, IntoColor, Srgb};
 
 use std::{cmp::Ordering, collections::HashMap, fs};
 
@@ -16,7 +16,7 @@ use imageproc::{
     rect::Rect,
     template_matching::{self, MatchTemplateMethod},
 };
-use img_hash::{HasherConfig, ImageHash};
+use image_hasher::{HasherConfig, ImageHash};
 use itertools::Itertools;
 use lazy_static::lazy_static;
 
@@ -274,16 +274,16 @@ fn find_item_rows(img: &GrayImage, min_width: u32) -> (Vec<ItemArea>, u32) {
 }
 
 fn hsv(ps: [u8; 3]) -> (f32, f32, f32) {
-    let rgb = Srgb::from_raw(&ps).into_format();
+    let rgb = Srgb::from(ps).into_format();
     let hsv: Hsv = rgb.into_color();
-    let h = hsv.hue.to_positive_degrees();
+    let h = hsv.hue.into_positive_degrees();
     let s = hsv.saturation;
     let v = hsv.value;
     (h, s, v)
 }
 
-fn hue(ps: [u8; 3]) -> Option<palette::RgbHue> {
-    let rgb = Srgb::from_raw(&ps).into_format();
+fn hue(ps: [u8; 3]) -> palette::RgbHue {
+    let rgb = Srgb::from(ps).into_format();
     let hsv: Hsv = rgb.into_color();
     hsv.get_hue()
 }
@@ -573,9 +573,9 @@ fn item_image_to_owned_item(
     let lvl = item_level_from_image(area, img, lvl_templates);
     let points = item_points_from_image(area, img, points_templates);
     let (hash, id) = item_id_from_image(area, img, item_hashes);
-    if id.is_some() {
+    if let Some(_id) = &id {
         Some(OwnedItemResult {
-            i_type: item_type_from_id(id.as_ref().unwrap()),
+            i_type: item_type_from_id(_id),
             id,
             lvl,
             points,
@@ -806,7 +806,7 @@ pub fn screenshots_to_owned_items(
     owned_items
 }
 
-pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: &MktData) {
+pub fn deduce_missing_owned_items(owned_items: &mut [OwnedItemResult], data: &MktData) {
     // try to identify items in order
     let mut item_offset = 0;
     let mut last_found_type: Option<ItemType> = None;
@@ -863,7 +863,7 @@ pub fn deduce_missing_owned_items(owned_items: &mut Vec<OwnedItemResult>, data: 
                         {
                             if expected_item_id == id {
                                 // all the items in between are know now
-                                for mut t_item in try_items {
+                                for t_item in try_items {
                                     let item_id = &potential_item_ids
                                         [t_item.0 - last_found_item.0 + item_offset];
                                     t_item.1.id = Some(item_id.clone());
@@ -959,7 +959,7 @@ pub fn _test_img_hash() {
 fn to_image_hash(img: &RgbImage) -> String {
     let hasher = HasherConfig::new()
         .preproc_dct()
-        .hash_alg(img_hash::HashAlg::DoubleGradient)
+        .hash_alg(image_hasher::HashAlg::DoubleGradient)
         .to_hasher();
 
     let mut hashes = vec![];
@@ -1060,12 +1060,8 @@ fn hue_gray_image(img: &RgbImage, base_hue: f32) -> GrayImage {
         img.pixels()
             .flat_map(|p| {
                 let h = hue(p.0);
-                let diff = if let Some(h) = h {
-                    base_hue - h
-                } else {
-                    180.0.into()
-                };
-                [((1.0 - diff.to_degrees().abs().min(90.0) / 90.0) * 255.0) as u8]
+                let diff = base_hue - h;
+                [((1.0 - diff.into_degrees().abs().min(90.0) / 90.0) * 255.0) as u8]
             })
             .collect(),
     )

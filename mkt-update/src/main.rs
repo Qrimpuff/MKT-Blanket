@@ -140,7 +140,7 @@ fn _test_wiki_coverage(data: &MktData) {
     {
         let rgx = format!(
             r"(.*\[File:.*[=|]{}\][^<\n]*)",
-            item.name.replace("(", r"\(").replace(")", r"\)")
+            item.name.replace('(', r"\(").replace(')', r"\)")
         );
         let re = Regex::new(&rgx).unwrap();
         if let Some(c) = re.captures_iter(&wiki).next() {
@@ -206,7 +206,7 @@ fn _test_wiki_coverage(data: &MktData) {
                     .filter(|r1| !c.favorite_items.iter().any(|r2| r1.id == r2.id)),
             )
             .collect_vec();
-        favorite_items.sort_by_key(|r| r.id.replace("_", " "));
+        favorite_items.sort_by_key(|r| r.id.replace('_', " "));
 
         writeln!(&mut wiki_new, "----- {} -----", c.name).unwrap();
         for r in [Rarity::HighEnd, Rarity::Super, Rarity::Normal] {

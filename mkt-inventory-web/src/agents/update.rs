@@ -68,7 +68,7 @@ impl Agent for UpdateAgent {
                             .unwrap_or_else(|_| Utc::now().with_year(2000).unwrap())
                     {
                         if let Some(data) = UpdateAgent::load_data().await {
-                            LocalStorage::set("mkt_data_date", &date).unwrap();
+                            LocalStorage::set("mkt_data_date", date).unwrap();
                             return Msg::UpdateData(id, Some(Box::new(data)));
                         }
                     }
@@ -87,7 +87,7 @@ impl UpdateAgent {
     pub async fn load_data() -> Option<MktData> {
         let base = Url::parse(&gloo_utils::window().origin()).ok()?;
         let mut url = base.join("MKT-Blanket/mkt_data.json").ok()?;
-        url.set_query(Some(&format!("day={}", Utc::today())));
+        url.set_query(Some(&format!("day={}", Utc::now().date_naive())));
         let resp = reqwest::get(url).await.ok()?;
         let json = resp.text().await.ok()?;
         MktData::from_json(&json).ok()

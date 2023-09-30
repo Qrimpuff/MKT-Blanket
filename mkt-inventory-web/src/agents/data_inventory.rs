@@ -237,7 +237,7 @@ impl Agent for DataInventoryAgent {
                 let mut new_courses = HashMap::<CourseId, Shared<DataInvCourse>>::default();
                 for course in data.courses.values() {
                     let new_course = if let Some(c) = state.courses.remove(&course.id) {
-                        (*c.write().unwrap()).data = course.clone();
+                        c.write().unwrap().data = course.clone();
                         c
                     } else {
                         Rc::new(RwLock::new(DataInvCourse {
@@ -253,7 +253,7 @@ impl Agent for DataInventoryAgent {
                 let mut new_drivers = HashMap::<ItemId, Shared<DataInvItem>>::default();
                 for driver in data.drivers.values() {
                     let new_driver = if let Some(i) = state.drivers.remove(&driver.id) {
-                        (*i.write().unwrap()).data = driver.clone();
+                        i.write().unwrap().data = driver.clone();
                         i
                     } else {
                         Rc::new(RwLock::new(DataInvItem {
@@ -270,7 +270,7 @@ impl Agent for DataInventoryAgent {
                 let mut new_karts = HashMap::<ItemId, Shared<DataInvItem>>::default();
                 for kart in data.karts.values() {
                     let new_kart = if let Some(i) = state.karts.remove(&kart.id) {
-                        (*i.write().unwrap()).data = kart.clone();
+                        i.write().unwrap().data = kart.clone();
                         i
                     } else {
                         Rc::new(RwLock::new(DataInvItem {
@@ -287,7 +287,7 @@ impl Agent for DataInventoryAgent {
                 let mut new_gliders = HashMap::<ItemId, Shared<DataInvItem>>::default();
                 for glider in data.gliders.values() {
                     let new_glider = if let Some(i) = state.gliders.remove(&glider.id) {
-                        (*i.write().unwrap()).data = glider.clone();
+                        i.write().unwrap().data = glider.clone();
                         i
                     } else {
                         Rc::new(RwLock::new(DataInvItem {

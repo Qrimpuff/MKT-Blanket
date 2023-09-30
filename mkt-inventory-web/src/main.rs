@@ -1,7 +1,7 @@
-#![feature(bool_to_option)]
 #![feature(try_blocks)]
 // rust-analyser doesn't like gloo::console
 #![allow(unused_unsafe)]
+#![allow(clippy::let_unit_value)]
 
 mod agents;
 mod comps;

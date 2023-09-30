@@ -521,7 +521,7 @@ impl FromIterator<(ItemId, ItemHash)> for MktItemHashes {
     fn from_iter<T: IntoIterator<Item = (ItemId, ItemHash)>>(iter: T) -> Self {
         let mut h = MktItemHashes::new();
         for (id, hash) in iter {
-            h.hashes.entry(id).or_insert_with(Vec::new).push(hash);
+            h.hashes.entry(id).or_default().push(hash);
         }
         h
     }
@@ -530,7 +530,7 @@ impl FromIterator<(ItemId, Vec<ItemHash>)> for MktItemHashes {
     fn from_iter<T: IntoIterator<Item = (ItemId, Vec<ItemHash>)>>(iter: T) -> Self {
         let mut h = MktItemHashes::new();
         for (id, hash) in iter {
-            h.hashes.entry(id).or_insert_with(Vec::new).extend(hash);
+            h.hashes.entry(id).or_default().extend(hash);
         }
         h
     }
