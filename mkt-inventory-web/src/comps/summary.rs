@@ -103,6 +103,11 @@ impl Component for Summary {
             <>
                 <h2 class="title is-4">{"Welcome"}</h2>
                 <p class="block">{"MKT Blanket is a course coverage tool for Mario Kart Tour. You can maintain you inventory and check which course is missing coverage."}</p>
+                <article class="message is-warning">
+                    <div class="message-body">
+                        {"No more updates are planned as of the 4th Anniversary of Mario Kart Tour. The coverage data will remain as is."}
+                    </div>
+                </article>
                 <article class="message is-info">
                     <div class="message-body">
                         {"To import your inventory from in-game screenshots or to use your inventory in a spreadsheet, go to the "}<a href="#import">{"Import / Export"}</a>{" page."}

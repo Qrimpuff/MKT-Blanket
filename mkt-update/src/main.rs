@@ -49,11 +49,10 @@ fn main() {
 
 fn update_data() -> MktData {
     let mut data = MktData::new();
-    update_mkt_item_data(&mut data, ItemType::Driver);
-    update_mkt_item_data(&mut data, ItemType::Kart);
-    update_mkt_item_data(&mut data, ItemType::Glider);
-    update_mkt_item_coverage_data(&mut data);
-    data
+    // uses b&g coverage, instead of wiki
+    update_mkt_item_and_course_data(&mut data);
+    update_mkt_mii_data(&mut data);
+    _test_b_and_g_coverage(&data)
 }
 
 fn _test_b_and_g_coverage(data: &MktData) -> MktData {
@@ -72,6 +71,7 @@ fn _test_b_and_g_coverage(data: &MktData) -> MktData {
         .values_mut()
         .for_each(|c| c.favorite_courses = Default::default());
 
+    // csv version of the sheet Coverage Lookup
     let mut rdr = csv::Reader::from_path("tmp/coverage.csv").unwrap();
 
     for result in rdr.records() {
@@ -80,6 +80,7 @@ fn _test_b_and_g_coverage(data: &MktData) -> MktData {
         let course_name_lvl1 = &record[1];
         let course_name_lvl3 = &record[2];
         let course_name_lvl6 = &record[3];
+        let course_name_lvl8 = &record[4];
         let mut course_name = "";
         let mut lvl = 0;
         if !course_name_lvl1.is_empty() {
@@ -91,6 +92,9 @@ fn _test_b_and_g_coverage(data: &MktData) -> MktData {
         } else if !course_name_lvl6.is_empty() {
             course_name = course_name_lvl6;
             lvl = 6;
+        } else if !course_name_lvl8.is_empty() {
+            course_name = course_name_lvl8;
+            lvl = 8;
         }
 
         if item_name.is_empty() || course_name.is_empty() {
@@ -98,27 +102,43 @@ fn _test_b_and_g_coverage(data: &MktData) -> MktData {
         }
 
         let item_name = item_name.to_uppercase();
-        let course_name = course_name.replace("RT", "R/T").to_uppercase();
+        let course_name = course_name.to_uppercase();
 
-        let item = data
+        let mut item = data
             .drivers
             .values_mut()
             .chain(data.karts.values_mut())
             .chain(data.gliders.values_mut())
             .find(|i| i.get_bgr_name() == item_name);
-        let course = data.courses.values_mut().find(|c| {
-            if c.name.starts_with("RMX") {
-                unidecode(&c.name).to_uppercase() == course_name
-            } else {
-                unidecode(&c.name).to_uppercase().ends_with(&course_name)
-            }
-        });
 
-        if let (Some(item), Some(course)) = (item, course) {
+        // exact match first
+        let mut course = data
+            .courses
+            .values_mut()
+            .find(|c| unidecode(&c.name).to_uppercase().replace("R/T", "RT") == course_name);
+        // match without console
+        if course.is_none() {
+            course = data.courses.values_mut().find(|c| {
+                !c.name.starts_with("RMX")
+                    && unidecode(&c.name)
+                        .to_uppercase()
+                        .replace("R/T", "RT")
+                        .ends_with(&course_name)
+            });
+        }
+
+        if let (Some(item), Some(course)) = (item.as_mut(), course.as_mut()) {
             course.favorite_items.insert((item.id.clone(), lvl).into());
             item.favorite_courses
                 .insert((course.id.clone(), lvl).into());
-            println!("{}, {} lvl {}", item.name, course.name, lvl);
+            // println!("{}, {} lvl {}", item.name, course.name, lvl);
+        } else {
+            if item.is_none() {
+                println!("ERROR: missing item: {item_name:?}");
+            }
+            if course.is_none() {
+                println!("ERROR: missing course: {course_name:?}");
+            }
         }
     }
 
@@ -185,6 +205,7 @@ fn _test_wiki_coverage(data: &MktData) {
                         match r.lvl {
                             3 => "<sup>*</sup>",
                             6 => "<sup>**</sup>",
+                            8 => "<sup>***</sup>",
                             _ => "",
                         }
                     )
@@ -223,7 +244,7 @@ fn _test_wiki_coverage(data: &MktData) {
                     writeln!(&mut wiki_new, "|-style=\"background-color:#E3E3E3\"").unwrap()
                 }
             }
-            for (l, t) in [|l| l == 1, |l| (3..=6).contains(&l) || l == 0]
+            for (l, t) in [|l| l == 1, |l| (3..=8).contains(&l) || l == 0]
                 .iter()
                 .cartesian_product([ItemType::Driver, ItemType::Kart, ItemType::Glider])
             {
